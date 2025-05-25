@@ -32,7 +32,36 @@
           <li>Organizador isento como pró-labore</li>
         </ul>`;
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
+
+      gerarTextoEntrada(projeto);
     });
+
+    function gerarTextoEntrada(projeto) {
+      const nomeMeses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+      const entradaDiv = document.getElementById("valoresEntradaDinamico");
+      const hoje = new Date();
+      const mesAtual = hoje.getMonth() + 1; // 1 a 12
+      const mesInicio = parseInt(projeto.mesInicio);
+      const mesFim = parseInt(projeto.mesFim);
+      const valorMes = projeto.valorMes;
+
+      let html = '<ul>';
+
+      for (let mes = mesInicio; mes <= mesFim; mes++) {
+        if (mes > mesAtual) break;
+
+        let valorTotal = 0;
+        for (let i = mesInicio; i <= mes; i++) {
+          valorTotal += i < mes ? valorMes + 1 : valorMes;
+        }
+
+        const nomeMes = nomeMeses[mes - 1];
+        html += `<li><strong>${nomeMes}</strong> → R$ ${valorTotal},00<br>🔁 A partir do mês seguinte, siga com parcelas mensais ✅</li>`;
+      }
+
+      html += '</ul>';
+      entradaDiv.innerHTML = html;
+    }
   </script>
 </head>
 <body>
@@ -66,7 +95,7 @@
       </ol>
 
       <h2>ENTRADA APÓS O INÍCIO</h2>
-        <div id="valoresEntradaDinamico"></div>
+      <div id="valoresEntradaDinamico"></div>
 
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn">Quero Participar</a>
     </div>
