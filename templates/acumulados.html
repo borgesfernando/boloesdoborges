@@ -19,7 +19,7 @@
 
       document.title = `Bolão - ${projeto.nome}`;
       document.getElementById("tituloPagina").textContent = `Bolão - ${projeto.nome}`;
-      document.getElementById("headerTitle").innerHTML = `<span class='emoji'>🎰</span> ${projeto.nome}`;
+      document.getElementById("headerTitle").innerHTML = `${projeto.nome}`;
       document.getElementById("infoProjeto").innerHTML = `
         <div>
           <p><span class="emoji">🎟️</span> Cota individual de <strong>R$ ${projeto.valor},00</strong> por concurso</p>
@@ -36,7 +36,7 @@
   <header>
     <div class="container">
       <h1 id="headerTitle"></h1>
-      <p>Participe dos concursos especiais com prêmios milionários!</p>
+      <p>Participação nos concursos acumulados com prêmios milionários!</p>
     </div>
   </header>
 
