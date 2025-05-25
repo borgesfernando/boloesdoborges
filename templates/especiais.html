@@ -47,13 +47,12 @@ function gerarTextoEntrada(projeto) {
   ];
   const entradaDiv = document.getElementById("valoresEntradaDinamico");
   const hoje = new Date();
-  const mesAtual = hoje.getMonth() + 1; // de 1 a 12
+  const mesAtual = hoje.getMonth() + 1;
   const mesInicio = parseInt(projeto.mesInicio);
   const mesFim = parseInt(projeto.mesFim);
   const valorMes = projeto.valorMes;
 
-  const limite = Math.min(mesFim, mesAtual + 1); // exibir até mês seguinte ao atual, sem ultrapassar o fim
-
+  const limite = Math.min(mesFim, mesAtual + 1);
   let html = '<ul>';
 
   for (let mes = mesInicio; mes <= limite; mes++) {
@@ -63,12 +62,20 @@ function gerarTextoEntrada(projeto) {
     }
 
     const nomeMes = nomeMeses[mes - 1];
-    html += `<li><strong>${nomeMes}</strong> → R$ ${valorTotal},00<br>👉🏼 A partir do mês seguinte, siga com as parcelas mensais no valor normal!</li>`;
+    html += `<li><strong>${nomeMes}</strong> → R$ ${valorTotal},00`;
+
+    // Somente exibe a frase se ainda houver meses seguintes
+    if (mes < limite) {
+      html += `<br>👉🏼 A partir do mês seguinte, siga com as parcelas mensais no valor normal!`;
+    }
+
+    html += `</li>`;
   }
 
   html += '</ul>';
   entradaDiv.innerHTML = html;
 }
+
 
   </script>
 </head>
