@@ -1,253 +1,263 @@
-<style>
-    :root {
-      --primary: #003366;
-      --secondary: #0077C8;
-      --accent: #FF6600;
-      --light: #F2F2F2;
-      --dark: #333333;
-      --success: #009933;
-      
-      /* Cores dos projetos */
-      --lf-indep: 128, 53, 148;
-      --qsj: 0, 93, 164;
-      --dsp: 166, 42, 82;
-      --sb2025: 0, 171, 103;
-      --mega: 0, 171, 103;       /* Verde Mega-Sena */
-      --quina: 0, 93, 164;       /* Azul Quina */
-      --lotofacil: 128, 53, 148; /* Roxo Lotofácil */
-      --dupla: 166, 42, 82;      /* Vinho Dupla Sena */
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background-color: #f5f7fa;
-      color: var(--dark);
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
-      border-radius: 0 0 10px 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-      background-color: var(--primary);
-    }
-    
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    h2 {
-      color: var(--primary);
-      margin: 1.5rem 0 1rem;
-      font-size: 1.8rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-    
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--secondary);
-    }
-    
-    h3 {
-      color: var(--secondary);
-      margin: 1rem 0;
-    }
-    
-    .card {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .project-card {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      border-left: 4px solid;
-    }
-    
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    /* Cores específicas para cada projeto especial */
-    .project-card.lf-indep {
-      background: linear-gradient(to right, rgba(var(--lotofacil),0.1), rgba(239,118,94,0.1));
-      border-left-color: rgb(var(--lotofacil));
-    }
-    
-    .project-card.qsj {
-      background: linear-gradient(to right, rgba(var(--quina),0.1), rgba(0,153,218,0.1));
-      border-left-color: rgb(var(--quina));
-    }
-    
-    .project-card.dsp {
-      background: linear-gradient(to right, rgba(var(--dupla),0.1), rgba(215,25,32,0.1));
-      border-left-color: rgb(var(--dupla));
-    }
-    
-    .project-card.sb2025 {
-      background: linear-gradient(to right, rgba(var(--mega),0.1), rgba(128,195,66,0.1));
-      border-left-color: rgb(var(--mega));
-    }
-    
-    /* Cores para sorteios normais */
-    .project-card.mega {
-      background: linear-gradient(to right, rgba(var(--mega),0.1), rgba(128,195,66,0.1));
-      border-left-color: rgb(var(--mega));
-    }
-    
-    .project-card.quina {
-      background: linear-gradient(to right, rgba(var(--quina),0.1), rgba(0,153,218,0.1));
-      border-left-color: rgb(var(--quina));
-    }
-    
-    /* Cores para projetos mensais */
-    .project-card.lotofacil {
-      background: linear-gradient(to right, rgba(var(--lotofacil),0.1), rgba(239,118,94,0.1));
-      border-left-color: rgb(var(--lotofacil));
-    }
-    
-    .project-info {
-      flex: 1;
-    }
-    
-    .project-info h3 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    
-    .project-date {
-      color: #666;
-      font-size: 0.9rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      font-size: 0.9rem;
-      min-width: 120px;
-    }
-    
-    /* Botões específicos para cada projeto */
-    .btn.lf-indep, .btn.lotofacil {
-      background-color: rgb(var(--lotofacil));
-    }
-    
-    .btn.lf-indep:hover, .btn.lotofacil:hover {
-      background-color: rgba(var(--lotofacil), 0.9);
-    }
-    
-    .btn.qsj, .btn.quina {
-      background-color: rgb(var(--quina));
-    }
-    
-    .btn.qsj:hover, .btn.quina:hover {
-      background-color: rgba(var(--quina), 0.9);
-    }
-    
-    .btn.dsp {
-      background-color: rgb(var(--dupla));
-    }
-    
-    .btn.dsp:hover {
-      background-color: rgba(var(--dupla), 0.9);
-    }
-    
-    .btn.sb2025, .btn.mega {
-      background-color: rgb(var(--mega));
-    }
-    
-    .btn.sb2025:hover, .btn.mega:hover {
-      background-color: rgba(var(--mega), 0.9);
-    }
-    
-    footer {
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 3rem;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 10px 10px 0 0;
-    }
-    
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .highlight {
-      background-color: rgba(0, 119, 200, 0.1);
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-      
-      .project-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .btn {
-        width: 100%;
-        margin-top: 1rem;
-      }
-    }
-  </style>
+/* ==========================
+   Cores e Variáveis Globais
+   ========================== */
+:root {
+  --primary: #003366;
+  --secondary: #0077C8;
+  --accent: #FF6600;
+  --light: #F2F2F2;
+  --dark: #333333;
+  --success: #009933;
+
+  /* Cores dos projetos */
+  --lf-indep: 128, 53, 148;
+  --qsj: 0, 93, 164;
+  --dsp: 166, 42, 82;
+  --sb2025: 0, 171, 103;
+  --mega: 0, 171, 103;
+  --quina: 0, 93, 164;
+  --lotofacil: 128, 53, 148;
+  --dupla: 166, 42, 82;
+}
+
+/* ==========================
+   Reset e Base
+   ========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+  color: var(--dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ==========================
+   Cabeçalho
+   ========================== */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  color: var(--primary);
+  margin: 1.5rem 0 1rem;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary);
+}
+
+h3 {
+  color: var(--secondary);
+  margin: 1rem 0;
+}
+
+/* ==========================
+   Cards e Layout
+   ========================== */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-info {
+  flex: 1;
+}
+
+.project-info h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================
+   Cores por Projeto
+   ========================== */
+.project-card.lf-indep,
+.project-card.lf,
+.project-card.lotofacil {
+  background: linear-gradient(to right, rgba(var(--lotofacil), 0.1), rgba(239,118,94,0.1));
+  border-left-color: rgb(var(--lotofacil));
+}
+
+.project-card.qsj,
+.project-card.quina {
+  background: linear-gradient(to right, rgba(var(--quina), 0.1), rgba(0,153,218,0.1));
+  border-left-color: rgb(var(--quina));
+}
+
+.project-card.dsp,
+.project-card.dupla {
+  background: linear-gradient(to right, rgba(var(--dupla), 0.1), rgba(215,25,32,0.1));
+  border-left-color: rgb(var(--dupla));
+}
+
+.project-card.sb2025,
+.project-card.mega {
+  background: linear-gradient(to right, rgba(var(--mega), 0.1), rgba(128,195,66,0.1));
+  border-left-color: rgb(var(--mega));
+}
+
+/* ==========================
+   Botões
+   ========================== */
+.btn {
+  display: inline-block;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+.btn.lf-indep,
+.btn.lf,
+.btn.lotofacil {
+  background-color: rgb(var(--lotofacil));
+}
+
+.btn.lf-indep:hover,
+.btn.lf:hover,
+.btn.lotofacil:hover {
+  background-color: rgba(var(--lotofacil), 0.9);
+}
+
+.btn.qsj,
+.btn.quina {
+  background-color: rgb(var(--quina));
+}
+
+.btn.qsj:hover,
+.btn.quina:hover {
+  background-color: rgba(var(--quina), 0.9);
+}
+
+.btn.dsp,
+.btn.dupla {
+  background-color: rgb(var(--dupla));
+}
+
+.btn.dsp:hover,
+.btn.dupla:hover {
+  background-color: rgba(var(--dupla), 0.9);
+}
+
+.btn.sb2025,
+.btn.mega {
+  background-color: rgb(var(--mega));
+}
+
+.btn.sb2025:hover,
+.btn.mega:hover {
+  background-color: rgba(var(--mega), 0.9);
+}
+
+/* ==========================
+   Footer
+   ========================== */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+/* ==========================
+   Responsivo
+   ========================== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
