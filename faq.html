@@ -84,7 +84,10 @@
 
       <button class="accordion">Como faço o pagamento?</button>
       <div class="panel">
-        <p>Os pagamentos são feitos exclusivamente via PIX. As instruções são enviadas por e-mail e WhatsApp após sua inscrição.</p>
+        <p>Os pagamentos são feitos exclusivamente via <strong>PIX</strong>. Utilize a chave abaixo:</p>
+        <p><strong>Chave PIX:</strong> <code id="pix-chave">3b4a7d83-2fcd-41a5-b7c6-1be66a8b9993</code></p>
+        <button onclick="copiarPix()" class="btn" style="margin-top: 0.5rem;">📋 Copiar Chave PIX</button>
+        <p id="feedbackPix" style="color: green; display: none; margin-top: 0.5rem;">✅ Chave copiada!</p>
       </div>
 
       <button class="accordion">Como facilitar os pagamentos mensais?</button>
@@ -177,5 +180,19 @@
       });
     });
   </script>
+
+  <script>
+  function copiarPix() {
+    const chave = document.getElementById("pix-chave").textContent;
+    navigator.clipboard.writeText(chave).then(() => {
+      const feedback = document.getElementById("feedbackPix");
+      feedback.style.display = "block";
+      setTimeout(() => {
+        feedback.style.display = "none";
+      }, 2000);
+    });
+  }
+</script>
+  
 </body>
 </html>
