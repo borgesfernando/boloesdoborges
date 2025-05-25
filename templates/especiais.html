@@ -39,20 +39,6 @@
 
       gerarTextoEntrada(projeto);
     });
-    // Aplicar a classe do projeto ao card "Posso Participar"
-      document.addEventListener("DOMContentLoaded", () => {
-        const params = new URLSearchParams(window.location.search);
-        const id = params.get("id");
-        const projeto = PROJETOS.especiais.projetos.find(p => p.id === id);
-        
-        if (projeto) {
-          const card = document.getElementById("possoParticiparCard");
-          // Remove todas as classes de projeto existentes
-          card.className = "project-card";
-          // Adiciona a classe específica do projeto
-          card.classList.add(projeto.id.toLowerCase().replace(/\s+/g, '-'));
-        }
-      });
 
     function gerarTextoEntrada(projeto) {
       const nomeMeses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
