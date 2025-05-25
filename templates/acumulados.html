@@ -21,12 +21,12 @@
       document.getElementById("tituloPagina").textContent = `Bolão - ${projeto.nome}`;
       document.getElementById("headerTitle").innerHTML = `<span class='emoji'>🎰</span> ${projeto.nome}`;
       document.getElementById("infoProjeto").innerHTML = `
-        <ul>
-          <li><span class="emoji">🎟️</span> Cota individual de <strong>R$ ${projeto.valor},00</strong> por concurso</li>
-          <li><span class="emoji">📈</span> Ativado somente para concursos acima de <strong>R$ ${projeto.minimo} milhões</strong></li>
-          <li><span class="emoji">📊</span> Predições geradas por algoritmos inteligentes</li>
-          <li><span class="emoji">📧</span> Resultados enviados apenas aos participantes confirmados</li>
-        </ul>`;
+        <div>
+          <p><span class="emoji">🎟️</span> Cota individual de <strong>R$ ${projeto.valor},00</strong> por concurso</p>
+          <p><span class="emoji">📈</span> Ativado somente para concursos acima de <strong>R$ ${projeto.minimo} milhões</strong></p>
+          <p><span class="emoji">📊</span> Predições geradas por algoritmos inteligentes</p>
+          <p><span class="emoji">📧</span> Resultados enviados apenas aos participantes confirmados</p>
+        </div>`;
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
       document.getElementById("footerTituloBolao").textContent = `Participe do bolão ${projeto.nome}!`;
     });
