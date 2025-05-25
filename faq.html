@@ -15,6 +15,10 @@
       background-color: #f9f9f9;
       font-weight: bold;
       transition: background-color 0.3s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
     }
     .accordion:hover {
       background-color: #e9e9e9;
@@ -22,13 +26,24 @@
     .accordion.active {
       background-color: #e0f7e9;
     }
+    .accordion::after {
+      content: '➕';
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+    .accordion.active::after {
+      content: '➖';
+    }
     .panel {
-      padding: 0 1rem 1rem;
-      display: none;
+      overflow: hidden;
+      max-height: 0;
+      padding: 0 1rem;
       background-color: white;
+      transition: max-height 0.4s ease, padding 0.4s ease;
     }
     .panel.show {
-      display: block;
+      max-height: 500px; /* valor suficiente para o conteúdo */
+      padding: 1rem;
     }
   </style>
 </head>
@@ -41,10 +56,10 @@
   </header>
 
   <div class="container" style="padding: 2rem 0;">
-    <div class="card">
+    <div class="card" id="faq-container">
 
-      <!-- Acordeões abaixo -->
-      <button class="accordion">1. Posso participar?</button>
+      <!-- Adicione seus botões sem numeração manual -->
+      <button class="accordion">Posso participar?</button>
       <div class="panel">
         <p>Sim! Para participar dos nossos projetos, é necessário:</p>
         <ul>
@@ -56,81 +71,82 @@
         </ul>
       </div>
 
-      <button class="accordion">2. Por que preciso ter um e-mail no Gmail?</button>
+      <button class="accordion">Por que preciso ter um e-mail no Gmail?</button>
       <div class="panel">
         <p>Porque usamos os recursos do Google (Drive, Planilhas, Documentos). O acesso é exclusivo a usuários logados com conta Gmail.</p>
       </div>
 
-      <button class="accordion">3. Como participar?</button>
+      <button class="accordion">Como participar?</button>
       <div class="panel">
         <p>Basta preencher o formulário de inscrição:</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" target="_blank" class="btn sb2025">Quero Participar</a>
       </div>
 
-      <button class="accordion">4. Como faço o pagamento?</button>
+      <button class="accordion">Como faço o pagamento?</button>
       <div class="panel">
         <p>Os pagamentos são feitos exclusivamente via PIX. As instruções são enviadas por e-mail e WhatsApp após sua inscrição.</p>
       </div>
 
-      <button class="accordion">5. Como facilitar os pagamentos mensais?</button>
+      <button class="accordion">Como facilitar os pagamentos mensais?</button>
       <div class="panel">
         <p>Você pode agendar um PIX recorrente no seu banco digital com os valores corretos e datas certas. Assim você evita esquecimentos.</p>
       </div>
 
-      <button class="accordion">6. Quando ocorrem os sorteios?</button>
+      <button class="accordion">Quando ocorrem os sorteios?</button>
       <div class="panel">
         <p>Cada projeto segue o calendário oficial da Caixa. As datas são informadas com antecedência na comunidade.</p>
       </div>
 
-      <button class="accordion">7. Como recebo os resultados e comprovantes?</button>
+      <button class="accordion">Como recebo os resultados e comprovantes?</button>
       <div class="panel">
         <p>Você recebe tudo por e-mail e pode acessar também as planilhas no Google Drive.</p>
       </div>
 
-      <button class="accordion">8. Onde vejo minha planilha e histórico?</button>
+      <button class="accordion">Onde vejo minha planilha e histórico?</button>
       <div class="panel">
         <p>Você recebe em seu email um link exclusivo, com todos os dados de pagamentos, cotas e resultados.</p>
       </div>
 
-      <button class="accordion">9. Posso indicar amigos ou familiares?</button>
+      <button class="accordion">Posso indicar amigos ou familiares?</button>
       <div class="panel">
         <p>Sim! Participantes ativos podem indicar outras pessoas, desde que atendam aos critérios.</p>
       </div>
 
-      <button class="accordion">10. Posso dividir uma cota com alguém?</button>
+      <button class="accordion">Posso dividir uma cota com alguém?</button>
       <div class="panel">
         <p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Informem os nomes para registro na Relação de Participantes. <strong>Importante:</strong> O bolão não se responsabiliza por pessoas não registradas.</p>
       </div>
 
-      <button class="accordion">11. Há alguma fiscalização ou auditoria?</button>
+      <button class="accordion">Há alguma fiscalização ou auditoria?</button>
       <div class="panel">
         <p>Não há uma equipe formal, mas ao final de cada projeto é realizada uma auditoria voluntária. Documentos são enviados a todos os participantes. Qualquer pessoa pode pedir esclarecimentos ou realizar auditoria independente.</p>
       </div>
 
-      <button class="accordion">12. Quando serão registradas as apostas?</button>
+      <button class="accordion">Quando serão registradas as apostas?</button>
       <div class="panel">
         <p>Todas as apostas serão registradas entre os dias <strong>5 e 15 de dezembro</strong>. A prestação de contas final será divulgada até <strong>20 de dezembro</strong>.</p>
       </div>
 
-      <button class="accordion">13. Recebo cópia física dos bilhetes?</button>
+      <button class="accordion">Recebo cópia física dos bilhetes?</button>
       <div class="panel">
         <p>Não. As apostas são digitais, feitas no app oficial da Caixa. Todos os comprovantes e recibos são compartilhados com o grupo para conferência.</p>
       </div>
 
-      <button class="accordion">14. E se o bolão for premiado?</button>
+      <button class="accordion">E se o bolão for premiado?</button>
       <div class="panel">
         <p>Se o valor individual for significativo, será repassado. Caso contrário, será feita uma pesquisa para decidir coletivamente como usar o valor.</p>
       </div>
 
-      <button class="accordion">15. Quando é feita a conferência dos bilhetes?</button>
+      <button class="accordion">Quando é feita a conferência dos bilhetes?</button>
       <div class="panel">
         <p>A conferência acontece logo após o sorteio (por volta das 22h), e todos recebem o relatório com os prêmios.</p>
       </div>
 
-      <button class="accordion">16. Ainda tenho dúvidas. O que faço?</button>
+      <button class="accordion">Ainda tenho dúvidas. O que faço?</button>
       <div class="panel">
         <p>Entre em contato com o organizador: <a href="mailto:correiodofernando@gmail.com">correiodofernando@gmail.com</a></p>
       </div>
+
     </div>
   </div>
 
@@ -142,11 +158,22 @@
 
   <script>
     const acc = document.querySelectorAll(".accordion");
-    acc.forEach(btn => {
+    acc.forEach((btn, index) => {
+      // Numeração automática
+      const numero = index + 1;
+      const textoOriginal = btn.textContent.trim().replace(/^\d+\.\s*/, '');
+      btn.innerHTML = `<span>${numero}. ${textoOriginal}</span>`;
+
+      // Clique: abre apenas 1 por vez
       btn.addEventListener("click", () => {
+        acc.forEach(other => {
+          if (other !== btn) {
+            other.classList.remove("active");
+            other.nextElementSibling.classList.remove("show");
+          }
+        });
         btn.classList.toggle("active");
-        const panel = btn.nextElementSibling;
-        panel.classList.toggle("show");
+        btn.nextElementSibling.classList.toggle("show");
       });
     });
   </script>
