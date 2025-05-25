@@ -25,6 +25,7 @@
       document.getElementById("tituloPagina").textContent = `Como Participar - ${projeto.nome}`;
       document.getElementById("headerTitle").textContent = "Como Participar";
       document.getElementById("headerSubtitle").textContent = `${projeto.nome} - Apuração: ${projeto.dataSorteio}`;
+      document.getElementById("footerTituloBolao").textContent = `Participe do nosso bolão ${projeto.nome}!`;
       document.getElementById("infoProjeto").innerHTML = `
         <ul>
           <li>Nome: <strong>${projeto.nome}</strong></li>
@@ -107,11 +108,11 @@
 
   <footer>
     <div class="container">
-      <h3>Participe do nosso Bolão Especial!</h3>
+      <h3 id="footerTituloBolao">Participe do nosso bolão mensal!</h3>
       <p style="margin: 1rem 0;">Junte-se a nós e aumente suas chances de ganhar</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank">Quero Participar</a>
 
-      <p style="margin-top: 1.5rem;">© 2025 Bolão Especial - Todos os direitos reservados</p>
+      <p style="margin-top: 1.5rem;">© 2025 Bolão Mensal - Todos os direitos reservados</p>
       <p style="margin-top: 0.5rem;">
         Organizado por
         <a href="mailto:correiodofernando@gmail.com"
@@ -121,7 +122,7 @@
                   display: inline-flex;
                   align-items: center;
                   gap: 4px;">
-          Borges
+          Fernando Borges
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M22 6L12 13L2 6" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
