@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="tituloPagina">Como Participar</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script defer src="../js/config.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const projeto = PROJETOS.especiais.projetos.find(p => p.id === id);
+
+      if (!projeto) {
+        document.body.innerHTML = '<div class="container"><h1>Projeto não encontrado</h1></div>';
+        return;
+      }
+
+      document.title = `Como Participar - ${projeto.nome}`;
+      document.getElementById("tituloPagina").textContent = `Como Participar - ${projeto.nome}`;
+      document.getElementById("headerTitle").textContent = "Como Participar";
+      document.getElementById("headerSubtitle").textContent = `${projeto.nome} - Apuração: ${projeto.dataSorteio}`;
+      document.getElementById("infoProjeto").innerHTML = `
+        <ul>
+          <li>Nome: <strong>${projeto.nome}</strong></li>
+          <li>Cota: <strong>R$ ${projeto.cota},00</strong> (${projeto.parcelas}x R$ ${projeto.valorMes},00)</li>
+          <li>Parcelas mensais: de <strong>${projeto.mesInicio}</strong> a <strong>${projeto.mesFim}</strong>, com vencimento no dia <strong>${projeto.diaPix}</strong> de cada mês</li>
+          <li>Data limite de pagamento da última parcela: <strong>${projeto.dataLimite}</strong></li>
+          <li>Data do sorteio: <strong>${projeto.dataSorteio}</strong></li>
+          <li>100% do valor arrecadado é convertido em apostas</li>
+          <li>Organizador isento como pró-labore</li>
+        </ul>`;
+      document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 id="headerTitle"></h1>
+      <p id="headerSubtitle"></p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="content-card">
+      <h2>Detalhes do Projeto</h2>
+      <div id="infoProjeto"></div>
+
+      <div class="highlight-box">
+        <h2>POSSO PARTICIPAR?</h2>
+        <p>Sim! Os requisitos para sua participação no Bolão são:</p>
+        <ul>
+          <li>Ser ex-integrante de projetos anteriores ou indicado.</li>
+          <li>Acreditar na sorte e no grupo.</li>
+          <li>Compromisso com os pagamentos mensais.</li>
+          <li>WhatsApp ativo e aceitação de grupo administrado somente pelo organizador.</li>
+        </ul>
+      </div>
+
+      <h2>PREMIAÇÃO</h2>
+      <ol>
+        <li>Se o rateio for significativo: PIX para cada participante.</li>
+        <li>Se pequeno: reaposta em novos concursos acumulados.</li>
+      </ol>
+
+      <h2>ENTRADA APÓS O INÍCIO</h2>
+      <p>O valor de entrada será ajustado proporcionalmente aos meses vencidos. Consulte o organizador.</p>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn">Quero Participar</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© Borges - Projetos de Bolões - Todos os direitos reservados</p>
+      <p style="margin-top: 0.5rem;">
+        Organizado por
+        <a href="mailto:correiodofernando@gmail.com"
+           style="color: #0077C8;
+                  text-decoration: none;
+                  transition: all 0.3s ease;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;">
+          Borges
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6L12 13L2 6" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
