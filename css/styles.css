@@ -152,6 +152,17 @@ footer h3 {
   border-radius: 0 8px 8px 0;
 }
 
+.highlight-box {
+  border-left: 4px solid var(--secondary);
+  padding-left: 16px;
+  margin: 1.5rem 0;
+}
+
+.highlight-box h2 {
+  margin-top: 0;
+}
+
+
 
 /* ==========================
    Cores por Projeto
