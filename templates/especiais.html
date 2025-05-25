@@ -38,6 +38,13 @@
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
 
       gerarTextoEntrada(projeto);
+
+      // Aplicar a classe do projeto ao card "Posso Participar"
+      const card = document.getElementById("possoParticiparCard");
+      if (card) {
+        card.className = "project-card"; // Remove classes antigas
+        card.classList.add(projeto.id.toLowerCase().replace(/\s+/g, '-')); // Adiciona classe do projeto
+      }
     });
 
     function gerarTextoEntrada(projeto) {
