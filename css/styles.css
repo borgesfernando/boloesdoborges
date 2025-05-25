@@ -144,9 +144,13 @@ footer h3 {
 }
 
 /* Estilo especial para o card da comunidade */
-.comunidade-info {
+/* Estilo especial para o conteúdo da comunidade */
+.comunidade-conteudo {
   background: linear-gradient(to right, rgba(0, 119, 200, 0.05), rgba(0, 119, 200, 0.03));
   border-left: 5px solid var(--secondary);
+  padding: 1rem 1rem 1rem 1.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0 8px 8px 0;
 }
 
 
