@@ -64,8 +64,8 @@ function gerarTextoEntrada(projeto) {
     const nomeMes = nomeMeses[mes - 1];
     html += `<li><strong>${nomeMes}</strong> → R$ ${valorTotal},00`;
 
-    // Somente exibe a frase se ainda houver meses seguintes
-    if (mes < limite) {
+    // Exibe a frase se ainda houver meses no projeto (mes < mesFim)
+    if (mes < mesFim) {
       html += `<br>👉🏼 A partir do mês seguinte, siga com as parcelas mensais no valor normal!`;
     }
 
@@ -75,6 +75,7 @@ function gerarTextoEntrada(projeto) {
   html += '</ul>';
   entradaDiv.innerHTML = html;
 }
+
 
 
   </script>
