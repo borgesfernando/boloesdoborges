@@ -199,18 +199,18 @@
     });
   </script>
 
-<script>
-  function copiarPix() {
-    const chave = document.getElementById("pix-chave").textContent;
-    navigator.clipboard.writeText(chave).then(() => {
-      const feedback = document.getElementById("feedbackPix");
-      feedback.style.display = "block";
-      setTimeout(() => {
-        feedback.style.display = "none";
-      }, 2000);
-    });
-  }
-</script>
+  <script>
+    function copiarPix(botao) {
+      const chave = botao.getAttribute("data-pix");
+      navigator.clipboard.writeText(chave).then(() => {
+        const feedback = document.getElementById("feedbackPix");
+        feedback.style.display = "block";
+        setTimeout(() => {
+          feedback.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
   
 </body>
 </html>
