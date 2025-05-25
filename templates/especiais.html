@@ -24,7 +24,7 @@
       document.title = `Como Participar - ${projeto.nome}`;
       document.getElementById("tituloPagina").textContent = `Como Participar - ${projeto.nome}`;
       document.getElementById("headerTitle").textContent = "Como Participar";
-      document.getElementById("headerSubtitle").textContent = `${projeto.nome} <br> Apuração: ${projeto.dataSorteio}`;
+      document.getElementById("headerSubtitle").innerHTML = `${projeto.nome}<br>Apuração: ${projeto.dataSorteio}`;
       document.getElementById("footerTituloBolao").textContent = `Participe do nosso Bolão Especial para a ${projeto.nome}!`;
       document.getElementById("infoProjeto").innerHTML = `
         <ul>
