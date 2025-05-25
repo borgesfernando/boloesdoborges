@@ -144,7 +144,7 @@ footer h3 {
 }
 
 /* Estilo especial para o card da comunidade */
-#comunidade-info {
+.comunidade-info {
   background: linear-gradient(to right, rgba(0, 119, 200, 0.05), rgba(0, 119, 200, 0.03));
   border-left: 5px solid var(--secondary);
 }
