@@ -29,12 +29,11 @@
       document.getElementById("infoProjeto").innerHTML = `
         <ul>
           <li>Nome: <strong>${projeto.nome}</strong></li>
-          <li>Cota: <strong>R$ ${projeto.cota},00</strong> (${projeto.parcelas}x R$ ${projeto.valorMes},00)</li>
+          <li>Cota: <strong>R$ ${projeto.cota},00</strong> (${projeto.parcelas} x R$ ${projeto.valorMes},00)</li>
           <li>Parcelas mensais: de <strong>${mesInicioNome}</strong> a <strong>${mesFimNome}</strong>, com pagamento unicamente no dia <strong>${projeto.diaPix}</strong> de cada mês</li>
-          <li>Data limite de pagamento da última parcela: <strong>${projeto.dataLimite}</strong></li>
+          <li>Data limite de pagamento da última parcela com valor atualizado: <strong>${projeto.dataLimite}</strong></li>
           <li>Data do sorteio: <strong>${projeto.dataSorteio}</strong></li>
           <li>100% do valor arrecadado é convertido em apostas</li>
-          <li>Organizador isento como pró-labore</li>
         </ul>`;
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
 
@@ -84,7 +83,7 @@
 
       <div class="highlight-box">
         <h2>POSSO PARTICIPAR?</h2>
-        <p>Sim! Os requisitos para sua participação no Bolão são:</p>
+        <p><strong>Sim!</strong>strong> Os requisitos para sua participação neste Projeto são:</p>
         <ul>
           <li>Ser ex-integrante de projetos anteriores ou indicado.</li>
           <li>Acreditar na sorte e no grupo.</li>
@@ -94,10 +93,10 @@
       </div>
 
       <h2>PREMIAÇÃO</h2>
-      <ol>
-        <li>Se o rateio for significativo: PIX para cada participante.</li>
-        <li>Se pequeno: reaposta em novos concursos acumulados.</li>
-      </ol>
+      <ul>
+        <li>Se o rateio for um valor significativo: pagamento via PIX para cada participante.</li>
+        <li>Se for um valor inferior ao valor da cota, será reapostado em outros concursos acumulados.</li>
+      </ul>
 
       <h2>ENTRADA APÓS O INÍCIO</h2>
       <div id="valoresEntradaDinamico"></div>
