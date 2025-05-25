@@ -7,7 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
 function carregarProjetos(tipo, projetos, containerId, templateFile) {
   const container = document.getElementById(containerId);
   projetos.forEach(projeto => {
-    const tipoCor = projeto.id.split('-')[0]; // ex: lf, quina, mega
+    //const tipoCor = projeto.id.split('-')[0]; // ex: lf, quina, mega
+    const tipoCor = {
+    'ds': 'dupla',
+    'lf': 'lotofacil',
+    'quina': 'quina',
+    'mega': 'mega'
+    }[projeto.id.split('-')[0]] || projeto.id.split('-')[0];
     const btnClasse = tipoCor;
     const card = document.createElement("div");
     card.className = `project-card ${tipoCor}`;
