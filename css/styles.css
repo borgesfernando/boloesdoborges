@@ -83,6 +83,10 @@ h3 {
   margin: 1rem 0;
 }
 
+footer h3 {
+  color: white;
+}
+
 /* ==========================
    Cards e Layout
    ========================== */
@@ -164,12 +168,12 @@ h3 {
 .btn.ds-pascoa,
 .btn.ds {
   background-color: rgb(var(--dupla));
+  color: white;
 }
 .btn.ds-pascoa:hover,
 .btn.ds:hover {
   background-color: rgba(var(--dupla), 0.9);
 }
-
 
 .project-card.dsp,
 .project-card.dupla {
