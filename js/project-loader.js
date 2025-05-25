@@ -1,27 +1,34 @@
-// js/project-loader.js
-
 document.addEventListener("DOMContentLoaded", () => {
-  carregarProjetos('especiais', PROJETOS.especiais.projetos, 'especiais-list');
-  carregarProjetos('mensais', PROJETOS.mensais.projetos, 'mensais-list');
-  carregarProjetos('acumulados', PROJETOS.acumulados.projetos, 'acumulados-list');
+  carregarProjetos('especiais', PROJETOS.especiais.projetos, 'especiais-list', 'especiais.html');
+  carregarProjetos('mensais', PROJETOS.mensais.projetos, 'mensais-list', 'mensais.html');
+  carregarProjetos('acumulados', PROJETOS.acumulados.projetos, 'acumulados-list', 'acumulados.html');
 });
 
-function carregarProjetos(tipo, projetos, containerId) {
+function carregarProjetos(tipo, projetos, containerId, templateFile) {
   const container = document.getElementById(containerId);
   projetos.forEach(projeto => {
+    const tipoCor = projeto.id.split('-')[0]; // ex: lf, quina, mega
+    const btnClasse = tipoCor;
     const card = document.createElement("div");
-    card.className = `project-card ${projeto.id.split('-')[0]}`;
+    card.className = `project-card ${tipoCor}`;
+    const nome = projeto.nome;
+    const apuracao = projeto.dataSorteio ? `<p class="project-date">Apuração: ${projeto.dataSorteio}</p>` : '';
+    const detalhes = projeto.minimo
+      ? `<p>Participamos quando o prêmio acumula acima de <strong>R$ ${projeto.minimo} milhões</strong></p>`
+      : projeto.cotaMensal
+        ? `<p>Bolões em todos os sorteios</p>`
+        : '';
+    const textoBotao = tipo === 'acumulados' || tipo === 'mensais' ? 'Mais informações' : 'Como Participar';
+    const link = `templates/${templateFile}?id=${projeto.id}`;
+
     card.innerHTML = `
       <div class="project-info">
-        <h3>${projeto.nome}</h3>
-        ${projeto.dataSorteio ? `<p class="project-date">Apuração: ${projeto.dataSorteio}</p>` : ''}
-        ${projeto.minimo ? `<p>Participamos quando o prêmio acumula acima de <strong>R$ ${projeto.minimo} milhões</strong></p>` : ''}
-        ${projeto.cotaMensal ? `<p>Bolões em todos os sorteios</p>` : ''}
+        <h3>${nome}</h3>
+        ${apuracao || detalhes}
       </div>
-      <a href="${projeto.id}.html" target="_blank" class="btn ${projeto.id.split('-')[0]}">
-        ${tipo === 'acumulados' || tipo === 'mensais' ? 'Mais informações' : 'Como Participar'}
-      </a>
+      <a href="${link}" class="btn ${btnClasse}">${textoBotao}</a>
     `;
+
     container.appendChild(card);
   });
 }
