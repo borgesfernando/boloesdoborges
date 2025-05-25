@@ -20,14 +20,14 @@
       document.title = `Bolão Mensal - ${projeto.nome}`;
       document.getElementById("tituloPagina").textContent = `Bolão Mensal - ${projeto.nome}`;
       document.getElementById("headerTitle").textContent = projeto.nome;
-      document.getElementById("headerSubtitle").textContent = `Participação permanente em ${projeto.ciclo} concursos`;
+      document.getElementById("headerSubtitle").textContent = `Participação permanente em ${projeto.ciclo} concursos diários`;
       document.getElementById("infoProjeto").innerHTML = `
         <ul>
           <li>Cotas mensais de <strong>R$ ${projeto.cotaMensal},00</strong>.</li>
-          <li>Participação em <strong>${projeto.ciclo}</strong> concursos seguidos.</li>
-          <li>Pagamentos mensais via PIX, sempre após a apuração do ciclo.</li>
+          <li>Participação nos <strong>${projeto.ciclo}</strong> concursos seguidos do ciclo.</li>
+          <li>Pagamentos mensais via PIX, sempre após a finalização do ciclo vigente.</li>
           <li>Prestacão de contas via GMail e grupo de WhatsApp silenciado.</li>
-          <li>Transparência total e controle acessível apenas a participantes confirmados.</li>
+          <li>Transparência total e resultados diários por e-mail apenas aos participantes confirmados.</li>
         </ul>`;
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
     });
@@ -52,15 +52,15 @@
         <ul>
           <li>Comprometimento com a permanência no grupo e pagamentos regulares.</li>
           <li>Ser indicado ou já ter participado de projetos anteriores.</li>
-          <li>Ter GMail e WhatsApp ativo para comunicação e confirmações.</li>
+          <li>Ter GMail e WhatsApp ativos para comunicação e confirmações.</li>
         </ul>
       </div>
 
-      <h2>PREMIAÇÕES E REAPROVEITAMENTO</h2>
-      <ol>
-        <li>Prêmios significativos são repassados via PIX.</li>
-        <li>Pequenos valores são acumulados e utilizados como desconto no mês seguinte.</li>
-      </ol>
+      <h2>PREMIAÇÕES</h2>
+      <ul>
+        <li>Prêmios significativos serão repassados via PIX.</li>
+        <li>Valores inferiores são acumulados no mês e utilizados como desconto no mês seguinte.</li>
+      </ul>
 
       <div style="text-align: center; margin-top: 2rem;">
         <p style="font-size: 1.2rem; font-weight: 600; color: var(--primary);">BOA SORTE!!!</p>
