@@ -155,7 +155,23 @@ h3 {
   border-left-color: rgb(var(--quina));
 }
 
-.project-card.ds,
+.project-card.ds-pascoa,
+.project-card.ds {
+  background: linear-gradient(to right, rgba(var(--dupla), 0.1), rgba(215,25,32,0.1));
+  border-left-color: rgb(var(--dupla));
+}
+
+.btn.ds-pascoa,
+.btn.ds {
+  background-color: rgb(var(--dupla));
+}
+.btn.ds-pascoa:hover,
+.btn.ds:hover {
+  background-color: rgba(var(--dupla), 0.9);
+}
+
+
+.project-card.dsp,
 .project-card.dupla {
   background: linear-gradient(to right, rgba(var(--dupla), 0.1), rgba(215,25,32,0.1));
   border-left-color: rgb(var(--dupla));
