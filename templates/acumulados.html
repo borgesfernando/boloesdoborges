@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="tituloPagina">Bolão Acumulado</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script defer src="../js/config.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const projeto = PROJETOS.acumulados.projetos.find(p => p.id === id);
+
+      if (!projeto) {
+        document.body.innerHTML = '<div class="container"><h1>Projeto não encontrado</h1></div>';
+        return;
+      }
+
+      document.title = `Bolão - ${projeto.nome}`;
+      document.getElementById("tituloPagina").textContent = `Bolão - ${projeto.nome}`;
+      document.getElementById("headerTitle").innerHTML = `<span class='emoji'>🎰</span> ${projeto.nome}`;
+      document.getElementById("infoProjeto").innerHTML = `
+        <ul>
+          <li><span class="emoji">🎟️</span> Cota individual de <strong>R$ ${projeto.valor},00</strong> por concurso</li>
+          <li><span class="emoji">📈</span> Ativado somente para concursos acima de <strong>R$ ${projeto.minimo} milhões</strong></li>
+          <li><span class="emoji">📊</span> Predições geradas por algoritmos inteligentes</li>
+          <li><span class="emoji">📧</span> Resultados enviados apenas aos participantes confirmados</li>
+        </ul>`;
+      document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 id="headerTitle"></h1>
+      <p>Participe dos concursos especiais com prêmios milionários!</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="content-card">
+      <div class="alert-box">
+        <h2><span class="emoji">🚨</span> ATENÇÃO: PRAZOS IMPORTANTES</h2>
+        <p>As inscrições fecham às <strong>18h do dia anterior ao sorteio</strong>.</p>
+        <p><span class="emoji">🔔</span> Fique atento aos avisos na comunidade!</p>
+      </div>
+
+      <h2><span class="emoji">💰</span> COMO FUNCIONA</h2>
+      <div id="infoProjeto"></div>
+
+      <div class="highlight-box">
+        <h2><span class="emoji">✅</span> COMO PARTICIPAR</h2>
+        <ol>
+          <li><span class="emoji">👀</span> Acompanhe os avisos na comunidade</li>
+          <li><span class="emoji">💸</span> Envie seu PIX de acordo com a cota</li>
+          <li><span class="emoji">📧</span> Confirmação por e-mail (sem necessidade de comprovante)</li>
+          <li><span class="emoji">🎉</span> Boa sorte!</li>
+        </ol>
+      </div>
+
+      <div class="danger-box">
+        <h2><span class="emoji">⚠️</span> REGRAS IMPORTANTES</h2>
+        <ul>
+          <li><span class="emoji">⏰</span> Não aceitamos pagamentos após 18h</li>
+          <li><span class="emoji">📵</span> PIX enviado após o prazo será devolvido com taxa</li>
+          <li><span class="emoji">👥</span> Cada participante deve se inscrever individualmente</li>
+        </ul>
+      </div>
+
+      <h2><span class="emoji">📲</span> FIQUE CONECTADO</h2>
+      <ul>
+        <li><span class="emoji">🔔</span> Ative as notificações da comunidade</li>
+        <li><span class="emoji">👥</span> Convide amigos interessados</li>
+      </ul>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="font-size: 1.2rem; font-weight: 600; color: var(--primary);"><span class="emoji">🍀</span> BOA SORTE! <span class="emoji">🍀</span></p>
+        <p style="font-style: italic;">Borges - Admin <span class="emoji">👨‍💼</span></p>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn" target="_blank">
+          <span class="emoji">✍️</span> Quero Participar dos Próximos Bolões
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <h3><span class="emoji">💎</span> Não perca os concursos milionários!</h3>
+      <p style="margin: 1rem 0;">Fique atento aos avisos quando o prêmio ultrapassar o limite estipulado</p>
+
+      <p style="margin-top: 1.5rem;">© 2025 Bolões Acumulados - Todos os direitos reservados</p>
+      <p style="margin-top: 0.5rem;">
+        Organizado por
+        <a href="mailto:correiodofernando@gmail.com"
+           style="color: #0077C8;
+                  text-decoration: none;
+                  transition: all 0.3s ease;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;">
+          Fernando Borges
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6L12 13L2 6" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
