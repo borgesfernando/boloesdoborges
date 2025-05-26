@@ -27,7 +27,7 @@ const PROJETOS = {
         mesInicio: '01',
         mesFim: '06',
         dataLimite: '08/06/2025',
-        dataSorteio: '24/06/2025',
+        dataSorteio: '28/06/2025',
         corPrimaria: '0, 93, 164', 
         corHex: '#005DA4',
         gradiente: 'linear-gradient(to right, rgb(0,93,164), rgb(0,153,218))',
