@@ -329,23 +329,14 @@ footer h3 {
 }
 .marco-timeline {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0.9rem 1.1rem;
   border-left: 4px solid var(--secondary, #005DA4);
-  transition: box-shadow 0.2s, background 0.2s;
-  gap: 0.5rem;
-}
-.marco-timeline:hover {
-  background: #f5faff;
-  box-shadow: 0 6px 16px rgba(0,171,103,0.08);
-}
-.marco-timeline .marco-top {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
+  margin-bottom: 0.3em;
 }
 .marco-timeline .icone {
   font-size: 1.6rem;
@@ -354,41 +345,30 @@ footer h3 {
   font-weight: 600;
   font-size: 1.07rem;
   color: var(--secondary, #005DA4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25em;
 }
-.marco-timeline .data {
-  color: #555;
-  background: #f5f7fa;
-  font-size: 0.97rem;
-  border-radius: 5px;
-  padding: 0.15em 0.7em;
-  width: fit-content;
-  font-weight: 500;
-  border: 1px solid #e8e8e8;
-  margin-left: 2.2rem; /* alinhamento visual com o texto */
-  margin-top: 0.3em;
+.data-inline {
+  font-weight: bold;
+  font-size: 1.07rem;
+  color: #111;
+  margin-left: 0.25em;
 }
-
 @media (max-width: 600px) {
-  #timeline-cronograma {
-    padding: 1rem 0.5rem;
-    gap: 0.7rem;
-  }
   .marco-timeline {
     padding: 0.7rem 0.7rem;
-    gap: 0.3rem;
+    gap: 0.5rem;
   }
   .marco-timeline .icone {
-    font-size: 1.18rem;
+    font-size: 1.16rem;
   }
-  .marco-timeline .titulo {
-    font-size: 1rem;
-  }
-  .marco-timeline .data {
-    font-size: 0.94rem;
-    margin-left: 2.1rem;
-    padding: 0.14em 0.6em;
+  .marco-timeline .titulo, .data-inline {
+    font-size: 0.97rem;
   }
 }
+
 
 
 /* ==========================
