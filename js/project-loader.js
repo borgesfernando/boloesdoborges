@@ -1,15 +1,16 @@
+// Função robusta para converter datas do formato brasileiro para Date
 function parseDataBRparaDate(str) {
   // Aceita 1 ou 2 dígitos para dia/mês, 4 dígitos para ano
   const parts = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if (!parts) return null;
-  return new Date(parts[3], parts[2]-1, parts[1]);
+  return new Date(parts[3], parts[2] - 1, parts[1]);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 1. Ordena concursos especiais por dataLimite (ativos primeiro, depois passados)
   const hojeLimpo = new Date();
-  hojeLimpo.setHours(0,0,0,0);
+  hojeLimpo.setHours(0, 0, 0, 0);
 
-  // Usa a função robusta para TODAS as datas
   const especiaisComDatas = PROJETOS.especiais.projetos.map(p => ({
     ...p,
     dataLimiteObj: parseDataBRparaDate(p.dataLimite)
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .filter(p => p.dataLimiteObj && p.dataLimiteObj >= hojeLimpo)
     .sort((a, b) => a.dataLimiteObj - b.dataLimiteObj);
 
-  // Vencidos: dataLimite < hoje (ordem decrescente)
+  // Passados: dataLimite < hoje (ordem decrescente)
   const especiaisPassados = especiaisComDatas
     .filter(p => p.dataLimiteObj && p.dataLimiteObj < hojeLimpo)
     .sort((a, b) => b.dataLimiteObj - a.dataLimiteObj);
@@ -29,13 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const especiaisOrdenados = [...especiaisAtivos, ...especiaisPassados];
 
   carregarProjetos('especiais', especiaisOrdenados, 'especiais-list', 'especiais.html');
-  // ...os outros carregamentos e aviso continuam iguais
-});
+  carregarProjetos('mensais', PROJETOS.mensais.projetos, 'mensais-list', 'mensais.html');
+  carregarProjetos('acumulados', PROJETOS.acumulados.projetos, 'acumulados-list', 'acumulados.html');
 
   // 2. AVISO TOP FIXO — APENAS 15 DIAS ANTES DO FECHAMENTO DOS BOLÕES ESPECIAIS
   // Usa a mesma lista especiaisComDatas para reaproveitar o parse de data
   const hoje = new Date();
-  hoje.setHours(0,0,0,0); // garantir comparações no mesmo dia
+  hoje.setHours(0, 0, 0, 0); // garantir comparações no mesmo dia
 
   // Encontra o próximo especial com data limite no futuro
   const proximo = especiaisComDatas
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ================================================
-// Função permanece igual
+// Função de renderização dos cards
 function carregarProjetos(tipo, projetos, containerId, templateFile) {
   const container = document.getElementById(containerId);
   projetos.forEach(projeto => {
