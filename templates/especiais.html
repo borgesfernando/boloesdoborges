@@ -88,6 +88,17 @@ function gerarTextoEntrada(projeto) {
 
   <div class="container">
     <div class="content-card">
+      const cronograma = gerarCronograma(projeto);
+
+const timelineDiv = document.getElementById("timeline-cronograma");
+timelineDiv.innerHTML = cronograma.map(ev => `
+  <div class="marco-timeline">
+    <span class="icone">${ev.icone}</span>
+    <span class="titulo">${ev.titulo}</span>
+    <span class="data">${ev.data}</span>
+  </div>
+`).join("");
+
       <h2>DETALHES DO PROJETO</h2>
       <div id="infoProjeto"></div>
 
