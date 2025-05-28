@@ -90,3 +90,68 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
     container.appendChild(card);
   });
 }
+
+function gerarCronograma(projeto) {
+  const dataLimite = parseDataBRparaDate(projeto.dataLimite); // já existe no project-loader.js
+  const dataSorteio = parseDataBRparaDate(projeto.dataSorteio);
+
+  // Helper para adicionar dias
+  function addDias(date, dias) {
+    const d = new Date(date);
+    d.setDate(d.getDate() + dias);
+    return d;
+  }
+
+  // Helper para formatar dd/mm (dia da semana)
+  function formatarDataExtensa(dt) {
+    const diasSemana = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+    return dt.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }) + 
+           ' (' + diasSemana[dt.getDay()] + ')';
+  }
+
+  return [
+    {
+      titulo: "Último dia para recebimento de cotas e entrada de novos participantes",
+      data: formatarDataExtensa(dataLimite),
+      icone: "⏳",
+      detalhe: `(${projeto.dataLimite})`
+    },
+    {
+      titulo: "Último dia para preenchimento das dezenas da sorte",
+      data: formatarDataExtensa(dataLimite),
+      icone: "🎯",
+      detalhe: `(${projeto.dataLimite})`
+    },
+    {
+      titulo: "Fechamento de contas e preparação dos jogos",
+      data: `${formatarDataExtensa(addDias(dataLimite, 1))} a ${formatarDataExtensa(addDias(dataLimite, 5))}`,
+      icone: "📊🎲",
+      detalhe: `(${projeto.dataLimite}+1 até +5)`
+    },
+    {
+      titulo: "Registro oficial do Bolão",
+      data: formatarDataExtensa(addDias(dataLimite, 6)),
+      icone: "🧾✅",
+      detalhe: `(${projeto.dataLimite}+6)`
+    },
+    {
+      titulo: "Envio da prestação de contas final",
+      data: formatarDataExtensa(addDias(dataLimite, 6)),
+      icone: "📤💰",
+      detalhe: `(${projeto.dataLimite}+6)`
+    },
+    {
+      titulo: "Sorteio oficial",
+      data: formatarDataExtensa(dataSorteio),
+      icone: "🏆🎫",
+      detalhe: `(${projeto.dataSorteio})`
+    },
+    {
+      titulo: "Divulgação dos resultados do Bolão",
+      data: formatarDataExtensa(dataSorteio),
+      icone: "📣🔍",
+      detalhe: `(${projeto.dataSorteio})`
+    }
+  ];
+}
+
