@@ -345,7 +345,7 @@ footer h3 {
 }
 .marco-timeline .titulo {
   color: var(--secondary, #005DA4);
-  font-weight: 500;
+  font-weight: 400 !important;   /* <-- Força o texto normal */
   display: inline;
   white-space: normal;
 }
