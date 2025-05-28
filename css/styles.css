@@ -328,45 +328,65 @@ footer h3 {
   gap: 1.15rem;
 }
 .marco-timeline {
-  /* Impede wrap automático para separar emoji e texto */
-  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--secondary, #005DA4);
+  transition: box-shadow 0.2s, background 0.2s;
+  gap: 0.5rem;
 }
-
-/* Faz o emoji e o texto ficarem sempre juntos, texto ocupando o máximo possível antes de quebrar */
-.marco-timeline .icone, .marco-timeline .titulo {
-  white-space: nowrap;
+.marco-timeline:hover {
+  background: #f5faff;
+  box-shadow: 0 6px 16px rgba(0,171,103,0.08);
 }
-
-/* Força o título a ocupar espaço junto ao emoji, mas permite quebrar para a linha de baixo se for MUITO longo */
+.marco-timeline .marco-top {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.marco-timeline .icone {
+  font-size: 1.6rem;
+}
 .marco-timeline .titulo {
-  overflow-wrap: anywhere;
-  white-space: normal;
-  flex-shrink: 1;
+  font-weight: 600;
+  font-size: 1.07rem;
+  color: var(--secondary, #005DA4);
+}
+.marco-timeline .data {
+  color: #555;
+  background: #f5f7fa;
+  font-size: 0.97rem;
+  border-radius: 5px;
+  padding: 0.15em 0.7em;
+  width: fit-content;
+  font-weight: 500;
+  border: 1px solid #e8e8e8;
+  margin-left: 2.2rem; /* alinhamento visual com o texto */
+  margin-top: 0.3em;
 }
 
 @media (max-width: 600px) {
+  #timeline-cronograma {
+    padding: 1rem 0.5rem;
+    gap: 0.7rem;
+  }
   .marco-timeline {
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: nowrap;
+    padding: 0.7rem 0.7rem;
+    gap: 0.3rem;
   }
   .marco-timeline .icone {
-    font-size: 1.2rem !important;
-    margin-right: 0.4rem;
-    /* Garante alinhamento vertical */
-    line-height: 1;
-    align-self: flex-start;
+    font-size: 1.18rem;
   }
   .marco-timeline .titulo {
     font-size: 1rem;
-    max-width: 68vw;
-    white-space: normal;
   }
   .marco-timeline .data {
-    margin-left: auto;
-    font-size: 0.97rem;
-    padding: 0.15em 0.6em;
-    margin-top: 0;
+    font-size: 0.94rem;
+    margin-left: 2.1rem;
+    padding: 0.14em 0.6em;
   }
 }
 
