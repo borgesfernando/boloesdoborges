@@ -330,19 +330,18 @@ footer h3 {
 .marco-timeline {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 0.9rem 1.1rem;
-  border-left: 4px solid var(--secondary, #005DA4);
-  margin-bottom: 0.3em;
-  font-size: 1.07rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
+
 .marco-timeline .icone {
   font-size: 1.45rem;
   flex-shrink: 0;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
 }
+
 .marco-timeline .titulo {
   color: var(--secondary, #005DA4);
   font-weight: 400 !important;   /* <-- Força o texto normal */
