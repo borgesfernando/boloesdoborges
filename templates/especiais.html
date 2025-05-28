@@ -186,13 +186,15 @@
         const diffDias = Math.ceil((dataLimiteObj - hoje) / (1000 * 60 * 60 * 24));
         if (diffDias <= 30 && diffDias >= 0) {
           const cronograma = gerarCronograma(projeto);
-          timelineDiv.innerHTML = cronograma.map(ev => `
-            <div class="marco-timeline">
-              <span class="icone">${ev.icone}</span>
-              <span class="titulo">${ev.titulo}</span>
-              <span class="data">${ev.data}</span>
-            </div>
-          `).join("");
+      timelineDiv.innerHTML = cronograma.map(ev => `
+        <div class="marco-timeline">
+          <div class="marco-top">
+            <span class="icone">${ev.icone}</span>
+            <span class="titulo">${ev.titulo}</span>
+          </div>
+          <div class="data">${ev.data}</div>
+        </div>
+      `).join("");
           timelineDiv.style.display = 'block';
           timelineTitulo.style.display = 'flex';
         } else {
