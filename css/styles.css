@@ -369,16 +369,27 @@ footer h3 {
     gap: 0.7rem;
   }
   .marco-timeline {
-    flex-direction: column;
+    /* Em vez de flex-direction: column, deixa row para manter o emoji junto */
+    flex-direction: row;
     align-items: flex-start;
-    padding: 0.7rem 0.8rem;
-    gap: 0.4rem;
+    padding: 0.7rem 0.7rem;
+    gap: 0.6rem;
+  }
+  .marco-timeline .icone {
+    font-size: 1.2rem !important; /* reduz emoji no mobile */
+    margin-right: 0.5rem;
+  }
+  .marco-timeline .titulo {
+    font-size: 1rem;
   }
   .marco-timeline .data {
-    margin-left: 0;
-    margin-top: 0.5em;
+    margin-left: auto;
+    font-size: 0.97rem;
+    padding: 0.15em 0.6em;
+    margin-top: 0;
   }
 }
+
 
 
 /* Destacar o evento do dia (opcional: adicionar via JS a classe .atual) */
