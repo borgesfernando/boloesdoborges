@@ -107,17 +107,35 @@
 
       gerarTextoEntrada(projeto);
 
-      // Renderizar timeline do cronograma
-      const cronograma = gerarCronograma(projeto);
-      const timelineDiv = document.getElementById("timeline-cronograma");
-      timelineDiv.innerHTML = cronograma.map(ev => `
-        <div class="marco-timeline">
-          <span class="icone">${ev.icone}</span>
-          <span class="titulo">${ev.titulo}</span>
-          <span class="data">${ev.data}</span>
-        </div>
-      `).join("");
-    });
+      // Renderizar timeline do cronograma SOMENTE se faltar 30 dias ou menos para dataLimite
+      const hoje = new Date();
+      const dataLimiteObj = (() => {
+        const parts = projeto.dataLimite.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        return parts ? new Date(parts[3], parts[2] - 1, parts[1]) : null;
+      })();
+      if (dataLimiteObj) {
+        const diffDias = Math.ceil((dataLimiteObj - hoje) / (1000 * 60 * 60 * 24));
+        if (diffDias <= 30 && diffDias >= 0) {
+          const cronograma = gerarCronograma(projeto);
+          const timelineDiv = document.getElementById("timeline-cronograma");
+          timelineDiv.innerHTML = cronograma.map(ev => `
+            <div class="marco-timeline">
+              <span class="icone">${ev.icone}</span>
+              <span class="titulo">${ev.titulo}</span>
+              <span class="data">${ev.data}</span>
+            </div>
+          `).join("");
+          // Mostra o título
+          document.querySelector('.timeline-titulo').style.display = '';
+        } else {
+          // Esconde o cronograma
+          document.getElementById("timeline-cronograma").innerHTML = "";
+          // Esconde o título, se tiver
+          const t = document.querySelector('.timeline-titulo');
+          if (t) t.style.display = 'none';
+        }
+      }
+
 
     function gerarTextoEntrada(projeto) {
       const nomeMeses = [
