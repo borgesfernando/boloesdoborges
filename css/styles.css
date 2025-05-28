@@ -328,59 +328,39 @@ footer h3 {
   gap: 1.15rem;
 }
 .marco-timeline {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  padding: 1rem 1.2rem;
-  gap: 1rem;
-  position: relative;
-  border-left: 4px solid var(--secondary, #005DA4);
-  transition: box-shadow 0.2s, background 0.2s;
+  /* Impede wrap automático para separar emoji e texto */
+  flex-wrap: nowrap;
 }
-.marco-timeline:hover {
-  background: #f5faff;
-  box-shadow: 0 6px 16px rgba(0,171,103,0.08);
+
+/* Faz o emoji e o texto ficarem sempre juntos, texto ocupando o máximo possível antes de quebrar */
+.marco-timeline .icone, .marco-timeline .titulo {
+  white-space: nowrap;
 }
-.marco-timeline .icone {
-  font-size: 1.8rem;
-  margin-right: 0.7rem;
-}
+
+/* Força o título a ocupar espaço junto ao emoji, mas permite quebrar para a linha de baixo se for MUITO longo */
 .marco-timeline .titulo {
-  font-weight: 600;
-  font-size: 1.07rem;
-  color: var(--secondary, #005DA4);
-  margin-right: 0.7rem;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  flex-shrink: 1;
 }
-.marco-timeline .data {
-  color: #666;
-  background: #f5f7fa;
-  font-size: 0.99rem;
-  border-radius: 5px;
-  padding: 0.2em 0.7em;
-  margin-left: auto;
-  font-weight: 500;
-  border: 1px solid #e8e8e8;
-}
+
 @media (max-width: 600px) {
-  #timeline-cronograma {
-    padding: 1rem 0.5rem;
-    gap: 0.7rem;
-  }
   .marco-timeline {
-    /* Em vez de flex-direction: column, deixa row para manter o emoji junto */
     flex-direction: row;
     align-items: flex-start;
-    padding: 0.7rem 0.7rem;
-    gap: 0.6rem;
+    flex-wrap: nowrap;
   }
   .marco-timeline .icone {
-    font-size: 1.2rem !important; /* reduz emoji no mobile */
-    margin-right: 0.5rem;
+    font-size: 1.2rem !important;
+    margin-right: 0.4rem;
+    /* Garante alinhamento vertical */
+    line-height: 1;
+    align-self: flex-start;
   }
   .marco-timeline .titulo {
     font-size: 1rem;
+    max-width: 68vw;
+    white-space: normal;
   }
   .marco-timeline .data {
     margin-left: auto;
@@ -389,6 +369,7 @@ footer h3 {
     margin-top: 0;
   }
 }
+
 
 /* ==========================
    Footer
