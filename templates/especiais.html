@@ -5,8 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="tituloPagina">Como Participar</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <script defer src="../js/config.js"></script>
-  <script defer>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 id="headerTitle"></h1>
+      <p id="headerSubtitle"></p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="content-card">
+      <div class="timeline-titulo" style="display:none;"><span>📅 Cronograma do Bolão</span></div>
+      <div id="timeline-cronograma" style="display:none;"></div>
+  
+      <h2>DETALHES DO PROJETO</h2>
+      <div id="infoProjeto"></div>
+      <div class="highlight-box">
+        <h2>POSSO PARTICIPAR?</h2>
+        <p>Sim! Os requisitos para sua participação no Bolão são:</p>
+        <ul>
+          <li>Ser ex-integrante de projetos anteriores ou indicado.</li>
+          <li>Acreditar na sorte e no grupo.</li>
+          <li>Compromisso com os pagamentos mensais.</li>
+          <li>WhatsApp ativo e aceitação de grupo administrado somente pelo organizador.</li>
+        </ul>
+      </div>
+
+      <h2>PREMIAÇÃO</h2>
+      <ul>
+        <li>Se o rateio for um valor significativo, será repassado via PIX para cada participante.</li>
+        <li>Se o valor for inferior a uma cota, o prêmio será reinvestido em novos concursos acumulados até a finalização. Eventuais novos prêmios seguirão a mesma lógica.</li>
+      </ul>
+
+      <h2>ENTRADA APÓS O INÍCIO DO ANO</h2>
+      <div id="valoresEntradaDinamico"></div>
+
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn">Quero Participar</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <h3 id="footerTituloBolao">Participe do nosso bolão mensal!</h3>
+      <p style="margin: 1rem 0;">Junte-se a nós e aumente suas chances de ganhar!</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank">Quero Participar</a>
+      <p style="margin-top: 1.5rem;">© Borges 2025 - Todos os direitos reservados</p>
+      <p style="margin-top: 0.5rem;">
+        Organizado por
+        <a href="mailto:correiodofernando@gmail.com"
+           style="color: #0077C8;
+                  text-decoration: none;
+                  transition: all 0.3s ease;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 4px;">
+          Borges
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6L12 13L2 6" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/config.js"></script>
+  <script>
     // Função para gerar cronograma automático baseado no projeto
     function gerarCronograma(projeto) {
       function parseDataBRparaDate(str) {
@@ -140,8 +205,7 @@
         timelineDiv.style.display = 'none';
         timelineTitulo.style.display = 'none';
       }
-
-
+    });
 
     function gerarTextoEntrada(projeto) {
       const nomeMeses = [
@@ -175,69 +239,5 @@
       entradaDiv.innerHTML = html;
     }
   </script>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1 id="headerTitle"></h1>
-      <p id="headerSubtitle"></p>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="content-card">
-      <div class="timeline-titulo" style="display:none;"><span>📅 Cronograma do Bolão</span></div>
-      <div id="timeline-cronograma" style="display:none;"></div>
-  
-      <h2>DETALHES DO PROJETO</h2>
-      <div id="infoProjeto"></div>
-      <div class="highlight-box">
-        <h2>POSSO PARTICIPAR?</h2>
-        <p>Sim! Os requisitos para sua participação no Bolão são:</p>
-        <ul>
-          <li>Ser ex-integrante de projetos anteriores ou indicado.</li>
-          <li>Acreditar na sorte e no grupo.</li>
-          <li>Compromisso com os pagamentos mensais.</li>
-          <li>WhatsApp ativo e aceitação de grupo administrado somente pelo organizador.</li>
-        </ul>
-      </div>
-
-      <h2>PREMIAÇÃO</h2>
-      <ul>
-        <li>Se o rateio for um valor significativo, será repassado via PIX para cada participante.</li>
-        <li>Se o valor for inferior a uma cota, o prêmio será reinvestido em novos concursos acumulados até a finalização. Eventuais novos prêmios seguirão a mesma lógica.</li>
-      </ul>
-
-      <h2>ENTRADA APÓS O INÍCIO DO ANO</h2>
-      <div id="valoresEntradaDinamico"></div>
-
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn">Quero Participar</a>
-    </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <h3 id="footerTituloBolao">Participe do nosso bolão mensal!</h3>
-      <p style="margin: 1rem 0;">Junte-se a nós e aumente suas chances de ganhar!</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank">Quero Participar</a>
-      <p style="margin-top: 1.5rem;">© Borges 2025 - Todos os direitos reservados</p>
-      <p style="margin-top: 0.5rem;">
-        Organizado por
-        <a href="mailto:correiodofernando@gmail.com"
-           style="color: #0077C8;
-                  text-decoration: none;
-                  transition: all 0.3s ease;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 4px;">
-          Borges
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M22 6L12 13L2 6" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </p>
-    </div>
-  </footer>
 </body>
 </html>
