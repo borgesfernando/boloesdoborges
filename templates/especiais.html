@@ -7,6 +7,74 @@
   <link rel="stylesheet" href="../css/styles.css">
   <script defer src="../js/config.js"></script>
   <script defer>
+    // Função para gerar cronograma automático baseado no projeto
+    function gerarCronograma(projeto) {
+      function parseDataBRparaDate(str) {
+        const parts = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        if (!parts) return null;
+        return new Date(parts[3], parts[2]-1, parts[1]);
+      }
+      const dataLimite = parseDataBRparaDate(projeto.dataLimite);
+      const dataSorteio = parseDataBRparaDate(projeto.dataSorteio);
+
+      function addDias(date, dias) {
+        const d = new Date(date);
+        d.setDate(d.getDate() + dias);
+        return d;
+      }
+
+      function formatarDataExtensa(dt) {
+        const diasSemana = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
+        return dt.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }) + 
+               ' (' + diasSemana[dt.getDay()] + ')';
+      }
+
+      return [
+        {
+          titulo: "Último dia para recebimento de cotas e entrada de novos participantes",
+          data: formatarDataExtensa(dataLimite),
+          icone: "⏳",
+          detalhe: `(${projeto.dataLimite})`
+        },
+        {
+          titulo: "Último dia para preenchimento das dezenas da sorte",
+          data: formatarDataExtensa(dataLimite),
+          icone: "🎯",
+          detalhe: `(${projeto.dataLimite})`
+        },
+        {
+          titulo: "Fechamento de contas e preparação dos jogos",
+          data: `${formatarDataExtensa(addDias(dataLimite, 1))} a ${formatarDataExtensa(addDias(dataLimite, 5))}`,
+          icone: "📊🎲",
+          detalhe: `(${projeto.dataLimite}+1 até +5)`
+        },
+        {
+          titulo: "Registro oficial do Bolão",
+          data: formatarDataExtensa(addDias(dataLimite, 6)),
+          icone: "🧾✅",
+          detalhe: `(${projeto.dataLimite}+6)`
+        },
+        {
+          titulo: "Envio da prestação de contas final",
+          data: formatarDataExtensa(addDias(dataLimite, 6)),
+          icone: "📤💰",
+          detalhe: `(${projeto.dataLimite}+6)`
+        },
+        {
+          titulo: "Sorteio oficial",
+          data: formatarDataExtensa(dataSorteio),
+          icone: "🏆🎫",
+          detalhe: `(${projeto.dataSorteio})`
+        },
+        {
+          titulo: "Divulgação dos resultados do Bolão",
+          data: formatarDataExtensa(dataSorteio),
+          icone: "📣🔍",
+          detalhe: `(${projeto.dataSorteio})`
+        }
+      ];
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const id = params.get("id");
@@ -34,49 +102,55 @@
           <li>Data limite de pagamento da última parcela: <strong>${projeto.dataLimite}</strong></li>
           <li>Data do sorteio: <strong>${projeto.dataSorteio}</strong></li>
           <li>100% do valor arrecadado é convertido em apostas</li>
-          </ul>`;
+        </ul>`;
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
 
       gerarTextoEntrada(projeto);
+
+      // Renderizar timeline do cronograma
+      const cronograma = gerarCronograma(projeto);
+      const timelineDiv = document.getElementById("timeline-cronograma");
+      timelineDiv.innerHTML = cronograma.map(ev => `
+        <div class="marco-timeline">
+          <span class="icone">${ev.icone}</span>
+          <span class="titulo">${ev.titulo}</span>
+          <span class="data">${ev.data}</span>
+        </div>
+      `).join("");
     });
 
-function gerarTextoEntrada(projeto) {
-  const nomeMeses = [
-    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
-    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-  ];
-  const entradaDiv = document.getElementById("valoresEntradaDinamico");
-  const hoje = new Date();
-  const mesAtual = hoje.getMonth() + 1;
-  const mesInicio = parseInt(projeto.mesInicio);
-  const mesFim = parseInt(projeto.mesFim);
-  const valorMes = projeto.valorMes;
+    function gerarTextoEntrada(projeto) {
+      const nomeMeses = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+      ];
+      const entradaDiv = document.getElementById("valoresEntradaDinamico");
+      const hoje = new Date();
+      const mesAtual = hoje.getMonth() + 1;
+      const mesInicio = parseInt(projeto.mesInicio);
+      const mesFim = parseInt(projeto.mesFim);
+      const valorMes = projeto.valorMes;
 
-  const limite = Math.min(mesFim, mesAtual + 1);
-  let html = '<ul>';
+      const limite = Math.min(mesFim, mesAtual + 1);
+      let html = '<ul>';
 
-  for (let mes = mesInicio; mes <= limite; mes++) {
-    let valorTotal = 0;
-    for (let i = mesInicio; i <= mes; i++) {
-      valorTotal += i < mes ? valorMes + 1 : valorMes;
+      for (let mes = mesInicio; mes <= limite; mes++) {
+        let valorTotal = 0;
+        for (let i = mesInicio; i <= mes; i++) {
+          valorTotal += i < mes ? valorMes + 1 : valorMes;
+        }
+        const nomeMes = nomeMeses[mes - 1];
+        html += `<li><strong>${nomeMes}</strong> → R$ ${valorTotal},00`;
+
+        if (mes < mesFim) {
+          html += `<br>👉🏼 A partir do mês seguinte, siga com as parcelas mensais no valor normal!`;
+        }
+        html += `</li>`;
+      }
+      html += '</ul>';
+      entradaDiv.innerHTML = html;
     }
-
-    const nomeMes = nomeMeses[mes - 1];
-    html += `<li><strong>${nomeMes}</strong> → R$ ${valorTotal},00`;
-
-    // Exibe a frase se ainda houver meses no projeto (mes < mesFim)
-    if (mes < mesFim) {
-      html += `<br>👉🏼 A partir do mês seguinte, siga com as parcelas mensais no valor normal!`;
-    }
-
-    html += `</li>`;
-  }
-
-  html += '</ul>';
-  entradaDiv.innerHTML = html;
-}
-</script>
-
+  </script>
 </head>
 <body>
   <header>
@@ -88,19 +162,11 @@ function gerarTextoEntrada(projeto) {
 
   <div class="container">
     <div class="content-card">
-      const cronograma = gerarCronograma(projeto);
-
-const timelineDiv = document.getElementById("timeline-cronograma");
-timelineDiv.innerHTML = cronograma.map(ev => `
-  <div class="marco-timeline">
-    <span class="icone">${ev.icone}</span>
-    <span class="titulo">${ev.titulo}</span>
-    <span class="data">${ev.data}</span>
-  </div>
-`).join("");
-
       <h2>DETALHES DO PROJETO</h2>
       <div id="infoProjeto"></div>
+      
+      <!-- Aqui entra a timeline -->
+      <div id="timeline-cronograma"></div>
 
       <div class="highlight-box">
         <h2>POSSO PARTICIPAR?</h2>
@@ -131,7 +197,6 @@ timelineDiv.innerHTML = cronograma.map(ev => `
       <h3 id="footerTituloBolao">Participe do nosso bolão mensal!</h3>
       <p style="margin: 1rem 0;">Junte-se a nós e aumente suas chances de ganhar!</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank">Quero Participar</a>
-
       <p style="margin-top: 1.5rem;">© Borges 2025 - Todos os direitos reservados</p>
       <p style="margin-top: 0.5rem;">
         Organizado por
