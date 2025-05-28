@@ -330,45 +330,49 @@ footer h3 {
 .marco-timeline {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.65rem;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 0.9rem 1.1rem;
   border-left: 4px solid var(--secondary, #005DA4);
   margin-bottom: 0.3em;
+  font-size: 1.07rem;
 }
 .marco-timeline .icone {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
+  flex-shrink: 0;
 }
 .marco-timeline .titulo {
-  font-weight: 600;
-  font-size: 1.07rem;
   color: var(--secondary, #005DA4);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25em;
+  font-weight: 500;
+  display: inline;
+  white-space: normal;
 }
 .data-inline {
   font-weight: bold;
-  font-size: 1.07rem;
   color: #111;
-  margin-left: 0.25em;
-}
-@media (max-width: 600px) {
-  .marco-timeline {
-    padding: 0.7rem 0.7rem;
-    gap: 0.5rem;
-  }
-  .marco-timeline .icone {
-    font-size: 1.16rem;
-  }
-  .marco-timeline .titulo, .data-inline {
-    font-size: 0.97rem;
-  }
+  font-size: 1.07rem;
+  margin-left: 0.15em;
+  display: inline;
 }
 
+@media (max-width: 600px) {
+  .marco-timeline {
+    padding: 0.7rem 0.6rem;
+    gap: 0.45rem;
+    font-size: 0.99rem;
+  }
+  .marco-timeline .icone {
+    font-size: 1.05rem;
+  }
+  .marco-timeline .titulo {
+    font-size: 0.99rem;
+  }
+  .data-inline {
+    font-size: 0.99rem;
+  }
+}
 
 
 /* ==========================
