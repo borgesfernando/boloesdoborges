@@ -113,8 +113,9 @@
         const parts = projeto.dataLimite.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
         return parts ? new Date(parts[3], parts[2] - 1, parts[1]) : null;
       })();
-      const timelineTitulo = document.querySelector('.timeline-titulo');
-      const timelineDiv = document.getElementById("timeline-cronograma");
+      // Sempre busque DENTRO da content-card para garantir
+      const timelineTitulo = document.querySelector('.content-card .timeline-titulo');
+      const timelineDiv = document.querySelector('.content-card #timeline-cronograma');
       
       if (dataLimiteObj) {
         const diffDias = Math.ceil((dataLimiteObj - hoje) / (1000 * 60 * 60 * 24));
@@ -127,18 +128,19 @@
               <span class="data">${ev.data}</span>
             </div>
           `).join("");
-          timelineDiv.style.display = '';
-          timelineTitulo.style.display = '';
+          timelineDiv.style.display = 'block';
+          timelineTitulo.style.display = 'flex';
         } else {
-          timelineDiv.style.display = 'none';
           timelineDiv.innerHTML = '';
+          timelineDiv.style.display = 'none';
           timelineTitulo.style.display = 'none';
         }
       } else {
-        timelineDiv.style.display = 'none';
         timelineDiv.innerHTML = '';
+        timelineDiv.style.display = 'none';
         timelineTitulo.style.display = 'none';
       }
+
 
 
     function gerarTextoEntrada(projeto) {
@@ -184,13 +186,11 @@
 
   <div class="container">
     <div class="content-card">
-    <!-- Timeline: já começa oculta -->
-    <div class="timeline-titulo" style="display:none;"><span>📅 Cronograma do Bolão</span></div>
-    <div id="timeline-cronograma" style="display:none;"></div>
-    
+      <div class="timeline-titulo" style="display:none;"><span>📅 Cronograma do Bolão</span></div>
+      <div id="timeline-cronograma" style="display:none;"></div>
+  
       <h2>DETALHES DO PROJETO</h2>
       <div id="infoProjeto"></div>
-
       <div class="highlight-box">
         <h2>POSSO PARTICIPAR?</h2>
         <p>Sim! Os requisitos para sua participação no Bolão são:</p>
