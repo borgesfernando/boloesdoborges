@@ -103,14 +103,6 @@ function gerarCronograma(projeto) {
   }
 
 
-  // Função para verificar se a data já passou (apenas para projetos especiais)
-function isSorteioPassado(dataSorteio) {
-  const [dia, mes, ano] = dataSorteio.split('/').map(Number);
-  const dataProjeto = new Date(ano, mes - 1, dia);
-  const hoje = new Date();
-  return dataProjeto < hoje;
-}
-
   // Helper para formatar dd/mm (dia da semana)
   function formatarDataExtensa(dt) {
     const diasSemana = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
