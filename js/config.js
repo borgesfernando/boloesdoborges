@@ -70,7 +70,7 @@ const PROJETOS = {
       {
         id: 'quina-mensal',
         nome: 'Quina Mensal',
-        cotaMensal: 72,
+        cotaMensal: 70,
         ciclo: '24',
         corPrimaria: '0, 93, 164', 
         corHex: '#005DA4',
