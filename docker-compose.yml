@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    image: boloesdoborges-web:latest
+    container_name: boloesdoborges-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+    # Exemplo de labels para Traefik (descomente e ajuste seu domínio)
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.boloes.rule=Host(`seu-dominio.com`)"
+    #   - "traefik.http.routers.boloes.entrypoints=websecure"
+    #   - "traefik.http.routers.boloes.tls.certresolver=letsencrypt"
+    #   - "traefik.http.services.boloes.loadbalancer.server.port=80"
+

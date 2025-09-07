@@ -1,15 +1,14 @@
+// Parser global: converte datas no formato brasileiro (dd/mm/aaaa) para Date
+function parseDataBRparaDate(str) {
+  const parts = str && str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!parts) return null;
+  return new Date(parts[3], parts[2] - 1, parts[1]);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Ordena concursos especiais por dataLimite (ativos primeiro, depois passados)
   const hojeLimpo = new Date();
   hojeLimpo.setHours(0, 0, 0, 0);
-
-  // Função robusta para converter datas do formato brasileiro para Date
-  function parseDataBRparaDate(str) {
-    // Aceita 1 ou 2 dígitos para dia/mês, 4 dígitos para ano
-    const parts = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-    if (!parts) return null;
-    return new Date(parts[3], parts[2] - 1, parts[1]);
-  }
   
   const especiaisComDatas = PROJETOS.especiais.projetos.map(p => ({
     ...p,
@@ -155,4 +154,3 @@ function gerarCronograma(projeto) {
     }
   ];
 }
-

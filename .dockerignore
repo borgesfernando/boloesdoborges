@@ -1,0 +1,12 @@
+.git
+.github
+node_modules
+npm-debug.log*
+yarn.lock
+Dockerfile*
+docker-compose*.yml
+.DS_Store
+*.swp
+README.md
+LICENSE
+
