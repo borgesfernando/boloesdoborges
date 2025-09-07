@@ -52,4 +52,4 @@ Entre em contato: [correiodofernando@gmail.com](mailto:correiodofernando@gmail.c
 
 ---
 
-**⚠️ Importante**: Este projeto é uma ação entre amigos organizada por Borges, sem vínculo com a CAIXA Econômica Federal. Participação voluntária por adultos maiores de 18 anos.
+**⚠️ Importante**: Este projeto é uma ação entre amigos organizada por Borges, sem vínculo com a CAIXA Econômica Federal. Participação voluntária por adultos maiores de 18 anos 🤝🏻
