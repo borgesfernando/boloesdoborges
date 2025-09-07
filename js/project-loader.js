@@ -75,7 +75,7 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
     const detalhes = projeto.minimo
       ? `<p>Participamos quando o prêmio acumula acima de <strong>R$ ${projeto.minimo} milhões</strong></p>`
       : projeto.cotaMensal
-        ? `<p>Bolões para todos os sorteios do mês</p>`
+        ? `<p>Bolão fechado para todos os sorteios do mês</p>`
         : '';
     const textoBotao = tipo === 'acumulados' || tipo === 'mensais' ? 'Mais informações' : 'Como Participar';
     const link = `templates/${templateFile}?id=${projeto.id}`;
