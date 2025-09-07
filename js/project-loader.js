@@ -72,9 +72,9 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
     const nome = projeto.nome;
     const apuracao = projeto.dataSorteio ? `<p class="project-date">Apuração: ${projeto.dataSorteio}</p>` : '';
     const detalhes = projeto.minimo
-      ? `<p>Participamos quando o prêmio acumula acima de <strong>R$ ${projeto.minimo} milhões</strong></p>`
+      ? `<p class="project-date">Participamos quando o prêmio acumula acima de <strong>R$ ${projeto.minimo} milhões</strong></p>`
       : projeto.cotaMensal
-        ? `<p>Bolão fechado para todos os sorteios do mês</p>`
+        ? `<p class="project-date">Bolão fechado para todos os sorteios do mês</p>`
         : '';
     const textoBotao = tipo === 'acumulados' || tipo === 'mensais' ? 'Mais informações' : 'Como Participar';
     const link = `templates/${templateFile}?id=${projeto.id}`;
