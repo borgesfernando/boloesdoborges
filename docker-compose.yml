@@ -5,8 +5,6 @@ services:
     build: .
     image: boloesdoborges-web:latest
     container_name: boloesdoborges-web
-    ports:
-      - "8080:80"
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1"]
@@ -14,12 +12,15 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.boloes.rule=Host(`boloes.borjaon8n.shop`)
+      - traefik.http.routers.boloes.entrypoints=websecure
+      - traefik.http.routers.boloes.tls.certresolver=mytlschallenge
+      - traefik.http.services.boloes.loadbalancer.server.port=80
+    networks:
+      - proxy
 
-    # Exemplo de labels para Traefik (descomente e ajuste seu domínio)
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.boloes.rule=Host(`seu-dominio.com`)"
-    #   - "traefik.http.routers.boloes.entrypoints=websecure"
-    #   - "traefik.http.routers.boloes.tls.certresolver=letsencrypt"
-    #   - "traefik.http.services.boloes.loadbalancer.server.port=80"
-
+networks:
+  proxy:
+    external: true
