@@ -14,4 +14,3 @@ COPY templates/ /usr/share/nginx/html/templates/
 EXPOSE 80
 
 # Healthcheck simples via curl (imagem não possui curl por padrão; mantido para orquestradores externos)
-
