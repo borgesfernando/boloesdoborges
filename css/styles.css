@@ -238,6 +238,25 @@ footer h3 {
   min-width: 120px;
 }
 
+/* Botão tonal discreto no tom da página */
+.btn.tonal {
+  color: var(--secondary);
+  background: #f5f7fa; /* fallback suave */
+  background: color-mix(in sRGB, var(--secondary) 12%, white);
+  border: 1px solid color-mix(in sRGB, var(--secondary) 28%, white);
+}
+.btn.tonal:hover {
+  background: color-mix(in sRGB, var(--secondary) 18%, white);
+  border-color: color-mix(in sRGB, var(--secondary) 36%, white);
+}
+.btn.tonal:active {
+  background: color-mix(in sRGB, var(--secondary) 24%, white);
+}
+.btn.tonal:focus {
+  outline: 2px solid color-mix(in sRGB, var(--secondary) 50%, transparent);
+  outline-offset: 2px;
+}
+
 .btn.lf-indep,
 .btn.lf,
 .btn.lotofacil {
