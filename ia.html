@@ -50,6 +50,17 @@
     </div>
 
     <div class="card">
+      <h2>Estatística vs. LSTM</h2>
+      <p>Usamos duas famílias de sinais que se <strong>complementam</strong>:</p>
+      <ul>
+        <li><strong>Estatística descritiva:</strong> frequências, médias/tendências por faixas, sorteio ponderado por histórico. É simples, interpretável e robusta, mas não captura bem interações complexas nem dependências longas no tempo.</li>
+        <li><strong>Predições com LSTM:</strong> a rede aprende padrões <em>temporais</em> e não lineares e devolve probabilidades por número/combinação. Exige dados limpos, calibração e cuidados contra <em>overfitting</em>.</li>
+      </ul>
+      <p><strong>Como combinamos:</strong> calibramos as probabilidades, comparamos com a estatística clássica e geramos um <em>ensemble</em>. Quando há divergência, priorizamos consistência (diversidade e regras de qualidade) em vez de “aposta única”. Tudo fica registrado em logs para auditoria.</p>
+      <p><strong>Nota importante:</strong> são <em>probabilidades</em>, não garantias. As escolhas finais sempre passam pelos filtros de qualidade e controle de risco descritos acima.</p>
+    </div>
+
+    <div class="card">
       <h2>Estratégias que combinamos</h2>
       <ul>
         <li><strong>Probabilística:</strong> sorteios ponderados por probabilidades estimadas.</li>
