@@ -1,0 +1,78 @@
+[
+  {
+    "question": "Posso participar?",
+    "answerHtml": "<p>Sim! Para participar dos nossos projetos, é necessário:</p><ul><li>Ser ex-integrante ou indicado por alguém que já participa;</li><li>Ter seriedade, sorte e espírito de grupo;</li><li>Realizar os pagamentos <strong>no valor exato e nas datas estipuladas para cada projeto</strong>;</li><li>Ter um <strong>e-mail do Gmail</strong> para acesso às planilhas;</li><li>Possuir <strong>WhatsApp</strong> para acompanhar a comunidade.</li></ul>"
+  },
+  {
+    "question": "Quais são as taxas para participar dos projetos?",
+    "answerHtml": "<p><strong>Transparência total:</strong> Não cobramos nenhuma taxa de administração. Todo o valor arrecadado é integralmente investido nas apostas do grupo. Nosso objetivo é reunir amigos de confiança que acreditam e aumentar as chances de todos.</p>"
+  },
+  {
+    "question": "Por que preciso ter um e-mail no Gmail?",
+    "answerHtml": "<p>Porque usamos os recursos do Google (Drive, Planilhas, Documentos). O acesso é exclusivo a usuários logados com conta Gmail.</p>"
+  },
+  {
+    "question": "Qual é a diferença entre os Projetos Mensais e Especiais?",
+    "answerHtml": "<p>Os <strong>Projetos Mensais</strong> são recorrentes e cobrem todos os 24 sorteios do mês, de segunda a sábado, nas loterias:</p><ul><li><a href=\"templates/mensais.html?id=lf-mensal\"><strong>Lotofácil Mensal</strong></a></li><li><a href=\"templates/mensais.html?id=quina-mensal\"><strong>Quina Mensal</strong></a></li></ul><p>Já os <strong>Projetos Especiais</strong> são voltados para grandes concursos anuais com grandes prêmios acumulados, como:</p><ul><li><a href=\"templates/especiais.html?id=mega-virada\"><strong>Mega da Virada</strong></a></li><li><a href=\"templates/especiais.html?id=quina-saojoao\"><strong>Quina de São João</strong></a></li><li><a href=\"templates/especiais.html?id=lf-independencia\"><strong>Lotofácil da Independência</strong></a></li><li><a href=\"templates/especiais.html?id=ds-pascoa\"><strong>Dupla Sena de Páscoa</strong></a></li></ul><p>Você pode participar de um ou mais projetos, conforme sua preferência e estratégia de jogo!</p><p><br><strong>Além desses</strong>, existem também os bolões de <a href=\"templates/acumulados.html?id=mega-acumulada\"><strong>Mega Sena Acumulada</strong></a> e <a href=\"templates/acumulados.html?id=quina-acumulada\"><strong>Quina Acumulada</strong></a>.</p>"
+  },
+  {
+    "question": "Como participar?",
+    "answerHtml": "<p>Basta preencher o formulário de inscrição:</p><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn sb2025\">Quero Participar</a>"
+  },
+  {
+    "question": "Como funcionam os grupos da Comunidade?",
+    "answerHtml": "<p>Nossos grupos fazem parte da comunidade e são organizados por <strong>temas/projetos</strong> (ex.: Mega da Virada, Quina Mensal, Lotofácil Mensal, etc.). São espaços objetivos, voltados exclusivamente ao andamento dos bolões.</p><ul><li><strong>Temáticos por projeto:</strong> cada grupo trata somente do seu respectivo bolão.</li><li><strong>Silenciados por padrão:</strong> durante a execução, priorizamos comunicados oficiais para evitar ruído.</li><li><strong>Abertura para considerações:</strong> após grandes marcos (fechamentos, registro de apostas, resultados), abrimos janela para observações e dúvidas.</li><li><strong>Conteúdo exclusivo sobre os jogos:</strong> não permitimos assuntos fora do tema.</li></ul><p>Relatórios oficiais continuam sendo enviados por <strong>e‑mail</strong>, e documentos ficam disponíveis no <strong>Google Drive</strong> com acesso autenticado. <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Veja detalhes da prestação de contas</a>.</p>"
+  },
+  {
+    "question": "Como faço os pagamentos?",
+    "answerHtml": "<p>Os pagamentos são feitos exclusivamente via <strong>PIX</strong>. Copie a chave utilizando o botão abaixo:</p><button onclick=\"copiarPix(this)\" class=\"btn sb2025\" style=\"margin-top: 0.5rem;\" data-pix=\"3b4a7d83-2fcd-41a5-b7c6-1be66a8b9993\">📋 Copiar Chave PIX</button><p id=\"feedbackPix\" style=\"color: green; display: none; margin-top: 0.5rem;\">✅ Chave copiada!</p><div style=\"margin-top: 1rem; padding: 1rem; background-color: #ffeaea; border-left: 5px solid #dc3545; border-radius: 4px; font-weight: bold; color: #721c24;\">⚠️ Evite fraudes!<br>Antes de efetuar o PIX, verifique os seguintes dados:<br>👉🏼 Nome: <strong>FERNANDO MARQUES BORGES</strong><br>👉🏼 CPF: <strong>•••.468.296-••</strong><br>👉🏼 Identificador: <strong>BolaoBorges</strong></div>"
+  },
+  {
+    "question": "Como facilitar os pagamentos mensais?",
+    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas - assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
+  },
+  {
+    "question": "Quando ocorrem os sorteios?",
+    "answerHtml": "<p>Cada projeto segue o calendário oficial da Caixa. As datas são informadas com antecedência na comunidade.</p>"
+  },
+  {
+    "question": "Como recebo os resultados e comprovantes?",
+    "answerHtml": "<p>Você recebe tudo por e-mail e pode acessar também as planilhas no Google Drive.</p>"
+  },
+  {
+    "question": "Onde vejo minha planilha e histórico?",
+    "answerHtml": "<p>Você recebe em seu email um link exclusivo, com todos os dados de pagamentos, cotas e resultados. Pode conferir também abrindo seu Drive do google na área de arquivos \"Compartilhados comigo\"</p>"
+  },
+  {
+    "question": "Posso indicar amigos ou familiares?",
+    "answerHtml": "<p>Sim! Participantes ativos podem indicar outras pessoas, desde que estas atendam aos critérios.</p>"
+  },
+  {
+    "question": "Posso dividir uma cota com alguém?",
+    "answerHtml": "<p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Importante: A cota será registrada no nome de apenas uma pessoa, que deve ser designada. <strong>Importante:</strong> O bolão não se responsabiliza por pessoas não registradas no Bolão!</p>"
+  },
+  {
+    "question": "Há alguma fiscalização ou auditoria?",
+    "answerHtml": "<p>Não há uma equipe formal, mas ao final de cada projeto é realizada uma auditoria voluntária. Documentos são enviados a todos os participantes. Qualquer pessoa pode pedir esclarecimentos ou realizar auditoria independente.</p>"
+  },
+  {
+    "question": "Quando as apostas são registradas?",
+    "answerHtml": "<p>Todas as apostas serão registradas sempre com a antecedência necessária e variam de projeto a projeto. Acompanhe as informações na comunidade!</p>"
+  },
+  {
+    "question": "Recebo cópia física dos bilhetes?",
+    "answerHtml": "<p>Não. As apostas são digitais, feitas no app oficial da Caixa. Todos os comprovantes e recibos são compartilhados nos emails dos participantes para conferência.</p>"
+  },
+  {
+    "question": "E se o bolão for premiado?",
+    "answerHtml": "<p>Se o valor individual for significativo, será repassado via PIX. Caso contrário, o valor será reapostado, conforme pesquisa para decidir coletivamente.</p>"
+  },
+  {
+    "question": "Quando é feita a conferência dos bilhetes?",
+    "answerHtml": "<p>A conferência acontece logo após cada sorteio (por volta das 21:20h), e todos recebem o relatório completo no e-mail.</p>"
+  },
+  {
+    "question": "Ainda tenho dúvidas. O que faço?",
+    "answerHtml": "<p>Entre em contato com o organizador <a href=\"mailto:correiodofernando@gmail.com\">aqui</a>.</p>"
+  }
+]

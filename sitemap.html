@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap – Bolões do Borges</title>
+  <meta name="description" content="Mapa do site para consulta: páginas principais e links para todos os projetos (mensais, especiais e acumulados).">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Sitemap (Consulta)</h1>
+      <p>Lista de páginas e projetos disponíveis no site.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Páginas Principais</h2>
+      <ul id="paginas-principais">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="faq.html">Perguntas Frequentes</a></li>
+        <li><a href="ia.html">Tecnologia e IA</a></li>
+        <li><a href="prest.html">Prestação de Contas</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Projetos Especiais</h2>
+      <ul id="lista-especiais"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Projetos Mensais</h2>
+      <ul id="lista-mensais"></ul>
+    </div>
+
+    <div class="card">
+      <h2>Concursos Acumulados</h2>
+      <ul id="lista-acumulados"></ul>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <a href="index.html" class="btn sb2025">⬅️ Voltar para a Página Principal</a>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const montar = (ulId, lista, arquivo) => {
+        const ul = document.getElementById(ulId);
+        ul.innerHTML = lista.map(p => {
+          const href = `${arquivo}?id=${p.id}`;
+          const texto = p.nome ? `${p.nome} (${p.id})` : p.id;
+          return `<li><a href="${href}">${texto}</a></li>`;
+        }).join('');
+      };
+
+      try {
+        montar('lista-especiais', PROJETOS.especiais.projetos, 'templates/especiais.html');
+        montar('lista-mensais', PROJETOS.mensais.projetos, 'templates/mensais.html');
+        montar('lista-acumulados', PROJETOS.acumulados.projetos, 'templates/acumulados.html');
+      } catch (e) {
+        console.warn('Não foi possível montar o sitemap dinâmico:', e);
+      }
+    });
+  </script>
+</body>
+</html>
+
