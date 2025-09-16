@@ -124,6 +124,10 @@
     "answerHtml": "<p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Importante: a cota será registrada no nome de apenas uma pessoa, designada pelas partes. O bolão não se responsabiliza por pessoas não registradas.</p>"
   },
   {
+    "question": "Existe uma formalização da participação na comunidade?",
+    "answerHtml": "<p>Sim. Acessando o link <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\">Entrar na Comunidade</a> você pode avaliar as regras da Comunidade e receber o <strong>Documento Oficial de Participação</strong> personalizado.</p><p>Esse documento integra o conjunto de comprovações válidas para fins de <strong>transparência</strong>, <strong>rastreabilidade</strong> e <strong>prestação de contas</strong> da comunidade.</p>"
+  },
+  {
     "question": "Ainda tenho dúvidas. O que faço?",
     "answerHtml": "<p>Entre em contato com o organizador <a href=\"mailto:correiodofernando@gmail.com\">por e‑mail</a>.</p>"
   }
