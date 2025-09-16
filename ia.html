@@ -22,6 +22,20 @@
     </div>
 
     <div class="card">
+      <h2>Resumo simples das estratégias</h2>
+      <p>Linguagem direta, sem jargões — a IA apoia as escolhas e nós aplicamos regras para manter diversidade e qualidade:</p>
+      <ul>
+        <li><strong>Pool por faixas:</strong> separamos o universo de números em faixas/blocos e pegamos os mais fortes de cada faixa para formar o pool base.</li>
+        <li><strong>Lotes com fixa exclusiva:</strong> montamos subgrupos (lotes) e cada lote tem uma “fixa” própria para aumentar a diversidade entre os jogos.</li>
+        <li><strong>Semelhança controlada:</strong> dentro do mesmo lote, limitamos quantos números podem se repetir entre dois jogos; entre lotes, o limite é ainda menor.</li>
+        <li><strong>Histórico protegido:</strong> reprovamos qualquer jogo muito parecido com resultados antigos.</li>
+        <li><strong>Bloqueios hierárquicos:</strong> quando há jogos de tamanhos diferentes em uma modalidade, evitamos que combinações menores repitam partes proibidas de jogos maiores.</li>
+        <li><strong>Variações locais (opcional):</strong> testamos pequenas mudanças em relação ao último sorteio (vizinhos), sem piorar a probabilidade e respeitando todas as regras acima.</li>
+      </ul>
+      <p>Exemplo (Quina): escolhemos 5 dezenas no universo 1..80. O pool nasce por blocos de 10; validamos semelhança máxima entre jogos e com o histórico, e ainda podemos testar “vizinhos” (±1/±2) do último resultado. Os parâmetros variam conforme a modalidade.</p>
+    </div>
+
+    <div class="card">
       <h2>Como funciona (LSTM, didático)</h2>
       <ul>
         <li><strong>Preparação das sequências:</strong> transformamos o histórico em séries temporais, criando janelas deslizantes (janela → próximo concurso) e alvos multirrótulo por número/posição, conforme a modalidade.</li>
