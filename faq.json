@@ -12,71 +12,116 @@
     "answerHtml": "<p>Porque usamos os recursos do Google (Drive, Planilhas, Documentos). O acesso é exclusivo a usuários logados com conta Gmail.</p>"
   },
   {
-    "question": "Qual é a diferença entre os Projetos Mensais e Especiais?",
-    "answerHtml": "<p>Os <strong>Projetos Mensais</strong> são recorrentes e cobrem todos os 24 sorteios do mês, de segunda a sábado, nas loterias:</p><ul><li><a href=\"templates/mensais.html?id=lf-mensal\"><strong>Lotofácil Mensal</strong></a></li><li><a href=\"templates/mensais.html?id=quina-mensal\"><strong>Quina Mensal</strong></a></li></ul><p>Já os <strong>Projetos Especiais</strong> são voltados para grandes concursos anuais com grandes prêmios acumulados, como:</p><ul><li><a href=\"templates/especiais.html?id=mega-virada\"><strong>Mega da Virada</strong></a></li><li><a href=\"templates/especiais.html?id=quina-saojoao\"><strong>Quina de São João</strong></a></li><li><a href=\"templates/especiais.html?id=lf-independencia\"><strong>Lotofácil da Independência</strong></a></li><li><a href=\"templates/especiais.html?id=ds-pascoa\"><strong>Dupla Sena de Páscoa</strong></a></li></ul><p>Você pode participar de um ou mais projetos, conforme sua preferência e estratégia de jogo!</p><p><br><strong>Além desses</strong>, existem também os bolões de <a href=\"templates/acumulados.html?id=mega-acumulada\"><strong>Mega Sena Acumulada</strong></a> e <a href=\"templates/acumulados.html?id=quina-acumulada\"><strong>Quina Acumulada</strong></a>.</p>"
+    "question": "Quais são os tipos de projetos disponíveis?",
+    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li><strong>Projetos Mensais</strong>: sorteios diários da <em>Lotofácil</em> e da <em>Quina</em>, ideais para quem gosta de acompanhar os resultados todas as noites.</li><li><strong>Projetos Especiais</strong>: focados nos grandes concursos da Caixa — <em>Lotofácil da Independência</em>, <em>Quina de São João</em>, <em>Dupla Sena de Páscoa</em> e <em>Mega da Virada</em>.</li><li><strong>Projetos Estratégicos (Acumulados)</strong>: mobilizados quando há acumulações relevantes, como <em>Mega‑Sena</em> (acima de R$ 50 milhões) e <em>Quina</em> (acima de R$ 40 milhões), com jogos otimizados e estruturados para aumentar as chances de prêmios.</li></ul><p>Você pode participar de um ou mais projetos, conforme sua preferência.</p>"
   },
   {
     "question": "Como participar?",
     "answerHtml": "<p>Basta preencher o formulário de inscrição:</p><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn sb2025\">Quero Participar</a>"
   },
   {
-    "question": "Como funcionam os grupos da Comunidade?",
-    "answerHtml": "<p>Nossos grupos fazem parte da comunidade e são organizados por <strong>temas/projetos</strong> (ex.: Mega da Virada, Quina Mensal, Lotofácil Mensal, etc.). São espaços objetivos, voltados exclusivamente ao andamento dos bolões.</p><ul><li><strong>Temáticos por projeto:</strong> cada grupo trata somente do seu respectivo bolão.</li><li><strong>Silenciados por padrão:</strong> durante a execução, priorizamos comunicados oficiais para evitar ruído.</li><li><strong>Abertura para considerações:</strong> após grandes marcos (fechamentos, registro de apostas, resultados), abrimos janela para observações e dúvidas.</li><li><strong>Conteúdo exclusivo sobre os jogos:</strong> não permitimos assuntos fora do tema.</li></ul><p>Relatórios oficiais continuam sendo enviados por <strong>e‑mail</strong>, e documentos ficam disponíveis no <strong>Google Drive</strong> com acesso autenticado. <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Veja detalhes da prestação de contas</a>.</p>"
+    "question": "Há limite de cotas por pessoa?",
+    "answerHtml": "<p>Não. Cada pessoa pode adquirir quantas cotas desejar, respeitando a disponibilidade e as regras específicas de cada projeto.</p>"
   },
   {
-    "question": "Como faço os pagamentos?",
-    "answerHtml": "<p>Os pagamentos são feitos exclusivamente via <strong>PIX</strong>. Copie a chave utilizando o botão abaixo:</p><button onclick=\"copiarPix(this)\" class=\"btn sb2025\" style=\"margin-top: 0.5rem;\" data-pix=\"3b4a7d83-2fcd-41a5-b7c6-1be66a8b9993\">📋 Copiar Chave PIX</button><p id=\"feedbackPix\" style=\"color: green; display: none; margin-top: 0.5rem;\">✅ Chave copiada!</p><div style=\"margin-top: 1rem; padding: 1rem; background-color: #ffeaea; border-left: 5px solid #dc3545; border-radius: 4px; font-weight: bold; color: #721c24;\">⚠️ Evite fraudes!<br>Antes de efetuar o PIX, verifique os seguintes dados:<br>👉🏼 Nome: <strong>FERNANDO MARQUES BORGES</strong><br>👉🏼 CPF: <strong>•••.468.296-••</strong><br>👉🏼 Identificador: <strong>BolaoBorges</strong></div>"
-  },
-  {
-    "question": "Como facilitar os pagamentos mensais?",
-    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas - assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
+    "question": "Posso entrar no meio do mês?",
+    "answerHtml": "<p>Não. As entradas ocorrem apenas nas <strong>datas e janelas definidas</strong> para cada projeto. Consulte a página do projeto para conferir cronograma e prazos.</p>"
   },
   {
     "question": "Como é calculado o valor das parcelas mensais?",
     "answerHtml": "<p>Nas parcelas <strong>Mensais</strong>, aplicamos um ajuste simples e previsível: somamos <strong>R$ 1,00</strong> por mês transcorrido desde o início do bolão, <strong>não contando o mês do pagamento</strong>. Essa lógica espelha a seção <em>\"ENTRADA APÓS O INÍCIO DO ANO\"</em> dos projetos especiais: cada mês anterior soma +1 e o mês corrente soma 0.</p><p><strong>Regra</strong>:</p><ul><li>Defina <em>M0</em> = mês de início do bolão e <em>V0</em> = valor base da parcela no mês de início.</li><li>Parcela no mês <em>M</em> = <code>V0 + (n × R$ 1,00)</code>, onde <em>n</em> é a quantidade de meses <strong>anteriores</strong> a <em>M</em> contados desde <em>M0</em>.</li></ul><p><strong>Exemplos (valores fictícios)</strong>:</p><ul><li>Início em <strong>Janeiro</strong>, <em>V0</em> = R$ 50,00 → Jan: R$ 50,00; Fev: R$ 51,00; Mar: R$ 52,00; Abr: R$ 53,00.</li><li>Início em <strong>Março</strong>, <em>V0</em> = R$ 40,00 → Mar: R$ 40,00; Abr: R$ 41,00; Mai: R$ 42,00; Jun: R$ 43,00.</li><li>Pagando em <strong>Setembro</strong> com início em <strong>Junho</strong>, <em>V0</em> = R$ 60,00 → meses anteriores a Set (Jun, Jul, Ago) = 3 → parcela de Set = <strong>R$ 63,00</strong>.</li></ul><p>Observação: se <em>V0</em> mudar em projetos futuros, o incremento permanece de R$ 1,00 por mês transcorrido.</p>"
   },
   {
+    "question": "Como faço os pagamentos?",
+    "answerHtml": "<p>Os pagamentos são feitos exclusivamente via <strong>PIX</strong>. Copie a chave utilizando o botão abaixo:</p><button onclick=\"copiarPix(this)\" class=\"btn sb2025\" style=\"margin-top: 0.5rem;\" data-pix=\"3b4a7d83-2fcd-41a5-b7c6-1be66a8b9993\">📋 Copiar Chave PIX</button><p id=\"feedbackPix\" style=\"color: green; display: none; margin-top: 0.5rem;\">✅ Chave copiada!</p><div style=\"margin-top: 1rem; padding: 1rem; background-color: #ffeaea; border-left: 5px solid #dc3545; border-radius: 4px; font-weight: bold; color: #721c24;\">⚠️ Evite fraudes!<br>Antes de efetuar o PIX, verifique os seguintes dados:<br>👉🏼 Nome: <strong>FERNANDO MARQUES BORGES</strong><br>👉🏼 CPF: <strong>•••.468.296-••</strong><br>👉🏼 Identificador: <strong>BolaoBorges</strong></div>"
+  },
+  {
+    "question": "O que acontece se eu atrasar o pagamento?",
+    "answerHtml": "<p>Pagamentos em atraso seguem duas regras simples:</p><ul><li><strong>Correção simbólica:</strong> o valor devido é cobrado no mês seguinte com acréscimo de <strong>R$ 1,00</strong> (conforme política da comunidade).</li><li><strong>Persistência do atraso:</strong> se o pagamento não for regularizado, o participante é removido do grupo e <strong>o valor eventualmente pago é integralmente devolvido</strong>.</li></ul><p>Em caso de imprevistos, avise com antecedência para avaliarmos alternativas.</p>"
+  },
+  {
+    "question": "Como facilitar os pagamentos mensais?",
+    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
+  },
+  {
     "question": "Quando ocorrem os sorteios?",
     "answerHtml": "<p>Cada projeto segue o calendário oficial da Caixa. As datas são informadas com antecedência na comunidade.</p>"
   },
   {
+    "question": "Como são escolhidos os jogos/dezenas?",
+    "answerHtml": "<p>Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e os comprovantes são compartilhados.</li></ul>"
+  },
+  {
+    "question": "Como conferir cada aposta registrada?",
+    "answerHtml": "<p>Todos os <strong>comprovantes</strong> e as <strong>planilhas consolidadas</strong> são armazenados em pasta do Google Drive, com <strong>acesso restrito aos participantes</strong>. A conferência detalhada é enviada por e‑mail, normalmente até <strong>3 horas após</strong> a apuração do sorteio.</p>"
+  },
+  {
     "question": "Como recebo os resultados e comprovantes?",
-    "answerHtml": "<p>Você recebe tudo por e-mail e pode acessar também as planilhas no Google Drive.</p>"
+    "answerHtml": "<p>Os resultados e comprovantes são enviados por <strong>e‑mail</strong> e ficam disponíveis no <strong>Google Drive</strong> do projeto. Veja também o item \"Como conferir cada aposta registrada?\".</p>"
   },
   {
     "question": "Onde vejo minha planilha e histórico?",
-    "answerHtml": "<p>Você recebe em seu email um link exclusivo, com todos os dados de pagamentos, cotas e resultados. Pode conferir também abrindo seu Drive do google na área de arquivos \"Compartilhados comigo\"</p>"
+    "answerHtml": "<p>Você recebe em seu e‑mail um link exclusivo com todos os dados de pagamentos, cotas e resultados. Também pode acessar pelo seu Drive em \"Compartilhados comigo\".</p>"
   },
   {
-    "question": "Posso indicar amigos ou familiares?",
-    "answerHtml": "<p>Sim! Participantes ativos podem indicar outras pessoas, desde que estas atendam aos critérios.</p>"
+    "question": "Privacidade: quem pode ver minhas informações?",
+    "answerHtml": "<p>O acesso às planilhas e documentos é <strong>estritamente controlado</strong> e concedido somente a <strong>usuários autenticados</strong> (e‑mails informados pelos próprios participantes). Adotamos práticas alinhadas à <strong>LGPD</strong>, com minimização de dados, controle de acesso e registro adequado das operações.</p>"
   },
   {
-    "question": "Posso dividir uma cota com alguém?",
-    "answerHtml": "<p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Importante: A cota será registrada no nome de apenas uma pessoa, que deve ser designada. <strong>Importante:</strong> O bolão não se responsabiliza por pessoas não registradas no Bolão!</p>"
+    "question": "Comunicação e documentos oficiais",
+    "answerHtml": "<ul><li>Toda comunicação oficial é realizada por <strong>e‑mail</strong>, incluindo confirmação de pagamento via PIX, link de acesso à pasta do projeto no Google Drive, prestação de contas e conferência detalhada das apostas.</li><li>Todos os documentos — comprovantes de pagamento, relatórios financeiros, termos de adesão e registros de apostas — são organizados em <strong>PDF</strong> e armazenados no Drive do projeto, com <strong>acesso restrito</strong> aos participantes.</li><li>Utilizamos grupos de <strong>WhatsApp</strong> para avisos. Eventualmente abrimos para interação entre os participantes, exclusivamente sobre os projetos.</li><li>A prestação de contas é publicada logo após o registro do bolão. Os resultados são enviados por e‑mail imediatamente após a divulgação da <strong>API oficial da Caixa</strong>, com a conferência detalhada.</li></ul>"
+  },
+  {
+    "question": "Qual o valor mínimo para repasse vs. reinvestimento?",
+    "answerHtml": "<p>Adotamos o critério de <strong>valor significativo</strong> por cota: quando o <strong>prêmio proporcional</strong> a cada participante <strong>excede o valor efetivamente pago pela cota no período</strong>, fazemos o <strong>repasse via PIX</strong>. Caso contrário, o valor é <strong>reaplicado</strong> em novos jogos do projeto, com o devido registro em prestação de contas.</p>"
+  },
+  {
+    "question": "Prêmios de pequeno valor serão reaplicados?",
+    "answerHtml": "<p>Sim. Prêmios de pequeno valor são <strong>reaplicados</strong> em novos jogos, a critério do administrador, para manter a dinâmica e ampliar as chances de premiação coletiva.</p>"
+  },
+  {
+    "question": "Prêmios significativos: como é a divisão?",
+    "answerHtml": "<p>Prêmios significativos são <strong>divididos proporcionalmente</strong> entre os participantes e o administrador, com base no número de cotas adquiridas, conforme registrado na prestação de contas de cada projeto.</p>"
+  },
+  {
+    "question": "Há impostos sobre os prêmios?",
+    "answerHtml": "<p>Os prêmios de loterias estão sujeitos a tributação exclusiva na fonte conforme a legislação vigente. Nos <strong>repasses proporcionais entre cotistas</strong> em apostas conjuntas, observamos as <a href=\"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm#:~:text=Dos%20pr%C3%AAmios%20e%20dos%20sorteios%20em%20geral\" target=\"_blank\" rel=\"noopener noreferrer\">orientações da Receita Federal do Brasil para apostas conjuntas</a>, assegurando a legalidade do procedimento e a correta classificação na declaração de cada participante.</p>"
+  },
+  {
+    "question": "Transparência e rastreabilidade",
+    "answerHtml": "<p>A transparência é garantida com a emissão da <strong>Relação de Participantes</strong> e suas respectivas cotas, além dos <strong>comprovantes individuais</strong> de pagamento via PIX. Esses documentos constituem prova formal da participação, quando necessário.</p>"
   },
   {
     "question": "Há alguma fiscalização ou auditoria?",
-    "answerHtml": "<p>Não há uma equipe formal, mas ao final de cada projeto é realizada uma auditoria voluntária. Documentos são enviados a todos os participantes. Qualquer pessoa pode pedir esclarecimentos ou realizar auditoria independente.</p>"
+    "answerHtml": "<p>Não há uma equipe formal, mas ao final de cada projeto realizamos <strong>auditoria voluntária</strong>. Documentos são enviados a todos os participantes, e qualquer pessoa pode solicitar esclarecimentos ou realizar auditoria independente.</p>"
   },
   {
     "question": "Quando as apostas são registradas?",
-    "answerHtml": "<p>Todas as apostas serão registradas sempre com a antecedência necessária e variam de projeto a projeto. Acompanhe as informações na comunidade!</p>"
+    "answerHtml": "<p>Todas as apostas são registradas com a antecedência necessária, variando de projeto para projeto. Acompanhe as informações na comunidade.</p>"
   },
   {
     "question": "Recebo cópia física dos bilhetes?",
-    "answerHtml": "<p>Não. As apostas são digitais, feitas no app oficial da Caixa. Todos os comprovantes e recibos são compartilhados nos emails dos participantes para conferência.</p>"
-  },
-  {
-    "question": "E se o bolão for premiado?",
-    "answerHtml": "<p>Se o valor individual for significativo, será repassado via PIX. Caso contrário, o valor será reapostado, conforme pesquisa para decidir coletivamente.</p>"
+    "answerHtml": "<p>Não. As apostas são digitais, registradas no aplicativo oficial da Caixa. Todos os comprovantes e recibos são compartilhados por e‑mail e no Drive do projeto.</p>"
   },
   {
     "question": "Quando é feita a conferência dos bilhetes?",
-    "answerHtml": "<p>A conferência acontece logo após cada sorteio (por volta das 21:20h), e todos recebem o relatório completo no e-mail.</p>"
+    "answerHtml": "<p>A conferência acontece após cada sorteio (por volta das 21:20), e todos recebem o relatório completo por e‑mail.</p>"
+  },
+  {
+    "question": "Quais são os compromissos do organizador?",
+    "answerHtml": "<ul><li>Conduzir todos os projetos com <strong>transparência, responsabilidade e ética</strong>, zelando pela confiança dos participantes.</li><li>Aplicar integralmente os valores arrecadados na aquisição de <strong>apostas oficiais</strong>, conforme as regras de cada projeto.</li><li>Prestar contas de forma clara, organizada e acessível, disponibilizando aos participantes <strong>comprovantes de pagamento</strong>, a <strong>relação completa das apostas</strong>, a <strong>distribuição das cotas</strong> e os <strong>resultados</strong> obtidos.</li><li>Preservar a <strong>confidencialidade</strong> das informações pessoais e financeiras, armazenando dados e documentos com segurança e acesso exclusivo aos participantes autorizados.</li><li>Realizar a <strong>distribuição proporcional</strong> de quaisquer premiações relevantes, com base nas cotas efetivamente adquiridas por cada participante.</li></ul><p>Essa distribuição observa as diretrizes da <strong>Receita Federal do Brasil</strong> aplicáveis a apostas conjuntas em loterias, nos termos do <em>Regulamento do Imposto sobre a Renda – RIR/2018</em>, art. 732, inciso I, e da Lei nº 11.941/2009.</p><p>Nos termos legais, o valor total do prêmio é informado pelo <strong>administrador</strong> — que efetua a aposta em seu nome — na sua <em>Declaração de Ajuste Anual (DAA)</em>, na ficha “Rendimentos Sujeitos à Tributação Exclusiva/Definitiva”. Os repasses aos cotistas são declarados na ficha “Pagamentos Efetuados”, código “99 – Outros”, indicando o CPF de cada participante e a natureza do pagamento (aposta conjunta em loteria).</p><p>Cada participante deve declarar o valor recebido na ficha “Rendimentos Isentos e Não Tributáveis”, vinculando o CPF do administrador e a origem da premiação como cota‑parte de uma aposta coletiva. Tal procedimento garante a legalidade da operação, a isenção tributária sobre os repasses e a rastreabilidade formal de toda a movimentação.</p>"
+  },
+  {
+    "question": "Posso indicar amigos ou familiares?",
+    "answerHtml": "<p>Sim. Participantes ativos podem indicar outras pessoas, desde que atendam aos critérios de participação.</p>"
+  },
+  {
+    "question": "Posso dividir uma cota com alguém?",
+    "answerHtml": "<p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Importante: a cota será registrada no nome de apenas uma pessoa, designada pelas partes. O bolão não se responsabiliza por pessoas não registradas.</p>"
   },
   {
     "question": "Ainda tenho dúvidas. O que faço?",
-    "answerHtml": "<p>Entre em contato com o organizador <a href=\"mailto:correiodofernando@gmail.com\">aqui</a>.</p>"
+    "answerHtml": "<p>Entre em contato com o organizador <a href=\"mailto:correiodofernando@gmail.com\">por e‑mail</a>.</p>"
   }
 ]
+
