@@ -128,6 +128,14 @@
     "answerHtml": "<p>Sim. Acessando o link <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\">Entrar na Comunidade</a> você pode avaliar as regras da Comunidade e receber o <strong>Documento Oficial de Participação</strong> personalizado.</p><p>Esse documento integra o conjunto de comprovações válidas para fins de <strong>transparência</strong>, <strong>rastreabilidade</strong> e <strong>prestação de contas</strong> da comunidade.</p>"
   },
   {
+    "question": "Como a IA é usada nos projetos?",
+    "answerHtml": "<p>Aplicamos IA e análise estatística (por exemplo, modelos LSTM) para estimar probabilidades e montar jogos mais consistentes. Tudo passa por regras de qualidade, validações, diversidade entre combinações e trilhas de auditoria — sem promessas milagrosas, com método e governança.</p><p>Veja mais em <a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">IA nos Projetos</a>.</p>"
+  },
+  {
+    "question": "Como funciona a prestação de contas?",
+    "answerHtml": "<p>Entregamos relatórios por e‑mail nas fases‑chave, publicamos documentos oficiais (planilhas, comprovantes, registros) no Google Drive com acesso autenticado e fazemos resumos via WhatsApp. Há controle de acesso, integridade dos arquivos e cronograma claro: fechamento de cotas, registro das apostas, resultados e prestação final.</p><p>Mais detalhes em <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Prestação de Contas</a>.</p>"
+  },
+  {
     "question": "Ainda tenho dúvidas. O que faço?",
     "answerHtml": "<p>Entre em contato com o organizador <a href=\"mailto:correiodofernando@gmail.com\">por e‑mail</a>.</p>"
   }
