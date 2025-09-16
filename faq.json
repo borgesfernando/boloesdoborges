@@ -129,11 +129,11 @@
   },
   {
     "question": "Como a IA é usada nos projetos?",
-    "answerHtml": "<p>Aplicamos IA e análise estatística (por exemplo, modelos LSTM) para estimar probabilidades e montar jogos mais consistentes. Tudo passa por regras de qualidade, validações, diversidade entre combinações e trilhas de auditoria — sem promessas milagrosas, com método e governança.</p><p>Veja mais em <a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">IA nos Projetos</a>.</p>"
+    "answerHtml": "<p>Usamos IA para orientar escolhas com base em dados — <strong>não para prometer acertos</strong>.</p><ul><li><strong>Modelagem:</strong> séries temporais e modelos LSTM combinados a estratégias probabilísticas.</li><li><strong>Qualidade dos dados:</strong> limpeza, normalização e fontes confiáveis.</li><li><strong>Validação:</strong> separação temporal, métricas (ex.: Brier/log‑loss) e calibração.</li><li><strong>Montagem dos jogos:</strong> diversidade entre combinações, limites de semelhança e bloqueios.</li><li><strong>Governança:</strong> logs, versionamento e reprodutibilidade de ponta a ponta.</li></ul><p>Entenda o fluxo completo em <a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">IA nos Projetos</a>.</p>"
   },
   {
     "question": "Como funciona a prestação de contas?",
-    "answerHtml": "<p>Entregamos relatórios por e‑mail nas fases‑chave, publicamos documentos oficiais (planilhas, comprovantes, registros) no Google Drive com acesso autenticado e fazemos resumos via WhatsApp. Há controle de acesso, integridade dos arquivos e cronograma claro: fechamento de cotas, registro das apostas, resultados e prestação final.</p><p>Mais detalhes em <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Prestação de Contas</a>.</p>"
+    "answerHtml": "<p>Transparência com documentos oficiais e <strong>trilhas de acesso</strong> conferíveis.</p><ul><li><strong>Canais:</strong> e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li><strong>Segurança:</strong> acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li><strong>LGPD e privacidade:</strong> minimização de dados e exposição controlada.</li><li><strong>Cronograma:</strong> fechamento de cotas → registro das apostas → resultados → prestação final.</li><li><strong>O que você recebe:</strong> links oficiais, PDFs, planilhas e comprovações auditáveis.</li></ul><p>Detalhes e exemplos em <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Prestação de Contas</a>.</p>"
   },
   {
     "question": "Ainda tenho dúvidas. O que faço?",
