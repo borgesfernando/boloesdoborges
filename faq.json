@@ -16,6 +16,10 @@
     "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li><strong>Projetos Mensais</strong>: sorteios diários da <em>Lotofácil</em> e da <em>Quina</em>, ideais para quem gosta de acompanhar os resultados todas as noites.</li><li><strong>Projetos Especiais</strong>: focados nos grandes concursos da Caixa — <em>Lotofácil da Independência</em>, <em>Quina de São João</em>, <em>Dupla Sena de Páscoa</em> e <em>Mega da Virada</em>.</li><li><strong>Projetos Estratégicos (Acumulados)</strong>: mobilizados quando há acumulações relevantes, como <em>Mega‑Sena</em> (acima de R$ 50 milhões) e <em>Quina</em> (acima de R$ 40 milhões), com jogos otimizados e estruturados para aumentar as chances de prêmios.</li></ul><p>Você pode participar de um ou mais projetos, conforme sua preferência.</p>"
   },
   {
+    "question": "Como funcionam os projetos mensais (Lotofácil e Quina)?",
+    "answerHtml": "<p><strong>Resumo</strong> dos projetos mensais:</p><ul><li><strong>Lotofácil Mensal (LF)</strong>: valor integralmente aplicado em apostas de <strong>15</strong> e <strong>16 dezenas</strong>, com <em>fechamento (combinações)</em> e <em>teimosinha</em> para <strong>24 concursos</strong>.</li><li><strong>Quina Mensal</strong>: valor integralmente aplicado em apostas de <strong>5 dezenas</strong>, com <em>fechamento</em> e <em>teimosinha</em> para <strong>24 concursos</strong>.</li><li><strong>Prestação de contas</strong>: diária e detalhada, enviada por <strong>e‑mail (Gmail)</strong>; grupo de <strong>WhatsApp</strong> usado apenas para avisos (grupo silenciado).</li><li><strong>Pagamentos</strong>: mensais, exclusivamente via <strong>PIX</strong>.</li><li><strong>Tradição</strong>: seriedade, responsabilidade e transparência na condução de todos os projetos de bolão.</li></ul><p>Consulte as páginas de cada projeto para mais informações: <a href=\"templates/mensais.html?id=lf-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">Lotofácil Mensal</a> e <a href=\"templates/mensais.html?id=quina-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">Quina Mensal</a>.</p>"
+  },
+  {
     "question": "Como participar?",
     "answerHtml": "<p>Basta preencher o formulário de inscrição:</p><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"btn sb2025\">Quero Participar</a>"
   },
@@ -26,6 +30,18 @@
   {
     "question": "Posso entrar no meio do mês?",
     "answerHtml": "<p>Não. As entradas ocorrem apenas nas <strong>datas e janelas definidas</strong> para cada projeto. Consulte a página do projeto para conferir cronograma e prazos.</p>"
+  },
+  {
+    "question": "Existe uma formalização da participação na comunidade?",
+    "answerHtml": "<p>Sim. Acessando o link <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\">Entrar na Comunidade</a> você pode avaliar as regras da Comunidade e receber o <strong>Documento Oficial de Participação</strong> personalizado.</p><p>Esse documento integra o conjunto de comprovações válidas para fins de <strong>transparência</strong>, <strong>rastreabilidade</strong> e <strong>prestação de contas</strong> da comunidade.</p>"
+  },
+  {
+    "question": "Posso indicar amigos ou familiares?",
+    "answerHtml": "<p>Sim. Participantes ativos podem indicar outras pessoas, desde que atendam aos critérios de participação.</p>"
+  },
+  {
+    "question": "Posso dividir uma cota com alguém?",
+    "answerHtml": "<p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Importante: a cota será registrada no nome de apenas uma pessoa, designada pelas partes. O bolão não se responsabiliza por pessoas não registradas.</p>"
   },
   {
     "question": "Como é calculado o valor das parcelas mensais?",
@@ -40,20 +56,40 @@
     "answerHtml": "<p>Não. Os pagamentos são <strong>somente via PIX</strong>.</p><p>Não aceitamos TED/DOC, cartão, boleto, dinheiro em espécie, aplicativos de terceiros ou transferências para contas não informadas oficialmente.</p><p>Use sempre a chave disponibilizada no item acima e confirme os dados do destinatário antes de enviar.</p>"
   },
   {
+    "question": "Como facilitar os pagamentos mensais?",
+    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
+  },
+  {
+    "question": "Como as Caixinhas do Nubank são usadas nos projetos especiais?",
+    "answerHtml": "<p>Para organizar os recursos dos <strong>projetos especiais</strong>, utilizamos <strong>Caixinhas do Nubank</strong> como mecanismo de <em>segregação financeira</em> e controle mensal.</p><p><strong>Vantagens</strong>:</p><ul><li><strong>Separação por finalidade</strong>: cada projeto (por exemplo, Lotofácil da Independência, Quina de São João, Mega da Virada) mantém seu saldo em uma caixinha própria, evitando mistura de recursos.</li><li><strong>Visibilidade e previsibilidade</strong>: o acompanhamento do saldo por projeto facilita o planejamento de compras de apostas e metas de arrecadação.</li><li><strong>Organização e disciplina</strong>: entradas mensais ficam reservadas até o momento do registro das apostas, reduzindo risco operacional.</li><li><strong>Eficiência</strong>: simplifica a conciliação com planilhas e a <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">prestação de contas</a>.</li></ul><p><strong>Como organizamos</strong>:</p><ul><li><strong>Uma caixinha por projeto</strong>, com nome padronizado (ex.: “Especial — Mega da Virada 2025”).</li><li><strong>Conciliação mensal</strong>: os aportes recebidos via PIX são lançados na planilha do projeto e conciliados com o saldo da caixinha correspondente.</li><li><strong>Metas e etiquetas</strong>: utilizamos metas/observações para indicar valor‑alvo por projeto e período.</li><li><strong>Transparência</strong>: extratos/resumos são anexados à pasta do projeto no Drive e referenciados na prestação de contas.</li><li><strong>Saídas controladas</strong>: no fechamento, os valores são transferidos para registrar as apostas; prêmios e sobras seguem as regras de repasse/reinvestimento.</li></ul><p><strong>Observações importantes</strong>:</p><ul><li>As caixinhas são um <strong>recurso de organização interna</strong>; não configuram conta em custódia ou serviço fiduciário para terceiros.</li><li>O acesso é <strong>exclusivo do Administrador</strong>, com boas práticas de segurança (múltiplos fatores, dispositivos confiáveis) e <strong>sem compartilhamento de dados sensíveis</strong>.</li><li>Se houver mudança operacional (instituição/conta), os participantes serão comunicados e a documentação será atualizada.</li></ul>"
+  },
+  {
     "question": "O que acontece se eu atrasar o pagamento?",
     "answerHtml": "<p>Pagamentos em atraso seguem duas regras simples:</p><ul><li><strong>Correção simbólica:</strong> o valor devido é cobrado no mês seguinte com acréscimo de <strong>R$ 1,00</strong> (conforme política da comunidade).</li><li><strong>Persistência do atraso:</strong> se o pagamento não for regularizado, o participante é removido do grupo e <strong>o valor eventualmente pago é integralmente devolvido</strong>.</li></ul><p>Em caso de imprevistos, avise com antecedência para avaliarmos alternativas.</p>"
   },
   {
-    "question": "Como facilitar os pagamentos mensais?",
-    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
+    "question": "Posso desistir ou pedir devolução de pagamentos antecipados?",
+    "answerHtml": "<p>Tratamos pedidos de <strong>desistência</strong> e de <strong>devolução de pagamentos antecipados</strong> apenas em <strong>casos excepcionais</strong>, avaliados pelo Administrador.</p><p><strong>Regra geral</strong>: a adesão aos <strong>projetos especiais</strong> implica compromisso de permanência até o seu encerramento, dado o <em>planejamento financeiro</em> e <em>operacional</em> do grupo.</p><p><strong>Quando aprovado</strong>: os valores pagos são <strong>devolvidos</strong> e o participante é <strong>excluído do bolão</strong>, com revogação de acessos às pastas e comunicações do projeto.</p><p><strong>Responsabilidade do participante</strong>: ao ingressar, você declara ciência das regras, das janelas e prazos, assumindo a responsabilidade de <strong>permanecer</strong> nos projetos especiais e manter os pagamentos no período acordado.</p><p>Para solicitar avaliação, entre em contato por <a href=\"mailto:correiodofernando@gmail.com\">e‑mail</a>.</p>"
   },
   {
     "question": "Quando ocorrem os sorteios?",
     "answerHtml": "<p>Cada projeto segue o calendário oficial da Caixa. As datas são informadas com antecedência na comunidade.</p>"
   },
   {
+    "question": "Quando as apostas são registradas?",
+    "answerHtml": "<p>Todas as apostas são registradas com a antecedência necessária, variando de projeto para projeto. Acompanhe as informações na comunidade.</p>"
+  },
+  {
     "question": "Como são escolhidos os jogos/dezenas?",
     "answerHtml": "<p>Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e os comprovantes são compartilhados.</li></ul>"
+  },
+  {
+    "question": "Recebo cópia física dos bilhetes?",
+    "answerHtml": "<p>Não. As apostas são digitais, registradas no aplicativo oficial da Caixa. Todos os comprovantes e recibos são compartilhados por e‑mail e no Drive do projeto.</p>"
+  },
+  {
+    "question": "Quando é feita a conferência dos bilhetes?",
+    "answerHtml": "<p>A conferência acontece após cada sorteio (por volta das 21:20), e todos recebem o relatório completo por e‑mail.</p>"
   },
   {
     "question": "Como conferir cada aposta registrada?",
@@ -68,12 +104,36 @@
     "answerHtml": "<p>Você recebe em seu e‑mail um link exclusivo com todos os dados de pagamentos, cotas e resultados. Também pode acessar pelo seu Drive em \"Compartilhados comigo\".</p>"
   },
   {
-    "question": "Privacidade: quem pode ver minhas informações?",
-    "answerHtml": "<p>O acesso às planilhas e documentos é <strong>estritamente controlado</strong> e concedido somente a <strong>usuários autenticados</strong> (e‑mails informados pelos próprios participantes). Adotamos práticas alinhadas à <strong>LGPD</strong>, com minimização de dados, controle de acesso e registro adequado das operações.</p>"
+    "question": "Como funciona a prestação de contas?",
+    "answerHtml": "<p>Transparência com documentos oficiais e <strong>trilhas de acesso</strong> conferíveis.</p><ul><li><strong>Canais:</strong> e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li><strong>Segurança:</strong> acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li><strong>LGPD e privacidade:</strong> minimização de dados e exposição controlada.</li><li><strong>Cronograma:</strong> fechamento de cotas → registro das apostas → resultados → prestação final.</li><li><strong>O que você recebe:</strong> links oficiais, PDFs, planilhas e comprovações auditáveis.</li></ul><p>Detalhes e exemplos em <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Prestação de Contas</a>.</p>"
   },
   {
     "question": "Comunicação e documentos oficiais",
     "answerHtml": "<ul><li>Toda comunicação oficial é realizada por <strong>e‑mail</strong>, incluindo confirmação de pagamento via PIX, link de acesso à pasta do projeto no Google Drive, prestação de contas e conferência detalhada das apostas.</li><li>Todos os documentos — comprovantes de pagamento, relatórios financeiros, termos de adesão e registros de apostas — são organizados em <strong>PDF</strong> e armazenados no Drive do projeto, com <strong>acesso restrito</strong> aos participantes.</li><li>Utilizamos grupos de <strong>WhatsApp</strong> para avisos. Eventualmente abrimos para interação entre os participantes, exclusivamente sobre os projetos.</li><li>A prestação de contas é publicada logo após o registro do bolão. Os resultados são enviados por e‑mail imediatamente após a divulgação da <strong>API oficial da Caixa</strong>, com a conferência detalhada.</li></ul>"
+  },
+  {
+    "question": "Transparência e rastreabilidade",
+    "answerHtml": "<p>A transparência é garantida com a emissão da <strong>Relação de Participantes</strong> e suas respectivas cotas, além dos <strong>comprovantes individuais</strong> de pagamento via PIX. Esses documentos constituem prova formal da participação, quando necessário.</p>"
+  },
+  {
+    "question": "Privacidade: quem pode ver minhas informações?",
+    "answerHtml": "<p>O acesso às planilhas e documentos é <strong>estritamente controlado</strong> e concedido somente a <strong>usuários autenticados</strong> (e‑mails informados pelos próprios participantes). Adotamos práticas alinhadas à <strong>LGPD</strong>, com minimização de dados, controle de acesso e registro adequado das operações.</p>"
+  },
+  {
+    "question": "Há alguma fiscalização ou auditoria?",
+    "answerHtml": "<p>Não há uma equipe formal, mas ao final de cada projeto realizamos <strong>auditoria voluntária</strong>. Documentos são enviados a todos os participantes, e qualquer pessoa pode solicitar esclarecimentos ou realizar auditoria independente.</p>"
+  },
+  {
+    "question": "Quais são os compromissos do organizador?",
+    "answerHtml": "<ul><li>Conduzir todos os projetos com <strong>transparência, responsabilidade e ética</strong>, zelando pela confiança dos participantes.</li><li>Aplicar integralmente os valores arrecadados na aquisição de <strong>apostas oficiais</strong>, conforme as regras de cada projeto.</li><li>Prestar contas de forma clara, organizada e acessível, disponibilizando aos participantes <strong>comprovantes de pagamento</strong>, a <strong>relação completa das apostas</strong>, a <strong>distribuição das cotas</strong> e os <strong>resultados</strong> obtidos.</li><li>Preservar a <strong>confidencialidade</strong> das informações pessoais e financeiras, armazenando dados e documentos com segurança e acesso exclusivo aos participantes autorizados.</li><li>Realizar a <strong>distribuição proporcional</strong> de quaisquer premiações relevantes, com base nas cotas efetivamente adquiridas por cada participante.</li></ul><p>Essa distribuição observa as diretrizes da <strong>Receita Federal do Brasil</strong> aplicáveis a apostas conjuntas em loterias, nos termos do <em>Regulamento do Imposto sobre a Renda – RIR/2018</em>, art. 732, inciso I, e da Lei nº 11.941/2009.</p><p>Nos termos legais, o valor total do prêmio é informado pelo <strong>administrador</strong> — que efetua a aposta em seu nome — na sua <em>Declaração de Ajuste Anual (DAA)</em>, na ficha “Rendimentos Sujeitos à Tributação Exclusiva/Definitiva”. Os repasses aos cotistas são declarados na ficha “Pagamentos Efetuados”, código “99 – Outros”, indicando o CPF de cada participante e a natureza do pagamento (aposta conjunta em loteria).</p><p>Cada participante deve declarar o valor recebido na ficha “Rendimentos Isentos e Não Tributáveis”, vinculando o CPF do administrador e a origem da premiação como cota‑parte de uma aposta coletiva. Tal procedimento garante a legalidade da operação, a isenção tributária sobre os repasses e a rastreabilidade formal de toda a movimentação.</p>"
+  },
+  {
+    "question": "Quem é o Administrador e quais são suas responsabilidades?",
+    "answerHtml": "<p>O Administrador dos projetos é <strong>Fernando Borges</strong>.</p><p><strong>Perfil profissional</strong>:</p><ul><li>Profissional de Segurança da Informação e <em>Incident Handler</em>;</li><li>Mestrado (áreas) em Ciência da Computação, com atuação em Cybersecurity;</li><li>Entusiasta de IA e Machine Learning aplicados a estratégias de loteria;</li><li>Organizador dos bolões e curador dos modelos e regras.</li></ul><p><strong>Responsabilidades</strong>:</p><ul><li>Governança dos projetos, definição e divulgação das regras;</li><li>Gestão de risco e segurança, prevenção a fraudes e controle de acessos;</li><li>Coordenação dos registros de apostas e consolidação de comprovantes e resultados;</li><li>Prestação de contas com trilhas auditáveis (<a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">saiba mais</a>);</li><li>Atendimento aos participantes e mediação de comunicações.</li></ul><p><strong>Compromissos e limites</strong>:</p><ul><li>Transparência, integridade e conformidade com a LGPD no tratamento de dados;</li><li>Sem taxa de administração; 100% dos valores são destinados às apostas do grupo;</li><li>Uso de IA apenas como apoio estatístico, <strong>sem garantia de acertos</strong> (<a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">entenda a abordagem</a>);</li><li>Respeito às janelas e regras publicadas para cada projeto.</li></ul><p><strong>Contato</strong>: <a href=\"mailto:correiodofernando@gmail.com\">correiodofernando@gmail.com</a>.</p>"
+  },
+  {
+    "question": "Quais prêmios já foram conquistados pelos bolões?",
+    "answerHtml": "<p>Ao longo dos últimos anos, nossos projetos coletivos acumularam <strong>diversas premiações</strong>, incluindo <strong>quadras na Mega‑Sena</strong>, <strong>inúmeros ternos na Quina</strong> e <strong>vários prêmios na Lotofácil</strong>. Todas as ocorrências constam nas planilhas e relatórios de <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">prestação de contas</a>.</p><p><strong>Projetos Mensais</strong>: historicamente, a recorrência de acertos nesses projetos tem gerado <strong>retorno mensal na faixa de 30% a 40%</strong> do valor investido, o qual é <strong>abatido automaticamente na contribuição do mês seguinte</strong>. Esse comportamento favorece a regularidade de participação e mantém a <em>exposição líquida</em> sob controle, enquanto buscamos <strong>premiações maiores</strong>.</p><p><em>Observação</em>: os percentuais informados refletem resultados históricos e podem variar a cada período. <strong>Não há garantia de retorno ou de premiação futura</strong>, e todo jogo envolve risco.</p>"
   },
   {
     "question": "Qual o valor mínimo para repasse vs. reinvestimento?",
@@ -92,48 +152,8 @@
     "answerHtml": "<p>Os prêmios de loterias estão sujeitos a tributação exclusiva na fonte conforme a legislação vigente. Nos <strong>repasses proporcionais entre cotistas</strong> em apostas conjuntas, observamos as <a href=\"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm#:~:text=Dos%20pr%C3%AAmios%20e%20dos%20sorteios%20em%20geral\" target=\"_blank\" rel=\"noopener noreferrer\">orientações da Receita Federal do Brasil para apostas conjuntas</a>, assegurando a legalidade do procedimento e a correta classificação na declaração de cada participante.</p>"
   },
   {
-    "question": "Transparência e rastreabilidade",
-    "answerHtml": "<p>A transparência é garantida com a emissão da <strong>Relação de Participantes</strong> e suas respectivas cotas, além dos <strong>comprovantes individuais</strong> de pagamento via PIX. Esses documentos constituem prova formal da participação, quando necessário.</p>"
-  },
-  {
-    "question": "Há alguma fiscalização ou auditoria?",
-    "answerHtml": "<p>Não há uma equipe formal, mas ao final de cada projeto realizamos <strong>auditoria voluntária</strong>. Documentos são enviados a todos os participantes, e qualquer pessoa pode solicitar esclarecimentos ou realizar auditoria independente.</p>"
-  },
-  {
-    "question": "Quando as apostas são registradas?",
-    "answerHtml": "<p>Todas as apostas são registradas com a antecedência necessária, variando de projeto para projeto. Acompanhe as informações na comunidade.</p>"
-  },
-  {
-    "question": "Recebo cópia física dos bilhetes?",
-    "answerHtml": "<p>Não. As apostas são digitais, registradas no aplicativo oficial da Caixa. Todos os comprovantes e recibos são compartilhados por e‑mail e no Drive do projeto.</p>"
-  },
-  {
-    "question": "Quando é feita a conferência dos bilhetes?",
-    "answerHtml": "<p>A conferência acontece após cada sorteio (por volta das 21:20), e todos recebem o relatório completo por e‑mail.</p>"
-  },
-  {
-    "question": "Quais são os compromissos do organizador?",
-    "answerHtml": "<ul><li>Conduzir todos os projetos com <strong>transparência, responsabilidade e ética</strong>, zelando pela confiança dos participantes.</li><li>Aplicar integralmente os valores arrecadados na aquisição de <strong>apostas oficiais</strong>, conforme as regras de cada projeto.</li><li>Prestar contas de forma clara, organizada e acessível, disponibilizando aos participantes <strong>comprovantes de pagamento</strong>, a <strong>relação completa das apostas</strong>, a <strong>distribuição das cotas</strong> e os <strong>resultados</strong> obtidos.</li><li>Preservar a <strong>confidencialidade</strong> das informações pessoais e financeiras, armazenando dados e documentos com segurança e acesso exclusivo aos participantes autorizados.</li><li>Realizar a <strong>distribuição proporcional</strong> de quaisquer premiações relevantes, com base nas cotas efetivamente adquiridas por cada participante.</li></ul><p>Essa distribuição observa as diretrizes da <strong>Receita Federal do Brasil</strong> aplicáveis a apostas conjuntas em loterias, nos termos do <em>Regulamento do Imposto sobre a Renda – RIR/2018</em>, art. 732, inciso I, e da Lei nº 11.941/2009.</p><p>Nos termos legais, o valor total do prêmio é informado pelo <strong>administrador</strong> — que efetua a aposta em seu nome — na sua <em>Declaração de Ajuste Anual (DAA)</em>, na ficha “Rendimentos Sujeitos à Tributação Exclusiva/Definitiva”. Os repasses aos cotistas são declarados na ficha “Pagamentos Efetuados”, código “99 – Outros”, indicando o CPF de cada participante e a natureza do pagamento (aposta conjunta em loteria).</p><p>Cada participante deve declarar o valor recebido na ficha “Rendimentos Isentos e Não Tributáveis”, vinculando o CPF do administrador e a origem da premiação como cota‑parte de uma aposta coletiva. Tal procedimento garante a legalidade da operação, a isenção tributária sobre os repasses e a rastreabilidade formal de toda a movimentação.</p>"
-  },
-  {
-    "question": "Posso indicar amigos ou familiares?",
-    "answerHtml": "<p>Sim. Participantes ativos podem indicar outras pessoas, desde que atendam aos critérios de participação.</p>"
-  },
-  {
-    "question": "Posso dividir uma cota com alguém?",
-    "answerHtml": "<p>Sim. Nesse caso, combinem e realizem o pagamento normalmente. Importante: a cota será registrada no nome de apenas uma pessoa, designada pelas partes. O bolão não se responsabiliza por pessoas não registradas.</p>"
-  },
-  {
-    "question": "Existe uma formalização da participação na comunidade?",
-    "answerHtml": "<p>Sim. Acessando o link <a href=\"https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform\" target=\"_blank\" rel=\"noopener noreferrer\">Entrar na Comunidade</a> você pode avaliar as regras da Comunidade e receber o <strong>Documento Oficial de Participação</strong> personalizado.</p><p>Esse documento integra o conjunto de comprovações válidas para fins de <strong>transparência</strong>, <strong>rastreabilidade</strong> e <strong>prestação de contas</strong> da comunidade.</p>"
-  },
-  {
     "question": "Como a IA é usada nos projetos?",
     "answerHtml": "<p>Usamos IA para apoiar as escolhas com base em dados — <strong>sem prometer acertos</strong> — e generalizamos para todas as modalidades.</p><ul><li><strong>Estatística vs LSTM (alto nível):</strong> combinamos <em>estatística descritiva</em> (frequências/tendências do histórico) com <em>predições LSTM</em> (probabilidades aprendidas no tempo), de forma complementar e calibrada.</li><li><strong>Pool por faixas:</strong> selecionamos números fortes por blocos/faixas para formar um conjunto base.</li><li><strong>Lotes com fixa exclusiva:</strong> criamos subgrupos com uma fixa por lote para aumentar a diversidade.</li><li><strong>Semelhança controlada:</strong> limitamos o quanto dois jogos podem se parecer entre si e com o histórico.</li><li><strong>Bloqueios e variações:</strong> bloqueios hierárquicos quando há tamanhos diferentes e variações locais opcionais sem piorar a qualidade.</li></ul><p>Detalhes na página <a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">IA nos Projetos</a>.</p>"
-  },
-  {
-    "question": "Como funciona a prestação de contas?",
-    "answerHtml": "<p>Transparência com documentos oficiais e <strong>trilhas de acesso</strong> conferíveis.</p><ul><li><strong>Canais:</strong> e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li><strong>Segurança:</strong> acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li><strong>LGPD e privacidade:</strong> minimização de dados e exposição controlada.</li><li><strong>Cronograma:</strong> fechamento de cotas → registro das apostas → resultados → prestação final.</li><li><strong>O que você recebe:</strong> links oficiais, PDFs, planilhas e comprovações auditáveis.</li></ul><p>Detalhes e exemplos em <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Prestação de Contas</a>.</p>"
   },
   {
     "question": "Ainda tenho dúvidas. O que faço?",
