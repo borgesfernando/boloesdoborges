@@ -93,7 +93,7 @@
   },
   {
     "question": "Como conferir cada aposta registrada?",
-    "answerHtml": "<p>Todos os <strong>comprovantes</strong> e as <strong>planilhas consolidadas</strong> são armazenados em pasta do Google Drive, com <strong>acesso restrito aos participantes</strong>. A conferência detalhada é enviada por e‑mail, normalmente até <strong>3 horas após</strong> a apuração do sorteio.</p>"
+    "answerHtml": "<p>O Administrador desenvolveu um <strong>sistema próprio</strong> de conferência, integrado à <strong>API oficial da Caixa</strong>, que <strong>coleta automaticamente</strong> os resultados dos sorteios e confere todas as apostas de cada bolão.</p><p>Você recebe por <strong>e‑mail</strong> um <strong>relatório detalhado</strong> com:</p><ul><li>lista de jogos conferidos por projeto;</li><li>acertos por aposta e por combinação;</li><li>prêmios por bilhete e totais consolidados;</li><li>links diretos para as <strong>planilhas</strong> e comprovantes no <strong>Google Drive</strong>.</li></ul><p><strong>Vantagens</strong>: <strong>transparência</strong> (trilhas auditáveis e documentos no Drive), <strong>automação</strong> (menos erros manuais), <strong>exatidão</strong> (base nos resultados oficiais), <strong>agilidade</strong> (envio logo após a divulgação) e <strong>organização</strong> (histórico completo por projeto).</p>"
   },
   {
     "question": "Como recebo os resultados e comprovantes?",
