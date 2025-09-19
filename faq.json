@@ -1,4 +1,8 @@
 [
+  {
+    "question": "O que é SB?",
+    "answerHtml": "<p><strong>Super Bolão (SB)</strong> é o nosso bolão raiz que nasceu em 2009, quando um pequeno grupo de militares juntou forças para a Mega da Virada. De lá pra cá, o projeto cresceu bonito: virou referência em organização, transparência nas contas e método.</p><p>Com o tempo, a galera foi aumentando e os recursos também. Hoje tem participante espalhado pelo país inteiro — muitos começaram lá no início, foram transferidos, mas continuam fiéis ao grupo.</p><p>Carinhosamente chamado de \"SB\" ou \"Sierra Bravo\", é uma verdadeira <em>ação entre amigos</em>, coordenada por <strong>Fernando Borges</strong>, administrador do Bolão, para aumentar as chances de todo mundo no sorteio da <a href=\"templates/especiais.html?id=mega-virada\" target=\"_blank\" rel=\"noopener noreferrer\">Mega‑Sena da Virada</a>. Simples, divertido e sério no que importa: método e boa gestão.</p><p>Ah, e no nosso vocabulário aparecem outras siglas também: <strong>QSJ</strong> (<a href=\"templates/especiais.html?id=quina-saojoao\" target=\"_blank\" rel=\"noopener noreferrer\">Quina de São João</a>), <strong>LF</strong> (Lotofácil — em especial a <a href=\"templates/especiais.html?id=lf-independencia\" target=\"_blank\" rel=\"noopener noreferrer\">Lotofácil da Independência</a>) e <strong>DSP</strong> (<a href=\"templates/especiais.html?id=ds-pascoa\" target=\"_blank\" rel=\"noopener noreferrer\">Dupla Sena de Páscoa</a>). Cada projeto com sua página, regras e aquele cuidado caprichado.</p>"
+  },
   
   {
     "question": "Quais são os tipos de projetos disponíveis?",
