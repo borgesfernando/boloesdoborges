@@ -93,11 +93,11 @@
   },
   {
     "question": "Como são escolhidos os jogos/dezenas?",
-    "answerHtml": "<p>Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e os comprovantes são compartilhados.</li></ul>"
+    "answerHtml": "<p>Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e/ou no site <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a>, com comprovantes digitais compartilhados.</li></ul>"
   },
   {
     "question": "Recebo cópia física dos bilhetes?",
-    "answerHtml": "<p>Não. As apostas são digitais, registradas no aplicativo oficial da Caixa. Todos os comprovantes e recibos são compartilhados por e‑mail e no Drive do projeto.</p>"
+    "answerHtml": "<p>Não. As apostas são digitais, registradas no aplicativo oficial da Caixa e/ou no site <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a>. Os comprovantes e recibos digitais são compartilhados por e‑mail e no Drive do projeto.</p>"
   },
   {
     "question": "Quando é feita a conferência dos bilhetes?",
