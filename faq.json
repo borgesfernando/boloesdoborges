@@ -88,6 +88,10 @@
     "answerHtml": "<p>Todas as apostas são registradas com a antecedência necessária, variando de projeto para projeto. Acompanhe as informações na comunidade.</p>"
   },
   {
+    "question": "As apostas são registradas em lotérica?",
+    "answerHtml": "<p><strong>Não</strong>. Todo o processo é <strong>online</strong>.</p><p>As apostas são registradas diretamente no sistema oficial da Caixa — <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a> — com emissão de comprovantes digitais válidos.</p><p><strong>Segurança aplicada</strong>:</p><ul><li><strong>Confirmação por e‑mail</strong> para operações sensíveis;</li><li><strong>MFA</strong> (autenticação em dois fatores) no acesso e na confirmação de transações;</li><li><strong>Dispositivos de confiança</strong> e sessões controladas;</li><li><strong>Comprovantes digitais</strong> registrados e guardados no histórico oficial.</li></ul><p><strong>Organização, método e tecnologia</strong>: processos padronizados, controles de acesso e registro, e uso de ferramentas digitais para garantir <strong>rastreabilidade</strong>, <strong>transparência</strong> e <strong>segurança</strong>.</p>"
+  },
+  {
     "question": "Como são escolhidos os jogos/dezenas?",
     "answerHtml": "<p>Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e os comprovantes são compartilhados.</li></ul>"
   },
