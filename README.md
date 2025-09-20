@@ -54,32 +54,30 @@ Entre em contato: [correiodofernando@gmail.com](mailto:correiodofernando@gmail.c
 
 **⚠️ Importante**: Este projeto é uma ação entre amigos organizada por Borges, sem vínculo com a CAIXA Econômica Federal. Participação voluntária por adultos maiores de 18 anos 🤝🏻
 
-## 🚀 Deploy em Container (VPS)
+## 🔄 JSON sempre atualizado a partir do `js/config.js`
 
-Esta aplicação é estática (HTML/CSS/JS). O deploy recomendado é via Nginx em container.
+Há automação para gerar um JSON consumível por integrações (ex.: n8n) com base em `js/config.js`.
 
-### Opção A: Docker Compose (porta 8080)
+### GitHub Actions (automático no `main`)
 
-1. Build e subida:
-   - `docker compose up -d --build`
-2. Acesse: `http://SEU_IP:8080`
+- Workflow: `.github/workflows/update-projetos.yml`
+- Em cada push para `main`, roda `node scripts/extract-projetos.js` e atualiza `data/projetos.json` no repositório.
 
-Arquivos relevantes:
-- `Dockerfile` – imagem baseada em `nginx:alpine`, copia o site para `/usr/share/nginx/html`.
-- `nginx.conf` – cache para assets, gzip e cabeçalhos básicos de segurança.
-- `docker-compose.yml` – expõe `8080->80`, com healthcheck.
+### Hook local de git (pré-commit)
 
-### Opção B: Integrar com Traefik/Proxy reverso (HTTPS)
+Para gerar e commitar o JSON automaticamente em cada commit local:
 
-1. Descomente e ajuste as labels no `docker-compose.yml` com seu domínio.
-2. Garanta que seu proxy (Traefik/Caddy/Nginx) aponte para a porta interna `80` do serviço.
+1. Configure os hooks uma vez:
+   - `bash scripts/setup-git-hooks.sh`
+2. A cada commit, o hook executa `node scripts/extract-projetos.js` e adiciona `data/projetos.json` ao commit.
 
-### Atualizações de versão
+### Geração manual (opcional)
 
-- `docker compose pull && docker compose up -d --build` para reconstruir com mudanças.
+- `node scripts/extract-projetos.js`
+- Saída: `data/projetos.json`
 
-### Checklist pós-deploy
+### Consumo pelo n8n
 
-- [ ] Abrir `index.html` e navegar até `faq.html` e `templates/*` para validar links.
-- [ ] Conferir cache de assets (CSS/JS) e headers no navegador (devtools > Network).
-- [ ] Se usar HTTPS atrás de proxy, habilitar HTTP/2 no proxy e compressão lá.
+- Faça um HTTP GET para o arquivo estático `data/projetos.json` hospedado no seu ambiente (por exemplo, via GitHub Pages/VPS/Nginx).
+
+> Observação: Todas as referências a Docker foram removidas deste projeto. O deploy pode ser feito por qualquer servidor estático (GitHub Pages, Nginx, etc.).

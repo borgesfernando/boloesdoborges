@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Gera JSON a partir de js/config.js e adiciona ao commit
+if command -v node >/dev/null 2>&1; then
+  echo "[pre-commit] Gerando data/projetos.json a partir de js/config.js..."
+  node scripts/extract-projetos.js
+  git add data/projetos.json
+else
+  echo "[pre-commit] Node.js não encontrado. Pulei geração de data/projetos.json" >&2
+fi
+
