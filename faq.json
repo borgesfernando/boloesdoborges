@@ -1,7 +1,7 @@
 [
   {
     "question": "O que é SB?",
-    "answerHtml": "<p>Super Bolão (SB) é um projeto coletivo iniciado em 2009, quando um pequeno grupo de militares se organizou para participar da Mega da Virada. Desde então, o SB evoluiu em escala e governança, tornando‑se referência em organização, transparência financeira e método.</p>"
+    "answerHtml": "<p>Super Bolão (SB) é um projeto coletivo iniciado em 2009, quando um pequeno grupo de militares se organizou para participar da <a href=\"templates/especiais.html?id=mega-virada\" target=\"_blank\" rel=\"noopener noreferrer\">Mega da Virada</a>. Desde então, o SB evoluiu em escala e governança, tornando‑se referência em organização, transparência financeira e método.</p>"
   },
   {
     "question": "Quais são os tipos de projetos disponíveis?",
@@ -73,11 +73,11 @@
   },
   {
     "question": "Como facilitar os pagamentos mensais?",
-    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
+    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como <a href=\"templates/mensais.html?id=quina-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">Quina Mensal</a> e <a href=\"templates/mensais.html?id=lf-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">Lotofácil Mensal</a> precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
   },
   {
     "question": "Como as Caixinhas do Nubank são usadas nos projetos especiais?",
-    "answerHtml": "<p>Para organizar os recursos dos projetos especiais, utilizamos Caixinhas do Nubank como mecanismo de segregação financeira e controle mensal.</p><ul><li>Separação por finalidade: cada projeto (por exemplo, Lotofácil da Independência, Quina de São João, Mega da Virada)…</li><li>Visibilidade e previsibilidade: o acompanhamento do saldo por projeto facilita o planejamento de compras de apostas e…</li><li>Organização e disciplina: entradas mensais ficam reservadas até o momento do registro das apostas, reduzindo risco…</li><li>Eficiência: simplifica a conciliação com planilhas e a prestação de contas.</li></ul>"
+    "answerHtml": "<p>Para organizar os recursos dos projetos especiais, utilizamos Caixinhas do Nubank como mecanismo de segregação financeira e controle mensal.</p><ul><li>Separação por finalidade: cada projeto (por exemplo, <a href=\"templates/especiais.html?id=lf-independencia\" target=\"_blank\" rel=\"noopener noreferrer\">Lotofácil da Independência</a>, <a href=\"templates/especiais.html?id=quina-saojoao\" target=\"_blank\" rel=\"noopener noreferrer\">Quina de São João</a>, <a href=\"templates/especiais.html?id=mega-virada\" target=\"_blank\" rel=\"noopener noreferrer\">Mega da Virada</a>)…</li><li>Visibilidade e previsibilidade: o acompanhamento do saldo por projeto facilita o planejamento de compras de apostas e…</li><li>Organização e disciplina: entradas mensais ficam reservadas até o momento do registro das apostas, reduzindo risco…</li><li>Eficiência: simplifica a conciliação com planilhas e a prestação de contas.</li></ul>"
   },
   {
     "question": "O que acontece se eu atrasar o pagamento?",
@@ -149,7 +149,7 @@
   },
   {
     "question": "Quem é o Administrador e quais são suas responsabilidades?",
-    "answerHtml": "<p>O Administrador dos projetos é Fernando Borges.</p><ul><li>Profissional de Segurança da Informação e Incident Handler;</li><li>Mestrado (áreas) em Ciência da Computação, com atuação em Cybersecurity;</li><li>Entusiasta de IA e Machine Learning aplicados a estratégias de loteria;</li><li>Organizador dos bolões e curador dos modelos e regras.</li></ul>"
+    "answerHtml": "<p>O Administrador dos projetos é Fernando Borges.</p><ul><li>Profissional de Segurança da Informação e Incident Handler;</li><li>Mestrado (áreas) em Ciência da Computação, com atuação em Cybersecurity;</li><li>Entusiasta de IA e Machine Learning aplicados a estratégias de loteria;</li><li>Organizador dos bolões e curador dos modelos e regras.</li></ul><p><strong>Contato:</strong> <a href=\"mailto:correiodofernando@gmail.com\">correiodofernando@gmail.com</a></p>"
   },
   {
     "question": "Qual o valor mínimo para repasse vs. reinvestimento?",
