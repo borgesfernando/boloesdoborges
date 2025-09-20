@@ -5,11 +5,11 @@
   },
   {
     "question": "Quais são os tipos de projetos disponíveis?",
-    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li>Projetos Mensais: sorteios diários da Lotofácil e da Quina, ideais para quem gosta de acompanhar os resultados todas as…</li><li>Projetos Especiais: focados nos grandes concursos da Caixa — Lotofácil da Independência, Quina de São João, Dupla Sena…</li><li>Projetos Estratégicos (Acumulados): mobilizados quando há acumulações relevantes, como Mega‑Sena (acima de R$ 50…</li></ul>"
+    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li><strong>Mensais</strong>: Lotofácil e Quina (sorteios diários). Veja <a href=\"templates/mensais.html?id=lf-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">Lotofácil Mensal</a> e <a href=\"templates/mensais.html?id=quina-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">Quina Mensal</a>.</li><li><strong>Especiais</strong>: LF da Independência, QSJ, DSP e Mega da Virada — páginas: <a href=\"templates/especiais.html?id=lf-independencia\" target=\"_blank\" rel=\"noopener noreferrer\">LF Independência</a>, <a href=\"templates/especiais.html?id=quina-saojoao\" target=\"_blank\" rel=\"noopener noreferrer\">Quina de São João</a>, <a href=\"templates/especiais.html?id=ds-pascoa\" target=\"_blank\" rel=\"noopener noreferrer\">Dupla Sena de Páscoa</a>, <a href=\"templates/especiais.html?id=mega-virada\" target=\"_blank\" rel=\"noopener noreferrer\">Mega da Virada</a>.</li><li><strong>Acumulados</strong>: ativados com prêmios altos — <a href=\"templates/acumulados.html?id=mega-acumulada\" target=\"_blank\" rel=\"noopener noreferrer\">Mega‑Sena Acumulada</a> e <a href=\"templates/acumulados.html?id=quina-acumulada\" target=\"_blank\" rel=\"noopener noreferrer\">Quina Acumulada</a>.</li></ul>"
   },
   {
     "question": "Como funcionam os projetos de concursos acumulados?",
-    "answerHtml": "<p>Concursos acumulados (estratégicos) ⏰:</p><ul><li>Fique atento: os avisos de prêmios acumulados saem na comunidade logo no início da manhã. Participe e acompanhe os…</li><li>Janela de entrada: até as 18h do dia anterior ao sorteio — organização com tempo e calma para zero erro.</li><li>Cota: R$ 20, 00 por concurso.</li><li>Ativação: apenas quando a Mega‑Sena estiver acima de R$ 50 milhões ou a Quina acima de R$ 40 milhões.</li><li>Predições por IA: combinamos estatística e algoritmos inteligentes para apoiar escolhas (sem promessa de acerto).</li></ul>"
+    "answerHtml": "<p>Concursos acumulados (estratégicos) ⏰:</p><ul><li>Fique atento: avisos na comunidade logo cedo.</li><li>Entrada: até 18h do dia anterior.</li><li>Cota: R$ 20,00 por concurso.</li><li>Ativação: Mega ≥ R$ 50 mi ou Quina ≥ R$ 40 mi.</li><li>Predições por IA: apoio estatístico sem promessa de acerto.</li></ul><p>Saiba mais: <a href=\"templates/acumulados.html?id=mega-acumulada\" target=\"_blank\" rel=\"noopener noreferrer\">Mega‑Sena Acumulada</a> | <a href=\"templates/acumulados.html?id=quina-acumulada\" target=\"_blank\" rel=\"noopener noreferrer\">Quina Acumulada</a>.</p>"
   },
   {
     "question": "Por que participar de um bolão?",
@@ -17,7 +17,7 @@
   },
   {
     "question": "E por que participar dos Bolões do Borges?",
-    "answerHtml": "<p>Motivos que fazem diferença 🧠🔒:</p><ul><li>Histórico comprovado: quadras na Mega‑Sena, ternos na Quina e na Dupla Sena, além de inúmeros 11, 12 e 13 pontos na…</li><li>Método e IA: desdobramentos, variações controladas, teimosinha e modelos de apoio (estatística e LSTM) para escolhas…</li><li>Organização e transparência: regras claras, cronograma, registros de apostas e comprovantes compartilhados; sem taxa de…</li><li>Confiança e segurança: administração identificada, controles de acesso, trilhas auditáveis e atenção à LGPD; …</li><li>Comodidade para você: o trabalho pesado (montagem dos jogos, compras, conferência e rateio) fica por nossa conta; você…</li></ul>"
+    "answerHtml": "<p>Motivos que fazem diferença 🧠🔒:</p><ul><li>Histórico comprovado em Mega‑Sena, Quina, Dupla Sena e Lotofácil.</li><li>Método + IA: desdobramentos, variações controladas e modelos de apoio.</li><li>Organização e transparência: regras claras e <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">prestação de contas</a> documentada.</li><li>Segurança: controles de acesso, trilhas auditáveis e atenção à LGPD.</li><li>Comodidade: compra, conferência e rateio centralizados.</li></ul>"
   },
   {
     "question": "Quais prêmios já foram conquistados pelos bolões?",
@@ -25,7 +25,7 @@
   },
   {
     "question": "Como funcionam os projetos mensais (Lotofácil e Quina)?",
-    "answerHtml": "<p>Resumo dos projetos mensais:</p><ul><li>Lotofácil Mensal (LF): valor integralmente aplicado em apostas de 15 e 16 dezenas, com fechamento (combinações) e…</li><li>Quina Mensal: valor integralmente aplicado em apostas de 5 dezenas, com fechamento e teimosinha para 24 concursos.</li><li>Prestação de contas: diária e detalhada, enviada por e‑mail (Gmail); grupo de WhatsApp usado apenas para avisos (grupo…</li><li>Pagamentos: mensais, exclusivamente via PIX.</li><li>Renovação por ciclo: ao término de cada ciclo de 24 sorteios, é responsabilidade do participante confirmar a…</li></ul>"
+    "answerHtml": "<p>Resumo dos projetos mensais:</p><ul><li>Lotofácil Mensal: apostas com fechamentos e variações; <a href=\"templates/mensais.html?id=lf-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">detalhes</a>.</li><li>Quina Mensal: apostas e teimosinha para 24 concursos; <a href=\"templates/mensais.html?id=quina-mensal\" target=\"_blank\" rel=\"noopener noreferrer\">detalhes</a>.</li><li>Prestação de contas diária por e‑mail (Gmail); WhatsApp só para avisos.</li><li>Pagamentos mensais via PIX.</li><li>Renovação por ciclo (24 sorteios): confirme continuidade ao final.</li></ul>"
   },
   {
     "question": "Posso participar?",
@@ -169,10 +169,10 @@
   },
   {
     "question": "Como a IA é usada nos projetos?",
-    "answerHtml": "<p>🤖 Usamos IA para apoiar as escolhas com base em dados — sem prometer acertos — e generalizamos para todas as modalidades.</p><ul><li>Estatística vs LSTM (alto nível): combinamos estatística descritiva…</li><li>Pool por faixas: selecionamos números fortes por blocos/faixas para formar um conjunto…</li><li>Lotes com fixa exclusiva: criamos subgrupos com uma fixa por lote para aumentar a…</li><li>Semelhança controlada: limitamos o quanto dois jogos podem se parecer entre si e com o…</li></ul>"
+    "answerHtml": "<p>🤖 Usamos IA para apoiar as escolhas com base em dados — sem prometer acertos.</p><ul><li>Estatística + modelos (ex.: LSTM) para selecionar números.</li><li>Diversidade e semelhança controlada entre jogos.</li></ul><p>Detalhes: <a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">IA nos Projetos</a>.</p>"
   },
   {
     "question": "Ainda tenho dúvidas. O que faço?",
-    "answerHtml": "<p>Entre em contato com o organizador por e‑mail.</p>"
+    "answerHtml": "<p>Entre em contato por e‑mail: <a href=\"mailto:correiodofernando@gmail.com\">correiodofernando@gmail.com</a>.</p>"
   }
 ]
