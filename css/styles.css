@@ -161,6 +161,24 @@ footer h3 {
   display: inline-block;
 }
 
+/* Tooltip de contagem regressiva nos ativos */
+.project-card .badge-contagem {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  background: rgba(0, 119, 200, 0.9);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.project-card:not(.inativo):hover .badge-contagem {
+  display: inline-block;
+}
+
 .project-info {
   flex: 1;
 }
