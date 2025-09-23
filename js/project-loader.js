@@ -69,6 +69,18 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
     const btnClasse = tipoCor;
     const card = document.createElement("div");
     card.className = `project-card ${tipoCor}`;
+
+    // Marcar especiais fora do período (mesAtual não entre mesInicio e mesFim) como inativos
+    if (tipo === 'especiais') {
+      const hoje = new Date();
+      const mesAtual = hoje.getMonth() + 1; // 1-12
+      const inicio = parseInt(projeto.mesInicio, 10);
+      const fim = parseInt(projeto.mesFim, 10);
+      const ativo = mesAtual >= inicio && mesAtual <= fim;
+      if (!ativo) {
+        card.classList.add('inativo');
+      }
+    }
     const nome = projeto.nome;
     const apuracao = projeto.dataSorteio ? `<p class="project-date">Apuração: ${projeto.dataSorteio}</p>` : '';
     const detalhes = projeto.minimo
@@ -85,6 +97,7 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
         ${apuracao || detalhes}
       </div>
       <a href="${link}" class="btn ${btnClasse}">${textoBotao}</a>
+      <span class="badge-finalizado">Projeto finalizado</span>
     `;
     container.appendChild(card);
   });
