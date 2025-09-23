@@ -71,14 +71,22 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
     card.className = `project-card ${tipoCor}`;
 
     // Marcar especiais fora do período (mesAtual não entre mesInicio e mesFim) como inativos
+    let ativo = true;
+    let diasRestantes = null;
     if (tipo === 'especiais') {
       const hoje = new Date();
       const mesAtual = hoje.getMonth() + 1; // 1-12
       const inicio = parseInt(projeto.mesInicio, 10);
       const fim = parseInt(projeto.mesFim, 10);
-      const ativo = mesAtual >= inicio && mesAtual <= fim;
+      ativo = mesAtual >= inicio && mesAtual <= fim;
       if (!ativo) {
         card.classList.add('inativo');
+      } else if (projeto.dataLimite) {
+        const limite = parseDataBRparaDate(projeto.dataLimite);
+        if (limite) {
+          const hojeLimpo = new Date(); hojeLimpo.setHours(0,0,0,0);
+          diasRestantes = Math.max(0, Math.ceil((limite - hojeLimpo) / (1000*60*60*24)));
+        }
       }
     }
     const nome = projeto.nome;
@@ -98,6 +106,7 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
       </div>
       <a href="${link}" class="btn ${btnClasse}">${textoBotao}</a>
       <span class="badge-finalizado">Projeto finalizado</span>
+      ${tipo === 'especiais' && ativo && diasRestantes !== null ? `<span class="badge-contagem">⏳ Restam ${diasRestantes} dia${diasRestantes === 1 ? '' : 's'} para encerrar este bolão!</span>` : ''}
     `;
     container.appendChild(card);
   });
