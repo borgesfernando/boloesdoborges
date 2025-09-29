@@ -1,83 +1,66 @@
-# 📌 Projeto Bolões do Borges 
+# 📌 Projeto Bolões do Borges
 
-**🤝 SUA COMUNIDADE CONFIÁVEL DE BOLÕES!**  
-Projeto organizado com transparência, tecnologia avançada e 15 anos de experiência para multiplicar suas chances nos principais concursos especiais da CAIXA.
+**🤝 Sua comunidade confiável de bolões!**
+Projetos coordenados com transparência, tecnologia e 15 anos de experiência para multiplicar suas chances nos principais concursos da Caixa.
 
-## 🎯 Principais Recursos
+## 💊 O que oferecemos
 
-- **📅 Concursos Especiais** organizados:
-  - Lotofácil da Independência
-  - Quina de São João
-  - Dupla Sena de Páscoa
-  - Mega da Virada
- 
-- **📅 Projetos Mensais** com sorteios diários:
-  - Lotofácil
-  - Quina
+- ✨ 15 anos de organização contínua e comunidade engajada
+- 🧠 Modelos estatísticos e IA para construir jogos diversificados
+- 🔒 Governança, prestação de contas e controle de acesso aos documentos
+- 📅 Calendário atualizado com projetos mensais, especiais e estratégicos
 
-- **🤖 Tecnologia de Ponta**:
-  - Machine Learning para análise estatística
-  - Redes Neurais para otimização de palpites
-  - Sistemas automatizados de conferência
+## 📑 Linhas de projetos
 
-- **✨ 15 Anos de História**:
-  - Comunidade consolidada
-  - Prestação de contas transparente
-  - Resultados comprovados
+- **Projetos Mensais**: Lotofácil e Quina, com sorteios diários para quem gosta de acompanhar resultados toda noite.
+- **Projetos Especiais**: Quina de São João, Lotofácil da Independência, Dupla Sena de Páscoa e Mega da Virada.
+- **Projetos Estratégicos (Acumulados)**: ativações pontuais quando Mega-Sena ou Quina atingem prêmios relevantes, com comunicação dedicada e janelas de entrada curtas.
 
-## 📊 Como Participar
+## 📈 Como funciona
 
-1. Inicie com seu cadastro [AQUI](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform)
-2. Entre na comunidade
-3. Confira os projetos disponíveis
+1. Realize o cadastro pelo [formulário oficial](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
+2. Receba as instruções e ingresse na comunidade WhatsApp.
+3. Escolha os projetos em que deseja participar e confirme as cotas nos prazos divulgados.
+4. Acompanhe avisos, comprovantes, resultados e prestações de contas enviadas aos participantes.
 
-## 🔍 Transparência Total
+## 📲 Comunidade WhatsApp
 
-- Todos os palpites são registrados e auditáveis
-- Resultados publicados imediatamente após os sorteios
-- Todas as informações são enviadas no e-mail
-- Relatórios completos de desempenho
+A comunidade “Bolões do Borges” no WhatsApp integra todos os projetos em um ambiente organizado.
 
-## 📌 Regras Básicas
+- **Grupo de avisos**: o administrador centraliza comunicados e abertura de oportunidades dos bolões estratégicos, mensais e especiais.
+- **Subgrupos por projeto**: cada linha possui grupos específicos apenas com os participantes confirmados, mantendo foco total.
+- **Interações pontuais**: os subgrupos ficam silenciados e abrem em momentos-chave para feedbacks, reações, eventos e compartilhamento de arquivos.
 
-✔️ Participação voluntária  
-✔️ Sem fins lucrativos  
-✔️ Responsabilidade compartilhada  
-✔️ Respeito aos prazos de pagamento  
+⚠️ Importante: fique atento aos avisos para não perder oportunidades. [Cadastre-se aqui](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
 
-## 📧 Contato
+## 📚 Transparência e segurança
 
-Dúvidas ou sugestões?  
-Entre em contato: [correiodofernando@gmail.com](mailto:correiodofernando@gmail.com)
+- Comprovantes, relações de jogos e rateios ficam disponíveis aos participantes autenticados.
+- Auditoria voluntária ao final de cada projeto e trilhas auditáveis de todo o fluxo financeiro.
+- Dados pessoais tratados conforme a LGPD, com acesso restrito e registro das operações.
+- Resultados significativos rateados proporcionalmente ao número de cotas.
+
+## ❗ Por que participar
+
+- Mais chances com jogos coletivos e técnicas de desdobramento.
+- Custo-benefício melhor que apostar sozinho.
+- Planejamento constante: prêmios menores podem ser reinvestidos para fortalecer a base.
+- Comunidade com histórico comprovado e comunicação ativa.
+
+## 👨‍💻 Quem organiza
+
+Fernando Borges é profissional de Segurança da Informação, especialista em cibersegurança e entusiasta de IA aplicada às loterias. Ele coordena os bolões, define métodos, cuida da prestação de contas e atende os participantes.
+
+## 👀 Pronto para entrar?
+
+- Cadastre-se no [formulário de interesse](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
+- Acompanhe as redes e fique por dentro de novas cotas.
+- Junte-se aos projetos que combinam com seu perfil.
+
+## 💌 Contato
+
+Dúvidas ou sugestões? Escreva para [correiodofernando@gmail.com](mailto:correiodofernando@gmail.com).
 
 ---
 
-**⚠️ Importante**: Este projeto é uma ação entre amigos organizada por Borges, sem vínculo com a CAIXA Econômica Federal. Participação voluntária por adultos maiores de 18 anos 🤝🏻
-
-## 🔄 JSON sempre atualizado a partir do `js/config.js`
-
-Há automação para gerar um JSON consumível por integrações (ex.: n8n) com base em `js/config.js`.
-
-### GitHub Actions (automático no `main`)
-
-- Workflow: `.github/workflows/update-projetos.yml`
-- Em cada push para `main`, roda `node scripts/extract-projetos.js` e atualiza `data/projetos.json` no repositório.
-
-### Hook local de git (pré-commit)
-
-Para gerar e commitar o JSON automaticamente em cada commit local:
-
-1. Configure os hooks uma vez:
-   - `bash scripts/setup-git-hooks.sh`
-2. A cada commit, o hook executa `node scripts/extract-projetos.js` e adiciona `data/projetos.json` ao commit.
-
-### Geração manual (opcional)
-
-- `node scripts/extract-projetos.js`
-- Saída: `data/projetos.json`
-
-### Consumo pelo n8n
-
-- Faça um HTTP GET para o arquivo estático `data/projetos.json` hospedado no seu ambiente (por exemplo, via GitHub Pages/VPS/Nginx).
-
-> Observação: Todas as referências a Docker foram removidas deste projeto. O deploy pode ser feito por qualquer servidor estático (GitHub Pages, Nginx, etc.).
+**⚠️ Importante**: Projeto em formato de ação entre amigos, sem qualquer ligação com a Caixa Econômica Federal. Participação voluntária e exclusiva para maiores de 18 anos.
