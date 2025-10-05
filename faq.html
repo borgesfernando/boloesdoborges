@@ -43,7 +43,6 @@
       transition: max-height 0.4s ease, padding 0.4s ease;
     }
     .panel.show {
-      max-height: 500px; /* valor suficiente para o conteúdo */
       padding: 1rem;
     }
   </style>
@@ -138,14 +137,25 @@
         btn.innerHTML = `<span>${numero}. ${textoOriginal}</span>`;
 
         btn.addEventListener('click', () => {
+          const panel = btn.nextElementSibling;
+          const alreadyOpen = btn.classList.contains('active');
+
           acc.forEach(other => {
-            if (other !== btn) {
-              other.classList.remove('active');
-              if (other.nextElementSibling) other.nextElementSibling.classList.remove('show');
+            other.classList.remove('active');
+            const otherPanel = other.nextElementSibling;
+            if (otherPanel) {
+              otherPanel.classList.remove('show');
+              otherPanel.style.maxHeight = null;
             }
           });
-          btn.classList.toggle('active');
-          if (btn.nextElementSibling) btn.nextElementSibling.classList.toggle('show');
+
+          if (!alreadyOpen) {
+            btn.classList.add('active');
+            if (panel) {
+              panel.classList.add('show');
+              panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+          }
         });
       });
     }
@@ -154,6 +164,15 @@
       const ok = await loadFaqFromJson();
       if (ok) initAccordions();
     })();
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.accordion.active').forEach(btn => {
+        const panel = btn.nextElementSibling;
+        if (panel && panel.classList.contains('show')) {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
   </script>
 
   <script>
