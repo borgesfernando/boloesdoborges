@@ -229,7 +229,8 @@
           panel.setAttribute('aria-labelledby', btnId);
           panel.setAttribute('aria-hidden', 'true');
           panel.classList.remove('show');
-          panel.style.maxHeight = null;
+          panel.style.maxHeight = '0px';
+          panel.style.overflow = 'hidden';
         }
 
         btn.addEventListener('click', () => {
@@ -242,9 +243,17 @@
             other.classList.remove('active');
             other.setAttribute('aria-expanded', 'false');
             if (otherPanel) {
+              if (otherPanel === currentPanel && !alreadyOpen) {
+                return;
+              }
+              const currentHeight = otherPanel.scrollHeight;
               otherPanel.classList.remove('show');
-              otherPanel.style.maxHeight = null;
               otherPanel.setAttribute('aria-hidden', 'true');
+              otherPanel.style.overflow = 'hidden';
+              otherPanel.style.maxHeight = currentHeight + 'px';
+              requestAnimationFrame(() => {
+                otherPanel.style.maxHeight = '0px';
+              });
             }
             if (otherIcon) otherIcon.textContent = '➕';
           });
@@ -255,8 +264,14 @@
             const icon = btn.querySelector('.accordion-icon');
             if (currentPanel) {
               currentPanel.classList.add('show');
-              currentPanel.style.maxHeight = currentPanel.scrollHeight + 'px';
               currentPanel.setAttribute('aria-hidden', 'false');
+              currentPanel.style.overflow = 'hidden';
+              const targetHeight = currentPanel.scrollHeight;
+              currentPanel.style.maxHeight = targetHeight + 'px';
+              requestAnimationFrame(() => {
+                currentPanel.style.maxHeight = 'none';
+                currentPanel.style.overflow = 'visible';
+              });
             }
             if (icon) icon.textContent = '➖';
           }
@@ -273,7 +288,12 @@
       document.querySelectorAll('.accordion.active').forEach(btn => {
         const panel = btn.nextElementSibling;
         if (panel && panel.classList.contains('show')) {
+          panel.style.overflow = 'hidden';
           panel.style.maxHeight = panel.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            panel.style.maxHeight = 'none';
+            panel.style.overflow = 'visible';
+          });
         }
       });
     });
