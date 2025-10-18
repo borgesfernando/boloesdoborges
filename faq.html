@@ -16,10 +16,10 @@
       background-color: #f9f9f9;
       font-weight: 600;
       transition: background-color 0.25s ease;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0.75rem;
       font-size: clamp(0.98rem, 0.94rem + 0.25vw, 1.18rem);
       padding: 1.05rem 1.15rem;
       border-radius: 4px;
@@ -37,19 +37,23 @@
     .accordion .accordion-index {
       color: #005da4;
       font-weight: 700;
-      min-width: 1.8rem;
+      min-width: 1.6rem;
       text-align: right;
+      flex: 0 0 auto;
     }
     .accordion .accordion-text {
-      display: block;
+      flex: 1 1 auto;
       line-height: 1.55;
       white-space: normal;
+      min-width: 0;
     }
     .accordion .accordion-icon {
       font-size: 1.25rem;
       line-height: 1;
       color: #005da4;
       transition: color 0.3s ease;
+      margin-left: auto;
+      flex: 0 0 auto;
     }
     .accordion.active .accordion-icon {
       color: #007f5f;
@@ -78,18 +82,32 @@
     .panel li {
       margin-bottom: 0.45rem;
     }
+    @media (min-width: 768px) {
+      .accordion {
+        align-items: center;
+        gap: 1rem;
+      }
+      .accordion .accordion-text {
+        flex: 1 1 auto;
+      }
+      .accordion .accordion-icon {
+        align-self: center;
+      }
+    }
     @media (max-width: 640px) {
       .accordion {
-        grid-template-columns: auto minmax(0, 1fr) auto;
         font-size: clamp(0.94rem, 0.92rem + 0.35vw, 1.08rem);
         padding: 0.95rem 1rem;
-        gap: 0.65rem;
+        gap: 0.6rem;
       }
       .accordion .accordion-index {
-        min-width: 1.4rem;
+        min-width: 1.2rem;
       }
       .accordion .accordion-icon {
         font-size: 1.1rem;
+      }
+      .accordion .accordion-text {
+        flex: 1 1 100%;
       }
       .panel {
         font-size: clamp(0.92rem, 0.88rem + 0.3vw, 1.05rem);
