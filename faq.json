@@ -100,12 +100,32 @@
     "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
   },
   {
+    "question": "Como usar meu aplicativo bancário para agendar o pagamento do projeto especial?",
+    "answerHtml": "<p>Consulte o aplicativo do seu banco para criar um <strong>agendamento de PIX</strong> na <strong>data do projeto especial</strong> em que você deseja participar.</p><p>Ao agendar, confira o <strong>valor exato da cota</strong> para o mês de entrada informado pelo Administrador e utilize sempre a chave PIX oficial do projeto.</p><p>Isso ajuda a evitar esquecimentos e manter os pagamentos em dia, sem necessidade de ajustes manuais todos os meses.</p>"
+  },
+  {
     "question": "Como as Caixinhas do Nubank são usadas nos projetos especiais?",
     "answerHtml": "<p>Para organizar os recursos dos <strong>projetos especiais</strong>, utilizamos <strong>Caixinhas do Nubank</strong> como mecanismo de <em>segregação financeira</em> e controle mensal.</p><p><strong>Vantagens</strong>:</p><ul><li><strong>Separação por finalidade</strong>: cada projeto (por exemplo, Lotofácil da Independência, Quina de São João, Mega da Virada) mantém seu saldo em uma caixinha própria, evitando mistura de recursos.</li><li><strong>Visibilidade e previsibilidade</strong>: o acompanhamento do saldo por projeto facilita o planejamento de compras de apostas e metas de arrecadação.</li><li><strong>Organização e disciplina</strong>: entradas mensais ficam reservadas até o momento do registro das apostas, reduzindo risco operacional.</li><li><strong>Eficiência</strong>: simplifica a conciliação com planilhas e a <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">prestação de contas</a>.</li></ul><p><strong>Como organizamos</strong>:</p><ul><li><strong>Uma caixinha por projeto</strong>, com nome padronizado (ex.: “Especial — Mega da Virada 2025”).</li><li><strong>Conciliação mensal</strong>: os aportes recebidos via PIX são lançados na planilha do projeto e conciliados com o saldo da caixinha correspondente.</li><li><strong>Metas e etiquetas</strong>: utilizamos metas/observações para indicar valor‑alvo por projeto e período.</li><li><strong>Transparência</strong>: extratos/resumos são anexados à pasta do projeto no Drive e referenciados na prestação de contas.</li><li><strong>Saídas controladas</strong>: no fechamento, os valores são transferidos para registrar as apostas; prêmios e sobras seguem as regras de repasse/reinvestimento.</li></ul><p><strong>Observações importantes</strong>:</p><ul><li>As caixinhas são um <strong>recurso de organização interna</strong>; não configuram conta em custódia ou serviço fiduciário para terceiros.</li><li>O acesso é <strong>exclusivo do Administrador</strong>, com boas práticas de segurança (múltiplos fatores, dispositivos confiáveis) e <strong>sem compartilhamento de dados sensíveis</strong>.</li><li>Se houver mudança operacional (instituição/conta), os participantes serão comunicados e a documentação será atualizada.</li></ul>"
   },
   {
+    "question": "Os rendimentos das Caixinhas do Nubank também são usados nas apostas?",
+    "answerHtml": "<p>Sim. Nos <strong>projetos especiais</strong>, não apenas o valor arrecadado em cada cota é aplicado em apostas, mas também <strong>todos os rendimentos</strong> gerados pelas <strong>Caixinhas do Nubank</strong> usadas para organizar os recursos.</p><p>O Administrador <strong>não fica com nenhum valor</strong> do bolão: <strong>100% dos aportes recebidos + correções</strong> são direcionados para a montagem dos jogos, conforme as regras de cada projeto e a prestação de contas.</p>"
+  },
+  {
     "question": "O que acontece se eu atrasar o pagamento?",
     "answerHtml": "<p>Pagamentos em atraso seguem duas regras simples:</p><ul><li><strong>Correção simbólica:</strong> o valor devido é cobrado no mês seguinte com acréscimo de <strong>R$ 1,00</strong> (conforme política da comunidade).</li><li><strong>Persistência do atraso:</strong> se o pagamento não for regularizado, o participante é removido do grupo e <strong>o valor eventualmente pago é integralmente devolvido</strong>.</li></ul><p>Em caso de imprevistos, avise com antecedência para avaliarmos alternativas.</p>"
+  },
+  {
+    "question": "Preciso pagar os projetos especiais exatamente nas datas previstas?",
+    "answerHtml": "<p>Sim. Os pagamentos dos <strong>projetos especiais</strong> devem ser feitos <strong>necessariamente nas datas previstas</strong> no cronograma de cada projeto (dias de PIX informados na abertura e nos comunicados).</p><p>Esse alinhamento garante que todos os aportes entrem no período correto, permitindo planejar as compras de apostas, respeitar os prazos oficiais da Caixa e manter a prestação de contas organizada.</p>"
+  },
+  {
+    "question": "Há desconto ou mudança de valor se eu pagar fora do período previsto?",
+    "answerHtml": "<p>Não. Pagamentos realizados fora dos <strong>períodos previstos</strong> não geram desconto nem alteração especial de valores.</p><p>Cada projeto especial possui sua <strong>data de referência</strong> e, caso haja atualização de valores, ela segue a <strong>regra geral dos projetos especiais</strong> (ajustes comunicados à comunidade), independentemente do momento em que o PIX foi feito.</p>"
+  },
+  {
+    "question": "Por que é melhor entrar nos projetos especiais logo no início do ano?",
+    "answerHtml": "<p>Os <strong>projetos especiais</strong> são planejados para começar no início do ano, com a cota total <strong>parcelada mês a mês</strong>, justamente para não pesar no orçamento de ninguém.</p><p>Quem entra apenas no final do ciclo precisa concentrar o valor em menos parcelas (ou em uma única entrada), o que torna a cota relativa <strong>mais alta</strong> e pode gerar um desembolso maior de uma vez.</p><p>Por isso, sempre que possível, priorize a entrada <strong>logo no início do ano</strong>: assim você parcela sua cota com tranquilidade e chega ao sorteio com tudo pago, sem grandes apertos.</p>"
   },
   {
     "question": "Posso desistir ou pedir devolução de pagamentos antecipados?",
