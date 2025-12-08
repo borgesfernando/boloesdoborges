@@ -212,6 +212,10 @@
     "answerHtml": "<p>🤖 Usamos IA para apoiar as escolhas com base em dados — <strong>sem prometer acertos</strong> — e generalizamos para todas as modalidades.</p><ul><li><strong>Estatística vs LSTM (alto nível):</strong> combinamos <em>estatística descritiva</em> (frequências/tendências do histórico) com <em>predições LSTM</em> (probabilidades aprendidas no tempo), de forma complementar e calibrada.</li><li><strong>Pool por faixas:</strong> selecionamos números fortes por blocos/faixas para formar um conjunto base.</li><li><strong>Lotes com fixa exclusiva:</strong> criamos subgrupos com uma fixa por lote para aumentar a diversidade.</li><li><strong>Semelhança controlada:</strong> limitamos o quanto dois jogos podem se parecer entre si e com o histórico.</li><li><strong>Bloqueios e variações:</strong> bloqueios hierárquicos quando há tamanhos diferentes e variações locais opcionais sem piorar a qualidade.</li></ul><p>Detalhes na página <a href=\"ia.html\" target=\"_blank\" rel=\"noopener noreferrer\">IA nos Projetos</a>.</p>"
   },
   {
+    "question": "Já tenho cadastro na comunidade e já participo de outros projetos. Preciso fazer novo cadastro?",
+    "answerHtml": "<p>Pessoas que já são cadastradas na comunidade ou já participam de outros projetos, basta fazer o PIX no valor exato e no dia correto do projeto desejado.</p>"
+  },
+  {
     "question": "Ainda tenho dúvidas. O que faço?",
     "answerHtml": "<p>Entre em contato com o organizador <a href=\"mailto:correiodofernando@gmail.com\">por e‑mail</a>.</p>"
   }
