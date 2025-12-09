@@ -164,6 +164,14 @@
     "answerHtml": "<p>Você recebe em seu e‑mail um link exclusivo com todos os dados de pagamentos, cotas e resultados. Também pode acessar pelo seu Drive em \"Compartilhados comigo\".</p>"
   },
   {
+    "question": "Como e quando as planilhas são atualizadas?",
+    "answerHtml": "<p><strong>Atualização contínua</strong>: todas as planilhas oficiais ficam no Google Drive e refletem automaticamente as movimentações de cada projeto.</p><ul><li><strong>Projetos especiais</strong>: consolidados nos <em>dias do cronograma</em> (ex.: 7, 8, 9 ou 10) para registrar pagamentos de parcelas e saldo de cada caixinha.</li><li><strong>Projetos mensais</strong>: ajustadas <strong>diariamente às 22h</strong>, logo após o fechamento do caixa do dia, incluindo conferência de resultados e reaplicações.</li><li><strong>Projetos estratégicos</strong>: atualizadas <strong>a cada novo participante confirmado</strong> e novamente após o sorteio, junto com a conferência automatizada.</li></ul><p>Todo o fluxo é integrado à <strong>API oficial da Caixa</strong>: assim que os resultados são liberados, o sistema importa os dados, confere os jogos e atualiza prêmios, pagamentos e status nas planilhas em poucos minutos.</p>"
+  },
+  {
+    "question": "Em nome de quem as cotas são registradas?",
+    "answerHtml": "<p>As cotas são registradas no nome do <strong>titular da chave PIX</strong> que realizou o pagamento, exatamente como aparece no comprovante bancário.</p><p>Quando duas ou mais pessoas dividem uma cota, o organizador pode ajustar a identificação no documento oficial para refletir quem representa aquele percentual, desde que a solicitação seja feita antes do fechamento da planilha.</p><p>Esse procedimento garante rastreabilidade dos aportes, facilita auditorias e assegura que os comprovantes reflitam quem realmente responde por cada fração do bolão.</p>"
+  },
+  {
     "question": "Como funciona a prestação de contas?",
     "answerHtml": "<p>Transparência com documentos oficiais e <strong>trilhas de acesso</strong> conferíveis.</p><ul><li><strong>Canais:</strong> e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li><strong>Segurança:</strong> acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li><strong>LGPD e privacidade:</strong> minimização de dados e exposição controlada.</li><li><strong>Cronograma:</strong> fechamento de cotas → registro das apostas → resultados → prestação final.</li><li><strong>O que você recebe:</strong> links oficiais, PDFs, planilhas e comprovações auditáveis.</li></ul><p>Detalhes e exemplos em <a href=\"prest.html\" target=\"_blank\" rel=\"noopener noreferrer\">Prestação de Contas</a>.</p>"
   },
