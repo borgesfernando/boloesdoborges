@@ -152,6 +152,10 @@
     "answerHtml": "<p>Nenhum participante fica de fora.</p><p>Se preferir não preencher (ou se estiver sem tempo), basta avisar o Administrador: ele utilizará os <strong>algoritmos avançados</strong> e as regras táticas do projeto para montar as dezenas na sua aba automaticamente.</p><p>O processo segue o mesmo padrão de conferência e transparência, com registro na planilha e envio dos comprovantes junto ao restante do grupo.</p>"
   },
   {
+    "question": "Não estou conseguindo preencher minhas dezenas. O que pode ser?",
+    "answerHtml": "<p>Verifique estes pontos antes de solicitar suporte:</p><ul><li><strong>Conta correta</strong>: o acesso de edição é liberado apenas para o <strong>Gmail usado no cadastro</strong>. Faça login nele antes de abrir a planilha.</li><li><strong>Pagamento confirmado</strong>: a aba personalizada só é liberada após o PIX ser registrado no cronograma do projeto.</li></ul><p>Se depois dessas verificações o problema continuar, envie uma mensagem ao Administrador (WhatsApp ou e-mail) informando o projeto e anexando prints/erros para agilizar o desbloqueio.</p>"
+  },
+  {
     "question": "Recebo cópia física dos bilhetes?",
     "answerHtml": "<p>🧾 Não. As apostas são digitais, registradas no aplicativo oficial da Caixa e/ou no site <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a>. Os comprovantes e recibos digitais são compartilhados por e‑mail e no Drive do projeto.</p>"
   },
