@@ -181,7 +181,7 @@
   },
   {
     "question": "Em nome de quem as cotas são registradas?",
-    "answerHtml": "<p>As cotas são registradas no nome do <strong>titular da chave PIX</strong> que realizou o pagamento, exatamente como aparece no comprovante bancário.</p><p>Quando duas ou mais pessoas dividem uma cota, o organizador pode ajustar a identificação no documento oficial para refletir quem representa aquele percentual, desde que a solicitação seja feita antes do fechamento da planilha.</p><p>Esse procedimento garante rastreabilidade dos aportes, facilita auditorias e assegura que os comprovantes reflitam quem realmente responde por cada fração do bolão.</p>"
+    "answerHtml": "<p>As cotas são registradas no nome do <strong>titular da chave PIX</strong> que realizou o pagamento, exatamente como aparece no comprovante bancário.</p><p><strong>Não trabalhamos com subcotas, meias cotas ou frações formais.</strong> Cada inscrição corresponde a uma cota integral (considerando os ajustes de correção comunicados ao grupo).</p><p>Se quiser participar com valor menor, combine com amigos, familiares ou integrantes da comunidade para dividir entre vocês a cota integral corrigida e definam <strong>uma única pessoa responsável</strong> — será o nome desse responsável que aparecerá no documento oficial e cuidará da redistribuição do eventual prêmio.</p><p>O administrador pode ajustar a identificação dessa cota compartilhada antes do fechamento da planilha, desde que a solicitação seja feita pelo responsável indicado.</p><p>Esse procedimento garante rastreabilidade dos aportes, facilita auditorias e assegura que os comprovantes reflitam quem realmente responde por cada fração privada do acordo entre vocês.</p>"
   },
   {
     "question": "Como funciona a prestação de contas?",
