@@ -144,6 +144,14 @@
     "answerHtml": "<p>🧠 Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e/ou no site <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a>, com comprovantes digitais compartilhados.</li></ul>"
   },
   {
+    "question": "Posso preencher minhas dezenas nos projetos especiais?",
+    "answerHtml": "<p><strong>Sim.</strong> Depois que o seu pagamento é confirmado, você recebe por e-mail o link da planilha oficial daquele projeto especial.</p><ul><li>Há uma <strong>aba exclusiva</strong> com o seu nome, criada pelo Administrador.</li><li>Somente você (logado com o <strong>Gmail cadastrado</strong>) consegue editar essa aba, garantindo privacidade e trilha de auditoria.</li><li>Os espaços de preenchimento são padronizados e sinalizados com instruções para evitar erros de digitação.</li></ul><p>Assim, você escolhe suas combinações favoritas com segurança e vê imediatamente como elas entram no conjunto total de jogos.</p>"
+  },
+  {
+    "question": "E se eu não quiser ou não puder preencher minha aba?",
+    "answerHtml": "<p>Nenhum participante fica de fora.</p><p>Se preferir não preencher (ou se estiver sem tempo), basta avisar o Administrador: ele utilizará os <strong>algoritmos avançados</strong> e as regras táticas do projeto para montar as dezenas na sua aba automaticamente.</p><p>O processo segue o mesmo padrão de conferência e transparência, com registro na planilha e envio dos comprovantes junto ao restante do grupo.</p>"
+  },
+  {
     "question": "Recebo cópia física dos bilhetes?",
     "answerHtml": "<p>🧾 Não. As apostas são digitais, registradas no aplicativo oficial da Caixa e/ou no site <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a>. Os comprovantes e recibos digitais são compartilhados por e‑mail e no Drive do projeto.</p>"
   },
