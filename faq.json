@@ -224,6 +224,14 @@
     "answerHtml": "<p>Prêmios significativos são <strong>divididos proporcionalmente</strong> entre os participantes e o administrador, com base no número de cotas adquiridas, conforme registrado na prestação de contas de cada projeto.</p>"
   },
   {
+    "question": "Em caso de um grande prêmio, como será pago ao participante?",
+    "answerHtml": "<p>Se o bolão for contemplado, o Administrador receberá o valor do prêmio diretamente na Caixa, pois as apostas estão todas em seu nome.</p><p>No momento do recebimento, o Administrador já levará a <strong>Relação de Participantes</strong>, contendo todas as cotas e seus responsáveis.</p><p>O valor do prêmio será dividido pelo número de cotas constante na Relação de Participantes (incluindo o Administrador). O valor correspondente a cada cota será repassado diretamente ao responsável.</p>"
+  },
+  {
+    "question": "A distribuição do prêmio entre os cotistas gera novo imposto? Como declarar?",
+    "answerHtml": "<p>Em prêmios de loteria, a tributação é <strong>exclusiva na fonte</strong> (retida pela Caixa) e o titular da aposta recebe o valor já líquido, conforme a legislação vigente.</p><p>Quando se trata de <strong>aposta conjunta</strong>, o repasse da parte de cada cotista <strong>não configura nova incidência tributária</strong>, desde que haja documentação idônea que comprove a aposta conjunta (como a Relação de Participantes, cotas e comprovantes).</p><p><strong>Para manter rastreabilidade</strong>, a orientação é que o Administrador e os participantes registrem a operação em suas declarações (prêmio e repasses), conforme as regras aplicáveis a apostas conjuntas. Em caso de dúvida, consulte seu contador.</p>"
+  },
+  {
     "question": "Há impostos sobre os prêmios?",
     "answerHtml": "<p>🧾 Os prêmios de loterias estão sujeitos a tributação exclusiva na fonte conforme a legislação vigente. Nos <strong>repasses proporcionais entre cotistas</strong> em apostas conjuntas, observamos as <a href=\"https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9580.htm#:~:text=Dos%20pr%C3%AAmios%20e%20dos%20sorteios%20em%20geral\" target=\"_blank\" rel=\"noopener noreferrer\">orientações da Receita Federal do Brasil para apostas conjuntas</a>, assegurando a legalidade do procedimento e a correta classificação na declaração de cada participante.</p>"
   },
