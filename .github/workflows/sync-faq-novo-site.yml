@@ -1,0 +1,44 @@
+name: Sincronizar FAQ com novo-site
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "faq.json"
+
+permissions:
+  contents: write
+
+jobs:
+  sync-faq:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout boloesdoborges
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout novo-site
+        uses: actions/checkout@v4
+        with:
+          repository: borgesfernando/novo-site
+          token: ${{ secrets.NOVO_SITE_SYNC_TOKEN }}
+          path: novo-site
+
+      - name: Copiar faq.json para novo-site
+        run: |
+          cp faq.json novo-site/src/data/faq.json
+
+      - name: Commit e push se houver mudanças
+        working-directory: novo-site
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/faq.json
+            git commit -m "chore: sincronizar faq.json a partir do boloesdoborges"
+            git push origin master
+          else
+            echo "Sem mudanças para sincronizar"
+          fi
+

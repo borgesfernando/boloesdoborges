@@ -164,6 +164,27 @@
 
 
   <script>
+    const FAQ_LINK_MAP = {
+      ROTA_ESPECIAL_MEGA_VIRADA: 'templates/especiais.html?id=mega-virada',
+      ROTA_ESPECIAL_QUINA_SAO_JOAO: 'templates/especiais.html?id=quina-saojoao',
+      ROTA_ESPECIAL_LF_INDEPENDENCIA: 'templates/especiais.html?id=lf-independencia',
+      ROTA_ESPECIAL_DS_PASCOA: 'templates/especiais.html?id=ds-pascoa',
+      ROTA_MENSAL_LF: 'templates/mensais.html?id=lf-mensal',
+      ROTA_MENSAL_QUINA: 'templates/mensais.html?id=quina-mensal',
+      ROTA_ACUMULADA_MEGA: 'templates/acumulados.html?id=mega-acumulada',
+      ROTA_ACUMULADA_QUINA: 'templates/acumulados.html?id=quina-acumulada',
+      ROTA_PRESTACAO_CONTAS: 'prest.html',
+      ROTA_IA: 'ia.html'
+    };
+
+    function resolveFaqLinks(html) {
+      if (!html || typeof html !== 'string') return html;
+      return html.replace(/href="(ROTA_[A-Z0-9_]+)"/g, (match, key) => {
+        const target = FAQ_LINK_MAP[key];
+        return target ? `href="${target}"` : match;
+      });
+    }
+
     async function loadFaqFromJson() {
       const container = document.getElementById('faq-container');
       if (!container) return false;
@@ -183,7 +204,7 @@
 
           const panel = document.createElement('div');
           panel.className = 'panel';
-          panel.innerHTML = (item.answerHtml || '').toString();
+          panel.innerHTML = resolveFaqLinks((item.answerHtml || '').toString());
 
           container.appendChild(btn);
           container.appendChild(panel);
