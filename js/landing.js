@@ -54,7 +54,19 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
   infoDiv.className = 'project-info';
 
   const h3 = document.createElement('h3');
-  h3.textContent = projeto.nome || projeto.id;
+  const nomeProjeto = projeto.nome || projeto.id;
+  const templateFile = tipo === 'especiais'
+    ? 'especiais.html'
+    : tipo === 'mensais'
+      ? 'mensais.html'
+      : 'acumulados.html';
+  const href = `templates/${templateFile}?id=${projeto.id}`;
+
+  const titleLink = document.createElement('a');
+  titleLink.href = href;
+  titleLink.textContent = nomeProjeto;
+  titleLink.className = 'project-title-link';
+  h3.appendChild(titleLink);
   infoDiv.appendChild(h3);
 
   const detalhes = document.createElement('p');
@@ -83,14 +95,9 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
     infoDiv.appendChild(detalhes);
   }
 
-  const templateFile = tipo === 'especiais'
-    ? 'especiais.html'
-    : tipo === 'mensais'
-      ? 'mensais.html'
-      : 'acumulados.html';
   const link = document.createElement('a');
   link.className = `btn ${tipoCor}`;
-  link.href = `templates/${templateFile}?id=${projeto.id}`;
+  link.href = href;
   // Mesmo texto de botão usado anteriormente
   if (tipo === 'mensais' || tipo === 'acumulados') {
     link.textContent = 'Mais informações';

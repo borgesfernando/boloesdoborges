@@ -363,6 +363,15 @@ footer h3 {
   margin-bottom: 0.5rem;
 }
 
+.project-info h3 .project-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-info h3 .project-title-link:hover {
+  text-decoration: underline;
+}
+
 .project-date {
   color: #666;
   font-size: 0.9rem;
