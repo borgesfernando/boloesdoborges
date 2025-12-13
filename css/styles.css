@@ -309,6 +309,10 @@ footer h3 {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.project-card.linha-card {
+  align-items: flex-start;
+}
+
 /* Estado esmaecido para projetos fora do período */
 .project-card.inativo {
   opacity: 0.45;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Linha de Projetos Estratégicos – concursos acumulados da Mega Sena e Quina com janelas curtas e comunicação dedicada.">
+  <title>Projetos Estratégicos (Acumulados) - Super Bolão 2025</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/landing.js"></script>
+  <script defer src="js/year.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Projetos Estratégicos (Acumulados)</h1>
+      <p>Abertos quando Mega-Sena ou Quina atingem premiações relevantes, com janelas curtas e comunicação dedicada na comunidade.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <p>
+          Nestes projetos, os convites são enviados somente quando os prêmios acumulam acima dos valores de referência.
+          Veja abaixo os concursos monitorados e clique em cada card para entender as regras.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Concursos Acumulados em <span id="ano-atual-acumulados">2025</span></h2>
+        <div class="project-grid" id="lista-acumulados-linha"></div>
+      </div>
+
+      <div class="card">
+        <a href="index.html" class="btn sb2025">⬅️ Voltar para a Página Principal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h3>Junte-se à nossa comunidade!</h3>
+      <p style="margin: 1rem 0;">Acompanhe todas as atualizações e participe dos nossos projetos</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar na Comunidade</a>
+      <p style="margin-top: 1.5rem;">© <span id="ano-copyright">2025</span> Super Bolão™ - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const spanAno = document.getElementById('ano-atual-acumulados');
+      if (spanAno) {
+        spanAno.textContent = new Date().getFullYear();
+      }
+
+      if (typeof PROJETOS === 'undefined' || !PROJETOS.acumulados || !Array.isArray(PROJETOS.acumulados.projetos)) return;
+
+      const container = document.getElementById('lista-acumulados-linha');
+      if (!container) return;
+
+      const hoje = new Date();
+      hoje.setHours(0, 0, 0, 0);
+
+      PROJETOS.acumulados.projetos.forEach(p => {
+        container.appendChild(criarCardProjeto(p, 'acumulados', hoje));
+      });
+    });
+  </script>
+</body>
+</html>
+

@@ -20,6 +20,33 @@ function getTipoCorFromId(id) {
   }[prefix] || prefix);
 }
 
+function obterEspeciaisOrdenados(hojeLimpo) {
+  if (typeof PROJETOS === 'undefined' || !PROJETOS.especiais || !Array.isArray(PROJETOS.especiais.projetos)) {
+    return { especiaisOrdenados: [], especiaisComData: [] };
+  }
+
+  const hojeBase = hojeLimpo instanceof Date ? new Date(hojeLimpo.getTime()) : new Date();
+  hojeBase.setHours(0, 0, 0, 0);
+
+  const especiaisComData = PROJETOS.especiais.projetos.map(p => ({
+    ...p,
+    dataLimiteObj: parseDataBR(p.dataLimite)
+  }));
+
+  const ativos = especiaisComData
+    .filter(p => p.dataLimiteObj && p.dataLimiteObj >= hojeBase)
+    .sort((a, b) => a.dataLimiteObj - b.dataLimiteObj);
+
+  const passados = especiaisComData
+    .filter(p => p.dataLimiteObj && p.dataLimiteObj < hojeBase)
+    .sort((a, b) => b.dataLimiteObj - a.dataLimiteObj);
+
+  return {
+    especiaisOrdenados: [...ativos, ...passados],
+    especiaisComData
+  };
+}
+
 function criarCardProjeto(projeto, tipo, hojeLimpo) {
   const card = document.createElement('div');
   const tipoCor = getTipoCorFromId(projeto.id);
@@ -162,24 +189,12 @@ function renderizarProjetosResumo() {
   const hoje = new Date();
   hoje.setHours(0, 0, 0, 0);
 
+  const { especiaisOrdenados, especiaisComData } = obterEspeciaisOrdenados(hoje);
+
   // Especiais ordenados por data limite (ativos primeiro)
   const especiaisContainer = document.getElementById('cards-especiais-resumo');
-  if (especiaisContainer && PROJETOS.especiais && Array.isArray(PROJETOS.especiais.projetos)) {
-    const especiaisComData = PROJETOS.especiais.projetos.map(p => ({
-      ...p,
-      dataLimiteObj: parseDataBR(p.dataLimite)
-    }));
-
-    const ativos = especiaisComData
-      .filter(p => p.dataLimiteObj && p.dataLimiteObj >= hoje)
-      .sort((a, b) => a.dataLimiteObj - b.dataLimiteObj);
-
-    const passados = especiaisComData
-      .filter(p => p.dataLimiteObj && p.dataLimiteObj < hoje)
-      .sort((a, b) => b.dataLimiteObj - a.dataLimiteObj);
-
-    const ordenados = [...ativos, ...passados];
-    ordenados.forEach(p => {
+  if (especiaisContainer && especiaisOrdenados.length) {
+    especiaisOrdenados.forEach(p => {
       especiaisContainer.appendChild(criarCardProjeto(p, 'especiais', hoje));
     });
 
@@ -202,6 +217,110 @@ function renderizarProjetosResumo() {
       acumuladosContainer.appendChild(criarCardProjeto(p, 'acumulados', hoje));
     });
   }
+}
+
+function renderizarLinhasPrincipais() {
+  if (typeof PROJETOS === 'undefined') return;
+
+  const container = document.getElementById('cards-linhas-principais');
+  if (!container) return;
+
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+
+  const { especiaisOrdenados } = obterEspeciaisOrdenados(hoje);
+  const especiaisAtivos = especiaisOrdenados.filter(p => p.dataLimiteObj && p.dataLimiteObj >= hoje);
+  const proximoEspecial = especiaisAtivos[0];
+
+  const totalMensais = PROJETOS.mensais && Array.isArray(PROJETOS.mensais.projetos)
+    ? PROJETOS.mensais.projetos.length
+    : 0;
+
+  const totalAcumulados = PROJETOS.acumulados && Array.isArray(PROJETOS.acumulados.projetos)
+    ? PROJETOS.acumulados.projetos.length
+    : 0;
+
+  function criarCardLinha(titulo, descricao, detalheDinamico, href, classeBtn) {
+    const card = document.createElement('div');
+    card.className = 'project-card linha-card';
+
+    const info = document.createElement('div');
+    info.className = 'project-info';
+
+    const h3 = document.createElement('h3');
+    h3.textContent = titulo;
+    info.appendChild(h3);
+
+    const pDesc = document.createElement('p');
+    pDesc.className = 'projects-subtitle';
+    pDesc.textContent = descricao;
+    info.appendChild(pDesc);
+
+    if (detalheDinamico) {
+      const pDet = document.createElement('p');
+      pDet.className = 'project-date';
+      pDet.textContent = detalheDinamico;
+      info.appendChild(pDet);
+    }
+
+    const link = document.createElement('a');
+    link.href = href;
+    link.className = `btn ${classeBtn || 'sb2025'}`;
+    link.textContent = 'Ver projetos';
+
+    card.appendChild(info);
+    card.appendChild(link);
+
+    return card;
+  }
+
+  const descEspeciais = 'Grandes concursos da Caixa com planejamento anual, cotas programadas e cronograma bem definido.';
+  let detalheEspeciais = '';
+  if (proximoEspecial && proximoEspecial.dataLimite) {
+    detalheEspeciais = `Próximo bolão em aberto: ${proximoEspecial.nome} (até ${proximoEspecial.dataLimite}).`;
+  } else if (especiaisOrdenados.length) {
+    detalheEspeciais = 'No momento não há bolão especial em aberto. Aguarde as próximas chamadas.';
+  }
+
+  const descMensais = 'Projetos contínuos, ideais para quem gosta de acompanhar resultados com disciplina ao longo do ano.';
+  const detalheMensais = totalMensais > 0
+    ? `${totalMensais} projeto${totalMensais > 1 ? 's' : ''} mensal(is) em funcionamento.`
+    : '';
+
+  const descAcumulados = 'Projetos estratégicos ativados apenas quando os prêmios da Mega ou Quina atingem valores relevantes.';
+  const detalheAcumulados = totalAcumulados > 0
+    ? `Monitoramos ${totalAcumulados} concurso${totalAcumulados > 1 ? 's' : ''} acumulado(s).`
+    : '';
+
+  container.appendChild(
+    criarCardLinha(
+      'Projetos Especiais',
+      descEspeciais,
+      detalheEspeciais,
+      'especiais.html',
+      'lotofacil'
+    )
+  );
+
+  container.appendChild(
+    criarCardLinha(
+      'Projetos Mensais',
+      descMensais,
+      detalheMensais,
+      'mensais.html',
+      'quina'
+    )
+  );
+
+  container.appendChild(
+    criarCardLinha(
+      'Projetos Estratégicos (Acumulados)',
+      descAcumulados,
+      detalheAcumulados,
+      'acumulados.html',
+      'mega'
+    )
+  );
 }
 
 async function renderizarFaqTeaser() {
@@ -249,6 +368,7 @@ function ajustarAnosLanding() {
 
 document.addEventListener('DOMContentLoaded', () => {
   ajustarAnosLanding();
+  renderizarLinhasPrincipais();
   renderizarProjetosResumo();
   renderizarFaqTeaser();
 });
