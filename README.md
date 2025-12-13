@@ -51,6 +51,35 @@ A comunidade “Bolões do Borges” no WhatsApp integra todos os projetos em um
 
 Fernando Borges é profissional de Segurança da Informação, especialista em cibersegurança e entusiasta de IA aplicada às loterias. Ele coordena os bolões, define métodos, cuida da prestação de contas e atende os participantes.
 
+## 🔄 FAQ como fonte de verdade
+
+- O arquivo `faq.json` na raiz deste repositório é a **fonte principal** de perguntas e respostas.
+- O novo site (repositório `borgesfernando/novo-site`) consome exatamente o mesmo `faq.json`, sincronizado por GitHub Actions.
+- Para links internos (rotas de páginas), o `faq.json` usa identificadores neutros como `ROTA_ESPECIAL_MEGA_VIRADA`, `ROTA_MENSAL_LF`, `ROTA_PRESTACAO_CONTAS`, etc.; cada projeto mapeia esses identificadores para suas próprias URLs.
+
+### Fluxo de sincronização
+
+1. Você atualiza o conteúdo de `faq.json` neste repositório e faz `git push` na branch `main`.
+2. O workflow `.github/workflows/sync-faq-novo-site.yml` é acionado e:
+   - faz checkout do repositório `borgesfernando/novo-site`;
+   - copia o `faq.json` para `novo-site/src/data/faq.json`;
+   - comita e faz push na branch `master` do `novo-site`.
+3. O push no `novo-site` dispara o workflow de deploy daquele repositório, que atualiza a FAQ na VPS.
+
+### Requisitos para o workflow
+
+- No repositório **boloesdoborges**, é necessário um secret `NOVO_SITE_SYNC_TOKEN` com um Personal Access Token do GitHub que tenha permissão de escrita no repositório `borgesfernando/novo-site`.
+- Não é preciso configurar nada no `novo-site` além do workflow de deploy já existente.
+
+Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter o novo site e a VPS sincronizados.
+
+## 🚨 Alerta automático da Mega acumulada
+
+- O script `scripts/update-mega-status.js` consulta a API oficial da Caixa (`https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena`) e grava o resultado consolidado em `data/mega-status.json`.
+- O workflow `.github/workflows/update-mega-status.yml` roda **de terça a domingo às 01h15 UTC** (22h15 de segunda a sábado em Brasília) e ao ser disparado manualmente via `workflow_dispatch`. Ele atualiza o JSON sempre após a atualização oficial da Caixa.
+- Sempre que `data/mega-status.json` muda, o workflow `.github/workflows/sync-mega-status-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mega-status.json` – assim o banner automático aparece tanto na landing antiga (VPS) quanto no novo site Astro.
+- A home (`index.html`) e a página `templates/acumulados.html?id=mega-acumulada` leem esse JSON e exibem o destaque apenas quando `valorEstimadoProximoConcurso` atinge ou supera o mínimo configurado em `js/config.js`/`data/projetos.json`.
+
 ## 👀 Pronto para entrar?
 
 - Cadastre-se no [formulário de interesse](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
