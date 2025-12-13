@@ -111,7 +111,7 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
   // Badge de projeto finalizado (visível somente em cards marcados como inativos)
   const badgeFinalizado = document.createElement('span');
   badgeFinalizado.className = 'badge-finalizado';
-  badgeFinalizado.textContent = 'Projeto finalizado';
+  badgeFinalizado.textContent = 'Aguarde a nova edição';
   card.appendChild(badgeFinalizado);
 
   // Tooltip de contagem regressiva para especiais ativos
