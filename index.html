@@ -54,6 +54,34 @@
   </header>
 
   <main>
+    <div class="container">
+      <!-- Aviso para novos usuários -->
+      <div class="card" id="aviso-novos">
+        <p style="display:flex; align-items:center; gap:.6rem; margin:0;">
+          <span style="display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:50%; background: rgba(0,119,200,.12); color: var(--secondary); font-weight:700;">i</span>
+          <span><span id="saudacao-hora">Olá</span>! Se você é novo por aqui, consulte as <a href="faq.html" style="color: var(--secondary); font-weight:600; text-decoration: none; border-bottom: 2px solid rgba(0,119,200,.25);" target="_blank" rel="noopener noreferrer">perguntas mais frequentes</a>.</span>
+        </p>
+      </div>
+
+      <!-- Box de comunidade confiável -->
+      <div class="card comunidade-info">
+        <h2>SUA COMUNIDADE CONFIÁVEL!</h2>
+        <div class="comunidade-conteudo">
+          <p>🤝 <strong>Sem fins lucrativos:</strong> Confiança e união para ganharmos juntos!</p>
+          <p>💻 <strong>Tecnologia de ponta:</strong> IA e Machine Learning para jogos mais precisos! <a href="ia.html">Clique aqui para saber mais</a></p>
+          <p>🔎 <strong>Controle rigoroso:</strong> <a href="prest.html">Prestação de contas detalhada e acessível</a>!</p>
+          <p>🌟 <strong>15 anos de história:</strong> Transparência e tradição na organização!</p>
+          <p>🍀 <strong>Não fique de fora:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" target="_blank" rel="noopener noreferrer">Cadastre-se</a> e participe de nossa comunidade!</p>
+        </div>
+      </div>
+
+      <!-- Aviso de prazo dos especiais (sticky) -->
+      <div id="avisoTopo" class="aviso-topo" style="display: none;">
+        <span id="mensagemAviso"></span>
+        <a id="btnParticipar" href="#" class="btn-aviso">Quero participar!</a>
+      </div>
+    </div>
+
     <!-- Seção: Como funciona -->
     <section id="como-funciona" class="section">
       <div class="container">
@@ -207,8 +235,23 @@
       <p style="margin-top: 1.5rem; font-style: italic; text-align: center;">
         Transparência e Confiança são os alicerces de um Bolão vencedor 🏆
       </p>
+
+      <!-- Botão adicional de FAQ, como na home anterior -->
+      <a href="faq.html" class="btn sb2025" style="margin-top: 1.5rem; display: inline-block;" target="_blank" rel="noopener noreferrer">Perguntas Frequentes</a>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      try {
+        var h = new Date().getHours();
+        var txt = (h >= 5 && h < 12) ? 'Bom dia'
+                : (h >= 12 && h < 18) ? 'Boa tarde'
+                : 'Boa noite';
+        var el = document.getElementById('saudacao-hora');
+        if (el) el.textContent = txt;
+      } catch (e) { /* no-op */ }
+    })();
+  </script>
 </body>
 </html>
-

@@ -20,10 +20,35 @@ function getTipoCorFromId(id) {
   }[prefix] || prefix);
 }
 
-function criarCardProjeto(projeto, tipo) {
+function criarCardProjeto(projeto, tipo, hojeLimpo) {
   const card = document.createElement('div');
   const tipoCor = getTipoCorFromId(projeto.id);
   card.className = `project-card ${tipoCor}`;
+
+  let ativo = true;
+  let diasRestantes = null;
+
+  // Regras de inatividade e contagem regressiva para especiais,
+  // espelhando o comportamento da home anterior.
+  if (tipo === 'especiais' && hojeLimpo instanceof Date) {
+    const mesAtual = hojeLimpo.getMonth() + 1;
+    const inicio = parseInt(projeto.mesInicio, 10);
+    const fim = parseInt(projeto.mesFim, 10);
+    if (!Number.isNaN(inicio) && !Number.isNaN(fim)) {
+      ativo = mesAtual >= inicio && mesAtual <= fim;
+    }
+    if (!ativo) {
+      card.classList.add('inativo');
+    } else if (projeto.dataLimite) {
+      const limite = parseDataBR(projeto.dataLimite);
+      if (limite) {
+        const base = new Date(hojeLimpo.getTime());
+        base.setHours(0, 0, 0, 0);
+        const MS_DIA = 1000 * 60 * 60 * 24;
+        diasRestantes = Math.max(0, Math.ceil((limite - base) / MS_DIA));
+      }
+    }
+  }
 
   const infoDiv = document.createElement('div');
   infoDiv.className = 'project-info';
@@ -63,7 +88,6 @@ function criarCardProjeto(projeto, tipo) {
     : tipo === 'mensais'
       ? 'mensais.html'
       : 'acumulados.html';
-
   const link = document.createElement('a');
   link.className = `btn ${tipoCor}`;
   link.href = `templates/${templateFile}?id=${projeto.id}`;
@@ -72,7 +96,52 @@ function criarCardProjeto(projeto, tipo) {
   card.appendChild(infoDiv);
   card.appendChild(link);
 
+  // Badge de projeto finalizado (visível somente em cards marcados como inativos)
+  const badgeFinalizado = document.createElement('span');
+  badgeFinalizado.className = 'badge-finalizado';
+  badgeFinalizado.textContent = 'Projeto finalizado';
+  card.appendChild(badgeFinalizado);
+
+  // Tooltip de contagem regressiva para especiais ativos
+  if (tipo === 'especiais' && ativo && diasRestantes !== null) {
+    const badgeContagem = document.createElement('span');
+    badgeContagem.className = 'badge-contagem';
+    badgeContagem.textContent =
+      `⏳ Restam ${diasRestantes} dia${diasRestantes === 1 ? '' : 's'} para encerrar este bolão!`;
+    card.appendChild(badgeContagem);
+  }
+
   return card;
+}
+
+function configurarAvisoTopo(especiaisComData, hoje) {
+  const aviso = document.getElementById('avisoTopo');
+  const msgEl = document.getElementById('mensagemAviso');
+  const btn = document.getElementById('btnParticipar');
+  if (!aviso || !msgEl || !btn || !Array.isArray(especiaisComData)) return;
+
+  const futuros = especiaisComData
+    .filter(p => p.dataLimiteObj && p.dataLimiteObj > hoje)
+    .sort((a, b) => a.dataLimiteObj - b.dataLimiteObj);
+
+  const proximo = futuros[0];
+  if (!proximo) {
+    aviso.style.display = 'none';
+    return;
+  }
+
+  const MS_DIA = 1000 * 60 * 60 * 24;
+  const diasRestantes = Math.ceil((proximo.dataLimiteObj - hoje) / MS_DIA);
+
+  if (diasRestantes > 0 && diasRestantes <= 15) {
+    const mensagem = `⏳ Faltam ${diasRestantes} dia${diasRestantes > 1 ? 's' : ''} para garantir sua cota no Bolão "${proximo.nome}"!` +
+      `<br><span class="aviso-fechamento">Fechamento no dia ${proximo.dataLimite.replace(/(\\d{2})\\/(\\d{2})\\/(\\d{4})/, '$1/$2/$3')}!</span>`;
+    msgEl.innerHTML = mensagem;
+    btn.href = `templates/especiais.html?id=${proximo.id}`;
+    aviso.style.display = 'flex';
+  } else {
+    aviso.style.display = 'none';
+  }
 }
 
 function renderizarProjetosResumo() {
@@ -99,15 +168,18 @@ function renderizarProjetosResumo() {
 
     const ordenados = [...ativos, ...passados];
     ordenados.forEach(p => {
-      especiaisContainer.appendChild(criarCardProjeto(p, 'especiais'));
+      especiaisContainer.appendChild(criarCardProjeto(p, 'especiais', hoje));
     });
+
+    // Aviso fixo de prazo dos especiais (até 15 dias antes do fechamento)
+    configurarAvisoTopo(especiaisComData, hoje);
   }
 
   // Mensais
   const mensaisContainer = document.getElementById('cards-mensais-resumo');
   if (mensaisContainer && PROJETOS.mensais && Array.isArray(PROJETOS.mensais.projetos)) {
     PROJETOS.mensais.projetos.forEach(p => {
-      mensaisContainer.appendChild(criarCardProjeto(p, 'mensais'));
+      mensaisContainer.appendChild(criarCardProjeto(p, 'mensais', hoje));
     });
   }
 
@@ -115,7 +187,7 @@ function renderizarProjetosResumo() {
   const acumuladosContainer = document.getElementById('cards-acumulados-resumo');
   if (acumuladosContainer && PROJETOS.acumulados && Array.isArray(PROJETOS.acumulados.projetos)) {
     PROJETOS.acumulados.projetos.forEach(p => {
-      acumuladosContainer.appendChild(criarCardProjeto(p, 'acumulados'));
+      acumuladosContainer.appendChild(criarCardProjeto(p, 'acumulados', hoje));
     });
   }
 }
@@ -168,4 +240,3 @@ document.addEventListener('DOMContentLoaded', () => {
   renderizarProjetosResumo();
   renderizarFaqTeaser();
 });
-
