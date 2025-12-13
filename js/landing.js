@@ -1,5 +1,5 @@
 // landing.js
-// Script da nova landing (landing-v2.html).
+// Script da landing principal (index.html).
 // Usa PROJETOS (js/config.js) e faq.json como fontes de verdade.
 
 function parseDataBR(str) {
@@ -91,7 +91,12 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
   const link = document.createElement('a');
   link.className = `btn ${tipoCor}`;
   link.href = `templates/${templateFile}?id=${projeto.id}`;
-  link.textContent = 'Ver detalhes';
+  // Mesmo texto de botão usado anteriormente
+  if (tipo === 'mensais' || tipo === 'acumulados') {
+    link.textContent = 'Mais informações';
+  } else {
+    link.textContent = 'Como Participar';
+  }
 
   card.appendChild(infoDiv);
   card.appendChild(link);
