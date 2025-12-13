@@ -47,6 +47,47 @@ function obterEspeciaisOrdenados(hojeLimpo) {
   };
 }
 
+function formatCurrencyBRL(value) {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(value ?? 0);
+}
+
+async function renderizarMegaAcumuladaAlert() {
+  const container = document.getElementById('mega-acumulada-alert');
+  if (!container) return;
+
+  try {
+    const res = await fetch('data/mega-status.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('Falha ao carregar mega-status');
+    const status = await res.json();
+
+    if (!status?.ativo) {
+      container.style.display = 'none';
+      return;
+    }
+
+    const valorFormatado = formatCurrencyBRL(status.valorEstimadoProximoConcurso || 0);
+    const dataProximo = status.dataProximoConcurso ? `Concurso ${status.concurso ?? ''} em ${status.dataProximoConcurso}` : '';
+
+    container.innerHTML = `
+      <div>
+        <h3>🚨 Mega Sena acumulada ativa!</h3>
+        <p>Prêmio estimado em <strong>${valorFormatado}</strong> ${dataProximo ? `· ${dataProximo}` : ''}</p>
+        <p>Bolão estratégico aberto apenas enquanto a premiação estiver acima de ${status.minimoMilhoes ?? 50} milhões.</p>
+        <div class="mega-alert-actions">
+          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bolão</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn tonal" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
+        </div>
+      </div>
+    `;
+    container.style.display = 'block';
+  } catch (error) {
+    container.style.display = 'none';
+  }
+}
+
 function criarCardProjeto(projeto, tipo, hojeLimpo) {
   const card = document.createElement('div');
   const tipoCor = getTipoCorFromId(projeto.id);
@@ -370,5 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ajustarAnosLanding();
   renderizarLinhasPrincipais();
   renderizarProjetosResumo();
+  renderizarMegaAcumuladaAlert();
   renderizarFaqTeaser();
 });

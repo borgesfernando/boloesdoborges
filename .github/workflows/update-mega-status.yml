@@ -1,0 +1,36 @@
+name: Atualizar mega-status
+
+on:
+  schedule:
+    # 01:15 UTC de terça a domingo → 22:15 BRT de segunda a sábado
+    - cron: '15 1 * * 2-7'
+  workflow_dispatch:
+
+jobs:
+  update-mega-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Atualizar data/mega-status.json
+        run: node scripts/update-mega-status.js
+
+      - name: Commit e push se houver mudanças
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain data/mega-status.json)" ]; then
+            git add data/mega-status.json
+            git commit -m "chore: atualizar data/mega-status.json"
+            git push
+          else
+            echo "Sem alterações em data/mega-status.json"
+          fi

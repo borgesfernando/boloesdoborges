@@ -7,6 +7,7 @@
   <title id="tituloPagina">Bolão Acumulado</title>
   <link rel="stylesheet" href="../css/styles.css">
   <script defer src="../js/config.js"></script>
+  <script defer src="../js/mega-alert.js"></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
@@ -43,6 +44,8 @@
 
   <div class="container">
     <div class="content-card">
+      <div class="mega-alert" id="mega-acumulada-destaque" style="display:none;"></div>
+
       <div class="alert-box">
         <h2>INFORMAÇÕES IMPORTANTES</h2>
         <p>⏰ A entrada em cada bolão finaliza às <strong>18h do dia anterior ao sorteio</strong>.</p>
