@@ -9,6 +9,16 @@ function parseDataBR(str) {
   return new Date(m[3], m[2] - 1, m[1]);
 }
 
+function formatFechamentoDMinusOne(dataProximoConcurso) {
+  const data = parseDataBR(dataProximoConcurso);
+  if (!data) return '';
+  const fechamento = new Date(data);
+  fechamento.setDate(fechamento.getDate() - 1);
+  const day = String(fechamento.getDate()).padStart(2, '0');
+  const month = String(fechamento.getMonth() + 1).padStart(2, '0');
+  return `D - 1 de ${day}/${month} (dia anterior) às 18h`;
+}
+
 function getTipoCorFromId(id) {
   if (!id) return '';
   const prefix = id.split('-')[0];
@@ -69,13 +79,23 @@ async function renderizarMegaAcumuladaAlert() {
     }
 
     const valorFormatado = formatCurrencyBRL(status.valorEstimadoProximoConcurso || 0);
-    const dataProximo = status.dataProximoConcurso ? `Concurso ${status.concurso ?? ''} em ${status.dataProximoConcurso}` : '';
+    const concursoParts = [];
+    if (status.concurso) {
+      concursoParts.push(`Concurso ${status.concurso}`);
+    }
+    if (status.dataProximoConcurso) {
+      concursoParts.push(`em ${status.dataProximoConcurso}`);
+    }
+    const dataProximo = concursoParts.length ? concursoParts.join(' ') : '';
+    const fechamentoTexto = formatFechamentoDMinusOne(status.dataProximoConcurso);
+    const minimoMilhoes = status.minimoMilhoes ?? 50;
 
     container.innerHTML = `
       <div>
-        <h3>🚨 Mega Sena acumulada ativa!</h3>
-        <p>Prêmio estimado em <strong>${valorFormatado}</strong> ${dataProximo ? `· ${dataProximo}` : ''}</p>
-        <p>Bolão estratégico aberto apenas enquanto a premiação estiver acima de ${status.minimoMilhoes ?? 50} milhões.</p>
+        <h3>🚨 Mega Sena 50Mi+ Acumulada!!!</h3>
+        <p>Prêmio estimado em <strong>${valorFormatado}</strong>${dataProximo ? ` · ${dataProximo}` : ''}</p>
+        <p>Bolão estratégico - aberto sempre que o prêmio for acima de ${minimoMilhoes} milhões.</p>
+        ${fechamentoTexto ? `<p>Fechamento em: ${fechamentoTexto}</p>` : ''}
         <div class="mega-alert-actions">
           <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bolão</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn tonal" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
