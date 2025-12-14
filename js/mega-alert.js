@@ -14,12 +14,12 @@ function getDataFechamento(dataProximoConcurso) {
   return fechamento;
 }
 
-function formatFechamentoDMinusOne(dataProximoConcurso) {
+function formatFechamentoLabel(dataProximoConcurso) {
   const fechamento = getDataFechamento(dataProximoConcurso);
   if (!fechamento) return '';
   const day = String(fechamento.getDate()).padStart(2, '0');
   const month = String(fechamento.getMonth() + 1).padStart(2, '0');
-  return `D - 1 de ${day}/${month} (dia anterior) às 18h`;
+  return `➡️ Fechamento em: ${day}/${month} às 18h!`;
 }
 
 (function () {
@@ -52,7 +52,7 @@ function formatFechamentoDMinusOne(dataProximoConcurso) {
       }
       const dataProximo = concursoParts.length ? concursoParts.join(' ') : '';
       const minimoMilhoes = status.minimoMilhoes ?? 50;
-      const fechamentoTexto = formatFechamentoDMinusOne(status.dataProximoConcurso);
+      const fechamentoLabel = formatFechamentoLabel(status.dataProximoConcurso);
       const fechamentoDataHora = getDataFechamento(status.dataProximoConcurso);
       if (fechamentoDataHora && new Date() >= fechamentoDataHora) {
         container.style.display = 'none';
@@ -64,7 +64,7 @@ function formatFechamentoDMinusOne(dataProximoConcurso) {
           <h3>🚨 Mega Sena 50Mi+ Acumulada!!!</h3>
           <p>Prêmio estimado em <strong>${valor}</strong>${dataProximo ? ` · ${dataProximo}` : ''}</p>
           <p>Bolão estratégico - aberto sempre que o prêmio for acima de ${minimoMilhoes} milhões.</p>
-          ${fechamentoTexto ? `<p>Fechamento em: ${fechamentoTexto}</p>` : ''}
+          ${fechamentoLabel ? `<p><strong>${fechamentoLabel}</strong></p>` : ''}
           <div class="mega-alert-actions">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform"
                class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar agora</a>
