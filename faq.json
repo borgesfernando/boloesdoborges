@@ -144,6 +144,10 @@
     "answerHtml": "<p>🧠 Adotamos uma abordagem combinada, com transparência e método:</p><ul><li><strong>Participação dos integrantes:</strong> parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li><strong>Modelos computacionais:</strong> outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes Neurais), personalizados para cada modalidade. Os modelos são atualizados periodicamente com técnicas estudadas em publicações acadêmicas internacionais.</li><li><strong>Registro oficial:</strong> todas as apostas são registradas no aplicativo oficial da Caixa e/ou no site <a href=\"https://www.loteriasonline.caixa.gov.br/\" target=\"_blank\" rel=\"noopener noreferrer\">Loterias Online</a>, com comprovantes digitais compartilhados.</li></ul>"
   },
   {
+    "question": "Posso preencher minhas dezenas da sorte?",
+    "answerHtml": "<p><strong>Sim.</strong> Nos <strong>projetos especiais</strong>, você tem protagonismo.</p><ul><li><strong>Acesso exclusivo</strong>: disponibilizamos uma aba dedicada na planilha do bolão, onde somente você pode digitar seus palpites.</li><li><strong>Integração total</strong>: todas as dezenas preenchidas pelos participantes são processadas e entram no jogo final.</li></ul><p>É a união da sua sorte individual com a força coletiva do grupo.</p>"
+  },
+  {
     "question": "Posso preencher minhas dezenas nos projetos especiais?",
     "answerHtml": "<p><strong>Sim.</strong> Depois que o seu pagamento é confirmado, você recebe por e-mail o link da planilha oficial daquele projeto especial.</p><ul><li>Há uma <strong>aba exclusiva</strong> com o seu nome, criada pelo Administrador.</li><li>Somente você (logado com o <strong>Gmail cadastrado</strong>) consegue editar essa aba, garantindo privacidade e trilha de auditoria.</li><li>Os espaços de preenchimento são padronizados e sinalizados com instruções para evitar erros de digitação.</li></ul><p>Assim, você escolhe suas combinações favoritas com segurança e vê imediatamente como elas entram no conjunto total de jogos.</p>"
   },
