@@ -9,11 +9,18 @@ function parseDataBR(str) {
   return new Date(m[3], m[2] - 1, m[1]);
 }
 
-function formatFechamentoDMinusOne(dataProximoConcurso) {
+function getDataFechamento(dataProximoConcurso) {
   const data = parseDataBR(dataProximoConcurso);
-  if (!data) return '';
+  if (!data) return null;
   const fechamento = new Date(data);
   fechamento.setDate(fechamento.getDate() - 1);
+  fechamento.setHours(18, 0, 0, 0);
+  return fechamento;
+}
+
+function formatFechamentoDMinusOne(dataProximoConcurso) {
+  const fechamento = getDataFechamento(dataProximoConcurso);
+  if (!fechamento) return '';
   const day = String(fechamento.getDate()).padStart(2, '0');
   const month = String(fechamento.getMonth() + 1).padStart(2, '0');
   return `D - 1 de ${day}/${month} (dia anterior) às 18h`;
@@ -88,6 +95,11 @@ async function renderizarMegaAcumuladaAlert() {
     }
     const dataProximo = concursoParts.length ? concursoParts.join(' ') : '';
     const fechamentoTexto = formatFechamentoDMinusOne(status.dataProximoConcurso);
+    const fechamentoDataHora = getDataFechamento(status.dataProximoConcurso);
+    if (fechamentoDataHora && new Date() >= fechamentoDataHora) {
+      container.style.display = 'none';
+      return;
+    }
     const minimoMilhoes = status.minimoMilhoes ?? 50;
 
     container.innerHTML = `

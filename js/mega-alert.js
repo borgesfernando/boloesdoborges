@@ -1,11 +1,24 @@
+function parseDataBR(str) {
+  if (!str) return null;
+  const m = str.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!m) return null;
+  return new Date(m[3], m[2] - 1, m[1]);
+}
+
+function getDataFechamento(dataProximoConcurso) {
+  const data = parseDataBR(dataProximoConcurso);
+  if (!data) return null;
+  const fechamento = new Date(data);
+  fechamento.setDate(fechamento.getDate() - 1);
+  fechamento.setHours(18, 0, 0, 0);
+  return fechamento;
+}
+
 function formatFechamentoDMinusOne(dataProximoConcurso) {
-  if (!dataProximoConcurso) return '';
-  const parts = dataProximoConcurso.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-  if (!parts) return '';
-  const date = new Date(parts[3], parts[2] - 1, parts[1]);
-  date.setDate(date.getDate() - 1);
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const fechamento = getDataFechamento(dataProximoConcurso);
+  if (!fechamento) return '';
+  const day = String(fechamento.getDate()).padStart(2, '0');
+  const month = String(fechamento.getMonth() + 1).padStart(2, '0');
   return `D - 1 de ${day}/${month} (dia anterior) às 18h`;
 }
 
@@ -40,6 +53,11 @@ function formatFechamentoDMinusOne(dataProximoConcurso) {
       const dataProximo = concursoParts.length ? concursoParts.join(' ') : '';
       const minimoMilhoes = status.minimoMilhoes ?? 50;
       const fechamentoTexto = formatFechamentoDMinusOne(status.dataProximoConcurso);
+      const fechamentoDataHora = getDataFechamento(status.dataProximoConcurso);
+      if (fechamentoDataHora && new Date() >= fechamentoDataHora) {
+        container.style.display = 'none';
+        return;
+      }
 
       container.innerHTML = `
         <div>
