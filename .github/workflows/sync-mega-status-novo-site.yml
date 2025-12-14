@@ -5,6 +5,11 @@ on:
     branches: [ main ]
     paths:
       - 'data/mega-status.json'
+  workflow_run:
+    workflows:
+      - Atualizar mega-status
+    types:
+      - completed
 
 permissions:
   contents: write
