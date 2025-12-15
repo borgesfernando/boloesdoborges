@@ -1,0 +1,111 @@
+<!-- index.html com box adicionado logo após o título -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bolões do Borges: Projetos com tecnologia e responsabilidade. Participe conosco! &quot;Transparência e Confiança são os alicerces de um Bolão vencedor&quot;">
+  <title>Bolões Especiais - Projetos 2025</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/project-loader.js"></script>
+  <script defer src="js/year.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Projetos de <span id="ano-atual"></span></h1>
+      <p><span class="chip-highlight">Bolões inteligentes: tecnologia para quem leva o assunto a sério</span><br>Participe conosco e aumente suas chances!</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Aviso para novos usuários -->
+    <div class="card" id="aviso-novos">
+      <p style="display:flex; align-items:center; gap:.6rem; margin:0;">
+        <span style="display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:50%; background: rgba(0,119,200,.12); color: var(--secondary); font-weight:700;">i</span>
+        <span><span id="saudacao-hora">Olá</span>! Se você é novo por aqui, consulte as <a href="faq.html" style="color: var(--secondary); font-weight:600; text-decoration: none; border-bottom: 2px solid rgba(0,119,200,.25);">perguntas mais frequentes</a>.</span>
+      </p>
+    </div>
+    <!-- NOVO box logo após o título -->
+  <div class="card comunidade-info">
+    <h2>SUA COMUNIDADE CONFIÁVEL!</h2>
+    <div class="comunidade-conteudo">
+      <p>🤝 <strong>Sem fins lucrativos:</strong> Confiança e união para ganharmos juntos!</p>
+      <p>💻 <strong>Tecnologia de ponta:</strong> IA e Machine Learning para jogos mais precisos! <a href="ia.html">Clique aqui para saber mais</a></p>
+      <p>🔎 <strong>Controle rigoroso:</strong> <a href="prest.html">Prestação de contas detalhada e acessível</a>!</p>
+      <p>🌟 <strong>15 anos de história:</strong> Transparência e tradição na organização!</p>
+      <p>🍀 <strong>Não fique de fora:</strong> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" target="_blank" rel="noopener noreferrer">Cadastre-se</a> e participe de nossa comunidade!</p>
+    </div>
+  </div>
+      <div id="avisoTopo" class="aviso-topo" style="display: none;">
+  <span id="mensagemAviso"></span>
+  <a id="btnParticipar" href="#" class="btn-aviso">Quero participar!</a>
+</div>
+    
+    <div class="card" id="especiais-section">
+      <h2>Concursos Especiais</h2>
+      <div class="project-grid" id="especiais-list"></div>
+    </div>
+
+    <div class="card" id="mensais-section">
+      <h2>Projetos Mensais</h2>
+      <div class="project-grid" id="mensais-list"></div>
+    </div>
+
+    <div class="card" id="acumulados-section">
+      <h2>Concursos Acumulados - Mega e Quina</h2>
+      <div class="project-grid" id="acumulados-list"></div>
+    </div>
+  </div>
+
+<!-- trecho do rodapé atualizado -->
+<footer>
+  <div class="container">
+    <h3>Junte-se à nossa comunidade!</h3>
+    <p style="margin: 1rem 0;">Acompanhe todas as atualizações e participe dos nossos projetos</p>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar na Comunidade</a>
+
+    <!-- NOVO BOTÃO DE FAQ -->
+    <a href="faq.html" class="btn sb2025" style="margin-top: 1rem; display: inline-block;" target="_blank" rel="noopener noreferrer">Perguntas Frequentes</a>
+
+    <p style="margin-top: 1.5rem;">© <span id="ano-copyright">2025</span> Super Bolão™ - Todos os direitos reservados</p>
+    <p style="margin-top: 0.5rem;">
+      Organizado por
+      <a href="mailto:correiodofernando@gmail.com"
+         style="color: #0077C8;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;">
+        Fernando Borges
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 6L12 13L2 6" stroke="#0077C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
+
+    <p style="margin-top: 1.5rem; font-style: italic; text-align: center;">
+      Transparência e Confiança são os alicerces de um Bolão vencedor 🏆
+    </p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    try {
+      var h = new Date().getHours();
+      var txt = (h >= 5 && h < 12) ? 'Bom dia'
+              : (h >= 12 && h < 18) ? 'Boa tarde'
+              : 'Boa noite';
+      var el = document.getElementById('saudacao-hora');
+      if (el) el.textContent = txt;
+    } catch (e) { /* no-op */ }
+  })();
+  </script>
+
+</body>
+</html>

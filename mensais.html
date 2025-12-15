@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Linha de Projetos Mensais – participação recorrente em loterias com sorteios frequentes.">
+  <title>Projetos Mensais - Super Bolão 2025</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/landing.js"></script>
+  <script defer src="js/year.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Projetos Mensais</h1>
+      <p>Loterias com sorteios frequentes, ideais para quem gosta de acompanhar resultados diariamente com disciplina.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <p>
+          Nesta linha você encontra os projetos com cotas mensais fixas. Clique em cada card para ver
+          as regras completas e como participar.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Bolões Mensais em <span id="ano-atual-mensais">2025</span></h2>
+        <div class="project-grid" id="lista-mensais-linha"></div>
+      </div>
+
+      <div class="card">
+        <a href="index.html" class="btn sb2025">⬅️ Voltar para a Página Principal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h3>Junte-se à nossa comunidade!</h3>
+      <p style="margin: 1rem 0;">Acompanhe todas as atualizações e participe dos nossos projetos</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar na Comunidade</a>
+      <p style="margin-top: 1.5rem;">© <span id="ano-copyright">2025</span> Super Bolão™ - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const spanAno = document.getElementById('ano-atual-mensais');
+      if (spanAno) {
+        spanAno.textContent = new Date().getFullYear();
+      }
+
+      if (typeof PROJETOS === 'undefined' || !PROJETOS.mensais || !Array.isArray(PROJETOS.mensais.projetos)) return;
+
+      const container = document.getElementById('lista-mensais-linha');
+      if (!container) return;
+
+      const hoje = new Date();
+      hoje.setHours(0, 0, 0, 0);
+
+      PROJETOS.mensais.projetos.forEach(p => {
+        container.appendChild(criarCardProjeto(p, 'mensais', hoje));
+      });
+    });
+  </script>
+</body>
+</html>
+

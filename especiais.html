@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Linha de Projetos Especiais – grandes concursos da Caixa com planejamento anual e cronogramas bem definidos.">
+  <title>Projetos Especiais - Super Bolão 2025</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/landing.js"></script>
+  <script defer src="js/year.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Projetos Especiais</h1>
+      <p>Grandes concursos da Caixa com planejamento anual, cotas programadas e cronograma bem definido.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <p>
+          Aqui você encontra todos os projetos especiais do ano. Cada card abaixo indica se o bolão está
+          ativo ou em pausa e mostra um aviso de contagem regressiva perto do prazo final de entrada.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Bolões Especiais em <span id="ano-atual-especiais">2025</span></h2>
+        <div class="project-grid" id="lista-especiais-linha"></div>
+      </div>
+
+      <div class="card">
+        <a href="index.html" class="btn sb2025">⬅️ Voltar para a Página Principal</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h3>Junte-se à nossa comunidade!</h3>
+      <p style="margin: 1rem 0;">Acompanhe todas as atualizações e participe dos nossos projetos</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar na Comunidade</a>
+      <p style="margin-top: 1.5rem;">© <span id="ano-copyright">2025</span> Super Bolão™ - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const spanAno = document.getElementById('ano-atual-especiais');
+      if (spanAno) {
+        spanAno.textContent = new Date().getFullYear();
+      }
+
+      if (typeof PROJETOS === 'undefined') return;
+
+      const container = document.getElementById('lista-especiais-linha');
+      if (!container) return;
+
+      const hoje = new Date();
+      hoje.setHours(0, 0, 0, 0);
+
+      const dados = typeof obterEspeciaisOrdenados === 'function'
+        ? obterEspeciaisOrdenados(hoje)
+        : { especiaisOrdenados: PROJETOS.especiais.projetos || [] };
+
+      const lista = dados.especiaisOrdenados || [];
+      lista.forEach(p => {
+        container.appendChild(criarCardProjeto(p, 'especiais', hoje));
+      });
+    });
+  </script>
+</body>
+</html>
+
