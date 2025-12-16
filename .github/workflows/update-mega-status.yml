@@ -7,31 +7,48 @@ on:
     - cron: '15 1 * * 2-6,0'
   workflow_dispatch:
 
+# 🔑 PERMISSÕES GLOBAIS PARA TODO O WORKFLOW
+permissions:
+  contents: write  # Permite que o GITHUB_TOKEN faça push das alterações
+
 jobs:
   update-mega-status:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout
+      - name: Checkout do repositório
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true  # Mantém as credenciais configuradas para os passos seguintes
 
-      - name: Setup Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - name: Atualizar data/mega-status.json
+      - name: Executar script de atualização
         run: node scripts/update-mega-status.js
 
-      - name: Commit e push se houver mudanças
+      - name: Verificar e enviar alterações
         run: |
+          # Configurar identidade do bot do GitHub Actions
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Verificar se há mudanças no arquivo específico
           if [ -n "$(git status --porcelain data/mega-status.json)" ]; then
+            echo "✅ Alterações detectadas em data/mega-status.json"
+            
+            # Preparar commit
             git add data/mega-status.json
-            git commit -m "chore: atualizar data/mega-status.json"
+            git commit -m "chore: atualizar status da Mega-Sena [skip ci]"
+            
+            # Enviar alterações
+            echo "📤 Enviando alterações para o repositório..."
             git push
+            echo "✅ Alterações enviadas com sucesso!"
           else
-            echo "Sem alterações em data/mega-status.json"
+            echo "ℹ️ Nenhuma alteração encontrada em data/mega-status.json"
           fi
