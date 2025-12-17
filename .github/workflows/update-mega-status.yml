@@ -26,7 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          # REMOVIDO: cache: 'npm' - porque não há package-lock.json no projeto
 
       - name: Executar script de atualização
         run: node scripts/update-mega-status.js
