@@ -21,7 +21,7 @@ function formatJanelaFimLabel(janelaFimISO) {
     hour: '2-digit',
     minute: '2-digit'
   }).replace(':', 'h');
-  return `${data} ??s ${hora}`;
+  return `${data} as ${hora}`;
 }
 
 (function () {
@@ -67,10 +67,10 @@ function formatJanelaFimLabel(janelaFimISO) {
 
       container.innerHTML = `
         <div>
-          <h3>?Ys? Mega Sena 50Mi+ Acumulada!!!</h3>
-          <p>Pr??mio estimado em <strong>${valor}</strong>${dataProximo ? ` ?? ${dataProximo}` : ''}</p>
-          <p>Bol??o estrat??gico - aberto sempre que o pr??mio for maior ou igual a ${minimoMilhoes} milh??es.</p>
-          ${janelaLabel ? `<p><strong>Janela de chamada aberta at?? ${janelaLabel} (hor??rio de Bras??lia).</strong></p>` : ''}
+          <h3>Mega Sena 50Mi+ Acumulada!!!</h3>
+          <p>Premio estimado em <strong>${valor}</strong>${dataProximo ? ` - ${dataProximo}` : ''}</p>
+          <p>Bolao estrategico - aberto sempre que o premio for maior ou igual a ${minimoMilhoes} milhoes.</p>
+          ${janelaLabel ? `<p><strong>Janela de chamada aberta ate ${janelaLabel} (horario de Brasilia).</strong></p>` : ''}
           <div class="mega-alert-actions">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform"
                class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar agora</a>
