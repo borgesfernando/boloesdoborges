@@ -11,6 +11,7 @@ const API_URL = 'https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena'
 const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'mega-status.json');
 const PROJETOS_PATH = path.join(__dirname, '..', 'data', 'projetos.json');
 const MEGA_PROJECT_ID = 'mega-acumulada';
+const BRAZIL_UTC_OFFSET_MINUTES = -180; // America/Sao_Paulo (UTC-3)
 
 async function fetchMegaData() {
   const controller = new AbortController();
@@ -55,7 +56,16 @@ function loadMegaProjectConfig() {
     throw new Error(`Valor mínimo inválido para ${MEGA_PROJECT_ID}: ${mega.minimo}`);
   }
 
-  return { minimoMilhoes: minimo };
+  return { minimoMilhoes: Math.max(minimo, 50) };
+}
+
+function getJanelaFim(date = new Date()) {
+  const brazilReference = new Date(date.getTime() + BRAZIL_UTC_OFFSET_MINUTES * 60 * 1000);
+  const year = brazilReference.getUTCFullYear();
+  const month = brazilReference.getUTCMonth();
+  const day = brazilReference.getUTCDate();
+  const utcHour = 18 - BRAZIL_UTC_OFFSET_MINUTES / 60;
+  return new Date(Date.UTC(year, month, day, utcHour, 0, 0, 0));
 }
 
 async function main() {
@@ -66,7 +76,10 @@ async function main() {
     const numero = megaData?.numero ?? megaData?.numeroConcurso ?? null;
     const dataProximoConcurso = megaData?.dataProximoConcurso ?? null;
     const acumulado = Boolean(megaData?.acumulado);
-    const ativo = valorEstimadoProximoConcurso >= minimoMilhoes * 1_000_000;
+    const minimoReais = minimoMilhoes * 1_000_000;
+    const ativo = valorEstimadoProximoConcurso >= minimoReais;
+    const agora = new Date();
+    const janelaFim = getJanelaFim(agora);
 
     const payload = {
       concurso: numero,
@@ -75,7 +88,9 @@ async function main() {
       valorEstimadoProximoConcurso,
       minimoMilhoes,
       ativo,
-      ultimaAtualizacao: new Date().toISOString(),
+      janelaInicio: agora.toISOString(),
+      janelaFim: janelaFim.toISOString(),
+      ultimaAtualizacao: agora.toISOString(),
       fonte: API_URL,
     };
 

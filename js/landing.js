@@ -9,21 +9,30 @@ function parseDataBR(str) {
   return new Date(m[3], m[2] - 1, m[1]);
 }
 
-function getDataFechamento(dataProximoConcurso) {
-  const data = parseDataBR(dataProximoConcurso);
-  if (!data) return null;
-  const fechamento = new Date(data);
-  fechamento.setDate(fechamento.getDate() - 1);
-  fechamento.setHours(18, 0, 0, 0);
-  return fechamento;
+function isDentroDaJanela(janelaInicioISO, janelaFimISO) {
+  if (!janelaInicioISO || !janelaFimISO) return false;
+  const inicio = new Date(janelaInicioISO);
+  const fim = new Date(janelaFimISO);
+  if (Number.isNaN(inicio.getTime()) || Number.isNaN(fim.getTime())) return false;
+  const agora = new Date();
+  return agora >= inicio && agora < fim;
 }
 
-function formatFechamentoLabel(dataProximoConcurso) {
-  const fechamento = getDataFechamento(dataProximoConcurso);
-  if (!fechamento) return '';
-  const day = String(fechamento.getDate()).padStart(2, '0');
-  const month = String(fechamento.getMonth() + 1).padStart(2, '0');
-  return `➡️ Fechamento em: ${day}/${month} às 18h!`;
+function formatJanelaFimLabel(janelaFimISO) {
+  if (!janelaFimISO) return '';
+  const fim = new Date(janelaFimISO);
+  if (Number.isNaN(fim.getTime())) return '';
+  const data = fim.toLocaleDateString('pt-BR', {
+    timeZone: 'America/Sao_Paulo',
+    day: '2-digit',
+    month: '2-digit'
+  });
+  const hora = fim.toLocaleTimeString('pt-BR', {
+    timeZone: 'America/Sao_Paulo',
+    hour: '2-digit',
+    minute: '2-digit'
+  }).replace(':', 'h');
+  return `${data} ??s ${hora}`;
 }
 
 function getTipoCorFromId(id) {
@@ -79,13 +88,22 @@ async function renderizarMegaAcumuladaAlert() {
     const res = await fetch('data/mega-status.json', { cache: 'no-store' });
     if (!res.ok) throw new Error('Falha ao carregar mega-status');
     const status = await res.json();
+    const minimoConfigurado = status?.minimoMilhoes ?? 50;
+    const minimoMilhoes = Math.max(minimoConfigurado, 50);
+    const minimoReais = minimoMilhoes * 1_000_000;
+    const valorAtual = Number(status?.valorEstimadoProximoConcurso ?? 0);
 
-    if (!status?.ativo) {
+    if (!status?.ativo || Number.isNaN(valorAtual) || valorAtual < minimoReais) {
       container.style.display = 'none';
       return;
     }
 
-    const valorFormatado = formatCurrencyBRL(status.valorEstimadoProximoConcurso || 0);
+    if (!isDentroDaJanela(status.janelaInicio, status.janelaFim)) {
+      container.style.display = 'none';
+      return;
+    }
+
+    const valorFormatado = formatCurrencyBRL(valorAtual);
     const concursoParts = [];
     if (status.concurso) {
       concursoParts.push(`Concurso ${status.concurso}`);
@@ -94,22 +112,16 @@ async function renderizarMegaAcumuladaAlert() {
       concursoParts.push(`em ${status.dataProximoConcurso}`);
     }
     const dataProximo = concursoParts.length ? concursoParts.join(' ') : '';
-    const fechamentoLabel = formatFechamentoLabel(status.dataProximoConcurso);
-    const fechamentoDataHora = getDataFechamento(status.dataProximoConcurso);
-    if (fechamentoDataHora && new Date() >= fechamentoDataHora) {
-      container.style.display = 'none';
-      return;
-    }
-    const minimoMilhoes = status.minimoMilhoes ?? 50;
+    const janelaLabel = formatJanelaFimLabel(status.janelaFim);
 
     container.innerHTML = `
       <div>
-        <h3>🚨 Mega Sena 50Mi+ Acumulada!!!</h3>
-        <p>Prêmio estimado em <strong>${valorFormatado}</strong>${dataProximo ? ` · ${dataProximo}` : ''}</p>
-        <p>Bolão estratégico - aberto sempre que o prêmio for acima de ${minimoMilhoes} milhões.</p>
-        ${fechamentoLabel ? `<p><strong>${fechamentoLabel}</strong></p>` : ''}
+        <h3>?Ys? Mega Sena 50Mi+ Acumulada!!!</h3>
+        <p>Pr??mio estimado em <strong>${valorFormatado}</strong>${dataProximo ? ` ?? ${dataProximo}` : ''}</p>
+        <p>Bol??o estrat??gico - aberto sempre que o pr??mio for maior ou igual a ${minimoMilhoes} milh??es.</p>
+        ${janelaLabel ? `<p><strong>Janela de chamada aberta at?? ${janelaLabel} (hor??rio de Bras??lia).</strong></p>` : ''}
         <div class="mega-alert-actions">
-          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bolão</a>
+          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bol??o</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn tonal" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
         </div>
       </div>
