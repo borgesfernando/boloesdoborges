@@ -32,7 +32,7 @@ function formatJanelaFimLabel(janelaFimISO) {
     hour: '2-digit',
     minute: '2-digit'
   }).replace(':', 'h');
-  return `${data} as ${hora}`;
+  return `${data} \u00e0s ${hora}`;
 }
 
 function getTipoCorFromId(id) {
@@ -116,12 +116,12 @@ async function renderizarMegaAcumuladaAlert() {
 
     container.innerHTML = `
       <div>
-        <h3>Mega Sena 50Mi+ Acumulada!!!</h3>
-        <p>Premio estimado em <strong>${valorFormatado}</strong>${dataProximo ? ` - ${dataProximo}` : ''}</p>
-        <p>Bolao estrategico - aberto sempre que o premio for maior ou igual a ${minimoMilhoes} milhoes.</p>
-        ${janelaLabel ? `<p><strong>Janela de chamada aberta ate ${janelaLabel} (horario de Brasilia).</strong></p>` : ''}
+        <h3>\uD83D\uDEA8 Mega Sena 50Mi+ Acumulada!!!</h3>
+        <p>Pr\u00eamio estimado em <strong>${valorFormatado}</strong>${dataProximo ? ` \u2013 ${dataProximo}` : ''}</p>
+        <p>Bol\u00e3o estrat\u00e9gico - aberto sempre que o pr\u00eamio for maior ou igual a ${minimoMilhoes} milh\u00f5es.</p>
+        ${janelaLabel ? `<p><strong>Janela de chamada aberta at\u00e9 ${janelaLabel} (hor\u00e1rio de Bras\u00edlia).</strong></p>` : ''}
         <div class="mega-alert-actions">
-          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bolao</a>
+          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bol\u00e3o</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn tonal" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
         </div>
       </div>
