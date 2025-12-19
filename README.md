@@ -75,10 +75,11 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 
 ## 🚨 Alerta automático da Mega acumulada
 
-- O script `scripts/update-mega-status.js` consulta a API oficial da Caixa (`https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena`), garante o corte m?nimo de **R$ 50 milh?es** e grava o resultado consolidado em `data/mega-status.json`.
-- O workflow `.github/workflows/update-mega-status.yml` roda **toda segunda, quarta e sexta ?s 09h00 UTC** (06h00 em Bras?lia) ou mediante `workflow_dispatch`. Cada execu??o abre uma janela de chamada v?lida at? 18h (BRT) do mesmo dia.
-- Sempre que `data/mega-status.json` muda, o workflow `.github/workflows/sync-mega-status-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mega-status.json` ? assim o banner autom?tico aparece tanto na landing antiga (VPS) quanto no novo site Astro.
-- A home (`index.html`) e a p?gina `templates/acumulados.html?id=mega-acumulada` leem esse JSON e exibem o destaque somente quando `valorEstimadoProximoConcurso` ? maior ou igual a 50 milh?es **e** o hor?rio atual est? dentro da janela informada pelos campos `janelaInicio`/`janelaFim`.
+- O script `scripts/update-mega-status.js` consulta a API oficial da Caixa (`https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena`) e grava o resultado consolidado em `data/mega-status.json`, incluindo o campo `ativo` calculado a partir do valor mínimo configurado para o projeto `mega-acumulada` em `data/projetos.json`.
+- O workflow `.github/workflows/update-mega-status.yml` roda **de terça a domingo às 01h15 UTC** (22h15 de segunda a sábado em Brasília) e ao ser disparado manualmente via `workflow_dispatch`. Ele atualiza o JSON sempre após a atualização oficial da Caixa.
+- Sempre que `data/mega-status.json` muda, o workflow `.github/workflows/sync-mega-status-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mega-status.json` – assim o banner automático aparece tanto na landing antiga (VPS) quanto no novo site Astro.
+- A home (`index.html`) e a página `templates/acumulados.html?id=mega-acumulada` leem esse JSON e exibem o destaque apenas quando `ativo: true`. No front-end, o alerta é automaticamente ocultado assim que a data/horário de fechamento (18h do dia anterior ao sorteio) é atingida.
+
 
 ## 👀 Pronto para entrar?
 
