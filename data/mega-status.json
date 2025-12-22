@@ -1,12 +1,12 @@
 {
-  "concurso": 2953,
+  "concurso": 2954,
   "acumulado": true,
-  "dataProximoConcurso": "20/12/2025",
-  "valorEstimadoProximoConcurso": 62000000,
+  "dataProximoConcurso": "31/12/2025",
+  "valorEstimadoProximoConcurso": 1000000000,
   "minimoMilhoes": 50,
   "ativo": true,
-  "janelaInicio": "2025-12-19T09:24:54.758Z",
-  "janelaFim": "2025-12-19T21:00:00.000Z",
-  "ultimaAtualizacao": "2025-12-19T09:24:54.758Z",
+  "janelaInicio": "2025-12-22T09:28:57.168Z",
+  "janelaFim": "2025-12-22T21:00:00.000Z",
+  "ultimaAtualizacao": "2025-12-22T09:28:57.168Z",
   "fonte": "https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena"
 }
