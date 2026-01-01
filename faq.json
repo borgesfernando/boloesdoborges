@@ -41,7 +41,7 @@
   },
   {
     "question": "Quais prêmios já foram conquistados pelos bolões?",
-    "answerHtml": "<p>🏆 <strong>Projetos Especiais</strong> (amostras):</p><ul><li>Quadras na Mega‑Sena;</li><li>Ternos na Quina;</li><li>Vários ternos na Dupla Sena;</li><li>Inúmeros 11, 12 e 13 pontos na Lotofácil.</li></ul><p><strong>Projetos Mensais</strong> (desempenho histórico):</p><ul><li><strong>Lotofácil</strong>: média de <strong>30% a 40%</strong> de retorno mensal sobre o valor investido;</li><li><strong>Quina</strong>: retorno histórico um pouco menor (varia por período).</li></ul><p><strong>Foco e evolução</strong>:</p><ul><li>Constância é essencial — a qualquer momento a premiação maior pode chegar;</li><li>Embora ainda não tenhamos um prêmio de grande impacto, a evolução é consistente;</li><li>O trabalho sério com <strong>IA</strong> e análise estatística vem aprimorando a qualidade dos jogos;</li><li>Transparência total: todas as ocorrências constam nas planilhas e relatórios de <a href=\"ROTA_PRESTACAO_CONTAS\" target=\"_blank\" rel=\"noopener noreferrer\">prestação de contas</a>.</li></ul><p><em>Observação</em>: resultados variam a cada período; <strong>não há garantia</strong> de retorno ou premiação futura, e todo jogo envolve risco.</p>"
+    "answerHtml": "<p>🏆 <strong>Projetos Especiais</strong> (amostras):</p><ul><li>Quadras na Mega‑Sena;</li><li>Quadras e quinas em edições da Mega da Virada;</li><li>Ternos na Quina;</li><li>Vários ternos na Dupla Sena;</li><li>Inúmeros 11, 12 e 13 pontos na Lotofácil.</li></ul><p><strong>Projetos Mensais</strong> (desempenho histórico):</p><ul><li><strong>Lotofácil</strong>: média de <strong>30% a 40%</strong> de retorno mensal sobre o valor investido;</li><li><strong>Quina</strong>: retorno histórico um pouco menor (varia por período).</li></ul><p><strong>Foco e evolução</strong>:</p><ul><li>Constância é essencial — a qualquer momento a premiação maior pode chegar;</li><li>Embora ainda não tenhamos um prêmio de grande impacto, a evolução é consistente;</li><li>O trabalho sério com <strong>IA</strong> e análise estatística vem aprimorando a qualidade dos jogos;</li><li>Transparência total: todas as ocorrências constam nas planilhas e relatórios de <a href=\"ROTA_PRESTACAO_CONTAS\" target=\"_blank\" rel=\"noopener noreferrer\">prestação de contas</a>.</li></ul><p><em>Observação</em>: resultados variam a cada período; <strong>não há garantia</strong> de retorno ou premiação futura, e todo jogo envolve risco.</p>"
   },
   {
     "question": "Posso participar?",
@@ -96,7 +96,7 @@
     "answerHtml": "<p>Não. Os pagamentos são <strong>somente via PIX</strong>.</p><p>Não aceitamos TED/DOC, cartão, boleto, dinheiro em espécie, aplicativos de terceiros ou transferências para contas não informadas oficialmente.</p><p>Use sempre a chave disponibilizada no item acima e confirme os dados do destinatário antes de enviar.</p>"
   },
   {
-    "question": "Como facilitar os pagamentos mensais?",
+    "question": "Como facilitar os pagamentos mensais dos projetos especiais?",
     "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
   },
   {
@@ -112,7 +112,7 @@
     "answerHtml": "<p>Sim. Nos <strong>projetos especiais</strong>, não apenas o valor arrecadado em cada cota é aplicado em apostas, mas também <strong>todos os rendimentos</strong> gerados pelas <strong>Caixinhas do Nubank</strong> usadas para organizar os recursos.</p><p>O Administrador <strong>não fica com nenhum valor</strong> do bolão: <strong>100% dos aportes recebidos + correções</strong> são direcionados para a montagem dos jogos, conforme as regras de cada projeto e a prestação de contas.</p>"
   },
   {
-    "question": "O que acontece se eu atrasar o pagamento?",
+    "question": "O que acontece se eu atrasar o pagamento de um projeto especial?",
     "answerHtml": "<p>Pagamentos em atraso seguem duas regras simples:</p><ul><li><strong>Correção simbólica:</strong> o valor devido é cobrado no mês seguinte com acréscimo de <strong>R$ 1,00</strong> (conforme política da comunidade).</li><li><strong>Persistência do atraso:</strong> se o pagamento não for regularizado, o participante é removido do grupo e <strong>o valor eventualmente pago é integralmente devolvido</strong>.</li></ul><p>Em caso de imprevistos, avise com antecedência para avaliarmos alternativas.</p>"
   },
   {
