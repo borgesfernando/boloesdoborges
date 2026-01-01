@@ -80,6 +80,13 @@ function formatCurrencyBRL(value) {
   }).format(value ?? 0);
 }
 
+const MEGA_PREMIO_MINIMO_CHAMADA = 50_000_000;
+const MEGA_PREMIO_MAXIMO_CHAMADA = 300_000_000;
+
+function isMegaPremioValido(valor) {
+  return valor > MEGA_PREMIO_MINIMO_CHAMADA && valor < MEGA_PREMIO_MAXIMO_CHAMADA;
+}
+
 async function renderizarMegaAcumuladaAlert() {
   const container = document.getElementById('mega-acumulada-alert');
   if (!container) return;
@@ -93,7 +100,12 @@ async function renderizarMegaAcumuladaAlert() {
     const minimoReais = minimoMilhoes * 1_000_000;
     const valorAtual = Number(status?.valorEstimadoProximoConcurso ?? 0);
 
-    if (!status?.ativo || Number.isNaN(valorAtual) || valorAtual < minimoReais) {
+    if (
+      !status?.ativo ||
+      Number.isNaN(valorAtual) ||
+      valorAtual < minimoReais ||
+      !isMegaPremioValido(valorAtual)
+    ) {
       container.style.display = 'none';
       return;
     }

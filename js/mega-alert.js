@@ -25,6 +25,13 @@ function formatJanelaFimLabel(janelaFimISO) {
 }
 
 (function () {
+  const MEGA_PREMIO_MINIMO_CHAMADA = 50_000_000;
+  const MEGA_PREMIO_MAXIMO_CHAMADA = 300_000_000;
+
+  function isMegaPremioValido(valor) {
+    return valor > MEGA_PREMIO_MINIMO_CHAMADA && valor < MEGA_PREMIO_MAXIMO_CHAMADA;
+  }
+
   async function carregarMegaStatus() {
     const params = new URLSearchParams(window.location.search);
     if (params.get('id') !== 'mega-acumulada') return;
@@ -41,7 +48,12 @@ function formatJanelaFimLabel(janelaFimISO) {
       const minimoReais = minimoMilhoes * 1_000_000;
       const valorAtual = Number(status?.valorEstimadoProximoConcurso ?? 0);
 
-      if (!status?.ativo || Number.isNaN(valorAtual) || valorAtual < minimoReais) {
+      if (
+        !status?.ativo ||
+        Number.isNaN(valorAtual) ||
+        valorAtual < minimoReais ||
+        !isMegaPremioValido(valorAtual)
+      ) {
         container.style.display = 'none';
         return;
       }
