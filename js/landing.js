@@ -121,7 +121,7 @@ async function renderizarMegaAcumuladaAlert() {
         <p>Bol\u00e3o estrat\u00e9gico - aberto sempre que o pr\u00eamio for maior ou igual a ${minimoMilhoes} milh\u00f5es.</p>
         ${janelaLabel ? `<p><strong>Janela de chamada aberta at\u00e9 ${janelaLabel} (hor\u00e1rio de Bras\u00edlia).</strong></p>` : ''}
         <div class="mega-alert-actions">
-          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2025">Ver detalhes do bol\u00e3o</a>
+          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2026">Ver detalhes do bol\u00e3o</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn tonal" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
         </div>
       </div>
@@ -350,7 +350,7 @@ function renderizarLinhasPrincipais() {
 
     const link = document.createElement('a');
     link.href = href;
-    link.className = `btn ${classeBtn || 'sb2025'}`;
+    link.className = `btn ${classeBtn || 'sb2026'}`;
     link.textContent = 'Ver projetos';
 
     card.appendChild(info);

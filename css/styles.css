@@ -13,7 +13,7 @@
   --lf-indep: 128, 53, 148;
   --qsj: 0, 93, 164;
   --dsp: 166, 42, 82;
-  --sb2025: 0, 171, 103;
+  --sb2026: 0, 171, 103;
   --mega: 0, 171, 103;
   --quina: 0, 93, 164;
   --lotofacil: 128, 53, 148;
@@ -447,7 +447,7 @@ footer h3 {
   border-left-color: rgb(var(--dupla));
 }
 
-.project-card.sb2025,
+.project-card.sb2026,
 .project-card.mega {
   background: linear-gradient(to right, rgba(var(--mega), 0.1), rgba(128,195,66,0.1));
   border-left-color: rgb(var(--mega));
@@ -522,12 +522,12 @@ footer h3 {
   background-color: rgba(var(--dupla), 0.9);
 }
 
-.btn.sb2025,
+.btn.sb2026,
 .btn.mega {
   background-color: rgb(var(--mega));
 }
 
-.btn.sb2025:hover,
+.btn.sb2026:hover,
 .btn.mega:hover {
   background-color: rgba(var(--mega), 0.9);
 }

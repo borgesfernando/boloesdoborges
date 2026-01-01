@@ -73,7 +73,7 @@ function formatJanelaFimLabel(janelaFimISO) {
           ${janelaLabel ? `<p><strong>Janela de chamada aberta at\u00e9 ${janelaLabel} (hor\u00e1rio de Bras\u00edlia).</strong></p>` : ''}
           <div class="mega-alert-actions">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform"
-               class="btn sb2025" target="_blank" rel="noopener noreferrer">Entrar agora</a>
+               class="btn sb2026" target="_blank" rel="noopener noreferrer">Entrar agora</a>
           </div>
         </div>
       `;
