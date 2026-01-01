@@ -180,27 +180,10 @@ function montarAberturaJaneiro() {
 
   const cards = [];
   const especiais = PROJETOS?.especiais?.projetos ?? [];
-  const mensais = PROJETOS?.mensais?.projetos ?? [];
-  const acumulados = PROJETOS?.acumulados?.projetos ?? [];
-
   especiais.forEach((p) => {
     cards.push({
       titulo: p.nome,
       detalhe: `PIX dia ${p.diaPix} · Limite ${p.dataLimite}`,
-    });
-  });
-
-  mensais.forEach((p) => {
-    cards.push({
-      titulo: p.nome,
-      detalhe: `Cota mensal R$ ${p.cotaMensal},00 · Ciclo ${p.ciclo}`,
-    });
-  });
-
-  acumulados.forEach((p) => {
-    cards.push({
-      titulo: p.nome,
-      detalhe: `Ativo acima de R$ ${p.minimo} milhões`,
     });
   });
 
