@@ -120,6 +120,56 @@ header {
   margin-bottom: 0.75rem;
 }
 
+.abertura-janeiro {
+  border-left: 5px solid var(--secondary);
+  background: linear-gradient(135deg, rgba(0, 119, 200, 0.06), rgba(0, 171, 103, 0.05));
+}
+
+.abertura-header h2 {
+  margin: 0.25rem 0;
+}
+
+.abertura-header .chip {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  background: rgba(0, 119, 200, 0.12);
+  color: var(--secondary);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.abertura-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.abertura-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+.abertura-card strong {
+  color: #003366;
+}
+
+.abertura-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.abertura-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
 .hero-list {
   list-style: none;
   padding-left: 0;

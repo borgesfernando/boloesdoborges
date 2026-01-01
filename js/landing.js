@@ -144,6 +144,77 @@ async function renderizarMegaAcumuladaAlert() {
   }
 }
 
+function getHojeSaoPaulo() {
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Sao_Paulo',
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric'
+  }).formatToParts(now);
+  const values = Object.fromEntries(parts.map(p => [p.type, p.value]));
+  return new Date(Number(values.year), Number(values.month) - 1, Number(values.day));
+}
+
+function isJanelaAberturaAnual(data) {
+  if (!(data instanceof Date) || Number.isNaN(data.getTime())) return false;
+  const mes = data.getMonth() + 1;
+  const dia = data.getDate();
+  return mes === 1 && dia >= 1 && dia <= 9;
+}
+
+function montarAberturaJaneiro() {
+  const wrapper = document.getElementById('abertura-janeiro');
+  const listaEl = document.getElementById('abertura-projetos');
+  const anoEl = document.getElementById('abertura-ano');
+  if (!wrapper || !listaEl || typeof PROJETOS === 'undefined') return;
+
+  const hojeSP = getHojeSaoPaulo();
+  if (!isJanelaAberturaAnual(hojeSP)) {
+    wrapper.style.display = 'none';
+    return;
+  }
+
+  const ano = hojeSP.getFullYear();
+  if (anoEl) anoEl.textContent = String(ano);
+
+  const cards = [];
+  const especiais = PROJETOS?.especiais?.projetos ?? [];
+  const mensais = PROJETOS?.mensais?.projetos ?? [];
+  const acumulados = PROJETOS?.acumulados?.projetos ?? [];
+
+  especiais.forEach((p) => {
+    cards.push({
+      titulo: p.nome,
+      detalhe: `PIX dia ${p.diaPix} · Limite ${p.dataLimite}`,
+    });
+  });
+
+  mensais.forEach((p) => {
+    cards.push({
+      titulo: p.nome,
+      detalhe: `Cota mensal R$ ${p.cotaMensal},00 · Ciclo ${p.ciclo}`,
+    });
+  });
+
+  acumulados.forEach((p) => {
+    cards.push({
+      titulo: p.nome,
+      detalhe: `Ativo acima de R$ ${p.minimo} milhões`,
+    });
+  });
+
+  listaEl.innerHTML = '';
+  cards.forEach(({ titulo, detalhe }) => {
+    const card = document.createElement('div');
+    card.className = 'abertura-card';
+    card.innerHTML = `<strong>${titulo}</strong><p>${detalhe}</p>`;
+    listaEl.appendChild(card);
+  });
+
+  wrapper.style.display = cards.length ? 'block' : 'none';
+}
+
 function criarCardProjeto(projeto, tipo, hojeLimpo) {
   const card = document.createElement('div');
   const tipoCor = getTipoCorFromId(projeto.id);
@@ -465,6 +536,7 @@ function ajustarAnosLanding() {
 
 document.addEventListener('DOMContentLoaded', () => {
   ajustarAnosLanding();
+  montarAberturaJaneiro();
   renderizarLinhasPrincipais();
   renderizarProjetosResumo();
   renderizarMegaAcumuladaAlert();
