@@ -17,33 +17,16 @@ function parseBoolean(value) {
   return normalized === 'true' || normalized === '1' || normalized === 'yes' || normalized === 'sim';
 }
 
-function parseISODate(value) {
-  if (!value) return null;
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    throw new Error(`Data ISO inválida: ${value}`);
-  }
-  return date.toISOString();
-}
-
 function loadPayload() {
   const projeto = (process.env.ALERTA_PROJETO || '').trim();
   if (!ALERT_FILES[projeto]) {
     throw new Error('Informe ALERTA_PROJETO (quina-mensal ou lf-mensal).');
   }
   const ativo = parseBoolean(process.env.ALERTA_ATIVO);
-  const janelaInicio = parseISODate(process.env.JANELA_INICIO);
-  const janelaFim = parseISODate(process.env.JANELA_FIM);
-
-  if (ativo && (!janelaInicio || !janelaFim)) {
-    throw new Error('Para ativar o alerta, informe JANELA_INICIO e JANELA_FIM em ISO-8601.');
-  }
 
   return {
     projeto,
     ativo,
-    janelaInicio,
-    janelaFim,
     ultimaAtualizacao: new Date().toISOString(),
   };
 }

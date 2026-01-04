@@ -1,29 +1,3 @@
-function isDentroDaJanela(janelaInicioISO, janelaFimISO) {
-  if (!janelaInicioISO || !janelaFimISO) return false;
-  const inicio = new Date(janelaInicioISO);
-  const fim = new Date(janelaFimISO);
-  if (Number.isNaN(inicio.getTime()) || Number.isNaN(fim.getTime())) return false;
-  const agora = new Date();
-  return agora >= inicio && agora < fim;
-}
-
-function formatJanelaFimLabel(janelaFimISO) {
-  if (!janelaFimISO) return '';
-  const fim = new Date(janelaFimISO);
-  if (Number.isNaN(fim.getTime())) return '';
-  const data = fim.toLocaleDateString('pt-BR', {
-    timeZone: 'America/Sao_Paulo',
-    day: '2-digit',
-    month: '2-digit'
-  });
-  const hora = fim.toLocaleTimeString('pt-BR', {
-    timeZone: 'America/Sao_Paulo',
-    hour: '2-digit',
-    minute: '2-digit'
-  }).replace(':', 'h');
-  return `${data} às ${hora}`;
-}
-
 function getContainersMensais() {
   const ids = ['mensais-alert', 'mensais-alert-destaque'];
   return ids.map((id) => document.getElementById(id)).filter(Boolean);
@@ -68,7 +42,7 @@ async function renderizarMensaisAlert() {
         : getAlertByProjectId('quina-mensal', [quinaAlert, lfAlert]) ||
           getAlertByProjectId('lf-mensal', [quinaAlert, lfAlert]);
 
-    if (!alertEscolhido?.ativo || !isDentroDaJanela(alertEscolhido.janelaInicio, alertEscolhido.janelaFim)) {
+    if (!alertEscolhido?.ativo) {
       containers.forEach((container) => {
         container.style.display = 'none';
       });
@@ -77,12 +51,10 @@ async function renderizarMensaisAlert() {
 
     const isQuina = alertEscolhido.projeto === 'quina-mensal';
     const projetoLabel = isQuina ? 'Quina Mensal' : 'Lotofácil Mensal';
-    const janelaLabel = formatJanelaFimLabel(alertEscolhido.janelaFim);
     const html = `
       <div>
         <h3>🎯 ${projetoLabel} aberto!</h3>
         <p>A janela de entrada para o ${projetoLabel} está ativa.</p>
-        ${janelaLabel ? `<p><strong>Janela aberta até ${janelaLabel} (horário de Brasília).</strong></p>` : ''}
         <div class="mega-alert-actions">
           <a href="${pagePrefix}?id=${alertEscolhido.projeto}" class="btn sb2026">Ver ${projetoLabel}</a>
         </div>
