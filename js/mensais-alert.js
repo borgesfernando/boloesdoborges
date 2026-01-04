@@ -39,10 +39,9 @@ async function renderizarMensaisAlert() {
         ? getAlertByProjectId('quina-mensal', [quinaAlert])
         : pageId === 'lf-mensal'
         ? getAlertByProjectId('lf-mensal', [lfAlert])
-        : getAlertByProjectId('quina-mensal', [quinaAlert, lfAlert]) ||
-          getAlertByProjectId('lf-mensal', [quinaAlert, lfAlert]);
+        : [quinaAlert, lfAlert].find((alert) => alert?.ativo);
 
-    if (!alertEscolhido?.ativo) {
+    if (!alertEscolhido) {
       containers.forEach((container) => {
         container.style.display = 'none';
       });
