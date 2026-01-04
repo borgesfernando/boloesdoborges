@@ -7,6 +7,7 @@
   <title id="tituloPagina">Bolão Mensal</title>
   <link rel="stylesheet" href="../css/styles.css">
   <script defer src="../js/config.js"></script>
+  <script defer src="../js/mensais-alert.js"></script>
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
@@ -47,6 +48,7 @@
 
   <div class="container">
     <div class="content-card">
+      <div class="mega-alert" id="mensais-alert-destaque" style="display:none;"></div>
       <h2>INFORMAÇÕES GERAIS</h2>
       <div id="infoProjeto"></div>
 

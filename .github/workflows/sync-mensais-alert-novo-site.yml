@@ -1,0 +1,48 @@
+name: Sincronizar mensais-alert com novo-site
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/mensais-alert.json'
+  workflow_run:
+    workflows:
+      - Atualizar mensais-alert
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  sync-mensais-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout boloesdoborges
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout novo-site
+        uses: actions/checkout@v4
+        with:
+          repository: borgesfernando/novo-site
+          token: ${{ secrets.NOVO_SITE_SYNC_TOKEN }}
+          path: novo-site
+
+      - name: Copiar mensais-alert.json para novo-site
+        run: |
+          cp data/mensais-alert.json novo-site/src/data/mensais-alert.json
+
+      - name: Commit e push se houver mudanças
+        working-directory: novo-site
+        run: |
+          if [ -n "$(git status --porcelain src/data/mensais-alert.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/data/mensais-alert.json
+            git commit -m "chore: sincronizar mensais-alert a partir do boloesdoborges"
+            git push origin master
+          else
+            echo "Sem mudanças para sincronizar"
+          fi

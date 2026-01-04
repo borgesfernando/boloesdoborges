@@ -80,6 +80,13 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - Sempre que `data/mega-status.json` muda, o workflow `.github/workflows/sync-mega-status-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mega-status.json` – assim o banner automático aparece tanto na landing antiga (VPS) quanto no novo site Astro.
 - A home (`index.html`) e a página `templates/acumulados.html?id=mega-acumulada` leem esse JSON e exibem o destaque apenas quando `ativo: true`. No front-end, o alerta é automaticamente ocultado assim que a data/horário de fechamento (18h do dia anterior ao sorteio) é atingida.
 
+## 🚨 Alerta dos projetos mensais
+
+- O script `scripts/update-mensais-alert.js` grava `data/mensais-alert.json` com os campos `ativo`, `janelaInicio` e `janelaFim`.
+- O workflow `.github/workflows/set-mensais-alert.yml` é disparado via `workflow_dispatch` (normalmente pelo Apps Script) e atualiza o JSON com a janela de entrada.
+- Sempre que `data/mensais-alert.json` muda, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mensais-alert.json`, mantendo o destaque sincronizado nos dois sites.
+- A home (`index.html`) e a página `templates/mensais.html?id=...` exibem o alerta somente quando `ativo: true` e a data atual está dentro da janela configurada.
+
 
 ## 👀 Pronto para entrar?
 

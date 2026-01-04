@@ -1,0 +1,54 @@
+name: Atualizar mensais-alert
+
+on:
+  workflow_dispatch:
+    inputs:
+      ativo:
+        description: 'Ativar alerta? (true/false)'
+        required: true
+        default: 'false'
+      janela_inicio:
+        description: 'ISO-8601 (ex: 2026-01-15T09:00:00-03:00)'
+        required: false
+      janela_fim:
+        description: 'ISO-8601 (ex: 2026-01-16T18:00:00-03:00)'
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  set-mensais-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: ''
+
+      - name: Atualizar mensais-alert.json
+        env:
+          ALERTA_ATIVO: ${{ inputs.ativo }}
+          JANELA_INICIO: ${{ inputs.janela_inicio }}
+          JANELA_FIM: ${{ inputs.janela_fim }}
+        run: node scripts/update-mensais-alert.js
+
+      - name: Commit e push se houver mudanças
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -n "$(git status --porcelain data/mensais-alert.json)" ]; then
+            git add data/mensais-alert.json
+            git commit -m "chore: atualizar mensais-alert [skip ci]"
+            git push
+          else
+            echo "Sem mudanças para sincronizar"
+          fi
