@@ -51,13 +51,17 @@ async function renderizarMensaisAlert() {
 
     const isQuina = alertEscolhido.projeto === 'quina-mensal';
     const projetoLabel = isQuina ? 'Quina Mensal' : 'Lotofácil Mensal';
+    const actionHtml = pagePrefix === 'mensais.html'
+      ? ''
+      : `<div class="mega-alert-actions">
+          <a href="${pagePrefix}?id=${alertEscolhido.projeto}" class="btn sb2026">Ver ${projetoLabel}</a>
+        </div>`;
+
     const html = `
       <div>
         <h3>🎯 ${projetoLabel} aberto!</h3>
         <p>A janela de entrada para o ${projetoLabel} está ativa.</p>
-        <div class="mega-alert-actions">
-          <a href="${pagePrefix}?id=${alertEscolhido.projeto}" class="btn sb2026">Ver ${projetoLabel}</a>
-        </div>
+        ${actionHtml}
       </div>
     `;
 
