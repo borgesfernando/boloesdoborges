@@ -82,10 +82,10 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 
 ## 🚨 Alerta dos projetos mensais
 
-- O script `scripts/update-mensais-alert.js` grava `data/mensais-alert.json` com os campos `ativo`, `janelaInicio` e `janelaFim`.
-- O workflow `.github/workflows/set-mensais-alert.yml` é disparado via `workflow_dispatch` (normalmente pelo Apps Script) e atualiza o JSON com a janela de entrada.
-- Sempre que `data/mensais-alert.json` muda, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mensais-alert.json`, mantendo o destaque sincronizado nos dois sites.
-- A home (`index.html`) e a página `templates/mensais.html?id=...` exibem o alerta somente quando `ativo: true` e a data atual está dentro da janela configurada.
+- O script `scripts/update-mensais-alert.js` grava `data/quina-mensal-alert.json` ou `data/lf-mensal-alert.json` com os campos `ativo`, `janelaInicio` e `janelaFim`.
+- Os workflows `.github/workflows/set-quina-mensal-alert.yml` e `.github/workflows/set-lf-mensal-alert.yml` são disparados via `workflow_dispatch` (normalmente pelo Apps Script) e atualizam o JSON do projeto específico.
+- Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
+- A home (`index.html`) e a página `templates/mensais.html?id=...` exibem o alerta somente quando `ativo: true` e a data atual está dentro da janela configurada para o projeto chamado.
 
 
 ## 👀 Pronto para entrar?

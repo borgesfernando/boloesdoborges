@@ -29,34 +29,62 @@ function getContainersMensais() {
   return ids.map((id) => document.getElementById(id)).filter(Boolean);
 }
 
+function getBasePaths() {
+  const isTemplatePage = window.location.pathname.includes('/templates/');
+  return {
+    dataPrefix: isTemplatePage ? '../data' : 'data',
+    pagePrefix: isTemplatePage ? 'mensais.html' : 'templates/mensais.html',
+  };
+}
+
+function getAlertByProjectId(projectId, alerts) {
+  return alerts.find((alert) => alert?.projeto === projectId);
+}
+
+async function carregarAlerta(url) {
+  const res = await fetch(url, { cache: 'no-store' });
+  if (!res.ok) throw new Error('Falha ao carregar mensais-alert');
+  return res.json();
+}
+
 async function renderizarMensaisAlert() {
   const containers = getContainersMensais();
   if (!containers.length) return;
 
   try {
-    const isTemplatePage = window.location.pathname.includes('/templates/');
-    const dataUrl = isTemplatePage ? '../data/mensais-alert.json' : 'data/mensais-alert.json';
-    const baseLink = isTemplatePage ? 'mensais.html' : 'templates/mensais.html';
-    const res = await fetch(dataUrl, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Falha ao carregar mensais-alert');
-    const status = await res.json();
+    const { dataPrefix, pagePrefix } = getBasePaths();
+    const [quinaAlert, lfAlert] = await Promise.all([
+      carregarAlerta(`${dataPrefix}/quina-mensal-alert.json`),
+      carregarAlerta(`${dataPrefix}/lf-mensal-alert.json`),
+    ]);
 
-    if (!status?.ativo || !isDentroDaJanela(status.janelaInicio, status.janelaFim)) {
+    const params = new URLSearchParams(window.location.search);
+    const pageId = params.get('id');
+    const alertEscolhido =
+      pageId === 'quina-mensal'
+        ? getAlertByProjectId('quina-mensal', [quinaAlert])
+        : pageId === 'lf-mensal'
+        ? getAlertByProjectId('lf-mensal', [lfAlert])
+        : getAlertByProjectId('quina-mensal', [quinaAlert, lfAlert]) ||
+          getAlertByProjectId('lf-mensal', [quinaAlert, lfAlert]);
+
+    if (!alertEscolhido?.ativo || !isDentroDaJanela(alertEscolhido.janelaInicio, alertEscolhido.janelaFim)) {
       containers.forEach((container) => {
         container.style.display = 'none';
       });
       return;
     }
 
-    const janelaLabel = formatJanelaFimLabel(status.janelaFim);
+    const isQuina = alertEscolhido.projeto === 'quina-mensal';
+    const projetoLabel = isQuina ? 'Quina Mensal' : 'Lotofácil Mensal';
+    const janelaLabel = formatJanelaFimLabel(alertEscolhido.janelaFim);
     const html = `
       <div>
-        <h3>🎯 Projetos Mensais abertos!</h3>
-        <p>A janela de entrada para Quina Mensal e Lotofácil Mensal está ativa.</p>
+        <h3>🎯 ${projetoLabel} aberto!</h3>
+        <p>A janela de entrada para o ${projetoLabel} está ativa.</p>
         ${janelaLabel ? `<p><strong>Janela aberta até ${janelaLabel} (horário de Brasília).</strong></p>` : ''}
         <div class="mega-alert-actions">
-          <a href="${baseLink}?id=quina-mensal" class="btn sb2026">Ver Quina Mensal</a>
-          <a href="${baseLink}?id=lf-mensal" class="btn tonal">Ver Lotofácil Mensal</a>
+          <a href="${pagePrefix}?id=${alertEscolhido.projeto}" class="btn sb2026">Ver ${projetoLabel}</a>
         </div>
       </div>
     `;

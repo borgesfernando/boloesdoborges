@@ -1,11 +1,14 @@
 #!/usr/bin/env node
 /**
- * Atualiza data/mensais-alert.json com a janela de chamada dos projetos mensais.
+ * Atualiza o JSON de alerta do projeto mensal (quina-mensal ou lf-mensal).
  */
 const fs = require('fs');
 const path = require('path');
 
-const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'mensais-alert.json');
+const ALERT_FILES = {
+  'quina-mensal': path.join(__dirname, '..', 'data', 'quina-mensal-alert.json'),
+  'lf-mensal': path.join(__dirname, '..', 'data', 'lf-mensal-alert.json'),
+};
 
 function parseBoolean(value) {
   if (typeof value === 'boolean') return value;
@@ -24,6 +27,10 @@ function parseISODate(value) {
 }
 
 function loadPayload() {
+  const projeto = (process.env.ALERTA_PROJETO || '').trim();
+  if (!ALERT_FILES[projeto]) {
+    throw new Error('Informe ALERTA_PROJETO (quina-mensal ou lf-mensal).');
+  }
   const ativo = parseBoolean(process.env.ALERTA_ATIVO);
   const janelaInicio = parseISODate(process.env.JANELA_INICIO);
   const janelaFim = parseISODate(process.env.JANELA_FIM);
@@ -33,6 +40,7 @@ function loadPayload() {
   }
 
   return {
+    projeto,
     ativo,
     janelaInicio,
     janelaFim,
@@ -43,8 +51,9 @@ function loadPayload() {
 function main() {
   try {
     const payload = loadPayload();
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(payload, null, 2) + '\n', 'utf8');
-    console.log(`Arquivo atualizado em ${OUTPUT_PATH}`);
+    const outputPath = ALERT_FILES[payload.projeto];
+    fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2) + '\n', 'utf8');
+    console.log(`Arquivo atualizado em ${outputPath}`);
   } catch (error) {
     console.error(`[update-mensais-alert] Falha ao atualizar mensais-alert: ${error.message}`);
     process.exit(1);

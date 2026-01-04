@@ -4,10 +4,12 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'data/mensais-alert.json'
+      - 'data/quina-mensal-alert.json'
+      - 'data/lf-mensal-alert.json'
   workflow_run:
     workflows:
-      - Atualizar mensais-alert
+      - Atualizar alerta Quina Mensal
+      - Atualizar alerta Lotofácil Mensal
     types:
       - completed
 
@@ -32,16 +34,17 @@ jobs:
 
       - name: Copiar mensais-alert.json para novo-site
         run: |
-          cp data/mensais-alert.json novo-site/src/data/mensais-alert.json
+          cp data/quina-mensal-alert.json novo-site/src/data/quina-mensal-alert.json
+          cp data/lf-mensal-alert.json novo-site/src/data/lf-mensal-alert.json
 
       - name: Commit e push se houver mudanças
         working-directory: novo-site
         run: |
-          if [ -n "$(git status --porcelain src/data/mensais-alert.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/mensais-alert.json
-            git commit -m "chore: sincronizar mensais-alert a partir do boloesdoborges"
+            git add src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json
+            git commit -m "chore: sincronizar alertas mensais a partir do boloesdoborges"
             git push origin master
           else
             echo "Sem mudanças para sincronizar"

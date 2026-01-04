@@ -1,4 +1,4 @@
-name: Atualizar mensais-alert
+name: Atualizar alerta Lotofácil Mensal
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 jobs:
-  set-mensais-alert:
+  set-alert:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -33,8 +33,9 @@ jobs:
           node-version: '20'
           cache: ''
 
-      - name: Atualizar mensais-alert.json
+      - name: Atualizar lf-mensal-alert.json
         env:
+          ALERTA_PROJETO: lf-mensal
           ALERTA_ATIVO: ${{ inputs.ativo }}
           JANELA_INICIO: ${{ inputs.janela_inicio }}
           JANELA_FIM: ${{ inputs.janela_fim }}
@@ -45,9 +46,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain data/mensais-alert.json)" ]; then
-            git add data/mensais-alert.json
-            git commit -m "chore: atualizar mensais-alert [skip ci]"
+          if [ -n "$(git status --porcelain data/lf-mensal-alert.json)" ]; then
+            git add data/lf-mensal-alert.json
+            git commit -m "chore: atualizar alerta lf-mensal [skip ci]"
             git push
           else
             echo "Sem mudanças para sincronizar"
