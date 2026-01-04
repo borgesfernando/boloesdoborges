@@ -41,7 +41,7 @@ async function renderizarMensaisAlert() {
         ? getAlertByProjectId('lf-mensal', [lfAlert])
         : [quinaAlert, lfAlert].find((alert) => alert?.ativo);
 
-    if (!alertEscolhido) {
+    if (!alertEscolhido || !alertEscolhido.ativo) {
       containers.forEach((container) => {
         container.style.display = 'none';
       });
