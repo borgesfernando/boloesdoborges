@@ -198,6 +198,84 @@ function montarAberturaJaneiro() {
   wrapper.style.display = cards.length ? 'block' : 'none';
 }
 
+const DIAS_PIX_ESPECIAIS = [7, 8, 9, 10];
+
+function isMesDentroIntervalo(mesAtual, mesInicio, mesFim) {
+  const inicio = parseInt(mesInicio, 10);
+  const fim = parseInt(mesFim, 10);
+  if (Number.isNaN(inicio) || Number.isNaN(fim)) return false;
+  if (inicio <= fim) return mesAtual >= inicio && mesAtual <= fim;
+  return mesAtual >= inicio || mesAtual <= fim;
+}
+
+function encontrarProjetoPorDiaPix(projetos, diaPix) {
+  if (!Array.isArray(projetos)) return null;
+  return projetos.find(p => Number(p.diaPix) === Number(diaPix)) || null;
+}
+
+function obterProjetoEspecialDestaque(hojeSP) {
+  if (!hojeSP || typeof PROJETOS === 'undefined') return null;
+  const especiais = PROJETOS?.especiais?.projetos ?? [];
+  if (!especiais.length) return null;
+
+  const mesAtual = hojeSP.getMonth() + 1;
+  const diaAtual = hojeSP.getDate();
+  const ativosNoMes = especiais.filter(p => isMesDentroIntervalo(mesAtual, p.mesInicio, p.mesFim));
+
+  if (diaAtual >= 7 && diaAtual <= 10) {
+    const projetoHoje = encontrarProjetoPorDiaPix(ativosNoMes, diaAtual);
+    if (projetoHoje) {
+      return { projeto: projetoHoje, etiqueta: `Hoje (dia ${diaAtual})` };
+    }
+  }
+
+  const proximoDia = DIAS_PIX_ESPECIAIS.find(dia => dia > diaAtual && encontrarProjetoPorDiaPix(ativosNoMes, dia));
+  if (proximoDia) {
+    const projetoProximo = encontrarProjetoPorDiaPix(ativosNoMes, proximoDia);
+    if (projetoProximo) {
+      return { projeto: projetoProximo, etiqueta: `Próximo (dia ${proximoDia})` };
+    }
+  }
+
+  const mesSeguinte = mesAtual === 12 ? 1 : mesAtual + 1;
+  const ativosNoProximoMes = especiais.filter(p => isMesDentroIntervalo(mesSeguinte, p.mesInicio, p.mesFim));
+  const proximoDiaMes = DIAS_PIX_ESPECIAIS.find(dia => encontrarProjetoPorDiaPix(ativosNoProximoMes, dia));
+  if (proximoDiaMes) {
+    const projetoProximo = encontrarProjetoPorDiaPix(ativosNoProximoMes, proximoDiaMes);
+    if (projetoProximo) {
+      return { projeto: projetoProximo, etiqueta: `Próximo (dia ${proximoDiaMes})` };
+    }
+  }
+
+  return null;
+}
+
+function renderizarDestaqueEspecial() {
+  const listaEl = document.getElementById('especial-destaque-list');
+  const infoEl = document.getElementById('especial-destaque-info');
+  if (!listaEl || !infoEl) return;
+
+  const hojeSP = getHojeSaoPaulo();
+  const destaque = obterProjetoEspecialDestaque(hojeSP);
+  if (!destaque || !destaque.projeto) return;
+
+  const { projeto, etiqueta } = destaque;
+  listaEl.innerHTML = '';
+
+  const li = document.createElement('li');
+  const link = document.createElement('a');
+  link.href = `templates/especiais.html?id=${projeto.id}`;
+  link.textContent = projeto.nome || projeto.id;
+  li.appendChild(link);
+  listaEl.appendChild(li);
+
+  const infoParts = [];
+  if (etiqueta) infoParts.push(etiqueta);
+  if (projeto.diaPix) infoParts.push(`PIX dia ${projeto.diaPix}`);
+  if (projeto.dataLimite) infoParts.push(`Limite ${projeto.dataLimite}`);
+  infoEl.textContent = infoParts.join(' · ');
+}
+
 function criarCardProjeto(projeto, tipo, hojeLimpo) {
   const card = document.createElement('div');
   const tipoCor = getTipoCorFromId(projeto.id);
@@ -520,6 +598,7 @@ function ajustarAnosLanding() {
 document.addEventListener('DOMContentLoaded', () => {
   ajustarAnosLanding();
   montarAberturaJaneiro();
+  renderizarDestaqueEspecial();
   renderizarLinhasPrincipais();
   renderizarProjetosResumo();
   renderizarMegaAcumuladaAlert();
