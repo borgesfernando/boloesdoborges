@@ -9,9 +9,12 @@ const path = require('path');
 
 const API_URL = 'https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena';
 const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'mega-status.json');
+const RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'megasena-api.json');
 const PROJETOS_PATH = path.join(__dirname, '..', 'data', 'projetos.json');
 const MEGA_PROJECT_ID = 'mega-acumulada';
 const BRAZIL_UTC_OFFSET_MINUTES = -180; // America/Sao_Paulo (UTC-3)
+const MAX_FETCH_ATTEMPTS = 4;
+const BASE_RETRY_DELAY_MS = 1200;
 
 async function fetchMegaData() {
   const controller = new AbortController();
@@ -35,6 +38,32 @@ async function fetchMegaData() {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchMegaDataWithRetry() {
+  let lastError = null;
+  for (let attempt = 1; attempt <= MAX_FETCH_ATTEMPTS; attempt += 1) {
+    if (attempt > 1) {
+      const backoff = BASE_RETRY_DELAY_MS * 2 ** (attempt - 2);
+      const jitter = Math.floor(Math.random() * 250);
+      await delay(backoff + jitter);
+    }
+
+    try {
+      return await fetchMegaData();
+    } catch (error) {
+      lastError = error;
+      console.warn(
+        `[update-mega-status] Tentativa ${attempt}/${MAX_FETCH_ATTEMPTS} falhou: ${error.message}`
+      );
+    }
+  }
+
+  throw lastError ?? new Error('Falha ao buscar dados da Mega-Sena');
 }
 
 function loadMegaProjectConfig() {
@@ -71,7 +100,7 @@ function getJanelaFim(date = new Date()) {
 async function main() {
   try {
     const { minimoMilhoes } = loadMegaProjectConfig();
-    const megaData = await fetchMegaData();
+    const megaData = await fetchMegaDataWithRetry();
     const valorEstimadoProximoConcurso = Number(megaData?.valorEstimadoProximoConcurso ?? 0);
     const numero = megaData?.numero ?? megaData?.numeroConcurso ?? null;
     const dataProximoConcurso = megaData?.dataProximoConcurso ?? null;
@@ -94,6 +123,7 @@ async function main() {
       fonte: API_URL,
     };
 
+    fs.writeFileSync(RAW_OUTPUT_PATH, JSON.stringify(megaData, null, 2) + '\n', 'utf8');
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(payload, null, 2) + '\n', 'utf8');
     console.log(`Arquivo atualizado em ${OUTPUT_PATH}`);
   } catch (error) {
