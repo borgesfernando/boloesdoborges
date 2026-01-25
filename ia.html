@@ -4,79 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Bolões do Borges: Projetos com tecnologia e responsabilidade. Participe conosco! &quot;Transparência e Confiança são os alicerces de um Bolão vencedor&quot;">
-  <title>IA nos Projetos – Resumo para Todos</title>
+  <title>IA nos Projetos – Metodologia (LSTM + Regras)</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
     <div class="container">
       <h1>IA nos Projetos</h1>
-      <p>Como transformamos dados em jogos mais inteligentes – explicação simples e direta.</p>
+      <p>Como usamos dados oficiais, LSTM e regras de qualidade para gerar carteiras de apostas — sem promessas de acerto.</p>
     </div>
   </header>
 
   <div class="container" style="padding: 2rem 0;">
     <div class="card">
-      <h2>O que fazemos</h2>
-      <p>Usamos Inteligência Artificial e análise estatística para montar jogos mais consistentes, sem promessas milagrosas. A ideia é simples: combinar dados, regras claras e validações rigorosas para aumentar nossas chances de forma sustentável.</p>
+      <h2>Objetivo (com transparência)</h2>
+      <p>
+        Loterias são eventos aleatórios: <strong>não existe “garantia”</strong> e não prometemos acertos.
+        Nosso foco é outro: aplicar engenharia de dados e um modelo de apoio (LSTM) para <strong>organizar escolhas</strong>,
+        <strong>reduzir redundância</strong> entre jogos e <strong>aumentar a qualidade</strong> do conjunto final com regras, validações e rastreabilidade.
+      </p>
+      <p>
+        Em um bolão, a diferença prática não é “adivinhar o sorteio”, e sim montar um <em>portfólio</em> de apostas com
+        diversidade, governança e menor risco de repetir padrões fracos — algo que “surpresinhas” e aleatoriedade pura não controlam.
+      </p>
     </div>
 
     <div class="card">
-      <h2>Resumo simples das estratégias</h2>
-      <p>Linguagem direta, sem jargões — a IA apoia as escolhas e nós aplicamos regras para manter diversidade e qualidade:</p>
-      <ul>
-        <li><strong>Pool por faixas:</strong> separamos o universo de números em faixas/blocos e pegamos os mais fortes de cada faixa para formar o pool base.</li>
-        <li><strong>Lotes com fixa exclusiva:</strong> montamos subgrupos (lotes) e cada lote tem uma “fixa” própria para aumentar a diversidade entre os jogos.</li>
-        <li><strong>Semelhança controlada:</strong> dentro do mesmo lote, limitamos quantos números podem se repetir entre dois jogos; entre lotes, o limite é ainda menor.</li>
-        <li><strong>Histórico protegido:</strong> reprovamos qualquer jogo muito parecido com resultados antigos.</li>
-        <li><strong>Bloqueios hierárquicos:</strong> quando há jogos de tamanhos diferentes em uma modalidade, evitamos que combinações menores repitam partes proibidas de jogos maiores.</li>
-        <li><strong>Variações locais (opcional):</strong> testamos pequenas mudanças em relação ao último sorteio (vizinhos), sem piorar a probabilidade e respeitando todas as regras acima.</li>
-      </ul>
-      <p>Exemplo (Quina): escolhemos 5 dezenas no universo 1..80. O pool nasce por blocos de 10; validamos semelhança máxima entre jogos e com o histórico, e ainda podemos testar “vizinhos” (±1/±2) do último resultado. Os parâmetros variam conforme a modalidade.</p>
+      <h2>Metodologia (fases do script)</h2>
+      <p>O pipeline é dividido em fases, com artefatos e logs a cada etapa — para que tudo seja auditável.</p>
+      <ol>
+        <li><strong>Coleta e versionamento do histórico:</strong> download do XLS oficial e preservação de versões (evita “dados tortos” e facilita auditoria).</li>
+        <li><strong>Fase 1 — Engenharia de dados (LSTM-ready):</strong> validações, ordenação temporal, criação de <em>features</em> e janelas (<em>LOOK_BACK</em>) para prever o próximo concurso.</li>
+        <li><strong>Fase 2/3 — Treino e seleção do modelo:</strong> LSTM com atenção, tuning de hiperparâmetros, perdas/ponderações para desbalanceamento e seleção do melhor checkpoint (com logs e métricas).</li>
+        <li><strong>Fase 4 — Geração das apostas:</strong> previsão → ranking Top‑N → montagem de subgrupos e aplicação de regras (fixas, blocos, vizinhos, bloqueios, sobreposição) → exportação em CSV e, opcionalmente, Google Sheets.</li>
+      </ol>
     </div>
 
     <div class="card">
-      <h2>Como funciona (LSTM, didático)</h2>
+      <h2>Fase 1 — Preparação dos dados (o que o modelo “enxerga”)</h2>
+      <p>Para cada concurso, geramos um vetor de entrada com sinais que combinam <strong>histórico</strong> e <strong>tempo</strong>:</p>
       <ul>
-        <li><strong>Preparação das sequências:</strong> transformamos o histórico em séries temporais, criando janelas deslizantes (janela → próximo concurso) e alvos multirrótulo por número/posição, conforme a modalidade.</li>
-        <li><strong>Features e normalização:</strong> combinamos codificações (one‑hot/frequências móveis), lags, médias exponenciais e sinais de tendência; padronizamos/normalizamos para estabilizar o treino.</li>
-        <li><strong>Arquitetura LSTM:</strong> 1–2 camadas LSTM com dropout e camada densa final; ativação sigmoid para probabilidade por número (multi‑label), ajustando a dimensionalidade à loteria.</li>
-        <li><strong>Treino temporal:</strong> separação treino/validação por tempo (sem embaralhar), early stopping e ajuste de hiperparâmetros (tamanho da janela, unidades LSTM, taxa de aprendizagem).</li>
-        <li><strong>Avaliação e calibração:</strong> métricas como log‑loss/Brier/AUC‑PR; calibramos saídas (isotônica/temperature) para probabilidades mais bem ajustadas.</li>
-        <li><strong>Inferência e ranking:</strong> aplicamos o modelo ao último bloco de dados para obter probabilidades/score por número; geramos um ranking Top‑N que alimenta a montagem dos jogos.</li>
-        <li><strong>Ensemble e regras:</strong> combinamos o LSTM com estratégias probabilísticas e de blocos; depois aplicamos filtros de qualidade e bloqueios cruzados antes de consolidar as apostas.</li>
-        <li><strong>Atualização contínua:</strong> incorporamos novos concursos periodicamente, registramos logs e re‑treinamos quando há ganho real de performance.</li>
+        <li><strong>One‑hot do sorteio:</strong> vetor binário 1..60 marcando as dezenas sorteadas.</li>
+        <li><strong>Tempo (cíclico):</strong> dia da semana/mês/dia do ano em seno/cosseno, além de <code>delta_days</code> (intervalo entre concursos).</li>
+        <li><strong>Recência por dezena:</strong> <code>days_since_last_hit</code> e <code>decay = exp(-λ·dias)</code> para modelar “memória” temporal.</li>
+        <li><strong>Frequência móvel:</strong> janelas (ex.: 10 e 20 concursos) mantidas por <code>deque</code> (eficiente) para gerar <code>freq_last_w</code>.</li>
+        <li><strong>Fusion em log‑space (por concurso):</strong> combina frequência e decaimento com normalização e checagens de sanidade (NaN/inf/clipping), reduzindo instabilidade numérica.</li>
+        <li><strong>Janelas temporais (LOOK_BACK):</strong> empilha <em>N</em> concursos passados para prever o próximo (<em>split</em> treino/validação por tempo, sem embaralhar).</li>
+        <li><strong>Estabilização opcional:</strong> normalização (minmax/z‑score), <em>label smoothing</em> e <em>class weights</em> (desbalanceamento por dezena).</li>
       </ul>
+      <p><strong>Saídas da fase:</strong> <code>X_train/X_val/y_train/y_val</code> (NPY) + <code>fase1_output.json</code> com schema, parâmetros e logs.</p>
     </div>
 
     <div class="card">
-      <h2>Estatística vs. LSTM</h2>
-      <p>Usamos duas famílias de sinais que se <strong>complementam</strong>:</p>
+      <h2>Fase 2/3 — Construção do modelo (LSTM + Atenção)</h2>
+      <p>O modelo é <strong>multi‑rótulo</strong>: ele produz uma probabilidade para cada dezena (1..60), com saída <code>sigmoid</code> (não “escolhe” um único número).</p>
       <ul>
-        <li><strong>Estatística descritiva:</strong> frequências, médias/tendências por faixas, sorteio ponderado por histórico. É simples, interpretável e robusta, mas não captura bem interações complexas nem dependências longas no tempo.</li>
-        <li><strong>Predições com LSTM:</strong> a rede aprende padrões <em>temporais</em> e não lineares e devolve probabilidades por número/combinação. Exige dados limpos, calibração e cuidados contra <em>overfitting</em>.</li>
+        <li><strong>Arquitetura típica:</strong> LSTM(256, <code>return_sequences=True</code>) → Dropout → LSTM(128) → Attention → Pooling → Dense(60, sigmoid).</li>
+        <li><strong>Desbalanceamento:</strong> Focal Loss (e/ou versão ponderada por <em>class weights</em>) para não “viciar” em dezenas muito frequentes.</li>
+        <li><strong>Tuning e seleção:</strong> Keras Tuner (Bayesian Optimization), <em>early stopping</em>, checkpoints e escolha do melhor modelo pelo conjunto de validação temporal.</li>
+        <li><strong>Métricas orientadas ao uso:</strong> além de loss/AUC, métricas do tipo “acertos médios em Top‑6” e percentuais de ≥3/≥4 acertos em Top‑6 (monitoramento realista do objetivo).</li>
+        <li><strong>Otimização opcional:</strong> <em>magnitude pruning</em> / “winning ticket” para reduzir complexidade e melhorar estabilidade/eficiência de inferência.</li>
       </ul>
-      <p><strong>Como combinamos:</strong> calibramos as probabilidades, comparamos com a estatística clássica e geramos um <em>ensemble</em>. Quando há divergência, priorizamos consistência (diversidade e regras de qualidade) em vez de “aposta única”. Tudo fica registrado em logs para auditoria.</p>
-      <p><strong>Nota importante:</strong> são <em>probabilidades</em>, não garantias. As escolhas finais sempre passam pelos filtros de qualidade e controle de risco descritos acima.</p>
+      <p><strong>Saída da fase:</strong> um checkpoint <code>.keras</code> que a Fase 4 consome diretamente.</p>
     </div>
 
     <div class="card">
-      <h2>Estratégias que combinamos</h2>
+      <h2>Fase 4 — Estratégias de geração de sequências (com regras)</h2>
+      <p>Em vez de “uma aposta”, geramos um conjunto grande com diversidade controlada. As principais estratégias são:</p>
       <ul>
-        <li><strong>Probabilística:</strong> sorteios ponderados por probabilidades estimadas.</li>
-        <li><strong>Top por blocos:</strong> seleção de números fortes por faixas e fixas moderadas por lote.</li>
-        <li><strong>Cluster (agrupamentos):</strong> padrões temporais para combinações equilibradas.</li>
+        <li><strong>Top‑N + amostragem ponderada:</strong> seleciona um pool (ex.: Top‑35/Top‑45) e amostra sem reposição, com pesos pelas probabilidades do modelo.</li>
+        <li><strong>Pool por blocos:</strong> divide 1..60 em blocos de 10 e pega as melhores de cada bloco (equilíbrio entre faixas).</li>
+        <li><strong>Subgrupos e fixas:</strong> configura lotes com fixas manuais ou automáticas (Top‑N), evitando colisões entre subgrupos.</li>
+        <li><strong>Vizinhos em grade 6×10:</strong> aplica substituições controladas em torno de dezenas do sorteio de referência (lag), aceitando apenas trocas que preservam a qualidade e não degradam demais o score.</li>
+        <li><strong>FFT por blocos (opcional):</strong> extrai um score temporal por dezena e combina com o score logarítmico do modelo (<code>log_prob + λ·fft_score</code>).</li>
+        <li><strong>Integrações:</strong> leitura de exclusões/preexistentes via planilha e geração adicional por “Estratégia B” (quando habilitado) para compor apostas reais do bolão.</li>
       </ul>
-      <p>Todas as estratégias passam pelas mesmas validações. O objetivo é construir diversidade com qualidade.</p>
+      <p>Ao final, exportamos CSV unificado e logs detalhados; opcionalmente, sincronizamos com Google Sheets para conferência e autopreenchimento.</p>
     </div>
 
     <div class="card">
       <h2>Regras de qualidade (o “filtro”)</h2>
       <ul>
-        <li><strong>Semelhança controlada:</strong> limitamos o quanto dois jogos podem se parecer.</li>
-        <li><strong>Histórico protegido:</strong> reduzimos a proximidade com resultados passados, respeitando a lógica de cada modalidade.</li>
-        <li><strong>Bloqueios cruzados:</strong> impedimos combinações já usadas/proibidas de reaparecerem.</li>
+        <li><strong>Semelhança controlada:</strong> limite de sobreposição entre jogos do mesmo conjunto (evita “quase duplicatas”).</li>
+        <li><strong>Histórico protegido:</strong> rejeita jogos excessivamente parecidos com concursos anteriores (ex.: 5+ dezenas iguais em um jogo de 6).</li>
+        <li><strong>Exclusões e bloqueios:</strong> impede sequências já usadas/proibidas (inclusive via planilhas) e pode aplicar bloqueios hierárquicos quando há tamanhos diferentes.</li>
+        <li><strong>Rastreabilidade:</strong> cada decisão deixa trilha (parâmetros, seeds, logs e arquivos gerados).</li>
       </ul>
+    </div>
+
+    <div class="card">
+      <h2>Exemplo prático (Mega‑Sena)</h2>
+      <p>
+        Suponha que o bolão precise de <strong>120 jogos de 6 dezenas</strong>. A Fase 4 faz, em alto nível:
+      </p>
+      <ol>
+        <li>Carrega o modelo <code>.keras</code> e gera a previsão para o próximo concurso (probabilidade por dezena).</li>
+        <li>Define um pool Top‑N (por exemplo Top‑35) e cria subgrupos com políticas de fixas (ex.: uma fixa Top‑N exclusiva por lote).</li>
+        <li>Gera jogos por amostragem ponderada e/ou por blocos, aplica “vizinhos” (grade 6×10) quando configurado.</li>
+        <li>Rejeita candidatos que violam regras (histórico, sobreposição, exclusões) até fechar a quantidade.</li>
+        <li>Exporta um CSV unificado e registra tudo em log (incluindo fixas, vizinhos aplicados e motivos de rejeição).</li>
+      </ol>
     </div>
 
     <div class="card">
@@ -92,20 +119,19 @@
     <div class="card">
       <h2>Por que isso importa</h2>
       <p>
-        Não é “acaso” nem promessa de acerto. É engenharia de dados aplicada: modelos calibrados, regras claras e
-        validações que buscam consistência e eficiência na alocação das apostas, com transparência e reprodutibilidade.
+        Não é “mágica” nem promessa de acerto. É engenharia aplicada: modelo + regras + validações que buscam
+        consistência na alocação das apostas, com transparência e reprodutibilidade.
       </p>
       <ul>
-        <li><strong>Redução de variância:</strong> montamos portfólios de jogos com baixa correlação entre si, mitigando concentração em padrões frágeis.</li>
-        <li><strong>Eficiência estatística:</strong> priorizamos combinações guiadas por sinais (probabilidades, tendência, clusters) calibrados e monitorados por métricas.</li>
-        <li><strong>Controle de risco:</strong> limites de semelhança e bloqueios cruzados evitam repetição e dispersão ineficiente do capital.</li>
-        <li><strong>Qualidade dos dados:</strong> higiene, validação e trilhas de auditoria garantem integridade e rastreabilidade de ponta a ponta.</li>
-        <li><strong>Aprendizado contínuo:</strong> backtests e reavaliações periódicas; só re‑treinamos/ajustamos quando há ganho mensurável.</li>
-        <li><strong>Governança:</strong> decisões documentadas e replicáveis (seeds, logs, versões), sem intervenções ad hoc.</li>
+        <li><strong>Diversidade com controle:</strong> evita jogar “muitas vezes o mesmo jogo” (alto overlap) e melhora cobertura do espaço de combinações dentro do orçamento.</li>
+        <li><strong>Menos erro humano:</strong> regras automáticas reduzem duplicações, inconsistências e esquecimentos na montagem manual.</li>
+        <li><strong>Melhor governança:</strong> tudo é rastreável (versões de dados/modelo, logs, parâmetros e arquivos gerados).</li>
+        <li><strong>Qualidade operacional:</strong> integração com planilhas e exportações padronizadas para conferência rápida.</li>
+        <li><strong>Honestidade estatística:</strong> o método não “quebra” a loteria; ele disciplina a construção do conjunto de apostas e evita aleatoriedade sem controle.</li>
       </ul>
       <p>
-        Em resumo: não prometemos resultados, mas diferenciamos nosso trabalho de escolhas aleatórias puras com método,
-        disciplina e evidências, buscando melhor relação entre custo, diversidade e qualidade dos jogos.
+        Em resumo: não prometemos resultados, mas entregamos um processo mais profissional do que “surpresinhas” — com
+        dados oficiais, modelo de apoio, filtros de qualidade e rastreabilidade.
       </p>
     </div>
 
