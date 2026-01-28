@@ -20,6 +20,18 @@
     "answerHtml": "<p><strong>Concursos acumulados (estratégicos)</strong> ⏰:</p><ul><li><strong>Fique atento</strong>: os avisos de prêmios acumulados saem na <a href=\"ROTA_COMUNIDADE\" target=\"_blank\" rel=\"noopener noreferrer\">comunidade</a> logo no início da manhã. <strong>Participe</strong> e acompanhe os recados.</li><li><strong>Janela de entrada</strong>: até as <strong>18h</strong> do dia <strong>anterior</strong> ao sorteio — organização com tempo e calma para <strong>zero erro</strong>.</li><li><strong>Cota</strong>: R$ 20,00 por concurso.</li><li><strong>Ativação</strong>: apenas quando a <em>Mega‑Sena</em> estiver <strong>acima de R$ 50 milhões</strong> ou a <em>Quina</em> <strong>acima de R$ 40 milhões</strong>.</li><li><strong>Predições por IA</strong>: combinamos estatística e algoritmos inteligentes para apoiar escolhas (sem promessa de acerto).</li><li><strong>Resultados</strong>: enviados somente aos <strong>participantes confirmados</strong> do concurso.</li><li><strong>Uma hora chega</strong>: <em>um prêmio pode sair a qualquer momento</em> — esteja dentro quando acontecer.</li></ul><p><strong>Saiba mais</strong> nas páginas dos acumulados:</p><ul><li><a href=\"ROTA_ACUMULADA_MEGA\" target=\"_blank\" rel=\"noopener noreferrer\">Mega‑Sena Acumulada</a></li><li><a href=\"ROTA_ACUMULADA_QUINA\" target=\"_blank\" rel=\"noopener noreferrer\">Quina Acumulada</a></li></ul>"
   },
   {
+    "question": "São quantos participantes a cada bolão?",
+    "answerHtml": "<p>O número de participantes varia a cada edição, conforme a adesão voluntária. Os acumulados são <strong>abertos</strong>: qualquer pessoa pode entrar dentro da janela oficial adquirindo suas cotas.</p>"
+  },
+  {
+    "question": "Posso comprar mais de uma cota?",
+    "answerHtml": "<p><strong>Sim.</strong> Basta fazer o PIX no valor múltiplo que desejar (ex.: R$ 40 para duas cotas, R$ 60 para três cotas). O sistema identifica pelo valor e registra a quantidade correspondente na planilha.</p>"
+  },
+  {
+    "question": "São quantos jogos feitos no bolão?",
+    "answerHtml": "<p>A quantidade e o tipo de jogos dependem do total arrecadado e do número de participantes confirmados.</p><ul><li>Após o fim da janela, o Administrador distribui <strong>100%</strong> do valor em bilhetes de <strong>8, 7 e 6 dezenas</strong>, em proporção otimizada para cobrir mais combinações.</li><li>Tudo fica detalhado na prestação de contas, em um PDF específico chamado <strong>\"Planejamento_Bilhetes_Mega\"</strong>, com o tipo e a quantidade de bilhetes daquele concurso.</li><li><strong>Exemplo real</strong>: para uma arrecadação de R$ 1.140,00 foram definidos 2 bilhetes de 8 dezenas, 6 bilhetes de 7 dezenas e 92 bilhetes de 6 dezenas, totalizando R$ 1.140,00 em apostas distribuídas em três categorias.</li><li>Em cada bolão os valores mudam e a distribuição é ajustada automaticamente conforme o montante final.</li></ul>"
+  },
+  {
     "question": "Quando são divulgados os bolões estratégicos (acumulados)?",
     "answerHtml": "<p>Os avisos são divulgados <strong>na véspera do concurso acumulado</strong>, com janela de entrada até as <strong>18h</strong> do dia anterior.</p><ul><li><strong>Mega‑Sena</strong>: sorteios às <strong>terças, quintas e sábados</strong>. Quando a Mega está 50+, o aviso é divulgado às <strong>segundas, quartas e sextas</strong> sempre no início da manhã.</li><li><strong>Quina</strong>: sorteios de <strong>segunda a sábado</strong>. Acompanhe a <strong>comunidade</strong> e o <strong>e‑mail</strong>.</li></ul><p>Se houver ajuste no calendário da Caixa, comunicamos imediatamente pelos canais oficiais.</p>"
   },
