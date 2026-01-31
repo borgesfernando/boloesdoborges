@@ -102,6 +102,7 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - `faq.json` continua como fonte de verdade.
 - `faq.html` é gerado em HTML estático para indexação e não depende de JavaScript.
 - Sempre que `faq.json` for atualizado, regenere `faq.html` antes do deploy.
+- Script oficial: `node scripts/generate-faq-html.js`
 
 
 ## 👀 Pronto para entrar?
