@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /index-v1.html
+Disallow: /test.txt
+Disallow: /mega2026_ltsm_vizinhos_autopreenche.py
+Disallow: /templates/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /faq.json
+
+Sitemap: https://borgesfernando.github.io/boloesdoborges/sitemap.xml

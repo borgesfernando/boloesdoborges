@@ -4,22 +4,29 @@
   <!-- Ex.: https://seu-dominio.com/ -->
 
   <url><loc>https://borgesfernando.github.io/boloesdoborges/index.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/mensais.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/especiais.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/acumulados.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/faq.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/ia.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/prest.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/sitemap.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/institucional/sobre.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/institucional/termos.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/institucional/privacidade.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/institucional/contato.html</loc></url>
 
   <!-- Especiais -->
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/especiais.html?id=lf-independencia</loc></url>
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/especiais.html?id=quina-saojoao</loc></url>
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/especiais.html?id=ds-pascoa</loc></url>
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/especiais.html?id=mega-virada</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/especiais/lf-independencia.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/especiais/quina-saojoao.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/especiais/ds-pascoa.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/especiais/mega-virada.html</loc></url>
 
   <!-- Mensais -->
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/mensais.html?id=quina-mensal</loc></url>
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/mensais.html?id=lf-mensal</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/mensais/quina-mensal.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/mensais/lf-mensal.html</loc></url>
 
   <!-- Acumulados -->
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/acumulados.html?id=mega-acumulada</loc></url>
-  <url><loc>https://borgesfernando.github.io/boloesdoborges/templates/acumulados.html?id=quina-acumulada</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/acumulados/mega-acumulada.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/acumulados/quina-acumulada.html</loc></url>
 </urlset>

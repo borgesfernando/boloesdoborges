@@ -46,6 +46,11 @@ function getTipoCorFromId(id) {
   }[prefix] || prefix);
 }
 
+function getProjetoUrl(tipo, id) {
+  if (!tipo || !id) return '#';
+  return `boloes/${tipo}/${id}.html`;
+}
+
 function obterEspeciaisOrdenados(hojeLimpo) {
   if (typeof PROJETOS === 'undefined' || !PROJETOS.especiais || !Array.isArray(PROJETOS.especiais.projetos)) {
     return { especiaisOrdenados: [], especiaisComData: [] };
@@ -133,7 +138,7 @@ async function renderizarMegaAcumuladaAlert() {
         <p>Bol\u00e3o estrat\u00e9gico - aberto sempre que o pr\u00eamio for maior ou igual a ${minimoMilhoes} milh\u00f5es.</p>
         ${janelaLabel ? `<p><strong>Janela de chamada aberta at\u00e9 ${janelaLabel} (hor\u00e1rio de Bras\u00edlia).</strong></p>` : ''}
         <div class="mega-alert-actions">
-          <a href="templates/acumulados.html?id=mega-acumulada" class="btn sb2026">Ver detalhes do bol\u00e3o</a>
+          <a href="boloes/acumulados/mega-acumulada.html" class="btn sb2026">Ver detalhes do bol\u00e3o</a>
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform" class="btn tonal" target="_blank" rel="noopener noreferrer">Entrar na comunidade</a>
         </div>
       </div>
@@ -264,7 +269,7 @@ function renderizarDestaqueEspecial() {
 
   const li = document.createElement('li');
   const link = document.createElement('a');
-  link.href = `templates/especiais.html?id=${projeto.id}`;
+  link.href = getProjetoUrl('especiais', projeto.id);
   link.textContent = projeto.nome || projeto.id;
   li.appendChild(link);
   listaEl.appendChild(li);
@@ -311,12 +316,7 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
 
   const h3 = document.createElement('h3');
   const nomeProjeto = projeto.nome || projeto.id;
-  const templateFile = tipo === 'especiais'
-    ? 'especiais.html'
-    : tipo === 'mensais'
-      ? 'mensais.html'
-      : 'acumulados.html';
-  const href = `templates/${templateFile}?id=${projeto.id}`;
+  const href = getProjetoUrl(tipo, projeto.id);
 
   const titleLink = document.createElement('a');
   titleLink.href = href;
@@ -405,7 +405,7 @@ function configurarAvisoTopo(especiaisComData, hoje) {
     const mensagem = `⏳ Faltam ${diasRestantes} dia${diasRestantes > 1 ? 's' : ''} para garantir sua cota no Bolão "${proximo.nome}"!` +
       `<br><span class="aviso-fechamento">Fechamento no dia ${proximo.dataLimite}!</span>`;
     msgEl.innerHTML = mensagem;
-    btn.href = `templates/especiais.html?id=${proximo.id}`;
+    btn.href = getProjetoUrl('especiais', proximo.id);
     aviso.style.display = 'flex';
   } else {
     aviso.style.display = 'none';

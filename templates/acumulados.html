@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bolões do Borges: Projetos com tecnologia e responsabilidade. Participe conosco! &quot;Transparência e Confiança são os alicerces de um Bolão vencedor&quot;">
+  <meta name="description" content="Bolão estratégico do Super Bolão para concursos acumulados, com entrada por janela e prestação de contas.">
+  <meta name="robots" content="noindex, follow">
   <title id="tituloPagina">Bolão Acumulado</title>
   <link rel="stylesheet" href="../css/styles.css">
   <script defer src="../js/config.js"></script>
@@ -26,7 +27,7 @@
         <div>
           <p><span class="emoji">🎟️</span> Cota individual de <strong>R$ ${projeto.valor},00</strong> por concurso</p>
           <p><span class="emoji">📈</span> Ativado somente para concursos acima de <strong>R$ ${projeto.minimo} milhões</strong></p>
-          <p><span class="emoji">📊</span> Predições geradas por algoritmos inteligentes</p>
+          <p><span class="emoji">📊</span> Organização de jogos com apoio de regras e dados, sem promessa de resultado</p>
           <p><span class="emoji">📧</span> Resultados enviados apenas aos participantes confirmados</p>
         </div>`;
       document.body.style.setProperty("--secondary", `rgb(${projeto.corPrimaria})`);
@@ -35,6 +36,25 @@
   </script>
 </head>
 <body>
+  <div class="disclaimer-bar">
+    <div class="container" style="text-align:center;">
+      Projeto independente, sem vínculo com a Caixa Econômica Federal. Sem promessa de ganho. Participação somente para maiores de 18 anos.
+    </div>
+  </div>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="../index.html">Início</a>
+      <a href="../mensais.html">Mensais</a>
+      <a href="../especiais.html">Especiais</a>
+      <a href="../acumulados.html">Acumulados</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../prest.html">Transparência</a>
+      <a href="../institucional/sobre.html">Sobre</a>
+      <a href="../institucional/termos.html">Termos</a>
+      <a href="../institucional/privacidade.html">Privacidade</a>
+      <a href="../institucional/contato.html">Contato</a>
+    </div>
+  </nav>
   <header>
     <div class="container">
       <h1 id="headerTitle"></h1>

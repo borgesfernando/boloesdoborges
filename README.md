@@ -78,14 +78,30 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - O script `scripts/update-mega-status.js` consulta a API oficial da Caixa (`https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena`) e grava o resultado consolidado em `data/mega-status.json`, incluindo o campo `ativo` calculado a partir do valor mínimo configurado para o projeto `mega-acumulada` em `data/projetos.json`.
 - O workflow `.github/workflows/update-mega-status.yml` roda **todos os dias às 01h30 UTC** (22h30 do dia anterior em Brasília) e ao ser disparado manualmente via `workflow_dispatch`. Ele atualiza o JSON sempre após a atualização oficial da Caixa.
 - Sempre que `data/mega-status.json` muda, o workflow `.github/workflows/sync-mega-status-novo-site.yml` copia o arquivo para `borgesfernando/novo-site/src/data/mega-status.json` – assim o banner automático aparece tanto na landing antiga (VPS) quanto no novo site Astro.
-- A home (`index.html`) e a página `templates/acumulados.html?id=mega-acumulada` leem esse JSON e exibem o destaque apenas quando `ativo: true`. No front-end, o alerta é automaticamente ocultado assim que a data/horário de fechamento (18h do dia anterior ao sorteio) é atingida.
+- A home (`index.html`) e a página `boloes/acumulados/mega-acumulada.html` leem esse JSON e exibem o destaque apenas quando `ativo: true`. No front-end, o alerta é automaticamente ocultado assim que a data/horário de fechamento (18h do dia anterior ao sorteio) é atingida.
 
 ## 🚨 Alerta dos projetos mensais
 
 - O script `scripts/update-mensais-alert.js` grava `data/quina-mensal-alert.json` ou `data/lf-mensal-alert.json` com o campo `ativo`.
 - Os workflows `.github/workflows/set-quina-mensal-alert.yml` e `.github/workflows/set-lf-mensal-alert.yml` são disparados via `workflow_dispatch` (normalmente pelo Apps Script) e ativam/desativam o alerta do projeto específico.
 - Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
-- A home (`index.html`) e a página `templates/mensais.html?id=...` exibem o alerta somente quando `ativo: true` para o projeto chamado.
+- A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html` e `boloes/mensais/lf-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
+
+## 🧭 Estrutura de URLs (SEO)
+
+- Páginas principais: `index.html`, `mensais.html`, `especiais.html`, `acumulados.html`, `faq.html`, `prest.html`, `ia.html`.
+- Páginas institucionais: `institucional/sobre.html`, `institucional/termos.html`, `institucional/privacidade.html`, `institucional/contato.html`.
+- Páginas de bolões (URLs limpas):
+  - Especiais: `boloes/especiais/*.html`
+  - Mensais: `boloes/mensais/*.html`
+  - Acumulados: `boloes/acumulados/*.html`
+- Templates antigos permanecem como fallback e estão marcados com `noindex`.
+
+## ❓ FAQ (HTML estático)
+
+- `faq.json` continua como fonte de verdade.
+- `faq.html` é gerado em HTML estático para indexação e não depende de JavaScript.
+- Sempre que `faq.json` for atualizado, regenere `faq.html` antes do deploy.
 
 
 ## 👀 Pronto para entrar?

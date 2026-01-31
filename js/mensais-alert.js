@@ -5,9 +5,11 @@ function getContainersMensais() {
 
 function getBasePaths() {
   const isTemplatePage = window.location.pathname.includes('/templates/');
+  const isProjectPage = window.location.pathname.includes('/boloes/mensais/');
   return {
     dataPrefix: isTemplatePage ? '../data' : 'data',
-    pagePrefix: isTemplatePage ? 'mensais.html' : 'templates/mensais.html',
+    pagePrefix: isTemplatePage ? '../boloes/mensais' : 'boloes/mensais',
+    isProjectPage,
   };
 }
 
@@ -26,7 +28,7 @@ async function renderizarMensaisAlert() {
   if (!containers.length) return;
 
   try {
-    const { dataPrefix, pagePrefix } = getBasePaths();
+    const { dataPrefix, pagePrefix, isProjectPage } = getBasePaths();
     const [quinaAlert, lfAlert] = await Promise.all([
       carregarAlerta(`${dataPrefix}/quina-mensal-alert.json`),
       carregarAlerta(`${dataPrefix}/lf-mensal-alert.json`),
@@ -50,10 +52,10 @@ async function renderizarMensaisAlert() {
 
     const isQuina = alertEscolhido.projeto === 'quina-mensal';
     const projetoLabel = isQuina ? 'Quina Mensal' : 'Lotofácil Mensal';
-    const actionHtml = pagePrefix === 'mensais.html'
+    const actionHtml = isProjectPage
       ? ''
       : `<div class="mega-alert-actions">
-          <a href="${pagePrefix}?id=${alertEscolhido.projeto}" class="btn sb2026">Ver ${projetoLabel}</a>
+          <a href="${pagePrefix}/${alertEscolhido.projeto}.html" class="btn sb2026">Ver ${projetoLabel}</a>
         </div>`;
 
     const html = `

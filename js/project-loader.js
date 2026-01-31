@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Junta: ativos, depois passados
   const especiaisOrdenados = [...especiaisAtivos, ...especiaisPassados];
 
-  carregarProjetos('especiais', especiaisOrdenados, 'especiais-list', 'especiais.html');
-  carregarProjetos('mensais', PROJETOS.mensais.projetos, 'mensais-list', 'mensais.html');
-  carregarProjetos('acumulados', PROJETOS.acumulados.projetos, 'acumulados-list', 'acumulados.html');
+  carregarProjetos('especiais', especiaisOrdenados, 'especiais-list');
+  carregarProjetos('mensais', PROJETOS.mensais.projetos, 'mensais-list');
+  carregarProjetos('acumulados', PROJETOS.acumulados.projetos, 'acumulados-list');
 
   // 2. AVISO TOP FIXO — APENAS 15 DIAS ANTES DO FECHAMENTO DOS BOLÕES ESPECIAIS
   // Usa a mesma lista especiaisComDatas para reaproveitar o parse de data
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (diasRestantes > 0 && diasRestantes <= 15) {
       const mensagem = `⏳ Faltam ${diasRestantes} dia${diasRestantes > 1 ? 's' : ''} para garantir sua cota no Bolão "${proximo.nome}"!<br><span class="aviso-fechamento">Fechamento no dia ${proximo.dataLimite.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$1/$2/$3')}!</span>`;
       document.getElementById("mensagemAviso").innerHTML = mensagem;
-      document.getElementById("btnParticipar").href = "templates/especiais.html?id=" + proximo.id;
+      document.getElementById("btnParticipar").href = `boloes/especiais/${proximo.id}.html`;
       document.getElementById("avisoTopo").style.display = "flex";
     }
   }
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ================================================
 // Função de renderização dos cards
-function carregarProjetos(tipo, projetos, containerId, templateFile) {
+function carregarProjetos(tipo, projetos, containerId) {
   const container = document.getElementById(containerId);
   projetos.forEach(projeto => {
     const tipoCor = {
@@ -97,7 +97,7 @@ function carregarProjetos(tipo, projetos, containerId, templateFile) {
         ? `<p class="project-date">Bolão fechado para todos os sorteios do mês</p>`
         : '';
     const textoBotao = tipo === 'acumulados' || tipo === 'mensais' ? 'Mais informações' : 'Como Participar';
-    const link = `templates/${templateFile}?id=${projeto.id}`;
+    const link = `boloes/${tipo}/${projeto.id}.html`;
 
     card.innerHTML = `
       <div class="project-info">
