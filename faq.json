@@ -241,7 +241,7 @@
   },
   {
     "question": "Onde vejo minha planilha e histórico?",
-    "answerHtml": "<p>Você recebe em seu e‑mail um link exclusivo com todos os dados de pagamentos, cotas e resultados. Também pode acessar pelo seu Drive em \"Compartilhados comigo\".</p>"
+    "answerHtml": "<p>A maneira mais fácil de confirmar é entrar no <strong>Google Drive</strong> em <strong>\"Compartilhados Comigo\"</strong> e se você é participante do projeto, nesta área você terá acesso aos arquivos e planilhas com todos os dados do bolão.</p>"
   },
   {
     "question": "Como e quando as planilhas são atualizadas?",
