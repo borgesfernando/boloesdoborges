@@ -176,6 +176,10 @@
     "answerHtml": "<p>Sim. Os pagamentos dos <strong>projetos especiais</strong> devem ser feitos <strong>necessariamente nas datas previstas</strong> no cronograma de cada projeto (dias de PIX informados na abertura e nos comunicados).</p><p>Esse alinhamento garante que todos os aportes entrem no período correto, permitindo planejar as compras de apostas, respeitar os prazos oficiais da Caixa e manter a prestação de contas organizada.</p>"
   },
   {
+    "question": "Qual é o prazo para pagamento nos projetos especiais?",
+    "answerHtml": "<p>Nos projetos especiais, o pagamento deve ser realizado dentro de uma janela fixa no dia do projeto, que ocorre do início da manhã até às 12h (meio-dia).</p><p>Caso o pagamento não seja identificado dentro desse período, o participante poderá receber notificações automáticas por e-mail e WhatsApp ao longo da manhã, a partir das 10h, como lembrete para regularização.</p><p>O PIX deve ser realizado até às 12h do dia do projeto, para que seja possível concluir os procedimentos operacionais e registrar as apostas dentro do prazo.</p><p>Em situações excepcionais, caso não seja possível realizar o pagamento no dia previsto, o valor poderá ser regularizado no mês seguinte, devendo ser realizado o pagamento conjunto das duas parcelas (a do mês atual e a pendente).</p>"
+  },
+  {
     "question": "Há desconto ou mudança de valor se eu pagar fora do período previsto?",
     "answerHtml": "<p>Não. Pagamentos realizados fora dos <strong>períodos previstos</strong> não geram desconto nem alteração especial de valores.</p><p>Cada projeto especial possui sua <strong>data de referência</strong> e, caso haja atualização de valores, ela segue a <strong>regra geral dos projetos especiais</strong> (ajustes comunicados à comunidade), independentemente do momento em que o PIX foi feito.</p>"
   },

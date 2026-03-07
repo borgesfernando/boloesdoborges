@@ -172,6 +172,10 @@
     "answer": "Ha correcao simbolica de R$ 1 no mes seguinte. Se o atraso nao for regularizado, o participante e removido e o valor pago e devolvido. Em caso de imprevistos, avise com antecedencia."
   },
   {
+    "question": "Qual é o prazo para pagamento nos projetos especiais?",
+    "answer": "Os pagamentos devem ser feitos no dia do projeto, entre o início da manhã e 12h (meio-dia). Participantes que ainda não pagaram podem receber lembretes por e-mail e WhatsApp a partir das 10h. Se houver impossibilidade excepcional de pagamento no dia, a regularização deve ocorrer no mês seguinte com o pagamento das duas parcelas juntas."
+  },
+  {
     "question": "Preciso pagar os projetos especiais exatamente nas datas previstas?",
     "answer": "Sim. Os pagamentos devem seguir as datas do cronograma para manter a organizacao e os prazos da Caixa."
   },
