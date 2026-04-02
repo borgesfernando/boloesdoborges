@@ -29,7 +29,8 @@ async function renderizarMensaisAlert() {
 
   try {
     const { dataPrefix, pagePrefix, isProjectPage } = getBasePaths();
-    const [quinaAlert, lfAlert] = await Promise.all([
+    const [dsAlert, quinaAlert, lfAlert] = await Promise.all([
+      carregarAlerta(`${dataPrefix}/ds-mensal-alert.json`),
       carregarAlerta(`${dataPrefix}/quina-mensal-alert.json`),
       carregarAlerta(`${dataPrefix}/lf-mensal-alert.json`),
     ]);
@@ -37,11 +38,13 @@ async function renderizarMensaisAlert() {
     const params = new URLSearchParams(window.location.search);
     const pageId = params.get('id');
     const alertEscolhido =
-      pageId === 'quina-mensal'
+      pageId === 'ds-mensal'
+        ? getAlertByProjectId('ds-mensal', [dsAlert])
+        : pageId === 'quina-mensal'
         ? getAlertByProjectId('quina-mensal', [quinaAlert])
         : pageId === 'lf-mensal'
         ? getAlertByProjectId('lf-mensal', [lfAlert])
-        : [quinaAlert, lfAlert].find((alert) => alert?.ativo);
+        : [dsAlert, quinaAlert, lfAlert].find((alert) => alert?.ativo);
 
     if (!alertEscolhido || !alertEscolhido.ativo) {
       containers.forEach((container) => {
@@ -50,8 +53,12 @@ async function renderizarMensaisAlert() {
       return;
     }
 
-    const isQuina = alertEscolhido.projeto === 'quina-mensal';
-    const projetoLabel = isQuina ? 'Quina Mensal' : 'Lotofácil Mensal';
+    const projetoLabel =
+      alertEscolhido.projeto === 'quina-mensal'
+        ? 'Quina Mensal'
+        : alertEscolhido.projeto === 'lf-mensal'
+        ? 'Lotofácil Mensal'
+        : 'Dupla Sena Mensal';
     const actionHtml = isProjectPage
       ? ''
       : `<div class="mega-alert-actions">

@@ -12,7 +12,7 @@ Projetos coordenados com transparência, tecnologia e 15 anos de experiência pa
 
 ## 📑 Linhas de projetos
 
-- **Projetos Mensais**: Lotofácil e Quina, com sorteios diários para quem gosta de acompanhar resultados toda noite.
+- **Projetos Mensais**: Lotofácil, Quina e Dupla Sena, com rotinas próprias de sorteio para quem gosta de acompanhar resultados com frequência.
 - **Projetos Especiais**: Quina de São João, Lotofácil da Independência, Dupla Sena de Páscoa e Mega da Virada.
 - **Projetos Estratégicos (Acumulados)**: ativações pontuais quando Mega-Sena ou Quina atingem prêmios relevantes, com comunicação dedicada e janelas de entrada curtas.
 
@@ -82,10 +82,10 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 
 ## 🚨 Alerta dos projetos mensais
 
-- O script `scripts/update-mensais-alert.js` grava `data/quina-mensal-alert.json` ou `data/lf-mensal-alert.json` com o campo `ativo`.
-- Os workflows `.github/workflows/set-quina-mensal-alert.yml` e `.github/workflows/set-lf-mensal-alert.yml` são disparados via `workflow_dispatch` (normalmente pelo Apps Script) e ativam/desativam o alerta do projeto específico.
+- O script `scripts/update-mensais-alert.js` grava `data/quina-mensal-alert.json`, `data/lf-mensal-alert.json` ou `data/ds-mensal-alert.json` com o campo `ativo`.
+- Os workflows `.github/workflows/set-quina-mensal-alert.yml`, `.github/workflows/set-lf-mensal-alert.yml` e `.github/workflows/set-ds-mensal-alert.yml` são disparados via `workflow_dispatch` (normalmente pelo Apps Script) e ativam/desativam o alerta do projeto específico.
 - Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
-- A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html` e `boloes/mensais/lf-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
+- A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html`, `boloes/mensais/lf-mensal.html` e `boloes/mensais/dupla-sena-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
 
 ## 🧭 Estrutura de URLs (SEO)
 

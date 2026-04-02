@@ -94,7 +94,7 @@ function carregarProjetos(tipo, projetos, containerId) {
     const detalhes = projeto.minimo
       ? `<p class="project-date">Participamos quando o prêmio acumula acima de <strong>R$ ${projeto.minimo} milhões</strong></p>`
       : projeto.cotaMensal
-        ? `<p class="project-date">Bolão fechado para todos os sorteios do mês</p>`
+        ? `<p class="project-date">Cota mensal: <strong>R$ ${projeto.cotaMensal},00</strong> · Ciclo: <strong>${projeto.ciclo || 'mensal'}</strong> · Sorteios: <strong>${projeto.sorteios || 'conforme calendário comunicado'}</strong></p>`
         : '';
     const textoBotao = tipo === 'acumulados' || tipo === 'mensais' ? 'Mais informações' : 'Como Participar';
     const link = `boloes/${tipo}/${projeto.id}.html`;

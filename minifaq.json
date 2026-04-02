@@ -1,306 +1,306 @@
 [
   {
     "question": "O que é SB?",
-    "answer": "Super Bolao (SB), tambem chamado de Sierra Bravo, e um projeto coletivo iniciado em 2009 por um pequeno grupo de militares para a Mega da Virada. Hoje tem maior escala, governanca e participantes em varias regioes. E uma acao entre amigos coordenada por Fernando Borges para aumentar as chances do grupo. Siglas de projetos especiais: QSJ, LF e DSP, cada um com pagina propria e regras. Projeto privado sem vinculo com a Caixa Economica Federal."
+    "answerHtml": "<p>Super Bolão (SB) é um projeto coletivo organizado iniciado em 2009, quando um pequeno grupo de militares se organizou para participar da Mega da Virada. Desde então, o SB evoluiu em escala e governança, tornando‑se referência em organização, transparência financeira e método.</p>"
   },
   {
-    "question": "Quais sao os tipos de projetos disponiveis?",
-    "answer": "Ha tres linhas: Projetos Mensais (Lotofacil e Quina diarias), Projetos Especiais (Lotofacil da Independencia, Quina de Sao Joao, Dupla Sena de Pascoa, Mega da Virada) e Projetos Estrategicos/Acumulados (quando Mega supera R$ 50 milhoes ou Quina supera R$ 40 milhoes). E possivel participar de um ou mais."
+    "question": "Quais são os tipos de projetos disponíveis?",
+    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li>Projetos Mensais: sorteios recorrentes da Lotofácil, da Quina e da Dupla Sena, ideais para quem gosta de acompanhar os…</li><li>Projetos Especiais: focados nos grandes concursos da Caixa — Lotofácil da Independência, Quina de São João, Dupla Sena…</li><li>Projetos Estratégicos (Acumulados): mobilizados quando há acumulações relevantes, como Mega‑Sena (acima de R$ 50…</li></ul>"
   },
   {
-    "question": "Como funcionam os projetos especiais (Lotofacil da Independencia, Quina de Sao Joao, Dupla Sena de Pascoa e Mega da Virada)?",
-    "answer": "Planejamento anual com parcelas mensais fixas e PIX em dias definidos (7, 8, 9 ou 10). A cota total e parcelada ate a data-limite; depois, so vagas remanescentes com pagamento integral. Recursos ficam em caixinhas do Nubank e conciliados em planilhas no Drive. O administrador monta jogos, registra apostas, confere resultados e envia relatorios. Calendario 2026: LF Independencia R$ 240 em 8x de R$ 30 (jan-ago), PIX dia 7, confirmacoes ate 07/08/2026, sorteio 07/09/2026. Quina Sao Joao R$ 180 em 6x de R$ 30 (jan-jun), PIX dia 8, confirmacoes ate 08/06/2026, sorteio 28/06/2026. Dupla Sena Pascoa R$ 120 em 4x de R$ 30 (jan-abr), PIX dia 9, confirmacoes ate 09/04/2026, sorteio 19/04/2026. Mega da Virada R$ 600 em 12x de R$ 50 (jan-dez), PIX dia 10, confirmacoes ate 10/12/2026, sorteio 31/12/2026. Entregas: relacao de participantes, comprovantes de PIX, planilhas no Drive, relatorios de arrecadacao e registros, e conferencia automatizada com rateio proporcional."
+    "question": "Como funcionam os projetos especiais (Lotofácil da Independência, Quina de São João, Dupla Sena de Páscoa e Mega da Virada)?",
+    "answerHtml": "<p>Visão geral dos projetos especiais:</p><ul><li>Planejamento anual: cada projeto tem cronograma divulgado no início do ano, com parcelas mensais fixas e data de PIX…</li><li>Cotas programadas: a cota total é diluída em parcelas mensais, garantindo previsibilidade e permitindo entradas…</li><li>Gestão financeira: os recursos ficam segregados em caixinhas exclusivas no Nubank e são conciliados em planilhas com…</li><li>Operação centralizada: o administrador monta os jogos, registra as apostas, confere os resultados e envia relatórios e…</li></ul>"
   },
   {
-    "question": "Como funcionam os projetos mensais (Lotofacil e Quina)?",
-    "answer": "Lotofacil Mensal usa apostas de 15 e 16 dezenas com fechamento e teimosinha para 24 concursos. Quina Mensal usa apostas de 5 dezenas com fechamento e teimosinha para 24 concursos. Sorteios 6 vezes por semana (seg-sab), com possiveis suspensoes por feriados ou ajustes da Caixa. Cada ciclo cobre 24 concursos e pode nao coincidir com o mes calendario. Prestacao de contas diaria por e-mail e WhatsApp apenas para avisos. Pagamentos mensais via PIX. Ao fim de cada ciclo, o participante deve confirmar a renovacao."
+    "question": "Como funcionam os projetos mensais (Lotofácil, Quina e Dupla Sena)?",
+    "answerHtml": "<p>Resumo dos projetos mensais:</p><ul><li>Lotofácil Mensal (LF): valor integralmente aplicado em apostas de 15 e 16 dezenas, com fechamento (combinações) e…</li><li>Quina Mensal: valor integralmente aplicado em apostas de 5 dezenas, com fechamento e teimosinha para 24 concursos.</li><li>Dupla Sena Mensal: valor integralmente aplicado em apostas de 6 dezenas, com fechamento e teimosinha para 12 concursos…</li><li>Volume de sorteios: Lotofácil e Quina acontecem seis vezes por semana (segunda a sábado), enquanto a Dupla Sena segue a…</li><li>Ciclo técnico: cada rodada cobre o ciclo informado em cada página. Como nem sempre esse total encaixa exatamente em um…</li></ul>"
   },
   {
     "question": "Como funcionam os projetos de concursos acumulados?",
-    "answer": "Avisos saem na comunidade no inicio da manha. Janela de entrada ate 18h do dia anterior ao sorteio. Cota de R$ 20 por concurso. Ativacao apenas quando Mega-Sena estiver acima de R$ 50 milhoes ou Quina acima de R$ 40 milhoes. IA apoia escolhas sem promessa de acerto. Resultados somente para participantes confirmados."
+    "answerHtml": "<p>Concursos acumulados (estratégicos) ⏰:</p><ul><li>Fique atento: os avisos de prêmios acumulados saem na comunidade logo no início da manhã. Participe e acompanhe os…</li><li>Janela de entrada: até as 18h do dia anterior ao sorteio — organização com tempo e calma para zero erro.</li><li>Cota: R$ 20, 00 por concurso.</li><li>Ativação: apenas quando a Mega‑Sena estiver acima de R$ 50 milhões ou a Quina acima de R$ 40 milhões.</li><li>Predições por IA: combinamos estatística e algoritmos inteligentes para apoiar escolhas (sem promessa de acerto).</li></ul>"
   },
   {
-    "question": "Sao quantos participantes a cada bolao?",
-    "answer": "O numero varia conforme adesao. Nos acumulados, a entrada e aberta a qualquer pessoa dentro da janela anunciada."
+    "question": "São quantos participantes a cada bolão?",
+    "answerHtml": "<p>O número de participantes varia a cada edição, conforme a adesão voluntária. Os acumulados são <strong>abertos</strong>: qualquer pessoa pode entrar dentro da janela anunciada pelo organizador adquirindo suas cotas.</p>"
   },
   {
     "question": "Posso comprar mais de uma cota?",
-    "answer": "Sim. Envie PIX com valor multiplo da cota; o sistema identifica e registra a quantidade correspondente."
+    "answerHtml": "<p><strong>Sim. </strong> Basta fazer o PIX no valor múltiplo que desejar (ex. : R$ 40 para duas cotas, R$ 60 para três cotas). O sistema identifica pelo valor e registra a quantidade correspondente na planilha.</p>"
   },
   {
-    "question": "Sao quantos jogos feitos no bolao?",
-    "answer": "A quantidade e o tipo dependem do total arrecadado. Depois da janela, 100% do valor e distribuido em bilhetes de 8, 7 e 6 dezenas em proporcao otimizada. A prestacao de contas detalha o tipo e a quantidade de bilhetes em PDF especifico."
+    "question": "São quantos jogos feitos no bolão?",
+    "answerHtml": "<p>A quantidade e o tipo de jogos dependem do total arrecadado e do número de participantes confirmados.</p><ul><li>Após o fim da janela, o Administrador distribui 100% do valor em bilhetes de 8, 7 e 6 dezenas, em proporção otimizada…</li><li>Tudo fica detalhado na prestação de contas, em um PDF específico chamado \"Planejamento_Bilhetes_Mega\", com o tipo e a…</li><li>Exemplo real: para uma arrecadação de R$ 1. 140, 00 foram definidos 2 bilhetes de 8 dezenas, 6 bilhetes de 7 dezenas e 92…</li><li>Em cada bolão os valores mudam e a distribuição é ajustada automaticamente conforme o montante final.</li></ul>"
   },
   {
-    "question": "Quando sao divulgados os boloes estrategicos (acumulados)?",
-    "answer": "Os avisos saem na vespera do concurso, com entrada ate 18h do dia anterior. Mega-Sena: sorteios tercas, quintas e sabados; quando > R$ 50 milhoes, avisos segundas, quartas e sextas de manha. Quina: sorteios de segunda a sabado. Ajustes no calendario da Caixa sao comunicados."
+    "question": "Quando são divulgados os bolões estratégicos (acumulados)?",
+    "answerHtml": "<p>Os avisos são divulgados <strong>na véspera do concurso acumulado</strong>, com janela de entrada até as <strong>18h</strong> do dia anterior.</p><ul><li><strong>Mega‑Sena</strong>: sorteios às <strong>terças, quintas e sábados</strong>. Quando a Mega está 50+, o aviso é divulgado às <strong>segundas, quartas e sextas</strong> sempre no início da manhã.</li><li><strong>Quina</strong>: sorteios de <strong>segunda a sábado</strong>. Acompanhe a <strong>comunidade</strong> e o <strong>e‑mail</strong>.</li></ul><p>Se houver ajuste no calendário da Caixa, comunicamos imediatamente pelos canais do organizador.</p>"
   },
   {
-    "question": "Como funcionam os pagamentos dos projetos estrategicos (acumulados)?",
-    "answer": "Cadastro atualizado na comunidade e requisito. Envie PIX apenas na janela anunciada, com valor exato ou multiplo. Confirmacao chega por e-mail em ate 5 minutos se dados corretos. Nome e cota entram na planilha e, a noite, e enviado o link do Drive com comprovantes. Se nao chegar confirmacao: verifique spam, dados, aguarde alguns minutos e contate o organizador."
+    "question": "Como funcionam os pagamentos dos projetos estratégicos (acumulados)?",
+    "answerHtml": "<p>Fluxo de pagamento dos acumulados:</p><ul><li>✅ Cadastro atualizado é requisito; faça seu registro na comunidade antes de tentar o PIX e alerte o Administrador…</li><li>⏳ Janela anunciada pelo organizador: só envie o PIX dentro da janela divulgada na véspera do concurso, usando o valor…</li><li>📨 Confirmação automática: não há necessidade de comprovante — o e-mail chega em até 5 minutos desde que e-mail e…</li><li>📋 Planilha de participantes: nome e cota entram na planilha do projeto que acompanha a prestação de contas após o…</li><li>📂 Prestação de contas: à noite, depois do registro das apostas, você recebe o link para a pasta do projeto no Drive…</li></ul>"
   },
   {
-    "question": "Como funciona a prestacao de contas dos projetos estrategicos (acumulados)?",
-    "answer": "Enviada aos participantes confirmados e organizada em pasta no Drive. Fluxo: cadastro ativo, acesso com Gmail correto, PIX dentro da janela, confirmacao em ate 5 minutos, registro das apostas, envio de documentos iniciais (relacao de participantes e distribuicao dos bilhetes), relatorio final apos sorteio e pasta completa disponivel. Voce esta dentro se o PIX foi efetivado e a confirmacao chegou."
+    "question": "Como funciona a prestação de contas dos projetos estratégicos (acumulados)?",
+    "answerHtml": "<p>A prestação de contas dos projetos estratégicos (acumulados) é enviada aos participantes confirmados (cotas pagas) e fica organizada em uma pasta no Drive.</p><ul><li>✅ Cadastro na comunidade: confirme que seu cadastro está ativo e com o e-mail correto.</li><li>🔐 Acesso aos documentos (Drive): o acesso aos documentos da prestação de contas é…</li><li>⏳ Janela de entrada: acompanhe os avisos e faça o PIX no valor da cota (ou múltiplos)…</li><li>📨 Confirmação em até 5 minutos: após o PIX, você recebe a confirmação de pagamento por…</li></ul>"
   },
   {
-    "question": "Existe grupo para os projetos Estrategicos (Acumulados)?",
-    "answer": "Nao. A comunicacao ocorre por e-mail usando o cadastro da comunidade, pelos canais do organizador."
+    "question": "Existe grupo para os projetos Estratégicos (Acumulados)?",
+    "answerHtml": "<p>Não. Os projetos estratégicos são operações pontuais, sem grupo específico. Toda a comunicação ocorre por e-mail, usando o endereço informado no cadastro da comunidade.</p><p>Mensagens sobre abertura de vagas, confirmação de pagamentos e envio de comprovantes seguem exclusivamente pelo canal do organizador.</p>"
   },
   {
     "question": "Quanto tempo preciso permanecer nos projetos?",
-    "answer": "Projetos Especiais exigem pagamento das parcelas ate o sorteio. Projetos Mensais seguem por ciclos e a continuidade tende a ser mais barata por reaplicacao de premios. Projetos Estrategicos sao pontuais, validos apenas para a janela do sorteio."
+    "answerHtml": "<p>O tempo de permanência depende da modalidade escolhida:</p><ul><li>Projetos Especiais: ao confirmar sua vaga, você declara ciência das regras e mantém as parcelas programadas até o…</li><li>Projetos Mensais: a entrada garante sua vaga nos ciclos seguintes; os valores de continuidade tendem a ser menores…</li><li>Projetos Estratégicos (Acumulados): participação pontual e independente, válida apenas para o sorteio daquela janela, …</li></ul>"
   },
   {
     "question": "Quando ocorrem os sorteios?",
-    "answer": "Cada sorteio segue o calendario oficial da Caixa; as datas sao informadas na comunidade."
+    "answerHtml": "<p>📅 Cada projeto segue o calendário oficial da Caixa. As datas são informadas com antecedência na comunidade.</p>"
   },
   {
-    "question": "Por que participar de um bolao?",
-    "answer": "Mais chances com custo dividido, uso de fechamentos e diversificacao de palpites, comodidade pela administracao centralizada, possibilidade de premios intermediarios, historico de grandes premios em boloes, risco distribuido, logistica simplificada, comunidade e transparencia. Loterias envolvem risco e nao ha garantia de premios."
+    "question": "Por que participar de um bolão?",
+    "answerHtml": "<p>Vantagens na prática:</p><ul><li>Mais chances: mais jogos por pessoa, cobrindo combinações que sozinho ficariam caras.</li><li>Custo‑benefício: uma verdadeira vaquinha — poder de fogo maior sem pesar no bolso.</li><li>Desdobramentos e fechamentos: técnicas que ampliam a cobertura com custo diluído entre as cotas.</li><li>Diversificação de palpites: menos jogos parecidos, mais \"rede\" para capturar acertos.</li><li>Comodidade: o administrador faz o trabalho pesado (montagem dos jogos, compra, organização de cotas, conferência e…</li></ul>"
   },
   {
-    "question": "E por que participar dos Boloes do Borges?",
-    "answer": "Ha historico documentado, metodo com apoio de IA sem promessa de acerto, organizacao e transparencia, sem taxa de administracao (100% vai para apostas), controles de seguranca e LGPD, e comodidade para o participante. Resultados passados nao garantem futuros."
+    "question": "E por que participar dos Bolões do Borges?",
+    "answerHtml": "<p>Motivos que fazem diferença 🧠🔒:</p><ul><li>Histórico documentado: registros de premiações intermediárias e resultados ficam organizados na prestação de contas…</li><li>Método e IA: desdobramentos, variações controladas, teimosinha e modelos de apoio (estatística e LSTM) para escolhas…</li><li>Organização e transparência: regras claras, cronograma, registros de apostas e comprovantes compartilhados; sem taxa de…</li><li>Confiança e segurança: administração identificada, controles de acesso, trilhas auditáveis e atenção à LGPD; …</li><li>Comodidade para você: o trabalho pesado (montagem dos jogos, compras, conferência e rateio) fica por nossa conta; você…</li></ul>"
   },
   {
     "question": "Quem administra os projetos, os recursos e as apostas da comunidade?",
-    "answer": "Todos os projetos sao administrados exclusivamente por Borges, incluindo gestao de recursos, estrategias, geracao e registro de apostas, acompanhamento de sorteios e informacoes aos participantes."
+    "answerHtml": "<p>Todos os projetos da comunidade são administrados única e exclusivamente pelo BORGES.</p><p>Isso inclui:</p><ul><li>A gestão integral dos recursos financeiros arrecadados;</li><li>A definição das estratégias de apostas;</li><li>A geração, conferência e registro das apostas na Caixa;</li><li>O acompanhamento dos sorteios e a prestação de informações aos participantes.</li></ul><p>O BORGES atua como administrador financeiro e gestor operacional, centralizando as decisões para garantir organização, transparência e coerência em todos os projetos.</p>"
   },
   {
-    "question": "Quem e o Administrador e quais sao suas responsabilidades?",
-    "answer": "O administrador e Fernando Borges, profissional de seguranca da informacao com mestrado em Ciencia da Computacao e atuacao em ciberseguranca. Responsavel por governanca, regras, seguranca e prevencao a fraudes, registros de apostas, consolidacao de comprovantes e resultados, prestacao de contas e atendimento. Compromissos: transparência, LGPD, sem taxa de administracao, 100% dos valores em apostas, IA apenas como apoio, respeito a janelas e regras. Contato: correiodofernando@gmail.com."
+    "question": "Quem é o Administrador e quais são suas responsabilidades?",
+    "answerHtml": "<p>O Administrador dos projetos é Fernando Borges.</p><ul><li>Profissional de Segurança da Informação e Incident Handler;</li><li>Mestrado (áreas) em Ciência da Computação, com atuação em Cybersecurity;</li><li>Entusiasta de IA e Machine Learning aplicados a estratégias de loteria;</li><li>Organizador dos bolões e curador dos modelos e regras.</li></ul>"
   },
   {
-    "question": "Quais sao os compromissos do organizador?",
-    "answer": "Conduzir projetos com transparencia e etica, aplicar integralmente os valores em apostas oficiais, prestar contas com comprovantes e relatorios, proteger dados pessoais e distribuir premios proporcionalmente as cotas. Os procedimentos seguem as regras da Receita Federal para apostas conjuntas (RIR/2018 art. 732, I, e Lei 11.941/2009), com declaracao pelo administrador e pelos participantes conforme a legislacao."
+    "question": "Quais são os compromissos do organizador?",
+    "answerHtml": "<p>Essa distribuição observa as diretrizes da Receita Federal do Brasil aplicáveis a apostas conjuntas em loterias, nos termos do Regulamento do Imposto sobre a Renda – RIR/2018, art. 732, inciso I, e da Lei nº 11. 941/2009.</p><ul><li>Conduzir todos os projetos com transparência, responsabilidade e ética, zelando pela…</li><li>Aplicar integralmente os valores arrecadados na aquisição de apostas oficiais, conforme…</li><li>Prestar contas de forma clara, organizada e acessível, disponibilizando aos participantes…</li><li>Preservar a confidencialidade das informações pessoais e financeiras, armazenando dados e…</li></ul>"
   },
   {
-    "question": "Como a IA e usada nos projetos?",
-    "answer": "A IA apoia as escolhas com base em dados, sem promessa de acerto. Combina estatistica descritiva com modelos LSTM, seleciona numeros por faixas, cria lotes com fixa exclusiva, controla semelhanca entre jogos e aplica bloqueios e variacoes conforme o tamanho do jogo."
+    "question": "Como a IA é usada nos projetos?",
+    "answerHtml": "<p>🤖 Usamos IA para apoiar as escolhas com base em dados — sem prometer acertos — e generalizamos para todas as modalidades.</p><ul><li>Estatística vs LSTM (alto nível): combinamos estatística descritiva…</li><li>Pool por faixas: selecionamos números fortes por blocos/faixas para formar um conjunto…</li><li>Lotes com fixa exclusiva: criamos subgrupos com uma fixa por lote para aumentar a…</li><li>Semelhança controlada: limitamos o quanto dois jogos podem se parecer entre si e com o…</li></ul>"
   },
   {
-    "question": "Quais premios ja foram conquistados pelos boloes?",
-    "answer": "Ha registros de premiacoes intermediarias em diferentes projetos, documentadas em planilhas e relatorios. Resultados variam por periodo e nao ha garantia de retorno."
+    "question": "Quais prêmios já foram conquistados pelos bolões?",
+    "answerHtml": "<p>Registros de premiações intermediárias aparecem em diferentes projetos. Os detalhes ficam documentados nas planilhas e relatórios enviados aos participantes.</p><ul><li>Constância é essencial — a qualquer momento a premiação maior pode chegar;</li><li>O trabalho sério com IA e análise estatística vem aprimorando a qualidade dos jogos;</li><li>Transparência total: ocorrências e documentos constam nas planilhas e relatórios de prestação de contas.</li></ul>"
   },
   {
     "question": "Posso participar?",
-    "answer": "Sim, desde que seja ex-participante ou indicado por participante ativo, cumpra pagamentos e prazos, tenha Gmail e WhatsApp e aceite as regras. Para entrar, preencha o formulario, acompanhe as oportunidades e receba o Termo de participacao."
+    "answerHtml": "<p>Sim. Para participar, observe os requisitos e siga os passos abaixo.</p><ul><li>Ser ex‑integrante de projetos anteriores ou indicado por participante ativo;</li><li>Compromisso com os pagamentos nos valores e prazos definidos para cada projeto;</li><li>Ter e‑mail do Gmail (acesso às planilhas e prestação de contas);</li><li>Ter WhatsApp para acompanhar os avisos da comunidade;</li><li>Concordar com as regras de participação e fluxo de prestação de contas.</li></ul>"
   },
   {
     "question": "Por que preciso ter um e-mail no Gmail?",
-    "answer": "O acesso as planilhas e documentos usa Google Drive e requer conta Gmail logada."
+    "answerHtml": "<p>📧 Porque usamos os recursos do Google (Drive, Planilhas, Documentos). O acesso é exclusivo a usuários logados com conta Gmail.</p>"
   },
   {
-    "question": "Existe uma formalizacao da participacao na comunidade?",
-    "answer": "Sim. Pelo link de entrada na comunidade, voce avalia as regras e recebe um Termo de participacao personalizado, usado para transparencia, rastreabilidade e prestacao de contas."
+    "question": "Existe uma formalização da participação na comunidade?",
+    "answerHtml": "<p>Sim. Acessando o link Entrar na Comunidade você pode avaliar as regras da Comunidade e receber o <strong>Termo de participação</strong> personalizado.</p><p>Esse documento integra o conjunto de comprovações válidas para fins de <strong>transparência</strong>, <strong>rastreabilidade</strong> e <strong>prestação de contas</strong> da comunidade.</p>"
   },
   {
-    "question": "Ja tenho cadastro na comunidade e ja participo de outros projetos. Preciso fazer novo cadastro?",
-    "answer": "Nao. Basta fazer o PIX no valor exato e no dia correto do projeto desejado."
+    "question": "Já tenho cadastro na comunidade e já participo de outros projetos. Preciso fazer novo cadastro?",
+    "answerHtml": "<p>Pessoas que já são cadastradas na comunidade ou já participam de outros projetos, basta fazer o PIX no valor exato e no dia correto do projeto desejado.</p>"
   },
   {
-    "question": "Preciso preencher o formulario mais de uma vez?",
-    "answer": "Nao. O formulario e unico. Depois da aprovacao, basta acompanhar avisos e pagar nos prazos. Se mudar dados importantes, informe o administrador."
+    "question": "Preciso preencher o formulário mais de uma vez?",
+    "answerHtml": "<p><strong>Não. </strong> O formulário de inscrição é preenchido apenas uma vez para validar seus dados e liberar seu cadastro na comunidade.</p><p>Depois da aprovação inicial, você já está habilitado a participar normalmente dos projetos em andamento, bastando acompanhar os avisos de vagas e confirmar seus pagamentos dentro dos prazos comunicados.</p><p>Se mudar algum dado importante (e-mail, WhatsApp ou titular da chave PIX), basta avisar o Administrador para atualização — não é necessário reenviar o formulário.</p>"
   },
   {
-    "question": "Ainda tenho duvidas. O que faco?",
-    "answer": "Entre em contato com o organizador por e-mail."
+    "question": "Ainda tenho dúvidas. O que faço?",
+    "answerHtml": "<p>Entre em contato com o organizador por e‑mail.</p>"
   },
   {
-    "question": "Posso entrar nos boloes a qualquer tempo?",
-    "answer": "Sim, mas apenas nas janelas definidas. Projetos Especiais aceitam entradas ate a data-limite; quem entra depois paga a cota integral em parcela unica com correcao simbolica. Valores integrais 2026: LF Independencia R$ 247 ate 07/08/2026; Quina Sao Joao R$ 185 ate 08/06/2026; Dupla Sena Pascoa R$ 123 ate 09/04/2026; Mega da Virada R$ 611 ate 10/12/2026. Projetos Mensais abrem janela a cada ciclo de 24 concursos. Projetos Estrategicos abrem na vespera e fecham as 18h. Todas as janelas sao anunciadas na comunidade WhatsApp."
+    "question": "Posso entrar nos bolões a qualquer tempo?",
+    "answerHtml": "<p>Sim, mas as entradas ocorrem apenas nas datas e janelas definidas para cada projeto.</p><ul><li>Projetos Especiais: seguem um cronograma anual com parcelas mensais. Entradas são aceitas até a data‑limite de cada…</li><li>Projetos Mensais: abrem janela de entrada a cada ciclo de 24 concursos. Veja detalhes da Lotofácil Mensal e da Quina…</li><li>Projetos Estratégicos (Acumulados): têm chamadas no dia anterior aos sorteios e encerram às 18h. Acompanhe a Mega Sena…</li></ul>"
   },
   {
-    "question": "Ha limite de cotas por pessoa?",
-    "answer": "Nao. Cada pessoa pode adquirir quantas cotas desejar, conforme disponibilidade e regras de cada projeto."
+    "question": "Há limite de cotas por pessoa?",
+    "answerHtml": "<p>Não. Cada pessoa pode adquirir quantas cotas desejar, respeitando a disponibilidade e as regras específicas de cada projeto.</p>"
   },
   {
     "question": "Posso indicar amigos ou familiares?",
-    "answer": "Sim. Participantes ativos podem indicar, desde que cumpram os criterios de participacao."
+    "answerHtml": "<p>Sim. Participantes ativos podem indicar outras pessoas, desde que atendam aos critérios de participação.</p>"
   },
   {
-    "question": "Posso dividir uma cota com alguem?",
-    "answer": "Sim, mas o bolao reconhece apenas o titular registrado. A comunicacao e o repasse de premios seguem para esse titular, que fica responsavel por dividir internamente; recomenda-se formalizar o acordo entre os envolvidos."
+    "question": "Posso dividir uma cota com alguém?",
+    "answerHtml": "<p>Sim, dividir uma cota com amigos ou familiares é permitido. Combinar internamente como será o rateio e registrar os acordos por escrito evita ruídos. A organização do bolão reconhece apenas o titular indicado no cadastro do organizador.</p>"
   },
   {
-    "question": "O que e a comunidade WhatsApp \"Boloes do Borges\" e como ela funciona?",
-    "answer": "A comunidade integra os projetos. Ha um grupo principal para avisos e abertura de vagas e subgrupos por projeto para participantes confirmados. Os grupos ficam silenciados e sao abertos apenas para interacoes pontuais."
+    "question": "O que é a comunidade WhatsApp \"Bolões do Borges\" e como ela funciona?",
+    "answerHtml": "<p>A comunidade ‘Bolões do Borges’ no WhatsApp funciona como um integrador de todos os projetos e facilita as comunicações importantes.</p><ul><li>Grupo de avisos: é onde o Admin reúne todos os participantes para enviar comunicados importantes e abre oportunidades…</li><li>Subgrupos por projeto: cada linha (projetos mensais e projetos especiais) possui grupos específicos apenas com os…</li><li>Interações pontuais: os subgrupos ficam silenciados e são abertos em ocasiões especiais para feedback, reações aos…</li></ul>"
   },
   {
-    "question": "Como e calculado o valor das parcelas mensais?",
-    "answer": "Quem entra desde o inicio paga o valor mensal fixo. Quem entra depois paga uma entrada com correcao simbolica de R$ 1 por mes anterior: Entrada(M) = (M - mesInicio) x (valorMes + 1) + valorMes. A partir do mes seguinte, paga apenas o valorMes mensal."
+    "question": "Como é calculado o valor das parcelas mensais?",
+    "answerHtml": "<p>Regra geral:</p><ul><li>Quem entra desde o primeiro mês paga sempre o valor fixo da parcela mensal (valorMes). Não há ajuste.</li><li>O ajuste só se aplica a quem entra após o início do projeto, para compensar os meses já decorridos.</li></ul>"
   },
   {
-    "question": "Como faco os pagamentos?",
-    "answer": "Pagamentos somente via PIX. Confirme os dados do destinatario antes de enviar: Nome Fernando Marques Borges, CPF mascarado, identificador BolaoBorges."
+    "question": "Como faço os pagamentos?",
+    "answerHtml": "<p>Os pagamentos são feitos exclusivamente via PIX. Não trabalhamos com outras formas de pagamento. Copie a chave utilizando o botão abaixo:</p>"
   },
   {
-    "question": "Quais sao as taxas para participar dos projetos?",
-    "answer": "Nao ha taxa de administracao. 100% do valor arrecadado e aplicado nas apostas do grupo."
+    "question": "Quais são as taxas para participar dos projetos?",
+    "answerHtml": "<p><strong>Transparência total</strong> ✅: Não cobramos nenhuma taxa de administração. Todo o valor arrecadado é integralmente investido nas apostas do grupo. Nosso objetivo é reunir amigos de confiança que acreditam e aumentar as chances de todos.</p>"
   },
   {
     "question": "Como agendar um PIX recorrente?",
-    "answer": "No app do banco, escolha PIX por chave, cole a chave do organizador, informe o valor e selecione agendamento recorrente/mensal. Defina a data do primeiro pagamento (dia 7, 8, 9 ou 10 conforme o projeto) e o numero de repeticoes igual ao total de parcelas."
+    "answerHtml": "<p>Agendar o PIX recorrente garante que o valor seja pago automaticamente todo mês e evita esquecimentos. Como cada banco organiza as telas e nomenclaturas de forma diferente, explore as opções do seu app e procure pelas funções relacionadas a agendamentos ou recorrências no PIX.</p>"
   },
   {
-    "question": "A chave PIX e a mesma para todos os projetos?",
-    "answer": "Sim. A chave PIX e unica para todos os projetos."
+    "question": "A chave PIX é a mesma para todos os projetos?",
+    "answerHtml": "<p>Sim, a chave PIX utilizada é a mesma para todos os projetos da comunidade.</p><p>Isso facilita a padronização dos pagamentos, o controle financeiro e a identificação das contribuições.</p><p>Independentemente de qual projeto você esteja participando, o pagamento deve ser feito sempre para a mesma chave PIX do organizador informada pelo administrador.</p>"
   },
   {
     "question": "Aceitam outras formas de pagamento?",
-    "answer": "Nao. Somente PIX. Nao aceitamos TED/DOC, cartao, boleto, dinheiro ou transferencias para outras contas."
+    "answerHtml": "<p>Não. Os pagamentos são <strong>somente via PIX</strong>.</p><p>Não aceitamos TED/DOC, cartão, boleto, dinheiro em espécie, aplicativos de terceiros ou transferências para contas não informadas pelo organizador.</p><p>Use sempre a chave disponibilizada no item acima e confirme os dados do destinatário antes de enviar.</p>"
   },
   {
     "question": "Como facilitar os pagamentos mensais dos projetos especiais?",
-    "answer": "Nos projetos especiais, voce pode agendar PIX recorrente com valores e datas corretos. Nos projetos mensais, o pagamento deve ocorrer na data avisada porque os valores mudam."
+    "answerHtml": "<p>Para os casos de projetos especiais, você pode agendar um PIX recorrente no seu banco com os valores corretos e datas certas — assim você evita esquecimentos. Projetos Mensais como Quina Mensal, Dupla Sena Mensal e Lotofácil Mensal precisam ser pagos no dia avisado pelo Administrador, pois os valores mudam mês a mês e não é possível agendar nesses casos.</p>"
   },
   {
-    "question": "Como usar meu aplicativo bancario para agendar o pagamento do projeto especial?",
-    "answer": "Agende um PIX na data do projeto especial, com o valor exato informado pelo administrador, usando sempre a chave PIX do organizador."
+    "question": "Como usar meu aplicativo bancário para agendar o pagamento do projeto especial?",
+    "answerHtml": "<p>Consulte o aplicativo do seu banco para criar um <strong>agendamento de PIX</strong> na <strong>data do projeto especial</strong> em que você deseja participar.</p><p>Ao agendar, confira o <strong>valor exato da cota</strong> para o mês de entrada informado pelo Administrador e utilize sempre a chave PIX do organizador do projeto.</p><p>Isso ajuda a evitar esquecimentos e manter os pagamentos em dia, sem necessidade de ajustes manuais todos os meses.</p>"
   },
   {
-    "question": "Como as Caixinhas do Nubank sao usadas nos projetos especiais?",
-    "answer": "As caixinhas separam recursos por projeto, facilitam visibilidade e previsibilidade, e ajudam na conciliação com planilhas e prestacao de contas. Ha uma caixinha por projeto, com conciliacao mensal e anexos de extratos no Drive. Os valores sao transferidos no fechamento para registrar as apostas. As caixinhas sao organizacao interna, com acesso exclusivo do administrador; nao sao custodia para terceiros. Mudancas de instituicao sao comunicadas."
+    "question": "Como as Caixinhas do Nubank são usadas nos projetos especiais?",
+    "answerHtml": "<p>Para organizar os recursos dos projetos especiais, utilizamos Caixinhas do Nubank como mecanismo de segregação financeira e controle mensal.</p><ul><li>Separação por finalidade: cada projeto (por exemplo, Lotofácil da Independência, Quina de São João, Mega da Virada)…</li><li>Visibilidade e previsibilidade: o acompanhamento do saldo por projeto facilita o planejamento de compras de apostas e…</li><li>Organização e disciplina: entradas mensais ficam reservadas até o momento do registro das apostas, reduzindo risco…</li><li>Eficiência: simplifica a conciliação com planilhas e a prestação de contas.</li></ul>"
   },
   {
-    "question": "Os rendimentos das Caixinhas do Nubank tambem sao usados nas apostas?",
-    "answer": "Sim. Nos projetos especiais, rendimentos das caixinhas sao aplicados nas apostas junto aos aportes. O administrador nao retira valores; 100% dos aportes e correcoes vao para os jogos."
+    "question": "Os rendimentos das Caixinhas do Nubank também são usados nas apostas?",
+    "answerHtml": "<p>Sim. Nos <strong>projetos especiais</strong>, não apenas o valor arrecadado em cada cota é aplicado em apostas, mas também <strong>todos os rendimentos</strong> gerados pelas <strong>Caixinhas do Nubank</strong> usadas para organizar os recursos.</p><p>O Administrador <strong>não fica com nenhum valor</strong> do bolão: <strong>100% dos aportes recebidos + correções</strong> são direcionados para a montagem dos jogos, conforme as regras de cada projeto e a prestação de contas.</p>"
   },
   {
     "question": "O que acontece se eu atrasar o pagamento de um projeto especial?",
-    "answer": "Ha correcao simbolica de R$ 1 no mes seguinte. Se o atraso nao for regularizado, o participante e removido e o valor pago e devolvido. Em caso de imprevistos, avise com antecedencia."
-  },
-  {
-    "question": "Qual é o prazo para pagamento nos projetos especiais?",
-    "answer": "Os pagamentos devem ser feitos no dia do projeto, entre o início da manhã e 12h (meio-dia). Participantes que ainda não pagaram podem receber lembretes por e-mail e WhatsApp a partir das 10h. Se houver impossibilidade excepcional de pagamento no dia, a regularização deve ocorrer no mês seguinte com o pagamento das duas parcelas juntas."
+    "answerHtml": "<p>Pagamentos em atraso seguem duas regras simples:</p><ul><li><strong>Correção simbólica: </strong> o valor devido é cobrado no mês seguinte com acréscimo de <strong>R$ 1, 00</strong> (conforme política da comunidade).</li><li><strong>Persistência do atraso: </strong> se o pagamento não for regularizado, o participante é removido do grupo e <strong>o valor eventualmente pago é integralmente devolvido</strong>.</li></ul><p>Em caso de imprevistos, avise com antecedência para avaliarmos alternativas.</p>"
   },
   {
     "question": "Preciso pagar os projetos especiais exatamente nas datas previstas?",
-    "answer": "Sim. Os pagamentos devem seguir as datas do cronograma para manter a organizacao e os prazos da Caixa."
+    "answerHtml": "<p>Sim. Os pagamentos dos <strong>projetos especiais</strong> devem ser feitos <strong>necessariamente nas datas previstas</strong> no cronograma de cada projeto (dias de PIX informados na abertura e nos comunicados).</p><p>Esse alinhamento garante que todos os aportes entrem no período correto, permitindo planejar as compras de apostas, respeitar os prazos oficiais da Caixa e manter a prestação de contas organizada.</p>"
   },
   {
-    "question": "Ha desconto ou mudanca de valor se eu pagar fora do periodo previsto?",
-    "answer": "Nao. Pagamentos fora do periodo nao geram desconto nem mudanca de valor; ajustes seguem a regra geral dos projetos especiais."
+    "question": "Qual é o prazo para pagamento nos projetos especiais?",
+    "answerHtml": "<p>Nos projetos especiais, o pagamento deve ser realizado dentro de uma janela fixa no dia do projeto, que ocorre do início da manhã até às 12h (meio-dia).</p>"
   },
   {
-    "question": "Por que e melhor entrar nos projetos especiais logo no inicio do ano?",
-    "answer": "Porque a cota e parcelada ao longo do ano. Quem entra no fim precisa pagar em menos parcelas ou em parcela unica, com desembolso maior."
+    "question": "Há desconto ou mudança de valor se eu pagar fora do período previsto?",
+    "answerHtml": "<p>Não. Pagamentos realizados fora dos <strong>períodos previstos</strong> não geram desconto nem alteração especial de valores.</p><p>Cada projeto especial possui sua <strong>data de referência</strong> e, caso haja atualização de valores, ela segue a <strong>regra geral dos projetos especiais</strong> (ajustes comunicados à comunidade), independentemente do momento em que o PIX foi feito.</p>"
   },
   {
-    "question": "Posso desistir da participacao em projetos e pedir devolucao de pagamentos?",
-    "answer": "Projetos especiais: devolucao apenas em casos excepcionais aprovados; se aprovada, ha reembolso e exclusao. Projetos mensais: para sair, avise com 15 dias de antecedencia ao fechamento; premios do mes sao pagos normalmente. Projetos estrategicos: nao ha devolucao, pois a execucao e imediata. Para solicitar avaliacao, contate o organizador por e-mail."
+    "question": "Por que é melhor entrar nos projetos especiais logo no início do ano?",
+    "answerHtml": "<p>Os <strong>projetos especiais</strong> são planejados para começar no início do ano, com a cota total <strong>parcelada mês a mês</strong>, justamente para não pesar no orçamento de ninguém.</p><p>Quem entra apenas no final do ciclo precisa concentrar o valor em menos parcelas (ou em uma única entrada), o que torna a cota relativa <strong>mais alta</strong> e pode gerar um desembolso maior de uma vez.</p><p>Por isso, sempre que possível, priorize a entrada <strong>logo no início do ano</strong>: assim você parcela sua cota com tranquilidade e chega ao sorteio com tudo pago, sem grandes apertos.</p>"
   },
   {
-    "question": "Como e definida a quantidade de bilhetes e o numero de dezenas em cada projeto?",
-    "answer": "Depende do montante arrecadado. Depois do encerramento, o valor total e distribuido entre estrategias e tipos de apostas para maximizar a cobertura dentro do orçamento. Mais recursos tendem a gerar maior diversificacao."
+    "question": "Posso desistir da participação em projetos e pedir devolução de pagamentos?",
+    "answerHtml": "<p>Projetos especiais: tratamos pedidos de desistência e de devolução de pagamentos antecipados apenas em casos excepcionais, avaliados pelo Administrador. A adesão implica compromisso de permanência até o encerramento, considerando o planejamento financeiro e operacional do grupo; ao ingressar, você declara ciência das regras, janelas e prazos e assume a responsabilidade de manter os…</p>"
   },
   {
-    "question": "Como sao escolhidos os jogos/dezenas?",
-    "answer": "Parte dos jogos vem das dezenas escolhidas pelos participantes em planilha. Outra parte e gerada por algoritmos de IA atualizados periodicamente. Todas as apostas sao registradas no sistema oficial da Caixa com comprovantes digitais."
+    "question": "Como é definida a quantidade de bilhetes e o número de dezenas em cada projeto?",
+    "answerHtml": "<p>A quantidade de bilhetes gerados e o número de dezenas por bilhete variam de acordo com o montante financeiro final arrecadado em cada projeto.</p><ul><li>O valor total disponível é calculado;</li><li>Esse valor é então distribuído proporcionalmente entre as diferentes estratégias e tipos de apostas previstas no…</li><li>O objetivo é sempre maximizar a cobertura estatística e o potencial das apostas, respeitando o orçamento final…</li></ul>"
+  },
+  {
+    "question": "Como são escolhidos os jogos/dezenas?",
+    "answerHtml": "<p>🧠 Adotamos uma abordagem combinada, com transparência e método:</p><ul><li>Participação dos integrantes: parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li>Modelos computacionais: outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes…</li><li>Registro oficial: todas as apostas são registradas no aplicativo oficial da Caixa e/ou no site Loterias Online, com…</li></ul>"
   },
   {
     "question": "Posso preencher minhas dezenas da sorte?",
-    "answer": "Sim. Nos projetos especiais, ha uma aba exclusiva na planilha para voce preencher; todas as dezenas entram no jogo final."
+    "answerHtml": "<p><strong>Sim. </strong> Nos <strong>projetos especiais</strong>, você tem protagonismo.</p><ul><li><strong>Acesso exclusivo</strong>: disponibilizamos uma aba dedicada na planilha do bolão, onde somente você pode digitar seus palpites.</li><li><strong>Integração total</strong>: todas as dezenas preenchidas pelos participantes são processadas e entram no jogo final.</li></ul><p>É a união da sua sorte individual com a força coletiva do grupo.</p>"
   },
   {
     "question": "Posso preencher minhas dezenas nos projetos especiais?",
-    "answer": "Sim. Apos confirmacao do pagamento, voce recebe o link da planilha com uma aba exclusiva. Apenas o Gmail cadastrado pode editar; os campos sao padronizados."
+    "answerHtml": "<p><strong>Sim. </strong> Depois que o seu pagamento é confirmado, você recebe por e-mail o link da planilha do projeto daquele projeto especial.</p><ul><li>Há uma <strong>aba exclusiva</strong> com o seu nome, criada pelo Administrador.</li><li>Somente você (logado com o <strong>Gmail cadastrado</strong>) consegue editar essa aba, garantindo privacidade e trilha de auditoria.</li><li>Os espaços de preenchimento são padronizados e sinalizados com instruções para evitar erros de digitação.</li></ul><p>Assim, você escolhe suas combinações favoritas com segurança e vê imediatamente como elas entram no conjunto total de jogos.</p>"
   },
   {
-    "question": "E se eu nao quiser ou nao puder preencher minha aba?",
-    "answer": "Avise o administrador, que preenche a sua aba com algoritmos e regras do projeto, mantendo o mesmo processo de conferencias e comprovantes."
+    "question": "E se eu não quiser ou não puder preencher minha aba?",
+    "answerHtml": "<p>Nenhum participante fica de fora.</p><p>Se preferir não preencher (ou se estiver sem tempo), basta avisar o Administrador: ele utilizará os <strong>algoritmos avançados</strong> e as regras táticas do projeto para montar as dezenas na sua aba automaticamente.</p><p>O processo segue o mesmo padrão de conferência e transparência, com registro na planilha e envio dos comprovantes junto ao restante do grupo.</p>"
   },
   {
-    "question": "Nao estou conseguindo preencher minhas dezenas. O que pode ser?",
-    "answer": "Verifique se esta logado no Gmail do cadastro e se o pagamento foi confirmado. Se o problema persistir, contate o administrador com o projeto e prints/erros."
+    "question": "Não estou conseguindo preencher minhas dezenas. O que pode ser?",
+    "answerHtml": "<p>Verifique estes pontos antes de solicitar suporte:</p><ul><li><strong>Conta correta</strong>: o acesso de edição é liberado apenas para o <strong>Gmail usado no cadastro</strong>. Faça login nele antes de abrir a planilha.</li><li><strong>Pagamento confirmado</strong>: a aba personalizada só é liberada após o PIX ser registrado no cronograma do projeto.</li></ul><p>Se depois dessas verificações o problema continuar, envie uma mensagem ao Administrador (WhatsApp ou e-mail) informando o projeto e anexando prints/erros para agilizar o desbloqueio.</p>"
   },
   {
-    "question": "Nao estou conseguindo acessar o Drive. O que pode ser?",
-    "answer": "Verifique se usa o Gmail do cadastro, se a participacao esta confirmada e se o link chegou por e-mail (incluindo spam). Confira a aba Compartilhados comigo no Drive. Se ainda falhar, contate o administrador com o projeto e prints/erros."
+    "question": "Não estou conseguindo acessar o Drive. O que pode ser?",
+    "answerHtml": "<p>Antes de solicitar suporte, verifique:</p><ul><li>Conta correta: o acesso é liberado somente para o Gmail informado no cadastro — use o mesmo Gmail que recebe nossos…</li><li>Participação confirmada: o Drive é restrito a participantes confirmados (cotas pagas).</li><li>Procure o link no e-mail: a confirmação e os links do Drive chegam por e-mail (em geral em até 5 minutos após o PIX). …</li><li>\"Compartilhados comigo\": no Google Drive, confira a seção Compartilhados comigo.</li></ul>"
   },
   {
-    "question": "Quando as apostas sao registradas?",
-    "answer": "Projetos especiais: no minimo 7 dias antes do sorteio. Projetos mensais: logo apos o fechamento do ciclo vigente. As datas constam no cronograma e na comunidade."
+    "question": "Quando as apostas são registradas?",
+    "answerHtml": "<p>Registramos as apostas com antecedência planejada, conforme o cronograma de cada projeto.</p><ul><li>Projetos especiais: registro realizado no mínimo 7 dias antes do sorteio.</li><li>Projetos mensais: o registro é efetuado imediatamente após o fechamento do ciclo vigente, para que não haja solução de…</li></ul>"
   },
   {
-    "question": "As apostas sao registradas em loterica?",
-    "answer": "Nao. Todo o processo e online pelo sistema oficial da Caixa, com comprovantes digitais e medidas de seguranca como confirmacao por e-mail e MFA."
+    "question": "As apostas são registradas em lotérica?",
+    "answerHtml": "<p>Não. Todo o processo é online 🌐.</p><ul><li>Confirmação por e‑mail para operações sensíveis;</li><li>MFA (autenticação em dois fatores) no acesso e na confirmação de transações;</li><li>Dispositivos de confiança e sessões controladas;</li><li>Comprovantes digitais registrados e guardados no histórico oficial.</li></ul>"
   },
   {
-    "question": "Recebo copia fisica dos bilhetes?",
-    "answer": "Nao. As apostas sao digitais, registradas no app ou site oficial, com comprovantes enviados por e-mail e no Drive."
+    "question": "Recebo cópia física dos bilhetes?",
+    "answerHtml": "<p>🧾 Não. As apostas são digitais, registradas no aplicativo oficial da Caixa e/ou no site Loterias Online. Os comprovantes e recibos digitais são compartilhados por e‑mail e no Drive do projeto.</p>"
   },
   {
-    "question": "Quando e feita a conferencia dos bilhetes?",
-    "answer": "Apos cada sorteio, por volta de 21:20, com envio de relatorio por e-mail."
+    "question": "Quando é feita a conferência dos bilhetes?",
+    "answerHtml": "<p>A conferência acontece após cada sorteio (por volta das 21: 20), e todos recebem o relatório completo por e‑mail.</p>"
   },
   {
     "question": "Como conferir cada aposta registrada?",
-    "answer": "Ha um sistema proprio integrado a API da Caixa que confere automaticamente as apostas. Voce recebe relatorio por e-mail com jogos, acertos, premios, totais e links para planilhas e comprovantes no Drive."
+    "answerHtml": "<p>O Administrador desenvolveu um sistema próprio de conferência, integrado à API oficial da Caixa, que coleta automaticamente os resultados dos sorteios e confere todas as apostas de cada bolão.</p><ul><li>lista de jogos conferidos por projeto;</li><li>acertos por aposta e por combinação;</li><li>prêmios por bilhete e totais consolidados;</li><li>links diretos para as planilhas e comprovantes no Google Drive.</li></ul>"
   },
   {
     "question": "Como recebo os resultados e comprovantes?",
-    "answer": "Por e-mail e no Google Drive do projeto."
+    "answerHtml": "<p>Os resultados e comprovantes são enviados por <strong>e‑mail</strong> e ficam disponíveis no <strong>Google Drive</strong> do projeto. Veja também o item \"Como conferir cada aposta registrada? \".</p>"
   },
   {
-    "question": "Onde vejo minha planilha e historico?",
-    "answer": "No Google Drive, na secao Compartilhados comigo, se voce for participante confirmado."
+    "question": "Onde vejo minha planilha e histórico?",
+    "answerHtml": "<p>A maneira mais fácil de confirmar é entrar no <strong>Google Drive</strong> em <strong>\"Compartilhados Comigo\"</strong> e se você é participante do projeto, nesta área você terá acesso aos arquivos e planilhas com todos os dados do bolão.</p>"
   },
   {
-    "question": "Como e quando as planilhas sao atualizadas?",
-    "answer": "As planilhas ficam no Drive e sao atualizadas continuamente. Projetos especiais: consolidacao nos dias 7, 8, 9 ou 10. Projetos mensais: atualizacao diaria as 22h. Projetos estrategicos: a cada novo participante e apos o sorteio. O fluxo usa a API oficial da Caixa para atualizar resultados rapidamente."
+    "question": "Como e quando as planilhas são atualizadas?",
+    "answerHtml": "<p>Atualização contínua: todas as planilhas do projeto ficam no Google Drive e refletem automaticamente as movimentações de cada projeto.</p><ul><li>Projetos especiais: consolidados nos dias do cronograma (ex. : 7, 8, 9 ou 10) para registrar pagamentos de parcelas e…</li><li>Projetos mensais: ajustadas diariamente às 22h, logo após o fechamento do caixa do dia, incluindo conferência de…</li><li>Projetos estratégicos: atualizadas a cada novo participante confirmado e novamente após o sorteio, junto com a…</li></ul>"
   },
   {
-    "question": "Em nome de quem as cotas sao registradas?",
-    "answer": "No nome do titular da chave PIX pagadora. Nao ha subcotas; quem quiser dividir deve definir um responsavel unico. O administrador pode ajustar a identificacao antes do fechamento se solicitado pelo responsavel."
+    "question": "Em nome de quem as cotas são registradas?",
+    "answerHtml": "<p>As cotas são registradas no nome do titular da chave PIX que realizou o pagamento, exatamente como aparece no comprovante bancário.</p>"
   },
   {
-    "question": "Como funciona a prestacao de contas?",
-    "answer": "Canais: e-mail, Google Drive e WhatsApp. Ha controle de acesso, historico e pratica de LGPD. Fluxo: fechamento de cotas, registro das apostas, resultados e prestacao final, com links, PDFs, planilhas e comprovacoes."
+    "question": "Como funciona a prestação de contas?",
+    "answerHtml": "<p>Transparência com documentos oficiais e trilhas de acesso conferíveis.</p><ul><li>Canais: e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li>Segurança: acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li>LGPD e privacidade: minimização de dados e exposição controlada.</li><li>Cronograma: fechamento de cotas → registro das apostas → resultados → prestação final.</li><li>O que você recebe: links enviados pelo organizador, PDFs, planilhas e comprovações auditáveis.</li></ul>"
   },
   {
-    "question": "Comunicacao e documentos oficiais",
-    "answer": "O organizador se comunica por e-mail para confirmacoes, links do Drive, prestacao de contas e conferencias. Documentos (comprovantes, relatorios, termos e registros) ficam em PDF no Drive com acesso restrito. WhatsApp e usado para avisos e, ocasionalmente, interacao."
+    "question": "Comunicação e documentos oficiais",
+    "answerHtml": "<p>📣 Toda comunicação do organizador é realizada por e‑mail, incluindo confirmação de pagamento via PIX, link de acesso à pasta do projeto no Google Drive, prestação de contas e conferência detalhada das apostas. Todos os documentos — comprovantes de pagamento, relatórios financeiros, termos de adesão e registros…</p><ul><li>📣 Toda comunicação do organizador é realizada por e‑mail, incluindo confirmação de…</li><li>Todos os documentos — comprovantes de pagamento, relatórios financeiros, termos de adesão…</li><li>Utilizamos grupos de WhatsApp para avisos. Eventualmente abrimos para interação entre os…</li><li>A prestação de contas é publicada logo após o registro do bolão. Os resultados são…</li></ul>"
   },
   {
-    "question": "Transparencia e rastreabilidade",
-    "answer": "A transparencia e garantida pela Relacao de Participantes, cotas e comprovantes de PIX, que servem como prova formal."
+    "question": "Transparência e rastreabilidade",
+    "answerHtml": "<p>🔍 A transparência é garantida com a emissão da <strong>Relação de Participantes</strong> e suas respectivas cotas, além dos <strong>comprovantes individuais</strong> de pagamento via PIX. Esses documentos constituem prova formal da participação, quando necessário.</p>"
   },
   {
-    "question": "Privacidade: quem pode ver minhas informacoes?",
-    "answer": "Somente usuarios autenticados com os e-mails cadastrados, seguindo praticas da LGPD com minimizacao de dados e controle de acesso."
+    "question": "Privacidade: quem pode ver minhas informações?",
+    "answerHtml": "<p>🔒 O acesso às planilhas e documentos é <strong>estritamente controlado</strong> e concedido somente a <strong>usuários autenticados</strong> (e‑mails informados pelos próprios participantes). Adotamos práticas alinhadas à <strong>LGPD</strong>, com minimização de dados, controle de acesso e registro adequado das operações.</p>"
   },
   {
-    "question": "Ha alguma fiscalizacao ou auditoria?",
-    "answer": "Nao ha equipe formal. Ao fim de cada projeto, ocorre auditoria voluntaria, com documentos enviados a todos e possibilidade de auditoria independente."
+    "question": "Há alguma fiscalização ou auditoria?",
+    "answerHtml": "<p>Não há uma equipe formal, mas ao final de cada projeto realizamos <strong>auditoria voluntária</strong>. Documentos são enviados a todos os participantes, e qualquer pessoa pode solicitar esclarecimentos ou realizar auditoria independente.</p>"
   },
   {
-    "question": "Qual o valor minimo para repasse vs. reinvestimento?",
-    "answer": "Se o premio proporcional por cota exceder o valor pago pela cota no periodo, ha repasse via PIX. Caso contrario, o valor e reaplicado, com registro na prestacao de contas."
+    "question": "Qual o valor mínimo para repasse vs. reinvestimento?",
+    "answerHtml": "<p>Adotamos o critério de <strong>valor significativo</strong> por cota: quando o <strong>prêmio proporcional</strong> a cada participante <strong>excede o valor efetivamente pago pela cota no período</strong>, fazemos o <strong>repasse via PIX</strong>. Caso contrário, o valor é <strong>reaplicado</strong> em novos jogos do projeto, com o devido registro em prestação de contas.</p>"
   },
   {
-    "question": "Premios de pequeno valor serao reaplicados?",
-    "answer": "Sim. Premios pequenos sao reaplicados em novos jogos a criterio do administrador."
+    "question": "Prêmios de pequeno valor serão reaplicados?",
+    "answerHtml": "<p>Sim. Prêmios de pequeno valor são <strong>reaplicados</strong> em novos jogos, a critério do administrador, para manter a dinâmica e ampliar as chances de premiação coletiva.</p>"
   },
   {
-    "question": "Premios significativos: como e a divisao?",
-    "answer": "Divisao proporcional entre participantes e administrador conforme o numero de cotas registradas na prestacao de contas."
+    "question": "Prêmios significativos: como é a divisão?",
+    "answerHtml": "<p>Prêmios significativos são <strong>divididos proporcionalmente</strong> entre os participantes e o administrador, com base no número de cotas adquiridas, conforme registrado na prestação de contas de cada projeto.</p>"
   },
   {
-    "question": "Em caso de um grande premio, como sera pago ao participante?",
-    "answer": "O administrador recebe o premio na Caixa porque as apostas estao em seu nome e leva a Relacao de Participantes. O valor e dividido pelo numero de cotas (incluindo o administrador) e repassado aos responsaveis."
+    "question": "Em caso de um grande prêmio, como será pago ao participante?",
+    "answerHtml": "<p>Se o bolão for contemplado, o Administrador receberá o valor do prêmio diretamente na Caixa, pois as apostas estão todas em seu nome.</p><p>No momento do recebimento, o Administrador já levará a <strong>Relação de Participantes</strong>, contendo todas as cotas e seus responsáveis.</p><p>O valor do prêmio será dividido pelo número de cotas constante na Relação de Participantes (incluindo o Administrador). O valor correspondente a cada cota será repassado diretamente ao responsável.</p>"
   },
   {
-    "question": "Se o premio sair no nome do administrador do bolao, ele paga imposto de novo ao repassar para os participantes?",
-    "answer": "Nao. O imposto e retido na fonte pela Caixa. O administrador repassa o valor liquido proporcional. Declaracao: o administrador informa o total em Rendimentos Sujeitos a Tributacao Exclusiva/Definitiva e os repasses em Pagamentos Efetuados (codigo 99). Participantes declaram em Rendimentos Isentos e Nao Tributaveis (codigo 99). Guardar a documentacao."
+    "question": "Se o prêmio sair no nome do administrador do bolão, ele paga imposto de novo ao repassar para os participantes?",
+    "answerHtml": "<p>Não. Quando o prêmio é pago no nome do administrador (organizador), o imposto já foi recolhido pela Caixa na fonte. O valor recebido já é líquido — portanto, não há nova tributação quando o administrador repassa as partes devidas aos demais participantes.</p><ul><li>As apostas são registradas no nome do Administrador (ex. : Fernando).</li><li>Se alguma aposta for premiada, a Caixa paga o valor líquido, já descontado o IR.</li><li>O Administrador repassa a cada participante exatamente o valor que corresponde à sua cota.</li></ul>"
   },
   {
-    "question": "Exemplo: como funciona o rateio de um premio no SB?",
-    "answer": "Exemplo: premio liquido de R$ 850.000.000,00 com 85 participantes e 85 cotas gera R$ 10.000.000,00 por cota; quem tem mais cotas recebe proporcionalmente. Nao ha nova tributacao. Para comprovar, guarde comprovantes de PIX, aposta, relacao de cotas e recibo do repasse."
+    "question": "Exemplo: como funciona o rateio de um prêmio no SB?",
+    "answerHtml": "<p>Exemplo adaptado: imagine que o Super Bolão acerte um prêmio líquido de R$ 850. 000. 000, 00 com 85 participantes.</p><ul><li>O Administrador recebe os R$ 850 milhões já com os impostos pagos na fonte.</li><li>Se forem 85 cotas (1 por participante), cada cota recebe R$ 10. 000. 000, 00 (850. 000. 000 ÷ 85).</li><li>Se alguém tiver mais de 1 cota, recebe proporcionalmente (ex. : 2 cotas = R$ 20. 000. 000, 00).</li><li>Nada disso gera novo imposto: é apenas a divisão do prêmio já tributado.</li></ul>"
   },
   {
-    "question": "Ha impostos sobre os premios?",
-    "answer": "Premios de loterias sofrem tributacao exclusiva na fonte. Repasses entre cotistas seguem orientacoes da Receita Federal para apostas conjuntas."
+    "question": "Há impostos sobre os prêmios?",
+    "answerHtml": "<p>🧾 Os prêmios de loterias estão sujeitos a tributação exclusiva na fonte conforme a legislação vigente. Nos <strong>repasses proporcionais entre cotistas</strong> em apostas conjuntas, observamos as orientações da Receita Federal do Brasil para apostas conjuntas, assegurando a legalidade do procedimento e a correta classificação na declaração de cada participante.</p>"
   }
 ]

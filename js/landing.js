@@ -338,9 +338,17 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
     }
     detalhes.textContent = partes.join(' · ');
   } else if (tipo === 'mensais') {
+    const partes = [];
     if (projeto.cotaMensal) {
-      detalhes.textContent = `Cota mensal: R$ ${projeto.cotaMensal},00`;
+      partes.push(`Cota mensal: R$ ${projeto.cotaMensal},00`);
     }
+    if (projeto.ciclo) {
+      partes.push(`Ciclo: ${projeto.ciclo}`);
+    }
+    if (projeto.sorteios) {
+      partes.push(`Sorteios: ${projeto.sorteios}`);
+    }
+    detalhes.textContent = partes.join(' · ');
   } else if (tipo === 'acumulados') {
     if (projeto.minimo) {
       detalhes.textContent = `Ativo quando o prêmio acumular acima de R$ ${projeto.minimo} milhões`;

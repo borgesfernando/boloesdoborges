@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Atualiza o JSON de alerta do projeto mensal (quina-mensal ou lf-mensal).
+ * Atualiza o JSON de alerta do projeto mensal (quina-mensal, lf-mensal ou ds-mensal).
  */
 const fs = require('fs');
 const path = require('path');
@@ -8,6 +8,7 @@ const path = require('path');
 const ALERT_FILES = {
   'quina-mensal': path.join(__dirname, '..', 'data', 'quina-mensal-alert.json'),
   'lf-mensal': path.join(__dirname, '..', 'data', 'lf-mensal-alert.json'),
+  'ds-mensal': path.join(__dirname, '..', 'data', 'ds-mensal-alert.json'),
 };
 
 function parseBoolean(value) {
@@ -20,7 +21,7 @@ function parseBoolean(value) {
 function loadPayload() {
   const projeto = (process.env.ALERTA_PROJETO || '').trim();
   if (!ALERT_FILES[projeto]) {
-    throw new Error('Informe ALERTA_PROJETO (quina-mensal ou lf-mensal).');
+    throw new Error('Informe ALERTA_PROJETO (quina-mensal, lf-mensal ou ds-mensal).');
   }
   const ativo = parseBoolean(process.env.ALERTA_ATIVO);
 
