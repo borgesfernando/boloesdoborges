@@ -7,7 +7,7 @@ function getBasePaths() {
   const isTemplatePage = window.location.pathname.includes('/templates/');
   const isProjectPage = window.location.pathname.includes('/boloes/mensais/');
   return {
-    dataPrefix: isTemplatePage ? '../data' : 'data',
+    dataPrefix: isTemplatePage ? '../data' : isProjectPage ? '../data' : 'data',
     pagePrefix: isTemplatePage ? '../boloes/mensais' : 'boloes/mensais',
     isProjectPage,
   };
@@ -71,11 +71,11 @@ async function renderizarMensaisAlert() {
         ? 'Lotofácil Mensal'
         : 'Dupla Sena Mensal';
     const { alertClass, buttonClass } = getAlertStyles(alertEscolhido.projeto);
-    const pageId = getAlertPageId(alertEscolhido.projeto);
+    const pageSlug = getAlertPageId(alertEscolhido.projeto);
     const actionHtml = isProjectPage
       ? ''
       : `<div class="mega-alert-actions">
-          <a href="${pagePrefix}/${pageId}.html" class="btn ${buttonClass}">Ver ${projetoLabel}</a>
+          <a href="${pagePrefix}/${pageSlug}.html" class="btn ${buttonClass}">Ver ${projetoLabel}</a>
         </div>`;
 
     const html = `
