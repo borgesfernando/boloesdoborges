@@ -17,6 +17,17 @@ function getAlertByProjectId(projectId, alerts) {
   return alerts.find((alert) => alert?.projeto === projectId);
 }
 
+function getAlertStyles(projectId) {
+  if (projectId === 'lf-mensal') return { alertClass: 'lotofacil', buttonClass: 'lotofacil' };
+  if (projectId === 'quina-mensal') return { alertClass: 'quina', buttonClass: 'quina' };
+  return { alertClass: 'dupla', buttonClass: 'dupla' };
+}
+
+function getAlertPageId(projectId) {
+  if (projectId === 'ds-mensal') return 'dupla-sena-mensal';
+  return projectId;
+}
+
 async function carregarAlerta(url) {
   const res = await fetch(url, { cache: 'no-store' });
   if (!res.ok) throw new Error('Falha ao carregar mensais-alert');
@@ -59,10 +70,12 @@ async function renderizarMensaisAlert() {
         : alertEscolhido.projeto === 'lf-mensal'
         ? 'Lotofácil Mensal'
         : 'Dupla Sena Mensal';
+    const { alertClass, buttonClass } = getAlertStyles(alertEscolhido.projeto);
+    const pageId = getAlertPageId(alertEscolhido.projeto);
     const actionHtml = isProjectPage
       ? ''
       : `<div class="mega-alert-actions">
-          <a href="${pagePrefix}/${alertEscolhido.projeto}.html" class="btn sb2026">Ver ${projetoLabel}</a>
+          <a href="${pagePrefix}/${pageId}.html" class="btn ${buttonClass}">Ver ${projetoLabel}</a>
         </div>`;
 
     const html = `
@@ -74,6 +87,8 @@ async function renderizarMensaisAlert() {
     `;
 
     containers.forEach((container) => {
+      container.classList.remove('lotofacil', 'quina', 'dupla');
+      container.classList.add(alertClass);
       container.innerHTML = html;
       container.style.display = 'block';
     });

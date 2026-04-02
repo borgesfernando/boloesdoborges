@@ -590,15 +590,45 @@ footer h3 {
   gap: 1rem;
 }
 
+.mega-alert.lotofacil {
+  border-left-color: rgb(var(--lotofacil));
+  background: linear-gradient(135deg, rgba(var(--lotofacil), 0.12), rgba(var(--lotofacil), 0.05));
+  color: #3e2038;
+}
+
+.mega-alert.quina {
+  border-left-color: rgb(var(--quina));
+  background: linear-gradient(135deg, rgba(var(--quina), 0.12), rgba(var(--quina), 0.05));
+  color: #0f3153;
+}
+
+.mega-alert.dupla {
+  border-left-color: rgb(var(--dupla));
+  background: linear-gradient(135deg, rgba(var(--dupla), 0.12), rgba(var(--dupla), 0.05));
+  color: #5c1630;
+}
+
 .mega-alert h3 {
   margin: 0;
   font-size: 1.35rem;
   color: #0a3622;
 }
 
+.mega-alert.lotofacil h3,
+.mega-alert.quina h3,
+.mega-alert.dupla h3 {
+  color: inherit;
+}
+
 .mega-alert p {
   margin: 0.35rem 0 0.75rem;
   color: #0f5132;
+}
+
+.mega-alert.lotofacil p,
+.mega-alert.quina p,
+.mega-alert.dupla p {
+  color: inherit;
 }
 
 .mega-alert .mega-alert-actions {
