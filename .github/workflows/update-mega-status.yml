@@ -1,5 +1,8 @@
 name: Atualizar mega-status
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   schedule:
     # 09:00 UTC de segunda, quarta e sexta → 06:00 BRT (janela de chamada até 18h do mesmo dia)

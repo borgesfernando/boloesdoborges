@@ -1,5 +1,8 @@
 name: Atualizar projetos.json
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: [ main ]
@@ -35,4 +38,3 @@ jobs:
           else
             echo "Sem mudanças a commitar"
           fi
-
