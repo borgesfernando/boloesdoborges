@@ -84,6 +84,8 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 
 - O script `scripts/update-mensais-alert.js` grava `data/quina-mensal-alert.json`, `data/lf-mensal-alert.json` ou `data/ds-mensal-alert.json` com o campo `ativo`.
 - Os workflows `.github/workflows/set-quina-mensal-alert.yml`, `.github/workflows/set-lf-mensal-alert.yml` e `.github/workflows/set-ds-mensal-alert.yml` são disparados via `workflow_dispatch` (normalmente pelo Apps Script) e ativam/desativam o alerta do projeto específico.
+- Inputs esperados (via `workflow_dispatch`):
+  - `ativo`: `true|false` (abre ou fecha a janela pública do projeto mensal correspondente).
 - Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
 - A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html`, `boloes/mensais/lf-mensal.html` e `boloes/mensais/dupla-sena-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
 
