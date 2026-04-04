@@ -447,7 +447,7 @@ function renderizarProjetosResumo() {
     });
   }
 
-  // Acumulados
+  // Estratégicos
   const acumuladosContainer = document.getElementById('cards-acumulados-resumo');
   if (acumuladosContainer && PROJETOS.acumulados && Array.isArray(PROJETOS.acumulados.projetos)) {
     PROJETOS.acumulados.projetos.forEach(p => {
@@ -551,7 +551,7 @@ function renderizarLinhasPrincipais() {
 
   container.appendChild(
     criarCardLinha(
-      'Projetos Estratégicos (Acumulados)',
+      'Projetos Estratégicos',
       descAcumulados,
       detalheAcumulados,
       'acumulados.html',

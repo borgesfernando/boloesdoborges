@@ -5,7 +5,7 @@
   },
   {
     "question": "Quais são os tipos de projetos disponíveis?",
-    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li>Projetos Mensais: sorteios recorrentes da Lotofácil, da Quina e da Dupla Sena, ideais para quem gosta de acompanhar os…</li><li>Projetos Especiais: focados nos grandes concursos da Caixa — Lotofácil da Independência, Quina de São João, Dupla Sena…</li><li>Projetos Estratégicos (Acumulados): mobilizados quando há acumulações relevantes, como Mega‑Sena (acima de R$ 50…</li></ul>"
+    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li>Projetos Mensais: sorteios recorrentes da Lotofácil, da Quina e da Dupla Sena, ideais para quem gosta de acompanhar os…</li><li>Projetos Especiais: focados nos grandes concursos da Caixa — Lotofácil da Independência, Quina de São João, Dupla Sena…</li><li>Projetos Estratégicos: mobilizados quando há acumulações relevantes, como Mega‑Sena (acima de R$ 50…</li></ul>"
   },
   {
     "question": "Como funcionam os projetos especiais (Lotofácil da Independência, Quina de São João, Dupla Sena de Páscoa e Mega da Virada)?",
@@ -16,12 +16,12 @@
     "answerHtml": "<p>Resumo dos projetos mensais:</p><ul><li>Lotofácil Mensal (LF): valor integralmente aplicado em apostas de 15 e 16 dezenas, com fechamento (combinações) e…</li><li>Quina Mensal: valor integralmente aplicado em apostas de 5 dezenas, com fechamento e teimosinha para 24 concursos.</li><li>Dupla Sena Mensal: valor integralmente aplicado em apostas de 6 dezenas, com fechamento e teimosinha para 12 concursos…</li><li>Volume de sorteios: Lotofácil e Quina acontecem seis vezes por semana (segunda a sábado), enquanto a Dupla Sena segue a…</li><li>Ciclo técnico: cada rodada cobre o ciclo informado em cada página. Como nem sempre esse total encaixa exatamente em um…</li></ul>"
   },
   {
-    "question": "Como funcionam os projetos de concursos acumulados?",
-    "answerHtml": "<p>Concursos acumulados (estratégicos) ⏰:</p><ul><li>Fique atento: os avisos de prêmios acumulados saem na comunidade logo no início da manhã. Participe e acompanhe os…</li><li>Janela de entrada: até as 18h do dia anterior ao sorteio — organização com tempo e calma para zero erro.</li><li>Cota: R$ 20, 00 por concurso.</li><li>Ativação: apenas quando a Mega‑Sena estiver acima de R$ 50 milhões ou a Quina acima de R$ 40 milhões.</li><li>Predições por IA: combinamos estatística e algoritmos inteligentes para apoiar escolhas (sem promessa de acerto).</li></ul>"
+    "question": "Como funcionam os projetos estratégicos?",
+    "answerHtml": "<p>Projetos Estratégicos ⏰:</p><ul><li>Fique atento: os avisos de prêmios acumulados saem na comunidade logo no início da manhã. Participe e acompanhe os…</li><li>Janela de entrada: até as 18h do dia anterior ao sorteio — organização com tempo e calma para zero erro.</li><li>Cota: R$ 20, 00 por concurso.</li><li>Ativação: apenas quando a Mega‑Sena estiver acima de R$ 50 milhões ou a Quina acima de R$ 40 milhões.</li><li>Predições por IA: combinamos estatística e algoritmos inteligentes para apoiar escolhas (sem promessa de acerto).</li></ul>"
   },
   {
     "question": "São quantos participantes a cada bolão?",
-    "answerHtml": "<p>O número de participantes varia a cada edição, conforme a adesão voluntária. Os acumulados são <strong>abertos</strong>: qualquer pessoa pode entrar dentro da janela anunciada pelo organizador adquirindo suas cotas.</p>"
+    "answerHtml": "<p>O número de participantes varia a cada edição, conforme a adesão voluntária. Os projetos estratégicos são <strong>abertos</strong>: qualquer pessoa pode entrar dentro da janela anunciada pelo organizador adquirindo suas cotas.</p>"
   },
   {
     "question": "Posso comprar mais de uma cota?",
@@ -36,7 +36,7 @@
     "answerHtml": "<p>Os avisos são divulgados <strong>na véspera do concurso acumulado</strong>, com janela de entrada até as <strong>18h</strong> do dia anterior.</p><ul><li><strong>Mega‑Sena</strong>: sorteios às <strong>terças, quintas e sábados</strong>. Quando a Mega está 50+, o aviso é divulgado às <strong>segundas, quartas e sextas</strong> sempre no início da manhã.</li><li><strong>Quina</strong>: sorteios de <strong>segunda a sábado</strong>. Acompanhe a <strong>comunidade</strong> e o <strong>e‑mail</strong>.</li></ul><p>Se houver ajuste no calendário da Caixa, comunicamos imediatamente pelos canais do organizador.</p>"
   },
   {
-    "question": "Como funcionam os pagamentos dos projetos estratégicos (acumulados)?",
+    "question": "Como funcionam os pagamentos dos projetos estratégicos?",
     "answerHtml": "<p>Fluxo de pagamento dos acumulados:</p><ul><li>✅ Cadastro atualizado é requisito; faça seu registro na comunidade antes de tentar o PIX e alerte o Administrador…</li><li>⏳ Janela anunciada pelo organizador: só envie o PIX dentro da janela divulgada na véspera do concurso, usando o valor…</li><li>📨 Confirmação automática: não há necessidade de comprovante — o e-mail chega em até 5 minutos desde que e-mail e…</li><li>📋 Planilha de participantes: nome e cota entram na planilha do projeto que acompanha a prestação de contas após o…</li><li>📂 Prestação de contas: à noite, depois do registro das apostas, você recebe o link para a pasta do projeto no Drive…</li></ul>"
   },
   {
@@ -44,12 +44,12 @@
     "answerHtml": "<p>A prestação de contas dos projetos estratégicos (acumulados) é enviada aos participantes confirmados (cotas pagas) e fica organizada em uma pasta no Drive.</p><ul><li>✅ Cadastro na comunidade: confirme que seu cadastro está ativo e com o e-mail correto.</li><li>🔐 Acesso aos documentos (Drive): o acesso aos documentos da prestação de contas é…</li><li>⏳ Janela de entrada: acompanhe os avisos e faça o PIX no valor da cota (ou múltiplos)…</li><li>📨 Confirmação em até 5 minutos: após o PIX, você recebe a confirmação de pagamento por…</li></ul>"
   },
   {
-    "question": "Existe grupo para os projetos Estratégicos (Acumulados)?",
+    "question": "Existe grupo para os projetos Estratégicos?",
     "answerHtml": "<p>Não. Os projetos estratégicos são operações pontuais, sem grupo específico. Toda a comunicação ocorre por e-mail, usando o endereço informado no cadastro da comunidade.</p><p>Mensagens sobre abertura de vagas, confirmação de pagamentos e envio de comprovantes seguem exclusivamente pelo canal do organizador.</p>"
   },
   {
     "question": "Quanto tempo preciso permanecer nos projetos?",
-    "answerHtml": "<p>O tempo de permanência depende da modalidade escolhida:</p><ul><li>Projetos Especiais: ao confirmar sua vaga, você declara ciência das regras e mantém as parcelas programadas até o…</li><li>Projetos Mensais: a entrada garante sua vaga nos ciclos seguintes; os valores de continuidade tendem a ser menores…</li><li>Projetos Estratégicos (Acumulados): participação pontual e independente, válida apenas para o sorteio daquela janela, …</li></ul>"
+    "answerHtml": "<p>O tempo de permanência depende da modalidade escolhida:</p><ul><li>Projetos Especiais: ao confirmar sua vaga, você declara ciência das regras e mantém as parcelas programadas até o…</li><li>Projetos Mensais: a entrada garante sua vaga nos ciclos seguintes; os valores de continuidade tendem a ser menores…</li><li>Projetos Estratégicos: participação pontual e independente, válida apenas para o sorteio daquela janela, …</li></ul>"
   },
   {
     "question": "Quando ocorrem os sorteios?",
@@ -109,7 +109,7 @@
   },
   {
     "question": "Posso entrar nos bolões a qualquer tempo?",
-    "answerHtml": "<p>Sim, mas as entradas ocorrem apenas nas datas e janelas definidas para cada projeto.</p><ul><li>Projetos Especiais: seguem um cronograma anual com parcelas mensais. Entradas são aceitas até a data‑limite de cada…</li><li>Projetos Mensais: abrem janela de entrada a cada ciclo de 24 concursos. Veja detalhes da Lotofácil Mensal e da Quina…</li><li>Projetos Estratégicos (Acumulados): têm chamadas no dia anterior aos sorteios e encerram às 18h. Acompanhe a Mega Sena…</li></ul>"
+    "answerHtml": "<p>Sim, mas as entradas ocorrem apenas nas datas e janelas definidas para cada projeto.</p><ul><li>Projetos Especiais: seguem um cronograma anual com parcelas mensais. Entradas são aceitas até a data‑limite de cada…</li><li>Projetos Mensais: abrem janela de entrada a cada ciclo de 24 concursos. Veja detalhes da Lotofácil Mensal e da Quina…</li><li>Projetos Estratégicos: têm chamadas no dia anterior aos sorteios e encerram às 18h. Acompanhe a Mega Sena…</li></ul>"
   },
   {
     "question": "Há limite de cotas por pessoa?",

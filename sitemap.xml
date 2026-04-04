@@ -4,6 +4,7 @@
   <!-- Ex.: https://seu-dominio.com/ -->
 
   <url><loc>https://borgesfernando.github.io/boloesdoborges/index.html</loc></url>
+  <url><loc>https://borgesfernando.github.io/boloesdoborges/linhas-de-projetos.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/mensais.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/especiais.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/acumulados.html</loc></url>
@@ -27,7 +28,7 @@
   <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/mensais/lf-mensal.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/mensais/dupla-sena-mensal.html</loc></url>
 
-  <!-- Acumulados -->
+  <!-- Estratégicos -->
   <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/acumulados/mega-acumulada.html</loc></url>
   <url><loc>https://borgesfernando.github.io/boloesdoborges/boloes/acumulados/quina-acumulada.html</loc></url>
 </urlset>

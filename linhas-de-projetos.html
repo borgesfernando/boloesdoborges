@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Linhas de projetos do Super Bolão: especiais, mensais e estratégicos, com links diretos para cada linha e seus projetos atuais.">
+  <title>Linhas de Projetos 2026 | Super Bolão</title>
+  <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/linhas-de-projetos.html">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/config.js"></script>
+  <script defer src="js/landing.js"></script>
+  <script defer src="js/year.js"></script>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html">Início</a>
+      <a href="linhas-de-projetos.html">Linhas de Projetos</a>
+      <a href="mensais.html">Mensais</a>
+      <a href="especiais.html">Especiais</a>
+      <a href="acumulados.html">Estratégicos</a>
+      <a href="faq.html">FAQ</a>
+      <a href="prest.html">Transparência</a>
+      <a href="institucional/sobre.html">Sobre</a>
+      <a href="institucional/termos.html">Termos</a>
+      <a href="institucional/privacidade.html">Privacidade</a>
+      <a href="institucional/contato.html">Contato</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container hero-container" style="grid-template-columns: 1fr; text-align: left;">
+      <div class="hero-text">
+        <p class="hero-kicker">Organização por linha</p>
+        <h1>Linhas de Projetos <span id="ano-atual"></span></h1>
+        <p class="hero-subtitle">
+          Veja os três blocos principais do site antigo reunidos em uma única página, com acesso rápido aos projetos atuais e às páginas detalhadas de cada linha.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#linhas-principais" class="btn sb2026">Ver blocos</a>
+          <a href="index.html" class="btn tonal">Voltar para a home</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="linhas-principais" class="section">
+      <div class="container">
+        <div class="card">
+          <h2>Projetos Especiais</h2>
+          <p>Grandes concursos com cronograma anual e janelas bem definidas.</p>
+          <div class="project-grid" id="linha-especiais"></div>
+          <div style="margin-top: 1.25rem;">
+            <a href="especiais.html" class="btn lf-indep">Abrir página da linha</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Projetos Mensais</h2>
+          <p>Participação recorrente com ciclo contínuo e acompanhamento constante.</p>
+          <div class="project-grid" id="linha-mensais"></div>
+          <div style="margin-top: 1.25rem;">
+            <a href="mensais.html" class="btn quina">Abrir página da linha</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Projetos Estratégicos</h2>
+          <p>Ativações estratégicas quando os prêmios acumulam e a janela é aberta na comunidade.</p>
+          <div class="project-grid" id="linha-acumulados"></div>
+          <div style="margin-top: 1.25rem;">
+            <a href="acumulados.html" class="btn mega">Abrir página da linha</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="text-align: center; padding: 2rem 0;">
+      <div class="trust-links">
+        <a href="institucional/sobre.html">Sobre</a>
+        <a href="institucional/termos.html">Termos</a>
+        <a href="institucional/privacidade.html">Privacidade</a>
+        <a href="institucional/contato.html">Contato</a>
+      </div>
+      <p style="margin-top: 1.2rem;">© <span id="ano-copyright">2026</span> Super Bolão™ - Todos os direitos reservados</p>
+      <p style="margin-top: 0.8rem; font-size: 0.95rem;">
+        Projeto independente, sem vínculo com a Caixa Econômica Federal. Sem promessa de ganho. Apenas para maiores de 18 anos.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hoje = new Date();
+      hoje.setHours(0, 0, 0, 0);
+
+      const renderLinha = (id, projetos, tipo) => {
+        const container = document.getElementById(id);
+        if (!container || !Array.isArray(projetos) || typeof criarCardProjeto !== 'function') return;
+        container.innerHTML = '';
+        projetos.forEach((projeto) => {
+          container.appendChild(criarCardProjeto(projeto, tipo, hoje));
+        });
+      };
+
+      if (typeof PROJETOS === 'undefined') return;
+
+      const especiais = typeof obterEspeciaisOrdenados === 'function'
+        ? obterEspeciaisOrdenados(hoje).especiaisOrdenados
+        : (PROJETOS.especiais?.projetos || []);
+
+      renderLinha('linha-especiais', especiais, 'especiais');
+      renderLinha('linha-mensais', PROJETOS.mensais?.projetos || [], 'mensais');
+      renderLinha('linha-acumulados', PROJETOS.acumulados?.projetos || [], 'acumulados');
+    });
+  </script>
+</body>
+</html>
