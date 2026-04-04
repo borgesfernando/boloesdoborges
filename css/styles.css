@@ -582,6 +582,103 @@ footer h3 {
   background-color: rgba(var(--mega), 0.9);
 }
 
+.icon-cta {
+  --cta-rgb: 34, 158, 217;
+  --cta-inner: rgba(6, 20, 34, 0.72);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 3.55rem;
+  min-width: 3.55rem;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 24px rgba(var(--cta-rgb), 0.16),
+    0 12px 26px rgba(0, 0, 0, 0.18);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+.icon-cta::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    rgba(var(--cta-rgb), 0.12),
+    rgba(var(--cta-rgb), 0.98),
+    rgba(255, 255, 255, 0.95),
+    rgba(var(--cta-rgb), 0.55),
+    rgba(var(--cta-rgb), 0.12)
+  );
+  animation: icon-cta-spin 1.8s linear infinite;
+  filter: blur(0.35px) drop-shadow(0 0 8px rgba(var(--cta-rgb), 0.55));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.icon-cta::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(7, 18, 30, 0.9), var(--cta-inner));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.icon-cta:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 0 28px rgba(var(--cta-rgb), 0.3),
+    0 16px 30px rgba(0, 0, 0, 0.22);
+}
+
+.icon-cta:hover::before {
+  filter: blur(0.45px) drop-shadow(0 0 12px rgba(var(--cta-rgb), 0.7));
+}
+
+.icon-cta:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.icon-cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.92);
+  outline-offset: 4px;
+}
+
+.icon-cta-telegram {
+  --cta-rgb: 34, 158, 217;
+}
+
+.icon-cta-forms {
+  --cta-rgb: 0, 119, 200;
+}
+
+.icon-cta-svg {
+  position: relative;
+  z-index: 1;
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentColor;
+  flex: none;
+}
+
+@keyframes icon-cta-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .mega-alert {
   display: none;
   border-left: 6px solid rgb(var(--mega));
@@ -772,8 +869,18 @@ footer {
   }
 
   .btn {
-  width: 100%;
-  margin-top: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .hero-cta-group .btn.icon-cta {
+    width: 3.25rem;
+    min-width: 3.25rem;
+    margin-top: 0;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
   }
 
   .hero-container {
@@ -791,6 +898,14 @@ footer {
 
   .hero-badges {
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-cta,
+  .icon-cta::before {
+    animation: none;
+    transition: none;
   }
 }
  .disclaimer-bar {
