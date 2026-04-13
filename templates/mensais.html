@@ -12,7 +12,8 @@
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
+      const aliasId = params.get("id");
+      const id = aliasId === "ds-mensal" ? "dupla-sena-mensal" : aliasId;
       const projeto = PROJETOS.mensais.projetos.find(p => p.id === id);
 
       if (!projeto) {

@@ -14,18 +14,26 @@ function getBasePaths() {
 }
 
 function getAlertByProjectId(projectId, alerts) {
-  return alerts.find((alert) => alert?.projeto === projectId);
+  const normalizedProjectId = normalizeMensalProjectId(projectId);
+  return alerts.find((alert) => normalizeMensalProjectId(alert?.projeto) === normalizedProjectId);
+}
+
+function normalizeMensalProjectId(projectId) {
+  if (projectId === 'dupla-sena-mensal') return 'ds-mensal';
+  return projectId;
 }
 
 function getAlertStyles(projectId) {
-  if (projectId === 'lf-mensal') return { alertClass: 'lotofacil', buttonClass: 'lotofacil' };
-  if (projectId === 'quina-mensal') return { alertClass: 'quina', buttonClass: 'quina' };
+  const normalizedProjectId = normalizeMensalProjectId(projectId);
+  if (normalizedProjectId === 'lf-mensal') return { alertClass: 'lotofacil', buttonClass: 'lotofacil' };
+  if (normalizedProjectId === 'quina-mensal') return { alertClass: 'quina', buttonClass: 'quina' };
   return { alertClass: 'dupla', buttonClass: 'dupla' };
 }
 
 function getAlertPageId(projectId) {
-  if (projectId === 'ds-mensal') return 'dupla-sena-mensal';
-  return projectId;
+  const normalizedProjectId = normalizeMensalProjectId(projectId);
+  if (normalizedProjectId === 'ds-mensal') return 'dupla-sena-mensal';
+  return normalizedProjectId;
 }
 
 async function carregarAlerta(url) {
@@ -47,7 +55,7 @@ async function renderizarMensaisAlert() {
     ]);
 
     const params = new URLSearchParams(window.location.search);
-    const pageId = params.get('id');
+    const pageId = normalizeMensalProjectId(params.get('id'));
     const alertEscolhido =
       pageId === 'ds-mensal'
         ? getAlertByProjectId('ds-mensal', [dsAlert])
@@ -65,9 +73,9 @@ async function renderizarMensaisAlert() {
     }
 
     const projetoLabel =
-      alertEscolhido.projeto === 'quina-mensal'
+      normalizeMensalProjectId(alertEscolhido.projeto) === 'quina-mensal'
         ? 'Quina Mensal'
-        : alertEscolhido.projeto === 'lf-mensal'
+        : normalizeMensalProjectId(alertEscolhido.projeto) === 'lf-mensal'
         ? 'Lotofácil Mensal'
         : 'Dupla Sena Mensal';
     const { alertClass, buttonClass } = getAlertStyles(alertEscolhido.projeto);
