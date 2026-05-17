@@ -1,25 +1,25 @@
 {
   "acumulado": true,
-  "dataApuracao": "14/05/2026",
-  "dataProximoConcurso": "16/05/2026",
+  "dataApuracao": "16/05/2026",
+  "dataProximoConcurso": "23/05/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "11",
-    "12",
-    "14",
-    "20",
-    "44",
-    "42"
+    "21",
+    "06",
+    "04",
+    "08",
+    "18",
+    "30"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "11",
-    "12",
-    "14",
-    "20",
-    "42",
-    "44"
+    "04",
+    "06",
+    "08",
+    "18",
+    "21",
+    "30"
   ],
   "listaDezenasSegundoSorteio": null,
   "listaMunicipioUFGanhadores": [],
@@ -33,35 +33,35 @@
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 50,
-      "valorPremio": 43872.17
+      "numeroDeGanhadores": 136,
+      "valorPremio": 19052.37
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 3762,
-      "valorPremio": 961.14
+      "numeroDeGanhadores": 6714,
+      "valorPremio": 636.14
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
-  "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
+  "nomeMunicipioUFSorteio": "SÃO PAULO,  SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3008,
-  "numeroConcursoAnterior": 3007,
+  "numero": 3009,
+  "numeroConcursoAnterior": 3008,
   "numeroConcursoFinal_0_5": 3010,
-  "numeroConcursoProximo": 3009,
+  "numeroConcursoProximo": 3010,
   "numeroJogo": 2,
-  "observacao": "",
+  "observacao": "O sorteio da Mega-Sena 30 Anos será realizado no dia 24/05/2026 (domingo), às 11:00.",
   "premiacaoContingencia": null,
   "tipoJogo": "MEGA_SENA",
   "tipoPublicacao": 3,
   "ultimoConcurso": true,
-  "valorArrecadado": 55048158,
-  "valorAcumuladoConcurso_0_5": 14202300.9,
-  "valorAcumuladoConcursoEspecial": 103323684.34,
-  "valorAcumuladoProximoConcurso": 56951254.24,
-  "valorEstimadoProximoConcurso": 65000000,
+  "valorArrecadado": 65023704,
+  "valorAcumuladoConcurso_0_5": 188828074.99,
+  "valorAcumuladoConcursoEspecial": 188828074.99,
+  "valorAcumuladoProximoConcurso": 188828074.99,
+  "valorEstimadoProximoConcurso": 300000000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
