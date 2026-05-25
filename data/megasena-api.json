@@ -1,67 +1,84 @@
 {
-  "acumulado": true,
-  "dataApuracao": "16/05/2026",
-  "dataProximoConcurso": "23/05/2026",
+  "acumulado": false,
+  "dataApuracao": "24/05/2026",
+  "dataProximoConcurso": "26/05/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "21",
-    "06",
-    "04",
-    "08",
-    "18",
-    "30"
+    "35",
+    "33",
+    "45",
+    "30",
+    "47",
+    "03"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
-  "indicadorConcursoEspecial": 1,
+  "indicadorConcursoEspecial": 2,
   "listaDezenas": [
-    "04",
-    "06",
-    "08",
-    "18",
-    "21",
-    "30"
+    "03",
+    "30",
+    "33",
+    "35",
+    "45",
+    "47"
   ],
   "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [],
+  "listaMunicipioUFGanhadores": [
+    {
+      "ganhadores": 1,
+      "municipio": "FORTALEZA",
+      "nomeFatansiaUL": "",
+      "posicao": 1,
+      "serie": "",
+      "uf": "CE"
+    },
+    {
+      "ganhadores": 1,
+      "municipio": "RIO DE JANEIRO",
+      "nomeFatansiaUL": "",
+      "posicao": 1,
+      "serie": "",
+      "uf": "RJ"
+    }
+  ],
   "listaRateioPremio": [
     {
       "descricaoFaixa": "6 acertos",
       "faixa": 1,
-      "numeroDeGanhadores": 0,
-      "valorPremio": 0
+      "numeroDeGanhadores": 2,
+      "valorPremio": 168170026.83
     },
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 136,
-      "valorPremio": 19052.37
+      "numeroDeGanhadores": 590,
+      "valorPremio": 13890.02
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 6714,
-      "valorPremio": 636.14
+      "numeroDeGanhadores": 37565,
+      "valorPremio": 311.65
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
-  "nomeMunicipioUFSorteio": "SÃO PAULO,    SP",
+  "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3009,
-  "numeroConcursoAnterior": 3008,
-  "numeroConcursoFinal_0_5": 3010,
-  "numeroConcursoProximo": 3010,
+  "numero": 3010,
+  "numeroConcursoAnterior": 3009,
+  "numeroConcursoFinal_0_5": 3015,
+  "numeroConcursoProximo": 3011,
   "numeroJogo": 2,
-  "observacao": "O sorteio da Mega-Sena 30 Anos será realizado no dia 24/05/2026 (domingo), às 11:00.",
+  "observacao": "",
   "premiacaoContingencia": null,
   "tipoJogo": "MEGA_SENA",
   "tipoPublicacao": 3,
   "ultimoConcurso": true,
-  "valorArrecadado": 65023704,
-  "valorAcumuladoConcurso_0_5": 188828074.99,
-  "valorAcumuladoConcursoEspecial": 188828074.99,
-  "valorAcumuladoProximoConcurso": 188828074.99,
-  "valorEstimadoProximoConcurso": 330000000,
+  "valorArrecadado": 534701982,
+  "valorAcumuladoConcurso_0_5": 0,
+  "valorAcumuladoConcursoEspecial": 0,
+  "valorAcumuladoProximoConcurso": 0,
+  "valorEstimadoProximoConcurso": 3500000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
