@@ -1,35 +1,35 @@
 {
   "acumulado": false,
-  "dataApuracao": "20/06/2026",
-  "dataProximoConcurso": "23/06/2026",
+  "dataApuracao": "23/06/2026",
+  "dataProximoConcurso": "25/06/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "46",
-    "19",
-    "16",
-    "58",
+    "11",
+    "02",
+    "03",
     "22",
-    "24"
+    "17",
+    "08"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "16",
-    "19",
-    "22",
-    "24",
-    "46",
-    "58"
+    "02",
+    "03",
+    "08",
+    "11",
+    "17",
+    "22"
   ],
   "listaDezenasSegundoSorteio": null,
   "listaMunicipioUFGanhadores": [
     {
       "ganhadores": 1,
-      "municipio": "NOVA IGUACU",
+      "municipio": "MANAUS",
       "nomeFatansiaUL": "",
       "posicao": 1,
       "serie": "",
-      "uf": "RJ"
+      "uf": "AM"
     }
   ],
   "listaRateioPremio": [
@@ -37,38 +37,38 @@
       "descricaoFaixa": "6 acertos",
       "faixa": 1,
       "numeroDeGanhadores": 1,
-      "valorPremio": 39427096.38
+      "valorPremio": 2813548.14
     },
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 65,
-      "valorPremio": 30910.5
+      "numeroDeGanhadores": 102,
+      "valorPremio": 8964.74
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 3942,
-      "valorPremio": 840.14
+      "numeroDeGanhadores": 4426,
+      "valorPremio": 340.54
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
   "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3021,
-  "numeroConcursoAnterior": 3020,
+  "numero": 3022,
+  "numeroConcursoAnterior": 3021,
   "numeroConcursoFinal_0_5": 3025,
-  "numeroConcursoProximo": 3022,
+  "numeroConcursoProximo": 3023,
   "numeroJogo": 2,
   "observacao": "",
   "premiacaoContingencia": null,
   "tipoJogo": "MEGA_SENA",
   "tipoPublicacao": 3,
   "ultimoConcurso": true,
-  "valorArrecadado": 50420016,
-  "valorAcumuladoConcurso_0_5": 6061766.86,
-  "valorAcumuladoConcursoEspecial": 12244134.25,
+  "valorArrecadado": 22946760,
+  "valorAcumuladoConcurso_0_5": 7609218.33,
+  "valorAcumuladoConcursoEspecial": 12947521.29,
   "valorAcumuladoProximoConcurso": 0,
   "valorEstimadoProximoConcurso": 3500000,
   "valorSaldoReservaGarantidora": 0,
