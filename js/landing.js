@@ -41,7 +41,6 @@ function getTipoCorFromId(id) {
   return ({
     ds: 'dupla',
     lf: 'lotofacil',
-    milionaria: 'quina',
     quina: 'quina',
     mega: 'mega'
   }[prefix] || prefix);

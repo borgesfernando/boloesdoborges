@@ -62,7 +62,6 @@ function carregarProjetos(tipo, projetos, containerId) {
     const tipoCor = {
       'ds': 'dupla',
       'lf': 'lotofacil',
-      'milionaria': 'quina',
       'quina': 'quina',
       'mega': 'mega'
     }[projeto.id.split('-')[0]] || projeto.id.split('-')[0];
