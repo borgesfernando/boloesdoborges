@@ -89,6 +89,15 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
 - A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html`, `boloes/mensais/lf-mensal.html` e `boloes/mensais/dupla-sena-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
 
+## 🚨 Alerta dos projetos estratégicos
+
+- O script `scripts/update-acumulados-alert.js` grava `data/mega-50mais-alert.json` ou `data/milionaria-alert.json` com o campo `ativo`.
+- Os workflows `.github/workflows/set-mega-50mais-alert.yml` e `.github/workflows/set-milionaria-alert.yml` são disparados via `workflow_dispatch` (normalmente pelo Apps Script) e ativam/desativam a janela pública do projeto estratégico correspondente.
+- Inputs esperados (via `workflow_dispatch`):
+  - `ativo`: `true|false` (abre ou fecha a janela pública do projeto estratégico correspondente).
+- Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-acumulados-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
+- A home (`index.html`), a página `acumulados.html` e as páginas `boloes/acumulados/mega-acumulada.html` e `boloes/acumulados/milionaria.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
+
 ## 🧭 Estrutura de URLs (SEO)
 
 - Páginas principais: `index.html`, `mensais.html`, `especiais.html`, `acumulados.html`, `faq.html`, `prest.html`, `ia.html`.
