@@ -111,7 +111,16 @@ const PROJETOS = {
         corHex: '#00AB67',
         gradiente: 'linear-gradient(to right, rgb(0,171,103), rgb(128,195,66))',
       },
-            {
+      {
+        id: 'milionaria',
+        nome: '+Milionária Acumulada +80Mi',
+        valor: 20,
+        minimo: 80,
+        corPrimaria: '0, 93, 164',
+        corHex: '#005DA4',
+        gradiente: 'linear-gradient(to right, rgb(0,93,164), rgb(128,53,148))',
+      },
+      {
         id: 'quina-acumulada',
         nome: 'Quina Acumulada +40Mi',
         valor: 20,

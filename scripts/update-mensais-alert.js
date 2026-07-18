@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Atualiza o JSON de alerta do projeto mensal (quina-mensal, lf-mensal ou ds-mensal).
+ * Atualiza o JSON de alerta de projetos com janela pública manual.
  */
 const fs = require('fs');
 const path = require('path');
@@ -9,6 +9,8 @@ const ALERT_FILES = {
   'quina-mensal': path.join(__dirname, '..', 'data', 'quina-mensal-alert.json'),
   'lf-mensal': path.join(__dirname, '..', 'data', 'lf-mensal-alert.json'),
   'ds-mensal': path.join(__dirname, '..', 'data', 'ds-mensal-alert.json'),
+  'mega-50mais': path.join(__dirname, '..', 'data', 'mega-50mais-alert.json'),
+  milionaria: path.join(__dirname, '..', 'data', 'milionaria-alert.json'),
 };
 
 function parseBoolean(value) {
@@ -21,7 +23,7 @@ function parseBoolean(value) {
 function loadPayload() {
   const projeto = (process.env.ALERTA_PROJETO || '').trim();
   if (!ALERT_FILES[projeto]) {
-    throw new Error('Informe ALERTA_PROJETO (quina-mensal, lf-mensal ou ds-mensal).');
+    throw new Error(`Informe ALERTA_PROJETO (${Object.keys(ALERT_FILES).join(', ')}).`);
   }
   const ativo = parseBoolean(process.env.ALERTA_ATIVO);
 
@@ -39,7 +41,7 @@ function main() {
     fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2) + '\n', 'utf8');
     console.log(`Arquivo atualizado em ${outputPath}`);
   } catch (error) {
-    console.error(`[update-mensais-alert] Falha ao atualizar mensais-alert: ${error.message}`);
+    console.error(`[update-mensais-alert] Falha ao atualizar alerta: ${error.message}`);
     process.exit(1);
   }
 }

@@ -1,4 +1,4 @@
-name: Sincronizar mensais-alert com novo-site
+name: Sincronizar alertas com novo-site
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -10,11 +10,15 @@ on:
       - 'data/ds-mensal-alert.json'
       - 'data/quina-mensal-alert.json'
       - 'data/lf-mensal-alert.json'
+      - 'data/mega-50mais-alert.json'
+      - 'data/milionaria-alert.json'
   workflow_run:
     workflows:
       - Atualizar alerta Quina Mensal
       - Atualizar alerta Lotofácil Mensal
       - Atualizar alerta Dupla Sena Mensal
+      - Atualizar alerta Mega 50+
+      - Atualizar alerta Milionária
     types:
       - completed
 
@@ -22,7 +26,7 @@ permissions:
   contents: write
 
 jobs:
-  sync-mensais-alert:
+  sync-alert:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout boloesdoborges
@@ -37,20 +41,22 @@ jobs:
           token: ${{ secrets.NOVO_SITE_SYNC_TOKEN }}
           path: novo-site
 
-      - name: Copiar mensais-alert.json para novo-site
+      - name: Copiar alertas para novo-site
         run: |
           cp data/ds-mensal-alert.json novo-site/src/data/ds-mensal-alert.json
           cp data/quina-mensal-alert.json novo-site/src/data/quina-mensal-alert.json
           cp data/lf-mensal-alert.json novo-site/src/data/lf-mensal-alert.json
+          cp data/mega-50mais-alert.json novo-site/src/data/mega-50mais-alert.json
+          cp data/milionaria-alert.json novo-site/src/data/milionaria-alert.json
 
       - name: Commit e push se houver mudanças
         working-directory: novo-site
         run: |
-          if [ -n "$(git status --porcelain src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json
-            git commit -m "chore: sincronizar alertas mensais a partir do boloesdoborges"
+            git add src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json
+            git commit -m "chore: sincronizar alertas a partir do boloesdoborges"
             git push origin master
           else
             echo "Sem mudanças para sincronizar"
