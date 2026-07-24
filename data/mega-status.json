@@ -5,8 +5,8 @@
   "valorEstimadoProximoConcurso": 62000000,
   "minimoMilhoes": 50,
   "ativo": true,
-  "janelaInicio": "2026-07-23T04:48:16.663Z",
-  "janelaFim": "2026-07-23T21:00:00.000Z",
-  "ultimaAtualizacao": "2026-07-23T04:48:16.663Z",
+  "janelaInicio": "2026-07-24T04:44:58.469Z",
+  "janelaFim": "2026-07-24T21:00:00.000Z",
+  "ultimaAtualizacao": "2026-07-24T04:44:58.469Z",
   "fonte": "https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena"
 }
