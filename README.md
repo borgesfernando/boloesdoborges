@@ -14,7 +14,7 @@ Projetos coordenados com transparência, tecnologia e 15 anos de experiência pa
 
 - **Projetos Mensais**: Lotofácil, Quina e Dupla Sena, com rotinas próprias de sorteio para quem gosta de acompanhar resultados com frequência.
 - **Projetos Especiais**: Quina de São João, Lotofácil da Independência, Dupla Sena de Páscoa e Mega da Virada.
-- **Projetos Estratégicos (Acumulados)**: ativações pontuais quando Mega-Sena ou Quina atingem prêmios relevantes, com comunicação dedicada e janelas de entrada curtas.
+- **Projetos Estratégicos (Acumulados)**: ativações pontuais quando Mega-Sena, +Milionária ou Quina atingem prêmios relevantes, com comunicação dedicada e janelas de entrada curtas.
 
 ## 📈 Como funciona
 

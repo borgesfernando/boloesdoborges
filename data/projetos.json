@@ -116,9 +116,9 @@
         "nome": "+Milionária Acumulada +80Mi",
         "valor": 20,
         "minimo": 80,
-        "corPrimaria": "0, 93, 164",
-        "corHex": "#005DA4",
-        "gradiente": "linear-gradient(to right, rgb(0,93,164), rgb(128,53,148))"
+        "corPrimaria": "43, 36, 111",
+        "corHex": "#2B246F",
+        "gradiente": "linear-gradient(to right, rgb(43,36,111), rgb(128,53,148))"
       },
       {
         "id": "quina-acumulada",

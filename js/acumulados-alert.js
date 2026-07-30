@@ -6,7 +6,7 @@
       arquivo: 'mega-50mais-alert.json',
       titulo: 'Mega Sena 50Mi+ Acumulada!!!',
       minimo: 50,
-      detalhe: 'Bolão estratégico aberto por janela manual para concursos da Mega-Sena acima de R$ 50 milhões.',
+      detalhe: 'Bolão estratégico aberto por janela pública para concursos da Mega-Sena acima de R$ 50 milhões.',
     },
     {
       alertaId: 'milionaria',
@@ -14,7 +14,7 @@
       arquivo: 'milionaria-alert.json',
       titulo: '+Milionária 80Mi+ Acumulada!!!',
       minimo: 80,
-      detalhe: 'Bolão estratégico aberto por janela manual para concursos da +Milionária acima de R$ 80 milhões.',
+      detalhe: 'Bolão estratégico com janela pública controlada pelo Apps Script para concursos da +Milionária acima de R$ 80 milhões.',
     },
   ];
 

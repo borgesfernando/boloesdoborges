@@ -524,7 +524,7 @@ function renderizarLinhasPrincipais() {
     ? `${totalMensais} projeto${totalMensais > 1 ? 's' : ''} mensal(is) em funcionamento.`
     : '';
 
-  const descAcumulados = 'Projetos estratégicos ativados apenas quando os prêmios da Mega ou Quina atingem valores relevantes.';
+  const descAcumulados = 'Projetos estratégicos ativados apenas quando Mega-Sena, +Milionária ou Quina atingem valores relevantes.';
   const detalheAcumulados = totalAcumulados > 0
     ? `Monitoramos ${totalAcumulados} concurso${totalAcumulados > 1 ? 's' : ''} acumulado(s).`
     : '';

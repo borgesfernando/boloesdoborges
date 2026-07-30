@@ -34,6 +34,7 @@ function normalize(html) {
   return html
     .replace(/\s+/g, ' ')
     .replace(/\s*([,.!?;:])\s*/g, '$1 ')
+    .replace(/(\d),\s+(\d{2})/g, '$1,$2')
     .replace(/\s*<\/(p|li)>\s*/gi, '</$1>')
     .replace(/>\s*</g, '><')
     .trim();
@@ -110,4 +111,3 @@ function main() {
 }
 
 if (require.main === module) main();
-

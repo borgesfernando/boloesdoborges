@@ -12,6 +12,7 @@ const rotaMap = {
   ROTA_MENSAL_QUINA: 'boloes/mensais/quina-mensal.html',
   ROTA_MENSAL_DS: 'boloes/mensais/dupla-sena-mensal.html',
   ROTA_ACUMULADA_MEGA: 'boloes/acumulados/mega-acumulada.html',
+  ROTA_ACUMULADA_MILIONARIA: 'boloes/acumulados/milionaria.html',
   ROTA_ACUMULADA_QUINA: 'boloes/acumulados/quina-acumulada.html',
   ROTA_COMUNIDADE: 'https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform',
   ROTA_PRESTACAO_CONTAS: 'prest.html',
