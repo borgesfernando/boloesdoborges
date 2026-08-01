@@ -10,14 +10,15 @@
   --success: #009933;
 
   /* Cores dos projetos */
-  --lf-indep: 128, 53, 148;
-  --qsj: 0, 93, 164;
-  --dsp: 166, 42, 82;
-  --sb2026: 0, 171, 103;
-  --mega: 0, 171, 103;
-  --quina: 0, 93, 164;
-  --lotofacil: 128, 53, 148;
-  --dupla: 166, 42, 82;
+  --lf-indep: 147, 0, 137;
+  --qsj: 38, 0, 133;
+  --dsp: 166, 19, 36;
+  --sb2026: 32, 152, 105;
+  --mega: 32, 152, 105;
+  --quina: 38, 0, 133;
+  --lotofacil: 147, 0, 137;
+  --dupla: 166, 19, 36;
+  --milionaria: 46, 48, 120;
 }
 
 /* ==========================
@@ -465,19 +466,19 @@ footer h3 {
 .project-card.lf-indep,
 .project-card.lf,
 .project-card.lotofacil {
-  background: linear-gradient(to right, rgba(var(--lotofacil), 0.1), rgba(239,118,94,0.1));
+  background: linear-gradient(to right, rgba(var(--lotofacil), 0.12), rgba(var(--lotofacil), 0.04));
   border-left-color: rgb(var(--lotofacil));
 }
 
 .project-card.qsj,
 .project-card.quina {
-  background: linear-gradient(to right, rgba(var(--quina), 0.1), rgba(0,153,218,0.1));
+  background: linear-gradient(to right, rgba(var(--quina), 0.12), rgba(var(--quina), 0.04));
   border-left-color: rgb(var(--quina));
 }
 
 .project-card.ds-pascoa,
 .project-card.ds {
-  background: linear-gradient(to right, rgba(var(--dupla), 0.1), rgba(215,25,32,0.1));
+  background: linear-gradient(to right, rgba(var(--dupla), 0.12), rgba(var(--dupla), 0.04));
   border-left-color: rgb(var(--dupla));
 }
 
@@ -493,14 +494,19 @@ footer h3 {
 
 .project-card.dsp,
 .project-card.dupla {
-  background: linear-gradient(to right, rgba(var(--dupla), 0.1), rgba(215,25,32,0.1));
+  background: linear-gradient(to right, rgba(var(--dupla), 0.12), rgba(var(--dupla), 0.04));
   border-left-color: rgb(var(--dupla));
 }
 
 .project-card.sb2026,
 .project-card.mega {
-  background: linear-gradient(to right, rgba(var(--mega), 0.1), rgba(128,195,66,0.1));
+  background: linear-gradient(to right, rgba(var(--mega), 0.12), rgba(var(--mega), 0.04));
   border-left-color: rgb(var(--mega));
+}
+
+.project-card.milionaria {
+  background: linear-gradient(to right, rgba(var(--milionaria), 0.12), rgba(var(--milionaria), 0.04));
+  border-left-color: rgb(var(--milionaria));
 }
 
 /* ==========================
@@ -580,6 +586,22 @@ footer h3 {
 .btn.sb2026:hover,
 .btn.mega:hover {
   background-color: rgba(var(--mega), 0.9);
+}
+
+.btn.milionaria {
+  background-color: rgb(var(--milionaria));
+}
+
+.btn.milionaria:hover {
+  background-color: rgba(var(--milionaria), 0.9);
+}
+
+.btn.project-cta {
+  background-color: var(--secondary);
+}
+
+.btn.project-cta:hover {
+  background-color: color-mix(in sRGB, var(--secondary) 90%, black);
 }
 
 .icon-cta {
@@ -682,7 +704,7 @@ footer h3 {
 .mega-alert {
   display: none;
   border-left: 6px solid rgb(var(--mega));
-  background: linear-gradient(135deg, rgba(0,171,103,0.12), rgba(0,171,103,0.05));
+  background: linear-gradient(135deg, rgba(var(--mega),0.12), rgba(var(--mega),0.05));
   color: #0f5132;
   gap: 1rem;
 }
@@ -705,6 +727,12 @@ footer h3 {
   color: #5c1630;
 }
 
+.mega-alert.milionaria {
+  border-left-color: rgb(var(--milionaria));
+  background: linear-gradient(135deg, rgba(var(--milionaria), 0.12), rgba(var(--milionaria), 0.05));
+  color: #24265f;
+}
+
 .mega-alert h3 {
   margin: 0;
   font-size: 1.35rem;
@@ -713,7 +741,8 @@ footer h3 {
 
 .mega-alert.lotofacil h3,
 .mega-alert.quina h3,
-.mega-alert.dupla h3 {
+.mega-alert.dupla h3,
+.mega-alert.milionaria h3 {
   color: inherit;
 }
 
@@ -724,7 +753,34 @@ footer h3 {
 
 .mega-alert.lotofacil p,
 .mega-alert.quina p,
-.mega-alert.dupla p {
+.mega-alert.dupla p,
+.mega-alert.milionaria p {
+  color: inherit;
+}
+
+.mega-alert.acumulados-alert-container {
+  border-left: 0;
+  background: transparent;
+  color: var(--dark);
+  gap: 0.75rem;
+}
+
+.acumulados-alert-item {
+  border-left: 6px solid rgb(var(--mega));
+  border-radius: 6px;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(var(--mega), 0.12), rgba(var(--mega), 0.05));
+  color: #0f5132;
+}
+
+.acumulados-alert-item.milionaria {
+  border-left-color: rgb(var(--milionaria));
+  background: linear-gradient(135deg, rgba(var(--milionaria), 0.12), rgba(var(--milionaria), 0.05));
+  color: #24265f;
+}
+
+.acumulados-alert-item h3,
+.acumulados-alert-item p {
   color: inherit;
 }
 

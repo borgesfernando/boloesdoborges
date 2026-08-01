@@ -63,7 +63,8 @@ function carregarProjetos(tipo, projetos, containerId) {
       'ds': 'dupla',
       'lf': 'lotofacil',
       'quina': 'quina',
-      'mega': 'mega'
+      'mega': 'mega',
+      'milionaria': 'milionaria'
     }[projeto.id.split('-')[0]] || projeto.id.split('-')[0];
 
     const btnClasse = tipoCor;

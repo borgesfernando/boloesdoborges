@@ -13,9 +13,9 @@
         "mesFim": "8",
         "dataLimite": "07/08/2026",
         "dataSorteio": "07/09/2026",
-        "corPrimaria": "128, 53, 148",
-        "corHex": "#803594",
-        "gradiente": "linear-gradient(to right, rgb(128,53,148), rgb(239,118,94))"
+        "corPrimaria": "147, 0, 137",
+        "corHex": "#930089",
+        "gradiente": "linear-gradient(to right, rgb(147,0,137), rgb(185,89,178))"
       },
       {
         "id": "quina-saojoao",
@@ -28,9 +28,9 @@
         "mesFim": "06",
         "dataLimite": "08/06/2026",
         "dataSorteio": "28/06/2026",
-        "corPrimaria": "0, 93, 164",
-        "corHex": "#005DA4",
-        "gradiente": "linear-gradient(to right, rgb(0,93,164), rgb(0,153,218))"
+        "corPrimaria": "38, 0, 133",
+        "corHex": "#260085",
+        "gradiente": "linear-gradient(to right, rgb(38,0,133), rgb(114,89,176))"
       },
       {
         "id": "ds-pascoa",
@@ -43,9 +43,9 @@
         "mesFim": "04",
         "dataLimite": "09/04/2026",
         "dataSorteio": "19/04/2026",
-        "corPrimaria": "166, 42, 82",
-        "corHex": "#A62A52",
-        "gradiente": "linear-gradient(to right, rgb(166,42,82), rgb(215,25,32))"
+        "corPrimaria": "166, 19, 36",
+        "corHex": "#A61324",
+        "gradiente": "linear-gradient(to right, rgb(166,19,36), rgb(197,102,113))"
       },
       {
         "id": "mega-virada",
@@ -58,9 +58,9 @@
         "mesFim": "12",
         "dataLimite": "10/12/2026",
         "dataSorteio": "31/12/2026",
-        "corPrimaria": "0, 171, 103",
-        "corHex": "#00AB67",
-        "gradiente": "linear-gradient(to right, rgb(0,171,103), rgb(128,195,66))"
+        "corPrimaria": "32, 152, 105",
+        "corHex": "#209869",
+        "gradiente": "linear-gradient(to right, rgb(32,152,105), rgb(110,188,158))"
       }
     ]
   },
@@ -73,9 +73,9 @@
         "cotaMensal": 72,
         "ciclo": "24 concursos consecutivos",
         "sorteios": "segunda a sábado",
-        "corPrimaria": "0, 93, 164",
-        "corHex": "#005DA4",
-        "gradiente": "linear-gradient(to right, rgb(0,93,164), rgb(0,153,218))"
+        "corPrimaria": "38, 0, 133",
+        "corHex": "#260085",
+        "gradiente": "linear-gradient(to right, rgb(38,0,133), rgb(114,89,176))"
       },
       {
         "id": "lf-mensal",
@@ -83,9 +83,9 @@
         "cotaMensal": 100,
         "ciclo": "24 concursos consecutivos",
         "sorteios": "segunda a sábado",
-        "corPrimaria": "128, 53, 148",
-        "corHex": "#803594",
-        "gradiente": "linear-gradient(to right, rgb(128,53,148), rgb(239,118,94))"
+        "corPrimaria": "147, 0, 137",
+        "corHex": "#930089",
+        "gradiente": "linear-gradient(to right, rgb(147,0,137), rgb(185,89,178))"
       },
       {
         "id": "dupla-sena-mensal",
@@ -93,9 +93,9 @@
         "cotaMensal": 60,
         "ciclo": "12 concursos consecutivos",
         "sorteios": "segunda, quarta e sexta",
-        "corPrimaria": "166, 42, 82",
-        "corHex": "#A62A52",
-        "gradiente": "linear-gradient(to right, rgb(166,42,82), rgb(215,25,32))"
+        "corPrimaria": "166, 19, 36",
+        "corHex": "#A61324",
+        "gradiente": "linear-gradient(to right, rgb(166,19,36), rgb(197,102,113))"
       }
     ]
   },
@@ -107,18 +107,18 @@
         "nome": "Mega Sena Acumulada +50Mi",
         "valor": 20,
         "minimo": 50,
-        "corPrimaria": "0, 171, 103",
-        "corHex": "#00AB67",
-        "gradiente": "linear-gradient(to right, rgb(0,171,103), rgb(128,195,66))"
+        "corPrimaria": "32, 152, 105",
+        "corHex": "#209869",
+        "gradiente": "linear-gradient(to right, rgb(32,152,105), rgb(110,188,158))"
       },
       {
         "id": "milionaria",
         "nome": "+Milionária Acumulada +80Mi",
         "valor": 20,
         "minimo": 80,
-        "corPrimaria": "43, 36, 111",
-        "corHex": "#2B246F",
-        "gradiente": "linear-gradient(to right, rgb(43,36,111), rgb(128,53,148))"
+        "corPrimaria": "46, 48, 120",
+        "corHex": "#2E3078",
+        "gradiente": "linear-gradient(to right, rgb(46,48,120), rgb(119,120,167))"
       }
     ]
   }

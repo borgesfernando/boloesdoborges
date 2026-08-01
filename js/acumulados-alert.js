@@ -4,6 +4,7 @@
       alertaId: 'mega-50mais',
       pageId: 'mega-acumulada',
       arquivo: 'mega-50mais-alert.json',
+      classeCor: 'mega',
       titulo: 'Mega Sena 50Mi+ Acumulada!!!',
       minimo: 50,
       detalhe: 'Bolão estratégico aberto por janela pública para concursos da Mega-Sena acima de R$ 50 milhões.',
@@ -12,6 +13,7 @@
       alertaId: 'milionaria',
       pageId: 'milionaria',
       arquivo: 'milionaria-alert.json',
+      classeCor: 'milionaria',
       titulo: '+Milionária 80Mi+ Acumulada!!!',
       minimo: 80,
       detalhe: 'Bolão estratégico com janela pública controlada pelo Apps Script para concursos da +Milionária acima de R$ 80 milhões.',
@@ -39,10 +41,10 @@
     const href = isPaginaProjeto ? `${projeto.pageId}.html` : `${pagePrefix}/${projeto.pageId}.html`;
     const acaoDetalhe = isPaginaProjeto
       ? ''
-      : `<a href="${href}" class="btn sb2026">Ver detalhes do bolão</a>`;
+      : `<a href="${href}" class="btn ${projeto.classeCor}">Ver detalhes do bolão</a>`;
 
     return `
-      <div class="acumulados-alert-item">
+      <div class="acumulados-alert-item ${projeto.classeCor}">
         <h3>${projeto.titulo}</h3>
         <p>${projeto.detalhe}</p>
         <p><strong>Janela pública aberta pelo Apps Script. Cota de R$ 20,00.</strong></p>
@@ -89,6 +91,7 @@
         .join('');
 
       containers.forEach((container) => {
+        container.classList.add('acumulados-alert-container');
         container.innerHTML = html;
         container.style.display = 'block';
       });

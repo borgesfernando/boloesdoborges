@@ -42,7 +42,8 @@ function getTipoCorFromId(id) {
     ds: 'dupla',
     lf: 'lotofacil',
     quina: 'quina',
-    mega: 'mega'
+    mega: 'mega',
+    milionaria: 'milionaria'
   }[prefix] || prefix);
 }
 
