@@ -11,13 +11,18 @@ const ALERT_FILES = {
   'ds-mensal': path.join(__dirname, '..', 'data', 'ds-mensal-alert.json'),
   'mega-50mais': path.join(__dirname, '..', 'data', 'mega-50mais-alert.json'),
   milionaria: path.join(__dirname, '..', 'data', 'milionaria-alert.json'),
+  'lf-independencia': path.join(__dirname, '..', 'data', 'lf-independencia-alert.json'),
+  'quina-saojoao': path.join(__dirname, '..', 'data', 'quina-saojoao-alert.json'),
+  'ds-pascoa': path.join(__dirname, '..', 'data', 'ds-pascoa-alert.json'),
+  'mega-virada': path.join(__dirname, '..', 'data', 'mega-virada-alert.json'),
 };
 
 function parseBoolean(value) {
   if (typeof value === 'boolean') return value;
-  if (!value) return false;
   const normalized = String(value).trim().toLowerCase();
-  return normalized === 'true' || normalized === '1' || normalized === 'yes' || normalized === 'sim';
+  if (normalized === 'true') return true;
+  if (normalized === 'false') return false;
+  throw new Error('Informe ALERTA_ATIVO como true ou false.');
 }
 
 function loadPayload() {
@@ -46,4 +51,8 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = { parseBoolean, loadPayload, main };

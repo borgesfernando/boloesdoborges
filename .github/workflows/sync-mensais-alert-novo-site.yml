@@ -12,6 +12,10 @@ on:
       - 'data/lf-mensal-alert.json'
       - 'data/mega-50mais-alert.json'
       - 'data/milionaria-alert.json'
+      - 'data/lf-independencia-alert.json'
+      - 'data/quina-saojoao-alert.json'
+      - 'data/ds-pascoa-alert.json'
+      - 'data/mega-virada-alert.json'
   workflow_run:
     workflows:
       - Atualizar alerta Quina Mensal
@@ -19,6 +23,10 @@ on:
       - Atualizar alerta Dupla Sena Mensal
       - Atualizar alerta Mega 50+
       - Atualizar alerta Milionária
+      - Atualizar alerta Lotofácil da Independência
+      - Atualizar alerta Quina de São João
+      - Atualizar alerta Dupla Sena de Páscoa
+      - Atualizar alerta Mega da Virada
     types:
       - completed
 
@@ -27,6 +35,7 @@ permissions:
 
 jobs:
   sync-alert:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout boloesdoborges
@@ -48,14 +57,18 @@ jobs:
           cp data/lf-mensal-alert.json novo-site/src/data/lf-mensal-alert.json
           cp data/mega-50mais-alert.json novo-site/src/data/mega-50mais-alert.json
           cp data/milionaria-alert.json novo-site/src/data/milionaria-alert.json
+          cp data/lf-independencia-alert.json novo-site/src/data/lf-independencia-alert.json
+          cp data/quina-saojoao-alert.json novo-site/src/data/quina-saojoao-alert.json
+          cp data/ds-pascoa-alert.json novo-site/src/data/ds-pascoa-alert.json
+          cp data/mega-virada-alert.json novo-site/src/data/mega-virada-alert.json
 
       - name: Commit e push se houver mudanças
         working-directory: novo-site
         run: |
-          if [ -n "$(git status --porcelain src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json src/data/lf-independencia-alert.json src/data/quina-saojoao-alert.json src/data/ds-pascoa-alert.json src/data/mega-virada-alert.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json
+            git add src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json src/data/lf-independencia-alert.json src/data/quina-saojoao-alert.json src/data/ds-pascoa-alert.json src/data/mega-virada-alert.json
             git commit -m "chore: sincronizar alertas a partir do boloesdoborges"
             git push origin master
           else
