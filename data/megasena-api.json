@@ -1,67 +1,76 @@
 {
-  "acumulado": true,
-  "dataApuracao": "06/08/2026",
-  "dataProximoConcurso": "08/08/2026",
+  "acumulado": false,
+  "dataApuracao": "09/08/2026",
+  "dataProximoConcurso": "11/08/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "16",
-    "21",
-    "24",
-    "54",
-    "31",
-    "43"
+    "02",
+    "35",
+    "53",
+    "10",
+    "40",
+    "05"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "16",
-    "21",
-    "24",
-    "31",
-    "43",
-    "54"
+    "02",
+    "05",
+    "10",
+    "35",
+    "40",
+    "53"
   ],
   "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [],
+  "listaMunicipioUFGanhadores": [
+    {
+      "ganhadores": 1,
+      "municipio": "FORTALEZA",
+      "nomeFatansiaUL": "",
+      "posicao": 1,
+      "serie": "",
+      "uf": "CE"
+    }
+  ],
   "listaRateioPremio": [
     {
       "descricaoFaixa": "6 acertos",
       "faixa": 1,
-      "numeroDeGanhadores": 0,
-      "valorPremio": 0
+      "numeroDeGanhadores": 1,
+      "valorPremio": 164895645.5
     },
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 88,
-      "valorPremio": 52843.18
+      "numeroDeGanhadores": 246,
+      "valorPremio": 22927.51
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 6903,
-      "valorPremio": 1110.41
+      "numeroDeGanhadores": 13158,
+      "valorPremio": 706.56
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
   "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3041,
-  "numeroConcursoAnterior": 3040,
+  "numero": 3042,
+  "numeroConcursoAnterior": 3041,
   "numeroConcursoFinal_0_5": 3045,
-  "numeroConcursoProximo": 3042,
+  "numeroConcursoProximo": 3043,
   "numeroJogo": 2,
   "observacao": "",
   "premiacaoContingencia": null,
   "tipoJogo": "MEGA_SENA",
   "tipoPublicacao": 3,
   "ultimoConcurso": true,
-  "valorArrecadado": 116695812,
-  "valorAcumuladoConcurso_0_5": 14987381.48,
-  "valorAcumuladoConcursoEspecial": 44881044.77,
-  "valorAcumuladoProximoConcurso": 147541286.48,
-  "valorEstimadoProximoConcurso": 165000000,
+  "valorArrecadado": 141538830,
+  "valorAcumuladoConcurso_0_5": 24532278.94,
+  "valorAcumuladoConcursoEspecial": 49219634.53,
+  "valorAcumuladoProximoConcurso": 0,
+  "valorEstimadoProximoConcurso": 3500000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
