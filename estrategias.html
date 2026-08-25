@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projetos mensais do Super Bolão com participação recorrente e prestação de contas.">
-  <title>Projetos Mensais | Super Bolão 2026</title>
-  <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/mensais.html">
+  <meta name="description" content="Estratégias dos bolões do Super Bolão: metodologias de geração de cada modalidade, com foco em cobertura, diversidade e transparência.">
+  <title>Estratégias | Super Bolão</title>
+  <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/estrategias.html">
   <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/config.js"></script>
-  <script defer src="js/landing.js"></script>
-  <script defer src="js/year.js"></script>
 </head>
 <body>
   <nav class="site-nav">
@@ -30,28 +27,23 @@
   </nav>
   <header>
     <div class="container">
-      <h1>Projetos Mensais</h1>
-      <p>Loterias com sorteios frequentes, ideais para quem gosta de acompanhar resultados diariamente com disciplina.</p>
+      <h1>Estratégias</h1>
+      <p>Metodologias e geradores estratégicos usados para montar as carteiras de cada modalidade, com foco em cobertura, diversidade e transparência — sem promessa de acerto.</p>
     </div>
   </header>
 
   <main>
     <div class="container">
       <div class="card">
+        <h2>Estratégias por modalidade</h2>
         <p>
-          Nesta linha você encontra os projetos com cotas mensais fixas. Clique em cada card para ver
-          as regras completas e como participar.
+          Cada modalidade tem uma metodologia própria de geração. Abaixo estão as estratégias já publicadas, explicando como
+          cada carteira de apostas é construída.
         </p>
-      </div>
-
-      <div class="card">
-        <h2>Bolões Mensais em <span id="ano-atual-mensais">2026</span></h2>
         <ul>
-          <li><a href="boloes/mensais/quina-mensal.html">Quina Mensal</a></li>
-          <li><a href="boloes/mensais/lf-mensal.html">Lotofácil Mensal</a></li>
-          <li><a href="boloes/mensais/dupla-sena-mensal.html">Dupla Sena Mensal</a></li>
+          <li><a href="estrategias/milionaria.html">+Milionária — Matriz+</a></li>
         </ul>
-        <div class="project-grid" id="lista-mensais-linha"></div>
+        <p>Novas modalidades serão adicionadas a esta área conforme as estratégias forem publicadas.</p>
       </div>
 
       <div class="card">
@@ -77,26 +69,5 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const spanAno = document.getElementById('ano-atual-mensais');
-      if (spanAno) {
-        spanAno.textContent = new Date().getFullYear();
-      }
-
-      if (typeof PROJETOS === 'undefined' || !PROJETOS.mensais || !Array.isArray(PROJETOS.mensais.projetos)) return;
-
-      const container = document.getElementById('lista-mensais-linha');
-      if (!container) return;
-
-      const hoje = new Date();
-      hoje.setHours(0, 0, 0, 0);
-
-      PROJETOS.mensais.projetos.forEach(p => {
-        container.appendChild(criarCardProjeto(p, 'mensais', hoje));
-      });
-    });
-  </script>
 </body>
 </html>
