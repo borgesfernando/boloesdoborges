@@ -16,6 +16,7 @@ const rotaMap = {
   ROTA_COMUNIDADE: 'https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform',
   ROTA_PRESTACAO_CONTAS: 'prest.html',
   ROTA_IA: 'ia.html',
+  ROTA_ESTRATEGIA_MILIONARIA: 'estrategias/milionaria.html',
 };
 
 function escapeHtml(value) {
@@ -66,6 +67,7 @@ const html = `<!DOCTYPE html>
   <nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html">Início</a>
+      <a href="estrategias.html">Estratégias</a>
       <a href="mensais.html">Mensais</a>
       <a href="especiais.html">Especiais</a>
       <a href="acumulados.html">Estratégicos</a>

@@ -224,6 +224,10 @@
     "answerHtml": "<p>🧠 Adotamos uma abordagem combinada, com transparência e método:</p><ul><li>Participação dos integrantes: parte dos jogos é marcada pelos participantes em planilha dedicada (\"dezenas da sorte\").</li><li>Modelos computacionais: outra parte é gerada por algoritmos de Inteligência Artificial (Machine Learning e Redes…</li><li>Registro oficial: todas as apostas são registradas no aplicativo oficial da Caixa e/ou no site Loterias Online, com…</li></ul>"
   },
   {
+    "question": "Quais estratégias são usadas na geração de jogos?",
+    "answerHtml": "<p>🧠 Usamos geradores estratégicos próprios que tratam o conjunto de apostas como uma única carteira. A primeira estratégia publicada é o <strong>Matriz+</strong>, da <strong>+Milionária</strong>:</p><ul><li>Apostas convertidas em unidades de <strong>6 dezenas + 2 trevos</strong> para eliminar duplicações (ex.: 46 apostas → 113 combinações únicas).</li><li>Equilíbrio das <strong>50 dezenas</strong> e dos <strong>6 trevos</strong> e controle de sobreposição entre jogos.</li><li>Cada aposta é avaliada pelo que <strong>acrescenta ao conjunto</strong>, com busca local para melhorar a carteira final.</li><li>Histórico usado apenas como referência de diversidade — <strong>sem promessa de acerto</strong>.</li></ul>"
+  },
+  {
     "question": "Posso preencher minhas dezenas da sorte?",
     "answerHtml": "<p><strong>Sim. </strong> Nos <strong>projetos especiais</strong>, você tem protagonismo.</p><ul><li><strong>Acesso exclusivo</strong>: disponibilizamos uma aba dedicada na planilha do bolão, onde somente você pode digitar seus palpites.</li><li><strong>Integração total</strong>: todas as dezenas preenchidas pelos participantes são processadas e entram no jogo final.</li></ul><p>É a união da sua sorte individual com a força coletiva do grupo.</p>"
   },
