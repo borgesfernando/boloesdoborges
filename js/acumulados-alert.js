@@ -5,18 +5,16 @@
       pageId: 'mega-acumulada',
       arquivo: 'mega-50mais-alert.json',
       classeCor: 'mega',
-      titulo: 'Mega Sena 50Mi+ Acumulada!!!',
       minimo: 50,
-      detalhe: 'Bolão estratégico aberto por janela pública para concursos da Mega-Sena acima de R$ 50 milhões.',
+      modalidade: 'Mega-Sena',
     },
     {
       alertaId: 'milionaria',
       pageId: 'milionaria',
       arquivo: 'milionaria-alert.json',
       classeCor: 'milionaria',
-      titulo: '+Milionária 80Mi+ Acumulada!!!',
       minimo: 80,
-      detalhe: 'Bolão estratégico com janela pública controlada pelo Apps Script para concursos da +Milionária acima de R$ 80 milhões.',
+      modalidade: '+Milionária',
     },
   ];
 
@@ -37,17 +35,45 @@
     return res.json();
   }
 
-  function montarCardAlerta(projeto, pagePrefix, isPaginaProjeto) {
+  function montarChamada(projeto, modelo) {
+    const premio = `R$ ${projeto.minimo} milhões`;
+    if (modelo === 2) {
+      return {
+        titulo: `🔥 Mais de ${premio} em jogo!`,
+        texto: `Está aberta a participação no nosso Bolão Estratégico da ${projeto.modalidade}, criado especialmente para os grandes concursos.`,
+        pontos: [
+          '🎯 Apostas planejadas estrategicamente',
+          '💰 Cota de apenas R$ 20,00',
+          '⏳ Participação por tempo limitado',
+          '🍀 Garanta sua cota e venha com a gente!',
+        ],
+      };
+    }
+
+    return {
+      titulo: `Bolão Estratégico ${projeto.modalidade}`,
+      texto: `Participação aberta para concursos com premiação estimada superior a ${premio}.`,
+      pontos: [
+        '💰 Valor da cota: R$ 20,00',
+        '🎯 Apostas organizadas com estratégia de cobertura e diversificação.',
+        '⏳ Adesões disponíveis durante a janela de participação',
+      ],
+    };
+  }
+
+  function montarCardAlerta(projeto, alerta, pagePrefix, isPaginaProjeto) {
     const href = isPaginaProjeto ? `${projeto.pageId}.html` : `${pagePrefix}/${projeto.pageId}.html`;
     const acaoDetalhe = isPaginaProjeto
       ? ''
       : `<a href="${href}" class="btn ${projeto.classeCor}">Ver detalhes do bolão</a>`;
+    const chamada = montarChamada(projeto, Number(alerta.modelo) === 2 ? 2 : 1);
+    const pontos = chamada.pontos.map((ponto) => `<p>${ponto}</p>`).join('');
 
     return `
       <div class="acumulados-alert-item ${projeto.classeCor}">
-        <h3>${projeto.titulo}</h3>
-        <p>${projeto.detalhe}</p>
-        <p><strong>Janela pública aberta pelo Apps Script. Cota de R$ 20,00.</strong></p>
+        <h3>${chamada.titulo}</h3>
+        <p>${chamada.texto}</p>
+        <div class="acumulados-alert-copy">${pontos}</div>
         <div class="mega-alert-actions">
           ${acaoDetalhe}
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform"
@@ -87,7 +113,7 @@
       }
 
       const html = ativos
-        .map(({ projeto }) => montarCardAlerta(projeto, contexto.pagePrefix, isPaginaProjeto))
+        .map(({ projeto, alerta }) => montarCardAlerta(projeto, alerta, contexto.pagePrefix, isPaginaProjeto))
         .join('');
 
       containers.forEach((container) => {

@@ -14,9 +14,21 @@ on:
           - 'false'
         required: true
         default: 'false'
+      concurso:
+        description: 'Número do concurso associado à ativação'
+        type: string
+        required: true
+      correlation_id:
+        description: 'Identificador idempotente da ativação'
+        type: string
+        required: true
 
 permissions:
   contents: write
+
+concurrency:
+  group: strategic-alert-rotation
+  cancel-in-progress: false
 
 jobs:
   set-alert:
@@ -38,6 +50,8 @@ jobs:
         env:
           ALERTA_PROJETO: mega-50mais
           ALERTA_ATIVO: ${{ inputs.ativo }}
+          ALERTA_CONCURSO: ${{ inputs.concurso }}
+          ALERTA_CORRELATION_ID: ${{ inputs.correlation_id }}
         run: node scripts/update-mensais-alert.js
 
       - name: Commit e push se houver mudanças
@@ -45,8 +59,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain data/mega-50mais-alert.json)" ]; then
-            git add data/mega-50mais-alert.json
+          if [ -n "$(git status --porcelain data/mega-50mais-alert.json data/strategic-alert-rotation.json)" ]; then
+            git add data/mega-50mais-alert.json data/strategic-alert-rotation.json
             git commit -m "chore: atualizar alerta mega-50mais [skip ci]"
             git push
           else

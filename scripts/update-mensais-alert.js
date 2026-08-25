@@ -16,6 +16,8 @@ const ALERT_FILES = {
   'ds-pascoa': path.join(__dirname, '..', 'data', 'ds-pascoa-alert.json'),
   'mega-virada': path.join(__dirname, '..', 'data', 'mega-virada-alert.json'),
 };
+const ROTATION_FILE = path.join(__dirname, '..', 'data', 'strategic-alert-rotation.json');
+const STRATEGIC_PROJECTS = new Set(['mega-50mais', 'milionaria']);
 
 function parseBoolean(value) {
   if (typeof value === 'boolean') return value;
@@ -25,16 +27,46 @@ function parseBoolean(value) {
   throw new Error('Informe ALERTA_ATIVO como true ou false.');
 }
 
+function loadRotation() {
+  if (!fs.existsSync(ROTATION_FILE)) return { ultimoModelo: 2, ativacoes: {} };
+  const rotation = JSON.parse(fs.readFileSync(ROTATION_FILE, 'utf8'));
+  return {
+    ultimoModelo: rotation.ultimoModelo === 1 ? 1 : 2,
+    ativacoes: rotation.ativacoes && typeof rotation.ativacoes === 'object' ? rotation.ativacoes : {},
+  };
+}
+
+function resolveStrategicModel(projeto, ativo, concurso, correlationId) {
+  if (!STRATEGIC_PROJECTS.has(projeto)) return 1;
+  if (!concurso || !correlationId) {
+    throw new Error('Informe ALERTA_CONCURSO e ALERTA_CORRELATION_ID para alertas estratégicos.');
+  }
+  const rotation = loadRotation();
+  const key = `${projeto}:${concurso}:${correlationId}`;
+  let modelo = rotation.ativacoes[key];
+  if (ativo && !modelo) {
+    modelo = rotation.ultimoModelo === 1 ? 2 : 1;
+    rotation.ultimoModelo = modelo;
+    rotation.ativacoes[key] = modelo;
+    fs.writeFileSync(ROTATION_FILE, JSON.stringify(rotation, null, 2) + '\n', 'utf8');
+  }
+  return modelo === 2 ? 2 : 1;
+}
+
 function loadPayload() {
   const projeto = (process.env.ALERTA_PROJETO || '').trim();
   if (!ALERT_FILES[projeto]) {
     throw new Error(`Informe ALERTA_PROJETO (${Object.keys(ALERT_FILES).join(', ')}).`);
   }
   const ativo = parseBoolean(process.env.ALERTA_ATIVO);
+  const concurso = (process.env.ALERTA_CONCURSO || '').trim();
+  const correlationId = (process.env.ALERTA_CORRELATION_ID || '').trim();
+  const modelo = resolveStrategicModel(projeto, ativo, concurso, correlationId);
 
   return {
     projeto,
     ativo,
+    modelo,
     ultimaAtualizacao: new Date().toISOString(),
   };
 }
