@@ -257,29 +257,34 @@ function obterProjetoEspecialDestaque(hojeSP) {
 }
 
 function renderizarDestaqueEspecial() {
-  const listaEl = document.getElementById('especial-destaque-list');
-  const infoEl = document.getElementById('especial-destaque-info');
-  if (!listaEl || !infoEl) return;
+  const cardEl = document.getElementById('especial-destaque-card');
+  const statusEl = document.getElementById('especial-destaque-status');
+  const tituloEl = document.getElementById('especial-destaque-title');
+  const descricaoEl = document.getElementById('especial-destaque-descricao');
+  const valorEl = document.getElementById('especial-destaque-valor');
+  const prazoEl = document.getElementById('especial-destaque-prazo');
+  const ctaEl = document.getElementById('especial-destaque-cta');
+  if (!cardEl || !statusEl || !tituloEl || !descricaoEl || !valorEl || !prazoEl || !ctaEl) return;
 
   const hojeSP = getHojeSaoPaulo();
   const destaque = obterProjetoEspecialDestaque(hojeSP);
   if (!destaque || !destaque.projeto) return;
 
   const { projeto, etiqueta } = destaque;
-  listaEl.innerHTML = '';
+  const valorMensal = Number(projeto.valorMes);
+  const valorFormatado = Number.isFinite(valorMensal)
+    ? new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorMensal)
+    : 'Consulte';
 
-  const li = document.createElement('li');
-  const link = document.createElement('a');
-  link.href = getProjetoUrl('especiais', projeto.id);
-  link.textContent = projeto.nome || projeto.id;
-  li.appendChild(link);
-  listaEl.appendChild(li);
-
-  const infoParts = [];
-  if (etiqueta) infoParts.push(etiqueta);
-  if (projeto.diaPix) infoParts.push(`PIX dia ${projeto.diaPix}`);
-  if (projeto.dataLimite) infoParts.push(`Limite ${projeto.dataLimite}`);
-  infoEl.textContent = infoParts.join(' · ');
+  cardEl.style.setProperty('--featured-project-color', projeto.corHex || '#0077C8');
+  statusEl.textContent = etiqueta || 'Em destaque';
+  tituloEl.textContent = projeto.nome || projeto.id;
+  descricaoEl.textContent = projeto.diaPix
+    ? `PIX programado para o dia ${projeto.diaPix}. Acompanhe o calendário e participe com antecedência.`
+    : 'Calendário e regras claras para acompanhar sua participação.';
+  valorEl.textContent = Number.isFinite(valorMensal) ? `${valorFormatado}/mês` : valorFormatado;
+  prazoEl.textContent = projeto.dataLimite || 'Consulte';
+  ctaEl.href = getProjetoUrl('especiais', projeto.id);
 }
 
 function criarCardProjeto(projeto, tipo, hojeLimpo) {

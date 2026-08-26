@@ -67,12 +67,28 @@
         </div>
       </div>
       <div class="hero-side">
-        <div class="hero-side-card">
-          <h2>Projeto especial em destaque</h2>
-          <ul class="hero-list" id="especial-destaque-list"></ul>
-          <p class="hero-side-note" id="especial-destaque-info">
+        <aside class="hero-side-card hero-featured-project" id="especial-destaque-card" aria-labelledby="especial-destaque-title">
+          <div class="featured-project-topline">
+            <span>Projeto especial</span>
+            <span class="featured-project-status" id="especial-destaque-status">Em breve</span>
+          </div>
+          <h2 id="especial-destaque-title">Projeto em destaque</h2>
+          <p class="featured-project-description" id="especial-destaque-descricao">
             Cotas programadas ao longo do ano, com calendário e regras claras para cada projeto.
           </p>
+          <dl class="featured-project-details">
+            <div>
+              <dt>Mensalidade</dt>
+              <dd id="especial-destaque-valor">Consulte</dd>
+            </div>
+            <div>
+              <dt>Prazo final</dt>
+              <dd id="especial-destaque-prazo">Consulte</dd>
+            </div>
+          </dl>
+          <a class="featured-project-cta" id="especial-destaque-cta" href="especiais.html">
+            Ver detalhes do projeto <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
     </div>
