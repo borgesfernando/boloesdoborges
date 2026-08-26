@@ -128,9 +128,9 @@ header {
 }
 
 .hero-featured-project {
-  --featured-project-color: var(--secondary);
-  --featured-project-rgb: 0, 119, 200;
-  --featured-project-gradient: linear-gradient(135deg, var(--secondary), var(--primary));
+  --featured-project-color: #72c9ff;
+  --featured-project-rgb: 255, 255, 255;
+  --featured-project-gradient: linear-gradient(135deg, #0879c2, #003d73);
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -172,8 +172,13 @@ header {
   position: relative;
   z-index: 1;
   margin: 1rem 0 0.55rem;
+  color: #fff;
   font-size: 1.55rem;
   line-height: 1.18;
+}
+
+.hero-featured-project h2::after {
+  background: var(--featured-project-color);
 }
 
 .featured-project-description {

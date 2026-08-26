@@ -275,9 +275,6 @@ function renderizarDestaqueEspecial() {
   const diaPix = projeto.diaPix ? String(projeto.diaPix).padStart(2, '0') : '';
   const dataPix = diaPix && mesLimite ? `${diaPix}/${mesLimite}` : diaPix || 'Consulte';
 
-  cardEl.style.setProperty('--featured-project-color', projeto.corHex || 'var(--secondary)');
-  cardEl.style.setProperty('--featured-project-rgb', projeto.corPrimaria || '0, 119, 200');
-  cardEl.style.setProperty('--featured-project-gradient', projeto.gradiente || 'linear-gradient(135deg, var(--secondary), var(--primary))');
   tituloEl.textContent = projeto.id === 'mega-virada'
     ? 'Super Bolão da Mega da Virada'
     : projeto.nome || projeto.id;
