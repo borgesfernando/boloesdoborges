@@ -258,31 +258,34 @@ function obterProjetoEspecialDestaque(hojeSP) {
 
 function renderizarDestaqueEspecial() {
   const cardEl = document.getElementById('especial-destaque-card');
-  const statusEl = document.getElementById('especial-destaque-status');
   const tituloEl = document.getElementById('especial-destaque-title');
   const descricaoEl = document.getElementById('especial-destaque-descricao');
-  const valorEl = document.getElementById('especial-destaque-valor');
+  const aberturaEl = document.getElementById('especial-destaque-abertura');
+  const pixEl = document.getElementById('especial-destaque-pix');
   const prazoEl = document.getElementById('especial-destaque-prazo');
   const ctaEl = document.getElementById('especial-destaque-cta');
-  if (!cardEl || !statusEl || !tituloEl || !descricaoEl || !valorEl || !prazoEl || !ctaEl) return;
+  if (!cardEl || !tituloEl || !descricaoEl || !aberturaEl || !pixEl || !prazoEl || !ctaEl) return;
 
   const hojeSP = getHojeSaoPaulo();
   const destaque = obterProjetoEspecialDestaque(hojeSP);
   if (!destaque || !destaque.projeto) return;
 
-  const { projeto, etiqueta } = destaque;
-  const valorMensal = Number(projeto.valorMes);
-  const valorFormatado = Number.isFinite(valorMensal)
-    ? new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valorMensal)
-    : 'Consulte';
+  const { projeto } = destaque;
+  const mesLimite = projeto.dataLimite?.split('/')[1];
+  const diaPix = projeto.diaPix ? String(projeto.diaPix).padStart(2, '0') : '';
+  const dataPix = diaPix && mesLimite ? `${diaPix}/${mesLimite}` : diaPix || 'Consulte';
 
-  cardEl.style.setProperty('--featured-project-color', projeto.corHex || '#0077C8');
-  statusEl.textContent = etiqueta || 'Em destaque';
-  tituloEl.textContent = projeto.nome || projeto.id;
-  descricaoEl.textContent = projeto.diaPix
-    ? `PIX programado para o dia ${projeto.diaPix}. Acompanhe o calendário e participe com antecedência.`
-    : 'Calendário e regras claras para acompanhar sua participação.';
-  valorEl.textContent = Number.isFinite(valorMensal) ? `${valorFormatado}/mês` : valorFormatado;
+  cardEl.style.setProperty('--featured-project-color', projeto.corHex || 'var(--secondary)');
+  cardEl.style.setProperty('--featured-project-rgb', projeto.corPrimaria || '0, 119, 200');
+  cardEl.style.setProperty('--featured-project-gradient', projeto.gradiente || 'linear-gradient(135deg, var(--secondary), var(--primary))');
+  tituloEl.textContent = projeto.id === 'mega-virada'
+    ? 'Super Bolão da Mega da Virada'
+    : projeto.nome || projeto.id;
+  descricaoEl.textContent = projeto.id === 'mega-virada'
+    ? 'Uma carteira especial de apostas para o maior concurso do ano.'
+    : `Uma carteira especial de apostas para ${projeto.nome || 'este concurso'}.`;
+  aberturaEl.textContent = dataPix;
+  pixEl.textContent = dataPix;
   prazoEl.textContent = projeto.dataLimite || 'Consulte';
   ctaEl.href = getProjetoUrl('especiais', projeto.id);
 }
