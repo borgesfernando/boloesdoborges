@@ -1,104 +1,169 @@
-# Matriz+ — Gerador Estratégico da +Milionária
+# Como funciona um bolão
 
-O **Matriz+** é o sistema utilizado para construir as carteiras de apostas dos nossos bolões da **+Milionária**. Em vez de simplesmente sortear números aleatoriamente ou selecionar cada jogo de forma isolada, o gerador analisa **o conjunto completo de apostas como uma única carteira**, buscando distribuir os recursos disponíveis da forma mais ampla, equilibrada e eficiente possível.
+Cada bolão segue um ciclo organizado, desde a abertura para participação até a conferência final dos resultados. Embora datas, horários, valores e regras específicas possam variar conforme a modalidade ou o concurso, o processo geral segue etapas bem definidas para garantir organização, transparência e segurança aos participantes.
 
-## Mais cobertura, menos redundância
+## 1. Abertura do bolão
 
-O princípio central do Matriz+ é simples: **evitar gastar recursos cobrindo repetidamente as mesmas combinações**.
+O ciclo começa com a **abertura das adesões**.
 
-Para isso, todas as apostas — inclusive jogos com mais dezenas ou mais trevos — são convertidas internamente em suas combinações equivalentes mais simples de **6 dezenas + 2 trevos**, chamadas de **unidades atômicas**.
+Nesse momento são divulgadas as principais informações do bolão, como:
 
-Isso permite ao sistema comparar matematicamente apostas de diferentes formatos e identificar quando duas delas estão cobrindo exatamente a mesma combinação.
+* modalidade e concurso;
+* data prevista do sorteio;
+* valor estimado do prêmio;
+* valor da cota;
+* prazo para participação;
+* orientações para pagamento;
+* regras aplicáveis ao bolão.
 
-Em uma geração recente, por exemplo, uma carteira de **46 apostas físicas** foi convertida em **113 combinações atômicas 6+2**, todas diferentes entre si, com **zero duplicação**.
+A abertura ocorre dentro de uma **janela previamente definida**, que pode variar conforme o tipo de bolão e as características do concurso.
 
-O objetivo é fazer com que cada parcela do orçamento destinada às apostas acrescente, sempre que possível, **nova cobertura à carteira**.
+Em algumas situações, o início das adesões pode ser ajustado para compatibilizar a operação com outros bolões ou atividades em andamento.
 
-## Distribuição equilibrada das dezenas e dos trevos
+---
 
-O Matriz+ acompanha continuamente a utilização das **50 dezenas** e dos **6 trevos** disponíveis na modalidade.
+## 2. Período de adesões
 
-O sistema procura evitar concentrações desnecessárias em determinados números e distribuir sua utilização por toda a carteira.
+Durante a janela de participação, os pagamentos recebidos são identificados e incorporados ao bolão.
 
-Na mesma geração de referência:
+A quantidade de cotas define progressivamente os recursos disponíveis para a montagem das apostas.
 
-* as **50 dezenas foram utilizadas**, atingindo 100% de cobertura;
-* os **6 trevos foram utilizados**, também com 100% de cobertura;
-* todos os **15 pares possíveis de trevos** apareceram na carteira.
-  O balanceamento não significa que determinados números tenham maior ou menor probabilidade de serem sorteados. Ele serve para **reduzir concentração e ampliar a diversidade da carteira**.
+Ao longo desse período, podem ser divulgadas atualizações com informações como:
 
-## Controle de sobreposição entre apostas
+* número de cotas já confirmadas;
+* quantidade de participantes;
+* evolução da composição das apostas;
+* horário restante para participação.
 
-Ter muitas apostas diferentes visualmente não significa, necessariamente, possuir uma carteira diversificada.
+Essas informações são **parciais**, pois a configuração definitiva dos jogos somente pode ser estabelecida depois que todas as adesões forem encerradas.
 
-Por isso, o Matriz+ mede a **sobreposição efetiva** entre os jogos e impõe limites para impedir que diferentes apostas concentrem excessivamente a cobertura nas mesmas regiões combinatórias.
+---
 
-O sistema também acompanha os pares de dezenas já utilizados. Existem **1.225 pares possíveis entre as 50 dezenas**, e a carteira é construída buscando ampliar progressivamente essa cobertura e controlar repetições.
+## 3. Composição das apostas
 
-Essa análise acontece durante a própria geração: uma nova aposta não é avaliada apenas por suas características individuais, mas principalmente pelo **valor que ela acrescenta ao conjunto já selecionado**.
+À medida que as cotas são confirmadas, é possível estimar como os recursos disponíveis serão distribuídos entre as diferentes configurações de apostas.
 
-## Seleção orientada pela contribuição marginal
+Dependendo da modalidade, podem existir jogos com diferentes quantidades de dezenas, números adicionais ou outras combinações previstas pelas regras da loteria.
 
-O Matriz+ utiliza um processo de seleção progressiva.
+A composição divulgada durante o período de adesões é apenas uma referência. A **composição final é definida somente após o fechamento**, quando o valor total disponível para apostas já é conhecido.
 
-A cada etapa são produzidos diversos candidatos e o sistema avalia quais deles acrescentam maior utilidade à carteira naquele momento.
+---
 
-Entre os fatores considerados estão:
+## 4. Avisos de encerramento
 
-**cobertura adicional**, equilíbrio de dezenas e trevos, diversidade de pares, sobreposição com jogos já selecionados e características estruturais da aposta.
+Próximo ao final do período de adesões, são enviados avisos informando que o bolão será encerrado em breve.
 
-Conforme a carteira cresce, o processo se torna progressivamente mais seletivo, priorizando candidatos capazes de preencher regiões ainda pouco exploradas. O sistema também pode ampliar automaticamente o conjunto de candidatos quando as restrições tornam a geração mais difícil.
+Normalmente há uma comunicação de fechamento iminente e uma última chamada pouco antes do horário limite.
 
-## Otimização após a geração
+O objetivo é deixar claro para todos os participantes que existe um horário definitivo para entrada no bolão e evitar pagamentos realizados fora da janela válida.
 
-A primeira carteira produzida não precisa ser necessariamente a definitiva.
+---
 
-Após a seleção inicial, o Matriz+ executa uma etapa adicional de **busca local**, testando substituições de apostas para verificar se outra composição consegue melhorar a eficiência global da carteira.
+## 5. Fechamento das adesões
 
-Assim, o sistema pode trocar um jogo já selecionado por outro quando essa alteração melhora o conjunto como um todo.
+No horário estabelecido, o bolão é oficialmente **encerrado para novas participações**.
 
-## Controle estrutural das apostas
+A partir desse momento:
 
-Além da cobertura combinatória, o gerador controla características como:
+* novos pagamentos não devem ser realizados;
+* a quantidade de participantes é consolidada;
+* o número total de cotas é fechado;
+* o orçamento definitivo para as apostas é conhecido;
+* a composição final dos jogos pode ser determinada.
 
-* concentração excessiva de dezenas;
-* sequências muito longas;
-* repetição excessiva de determinadas estruturas;
-* distribuição das dezenas;
-* equilíbrio entre diferentes regiões combinatórias.
+O grupo recebe uma comunicação informando o encerramento e apresentando os principais números finais da participação.
 
-Em uma carteira recente, apenas **1 das 46 apostas** apresentou concentração classificada como excessiva e **nenhuma possuía sequência de três ou mais dezenas consecutivas**.
+---
 
-## Histórico como referência, não como previsão
+## 6. Auditoria e conferência administrativa
 
-O Matriz+ também compara a estrutura das apostas com o histórico dos concursos da +Milionária.
+Depois do fechamento começa uma etapa interna de conferência.
 
-Essa análise é utilizada exclusivamente como **referência estatística de geometria e diversidade**, ajudando a identificar apostas estruturalmente muito extremas ou uma carteira excessivamente concentrada em um mesmo perfil.
+Antes do registro das apostas, são verificados os dados necessários para garantir que o planejamento esteja consistente com os valores efetivamente recebidos e com as regras estabelecidas para aquele bolão.
 
-O histórico **não é utilizado para afirmar que determinada dezena está “atrasada”, “quente” ou tem maior chance de ser sorteada**.
+Essa etapa pode incluir a conferência de:
 
-Em uma análise baseada em 375 concursos anteriores, por exemplo, a carteira foi distribuída entre regiões centrais, intermediárias, periféricas e extremas, em vez de concentrar todos os jogos em um único padrão.
+* participantes confirmados;
+* quantidade de cotas;
+* valores recebidos;
+* orçamento destinado às apostas;
+* composição planejada dos jogos;
+* eventuais ajustes necessários antes do registro.
 
-## O que o Matriz+ realmente otimiza
+Somente depois dessa consolidação o processo segue para a emissão dos bilhetes.
 
-O Matriz+ **não prevê resultados e não altera as probabilidades matemáticas da loteria**.
+---
 
-Cada combinação válida continua tendo exatamente a mesma possibilidade de ser sorteada.
+## 7. Registro das apostas
 
-O que o sistema procura otimizar é algo diferente: **a eficiência da carteira**.
+Com o planejamento finalizado, as apostas são registradas nos canais oficiais da loteria.
 
-Em outras palavras, dado um orçamento e determinada quantidade de apostas, o objetivo é:
+Os jogos efetivamente registrados passam então a representar a participação do grupo naquele concurso.
 
-**espalhar a cobertura pelo maior número possível de combinações distintas, reduzir redundâncias, controlar concentrações e aproveitar melhor cada aposta incluída no bolão.**
+Após o registro, é realizada nova conferência para verificar se os bilhetes emitidos correspondem ao planejamento aprovado para o bolão.
 
-É uma abordagem de **engenharia combinatória e otimização de portfólio aplicada às apostas**, e não um sistema de previsão de números.
+---
 
-### Em resumo
+## 8. Prestação de contas
 
-**Matriz+ transforma um conjunto de apostas em uma carteira planejada.**
+Concluído o registro, os participantes recebem a **prestação de contas do bolão**.
 
-Em vez de perguntar apenas *“este jogo é bom?”*, o sistema avalia:
+Ela pode incluir documentos como:
 
-**“O que este jogo acrescenta a tudo aquilo que já estamos cobrindo?”**
+* relação dos participantes e respectivas cotas;
+* planejamento das apostas;
+* relação ou reprodução dos bilhetes registrados;
+* informações gerais sobre o concurso e o bolão.
 
-É essa diferença que orienta toda a geração.
+Dessa forma, cada participante pode consultar o que foi efetivamente realizado com os recursos arrecadados.
+
+---
+
+## 9. Sorteio
+
+No dia do concurso, os participantes podem receber um lembrete com as informações do sorteio.
+
+A partir da divulgação oficial do resultado, inicia-se o processo de conferência dos jogos registrados.
+
+Os resultados considerados para a apuração são sempre os resultados oficiais da respectiva loteria.
+
+---
+
+## 10. Apuração e conferência das apostas
+
+Após a publicação do resultado, os bilhetes do bolão são confrontados com as dezenas sorteadas.
+
+A conferência identifica eventuais faixas de premiação e permite consolidar o desempenho das apostas realizadas.
+
+Quando necessário, a apuração também considera informações oficiais sobre valores de premiação, quantidade de ganhadores e demais dados do concurso.
+
+---
+
+## 11. Relatório final
+
+Depois da conferência é produzido o **Relatório Final do Bolão**, encerrando o ciclo daquele concurso.
+
+O relatório reúne, de forma organizada, as principais informações da operação, podendo apresentar:
+
+* dados do concurso;
+* participação final;
+* composição das apostas;
+* jogos registrados;
+* resultado oficial;
+* conferência dos bilhetes;
+* eventuais premiações;
+* informações complementares da prestação de contas.
+
+Esse material é disponibilizado aos participantes pelos canais definidos para o bolão.
+
+---
+
+## Um processo completo, do início ao resultado
+
+De forma resumida, todo bolão passa por quatro grandes momentos:
+
+**Adesão → Planejamento e registro → Sorteio e conferência → Prestação de contas**
+
+A estrutura foi concebida para que o participante possa acompanhar não apenas o momento da aposta, mas **todo o ciclo do bolão**, desde sua abertura até a divulgação dos resultados e documentos finais.
+
+Datas, horários, valores das cotas, critérios de abertura e demais condições podem variar entre os diferentes bolões. Por isso, antes de participar, é importante consultar as **regras específicas do projeto vigente**.
