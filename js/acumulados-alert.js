@@ -56,6 +56,7 @@
       pontos: [
         '💰 Valor da cota: R$ 20,00',
         '🎯 Apostas organizadas com estratégia de cobertura e diversificação.',
+        ...(projeto.alertaId === 'milionaria' ? ['📅 Concurso de quarta-feira · abertura na terça-feira pela manhã'] : []),
         '⏳ Adesões disponíveis durante a janela de participação',
       ],
     };

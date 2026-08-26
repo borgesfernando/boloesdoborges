@@ -5,7 +5,7 @@
   },
   {
     "question": "Quais são os tipos de projetos disponíveis?",
-    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li>Projetos Mensais: sorteios recorrentes da Lotofácil, da Quina e da Dupla Sena, ideais para quem gosta de acompanhar os…</li><li>Projetos Especiais: focados nos grandes concursos da Caixa — Lotofácil da Independência, Quina de São João, Dupla Sena…</li><li>Projetos Estratégicos: mobilizados quando há acumulações relevantes, como Mega‑Sena (a partir de R$ 50 milhões), …</li></ul>"
+    "answerHtml": "<p>Nossa comunidade oferece três linhas de projetos:</p><ul><li>Projetos Mensais: sorteios recorrentes da Lotofácil, da Quina e da Dupla Sena, ideais para quem gosta de acompanhar os…</li><li>Projetos Especiais: focados nos grandes concursos da Caixa — Lotofácil da Independência, Quina de São João, Dupla Sena…</li><li>Projetos Estratégicos: mobilizados quando há acumulações relevantes, como Mega-Sena (a partir de R$ 50 milhões) e…</li></ul>"
   },
   {
     "question": "Como funciona um bolão (ciclo completo)?",
@@ -21,19 +21,19 @@
   },
   {
     "question": "Como funcionam os projetos estratégicos?",
-    "answerHtml": "<p>Projetos Estratégicos são operações pontuais abertas quando uma modalidade atinge prêmio acumulado relevante.</p><ul><li>Fique atento: os avisos saem na comunidade e, conforme o projeto, também por e-mail.</li><li>Janela de entrada: normalmente até as 18h do dia anterior ao sorteio, com ajustes informados no aviso de cada concurso.</li><li>Cota: R$ 20,00 por concurso.</li><li>Ativação: Mega-Sena a partir de R$ 50 milhões e +Milionária a partir de R$ 80 milhões.</li><li>Resultados: enviados somente aos participantes confirmados, com conferência e prestação de contas.</li></ul>"
+    "answerHtml": "<p>Projetos Estratégicos são operações pontuais abertas quando uma modalidade atinge prêmio acumulado relevante.</p><ul><li>Fique atento: os avisos saem na comunidade e, conforme o projeto, também por e-mail.</li><li>Janela de entrada: normalmente até as 18h do dia anterior ao sorteio, com ajustes informados no aviso de cada concurso.</li><li>Cota: R$ 20,00 por concurso.</li><li>Ativação: Mega-Sena a partir de R$ 50 milhões e +Milionária acima de R$ 80 milhões.</li><li>+Milionária: participação uma vez por semana, apenas no concurso de quarta-feira, com abertura na manhã de terça-feira.</li></ul>"
   },
   {
     "question": "Como funciona a +Milionária Estratégica?",
-    "answerHtml": "<p>A +Milionária Estratégica é aberta quando o prêmio estimado da modalidade atinge ou ultrapassa R$ 80 milhões. A cota é de R$ 20,00 por concurso e a participação vale apenas para a janela divulgada.</p><ul><li>Os sorteios oficiais da +Milionária acontecem às quartas-feiras e aos sábados.</li><li>A abertura ocorre na véspera do concurso, nos dias operacionais permitidos pelo projeto.</li><li>Quando o prêmio estimado chega a R$ 120 milhões, pode haver campanha especial de e-mail para avisar interessados.</li><li>As apostas são registradas online nos canais oficiais da Caixa e os comprovantes ficam documentados no Drive.</li></ul>"
+    "answerHtml": "<p>A +Milionária Estratégica é ativada somente quando o prêmio estimado do próximo concurso é superior a R$ 80 milhões. A cota é de R$ 20,00 por concurso e a participação vale apenas para a janela divulgada.</p><ul><li>O projeto participa uma vez por semana, sempre no concurso oficial de quarta-feira.</li><li>A abertura ocorre na manhã de terça-feira, com a janela encerrando no horário informado no aviso (rotina padrão: 18h).</li><li>Quando o prêmio estimado chega a R$ 120 milhões, pode haver campanha especial de e-mail para ampliar o aviso aos…</li><li>As apostas são registradas online nos canais oficiais da Caixa e os comprovantes ficam documentados no Drive.</li></ul>"
   },
   {
     "question": "Quando a +Milionária abre para participação?",
-    "answerHtml": "<p>A janela pública da +Milionária abre quando o próximo concurso está acumulado em pelo menos <strong>R$ 80 milhões</strong> e passa pelas validações operacionais do projeto.</p><ul><li>A abertura normal ocorre na <strong>véspera do concurso</strong>.</li><li>O projeto evita abertura comum em sexta-feira para reduzir conflito operacional com outros bolões estratégicos.</li><li>Em sextas-feiras com prêmio a partir de <strong>R$ 120 milhões</strong>, pode haver pré-aviso por e-mail informando abertura no sábado pela manhã.</li><li>Se houver ajuste no calendário da Caixa, os canais oficiais do organizador informam a regra válida para aquele concurso.</li></ul>"
+    "answerHtml": "<p>A janela pública da +Milionária abre quando o próximo concurso — sempre o de quarta-feira — está acumulado em mais de R$ 80 milhões e passa pelas validações operacionais do projeto.</p><ul><li>O projeto participa uma vez por semana, exclusivamente no concurso de quarta-feira.</li><li>A abertura ocorre na manhã de terça-feira (véspera do sorteio), com fechamento no horário informado no aviso.</li><li>Quando o prêmio estimado chega a R$ 120 milhões, pode haver pré-aviso por e-mail antes da abertura de terça-feira.</li><li>Se houver ajuste no calendário da Caixa, os canais oficiais do organizador informam a regra válida para aquele concurso.</li></ul>"
   },
   {
     "question": "Quais são os horários de fechamento da +Milionária?",
-    "answerHtml": "<p>O horário de fechamento depende da janela aberta para o concurso.</p><ul><li><strong>Fluxo padrão</strong>: entrada até <strong>18h</strong>.</li><li><strong>Abertura tardia</strong>: quando aplicável, entrada até <strong>20h</strong>.</li><li><strong>Sábado</strong>: janela reduzida pela manhã, com fechamento ao <strong>meio-dia</strong>.</li></ul><p>O horário informado no aviso do concurso é sempre a referência prática para o participante.</p>"
+    "answerHtml": "<p>O horário de fechamento depende da janela aberta para o concurso de quarta-feira.</p><ul><li><strong>Rotina padrão</strong>: abertura na manhã de <strong>terça-feira</strong> e entrada até as <strong>18h</strong> da própria terça-feira (véspera do sorteio).</li><li><strong>Abertura tardia</strong>: quando aplicável, a janela de terça-feira pode permanecer até as <strong>20h</strong>.</li></ul><p>O horário informado no aviso do concurso é sempre a referência prática para o participante.</p>"
   },
   {
     "question": "Como funciona o reinvestimento na +Milionária?",
@@ -61,7 +61,7 @@
   },
   {
     "question": "Quando são divulgados os bolões estratégicos (acumulados)?",
-    "answerHtml": "<p>Os avisos são divulgados na véspera do concurso acumulado, com a janela de entrada informada em cada chamada.</p><ul><li>Mega‑Sena: sorteios às terças, quintas e sábados; quando está 50+, o aviso costuma sair na véspera.</li><li>+Milionária: sorteios às quartas e sábados; abre a partir de R$ 80 milhões e pode ter e-mail especial a partir de R$…</li><li>Quina: sorteios de segunda a sábado. Acompanhe a comunidade e o e‑mail.</li></ul>"
+    "answerHtml": "<p>Os avisos são divulgados na véspera do concurso acumulado, com a janela de entrada informada em cada chamada.</p><ul><li>Mega‑Sena: sorteios às terças, quintas e sábados; quando está 50+, o aviso costuma sair na véspera.</li><li>+Milionária: participação uma vez por semana, no concurso de quarta-feira, com abertura na manhã de terça-feira; ativa…</li><li>Quina: sorteios de segunda a sábado. Acompanhe a comunidade e o e‑mail.</li></ul>"
   },
   {
     "question": "Como funcionam os pagamentos dos projetos estratégicos?",
