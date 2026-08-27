@@ -56,6 +56,7 @@
   "premiacaoContingencia": null,
   "tipoJogo": "MEGA_SENA",
   "tipoPublicacao": 3,
+  "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
   "valorArrecadado": 23179884,
   "valorAcumuladoConcurso_0_5": 18908975.38,
