@@ -206,14 +206,6 @@ function montarAberturaJaneiro() {
 
 const DIAS_PIX_ESPECIAIS = [7, 8, 9, 10];
 
-function isMesDentroIntervalo(mesAtual, mesInicio, mesFim) {
-  const inicio = parseInt(mesInicio, 10);
-  const fim = parseInt(mesFim, 10);
-  if (Number.isNaN(inicio) || Number.isNaN(fim)) return false;
-  if (inicio <= fim) return mesAtual >= inicio && mesAtual <= fim;
-  return mesAtual >= inicio || mesAtual <= fim;
-}
-
 function encontrarProjetoPorDiaPix(projetos, diaPix) {
   if (!Array.isArray(projetos)) return null;
   return projetos.find(p => Number(p.diaPix) === Number(diaPix)) || null;
@@ -224,9 +216,13 @@ function obterProjetoEspecialDestaque(hojeSP) {
   const especiais = PROJETOS?.especiais?.projetos ?? [];
   if (!especiais.length) return null;
 
-  const mesAtual = hojeSP.getMonth() + 1;
+  const hojeBase = new Date(hojeSP.getTime());
+  hojeBase.setHours(0, 0, 0, 0);
   const diaAtual = hojeSP.getDate();
-  const ativosNoMes = especiais.filter(p => isMesDentroIntervalo(mesAtual, p.mesInicio, p.mesFim));
+  const ativosNoMes = especiais.filter(p => {
+    const limite = parseDataBR(p.dataLimite);
+    return limite && limite >= hojeBase;
+  });
 
   if (diaAtual >= 7 && diaAtual <= 10) {
     const projetoHoje = encontrarProjetoPorDiaPix(ativosNoMes, diaAtual);
@@ -243,8 +239,10 @@ function obterProjetoEspecialDestaque(hojeSP) {
     }
   }
 
-  const mesSeguinte = mesAtual === 12 ? 1 : mesAtual + 1;
-  const ativosNoProximoMes = especiais.filter(p => isMesDentroIntervalo(mesSeguinte, p.mesInicio, p.mesFim));
+  const ativosNoProximoMes = especiais.filter(p => {
+    const limite = parseDataBR(p.dataLimite);
+    return limite && limite >= hojeBase;
+  });
   const proximoDiaMes = DIAS_PIX_ESPECIAIS.find(dia => encontrarProjetoPorDiaPix(ativosNoProximoMes, dia));
   if (proximoDiaMes) {
     const projetoProximo = encontrarProjetoPorDiaPix(ativosNoProximoMes, proximoDiaMes);
@@ -296,24 +294,20 @@ function criarCardProjeto(projeto, tipo, hojeLimpo) {
   let diasRestantes = null;
 
   // Regras de inatividade e contagem regressiva para especiais,
-  // espelhando o comportamento da home anterior.
+  // usando a data limite (dataLimite) como critério único.
   if (tipo === 'especiais' && hojeLimpo instanceof Date) {
-    const mesAtual = hojeLimpo.getMonth() + 1;
-    const inicio = parseInt(projeto.mesInicio, 10);
-    const fim = parseInt(projeto.mesFim, 10);
-    if (!Number.isNaN(inicio) && !Number.isNaN(fim)) {
-      ativo = mesAtual >= inicio && mesAtual <= fim;
-    }
-    if (!ativo) {
-      card.classList.add('inativo');
-    } else if (projeto.dataLimite) {
+    if (projeto.dataLimite) {
       const limite = parseDataBR(projeto.dataLimite);
       if (limite) {
         const base = new Date(hojeLimpo.getTime());
         base.setHours(0, 0, 0, 0);
         const MS_DIA = 1000 * 60 * 60 * 24;
-        diasRestantes = Math.max(0, Math.ceil((limite - base) / MS_DIA));
+        ativo = limite >= base;
+        diasRestantes = ativo ? Math.max(0, Math.ceil((limite - base) / MS_DIA)) : null;
       }
+    }
+    if (!ativo) {
+      card.classList.add('inativo');
     }
   }
 

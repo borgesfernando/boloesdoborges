@@ -71,23 +71,19 @@ function carregarProjetos(tipo, projetos, containerId) {
     const card = document.createElement("div");
     card.className = `project-card ${tipoCor}`;
 
-    // Marcar especiais fora do período (mesAtual não entre mesInicio e mesFim) como inativos
+    // Marcar especiais fora da janela (dataLimite já passou) como inativos
     let ativo = true;
     let diasRestantes = null;
     if (tipo === 'especiais') {
-      const hoje = new Date();
-      const mesAtual = hoje.getMonth() + 1; // 1-12
-      const inicio = parseInt(projeto.mesInicio, 10);
-      const fim = parseInt(projeto.mesFim, 10);
-      ativo = mesAtual >= inicio && mesAtual <= fim;
+      const hojeLimpo = new Date();
+      hojeLimpo.setHours(0, 0, 0, 0);
+      const limite = parseDataBRparaDate(projeto.dataLimite);
+      if (limite) {
+        ativo = limite >= hojeLimpo;
+        diasRestantes = ativo ? Math.max(0, Math.ceil((limite - hojeLimpo) / (1000 * 60 * 60 * 24))) : null;
+      }
       if (!ativo) {
         card.classList.add('inativo');
-      } else if (projeto.dataLimite) {
-        const limite = parseDataBRparaDate(projeto.dataLimite);
-        if (limite) {
-          const hojeLimpo = new Date(); hojeLimpo.setHours(0,0,0,0);
-          diasRestantes = Math.max(0, Math.ceil((limite - hojeLimpo) / (1000*60*60*24)));
-        }
       }
     }
     const nome = projeto.nome;
