@@ -17,13 +17,8 @@
   }
 
   function tabelaParcelas(projeto) {
-    var mesInicio = parseInt(projeto.mesInicio, 10);
-    var mesFim = parseInt(projeto.mesFim, 10);
-    var linhas = '';
-    for (var mes = mesInicio; mes <= mesFim; mes++) {
-      linhas += '<tr><td>' + NOMES_MESES[mes - 1] + '</td><td>R$ ' + projeto.valorMes + ',00</td></tr>';
-    }
-    return '<table class="tabela-projeto"><thead><tr><th>Mês</th><th>Parcela</th></tr></thead><tbody>' + linhas + '</tbody></table>';
+    return '<table class="tabela-projeto"><tbody><tr><th>Parcelas mensais</th><td>' +
+      projeto.parcelas + ' × R$ ' + projeto.valorMes + ',00 — R$ ' + projeto.cota + ',00 no total</td></tr></tbody></table>';
   }
 
   function tabelaEntrada(projeto) {
@@ -54,9 +49,8 @@
     if (containerParcelas) {
       containerParcelas.innerHTML =
         '<h2>PARCELAS MENSAIS</h2>' +
-        '<p>Quem participa desde o início paga a parcela fixa de <strong>R$ ' + valorMes + ',00</strong> todo dia <strong>' + projeto.diaPix + '</strong>, de <strong>' + inicio + '</strong> a <strong>' + fim + '</strong> — cota total de <strong>R$ ' + projeto.cota + ',00</strong> (' + projeto.parcelas + ' × R$ ' + valorMes + ',00). <strong>Não há ajuste mensal</strong> para quem entra no primeiro mês.</p>' +
-        '<p>Resumo da regra: quem entra no primeiro mês paga sempre a mesma parcela, do início ao fim do projeto, sem ajuste. Quem entra depois paga de uma vez os meses já vencidos (cada um com R$ 1,00 de correção) mais a parcela do mês atual. <strong>Os pagamentos devem ser feitos somente no dia ' + projeto.diaPix + ' de cada mês</strong>, que é o dia de PIX deste projeto.</p>' +
-        tabelaParcelas(projeto);
+        tabelaParcelas(projeto) +
+        '<p>Quem entra no primeiro mês paga sempre a mesma parcela, todo dia <strong>' + projeto.diaPix + '</strong>, de <strong>' + inicio + '</strong> a <strong>' + fim + '</strong>, sem ajuste. Quem entra depois paga de uma vez os meses já vencidos (cada um com R$ 1,00 de correção) mais a parcela do mês atual. <strong>Os pagamentos devem ser feitos somente no dia ' + projeto.diaPix + ' de cada mês</strong>, que é o dia de PIX deste projeto.</p>';
     }
 
     var containerEntrada = document.getElementById('entrada-apos-inicio');
