@@ -57,8 +57,9 @@
     if (containerEntrada) {
       containerEntrada.innerHTML =
         '<h2>ENTRADA APÓS O INÍCIO DO ANO</h2>' +
-        '<p><strong>Critério padrão de ajuste das parcelas (SB2026):</strong> quem já participa desde o primeiro mês mantém a parcela fixa de R$ ' + valorMes + ',00. Quem entra depois precisa “comprar” também os meses que já passaram, para ficar em dia com a cota: cada mês vencido é cobrado com <strong>+R$ 1,00 de correção</strong> (parcela “corrigida” de R$ ' + corrigida + ',00) e o mês atual com os R$ ' + valorMes + ',00 normais. Por isso o valor da entrada cresce R$ ' + corrigida + ',00 a cada mês que passa.</p>' +
-        '<p>Em termos práticos: quanto mais tarde entrar, maior o valor da entrada — por isso compensa começar cedo. O pagamento da entrada no dia <strong>' + projeto.diaPix + '</strong> fecha ao meio-dia.</p>' +
+        '<p><strong>Por que existe uma entrada?</strong> Os valores das parcelas ficam guardados em uma <strong>caixinha do Nubank</strong>, rendendo juros atrelados à <strong>Selic</strong> desde o primeiro pagamento. Quem entra depois aproveita o mesmo bolão, mas não contribuiu nesses meses — por isso precisa regularizar os meses já transcorridos.</p>' +
+        '<p>Na prática, cada mês vencido é somado com um <strong>pequeno acréscimo simbólico de R$ 1,00</strong> (parcela “corrigida” de R$ ' + corrigida + ',00) e o mês atual entra pelo valor normal (R$ ' + valorMes + ',00). <strong>Isso não é multa nem penalidade</strong> — é uma forma simples de <strong>equalização financeira</strong>, considerando o valor do dinheiro no tempo. Quanto mais tarde entrar, maior o valor da entrada; por isso compensa começar cedo.</p>' +
+        '<p>O pagamento da entrada no dia <strong>' + projeto.diaPix + '</strong> fecha ao meio-dia.</p>' +
         tabelaEntrada(projeto) +
         '<p style="font-size: 0.9rem;"><em>Após a entrada, a partir do mês seguinte, o participante volta a pagar apenas a parcela mensal normal de R$ ' + valorMes + ',00.</em></p>';
     }
