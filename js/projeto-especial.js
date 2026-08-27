@@ -55,6 +55,7 @@
       containerParcelas.innerHTML =
         '<h2>PARCELAS MENSAIS</h2>' +
         '<p>Quem participa desde o início paga a parcela fixa de <strong>R$ ' + valorMes + ',00</strong> todo dia <strong>' + projeto.diaPix + '</strong>, de <strong>' + inicio + '</strong> a <strong>' + fim + '</strong> — cota total de <strong>R$ ' + projeto.cota + ',00</strong> (' + projeto.parcelas + ' × R$ ' + valorMes + ',00). <strong>Não há ajuste mensal</strong> para quem entra no primeiro mês.</p>' +
+        '<p>Resumo da regra: quem entra no primeiro mês paga sempre a mesma parcela, do início ao fim do projeto, sem ajuste. Quem entra depois paga de uma vez os meses já vencidos (cada um com R$ 1,00 de correção) mais a parcela do mês atual. <strong>Os pagamentos devem ser feitos somente no dia ' + projeto.diaPix + ' de cada mês</strong>, que é o dia de PIX deste projeto.</p>' +
         tabelaParcelas(projeto);
     }
 
