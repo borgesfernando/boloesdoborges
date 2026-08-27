@@ -56,6 +56,10 @@ const html = `<!DOCTYPE html>
     .faq-item summary { cursor: pointer; font-weight: 700; color: #005da4; }
     .faq-answer { margin-top: 0.8rem; line-height: 1.6; }
     .faq-answer ul { margin-left: 1.1rem; }
+    .faq-answer table.tabela-faq { border-collapse: collapse; width: 100%; margin: 0.6rem 0 0.9rem; font-size: 0.95rem; }
+    .faq-answer table.tabela-faq th, .faq-answer table.tabela-faq td { border: 1px solid #d9d9d9; padding: 0.45rem 0.6rem; text-align: left; }
+    .faq-answer table.tabela-faq th { background: #f2f2f2; color: #005da4; }
+    .faq-answer table.tabela-faq tr:nth-child(even) td { background: #fafafa; }
   </style>
 </head>
 <body>

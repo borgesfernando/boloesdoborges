@@ -1132,3 +1132,22 @@ footer {
  .trust-links a:hover {
   text-decoration: underline;
  }
+ .tabela-projeto {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.6rem 0 0.9rem;
+  font-size: 0.95rem;
+ }
+ .tabela-projeto th,
+ .tabela-projeto td {
+  border: 1px solid #d9d9d9;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+ }
+ .tabela-projeto th {
+  background: #f2f2f2;
+  color: #005da4;
+ }
+ .tabela-projeto tr:nth-child(even) td {
+  background: #fafafa;
+ }

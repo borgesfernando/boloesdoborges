@@ -9,7 +9,7 @@
   },
   {
     "question": "Como funciona um bolão (ciclo completo)?",
-    "answerHtml": "<p>Cada bolão segue um ciclo organizado, da abertura para participação até a conferência final dos resultados, com etapas bem definidas para garantir organização, transparência e segurança.</p><ol><li>Abertura do bolão: divulgação de modalidade, concurso, data do sorteio, prêmio, valor da cota, prazo, pagamento e regras.</li><li>Período de adesões: pagamentos identificados e incorporados; as cotas definem os recursos para as apostas.</li><li>Composição das apostas: estimativa da distribuição; a composição final é definida após o fechamento.</li><li>Avisos de encerramento: aviso de fechamento iminente e última chamada antes do horário limite.</li><li>Fechamento das adesões: encerramento para novas participações e consolidação dos números finais.</li><li>Auditoria administrativa: conferência de participantes, cotas, valores e orçamento antes do registro.</li><li>Registro das apostas: apostas registradas nos canais oficiais da loteria.</li><li>Prestação de contas: envio de relação de participantes e cotas, planejamento e bilhetes registrados.</li><li>Sorteio: lembrete e resultados oficiais da loteria.</li><li>Apuração e conferência: confronto dos bilhetes com as dezenas sorteadas.</li><li>Relatório final: documento com dados do concurso, participação, jogos, resultado e premiações.</li></ol><p>Resumo: Adesão → Planejamento e registro → Sorteio e conferência → Prestação de contas.</p>"
+    "answerHtml": "<p>Cada bolão segue um ciclo organizado, da abertura para participação até a conferência final dos resultados. Datas, horários, valores e regras podem variar conforme a modalidade ou o concurso, mas as etapas são bem definidas para garantir organização, transparência e segurança.</p>"
   },
   {
     "question": "Como funcionam os projetos especiais (Lotofácil da Independência, Quina de São João, Dupla Sena de Páscoa e Mega da Virada)?",
@@ -37,7 +37,7 @@
   },
   {
     "question": "Como funciona o reinvestimento na +Milionária?",
-    "answerHtml": "<p>Quando a +Milionária recebe prêmio de pequeno valor que justifica continuidade, o projeto pode fazer <strong>reinvestimento integral</strong> em novo ciclo, sem pedir novo PIX aos participantes.</p><ul><li>Os mesmos participantes e cotas do concurso de origem são preservados.</li><li>O valor fica reservado até existir concurso elegível com prêmio estimado mínimo de <strong>R$ 40 milhões</strong>; enquanto isso, o bolão não abre novas rodadas.</li><li>A nova rodada usa subpasta e documentos próprios dentro da trilha de prestação de contas do ciclo original.</li><li>O participante recebe comunicação por e-mail explicando se o reinvestimento está pendente ou já foi reaberto.</li><li><strong>Ciclo</strong>: se o concurso reinvestido voltar a premiar no mesmo formato, o valor é reinvestido de novo, seguindo a mesma lógica. Quando o prêmio passa a valer repasse individual ou fica abaixo do mínimo, o ciclo se encerra e o bolão volta ao normal.</li></ul>"
+    "answerHtml": "<p>Quando a +Milionária recebe prêmio de pequeno valor que justifica continuidade, o projeto pode fazer reinvestimento integral em novo ciclo, sem pedir novo PIX aos participantes.</p><ul><li>Os mesmos participantes e cotas do concurso de origem são preservados.</li><li>O valor fica reservado até existir concurso elegível com prêmio estimado mínimo de R$ 40…</li><li>A nova rodada usa subpasta e documentos próprios dentro da trilha de prestação de contas…</li><li>O participante recebe comunicação por e-mail explicando se o reinvestimento está pendente…</li></ul>"
   },
   {
     "question": "Quando há repasse via PIX na +Milionária?",
@@ -137,7 +137,7 @@
   },
   {
     "question": "Posso entrar nos bolões a qualquer tempo?",
-    "answerHtml": "<p>Sim, mas as entradas ocorrem apenas nas datas e janelas definidas para cada projeto.</p><ul><li>Projetos Especiais: seguem um cronograma anual com parcelas mensais. Entradas são aceitas até a data‑limite de cada…</li><li>Projetos Mensais: abrem janela de entrada a cada ciclo de 24 concursos. Veja detalhes da Lotofácil Mensal, da Quina…</li><li>Projetos Estratégicos: têm chamadas na véspera dos sorteios, com horários específicos em cada aviso. Acompanhe a Mega…</li></ul>"
+    "answerHtml": "<p>Sim, mas as entradas ocorrem apenas nas datas e janelas definidas para cada projeto.</p><ul><li>Projetos Especiais: seguem cronograma anual, parcelas e data-limite próprios.</li><li>Projetos Mensais: abrem janela de entrada a cada ciclo de 24 concursos.</li><li>Projetos Estratégicos: têm chamadas na véspera dos sorteios, com horários específicos em cada aviso. Acompanhe a…</li></ul>"
   },
   {
     "question": "Há limite de cotas por pessoa?",
@@ -153,11 +153,15 @@
   },
   {
     "question": "O que é a comunidade WhatsApp \"Bolões do Borges\" e como ela funciona?",
-    "answerHtml": "<p>A comunidade ‘Bolões do Borges’ no WhatsApp funciona como um integrador de todos os projetos e facilita as comunicações importantes.</p><ul><li>Grupo de avisos: é onde o Admin reúne todos os participantes para enviar comunicados importantes e abre oportunidades…</li><li>Subgrupos por projeto: cada linha possui grupos específicos apenas com participantes confirmados. Nos <strong>projetos mensais</strong>, novos integrantes são adicionados <strong>automaticamente após a confirmação do pagamento</strong>.</li><li>Interações pontuais: os subgrupos ficam silenciados e são abertos em ocasiões especiais para feedback, reações aos…</li></ul>"
+    "answerHtml": "<p>A comunidade ‘Bolões do Borges’ no WhatsApp funciona como um integrador de todos os projetos e facilita as comunicações importantes.</p><ul><li>Grupo de avisos: é onde o Admin reúne todos os participantes para enviar comunicados importantes e abre oportunidades…</li><li>Subgrupos por projeto: cada linha (projetos mensais e projetos especiais) possui grupos específicos apenas com os…</li><li>Interações pontuais: os subgrupos ficam silenciados e são abertos em ocasiões especiais para feedback, reações aos…</li></ul>"
   },
   {
     "question": "Como é calculado o valor das parcelas mensais?",
     "answerHtml": "<p>Regra geral:</p><ul><li>Quem entra desde o primeiro mês paga sempre o valor fixo da parcela mensal (valorMes). Não há ajuste.</li><li>O ajuste só se aplica a quem entra após o início do projeto, para compensar os meses já decorridos.</li></ul>"
+  },
+  {
+    "question": "Como funciona o critério de ajuste das parcelas do SB2026 (Super Bolão 2026)?",
+    "answerHtml": "<p>Critério de ajuste das parcelas do SB2026 — regra padrão aplicada a todos os projetos especiais:</p>"
   },
   {
     "question": "Como faço os pagamentos?",
@@ -229,7 +233,7 @@
   },
   {
     "question": "Quais estratégias são usadas na geração de jogos?",
-    "answerHtml": "<p>🧠 Usamos geradores estratégicos próprios que tratam o conjunto de apostas como uma única carteira. A primeira estratégia publicada é o <strong>Matriz+</strong>, da <strong>+Milionária</strong>:</p><ul><li>Apostas convertidas em unidades de <strong>6 dezenas + 2 trevos</strong> para eliminar duplicações (ex.: 46 apostas → 113 combinações únicas).</li><li>Equilíbrio das <strong>50 dezenas</strong> e dos <strong>6 trevos</strong> e controle de sobreposição entre jogos.</li><li>Cada aposta é avaliada pelo que <strong>acrescenta ao conjunto</strong>, com busca local para melhorar a carteira final.</li><li>Histórico usado apenas como referência de diversidade — <strong>sem promessa de acerto</strong>.</li></ul>"
+    "answerHtml": "<p>🧠 Para montar as carteiras de apostas, o Super Bolão combina modelos estatísticos, regras de qualidade e geradores estratégicos próprios, que tratam o conjunto de apostas como uma única carteira — e não como jogos isolados. Esta seção reúne as estratégias de geração publicadas por modalidade.</p><ul><li>Mais cobertura, menos redundância: as apostas são convertidas em unidades atômicas…</li><li>Distribuição equilibrada: o gerador acompanha a utilização das 50 dezenas e dos 6 trevos, …</li><li>Controle de sobreposição: a cobertura é medida entre os jogos e sobre os 1. 225 pares…</li><li>Contribuição marginal: cada nova aposta é avaliada pelo valor que acrescenta ao conjunto…</li></ul>"
   },
   {
     "question": "Posso preencher minhas dezenas da sorte?",
@@ -289,7 +293,7 @@
   },
   {
     "question": "Como funciona a prestação de contas?",
-    "answerHtml": "<p>Transparência com documentos oficiais e trilhas de acesso conferíveis.</p><ul><li>Canais: e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li>Segurança: acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li>LGPD e privacidade: minimização de dados e exposição controlada.</li><li>Cronograma: abertura das adesões → período de adesões → composição das apostas → avisos de encerramento → fechamento das adesões → auditoria administrativa → registro das apostas → prestação de contas → sorteio → apuração → relatório final.</li><li>Documentos da prestação de contas: relação dos participantes e cotas, planejamento das apostas, relação ou reprodução dos bilhetes registrados e informações gerais sobre o concurso e o bolão.</li><li>O que você recebe: links enviados pelo organizador, PDFs, planilhas e comprovações auditáveis.</li></ul>"
+    "answerHtml": "<p>Transparência com documentos oficiais e trilhas de acesso conferíveis.</p><ul><li>Canais: e‑mail (relatórios), Google Drive (planilhas, comprovantes, registros) e WhatsApp (resumos).</li><li>Segurança: acesso autenticado, permissões mínimas necessárias e histórico de alterações.</li><li>LGPD e privacidade: minimização de dados e exposição controlada.</li><li>Cronograma: abertura das adesões → período de adesões → composição das apostas → avisos de encerramento → fechamento…</li><li>Documentos da prestação de contas: relação dos participantes e cotas, planejamento das apostas, relação ou reprodução…</li></ul>"
   },
   {
     "question": "Comunicação e documentos oficiais",
