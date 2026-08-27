@@ -157,7 +157,7 @@
   },
   {
     "question": "Como é calculado o valor das parcelas mensais?",
-    "answerHtml": "<p>Regra geral:</p><ul><li>Quem entra desde o primeiro mês paga sempre o valor fixo da parcela mensal (valorMes). Não há ajuste.</li><li>O ajuste só se aplica a quem entra após o início do projeto, para compensar os meses já decorridos.</li></ul>"
+    "answerHtml": "<p>Entender o valor das parcelas é simples: quem começa junto no primeiro mês paga sempre o mesmo valor todo mês, do início ao fim do projeto — sem surpresas e sem ajuste.</p><ul><li>Quem entra em janeiro paga R$ 50,00 todo dia 10, de janeiro a dezembro — R$ 600,00 no total (12 parcelas).</li><li>Quem entra em abril paga de uma vez a entrada: os 3 meses já vencidos (janeiro, fevereiro e março) com R$ 1,00 de…</li><li>Quem deixa para entrar em dezembro paga R$ 611,00 de entrada, e não há mais meses seguintes.</li></ul>"
   },
   {
     "question": "Como funciona o critério de ajuste das parcelas do SB2026 (Super Bolão 2026)?",
