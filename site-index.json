@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T23:05:13.485Z",
+  "generated_at": "2026-08-28T23:05:51.017Z",
   "page_count": 63,
   "sites": [
     {
@@ -141,11 +141,11 @@
           "description": "Sistema Synapse: como a inteligência artificial da Mega-Sena do Super Bolão aprende com o histórico — rede LSTM com atenção temporal, focal loss, poda lottery ticket e geração por ranking."
         },
         {
-          "title": "Matriz+ — Gerador Estratégico da +Milionária",
+          "title": "Sistema Matrix+ — Gerador Estratégico da +Milionária",
           "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/milionaria.html",
           "path": "/boloesdoborges/estrategias/milionaria.html",
           "type": "page",
-          "description": "Como o Matriz+ monta carteiras de apostas da +Milionária: cobertura ampla, distribuição equilibrada e controle de sobreposição, sem promessas de acerto."
+          "description": "Como o Sistema Matrix+ monta carteiras de apostas da +Milionária: cobertura ampla, distribuição equilibrada e controle de sobreposição, sem promessas de acerto."
         },
         {
           "title": "Sistema Horizonte — Estratégia da Quina Mensal | Super Bolão",
