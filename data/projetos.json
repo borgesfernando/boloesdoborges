@@ -60,19 +60,7 @@
         "dataSorteio": "31/12/2026",
         "corPrimaria": "32, 152, 105",
         "corHex": "#209869",
-        "gradiente": "linear-gradient(to right, rgb(32,152,105), rgb(110,188,158))",
-        "idInterno": "MEGA_VIRADA",
-        "categoria": "ESPECIAL",
-        "aliases": [
-          "mega da virada",
-          "virada",
-          "super bolão",
-          "super bolão mega da virada",
-          "sb"
-        ],
-        "naoConfundirCom": [
-          "MEGA_ACUMULADA"
-        ]
+        "gradiente": "linear-gradient(to right, rgb(32,152,105), rgb(110,188,158))"
       }
     ]
   },
@@ -121,19 +109,7 @@
         "minimo": 50,
         "corPrimaria": "32, 152, 105",
         "corHex": "#209869",
-        "gradiente": "linear-gradient(to right, rgb(32,152,105), rgb(110,188,158))",
-        "idInterno": "MEGA_ACUMULADA",
-        "categoria": "ESTRATEGICO",
-        "aliases": [
-          "mega acumulada",
-          "mega sena acumulada",
-          "mega 50 milhões",
-          "mega 50 milhoes"
-        ],
-        "gatilhoAcumulacao": 50000000,
-        "naoConfundirCom": [
-          "MEGA_VIRADA"
-        ]
+        "gradiente": "linear-gradient(to right, rgb(32,152,105), rgb(110,188,158))"
       },
       {
         "id": "milionaria",
