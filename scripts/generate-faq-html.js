@@ -17,6 +17,8 @@ const rotaMap = {
   ROTA_PRESTACAO_CONTAS: 'prest.html',
   ROTA_IA: 'ia.html',
   ROTA_ESTRATEGIA_MILIONARIA: 'estrategias/milionaria.html',
+  ROTA_ESTRATEGIA_LOTOFACIL: 'estrategias/lotofacil.html',
+  ROTA_ESTRATEGIA_QUINA_MENSAL: 'estrategias/quina-mensal.html',
 };
 
 function escapeHtml(value) {
