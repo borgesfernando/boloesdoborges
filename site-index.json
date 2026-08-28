@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T18:07:00.082Z",
-  "page_count": 56,
+  "generated_at": "2026-08-28T18:07:51.336Z",
+  "page_count": 57,
   "sites": [
     {
       "id": "public",
@@ -244,6 +244,13 @@
           "path": "/estrategias",
           "type": "page",
           "description": "Metodologias e geradores estratégicos usados para montar as carteiras de cada modalidade, com foco em cobertura, diversidade e transparência — sem promessa de acerto."
+        },
+        {
+          "title": "Dupla Sena — Bolão Mensal: como as apostas são geradas · Super Bolão",
+          "url": "https://site.boloesdoborges.shop/estrategias/dupla-sena-mensal",
+          "path": "/estrategias/dupla-sena-mensal",
+          "type": "page",
+          "description": "Como as apostas do Bolão Mensal da Dupla Sena são geradas como uma única carteira planejada: histórico oficial da Caixa, funil de sinais estatísticos, Random Forest e modelagem independente dos dois sorteios de cada concurso."
         },
         {
           "title": "Lotofácil — Carteira otimizada · Super Bolão",
