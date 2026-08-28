@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T18:07:51.336Z",
-  "page_count": 57,
+  "generated_at": "2026-08-28T22:29:37.316Z",
+  "page_count": 60,
   "sites": [
     {
       "id": "public",
@@ -118,6 +118,27 @@
           "path": "/boloesdoborges/estrategias/lotofacil.html",
           "type": "page",
           "description": "Como as carteiras de apostas da Lotofácil são construídas com diversidade, controles de sobreposição e otimização de carteira."
+        },
+        {
+          "title": "Sistema Mosaico — Cobertura Combinatória da Mega-Sena | Super Bolão",
+          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/mega-mosaico.html",
+          "path": "/boloesdoborges/estrategias/mega-mosaico.html",
+          "type": "page",
+          "description": "Sistema Mosaico: como as apostas da Mega-Sena do Super Bolão são montadas como um mosaico de cobertura — unidades atômicas, pares de dezenas, sobreposição controlada e ganho marginal submodular."
+        },
+        {
+          "title": "Sistema Sigma — Portfólio Estatístico da Mega-Sena | Super Bolão",
+          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/mega-sigma.html",
+          "path": "/boloesdoborges/estrategias/mega-sigma.html",
+          "type": "page",
+          "description": "Sistema Sigma: como a Mega-Sena do Super Bolão é tratada como um portfólio estatístico — coocorrência com decaimento temporal, FFT, Pareto, funil de seleção e otimização global de carteira."
+        },
+        {
+          "title": "Sistema Synapse — Inteligência Artificial da Mega-Sena | Super Bolão",
+          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/mega-synapse.html",
+          "path": "/boloesdoborges/estrategias/mega-synapse.html",
+          "type": "page",
+          "description": "Sistema Synapse: como a inteligência artificial da Mega-Sena do Super Bolão aprende com o histórico — rede LSTM com atenção temporal, focal loss, poda lottery ticket e geração por ranking."
         },
         {
           "title": "Matriz+ — Gerador Estratégico da +Milionária",
