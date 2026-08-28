@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T13:38:59.653Z",
-  "page_count": 55,
+  "generated_at": "2026-08-28T18:07:00.082Z",
+  "page_count": 56,
   "sites": [
     {
       "id": "public",
@@ -104,6 +104,13 @@
           "path": "/boloesdoborges/estrategias.html",
           "type": "page",
           "description": "Estratégias dos bolões do Super Bolão: metodologias de geração de cada modalidade, com foco em cobertura, diversidade e transparência."
+        },
+        {
+          "title": "Dupla Sena Mensal — Carteira de sinais com os dois sorteios | Super Bolão",
+          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/dupla-sena-mensal.html",
+          "path": "/boloesdoborges/estrategias/dupla-sena-mensal.html",
+          "type": "page",
+          "description": "Como as apostas do Bolão Mensal da Dupla Sena são geradas como uma única carteira planejada: histórico oficial da Caixa, funil de sinais estatísticos, Random Forest e modelagem independente dos dois sorteios de cada concurso."
         },
         {
           "title": "Lotofácil — Carteira otimizada | Super Bolão",
