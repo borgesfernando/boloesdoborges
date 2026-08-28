@@ -13,7 +13,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const id = params.get("id");
-      const projeto = PROJETOS.acumulados.projetos.find(p => p.id === id);
+      const projeto = PROJETOS.estrategicos.projetos.find(p => p.id === id);
 
       if (!projeto) {
         document.body.innerHTML = '<div class="container"><h1>Projeto não encontrado</h1></div>';

@@ -75,11 +75,11 @@ function loadMegaProjectConfig() {
 
   const raw = fs.readFileSync(PROJETOS_PATH, 'utf8');
   const data = JSON.parse(raw);
-  const acumulados = data?.acumulados?.projetos ?? [];
-  const mega = acumulados.find((project) => project.id === MEGA_PROJECT_ID);
+  const estrategicos = data?.estrategicos?.projetos ?? [];
+  const mega = estrategicos.find((project) => project.id === MEGA_PROJECT_ID);
 
   if (!mega) {
-    throw new Error(`Projeto acumulado "${MEGA_PROJECT_ID}" não encontrado em data/projetos.json`);
+    throw new Error(`Projeto estratégico "${MEGA_PROJECT_ID}" não encontrado em data/projetos.json`);
   }
 
   const minimo = Number(mega.minimo);

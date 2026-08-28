@@ -86,7 +86,7 @@
         spanAno.textContent = new Date().getFullYear();
       }
 
-      if (typeof PROJETOS === 'undefined' || !PROJETOS.acumulados || !Array.isArray(PROJETOS.acumulados.projetos)) return;
+      if (typeof PROJETOS === 'undefined' || !PROJETOS.estrategicos || !Array.isArray(PROJETOS.estrategicos.projetos)) return;
 
       const container = document.getElementById('lista-acumulados-linha');
       if (!container) return;
@@ -94,7 +94,7 @@
       const hoje = new Date();
       hoje.setHours(0, 0, 0, 0);
 
-      PROJETOS.acumulados.projetos.forEach(p => {
+      PROJETOS.estrategicos.projetos.forEach(p => {
         container.appendChild(criarCardProjeto(p, 'acumulados', hoje));
       });
     });

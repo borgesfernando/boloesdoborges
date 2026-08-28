@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   carregarProjetos('especiais', especiaisOrdenados, 'especiais-list');
   carregarProjetos('mensais', PROJETOS.mensais.projetos, 'mensais-list');
-  carregarProjetos('acumulados', PROJETOS.acumulados.projetos, 'acumulados-list');
+  carregarProjetos('acumulados', PROJETOS.estrategicos.projetos, 'acumulados-list');
 
   // 2. AVISO TOP FIXO — APENAS 15 DIAS ANTES DO FECHAMENTO DOS BOLÕES ESPECIAIS
   // Usa a mesma lista especiaisComDatas para reaproveitar o parse de data

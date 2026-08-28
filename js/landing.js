@@ -449,8 +449,8 @@ function renderizarProjetosResumo() {
 
   // Estratégicos
   const acumuladosContainer = document.getElementById('cards-acumulados-resumo');
-  if (acumuladosContainer && PROJETOS.acumulados && Array.isArray(PROJETOS.acumulados.projetos)) {
-    PROJETOS.acumulados.projetos.forEach(p => {
+  if (acumuladosContainer && PROJETOS.estrategicos && Array.isArray(PROJETOS.estrategicos.projetos)) {
+    PROJETOS.estrategicos.projetos.forEach(p => {
       acumuladosContainer.appendChild(criarCardProjeto(p, 'acumulados', hoje));
     });
   }
@@ -473,8 +473,8 @@ function renderizarLinhasPrincipais() {
     ? PROJETOS.mensais.projetos.length
     : 0;
 
-  const totalAcumulados = PROJETOS.acumulados && Array.isArray(PROJETOS.acumulados.projetos)
-    ? PROJETOS.acumulados.projetos.length
+  const totalAcumulados = PROJETOS.estrategicos && Array.isArray(PROJETOS.estrategicos.projetos)
+    ? PROJETOS.estrategicos.projetos.length
     : 0;
 
   function criarCardLinha(titulo, descricao, detalheDinamico, href, classeBtn) {

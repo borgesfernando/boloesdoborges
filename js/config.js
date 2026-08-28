@@ -99,8 +99,8 @@ const PROJETOS = {
       },
     ]
   },
-  acumulados: {
-    template: 'acumulados',
+  estrategicos: {
+    template: 'estrategicos',
     projetos: [
       {
         id: 'mega-acumulada',
