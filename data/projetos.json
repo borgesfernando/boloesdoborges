@@ -49,7 +49,17 @@
       },
       {
         "id": "mega-virada",
+        "idInterno": "MEGA_VIRADA",
         "nome": "Super Bolão para a Mega da Virada",
+        "categoria": "ESPECIAL",
+        "aliases": [
+          "mega da virada",
+          "virada",
+          "super bolão",
+          "super bolão mega da virada",
+          "sb"
+        ],
+        "naoConfundirCom": ["MEGA_ACUMULADA"],
         "cota": 600,
         "valorMes": 50,
         "parcelas": 12,
@@ -104,7 +114,16 @@
     "projetos": [
       {
         "id": "mega-acumulada",
+        "idInterno": "MEGA_ACUMULADA",
         "nome": "Mega Sena Acumulada +50Mi",
+        "categoria": "ESTRATEGICO",
+        "aliases": [
+          "mega acumulada",
+          "mega sena acumulada",
+          "mega 50 milhões",
+          "mega 50 milhoes"
+        ],
+        "naoConfundirCom": ["MEGA_VIRADA"],
         "valor": 20,
         "minimo": 50,
         "corPrimaria": "32, 152, 105",
