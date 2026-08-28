@@ -998,6 +998,115 @@ footer h3 {
   font-size: 1.02em;
 }
 
+/* ==========================
+   Cor de projeto nas páginas de estratégia
+   ========================== */
+body.projeto-mega header {
+  background: linear-gradient(135deg, #064d30, rgb(var(--mega)));
+}
+body.projeto-mega h2 {
+  color: rgb(var(--mega));
+}
+body.projeto-mega h2::after {
+  background: rgb(var(--mega));
+}
+body.projeto-mega h3 {
+  color: rgb(var(--mega));
+}
+body.projeto-mega .card {
+  border-left: 4px solid rgba(var(--mega), 0.5);
+}
+
+body.projeto-milionaria header {
+  background: linear-gradient(135deg, #17184d, rgb(var(--milionaria)));
+}
+body.projeto-milionaria h2 {
+  color: rgb(var(--milionaria));
+}
+body.projeto-milionaria h2::after {
+  background: rgb(var(--milionaria));
+}
+body.projeto-milionaria h3 {
+  color: rgb(var(--milionaria));
+}
+body.projeto-milionaria .card {
+  border-left: 4px solid rgba(var(--milionaria), 0.5);
+}
+
+body.projeto-lotofacil header {
+  background: linear-gradient(135deg, #4a0045, rgb(var(--lotofacil)));
+}
+body.projeto-lotofacil h2 {
+  color: rgb(var(--lotofacil));
+}
+body.projeto-lotofacil h2::after {
+  background: rgb(var(--lotofacil));
+}
+body.projeto-lotofacil h3 {
+  color: rgb(var(--lotofacil));
+}
+body.projeto-lotofacil .card {
+  border-left: 4px solid rgba(var(--lotofacil), 0.5);
+}
+
+body.projeto-quina header {
+  background: linear-gradient(135deg, #12004a, rgb(var(--quina)));
+}
+body.projeto-quina h2 {
+  color: rgb(var(--quina));
+}
+body.projeto-quina h2::after {
+  background: rgb(var(--quina));
+}
+body.projeto-quina h3 {
+  color: rgb(var(--quina));
+}
+body.projeto-quina .card {
+  border-left: 4px solid rgba(var(--quina), 0.5);
+}
+
+body.projeto-dupla header {
+  background: linear-gradient(135deg, #4d0a12, rgb(var(--dupla)));
+}
+body.projeto-dupla h2 {
+  color: rgb(var(--dupla));
+}
+body.projeto-dupla h2::after {
+  background: rgb(var(--dupla));
+}
+body.projeto-dupla h3 {
+  color: rgb(var(--dupla));
+}
+body.projeto-dupla .card {
+  border-left: 4px solid rgba(var(--dupla), 0.5);
+}
+
+/* Lista do índice de estratégias colorida por projeto */
+.estrategia-lista {
+  list-style: none;
+  padding-left: 0;
+}
+.estrategia-lista li {
+  border-left: 4px solid transparent;
+  padding-left: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.estrategia-lista li.mega {
+  border-left-color: rgb(var(--mega));
+}
+.estrategia-lista li.milionaria {
+  border-left-color: rgb(var(--milionaria));
+}
+.estrategia-lista li.lotofacil {
+  border-left-color: rgb(var(--lotofacil));
+}
+.estrategia-lista li.quina {
+  border-left-color: rgb(var(--quina));
+}
+.estrategia-lista li.dupla {
+  border-left-color: rgb(var(--dupla));
+}
+
 .aviso-topo {
   background: #ffeb3b;
   color: #000;
