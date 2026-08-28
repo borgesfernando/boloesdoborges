@@ -1087,24 +1087,59 @@ body.projeto-dupla .card {
   padding-left: 0;
 }
 .estrategia-lista li {
-  border-left: 4px solid transparent;
-  padding-left: 0.6rem;
-  margin-bottom: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 5px solid transparent;
+  border-radius: 8px;
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 0.6rem;
+  background: rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.estrategia-lista li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .estrategia-lista li.mega {
   border-left-color: rgb(var(--mega));
+  background: linear-gradient(to right, rgba(var(--mega), 0.12), rgba(255, 255, 255, 0.5));
+}
+.estrategia-lista li.mega a {
+  color: #1a7a4f;
 }
 .estrategia-lista li.milionaria {
   border-left-color: rgb(var(--milionaria));
+  background: linear-gradient(to right, rgba(var(--milionaria), 0.12), rgba(255, 255, 255, 0.5));
+}
+.estrategia-lista li.milionaria a {
+  color: rgb(var(--milionaria));
 }
 .estrategia-lista li.lotofacil {
   border-left-color: rgb(var(--lotofacil));
+  background: linear-gradient(to right, rgba(var(--lotofacil), 0.12), rgba(255, 255, 255, 0.5));
+}
+.estrategia-lista li.lotofacil a {
+  color: rgb(var(--lotofacil));
 }
 .estrategia-lista li.quina {
   border-left-color: rgb(var(--quina));
+  background: linear-gradient(to right, rgba(var(--quina), 0.12), rgba(255, 255, 255, 0.5));
+}
+.estrategia-lista li.quina a {
+  color: rgb(var(--quina));
 }
 .estrategia-lista li.dupla {
   border-left-color: rgb(var(--dupla));
+  background: linear-gradient(to right, rgba(var(--dupla), 0.12), rgba(255, 255, 255, 0.5));
+}
+.estrategia-lista li.dupla a {
+  color: rgb(var(--dupla));
+}
+.estrategia-lista li a {
+  font-weight: 600;
+  text-decoration: none;
+}
+.estrategia-lista li a:hover {
+  text-decoration: underline;
 }
 
 .aviso-topo {
