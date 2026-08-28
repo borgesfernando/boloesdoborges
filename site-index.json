@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T22:59:03.280Z",
+  "generated_at": "2026-08-28T22:59:39.881Z",
   "page_count": 63,
   "sites": [
     {
@@ -267,18 +267,18 @@
           "description": "Metodologias e geradores estratégicos usados para montar as carteiras de cada modalidade, com foco em cobertura, diversidade e transparência — sem promessa de acerto."
         },
         {
-          "title": "Dupla Sena — Bolão Mensal: como as apostas são geradas · Super Bolão",
+          "title": "Sistema Eclipse — Estratégia da Dupla Sena Mensal · Super Bolão",
           "url": "https://site.boloesdoborges.shop/estrategias/dupla-sena-mensal",
           "path": "/estrategias/dupla-sena-mensal",
           "type": "page",
-          "description": "Como as apostas do Bolão Mensal da Dupla Sena são geradas como uma única carteira planejada: histórico oficial da Caixa, funil de sinais estatísticos, Random Forest e modelagem independente dos dois sorteios de cada concurso."
+          "description": "Sistema Eclipse: como as apostas do Bolão Mensal da Dupla Sena são geradas com os dois sorteios de cada concurso alinhados em uma única carteira — funil de sinais estatísticos, Random Forest e modelagem independente dos dois sorteios."
         },
         {
-          "title": "Lotofácil — Carteira otimizada · Super Bolão",
+          "title": "Sistema Prisma — Estratégia da Lotofácil · Super Bolão",
           "url": "https://site.boloesdoborges.shop/estrategias/lotofacil",
           "path": "/estrategias/lotofacil",
           "type": "page",
-          "description": "Como as carteiras de apostas da Lotofácil são construídas com diversidade, controles de sobreposição e otimização de carteira."
+          "description": "Sistema Prisma: como as carteiras da Lotofácil são construídas como uma única carteira integrada, combinando múltiplos sinais com diversidade, controles de sobreposição e otimização de portfólio."
         },
         {
           "title": "Sistema Mosaico — Cobertura Combinatória da Mega-Sena · Super Bolão",
@@ -309,11 +309,11 @@
           "description": "Como o Matriz+ monta carteiras de apostas da +Milionária: cobertura ampla, distribuição equilibrada e controle de sobreposição, sem promessas de acerto."
         },
         {
-          "title": "Quina — Bolão Mensal: como as apostas são geradas · Super Bolão",
+          "title": "Sistema Horizonte — Estratégia da Quina Mensal · Super Bolão",
           "url": "https://site.boloesdoborges.shop/estrategias/quina-mensal",
           "path": "/estrategias/quina-mensal",
           "type": "page",
-          "description": "Como as apostas do Bolão Mensal da Quina são geradas como uma única carteira planejada: histórico oficial da Caixa, modelo híbrido orientado à cobertura e dezenas distintas."
+          "description": "Sistema Horizonte: como as apostas do Bolão Mensal da Quina são geradas como uma única carteira planejada voltada à janela futura — histórico oficial da Caixa, modelo híbrido orientado à cobertura e dezenas distintas."
         },
         {
           "title": "Perguntas frequentes · Super Bolão",
