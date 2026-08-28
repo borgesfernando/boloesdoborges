@@ -99,6 +99,16 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
   - Acumulados: `boloes/acumulados/*.html`
 - Templates antigos permanecem como fallback e estão marcados com `noindex`.
 
+## 🤖 Índice público de páginas
+
+- A API estática oficial é [`site-index.json`](https://borgesfernando.github.io/boloesdoborges/site-index.json), publicada na raiz do GitHub Pages.
+- O schema estável usa `version`, `generated_at`, `page_count` e `sites`; cada página contém `title`, `url`, `path`, `type` e `description` somente quando já existe no HTML publicado.
+- Gere localmente com `node scripts/generate-site-index.js`. O comando descobre HTMLs rastreados pelo Git, exclui `templates/`, `index-v1.html` e documentos com `noindex`, e valida URLs, domínios, duplicatas e rotas privadas.
+- O workflow `.github/workflows/update-projetos.yml` executa o gerador a cada alteração relevante na `main` e só faz commit quando a estrutura mudou. Commits que alteram apenas o índice não reexecutam o workflow.
+- O site comercial contribui com `.generated/site-commercial.json`: ele é produzido a partir do `dist/` do Astro, após o build/deploy, e contém exclusivamente metadados allowlisted de páginas indexáveis. O repositório público consolida esse manifesto; não acessa o código privado.
+- Para adicionar uma página, publique um HTML com `<title>` (e descrição opcional) no site público, ou uma rota Astro com canonical absoluto no site comercial. Para excluir uma rota pública, marque-a com `noindex`; rotas administrativas e internas são rejeitadas pela validação.
+- O secret `NOVO_SITE_SYNC_TOKEN` também deve existir no repositório privado, com permissão mínima `Contents: Read and write` nos dois repositórios, para atualizar o manifesto comercial.
+
 ## ❓ FAQ (HTML estático)
 
 - `faq.json` continua como fonte de verdade.

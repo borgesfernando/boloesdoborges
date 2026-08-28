@@ -1,0 +1,203 @@
+{
+  "id": "commercial",
+  "name": "Bolões do Borges — Site comercial",
+  "base_url": "https://site.boloesdoborges.shop",
+  "pages": [
+    {
+      "title": "Bolões Mega-Sena, Lotofácil, Quina e Dupla Sena · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/",
+      "path": "/",
+      "type": "page",
+      "description": "Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, 15 anos de histórico e uso responsável de dados e tecnologia."
+    },
+    {
+      "title": "Como funciona um bolão · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/como-funciona",
+      "path": "/como-funciona",
+      "type": "page",
+      "description": "Entenda como participar de um bolão da Mega-Sena, Lotofácil, Quina e Dupla Sena de forma simples e transparente."
+    },
+    {
+      "title": "Comunidade e cadastro · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/comunidade",
+      "path": "/comunidade",
+      "type": "page",
+      "description": "Entre na comunidade e acompanhe os avisos dos projetos."
+    },
+    {
+      "title": "Contato · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/contato",
+      "path": "/contato",
+      "type": "page",
+      "description": "Fale com o organizador e acesse o formulário de participação."
+    },
+    {
+      "title": "Estratégias · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/estrategias",
+      "path": "/estrategias",
+      "type": "page",
+      "description": "Metodologias e geradores estratégicos usados para montar as carteiras de cada modalidade, com foco em cobertura, diversidade e transparência — sem promessa de acerto."
+    },
+    {
+      "title": "Lotofácil — Carteira otimizada · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/estrategias/lotofacil",
+      "path": "/estrategias/lotofacil",
+      "type": "page",
+      "description": "Como as carteiras de apostas da Lotofácil são construídas com diversidade, controles de sobreposição e otimização de carteira."
+    },
+    {
+      "title": "Matriz+ — Gerador Estratégico da +Milionária · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/estrategias/milionaria",
+      "path": "/estrategias/milionaria",
+      "type": "page",
+      "description": "Como o Matriz+ monta carteiras de apostas da +Milionária: cobertura ampla, distribuição equilibrada e controle de sobreposição, sem promessas de acerto."
+    },
+    {
+      "title": "Quina — Bolão Mensal: como as apostas são geradas · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/estrategias/quina-mensal",
+      "path": "/estrategias/quina-mensal",
+      "type": "page",
+      "description": "Como as apostas do Bolão Mensal da Quina são geradas como uma única carteira planejada: histórico oficial da Caixa, modelo híbrido orientado à cobertura e dezenas distintas."
+    },
+    {
+      "title": "Perguntas frequentes · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/faq",
+      "path": "/faq",
+      "type": "page",
+      "description": "FAQ completa dos bolões organizados pelo Borges."
+    },
+    {
+      "title": "IA aplicada aos projetos · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/ia",
+      "path": "/ia",
+      "type": "page",
+      "description": "Metodologia técnica (LSTM + regras) com transparência, rastreabilidade e sem promessas de acerto."
+    },
+    {
+      "title": "Linhas de Projetos · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/linhas-de-projetos",
+      "path": "/linhas-de-projetos",
+      "type": "page",
+      "description": "Visão geral das três linhas do site com links diretos para cada projeto e para a página de cada linha."
+    },
+    {
+      "title": "Projetos Estratégicos · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/linhas-de-projetos/acumulados",
+      "path": "/linhas-de-projetos/acumulados",
+      "type": "page",
+      "description": "Os projetos estratégicos entram em ação quando o prêmio alcança o gatilho definido para cada linha."
+    },
+    {
+      "title": "Projetos Especiais · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/linhas-de-projetos/especiais",
+      "path": "/linhas-de-projetos/especiais",
+      "type": "page",
+      "description": "Os projetos especiais seguem datas específicas do calendário e reúnem as edições mais importantes do ano."
+    },
+    {
+      "title": "Projetos Mensais · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/linhas-de-projetos/mensais",
+      "path": "/linhas-de-projetos/mensais",
+      "type": "page",
+      "description": "Os projetos mensais mantêm operação regular ao longo do mês, com páginas próprias e participação contínua."
+    },
+    {
+      "title": "Pagamentos e repasses · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/politica-pagamentos",
+      "path": "/politica-pagamentos",
+      "type": "page",
+      "description": "Política de pagamentos, repasses e cancelamento."
+    },
+    {
+      "title": "Prestação de contas · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/prestacao-de-contas",
+      "path": "/prestacao-de-contas",
+      "type": "page",
+      "description": "Transparência e governança financeira para todos os projetos."
+    },
+    {
+      "title": "Política de privacidade · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/privacidade",
+      "path": "/privacidade",
+      "type": "page",
+      "description": "Como os dados pessoais são tratados nos projetos."
+    },
+    {
+      "title": "Bolão Mega Sena Acumulada +50Mi · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/acumulados/mega-acumulada",
+      "path": "/projetos/acumulados/mega-acumulada",
+      "type": "page",
+      "description": "Ativamos o grupo quando a Mega ultrapassa R$ 50 milhões, com combinações especiais e filtros extras."
+    },
+    {
+      "title": "Bolão +Milionária Acumulada +80Mi · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/acumulados/milionaria",
+      "path": "/projetos/acumulados/milionaria",
+      "type": "page",
+      "description": "Bolão estratégico da +Milionária, uma vez por semana no concurso de quarta-feira, aberto quando o prêmio é superior a R$ 80 milhões, com abertura na terça-feira pela manhã, janela pública, documentação completa e regras claras de reinvestimento."
+    },
+    {
+      "title": "Bolão Dupla Sena de Páscoa · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/especiais/ds-pascoa",
+      "path": "/projetos/especiais/ds-pascoa",
+      "type": "page",
+      "description": "Campanha curta em que a IA ajuda a montar combinações variadas e bem distribuídas, dentro das regras oficiais. Ideal para quem gosta de janelas curtas e resultados ágeis."
+    },
+    {
+      "title": "Bolão Lotofácil da Independência · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/especiais/lf-independencia",
+      "path": "/projetos/especiais/lf-independencia",
+      "type": "page",
+      "description": "Estratégia focada em regularidade, reaproveitando parte dos resultados para reduzir o custo por cota ao longo do ano. Parcelas previsíveis e cronograma divulgado no início do ano."
+    },
+    {
+      "title": "Super Bolão para a Mega da Virada · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/especiais/mega-virada",
+      "path": "/projetos/especiais/mega-virada",
+      "type": "page",
+      "description": "Plano anual preparado com antecedência, combinando jogos bem distribuídos, apoio de IA e uma rotina clara de prestação de contas para o maior concurso do país. Planejamento para 12 meses, com reservas e reforços progressivos."
+    },
+    {
+      "title": "Bolão Quina de São João · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/especiais/quina-saojoao",
+      "path": "/projetos/especiais/quina-saojoao",
+      "type": "page",
+      "description": "Rotina de jogos com ajustes feitos conforme a frequência de acumulações e o comportamento recente dos resultados. Operação enxuta, com validações cruzadas e bloqueios inteligentes."
+    },
+    {
+      "title": "Bolão Dupla Sena Mensal · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/mensais/dupla-sena-mensal",
+      "path": "/projetos/mensais/dupla-sena-mensal",
+      "type": "page",
+      "description": "Bolão mensal da Dupla Sena com ciclo de 12 concursos, sorteios às segundas, quartas e sextas e combinação de jogos calibrados para ampliar a cobertura."
+    },
+    {
+      "title": "Bolão Lotofácil Mensal · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/mensais/lf-mensal",
+      "path": "/projetos/mensais/lf-mensal",
+      "type": "page",
+      "description": "Bolão mensal da Lotofácil com matriz calibrada por ciclo, retreinamento do modelo LSTM e regras de fixas/móveis para ampliar a cobertura de combinações."
+    },
+    {
+      "title": "Bolão Quina Mensal · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/projetos/mensais/quina-mensal",
+      "path": "/projetos/mensais/quina-mensal",
+      "type": "page",
+      "description": "Bolão mensal da Quina com matriz calibrada por ciclo, retreinamento do modelo LSTM e ajustes baseados em vizinhança para diversificar os jogos."
+    },
+    {
+      "title": "Sobre o organizador · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/sobre",
+      "path": "/sobre",
+      "type": "page",
+      "description": "Conheça o responsável pelos projetos e o histórico dos bolões."
+    },
+    {
+      "title": "Termos de participação · Super Bolão",
+      "url": "https://site.boloesdoborges.shop/termos",
+      "path": "/termos",
+      "type": "page",
+      "description": "Regras gerais para participação nos bolões e projetos."
+    }
+  ]
+}
