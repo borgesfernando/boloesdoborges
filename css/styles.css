@@ -909,6 +909,59 @@ footer h3 {
   margin-top: 0.75rem;
 }
 
+/* ==========================
+   Chamada de Estratégia (páginas de projeto)
+   ========================== */
+.estrategia-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+  padding: 1.5rem 1.6rem;
+  border-radius: 8px;
+  border-left: 6px solid rgb(var(--secondary));
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(255, 255, 255, 0.6));
+}
+.estrategia-cta.lotofacil {
+  border-left-color: rgb(var(--lotofacil));
+  background: linear-gradient(135deg, rgba(var(--lotofacil), 0.1), rgba(255, 255, 255, 0.6));
+}
+.estrategia-cta.quina {
+  border-left-color: rgb(var(--quina));
+  background: linear-gradient(135deg, rgba(var(--quina), 0.1), rgba(255, 255, 255, 0.6));
+}
+.estrategia-cta.dupla {
+  border-left-color: rgb(var(--dupla));
+  background: linear-gradient(135deg, rgba(var(--dupla), 0.1), rgba(255, 255, 255, 0.6));
+}
+.estrategia-cta.mega {
+  border-left-color: rgb(var(--mega));
+  background: linear-gradient(135deg, rgba(var(--mega), 0.1), rgba(255, 255, 255, 0.6));
+}
+.estrategia-cta.milionaria {
+  border-left-color: rgb(var(--milionaria));
+  background: linear-gradient(135deg, rgba(var(--milionaria), 0.1), rgba(255, 255, 255, 0.6));
+}
+.estrategia-cta-texto {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.estrategia-cta-texto h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+.estrategia-cta-texto p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+.estrategia-cta .btn {
+  flex: 0 0 auto;
+}
+
 .aviso-topo {
   background: #ffeb3b;
   color: #000;
