@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema Mosaico: como as apostas da Mega-Sena do Super Bolão são montadas como um mosaico de cobertura — unidades atômicas, pares de dezenas, sobreposição controlada e ganho marginal submodular.">
+  <title>Sistema Mosaico — Cobertura Combinatória da Mega-Sena | Super Bolão</title>
+  <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/estrategias/mega-mosaico.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '$$', right: '$$', display: true }
+          ]
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <nav class="site-nav"><div class="container nav-inner"><a href="../index.html">Início</a><a href="../linhas-de-projetos.html">Linhas de Projetos</a><a href="../estrategias.html">Estratégias</a><a href="../mensais.html">Mensais</a><a href="../especiais.html">Especiais</a><a href="../acumulados.html">Estratégicos</a><a href="../faq.html">FAQ</a><a href="../prest.html">Transparência</a></div></nav>
+  <header><div class="container"><h1>Sistema Mosaico — Cobertura Combinatória da Mega-Sena</h1><p>Como o Sistema Mosaico constrói a carteira do bolão: encaixar cada aposta como uma peça que cobre regiões ainda descobertas do mapa de combinações da Mega-Sena.</p></div></header>
+  <main><div class="container" style="padding:2rem 0;">
+    <div class="card"><p>Imagine um mapa com <strong>50.063.860 regiões</strong> — uma para cada combinação possível de 6 dezenas da Mega-Sena. Agora imagine que cada aposta do bolão é uma peça que cobre algumas dessas regiões. O <strong>Sistema Mosaico</strong> encara o problema exatamente assim: como encaixar as peças disponíveis <strong>sem sobrepô-las</strong>, cobrindo a maior área possível com o orçamento que temos — como um quebra-cabeça em que cada peça precisa ocupar uma região ainda vazia.</p><p>Em vez de avaliar cada jogo isoladamente, o Mosaico constrói essa <strong>matriz de cobertura</strong> peça por peça, conferindo constantemente duas coisas: quanto do mapa ainda está descoberto e quanto cada nova peça ajuda a preenchê-lo.</p></div>
+
+    <div class="card"><h2>A mesma moeda: unidades atômicas</h2><p>Imagine que você queira comparar um jogo de 6 dezenas com um jogo de 9 dezenas. Eles parecem coisas diferentes — mas, matematicamente, ambos podem ser convertidos em combinações simples de 6 dezenas, as <strong>unidades atômicas</strong> do mosaico.</p><p>Uma aposta com \(k\) dezenas cobre exatamente:</p><div class="formula-box"><span class="formula-label">Combinações atômicas de uma aposta com k dezenas</span>\[C(k, 6) = \frac{k!}{6! \cdot (k-6)!} = \frac{k(k-1)(k-2)(k-3)(k-4)(k-5)}{720}\]</div><p>combinações atômicas. Um jogo de 6 cobre 1 célula; um de 7 cobre 7; um de 8, 28; um de 9, 84; um de 10, 210. Assim, tudo vira a mesma moeda — e passa a ser possível enxergar algo que passa despercebido a olho nu: <strong>duas apostas diferentes podem cobrir exatamente as mesmas células</strong>, ou seja, duas peças ocupando o mesmo lugar do mapa.</p><p>O Mosaico identifica essas redundâncias e trabalha para que cada parcela do dinheiro preencha células <strong>ainda vazias</strong>, evitando duplicações.</p></div>
+
+    <div class="card"><h2>Distribuição equilibrada das dezenas</h2><p>O sistema acompanha, a cada passo, quais dezenas já foram muito usadas e quais ainda estão esquecidas. As dezenas pouco utilizadas passam a ter preferência na geração dos próximos jogos.</p><p>Isso faz a carteira se espalhar por toda a faixa numérica — dezenas baixas, médias e altas — em vez de concentrar tudo em um punhado de números "favoritos". É um controle de diversidade — <strong>não</strong> uma afirmação de que certos números têm mais chance de sair.</p></div>
+
+    <div class="card"><h2>Controle dos pares de dezenas</h2><p>Cada jogo de 6 dezenas carrega 15 pares internos:</p><div class="formula-box"><span class="formula-label">Pares internos de um jogo de 6 dezenas</span>\[C(6, 2) = \frac{6!}{2! \cdot 4!} = 15\]</div><p>Em todo o universo da Mega-Sena existem <strong>1.770 pares possíveis</strong>:</p><div class="formula-box"><span class="formula-label">Pares possíveis entre as 60 dezenas</span>\[C(60, 2) = \frac{60 \cdot 59}{2} = 1.770\]</div><p>O Mosaico acompanha quais desses 1.770 pares já aparecem na carteira e dá preferência a jogos que explorem <strong>pares ainda não utilizados</strong>. Isso garante que a cobertura se expanda em novas direções combinatórias, em vez de circular sempre pelas mesmas regiões do mapa.</p></div>
+
+    <div class="card"><h2>Limite de sobreposição entre as peças</h2><p>Dois jogos podem parecer muito diferentes e, ainda assim, se sobrepor demais em termos de combinações cobertas. O sistema <strong>mede essa sobreposição</strong> de forma objetiva — pela interseção entre os conjuntos de células cobertas:</p><div class="formula-box"><span class="formula-label">Sobreposição entre duas peças</span>\[\text{sobreposição}(A, B) = |A \cap B|\]</div><p>e impõe limites: nenhuma peça pode se encaixar por cima de outra, repetindo demais as células que ela já cobre. O resultado é um mosaico em que cada jogo ocupa uma região relativamente própria, sem peças empilhadas desperdiçando o orçamento.</p></div>
+
+    <div class="card"><h2>Encaixe pela contribuição de cada peça</h2><p>A montagem do mosaico acontece peça por peça, mas com visão do conjunto. A cada etapa, o sistema mede o <strong>ganho marginal</strong> de cada candidata — quantas células novas ela traria:</p><div class="formula-box"><span class="formula-label">Ganho marginal de uma peça</span>\[\Delta(x \mid S) = f(S \cup \{x\}) - f(S)\]</div><p>onde \(f\) mede a cobertura total da carteira. A função tem a propriedade da <strong>submodularidade</strong>: quanto mais completo o mosaico, menor é a contribuição de cada peça nova — matematicamente:</p><div class="formula-box"><span class="formula-label">Propriedade submodular</span>\[f(S \cup \{x\}) + f(S \cup \{y\}) \geq f(S) + f(S \cup \{x, y\})\]</div><p>Por isso, no começo, a seleção é mais aberta e variada (muita área vazia); conforme a cobertura se completa, a seleção prioriza as peças que preenchem os <strong>vãos ainda descobertos</strong>. Se a montagem ficar difícil demais, o sistema <strong>gera mais peças candidatas</strong> — em vez de desistir ou encaixar peças ruins.</p></div>
+
+    <div class="card"><h2>Melhoria após a primeira montagem</h2><p>O primeiro mosaico montado não é o definitivo. Depois dele, o Mosaico faz uma <strong>rodada de ajustes finos</strong>: testa trocar uma peça por outra candidata e só aceita a troca se <strong>o mosaico inteiro</strong> cobrir melhor a área total — nunca para melhorar uma peça isolada em prejuízo do conjunto.</p></div>
+
+    <div class="card"><h2>Controle estrutural das peças</h2><p>Além de distribuir bem a cobertura, a estratégia cuida do "formato" das apostas:</p><ul><li>evita peças com dezenas em sequência longa;</li><li>evita excesso de dezenas com o mesmo final;</li><li>busca equilíbrio entre números pares e ímpares;</li><li>espalha as dezenas pelas várias faixas do volante.</li></ul></div>
+
+    <div class="card"><h2>O papel do histórico</h2><p>O sistema usa o histórico de concursos anteriores <strong>apenas como referência estatística de estilo</strong>. Ele observa quais tipos de estrutura costumam aparecer para:</p><ul><li>evitar peças estruturalmente "extremas" ou fora do comum;</li><li>espalhar a carteira entre perfis variados;</li><li>medir a sobreposição com resultados já sorteados.</li></ul><p>Importante deixar claro: o histórico <strong>não</strong> é usado para afirmar que uma dezena está "atrasada", "quente" ou tem mais chance de sair. Ele é uma régua de diversidade, não uma bola de cristal.</p></div>
+
+    <div class="card"><h2>O que o Sistema Mosaico realmente faz</h2><p>Este sistema <strong>não prevê resultados e não muda a probabilidade da loteria</strong>. Toda combinação válida continua tendo exatamente a mesma chance de ser sorteada.</p><p>O que ele faz é <strong>montar e completar o mosaico de cobertura</strong> com eficiência:</p><ul><li>preencher células ainda descobertas do mapa de combinações;</li><li>evitar peças empilhadas, sobreposições e redundâncias;</li><li>espalhar as dezenas e os pares por toda a faixa numérica;</li><li>manter peças com formatos variados e equilibrados.</li></ul><p>O critério de qualidade não é o "sabor" de cada jogo, e sim o <strong>estado final do mosaico</strong>: quanta área distinta foi coberta, quantas células ficaram ocupadas mais de uma vez e quão bem distribuídas estão as peças. É a completude e a organização do conjunto — não o valor de nenhuma peça isolada — que define se a carteira está bem montada.</p></div>
+
+    <div class="card"><h2>Em resumo</h2><p>O Sistema Mosaico não pergunta apenas <em>"este jogo é bom?"</em>. Ele pergunta:</p><blockquote><strong>"Esta peça ocupa uma região ainda descoberta do mosaico?"</strong></blockquote><p>Cada aposta precisa provar que preenche um vão novo — e é o estado final do mosaico, não o valor isolado de cada jogo, que define a qualidade da carteira.</p><p><strong>Estatística não significa previsão.</strong> Nenhuma análise altera as probabilidades matemáticas da loteria. Esta metodologia melhora a construção da carteira, não prevê o sorteio.</p></div>
+
+    <div class="card" style="text-align:center"><a href="../estrategias.html" class="btn sb2026">← Ver todas as estratégias</a></div>
+  </div></main>
+  <footer><div class="container" style="text-align:center;padding:2rem 0;"><p>© 2026 Super Bolão™ — Todos os direitos reservados</p><p style="margin-top:.8rem;font-size:.95rem;">Projeto independente, sem vínculo com a Caixa Econômica Federal. Sem promessa de ganho. Apenas para maiores de 18 anos.</p></div></footer>
+</body></html>

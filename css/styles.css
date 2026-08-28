@@ -962,6 +962,42 @@ footer h3 {
   flex: 0 0 auto;
 }
 
+/* ==========================
+   Fórmulas (KaTeX)
+   ========================== */
+.formula-box {
+  background: linear-gradient(135deg, rgba(var(--mega), 0.08), rgba(255, 255, 255, 0.65));
+  border: 1px solid rgba(var(--mega), 0.35);
+  border-left: 6px solid rgb(var(--mega));
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0 1.25rem;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.formula-box .formula-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1a7a4f;
+}
+
+.formula-box .katex-display {
+  margin: 0;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+
+.formula-inline {
+  font-size: 1.02em;
+}
+
 .aviso-topo {
   background: #ffeb3b;
   color: #000;
