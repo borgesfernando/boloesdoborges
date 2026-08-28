@@ -19,6 +19,7 @@ const rotaMap = {
   ROTA_ESTRATEGIA_MILIONARIA: 'estrategias/milionaria.html',
   ROTA_ESTRATEGIA_LOTOFACIL: 'estrategias/lotofacil.html',
   ROTA_ESTRATEGIA_QUINA_MENSAL: 'estrategias/quina-mensal.html',
+  ROTA_ESTRATEGIA_DS_MENSAL: 'estrategias/dupla-sena-mensal.html',
 };
 
 function escapeHtml(value) {
