@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T22:29:37.316Z",
-  "page_count": 60,
+  "generated_at": "2026-08-28T22:30:38.194Z",
+  "page_count": 63,
   "sites": [
     {
       "id": "public",
@@ -279,6 +279,27 @@
           "path": "/estrategias/lotofacil",
           "type": "page",
           "description": "Como as carteiras de apostas da Lotofácil são construídas com diversidade, controles de sobreposição e otimização de carteira."
+        },
+        {
+          "title": "Sistema Mosaico — Cobertura Combinatória da Mega-Sena · Super Bolão",
+          "url": "https://site.boloesdoborges.shop/estrategias/mega-mosaico",
+          "path": "/estrategias/mega-mosaico",
+          "type": "page",
+          "description": "Como as apostas da Mega-Sena do Super Bolão são montadas como um mosaico de cobertura: unidades atômicas, 1.770 pares de dezenas, sobreposição controlada e ganho marginal submodular."
+        },
+        {
+          "title": "Sistema Sigma — Portfólio Estatístico da Mega-Sena · Super Bolão",
+          "url": "https://site.boloesdoborges.shop/estrategias/mega-sigma",
+          "path": "/estrategias/mega-sigma",
+          "type": "page",
+          "description": "Como a Mega-Sena do Super Bolão é tratada como um portfólio estatístico: coocorrência com decaimento temporal, FFT, segmentação Pareto, funil de seleção e otimização global de carteira."
+        },
+        {
+          "title": "Sistema Synapse — Inteligência Artificial da Mega-Sena · Super Bolão",
+          "url": "https://site.boloesdoborges.shop/estrategias/mega-synapse",
+          "path": "/estrategias/mega-synapse",
+          "type": "page",
+          "description": "Como a inteligência artificial da Mega-Sena do Super Bolão aprende com o histórico: rede LSTM com atenção temporal, focal loss, poda lottery ticket e geração por ranking de dezenas."
         },
         {
           "title": "Matriz+ — Gerador Estratégico da +Milionária · Super Bolão",
