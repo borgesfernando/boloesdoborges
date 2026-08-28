@@ -108,6 +108,7 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - O site comercial contribui com `.generated/site-commercial.json`: ele é produzido a partir do `dist/` do Astro, após o build/deploy, e contém exclusivamente metadados allowlisted de páginas indexáveis. O repositório público consolida esse manifesto; não acessa o código privado.
 - Para adicionar uma página, publique um HTML com `<title>` (e descrição opcional) no site público, ou uma rota Astro com canonical absoluto no site comercial. Para excluir uma rota pública, marque-a com `noindex`; rotas administrativas e internas são rejeitadas pela validação.
 - O secret `NOVO_SITE_SYNC_TOKEN` também deve existir no repositório privado, com permissão mínima `Contents: Read and write` nos dois repositórios, para atualizar o manifesto comercial.
+- Verifique a publicação com `curl -I https://borgesfernando.github.io/boloesdoborges/site-index.json`; a resposta deve ser `200` com `Content-Type: application/json`.
 
 ## ❓ FAQ (HTML estático)
 
