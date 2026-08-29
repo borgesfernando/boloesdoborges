@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T12:09:57.429Z",
+  "generated_at": "2026-08-29T12:26:52.669Z",
   "page_count": 41,
   "sites": [
     {
@@ -9,18 +9,18 @@
       "base_url": "https://borgesfernando.github.io/boloesdoborges",
       "pages": [
         {
-          "title": "Super Bolão 2026 | Bolões independentes com transparência",
-          "url": "https://borgesfernando.github.io/boloesdoborges/",
-          "path": "/boloesdoborges/",
-          "type": "page",
-          "description": "Super Bolão – comunidade independente de bolões com transparência, tecnologia e 15 anos de história. Sem vínculo com a Caixa."
-        },
-        {
           "title": "Perguntas Frequentes | Super Bolão",
           "url": "https://borgesfernando.github.io/boloesdoborges/faq.html",
           "path": "/boloesdoborges/faq.html",
           "type": "page",
           "description": "Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras."
+        },
+        {
+          "title": "Super Bolão 2026 | Bolões independentes com transparência",
+          "url": "https://borgesfernando.github.io/boloesdoborges/index.html",
+          "path": "/boloesdoborges/index.html",
+          "type": "page",
+          "description": "Super Bolão – comunidade independente de bolões com transparência, tecnologia e 15 anos de história. Sem vínculo com a Caixa."
         },
         {
           "title": "Contato | Super Bolão",

@@ -37,7 +37,7 @@ function publicPageFromFile(root, file) {
   const title = findValue(html, /<title>([^<]+)<\/title>/i);
   if (!title) throw new Error(`Página sem title: ${file}`);
   const description = findValue(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["'][^>]*>/i);
-  const relativePath = file === 'index.html' ? '/' : `/${file}`;
+  const relativePath = `/${file}`;
   const page = { title: decodeHtml(title), url: `${PUBLIC_BASE_URL}${relativePath}`, path: `${PUBLIC_BASE_PATH}${relativePath}`, type: 'page' };
   if (description) page.description = decodeHtml(description);
   return page;

@@ -41,7 +41,7 @@ const items = faq
   .map((item) => {
     const question = escapeHtml(item.question || '');
     const answer = resolveLinks(item.answerHtml || '');
-    return `<details class="faq-item"><summary>${question}</summary><div class="faq-answer">${answer}</div></details>`;
+    return `<details class="faq-item"><summary><h2 class="faq-question">${question}</h2></summary><div class="faq-answer">${answer}</div></details>`;
   })
   .join('\n');
 
@@ -115,7 +115,8 @@ const html = `<!DOCTYPE html>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
     .faq-item { border: 1px solid #e2e2e2; border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 0.8rem; background: #fff; }
-    .faq-item summary { cursor: pointer; font-weight: 700; color: #005da4; }
+    .faq-item summary { cursor: pointer; color: #005da4; }
+    .faq-item summary .faq-question { display: inline; margin: 0; font-size: inherit; line-height: inherit; }
     .faq-answer { margin-top: 0.8rem; line-height: 1.6; }
     .faq-answer ul { margin-left: 1.1rem; }
     .faq-answer table.tabela-faq { border-collapse: collapse; width: 100%; margin: 0.6rem 0 0.9rem; font-size: 0.95rem; }
