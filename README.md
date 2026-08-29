@@ -105,13 +105,14 @@ Regras de ouro:
 
 ## 🧭 Estrutura de URLs (SEO)
 
-- Páginas principais: `index.html`, `mensais.html`, `especiais.html`, `acumulados.html`, `faq.html`, `prest.html`, `ia.html`.
+- Páginas principais: `index.html`, `linhas-de-projetos.html`, `faq.html`, `prest.html`, `sitemap.html`.
 - Páginas institucionais: `institucional/sobre.html`, `institucional/termos.html`, `institucional/privacidade.html`, `institucional/contato.html`.
-- Páginas de bolões (URLs limpas):
-  - Especiais: `boloes/especiais/*.html`
-  - Mensais: `boloes/mensais/*.html`
-  - Acumulados: `boloes/acumulados/*.html`
+- Páginas de bolões (URLs limpas) e estratégias/IA têm `noindex,follow` — o conteúdo comercial pertence ao site `site.boloesdoborges.shop`.
 - Templates antigos permanecem como fallback e estão marcados com `noindex`.
+
+## 🔍 Search Console
+
+- O site público **não possui verificação** no Google Search Console. Adicionar a propriedade `https://borgesfernando.github.io/boloesdoborges` (prefixo de URL) e validar que, após a arquitetura de domínios, apenas as páginas institucionais permanecem indexadas.
 
 ## 🤖 Índice público de páginas
 
