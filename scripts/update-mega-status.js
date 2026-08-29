@@ -9,9 +9,15 @@ const path = require('path');
 
 const MEGA_API_URL = 'https://servicebus3.caixa.gov.br/portaldeloterias/api/megasena';
 const MAIS_MILIONARIA_API_URL = 'https://servicebus3.caixa.gov.br/portaldeloterias/api/maismilionaria';
+const LOTOFACIL_API_URL = 'https://servicebus3.caixa.gov.br/portaldeloterias/api/lotofacil';
+const QUINA_API_URL = 'https://servicebus3.caixa.gov.br/portaldeloterias/api/quina';
+const DUPLA_SENA_API_URL = 'https://servicebus3.caixa.gov.br/portaldeloterias/api/duplasena';
 const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'mega-status.json');
 const RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'megasena-api.json');
 const MAIS_MILIONARIA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'maismilionaria-api.json');
+const LOTOFACIL_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'lotofacil-api.json');
+const QUINA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'quina-api.json');
+const DUPLA_SENA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'duplasena-api.json');
 const PROJETOS_PATH = path.join(__dirname, '..', 'data', 'projetos.json');
 const MEGA_PROJECT_ID = 'mega-acumulada';
 const BRAZIL_UTC_OFFSET_MINUTES = -180; // America/Sao_Paulo (UTC-3)
@@ -129,9 +135,12 @@ function hasMegaStatusChanged(existing, next) {
 async function main() {
   try {
     const { minimoMilhoes } = loadMegaProjectConfig();
-    const [megaData, maisMilionariaData] = await Promise.all([
+    const [megaData, maisMilionariaData, lotofacilData, quinaData, duplaSenaData] = await Promise.all([
       fetchLotteryDataWithRetry(MEGA_API_URL, 'Mega-Sena'),
       fetchLotteryDataWithRetry(MAIS_MILIONARIA_API_URL, '+Milionária'),
+      fetchLotteryDataWithRetry(LOTOFACIL_API_URL, 'Lotofácil'),
+      fetchLotteryDataWithRetry(QUINA_API_URL, 'Quina'),
+      fetchLotteryDataWithRetry(DUPLA_SENA_API_URL, 'Dupla Sena'),
     ]);
     const valorEstimadoProximoConcurso = Number(megaData?.valorEstimadoProximoConcurso ?? 0);
     const numero = megaData?.numero ?? megaData?.numeroConcurso ?? null;
@@ -160,10 +169,20 @@ async function main() {
       MAIS_MILIONARIA_RAW_OUTPUT_PATH,
       maisMilionariaData
     );
+    const lotofacilSnapshotUpdated = writeJsonIfChanged(LOTOFACIL_RAW_OUTPUT_PATH, lotofacilData);
+    const quinaSnapshotUpdated = writeJsonIfChanged(QUINA_RAW_OUTPUT_PATH, quinaData);
+    const duplaSenaSnapshotUpdated = writeJsonIfChanged(DUPLA_SENA_RAW_OUTPUT_PATH, duplaSenaData);
     const statusUpdated = hasMegaStatusChanged(readJsonIfExists(OUTPUT_PATH), payload);
     if (statusUpdated) writeJsonIfChanged(OUTPUT_PATH, payload);
 
-    if (megaSnapshotUpdated || maisMilionariaSnapshotUpdated || statusUpdated) {
+    if (
+      megaSnapshotUpdated ||
+      maisMilionariaSnapshotUpdated ||
+      lotofacilSnapshotUpdated ||
+      quinaSnapshotUpdated ||
+      duplaSenaSnapshotUpdated ||
+      statusUpdated
+    ) {
       console.log('Arquivos de loterias atualizados');
     } else {
       console.log('Nenhuma alteração nas respostas das loterias');

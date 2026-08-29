@@ -39,10 +39,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain data/mega-status.json data/megasena-api.json data/maismilionaria-api.json)" ]; then
+          if [ -n "$(git status --porcelain data/mega-status.json data/megasena-api.json data/maismilionaria-api.json data/lotofacil-api.json data/quina-api.json data/duplasena-api.json)" ]; then
             echo "✅ Alterações detectadas nos arquivos de loterias"
 
-            git add data/mega-status.json data/megasena-api.json data/maismilionaria-api.json
+            git add data/mega-status.json data/megasena-api.json data/maismilionaria-api.json data/lotofacil-api.json data/quina-api.json data/duplasena-api.json
             git commit -m "chore: atualizar status e snapshots das loterias [skip ci]"
 
             echo "📤 Enviando alterações para o repositório..."
