@@ -52,13 +52,19 @@ function toPlainText(html) {
 }
 
 function normalize(html) {
-  return html
+  const urls = [];
+  const masked = html.replace(/https?:\/\/\S+/gi, (u) => {
+    urls.push(u);
+    return `\u0000URL${urls.length - 1}\u0000`;
+  });
+  return masked
     .replace(/\s+/g, ' ')
     .replace(/\s*([,.!?;:])\s*/g, '$1 ')
     .replace(/(\d),\s+(\d{2})/g, '$1,$2')
     .replace(/\s*<\/(p|li)>\s*/gi, '</$1>')
     .replace(/>\s*</g, '><')
-    .trim();
+    .trim()
+    .replace(/\u0000URL(\d+)\u0000/g, (_, i) => urls[Number(i)]);
 }
 
 function limitText(text, max) {

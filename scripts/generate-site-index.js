@@ -7,6 +7,7 @@ const PUBLIC_ORIGIN = 'https://borgesfernando.github.io';
 const PUBLIC_BASE_PATH = '/boloesdoborges';
 const PUBLIC_BASE_URL = `${PUBLIC_ORIGIN}${PUBLIC_BASE_PATH}`;
 const COMMERCIAL_ORIGIN = 'https://site.boloesdoborges.shop';
+const FORMS_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform';
 const PAGE_KEYS = new Set(['title', 'url', 'path', 'type', 'description']);
 
 function trackedHtmlFiles(root) {
@@ -25,8 +26,13 @@ function decodeHtml(value) {
 
 function assertPage(page, expectedOrigin, requiredPathPrefix = '') {
   if (!page || typeof page !== 'object' || Object.keys(page).some((key) => !PAGE_KEYS.has(key))) throw new Error('Campos de página inválidos');
-  if (!page.title || !page.url || !page.path || page.type !== 'page' || Object.values(page).some((value) => value == null)) throw new Error('Página incompleta');
+  if (!page.title || !page.url || !page.path || Object.values(page).some((value) => value == null)) throw new Error('Página incompleta');
   const url = new URL(page.url);
+  if (page.type === 'external') {
+    if (url.href !== FORMS_URL) throw new Error(`URL externa fora do permitido: ${page.url}`);
+    return;
+  }
+  if (page.type !== 'page') throw new Error('Tipo de página inválido');
   if (url.origin !== expectedOrigin || url.pathname !== page.path || !url.pathname.startsWith(requiredPathPrefix)) throw new Error(`URL fora do domínio permitido: ${page.url}`);
   if (/^\/(?:boloesdoborges\/)?(?:admin|internal)(?:\/|$)/i.test(url.pathname)) throw new Error(`Rota privada encontrada: ${page.path}`);
 }
@@ -86,6 +92,14 @@ function sameStructure(left, right) {
 
 function generate(root) {
   const sites = [publicSite(root), commercialSite(root)];
+  const formsPage = {
+    title: 'Formulário de Inscrição — Entrar na Comunidade',
+    url: FORMS_URL,
+    path: '/forms/inscricao',
+    type: 'external',
+    description: 'Formulário de inscrição da Comunidade Bolões do Borges para aderir e receber o Termo de participação.',
+  };
+  sites[1].pages = [...sites[1].pages, formsPage].sort((a, b) => a.url.localeCompare(b.url));
   const index = { version: 1, generated_at: new Date().toISOString(), page_count: sites.reduce((sum, site) => sum + site.pages.length, 0), sites };
   return validateIndex(index);
 }
