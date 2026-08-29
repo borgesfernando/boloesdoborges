@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-28T23:06:24.195Z",
+  "generated_at": "2026-08-29T09:47:32.939Z",
   "page_count": 63,
   "sites": [
     {
@@ -166,7 +166,7 @@
           "url": "https://borgesfernando.github.io/boloesdoborges/ia.html",
           "path": "/boloesdoborges/ia.html",
           "type": "page",
-          "description": "Metodologia de IA nos projetos do Super Bolão, com transparência e sem promessa de ganho."
+          "description": "Metodologia de IA nos projetos do Super Bolão: como comparamos e combinamos estatística pura e redes LSTM, com transparência e sem promessa de ganho."
         },
         {
           "title": "Contato | Super Bolão",
