@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname, '..');
 const SITE_URL = 'https://borgesfernando.github.io/boloesdoborges';
 const ORG_URL = 'https://site.boloesdoborges.shop';
 const ORG_DESCRIPTION =
-  'Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, 15 anos de histórico e uso responsável de dados e tecnologia.';
+  'Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, histórico desde 2009 e uso responsável de dados e tecnologia.';
 const INSTITUTIONAL_NAME = 'Comunidade Bolões do Borges';
 const ORG_NAME = 'Bolões do Borges';
 const OWNER = 'Fernando Borges';
