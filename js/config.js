@@ -5,6 +5,7 @@ const PROJETOS = {
         {
         id: 'lf-independencia',
         nome: 'Lotofácil da Independência',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/lotofacil',
         cota: 240,
         valorMes: 30,
         parcelas: 8,
@@ -20,6 +21,7 @@ const PROJETOS = {
       {
         id: 'quina-saojoao',
         nome: 'Quina de São João',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/quina',
         cota: 180,
         valorMes: 30,
         parcelas: 6,
@@ -35,6 +37,7 @@ const PROJETOS = {
       {
         id: 'ds-pascoa',
         nome: 'Dupla Sena de Páscoa',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/duplasena',
         cota: 120,
         valorMes: 30,
         parcelas: 4,
@@ -50,6 +53,7 @@ const PROJETOS = {
       {
         id: 'mega-virada',
         nome: 'Super Bolão para a Mega da Virada (SB)',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/megasena',
         cota: 600,
         valorMes: 50,
         parcelas: 12,
@@ -70,6 +74,7 @@ const PROJETOS = {
       {
         id: 'quina-mensal',
         nome: 'Quina Mensal',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/quina',
         cotaMensal: 72,
         ciclo: '24 concursos consecutivos',
         sorteios: 'segunda a sexta às 21h e domingo às 11h',
@@ -80,6 +85,7 @@ const PROJETOS = {
       {
         id: 'lf-mensal',
         nome: 'Lotofácil Mensal',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/lotofacil',
         cotaMensal: 100,
         ciclo: '24 concursos consecutivos',
         sorteios: 'segunda a sexta às 21h e domingo às 11h',
@@ -90,6 +96,7 @@ const PROJETOS = {
       {
         id: 'dupla-sena-mensal',
         nome: 'Dupla Sena Mensal',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/duplasena',
         cotaMensal: 60,
         ciclo: '12 concursos consecutivos',
         sorteios: 'segunda, quarta e sexta',
@@ -105,6 +112,7 @@ const PROJETOS = {
       {
         id: 'mega-acumulada',
         nome: 'Mega Sena Acumulada +50Mi',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/megasena',
         valor: 20,
         minimo: 50,
         corPrimaria: '32, 152, 105',
@@ -114,6 +122,7 @@ const PROJETOS = {
       {
         id: 'milionaria',
         nome: '+Milionária Acumulada +80Mi',
+        apiCaixa: 'https://servicebus3.caixa.gov.br/portaldeloterias/api/maismilionaria',
         valor: 20,
         minimo: 80,
         corPrimaria: '46, 48, 120',
