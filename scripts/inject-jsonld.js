@@ -12,10 +12,10 @@ const SITE_URL = 'https://borgesfernando.github.io/boloesdoborges';
 const ORG_URL = 'https://site.boloesdoborges.shop';
 const ORG_DESCRIPTION =
   'Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, 15 anos de histórico e uso responsável de dados e tecnologia.';
-const ORG_NAME = 'Super Bolão';
+const ORG_NAME = 'Bolões do Borges';
 const OWNER = 'Fernando Borges';
 const EMAIL = 'correiodofernando@gmail.com';
-const LOGO_URL = `${ORG_URL}/favicon.svg`;
+const LOGO_URL = `${ORG_URL}/images/brand/boloes-do-borges-logo.png`;
 const OG_IMAGE = `${ORG_URL}/images/hero-operations-og.jpg`;
 
 const LINE_CRUMB = {

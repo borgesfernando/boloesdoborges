@@ -1,11 +1,11 @@
 # 📌 Projeto Bolões do Borges
 
 **🤝 Sua comunidade confiável de bolões!**
-Projetos coordenados com transparência, tecnologia e 15 anos de experiência para multiplicar suas chances nos principais concursos da Caixa.
+Projetos coordenados com transparência, tecnologia e experiência desde 2009 para multiplicar suas chances nos principais concursos da Caixa.
 
 ## 💊 O que oferecemos
 
-- ✨ 15 anos de organização contínua e comunidade engajada
+- ✨ Organização contínua desde 2009 e comunidade engajada
 - 🧠 Modelos estatísticos e IA para construir jogos diversificados
 - 🔒 Governança, prestação de contas e controle de acesso aos documentos
 - 📅 Calendário atualizado com projetos mensais, especiais e estratégicos
@@ -91,7 +91,7 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 
 ## 🌐 Estratégia entre domínios (SEO)
 
-Os dois domínios fazem parte de um único ecossistema (Super Bolão), com papéis complementares:
+Os dois domínios fazem parte de um único ecossistema (Bolões do Borges), com papéis complementares:
 
 - **`borgesfernando.github.io/boloesdoborges`** — presença pública e arquivo institucional (este repositório).
 - **`site.boloesdoborges.shop`** — site comercial/participação: cadastro, cotas, PIX e conversão (repositório `borgesfernando/novo-site`).

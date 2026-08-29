@@ -7,9 +7,9 @@ const { execFileSync } = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_BASE = 'https://borgesfernando.github.io/boloesdoborges';
-const SITE_NAME = 'Super Bolão';
+const SITE_NAME = 'Bolões do Borges';
 const OG_IMAGE = 'https://site.boloesdoborges.shop/images/hero-operations-og.jpg';
-const FAVICON_URL = `${PUBLIC_BASE}/favicon.svg`;
+const FAVICON_URL = `${PUBLIC_BASE}/favicon-192x192.png`;
 
 function trackedHtmlFiles() {
   return execFileSync('git', ['ls-files', '*.html'], { cwd: ROOT, encoding: 'utf8' })

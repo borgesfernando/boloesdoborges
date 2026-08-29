@@ -35,7 +35,7 @@ function publicPageFromFile(root, file) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   if (/\bnoindex\b/i.test(html)) return null;
   const title = findValue(html, /<title>([^<]+)<\/title>/i);
-  if (!title) throw new Error(`Página sem title: ${file}`);
+  if (!title) return null;
   const description = findValue(html, /<meta\s+name=["']description["']\s+content=["']([^"']+)["'][^>]*>/i);
   const relativePath = `/${file}`;
   const page = { title: decodeHtml(title), url: `${PUBLIC_BASE_URL}${relativePath}`, path: `${PUBLIC_BASE_PATH}${relativePath}`, type: 'page' };

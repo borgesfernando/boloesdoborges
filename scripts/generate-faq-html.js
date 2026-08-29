@@ -53,7 +53,7 @@ const html = `<!DOCTYPE html>
   <meta name="description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
   <title>Perguntas Frequentes | Bolões do Borges</title>
   <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/faq.html">
-  <link rel="icon" href="https://borgesfernando.github.io/boloesdoborges/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="https://borgesfernando.github.io/boloesdoborges/favicon-192x192.png" type="image/png" sizes="192x192">
   <meta property="og:title" content="Perguntas Frequentes | Bolões do Borges">
   <meta property="og:description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
   <meta property="og:url" content="https://borgesfernando.github.io/boloesdoborges/faq.html">
