@@ -50,21 +50,21 @@ const html = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
-  <title>Perguntas Frequentes | Super Bolão</title>
+  <meta name="description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
+  <title>Perguntas Frequentes | Bolões do Borges</title>
   <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/faq.html">
   <link rel="icon" href="https://borgesfernando.github.io/boloesdoborges/favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Perguntas Frequentes | Super Bolão">
-  <meta property="og:description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
+  <meta property="og:title" content="Perguntas Frequentes | Bolões do Borges">
+  <meta property="og:description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
   <meta property="og:url" content="https://borgesfernando.github.io/boloesdoborges/faq.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Super Bolão">
+  <meta property="og:site_name" content="Bolões do Borges">
   <meta property="og:image" content="https://site.boloesdoborges.shop/images/hero-operations-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Perguntas Frequentes | Super Bolão">
-  <meta name="twitter:description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
+  <meta name="twitter:title" content="Perguntas Frequentes | Bolões do Borges">
+  <meta name="twitter:description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
   <meta name="twitter:image" content="https://site.boloesdoborges.shop/images/hero-operations-og.jpg">
   <script type="application/ld+json">
 {
@@ -73,12 +73,12 @@ const html = `<!DOCTYPE html>
     {
       "@type": "Organization",
       "@id": "https://site.boloesdoborges.shop#organization",
-      "name": "Super Bolão",
+      "name": "Bolões do Borges",
       "url": "https://site.boloesdoborges.shop",
       "email": "correiodofernando@gmail.com",
       "founder": { "@type": "Person", "@id": "https://site.boloesdoborges.shop#person", "name": "Fernando Borges" },
-      "description": "Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, 15 anos de histórico e uso responsável de dados e tecnologia.",
-      "logo": { "@type": "ImageObject", "url": "https://site.boloesdoborges.shop/favicon.svg" },
+      "description": "Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com estratégia coletiva, tecnologia aplicada, transparência e prestação de contas desde 2009.",
+      "logo": { "@type": "ImageObject", "url": "https://site.boloesdoborges.shop/images/brand/boloes-do-borges-logo.png" },
       "contactPoint": [ { "@type": "ContactPoint", "contactType": "customer support", "email": "correiodofernando@gmail.com" } ]
     },
     { "@type": "Person", "@id": "https://site.boloesdoborges.shop#person", "name": "Fernando Borges", "email": "correiodofernando@gmail.com" },
@@ -86,7 +86,7 @@ const html = `<!DOCTYPE html>
       "@type": "WebSite",
       "@id": "https://borgesfernando.github.io/boloesdoborges#website",
       "url": "https://borgesfernando.github.io/boloesdoborges",
-      "name": "Super Bolão",
+      "name": "Bolões do Borges",
       "inLanguage": "pt-BR",
       "publisher": { "@id": "https://site.boloesdoborges.shop#organization" }
     },
@@ -94,8 +94,8 @@ const html = `<!DOCTYPE html>
       "@type": "WebPage",
       "@id": "https://borgesfernando.github.io/boloesdoborges/faq.html#webpage",
       "url": "https://borgesfernando.github.io/boloesdoborges/faq.html",
-      "name": "Perguntas Frequentes | Super Bolão",
-      "description": "Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.",
+      "name": "Perguntas Frequentes | Bolões do Borges",
+      "description": "Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.",
       "inLanguage": "pt-BR",
       "isPartOf": { "@id": "https://borgesfernando.github.io/boloesdoborges#website" },
       "about": { "@id": "https://site.boloesdoborges.shop#organization" },
@@ -164,7 +164,7 @@ const html = `<!DOCTYPE html>
         <a href="institucional/contato.html">Contato</a>
         <a href="https://site.boloesdoborges.shop" rel="noopener noreferrer">Participação e cadastro</a>
       </div>
-      <p style="margin-top: 1.2rem;">© 2026 Super Bolão™ - Todos os direitos reservados</p>
+      <p style="margin-top: 1.2rem;">© 2026 Bolões do Borges - Todos os direitos reservados</p>
       <p style="margin-top: 0.8rem; font-size: 0.95rem;">
         Projeto independente, sem vínculo com a Caixa Econômica Federal. Sem promessa de ganho. Apenas para maiores de 18 anos.
       </p>

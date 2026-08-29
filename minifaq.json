@@ -1,7 +1,7 @@
 [
   {
     "question": "O que é SB?",
-    "answerHtml": "<p>Super Bolão (SB) é um projeto coletivo organizado iniciado em 2009, quando um pequeno grupo de militares se organizou para participar da Mega da Virada. Desde então, o SB evoluiu em escala e governança, tornando‑se referência em organização, transparência financeira e método.</p>"
+    "answerHtml": "<p>Bolões do Borges é o nome atual do projeto coletivo iniciado em 2009, quando um pequeno grupo de militares se organizou para participar da Mega da Virada. Desde então, o projeto evoluiu em escala e governança, tornando‑se referência em organização, transparência financeira e método.</p>"
   },
   {
     "question": "Quais são os tipos de projetos disponíveis?",
@@ -233,7 +233,7 @@
   },
   {
     "question": "Quais estratégias são usadas na geração de jogos?",
-    "answerHtml": "<p>🧠 Para montar as carteiras de apostas, o Super Bolão combina modelos estatísticos, regras de qualidade e geradores estratégicos próprios, que tratam o conjunto de apostas como uma única carteira — e não como jogos isolados. Esta seção reúne as estratégias de geração publicadas por modalidade.</p><ul><li>Mais cobertura, menos redundância: as apostas são convertidas em unidades atômicas…</li><li>Distribuição equilibrada: o gerador acompanha a utilização das 50 dezenas e dos 6 trevos, …</li><li>Controle de sobreposição: a cobertura é medida entre os jogos e sobre os 1. 225 pares…</li><li>Contribuição marginal: cada nova aposta é avaliada pelo valor que acrescenta ao conjunto…</li></ul>"
+    "answerHtml": "<p>🧠 Para montar as carteiras de apostas, os Bolões do Borges combinam modelos estatísticos, regras de qualidade e geradores estratégicos próprios, que tratam o conjunto de apostas como uma única carteira — e não como jogos isolados. Esta seção reúne as estratégias de geração publicadas por modalidade.</p><ul><li>Divisão do orçamento entre os tipos de bilhete: o valor arrecadado é distribuído entre os…</li><li>Mais cobertura, menos redundância: as apostas são convertidas em unidades atômicas…</li><li>Distribuição equilibrada: o gerador acompanha a utilização das 50 dezenas e dos 6 trevos, …</li><li>Controle de sobreposição: a cobertura é medida entre os jogos e sobre os 1. 225 pares…</li></ul>"
   },
   {
     "question": "Posso preencher minhas dezenas da sorte?",
@@ -333,7 +333,7 @@
   },
   {
     "question": "Exemplo: como funciona o rateio de um prêmio no SB?",
-    "answerHtml": "<p>Exemplo adaptado: imagine que o Super Bolão acerte um prêmio líquido de R$ 850. 000. 000,00 com 85 participantes.</p><ul><li>O Administrador recebe os R$ 850 milhões já com os impostos pagos na fonte.</li><li>Se forem 85 cotas (1 por participante), cada cota recebe R$ 10. 000. 000,00 (850. 000. 000 ÷ 85).</li><li>Se alguém tiver mais de 1 cota, recebe proporcionalmente (ex. : 2 cotas = R$ 20. 000. 000,00).</li><li>Nada disso gera novo imposto: é apenas a divisão do prêmio já tributado.</li></ul>"
+    "answerHtml": "<p>Exemplo adaptado: imagine que os Bolões do Borges acertem um prêmio líquido de R$ 850. 000. 000,00 com 85 participantes.</p><ul><li>O Administrador recebe os R$ 850 milhões já com os impostos pagos na fonte.</li><li>Se forem 85 cotas (1 por participante), cada cota recebe R$ 10. 000. 000,00 (850. 000. 000 ÷ 85).</li><li>Se alguém tiver mais de 1 cota, recebe proporcionalmente (ex. : 2 cotas = R$ 20. 000. 000,00).</li><li>Nada disso gera novo imposto: é apenas a divisão do prêmio já tributado.</li></ul>"
   },
   {
     "question": "Há impostos sobre os prêmios?",
