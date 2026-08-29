@@ -66,6 +66,52 @@ const html = `<!DOCTYPE html>
   <meta name="twitter:title" content="Perguntas Frequentes | Super Bolão">
   <meta name="twitter:description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
   <meta name="twitter:image" content="https://site.boloesdoborges.shop/images/hero-operations.svg.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://site.boloesdoborges.shop#organization",
+      "name": "Super Bolão",
+      "url": "https://site.boloesdoborges.shop",
+      "email": "correiodofernando@gmail.com",
+      "founder": { "@type": "Person", "@id": "https://site.boloesdoborges.shop#person", "name": "Fernando Borges" },
+      "description": "Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, 15 anos de histórico e uso responsável de dados e tecnologia.",
+      "logo": { "@type": "ImageObject", "url": "https://site.boloesdoborges.shop/favicon.svg" },
+      "contactPoint": [ { "@type": "ContactPoint", "contactType": "customer support", "email": "correiodofernando@gmail.com" } ]
+    },
+    { "@type": "Person", "@id": "https://site.boloesdoborges.shop#person", "name": "Fernando Borges", "email": "correiodofernando@gmail.com" },
+    {
+      "@type": "WebSite",
+      "@id": "https://borgesfernando.github.io/boloesdoborges#website",
+      "url": "https://borgesfernando.github.io/boloesdoborges",
+      "name": "Super Bolão",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://site.boloesdoborges.shop#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://borgesfernando.github.io/boloesdoborges/faq.html#webpage",
+      "url": "https://borgesfernando.github.io/boloesdoborges/faq.html",
+      "name": "Perguntas Frequentes | Super Bolão",
+      "description": "Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.",
+      "inLanguage": "pt-BR",
+      "isPartOf": { "@id": "https://borgesfernando.github.io/boloesdoborges#website" },
+      "about": { "@id": "https://site.boloesdoborges.shop#organization" },
+      "primaryImageOfPage": { "@id": "https://site.boloesdoborges.shop/images/hero-operations.svg.png#primaryimage" }
+    },
+    { "@type": "ImageObject", "@id": "https://site.boloesdoborges.shop/images/hero-operations.svg.png#primaryimage", "url": "https://site.boloesdoborges.shop/images/hero-operations.svg.png" },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://borgesfernando.github.io/boloesdoborges/" },
+        { "@type": "ListItem", "position": 2, "name": "Perguntas Frequentes", "item": "https://borgesfernando.github.io/boloesdoborges/faq.html" }
+      ]
+    }
+  ]
+}
+  </script>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
     .faq-item { border: 1px solid #e2e2e2; border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 0.8rem; background: #fff; }
