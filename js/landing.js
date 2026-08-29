@@ -431,6 +431,7 @@ function renderizarProjetosResumo() {
   // Especiais ordenados por data limite (ativos primeiro)
   const especiaisContainer = document.getElementById('cards-especiais-resumo');
   if (especiaisContainer && especiaisOrdenados.length) {
+    especiaisContainer.replaceChildren();
     especiaisOrdenados.forEach(p => {
       especiaisContainer.appendChild(criarCardProjeto(p, 'especiais', hoje));
     });
@@ -442,6 +443,7 @@ function renderizarProjetosResumo() {
   // Mensais
   const mensaisContainer = document.getElementById('cards-mensais-resumo');
   if (mensaisContainer && PROJETOS.mensais && Array.isArray(PROJETOS.mensais.projetos)) {
+    mensaisContainer.replaceChildren();
     PROJETOS.mensais.projetos.forEach(p => {
       mensaisContainer.appendChild(criarCardProjeto(p, 'mensais', hoje));
     });
@@ -450,6 +452,7 @@ function renderizarProjetosResumo() {
   // Estratégicos
   const acumuladosContainer = document.getElementById('cards-acumulados-resumo');
   if (acumuladosContainer && PROJETOS.estrategicos && Array.isArray(PROJETOS.estrategicos.projetos)) {
+    acumuladosContainer.replaceChildren();
     PROJETOS.estrategicos.projetos.forEach(p => {
       acumuladosContainer.appendChild(criarCardProjeto(p, 'acumulados', hoje));
     });
@@ -461,6 +464,7 @@ function renderizarLinhasPrincipais() {
 
   const container = document.getElementById('cards-linhas-principais');
   if (!container) return;
+  container.replaceChildren();
 
   const hoje = new Date();
   hoje.setHours(0, 0, 0, 0);
@@ -591,6 +595,7 @@ async function renderizarFaqTeaser() {
   } catch (e) {
     if (loadingEl) {
       loadingEl.textContent = 'Não foi possível carregar as principais dúvidas agora. Acesse a FAQ completa.';
+      loadingEl.style.display = 'block';
     }
   }
 }
