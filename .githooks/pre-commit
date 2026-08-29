@@ -6,7 +6,15 @@ if command -v node >/dev/null 2>&1; then
   echo "[pre-commit] Gerando data/projetos.json a partir de js/config.js..."
   node scripts/extract-projetos.js
   git add data/projetos.json
+
+  echo "[pre-commit] Gerando minifaq.json a partir de faq.json..."
+  node scripts/summarize-faq.js --in faq.json --out minifaq.json
+  git add minifaq.json
+
+  echo "[pre-commit] Gerando faq.html a partir de faq.json..."
+  node scripts/generate-faq-html.js
+  git add faq.html
 else
-  echo "[pre-commit] Node.js não encontrado. Pulei geração de data/projetos.json" >&2
+  echo "[pre-commit] Node.js não encontrado. Pulei geração de data/projetos.json, minifaq.json e faq.html" >&2
 fi
 
