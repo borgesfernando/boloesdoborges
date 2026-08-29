@@ -16,7 +16,7 @@ const ORG_NAME = 'Super Bolão';
 const OWNER = 'Fernando Borges';
 const EMAIL = 'correiodofernando@gmail.com';
 const LOGO_URL = `${ORG_URL}/favicon.svg`;
-const OG_IMAGE = `${ORG_URL}/images/hero-operations.svg.png`;
+const OG_IMAGE = `${ORG_URL}/images/hero-operations-og.jpg`;
 
 const LINE_CRUMB = {
   'estrategias/': { name: 'Estratégias', item: '/estrategias.html' },

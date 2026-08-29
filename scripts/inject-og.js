@@ -8,7 +8,7 @@ const { execFileSync } = require('node:child_process');
 const ROOT = path.resolve(__dirname, '..');
 const PUBLIC_BASE = 'https://borgesfernando.github.io/boloesdoborges';
 const SITE_NAME = 'Super Bolão';
-const OG_IMAGE = 'https://site.boloesdoborges.shop/images/hero-operations.svg.png';
+const OG_IMAGE = 'https://site.boloesdoborges.shop/images/hero-operations-og.jpg';
 const FAVICON_URL = `${PUBLIC_BASE}/favicon.svg`;
 
 function trackedHtmlFiles() {
@@ -53,8 +53,8 @@ function main() {
       `  <meta property="og:type" content="website">`,
       `  <meta property="og:site_name" content="${SITE_NAME}">`,
       `  <meta property="og:image" content="${OG_IMAGE}">`,
-      `  <meta property="og:image:width" content="1536">`,
-      `  <meta property="og:image:height" content="1024">`,
+      `  <meta property="og:image:width" content="1200">`,
+      `  <meta property="og:image:height" content="630">`,
       `  <meta name="twitter:card" content="summary_large_image">`,
       `  <meta name="twitter:title" content="${t}">`,
       `  <meta name="twitter:description" content="${d}">`,
