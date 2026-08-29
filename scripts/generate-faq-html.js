@@ -50,12 +50,12 @@ const html = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
+  <meta name="description" content="Perguntas frequentes sobre a Comunidade Bolões do Borges: participação, pagamentos, transparência e regras.">
   <title>Perguntas Frequentes | Bolões do Borges</title>
   <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/faq.html">
   <link rel="icon" href="https://borgesfernando.github.io/boloesdoborges/favicon-192x192.png" type="image/png" sizes="192x192">
   <meta property="og:title" content="Perguntas Frequentes | Bolões do Borges">
-  <meta property="og:description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
+  <meta property="og:description" content="Perguntas frequentes sobre a Comunidade Bolões do Borges: participação, pagamentos, transparência e regras.">
   <meta property="og:url" content="https://borgesfernando.github.io/boloesdoborges/faq.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bolões do Borges">
@@ -64,7 +64,7 @@ const html = `<!DOCTYPE html>
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Perguntas Frequentes | Bolões do Borges">
-  <meta name="twitter:description" content="Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.">
+  <meta name="twitter:description" content="Perguntas frequentes sobre a Comunidade Bolões do Borges: participação, pagamentos, transparência e regras.">
   <meta name="twitter:image" content="https://site.boloesdoborges.shop/images/hero-operations-og.jpg">
   <script type="application/ld+json">
 {
@@ -73,7 +73,8 @@ const html = `<!DOCTYPE html>
     {
       "@type": "Organization",
       "@id": "https://site.boloesdoborges.shop#organization",
-      "name": "Bolões do Borges",
+      "name": "Comunidade Bolões do Borges",
+      "alternateName": "Bolões do Borges",
       "url": "https://site.boloesdoborges.shop",
       "email": "correiodofernando@gmail.com",
       "founder": { "@type": "Person", "@id": "https://site.boloesdoborges.shop#person", "name": "Fernando Borges" },
@@ -95,7 +96,7 @@ const html = `<!DOCTYPE html>
       "@id": "https://borgesfernando.github.io/boloesdoborges/faq.html#webpage",
       "url": "https://borgesfernando.github.io/boloesdoborges/faq.html",
       "name": "Perguntas Frequentes | Bolões do Borges",
-      "description": "Perguntas frequentes sobre os Bolões do Borges: participação, pagamentos, transparência e regras.",
+      "description": "Perguntas frequentes sobre a Comunidade Bolões do Borges: participação, pagamentos, transparência e regras.",
       "inLanguage": "pt-BR",
       "isPartOf": { "@id": "https://borgesfernando.github.io/boloesdoborges#website" },
       "about": { "@id": "https://site.boloesdoborges.shop#organization" },
@@ -164,7 +165,7 @@ const html = `<!DOCTYPE html>
         <a href="institucional/contato.html">Contato</a>
         <a href="https://site.boloesdoborges.shop" rel="noopener noreferrer">Participação e cadastro</a>
       </div>
-      <p style="margin-top: 1.2rem;">© 2026 Bolões do Borges - Todos os direitos reservados</p>
+      <p style="margin-top: 1.2rem;">© 2026 Comunidade Bolões do Borges - Todos os direitos reservados</p>
       <p style="margin-top: 0.8rem; font-size: 0.95rem;">
         Projeto independente, sem vínculo com a Caixa Econômica Federal. Sem promessa de ganho. Apenas para maiores de 18 anos.
       </p>

@@ -12,6 +12,7 @@ const SITE_URL = 'https://borgesfernando.github.io/boloesdoborges';
 const ORG_URL = 'https://site.boloesdoborges.shop';
 const ORG_DESCRIPTION =
   'Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com transparência, 15 anos de histórico e uso responsável de dados e tecnologia.';
+const INSTITUTIONAL_NAME = 'Comunidade Bolões do Borges';
 const ORG_NAME = 'Bolões do Borges';
 const OWNER = 'Fernando Borges';
 const EMAIL = 'correiodofernando@gmail.com';
@@ -64,7 +65,8 @@ function buildGraph(file, title, description, canonical) {
     {
       '@type': 'Organization',
       '@id': `${ORG_URL}#organization`,
-      name: ORG_NAME,
+      name: INSTITUTIONAL_NAME,
+      alternateName: ORG_NAME,
       url: ORG_URL,
       email: EMAIL,
       founder: { '@type': 'Person', '@id': `${ORG_URL}#person`, name: OWNER },

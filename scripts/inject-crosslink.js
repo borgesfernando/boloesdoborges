@@ -37,7 +37,7 @@ function main() {
         return `${open}${trimmed}\n${CROSS_LINK}\n      ${close}`;
       });
     } else {
-      const footerRegex = /(<p>©\s*\d{4}\s+Bolões do Borges[\s\S]*?<\/p>)/;
+      const footerRegex = /(<p>©\s*\d{4}\s+(?:Comunidade )?Bolões do Borges[\s\S]*?<\/p>)/;
       if (!footerRegex.test(html)) {
         skipped += 1;
         continue;

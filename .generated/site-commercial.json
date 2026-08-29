@@ -57,21 +57,21 @@
       "url": "https://site.boloesdoborges.shop/estrategias/mega-mosaico",
       "path": "/estrategias/mega-mosaico",
       "type": "page",
-      "description": "Como as apostas da Mega-Sena dos Bolões do Borges são montadas como um mosaico de cobertura: unidades atômicas, 1.770 pares de dezenas, sobreposição controlada e ganho marginal submodular."
+      "description": "Como as apostas da Mega-Sena da Comunidade Bolões do Borges são montadas como um mosaico de cobertura: unidades atômicas, 1.770 pares de dezenas, sobreposição controlada e ganho marginal submodular."
     },
     {
       "title": "Sistema Sigma — Portfólio Estatístico da Mega-Sena · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/estrategias/mega-sigma",
       "path": "/estrategias/mega-sigma",
       "type": "page",
-      "description": "Como a Mega-Sena dos Bolões do Borges é tratada como um portfólio estatístico: coocorrência com decaimento temporal, FFT, segmentação Pareto, funil de seleção e otimização global de carteira."
+      "description": "Como a Mega-Sena da Comunidade Bolões do Borges é tratada como um portfólio estatístico: coocorrência com decaimento temporal, FFT, segmentação Pareto, funil de seleção e otimização global de carteira."
     },
     {
       "title": "Sistema Synapse — Inteligência Artificial da Mega-Sena · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/estrategias/mega-synapse",
       "path": "/estrategias/mega-synapse",
       "type": "page",
-      "description": "Como a inteligência artificial da Mega-Sena dos Bolões do Borges aprende com o histórico: rede LSTM com atenção temporal, focal loss, poda lottery ticket e geração por ranking de dezenas."
+      "description": "Como a inteligência artificial da Mega-Sena da Comunidade Bolões do Borges aprende com o histórico: rede LSTM com atenção temporal, focal loss, poda lottery ticket e geração por ranking de dezenas."
     },
     {
       "title": "Sistema Matrix+ — Gerador Estratégico da +Milionária · Bolões do Borges",
@@ -214,11 +214,11 @@
       "description": "Bolão mensal da Quina com matriz calibrada por ciclo, retreinamento do modelo LSTM e ajustes baseados em vizinhança para diversificar os jogos."
     },
     {
-      "title": "Sobre a comunidade \"Bolões do Borges\" · Bolões do Borges",
+      "title": "Sobre a Comunidade Bolões do Borges · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/sobre",
       "path": "/sobre",
       "type": "page",
-      "description": "Apresentação institucional dos Bolões do Borges: natureza do projeto, quem organiza, princípios de transparência e governança."
+      "description": "Apresentação institucional da Comunidade Bolões do Borges: natureza do projeto, quem organiza, princípios de transparência e governança."
     },
     {
       "title": "Termos de participação · Bolões do Borges",
