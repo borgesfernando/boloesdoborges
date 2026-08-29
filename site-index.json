@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T12:02:37.778Z",
-  "page_count": 62,
+  "generated_at": "2026-08-29T12:09:57.429Z",
+  "page_count": 41,
   "sites": [
     {
       "id": "public",
@@ -16,151 +16,11 @@
           "description": "Super Bolão – comunidade independente de bolões com transparência, tecnologia e 15 anos de história. Sem vínculo com a Caixa."
         },
         {
-          "title": "Projetos Estratégicos | Super Bolão 2026",
-          "url": "https://borgesfernando.github.io/boloesdoborges/acumulados.html",
-          "path": "/boloesdoborges/acumulados.html",
-          "type": "page",
-          "description": "Projetos estratégicos do Super Bolão para concursos da Mega-Sena, +Milionária e Quina quando os prêmios acumulam."
-        },
-        {
-          "title": "Mega-Sena Acumulada | Bolão Estratégico",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/acumulados/mega-acumulada.html",
-          "path": "/boloesdoborges/boloes/acumulados/mega-acumulada.html",
-          "type": "page",
-          "description": "Bolão estratégico para Mega-Sena acumulada, com entrada por janela e prestação de contas."
-        },
-        {
-          "title": "+Milionária Acumulada | Bolão Estratégico",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/acumulados/milionaria.html",
-          "path": "/boloesdoborges/boloes/acumulados/milionaria.html",
-          "type": "page",
-          "description": "Bolão estratégico da +Milionária ativado quando o prêmio é superior a R$ 80Mi, com participação uma vez por semana (quarta-feira), abertura na manhã de terça-feira, cota de R$ 20, prestação de contas e regras de reinvestimento."
-        },
-        {
-          "title": "Dupla Sena de Páscoa | Bolão Especial",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/especiais/ds-pascoa.html",
-          "path": "/boloesdoborges/boloes/especiais/ds-pascoa.html",
-          "type": "page",
-          "description": "Bolão especial da Dupla Sena de Páscoa com cronograma anual, cotas programadas e prestação de contas."
-        },
-        {
-          "title": "Lotofácil da Independência | Bolão Especial",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/especiais/lf-independencia.html",
-          "path": "/boloesdoborges/boloes/especiais/lf-independencia.html",
-          "type": "page",
-          "description": "Bolão especial da Lotofácil da Independência com cronograma anual, cotas programadas e prestação de contas."
-        },
-        {
-          "title": "Mega da Virada | Bolão Especial",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/especiais/mega-virada.html",
-          "path": "/boloesdoborges/boloes/especiais/mega-virada.html",
-          "type": "page",
-          "description": "Bolão especial da Mega da Virada com cronograma anual, cotas programadas e prestação de contas."
-        },
-        {
-          "title": "Quina de São João | Bolão Especial",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/especiais/quina-saojoao.html",
-          "path": "/boloesdoborges/boloes/especiais/quina-saojoao.html",
-          "type": "page",
-          "description": "Bolão especial da Quina de São João com cronograma anual, cotas programadas e prestação de contas."
-        },
-        {
-          "title": "Dupla Sena Mensal | Bolão Mensal",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/mensais/dupla-sena-mensal.html",
-          "path": "/boloesdoborges/boloes/mensais/dupla-sena-mensal.html",
-          "type": "page",
-          "description": "Bolão mensal da Dupla Sena com participação recorrente, ciclo de concursos e prestação de contas."
-        },
-        {
-          "title": "Lotofácil Mensal | Bolão Mensal",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/mensais/lf-mensal.html",
-          "path": "/boloesdoborges/boloes/mensais/lf-mensal.html",
-          "type": "page",
-          "description": "Bolão mensal da Lotofácil com participação recorrente, ciclo de concursos e prestação de contas."
-        },
-        {
-          "title": "Quina Mensal | Bolão Mensal",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/mensais/quina-mensal.html",
-          "path": "/boloesdoborges/boloes/mensais/quina-mensal.html",
-          "type": "page",
-          "description": "Bolão mensal da Quina com participação recorrente, ciclo de concursos e prestação de contas."
-        },
-        {
-          "title": "Projetos Especiais | Super Bolão 2026",
-          "url": "https://borgesfernando.github.io/boloesdoborges/especiais.html",
-          "path": "/boloesdoborges/especiais.html",
-          "type": "page",
-          "description": "Projetos especiais do Super Bolão para grandes concursos com cronogramas bem definidos."
-        },
-        {
-          "title": "Estratégias | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias.html",
-          "path": "/boloesdoborges/estrategias.html",
-          "type": "page",
-          "description": "Estratégias dos bolões do Super Bolão: metodologias de geração de cada modalidade, com foco em cobertura, diversidade e transparência."
-        },
-        {
-          "title": "Sistema Eclipse — Estratégia da Dupla Sena Mensal | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/dupla-sena-mensal.html",
-          "path": "/boloesdoborges/estrategias/dupla-sena-mensal.html",
-          "type": "page",
-          "description": "Sistema Eclipse: como as apostas do Bolão Mensal da Dupla Sena são geradas com os dois sorteios de cada concurso alinhados em uma única carteira — funil de sinais estatísticos, Random Forest e modelagem independente dos dois sorteios."
-        },
-        {
-          "title": "Sistema Prisma — Estratégia da Lotofácil | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/lotofacil.html",
-          "path": "/boloesdoborges/estrategias/lotofacil.html",
-          "type": "page",
-          "description": "Sistema Prisma: como as carteiras da Lotofácil são construídas como uma única carteira integrada, combinando múltiplos sinais com diversidade, controles de sobreposição e otimização de portfólio."
-        },
-        {
-          "title": "Sistema Mosaico — Cobertura Combinatória da Mega-Sena | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/mega-mosaico.html",
-          "path": "/boloesdoborges/estrategias/mega-mosaico.html",
-          "type": "page",
-          "description": "Sistema Mosaico: como as apostas da Mega-Sena do Super Bolão são montadas como um mosaico de cobertura — unidades atômicas, pares de dezenas, sobreposição controlada e ganho marginal submodular."
-        },
-        {
-          "title": "Sistema Sigma — Portfólio Estatístico da Mega-Sena | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/mega-sigma.html",
-          "path": "/boloesdoborges/estrategias/mega-sigma.html",
-          "type": "page",
-          "description": "Sistema Sigma: como a Mega-Sena do Super Bolão é tratada como um portfólio estatístico — coocorrência com decaimento temporal, FFT, Pareto, funil de seleção e otimização global de carteira."
-        },
-        {
-          "title": "Sistema Synapse — Inteligência Artificial da Mega-Sena | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/mega-synapse.html",
-          "path": "/boloesdoborges/estrategias/mega-synapse.html",
-          "type": "page",
-          "description": "Sistema Synapse: como a inteligência artificial da Mega-Sena do Super Bolão aprende com o histórico — rede LSTM com atenção temporal, focal loss, poda lottery ticket e geração por ranking."
-        },
-        {
-          "title": "Sistema Matrix+ — Gerador Estratégico da +Milionária",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/milionaria.html",
-          "path": "/boloesdoborges/estrategias/milionaria.html",
-          "type": "page",
-          "description": "Como o Sistema Matrix+ divide o orçamento entre os tipos de bilhete da +Milionária (6+2, 6+3, 6+4 e 7+2), multiplica chances por formato e monta carteiras com cobertura ampla, distribuição equilibrada e controle de sobreposição, sem promessas de acerto."
-        },
-        {
-          "title": "Sistema Horizonte — Estratégia da Quina Mensal | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/estrategias/quina-mensal.html",
-          "path": "/boloesdoborges/estrategias/quina-mensal.html",
-          "type": "page",
-          "description": "Sistema Horizonte: como as apostas do Bolão Mensal da Quina são geradas como uma única carteira planejada voltada à janela futura — histórico oficial da Caixa, modelo híbrido orientado à cobertura e dezenas distintas."
-        },
-        {
           "title": "Perguntas Frequentes | Super Bolão",
           "url": "https://borgesfernando.github.io/boloesdoborges/faq.html",
           "path": "/boloesdoborges/faq.html",
           "type": "page",
           "description": "Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras."
-        },
-        {
-          "title": "IA nos Projetos | Metodologia e transparência",
-          "url": "https://borgesfernando.github.io/boloesdoborges/ia.html",
-          "path": "/boloesdoborges/ia.html",
-          "type": "page",
-          "description": "Metodologia de IA nos projetos do Super Bolão: como comparamos e combinamos estatística pura e redes LSTM, com transparência e sem promessa de ganho."
         },
         {
           "title": "Contato | Super Bolão",
@@ -196,13 +56,6 @@
           "path": "/boloesdoborges/linhas-de-projetos.html",
           "type": "page",
           "description": "Linhas de projetos do Super Bolão: especiais, mensais e estratégicos, com links diretos para cada linha e seus projetos atuais."
-        },
-        {
-          "title": "Projetos Mensais | Super Bolão 2026",
-          "url": "https://borgesfernando.github.io/boloesdoborges/mensais.html",
-          "path": "/boloesdoborges/mensais.html",
-          "type": "page",
-          "description": "Projetos mensais do Super Bolão com participação recorrente e prestação de contas."
         },
         {
           "title": "Prestação de Contas | Transparência e Segurança",
