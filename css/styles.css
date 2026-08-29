@@ -804,6 +804,10 @@ footer h3 {
   --cta-rgb: 0, 119, 200;
 }
 
+.icon-cta-whatsapp {
+  --cta-rgb: 37, 211, 102;
+}
+
 .icon-cta-svg {
   position: relative;
   z-index: 1;
