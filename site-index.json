@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T13:35:32.668Z",
+  "generated_at": "2026-08-29T13:48:35.836Z",
   "page_count": 41,
   "sites": [
     {
@@ -37,7 +37,7 @@
           "description": "Política de Privacidade e LGPD dos Bolões do Borges: dados coletados, finalidades, retenção e direitos do titular."
         },
         {
-          "title": "Sobre os Bolões do Borges | Organização e transparência",
+          "title": "Sobre a comunidade \"Bolões do Borges\" | Organização e transparência",
           "url": "https://borgesfernando.github.io/boloesdoborges/institucional/sobre.html",
           "path": "/boloesdoborges/institucional/sobre.html",
           "type": "page",
@@ -289,7 +289,7 @@
           "description": "Bolão mensal da Quina com matriz calibrada por ciclo, retreinamento do modelo LSTM e ajustes baseados em vizinhança para diversificar os jogos."
         },
         {
-          "title": "Sobre os Bolões do Borges · Bolões do Borges",
+          "title": "Sobre a comunidade \"Bolões do Borges\" · Bolões do Borges",
           "url": "https://site.boloesdoborges.shop/sobre",
           "path": "/sobre",
           "type": "page",
