@@ -214,11 +214,11 @@
       "description": "Bolão mensal da Quina com matriz calibrada por ciclo, retreinamento do modelo LSTM e ajustes baseados em vizinhança para diversificar os jogos."
     },
     {
-      "title": "Sobre o organizador · Super Bolão",
+      "title": "Sobre o Super Bolão · Super Bolão",
       "url": "https://site.boloesdoborges.shop/sobre",
       "path": "/sobre",
       "type": "page",
-      "description": "Conheça o responsável pelos projetos e o histórico dos bolões."
+      "description": "Apresentação institucional do Super Bolão: natureza do projeto, quem organiza, princípios de transparência e governança."
     },
     {
       "title": "Termos de participação · Super Bolão",
