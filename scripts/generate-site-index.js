@@ -93,11 +93,11 @@ function sameStructure(left, right) {
 function generate(root) {
   const sites = [publicSite(root), commercialSite(root)];
   const formsPage = {
-    title: 'Formulário de Inscrição — Entrar na Comunidade',
+    title: 'Formulário de Inscrição — Entrada na Comunidade',
     url: FORMS_URL,
     path: '/forms/inscricao',
     type: 'external',
-    description: 'Formulário de inscrição da Comunidade Bolões do Borges para aderir e receber o Termo de participação.',
+    description: 'Para entrar na Comunidade, preencha o Formulário de Inscrição: condição necessária e suficiente. Ao enviar, você é adicionado automaticamente e recebe o Termo de participação.',
   };
   sites[1].pages = [...sites[1].pages, formsPage].sort((a, b) => a.url.localeCompare(b.url));
   const index = { version: 1, generated_at: new Date().toISOString(), page_count: sites.reduce((sum, site) => sum + site.pages.length, 0), sites };

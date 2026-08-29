@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T16:07:22.896Z",
+  "generated_at": "2026-08-29T16:24:59.447Z",
   "page_count": 42,
   "sites": [
     {
@@ -79,11 +79,11 @@
       "base_url": "https://site.boloesdoborges.shop",
       "pages": [
         {
-          "title": "Formulário de Inscrição — Entrar na Comunidade",
+          "title": "Formulário de Inscrição — Entrada na Comunidade",
           "url": "https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform",
           "path": "/forms/inscricao",
           "type": "external",
-          "description": "Formulário de inscrição da Comunidade Bolões do Borges para aderir e receber o Termo de participação."
+          "description": "Para entrar na Comunidade, preencha o Formulário de Inscrição: condição necessária e suficiente. Ao enviar, você é adicionado automaticamente e recebe o Termo de participação."
         },
         {
           "title": "Bolões Mega-Sena, Lotofácil, Quina, Dupla Sena e +Milionária · Bolões do Borges",
