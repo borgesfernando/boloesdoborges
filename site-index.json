@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T10:02:59.595Z",
-  "page_count": 63,
+  "generated_at": "2026-08-29T12:02:37.778Z",
+  "page_count": 62,
   "sites": [
     {
       "id": "public",
@@ -63,12 +63,6 @@
           "path": "/boloesdoborges/boloes/especiais/quina-saojoao.html",
           "type": "page",
           "description": "Bolão especial da Quina de São João com cronograma anual, cotas programadas e prestação de contas."
-        },
-        {
-          "title": "Dupla Sena Mensal",
-          "url": "https://borgesfernando.github.io/boloesdoborges/boloes/mensais/ds-mensal.html",
-          "path": "/boloesdoborges/boloes/mensais/ds-mensal.html",
-          "type": "page"
         },
         {
           "title": "Dupla Sena Mensal | Bolão Mensal",
