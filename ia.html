@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Metodologia de IA nos projetos do Super Bolão, com transparência e sem promessa de ganho.">
+  <meta name="description" content="Metodologia de IA nos projetos do Super Bolão: como comparamos e combinamos estatística pura e redes LSTM, com transparência e sem promessa de ganho.">
   <title>IA nos Projetos | Metodologia e transparência</title>
   <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/ia.html">
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false },
+            { left: '$$', right: '$$', display: true }
+          ]
+        });
+      }
+    });
+  </script>
 </head>
 <body>
   <nav class="site-nav">
@@ -28,7 +44,7 @@
   <header>
     <div class="container">
       <h1>IA nos Projetos</h1>
-      <p>Como usamos dados oficiais, LSTM e regras de qualidade para gerar carteiras de apostas — sem promessas de acerto.</p>
+      <p>Como usamos estatística pura e redes LSTM de forma combinada e auditável para montar carteiras — sem promessas de acerto.</p>
     </div>
   </header>
 
@@ -37,7 +53,7 @@
       <h2>Objetivo (com transparência)</h2>
       <p>
         Loterias são eventos aleatórios: <strong>não existe “garantia”</strong> e não prometemos acertos.
-        Nosso foco é outro: aplicar engenharia de dados e um modelo de apoio (LSTM) para <strong>organizar escolhas</strong>,
+        Nosso foco é outro: aplicar engenharia de dados e modelos de apoio para <strong>organizar escolhas</strong>,
         <strong>reduzir redundância</strong> entre jogos e <strong>aumentar a qualidade</strong> do conjunto final com regras, validações e rastreabilidade.
       </p>
       <p>
@@ -47,12 +63,150 @@
     </div>
 
     <div class="card">
+      <h2>Dois eixos: estatística pura × LSTM</h2>
+      <p>
+        Nos projetos convivem duas famílias de estratégia que se complementam: as <strong>puramente estatísticas</strong>
+        (Sistema Sigma, Sistema Mosaico, Sistema Matrix+, Prisma e Eclipse) e as que usam <strong>redes LSTM</strong>
+        (Sistema Synapse e Sistema Horizonte). Nenhuma das duas “quebra” a loteria: ambas usam o histórico como régua de
+        orientação para distribuir o orçamento da carteira.
+      </p>
+      <p>Para dimensionar o que qualquer método enfrenta, vale lembrar o espaço combinatório da Mega-Sena:</p>
+      <div class="formula-box"><span class="formula-label">Total de combinações de 6 dezenas na Mega-Sena</span>\[C(60, 6) = \frac{60!}{6! \cdot 54!} = 50.063.860\]</div>
+      <p>
+        E o referencial mais honesto de todos: um jogo aleatório de 6 dezenas acerta, em média, exatamente
+        \(E[X] = k \cdot \frac{s}{N}\) dezenas por sorteio — no caso, \(6 \cdot \frac{6}{60} = 0{,}6\). É contra essa
+        régua que medimos tudo, inclusive os acertos médios do modelo LSTM:
+      </p>
+      <div class="formula-box"><span class="formula-label">Acertos esperados de um jogo aleatório (baseline)</span>\[E[X] = \frac{k \cdot s}{N} = \frac{6 \cdot 6}{60} = 0{,}6\]</div>
+    </div>
+
+    <div class="card">
+      <h2>Estatística pura: sinais explícitos e auditáveis</h2>
+      <p>
+        As estratégias puramente estatísticas <strong>não treinam redes</strong>: elas transformam o histórico em artefatos
+        matemáticos explícitos. São exemplos práticos nos nossos projetos:
+      </p>
+      <ul>
+        <li>
+          <strong>Coocorrência com decaimento temporal</strong> (Sigma, Prisma, Eclipse): mede pares de dezenas que aparecem juntas,
+          dando mais peso aos concursos recentes via peso exponencial:
+          <div class="formula-box"><span class="formula-label">Matriz de coocorrência com decaimento</span>\[C_{ij} = \sum_{t} w_t \cdot \mathbf{1}\{i \in S_t\} \cdot \mathbf{1}\{j \in S_t\}, \quad w_t = \lambda^{N-t}\]</div>
+        </li>
+        <li>
+          <strong>Amostragem β-mixing</strong> (Sigma, Eclipse): mistura distribuições de sinais diferentes com uma combinação convexa
+          para gerar um pool amplo de candidatos:
+          <div class="formula-box"><span class="formula-label">Combinação convexa de sinais</span>\[q(i) = \beta \cdot p_A(i) + (1 - \beta) \cdot p_B(i)\]</div>
+        </li>
+        <li>
+          <strong>Rigor estatístico</strong> (Sigma): os próprios sinais são validados com intervalos de confiança de Wilson e
+          segmentação Pareto (camadas de destaque, intermediárias e periféricas), para que a seleção respeite a geometria real dos dados:
+          <div class="formula-box"><span class="formula-label">Intervalo de confiança de Wilson</span>\[\hat{p} \pm z \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}\]</div>
+        </li>
+        <li>
+          <strong>Funil de seleção e diversidade</strong> (Sigma, Eclipse): os candidatos passam por gates que medem similaridade cosseno,
+          correlação e entropia de Shannon, e cada aposta é aceita pelo <strong>ganho marginal</strong> que traz ao conjunto:
+          <div class="formula-box"><span class="formula-label">Ganho marginal de uma aposta</span>\[\Delta(x \mid S) = f(S \cup \{x\}) - f(S)\]</div>
+        </li>
+      </ul>
+      <p>
+        <strong>Vantagens:</strong> 100% auditáveis (cada número sai de uma fórmula), determinísticos com mesma semente, baixo custo
+        computacional e interpretação direta. <strong>Limites:</strong> capturam apenas o que está explicitamente codificado — dependem
+        das janelas, pesos e decaimentos escolhidos, e não modelam interações temporais mais profundas.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>IA com LSTM: aprendizado de sequência + atenção</h2>
+      <p>
+        O <strong>Sistema Synapse</strong> (Mega-Sena) e o <strong>Sistema Horizonte</strong> (Quina Mensal) usam redes LSTM.
+        Em vez de fórmulas fixas, a rede <strong>aprende pesos</strong> que relacionam os concursos em sequência. Para cada
+        concurso, o histórico é organizado em janelas (<code>LOOK_BACK</code> = 36 concursos na Mega-Sena) e a rede recebe uma
+        sequência temporal para prever o próximo sorteio.
+      </p>
+      <p>
+        A célula LSTM é controlada por portões que decidem o que <strong>esquecer</strong>, o que <strong>atualizar</strong> e o que
+        <strong>emitir</strong>:
+      </p>
+      <div class="formula-box"><span class="formula-label">Célula LSTM — memória e portões</span>\[f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)\]\[i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)\]\[o_t = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o)\]\[c_t = f_t \odot c_{t-1} + i_t \odot \tanh(W_c \cdot [h_{t-1}, x_t] + b_c)\]</div>
+      <p>
+        Sobre a LSTM, o mecanismo de <strong>atenção</strong> pondera quais momentos do passado são mais relevantes antes de gerar a
+        saída — que atribui, para cada uma das 60 dezenas, uma probabilidade com função logística:
+      </p>
+      <div class="formula-box"><span class="formula-label">Atenção e saída por dezena</span>\[\alpha_t = \frac{e_t}{\sum_{j} e_j}, \quad c = \sum_{t} \alpha_t \cdot h_t\]\[p_i = \sigma(z_i) = \frac{1}{1 + e^{-z_i}}, \quad i = 1, \dots, 60\]</div>
+      <p>
+        Como “6 sorteadas em 60” é um evento raro (desbalanceado), o treinamento usa <strong>Focal Loss</strong>, que concentra o
+        aprendizado nas dezenas realmente sorteadas:
+      </p>
+      <div class="formula-box"><span class="formula-label">Focal Loss</span>\[FL(p) = -\alpha \cdot (1-p)^{\gamma} \cdot \log(p)\]</div>
+      <p>
+        E o modelo é refinado com <strong>poda por magnitude</strong> (“winning ticket”): pesos pequenos são zerados
+        (\(m_i = 1\) se \(|\theta_i| > \tau\), senão \(0\)) e o modelo é retreinado, reduzindo complexidade e estabilizando a inferência.
+      </p>
+      <p>
+        <strong>Vantagens:</strong> captura padrões temporais e interações não lineares que fórmulas explícitas perdem, e gera um
+        ranking de dezenas mais refinado. <strong>Limites:</strong> exige grande histórico, validação temporal honesta (nunca avaliar em
+        dados já vistos) e cuidado com overfitting; sem regras de qualidade ao redor, as probabilidades sozinhas não montam uma boa carteira.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Estatística pura × LSTM: comparativo direto</h2>
+      <table class="tabela-projeto">
+        <thead>
+          <tr>
+            <th>Critério</th>
+            <th>Estatística pura (Sigma, Mosaico, Matrix+, Prisma, Eclipse)</th>
+            <th>LSTM (Synapse, Horizonte)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>O que gera o sinal</strong></td>
+            <td>Fórmulas explícitas sobre o histórico (coocorrência, FFT, Pareto, β-mixing)</td>
+            <td>Pesos aprendidos pela rede em sequências de concursos (LOOK_BACK = 36)</td>
+          </tr>
+          <tr>
+            <td><strong>Interpretabilidade</strong></td>
+            <td>Total: cada número sai de uma fórmula auditável</td>
+            <td>Parcial: ranking de probabilidades, exigindo validação e calibração</td>
+          </tr>
+          <tr>
+            <td><strong>Principal métrica</strong></td>
+            <td>Cobertura, diversidade (entropia, pares) e ganho marginal</td>
+            <td>Acertos médios Top‑6 (\(E[X] = 0{,}6\) aleatório), % ≥3 e ≥4</td>
+          </tr>
+          <tr>
+            <td><strong>Risco principal</strong></td>
+            <td>Dependência dos parâmetros escolhidos (λ, β, janelas)</td>
+            <td>Overfitting — exige validação temporal, early stopping e poda</td>
+          </tr>
+          <tr>
+            <td><strong>Papel no bolão</strong></td>
+            <td>Baseline, camada de segurança e diversidade da carteira</td>
+            <td>Orientar o ranking de dezenas que alimenta as regras</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Na prática, os dois eixos convivem: o ranking do modelo LSTM alimenta fixas e subgrupos, e as regras estatísticas
+        (coocorrência, blocos, vizinhos, semelhança) garantem que o resultado seja uma carteira diversificada — nunca um
+        “jogo solto” dependente de um único sinal.
+      </p>
+      <p class="text-sm">
+        <em>Nota de precisão:</em> a Dupla Sena Mensal (Sistema Eclipse) combina sinais estatísticos com um score de
+        <strong>Random Forest</strong> no funil de seleção — uma camada de aprendizado leve sobre os mesmos sinais, sem rede LSTM.
+        E a Lotofácil (Sistema Prisma) usa apenas múltiplos sinais estatísticos combinados, sem treinamento de rede.
+        Por isso, o comparativo abaixo foca no contraste entre o polo puramente estatístico e o polo LSTM.
+      </p>
+    </div>
+
+    <div class="card">
       <h2>Metodologia (fases do script)</h2>
       <p>O pipeline é dividido em fases, com artefatos e logs a cada etapa — para que tudo seja auditável.</p>
       <ol>
         <li><strong>Coleta e versionamento do histórico:</strong> download do XLS oficial e preservação de versões (evita “dados tortos” e facilita auditoria).</li>
         <li><strong>Fase 1 — Engenharia de dados (LSTM-ready):</strong> validações, ordenação temporal, criação de <em>features</em> e janelas (<em>LOOK_BACK</em>) para prever o próximo concurso.</li>
-        <li><strong>Fase 2/3 — Treino e seleção do modelo:</strong> LSTM com atenção, tuning de hiperparâmetros, perdas/ponderações para desbalanceamento e seleção do melhor checkpoint (com logs e métricas).</li>
+        <li><strong>Fase 2/3 — Treino e seleção do modelo:</strong> LSTM com atenção, tuning de hiperparâmetros, Focal Loss e seleção do melhor checkpoint (com logs e métricas).</li>
         <li><strong>Fase 4 — Geração das apostas:</strong> previsão → ranking Top‑N → montagem de subgrupos e aplicação de regras (fixas, blocos, vizinhos, bloqueios, sobreposição) → exportação em CSV e, opcionalmente, Google Sheets.</li>
       </ol>
     </div>
@@ -63,7 +217,9 @@
       <ul>
         <li><strong>One‑hot do sorteio:</strong> vetor binário 1..60 marcando as dezenas sorteadas.</li>
         <li><strong>Tempo (cíclico):</strong> dia da semana/mês/dia do ano em seno/cosseno, além de <code>delta_days</code> (intervalo entre concursos).</li>
-        <li><strong>Recência por dezena:</strong> <code>days_since_last_hit</code> e <code>decay = exp(-λ·dias)</code> para modelar “memória” temporal.</li>
+        <li><strong>Recência por dezena:</strong> <code>days_since_last_hit</code> e um decaimento exponencial para modelar “memória” temporal:
+          <div class="formula-box"><span class="formula-label">Decaimento de recência</span>\[\text{decay} = e^{-\lambda \cdot dias}\]</div>
+        </li>
         <li><strong>Frequência móvel:</strong> janelas (ex.: 10 e 20 concursos) mantidas por <code>deque</code> (eficiente) para gerar <code>freq_last_w</code>.</li>
         <li><strong>Fusion em log‑space (por concurso):</strong> combina frequência e decaimento com normalização e checagens de sanidade (NaN/inf/clipping), reduzindo instabilidade numérica.</li>
         <li><strong>Janelas temporais (LOOK_BACK):</strong> empilha <em>N</em> concursos passados para prever o próximo (<em>split</em> treino/validação por tempo, sem embaralhar).</li>
@@ -77,9 +233,9 @@
       <p>O modelo é <strong>multi‑rótulo</strong>: ele produz uma probabilidade para cada dezena (1..60), com saída <code>sigmoid</code> (não “escolhe” um único número).</p>
       <ul>
         <li><strong>Arquitetura típica:</strong> LSTM(256, <code>return_sequences=True</code>) → Dropout → LSTM(128) → Attention → Pooling → Dense(60, sigmoid).</li>
-        <li><strong>Desbalanceamento:</strong> Focal Loss (e/ou versão ponderada por <em>class weights</em>) para não “viciar” em dezenas muito frequentes.</li>
+        <li><strong>Desbalanceamento:</strong> Focal Loss (\(FL(p) = -\alpha(1-p)^{\gamma} \log p\)) para não “viciar” em dezenas muito frequentes.</li>
         <li><strong>Tuning e seleção:</strong> Keras Tuner (Bayesian Optimization), <em>early stopping</em>, checkpoints e escolha do melhor modelo pelo conjunto de validação temporal.</li>
-        <li><strong>Métricas orientadas ao uso:</strong> além de loss/AUC, métricas do tipo “acertos médios em Top‑6” e percentuais de ≥3/≥4 acertos em Top‑6 (monitoramento realista do objetivo).</li>
+        <li><strong>Métricas orientadas ao uso:</strong> além de loss/AUC, métricas do tipo “acertos médios em Top‑6” e percentuais de ≥3/≥4 acertos em Top‑6 — sempre comparadas ao baseline aleatório de 0,6.</li>
         <li><strong>Otimização opcional:</strong> <em>magnitude pruning</em> / “winning ticket” para reduzir complexidade e melhorar estabilidade/eficiência de inferência.</li>
       </ul>
       <p><strong>Saída da fase:</strong> um checkpoint <code>.keras</code> que a Fase 4 consome diretamente.</p>
@@ -93,7 +249,9 @@
         <li><strong>Pool por blocos:</strong> divide 1..60 em blocos de 10 e pega as melhores de cada bloco (equilíbrio entre faixas).</li>
         <li><strong>Subgrupos e fixas:</strong> configura lotes com fixas manuais ou automáticas (Top‑N), evitando colisões entre subgrupos.</li>
         <li><strong>Vizinhos em grade 6×10:</strong> aplica substituições controladas em torno de dezenas do sorteio de referência (lag), aceitando apenas trocas que preservam a qualidade e não degradam demais o score.</li>
-        <li><strong>FFT por blocos (opcional):</strong> extrai um score temporal por dezena e combina com o score logarítmico do modelo (<code>log_prob + λ·fft_score</code>).</li>
+        <li><strong>FFT por blocos (opcional):</strong> extrai um score temporal por dezena e combina com o score logarítmico do modelo:
+          <div class="formula-box"><span class="formula-label">Score combinado (modelo + periodicidade)</span>\[\text{score}(i) = \log(p_i) + \lambda \cdot \text{fft\_score}(i)\]</div>
+        </li>
         <li><strong>Integrações:</strong> leitura de exclusões/preexistentes via planilha e geração adicional por “Estratégia B” (quando habilitado) para compor apostas reais do bolão.</li>
       </ul>
       <p>Ao final, exportamos CSV unificado e logs detalhados; opcionalmente, sincronizamos com Google Sheets para conferência e autopreenchimento.</p>
@@ -148,7 +306,7 @@
       </ul>
       <p>
         Em resumo: não prometemos resultados, mas entregamos um processo mais profissional do que “surpresinhas” — com
-        dados oficiais, modelo de apoio, filtros de qualidade e rastreabilidade.
+        dados oficiais, estatística pura e LSTM como apoio, filtros de qualidade e rastreabilidade.
       </p>
     </div>
 
