@@ -53,6 +53,19 @@ const html = `<!DOCTYPE html>
   <meta name="description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
   <title>Perguntas Frequentes | Super Bolão</title>
   <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/faq.html">
+  <link rel="icon" href="https://borgesfernando.github.io/boloesdoborges/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Perguntas Frequentes | Super Bolão">
+  <meta property="og:description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
+  <meta property="og:url" content="https://borgesfernando.github.io/boloesdoborges/faq.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Super Bolão">
+  <meta property="og:image" content="https://site.boloesdoborges.shop/images/hero-operations.svg.png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Perguntas Frequentes | Super Bolão">
+  <meta name="twitter:description" content="Perguntas frequentes sobre o Super Bolão: participação, pagamentos, transparência e regras.">
+  <meta name="twitter:image" content="https://site.boloesdoborges.shop/images/hero-operations.svg.png">
   <link rel="stylesheet" href="css/styles.css" />
   <style>
     .faq-item { border: 1px solid #e2e2e2; border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 0.8rem; background: #fff; }
@@ -102,6 +115,7 @@ const html = `<!DOCTYPE html>
         <a href="institucional/termos.html">Termos</a>
         <a href="institucional/privacidade.html">Privacidade</a>
         <a href="institucional/contato.html">Contato</a>
+        <a href="https://site.boloesdoborges.shop" rel="noopener noreferrer">Participação e cadastro</a>
       </div>
       <p style="margin-top: 1.2rem;">© 2026 Super Bolão™ - Todos os direitos reservados</p>
       <p style="margin-top: 0.8rem; font-size: 0.95rem;">
