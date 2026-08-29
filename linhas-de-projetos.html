@@ -7,8 +7,6 @@
   <title>Linhas de Projetos 2026 | Super Bolão</title>
   <link rel="canonical" href="https://borgesfernando.github.io/boloesdoborges/linhas-de-projetos.html">
   <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/config.js"></script>
-  <script defer src="js/landing.js"></script>
   <script defer src="js/year.js"></script>
 </head>
 <body>
@@ -17,6 +15,7 @@
       <a href="index.html">Início</a>
       <a href="linhas-de-projetos.html">Linhas de Projetos</a>
       <a href="estrategias.html">Estratégias</a>
+      <a href="ia.html">IA</a>
       <a href="mensais.html">Mensais</a>
       <a href="especiais.html">Especiais</a>
       <a href="acumulados.html">Estratégicos</a>
@@ -35,7 +34,7 @@
         <p class="hero-kicker">Organização por linha</p>
         <h1>Linhas de Projetos <span id="ano-atual"></span></h1>
         <p class="hero-subtitle">
-          Veja os três blocos principais do site antigo reunidos em uma única página, com acesso rápido aos projetos atuais e às páginas detalhadas de cada linha.
+          Conheça as três linhas do Super Bolão — especiais, mensais e estratégicos — com acesso direto à página de cada uma.
         </p>
         <div class="hero-cta-group">
           <a href="#linhas-principais" class="btn sb2026">Ver blocos</a>
@@ -51,7 +50,6 @@
         <div class="card">
           <h2>Projetos Especiais</h2>
           <p>Grandes concursos com cronograma anual e janelas bem definidas.</p>
-          <div class="project-grid" id="linha-especiais"></div>
           <div style="margin-top: 1.25rem;">
             <a href="especiais.html" class="btn lf-indep">Abrir página da linha</a>
           </div>
@@ -60,7 +58,6 @@
         <div class="card">
           <h2>Projetos Mensais</h2>
           <p>Participação recorrente com ciclo contínuo e acompanhamento constante.</p>
-          <div class="project-grid" id="linha-mensais"></div>
           <div style="margin-top: 1.25rem;">
             <a href="mensais.html" class="btn quina">Abrir página da linha</a>
           </div>
@@ -69,7 +66,6 @@
         <div class="card">
           <h2>Projetos Estratégicos</h2>
           <p>Ativações estratégicas quando os prêmios acumulam e a janela é aberta na comunidade.</p>
-          <div class="project-grid" id="linha-acumulados"></div>
           <div style="margin-top: 1.25rem;">
             <a href="acumulados.html" class="btn mega">Abrir página da linha</a>
           </div>
@@ -93,30 +89,5 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hoje = new Date();
-      hoje.setHours(0, 0, 0, 0);
-
-      const renderLinha = (id, projetos, tipo) => {
-        const container = document.getElementById(id);
-        if (!container || !Array.isArray(projetos) || typeof criarCardProjeto !== 'function') return;
-        container.innerHTML = '';
-        projetos.forEach((projeto) => {
-          container.appendChild(criarCardProjeto(projeto, tipo, hoje));
-        });
-      };
-
-      if (typeof PROJETOS === 'undefined') return;
-
-      const especiais = typeof obterEspeciaisOrdenados === 'function'
-        ? obterEspeciaisOrdenados(hoje).especiaisOrdenados
-        : (PROJETOS.especiais?.projetos || []);
-
-      renderLinha('linha-especiais', especiais, 'especiais');
-      renderLinha('linha-mensais', PROJETOS.mensais?.projetos || [], 'mensais');
-      renderLinha('linha-acumulados', PROJETOS.estrategicos?.projetos || [], 'acumulados');
-    });
-  </script>
 </body>
 </html>

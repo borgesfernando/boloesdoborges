@@ -75,6 +75,7 @@ const html = `<!DOCTYPE html>
     <div class="container nav-inner">
       <a href="index.html">Início</a>
       <a href="estrategias.html">Estratégias</a>
+      <a href="ia.html">IA</a>
       <a href="mensais.html">Mensais</a>
       <a href="especiais.html">Especiais</a>
       <a href="acumulados.html">Estratégicos</a>
