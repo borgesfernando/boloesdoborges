@@ -89,6 +89,20 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
 - A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html`, `boloes/mensais/lf-mensal.html` e `boloes/mensais/dupla-sena-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
 
+## 🌐 Estratégia entre domínios (SEO)
+
+Os dois domínios fazem parte de um único ecossistema (Super Bolão), com papéis complementares:
+
+- **`borgesfernando.github.io/boloesdoborges`** — presença pública e arquivo institucional (este repositório).
+- **`site.boloesdoborges.shop`** — site comercial/participação: cadastro, cotas, PIX e conversão (repositório `borgesfernando/novo-site`).
+
+Regras de ouro:
+
+1. **Nunca** usar canonical cruzado entre os dois domínios (cada domínio declara seu próprio canonical). Canonical cruzado é sinal de "mesmo dono" e pode causar desindexação.
+2. **Cross-links recíprocos e contextuais** são os únicos elos entre os sites: o site público aponta para o comercial no rodapé (`Participação e cadastro`) e o comercial aponta para o público (`Site público e arquivo do projeto`).
+3. Conteúdo duplicado entre os domínios é evitado por **diferenciação ou `noindex` seletivo**, decidido por intenção de busca — nunca por canonicalização cruzada.
+4. O script `scripts/inject-crosslink.js` mantém os cross-links no rodapé das páginas públicas (idempotente).
+
 ## 🧭 Estrutura de URLs (SEO)
 
 - Páginas principais: `index.html`, `mensais.html`, `especiais.html`, `acumulados.html`, `faq.html`, `prest.html`, `ia.html`.
