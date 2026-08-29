@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T09:47:32.939Z",
+  "generated_at": "2026-08-29T09:48:32.988Z",
   "page_count": 63,
   "sites": [
     {
@@ -327,7 +327,7 @@
           "url": "https://site.boloesdoborges.shop/ia",
           "path": "/ia",
           "type": "page",
-          "description": "Metodologia técnica (LSTM + regras) com transparência, rastreabilidade e sem promessas de acerto."
+          "description": "Metodologia técnica (estatística pura + LSTM) com transparência, rastreabilidade e sem promessas de acerto."
         },
         {
           "title": "Linhas de Projetos · Super Bolão",
