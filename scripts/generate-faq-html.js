@@ -20,6 +20,10 @@ const rotaMap = {
   ROTA_ESTRATEGIA_LOTOFACIL: 'estrategias/lotofacil.html',
   ROTA_ESTRATEGIA_QUINA_MENSAL: 'estrategias/quina-mensal.html',
   ROTA_ESTRATEGIA_DS_MENSAL: 'estrategias/dupla-sena-mensal.html',
+  ROTA_ESTRATEGIA_MEGA_MOSAICO: 'estrategias/mega-mosaico.html',
+  ROTA_ESTRATEGIA_MEGA_SIGMA: 'estrategias/mega-sigma.html',
+  ROTA_ESTRATEGIA_MEGA_SYNAPSE: 'estrategias/mega-synapse.html',
+  ROTA_ESTRATEGIAS: 'estrategias.html',
 };
 
 function escapeHtml(value) {

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-29T16:24:59.447Z",
+  "generated_at": "2026-08-29T20:27:42.140Z",
   "page_count": 42,
   "sites": [
     {
@@ -16,7 +16,7 @@
           "description": "Perguntas frequentes sobre a Comunidade Bolões do Borges: participação, pagamentos, transparência e regras."
         },
         {
-          "title": "Comunidade Bolões do Borges 2026 | Bolões independentes com transparência",
+          "title": "Comunidade Bolões do Borges | Bolões independentes com transparência",
           "url": "https://borgesfernando.github.io/boloesdoborges/index.html",
           "path": "/boloesdoborges/index.html",
           "type": "page",
@@ -34,7 +34,7 @@
           "url": "https://borgesfernando.github.io/boloesdoborges/institucional/privacidade.html",
           "path": "/boloesdoborges/institucional/privacidade.html",
           "type": "page",
-          "description": "Política de Privacidade e LGPD da Comunidade Bolões do Borges: dados coletados, finalidades, retenção e direitos do titular."
+          "description": "Política de Privacidade da Comunidade Bolões do Borges conforme a LGPD (Lei 13.709/2018): dados coletados, bases legais, finalidades, segurança, retenção e direitos do titular."
         },
         {
           "title": "Sobre a Comunidade Bolões do Borges | Organização e transparência",

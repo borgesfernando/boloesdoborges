@@ -13,7 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const hasYearInTitle = /\b\d{4}\b/.test(document.title);
   if (hasYearInTitle) {
     document.title = document.title.replace(/\b\d{4}\b/g, String(year));
-  } else {
-    document.title = `Bolões Especiais - Projetos ${year}`;
   }
 });
