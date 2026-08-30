@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-30T00:33:38.417Z",
+  "generated_at": "2026-08-30T00:38:52.155Z",
   "page_count": 42,
   "sites": [
     {
@@ -44,11 +44,11 @@
           "description": "Conheça quem organiza a Comunidade Bolões do Borges, o histórico do projeto e os princípios de transparência e governança."
         },
         {
-          "title": "Termo de Adesão | Bolões do Borges",
+          "title": "Termos de participação | Bolões do Borges",
           "url": "https://borgesfernando.github.io/boloesdoborges/institucional/termos.html",
           "path": "/boloesdoborges/institucional/termos.html",
           "type": "page",
-          "description": "Termo de Adesão da Comunidade Bolões do Borges em linguagem simples: regras de participação, projetos, pagamentos, apostas, prestação de contas, premiações e compromissos."
+          "description": "Regras de participação da Comunidade Bolões do Borges em linguagem simples: como funcionam os projetos, pagamentos, apostas, prêmios, comunicação e prestação de contas."
         },
         {
           "title": "Linhas de Projetos 2026 | Bolões do Borges",
@@ -303,11 +303,11 @@
           "description": "Apresentação institucional da Comunidade Bolões do Borges: natureza do projeto, quem organiza, princípios de transparência e governança."
         },
         {
-          "title": "Termo de Adesão · Bolões do Borges",
+          "title": "Termos de participação · Bolões do Borges",
           "url": "https://site.boloesdoborges.shop/termos",
           "path": "/termos",
           "type": "page",
-          "description": "Termo de Adesão da Comunidade Bolões do Borges em linguagem simples: regras de participação, projetos, pagamentos, apostas, prestação de contas, premiações e compromissos."
+          "description": "Regras de participação da Comunidade Bolões do Borges em linguagem simples: como funcionam os projetos, pagamentos, apostas, prêmios, comunicação e prestação de contas."
         }
       ]
     }
