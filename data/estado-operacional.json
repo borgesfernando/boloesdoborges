@@ -1,9 +1,196 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": "2026-08-31T10:58:12.574Z",
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-31T21:45:55.809Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
-    "mega-50mais": null,
-    "milionaria": null
+    "lf-mensal": {
+      "slug": "lf-mensal",
+      "nome": "Lotofácil Mensal",
+      "tipo": "MENSAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "quina-mensal": {
+      "slug": "quina-mensal",
+      "nome": "Quina Mensal",
+      "tipo": "MENSAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "ds-mensal": {
+      "slug": "ds-mensal",
+      "nome": "Dupla Sena Mensal",
+      "tipo": "MENSAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "lf-independencia": {
+      "slug": "lf-independencia",
+      "nome": "Lotofácil da Independência",
+      "tipo": "ESPECIAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "quina-saojoao": {
+      "slug": "quina-saojoao",
+      "nome": "Quina de São João",
+      "tipo": "ESPECIAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "ds-pascoa": {
+      "slug": "ds-pascoa",
+      "nome": "Dupla Sena de Páscoa",
+      "tipo": "ESPECIAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "mega-virada": {
+      "slug": "mega-virada",
+      "nome": "Mega da Virada",
+      "tipo": "ESPECIAL",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "mega-50mais": {
+      "slug": "mega-50mais",
+      "nome": "Mega-Sena 50+",
+      "tipo": "ESTRATEGICO",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    },
+    "milionaria": {
+      "slug": "milionaria",
+      "nome": "+Milionária",
+      "tipo": "ESTRATEGICO",
+      "estado": "INDISPONIVEL",
+      "ativo": false,
+      "fase": "INDISPONIVEL",
+      "concurso": "",
+      "abreEm": "",
+      "fechaEm": "",
+      "timezone": "America/Sao_Paulo",
+      "janelaComunidade": {
+        "abreEm": "",
+        "fechaEm": "",
+        "timezone": "America/Sao_Paulo"
+      },
+      "contexto": {},
+      "atualizadoEm": "",
+      "correlationId": "",
+      "fonteEstado": "Apps_Scripts"
+    }
   }
 }

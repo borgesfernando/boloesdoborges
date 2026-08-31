@@ -8,7 +8,7 @@ const assert = require('assert');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { atualizarEstadoOperacional } = require('./update-mensais-alert.js');
+const { atualizarEstadoOperacional, emptyAggregate } = require('./update-mensais-alert.js');
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'estado-operacional-test-'));
 const estadoPath = path.join(tmp, 'estado-operacional.json');
@@ -37,6 +37,8 @@ const dadosMilionaria = {
   atualizadoEm: '2026-09-01T11:00:00Z',
 };
 
+const slugs = ['lf-mensal','quina-mensal','ds-mensal','lf-independencia','quina-saojoao','ds-pascoa','mega-virada','mega-50mais','milionaria'];
+
 // 1. Projeto desconhecido falha de forma segura (não cria nem corrompe)
 {
   const r = atualizarEstadoOperacional(estadoPath, { projeto: 'desconhecido', ativo: true });
@@ -50,13 +52,14 @@ const dadosMilionaria = {
   const r = atualizarEstadoOperacional(estadoPath, dadosMega);
   assert.strictEqual(r.atualizado, true);
   const doc = JSON.parse(fs.readFileSync(estadoPath, 'utf8'));
-  assert.strictEqual(doc.schemaVersion, 1);
+  assert.strictEqual(doc.schemaVersion, 2);
   assert.strictEqual(doc.projetos['mega-50mais'].estado, 'ABERTA');
-  assert.strictEqual(doc.projetos['mega-50mais'].janelaComunidade.aberta, true);
+  assert.strictEqual(doc.projetos['mega-50mais'].ativo, true);
+  assert.strictEqual(doc.projetos['mega-50mais'].concurso, '9999');
   assert.strictEqual(doc.projetos['mega-50mais'].correlationId, 'corr-mega-1');
   assert.strictEqual(doc.projetos['mega-50mais'].fonteEstado, 'Apps_Scripts');
-  assert.strictEqual(doc.projetos['milionaria'], null);
-  console.log('PASS: abertura da Mega cria entrada própria');
+  assert.deepStrictEqual(Object.keys(doc.projetos).sort(), slugs.sort());
+  console.log('PASS: abertura da Mega cria entrada própria no schema v2');
 }
 
 // 3. Atualizar Milionária não apaga a Mega (coexistência)
@@ -91,7 +94,7 @@ const dadosMilionaria = {
   const doc = JSON.parse(fs.readFileSync(estadoPath, 'utf8'));
   const mili = doc.projetos['milionaria'];
   assert.strictEqual(mili.estado, 'FECHADA');
-  assert.strictEqual(mili.janelaComunidade.aberta, false);
+  assert.strictEqual(mili.ativo, false);
   assert.strictEqual(mili.concurso, '390');
   assert.strictEqual(mili.correlationId, 'corr-mili-1');
   assert.strictEqual(mili.atualizadoEm, '2026-09-01T12:05:00Z');
@@ -106,7 +109,7 @@ const dadosMilionaria = {
   }
   const doc = JSON.parse(conteudo);
   const chavesMega = Object.keys(doc.projetos['mega-50mais']).sort();
-  assert.deepStrictEqual(chavesMega, ['atualizadoEm', 'concurso', 'correlationId', 'estado', 'fonteEstado', 'janelaComunidade', 'timezone']);
+  assert.deepStrictEqual(chavesMega, ['abreEm', 'ativo', 'atualizadoEm', 'concurso', 'contexto', 'correlationId', 'estado', 'fase', 'fechaEm', 'fonteEstado', 'janelaComunidade', 'nome', 'slug', 'timezone', 'tipo']);
   console.log('PASS: documento sanitizado, somente campos operacionais públicos');
 }
 
@@ -115,10 +118,19 @@ const dadosMilionaria = {
   fs.writeFileSync(estadoPath, '{ corrompido', 'utf8');
   atualizarEstadoOperacional(estadoPath, dadosMega);
   const doc = JSON.parse(fs.readFileSync(estadoPath, 'utf8'));
-  assert.strictEqual(doc.schemaVersion, 1);
+  assert.strictEqual(doc.schemaVersion, 2);
   assert.strictEqual(doc.projetos['mega-50mais'].estado, 'ABERTA');
   assert.ok(doc.projetos.hasOwnProperty('milionaria'));
   console.log('PASS: arquivo corrompido é reconstruído com segurança');
+}
+
+// 8. emptyAggregate fornece os nove projetos com slug
+{
+  const base = emptyAggregate();
+  assert.deepStrictEqual(Object.keys(base.projetos).sort(), slugs.sort());
+  assert.strictEqual(base.projetos.milionaria.slug, 'milionaria');
+  assert.strictEqual(base.projetos['lf-mensal'].estado, 'INDISPONIVEL');
+  console.log('PASS: emptyAggregate expõe os nove projetos no schema v2');
 }
 
 fs.rmSync(tmp, { recursive: true, force: true });
