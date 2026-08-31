@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sanitized ecosystem health",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "overallStatus", "components"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "overallStatus": { "enum": ["ok", "degraded", "unknown"] },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["name", "status", "checkedAt", "reasonCode"],
+        "properties": {
+          "name": { "enum": ["apps_scripts", "n8n", "telegram_gateway", "wppconnect", "site_public", "site_commercial", "miniapp"] },
+          "status": { "enum": ["ok", "degraded", "unknown"] },
+          "checkedAt": { "type": "string", "format": "date-time" },
+          "lastOkAt": { "type": "string", "format": "date-time" },
+          "reasonCode": { "type": "string", "pattern": "^[A-Z0-9_]+$" }
+        }
+      }
+    }
+  }
+}
