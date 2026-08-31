@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "timezone": "America/Sao_Paulo",
+  "fonte": "CAIXA",
+  "referencia": "https://loterias.caixa.gov.br/",
+  "generatedAt": "2026-08-31T23:47:00.642Z",
+  "verificadoEm": "2026-08-31T23:47:00.642Z",
+  "versions": [
+    {
+      "validFrom": "2026-07-19",
+      "validUntil": null,
+      "modalidades": {
+        "megasena": {
+          "sorteios": [
+            {
+              "weekday": "TUE",
+              "time": "21:00"
+            },
+            {
+              "weekday": "THU",
+              "time": "21:00"
+            },
+            {
+              "weekday": "SUN",
+              "time": "11:00"
+            }
+          ]
+        },
+        "maismilionaria": {
+          "sorteios": [
+            {
+              "weekday": "WED",
+              "time": "21:00"
+            },
+            {
+              "weekday": "SUN",
+              "time": "11:00"
+            }
+          ]
+        },
+        "lotofacil": {
+          "sorteios": [
+            {
+              "weekday": "MON",
+              "time": "21:00"
+            },
+            {
+              "weekday": "TUE",
+              "time": "21:00"
+            },
+            {
+              "weekday": "WED",
+              "time": "21:00"
+            },
+            {
+              "weekday": "THU",
+              "time": "21:00"
+            },
+            {
+              "weekday": "FRI",
+              "time": "21:00"
+            },
+            {
+              "weekday": "SUN",
+              "time": "11:00"
+            }
+          ]
+        },
+        "quina": {
+          "sorteios": [
+            {
+              "weekday": "MON",
+              "time": "21:00"
+            },
+            {
+              "weekday": "TUE",
+              "time": "21:00"
+            },
+            {
+              "weekday": "WED",
+              "time": "21:00"
+            },
+            {
+              "weekday": "THU",
+              "time": "21:00"
+            },
+            {
+              "weekday": "FRI",
+              "time": "21:00"
+            },
+            {
+              "weekday": "SUN",
+              "time": "11:00"
+            }
+          ]
+        },
+        "duplasena": {
+          "sorteios": [
+            {
+              "weekday": "MON",
+              "time": "21:00"
+            },
+            {
+              "weekday": "WED",
+              "time": "21:00"
+            },
+            {
+              "weekday": "FRI",
+              "time": "21:00"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "exceptions": []
+}

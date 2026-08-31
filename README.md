@@ -89,6 +89,19 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - Sempre que os arquivos de alerta mudam, o workflow `.github/workflows/sync-mensais-alert-novo-site.yml` copia os JSONs para `borgesfernando/novo-site/src/data/`, mantendo o destaque sincronizado nos dois sites.
 - A home (`index.html`) e as páginas `boloes/mensais/quina-mensal.html`, `boloes/mensais/lf-mensal.html` e `boloes/mensais/dupla-sena-mensal.html` exibem o alerta somente quando `ativo: true` para o projeto chamado.
 
+## 📅 Calendário oficial CAIXA
+
+- `data/calendario-caixa.json` é a **API estática pública** do dia e horário oficial de sorteio por modalidade (Mega-Sena, +Milionária, Lotofácil, Quina e Dupla Sena), consumível por site, n8n e agentes.
+- A **fonte canônica é única**: o módulo `libs/LoteriasGeral/src/calendarioCaixa.js` do repositório `Apps_Scripts`. Não existe segunda grade editável manualmente.
+- O espelho `scripts/vendor/loterias-geral/calendarioCaixa.js` é cópia verbatim da fonte canônica (sincronizada pelo workflow, nunca editada à mão).
+- O gerador `scripts/generate-calendario-caixa.js` transforma o espelho na representação pública (`versions[].modalidades[].sorteios[]` com `weekday` `MON..SUN` e `time` `HH:MM`, metadados `fonte: CAIXA`, `referencia`, `generatedAt` e `verificadoEm`) e grava `data/calendario-caixa.json`.
+- O validador `scripts/validate-calendario-caixa.js` aplica validações determinísticas (schemaVersion, timezone, weekdays permitidos, formato `HH:MM`, vigências sem sobreposição, modalidades conhecidas, exceções duplicadas e sanitização) e **detecta drift** contra a fonte canônica, retornando `exit 1` em divergência.
+- O workflow `.github/workflows/calendario-caixa.yml`:
+  - em **push/PR** nos arquivos do calendário: clona `Apps_Scripts` (público), espelha a fonte canônica, roda testes e validação — **falha a CI quando há drift**;
+  - em **schedule diário (00h00 UTC) / `workflow_dispatch`**: regenera e **commita automaticamente** quando a fonte canônica mudou.
+- Testes locais: `node test/calendario-caixa.test.js`.
+- URL pública: `https://borgesfernando.github.io/boloesdoborges/data/calendario-caixa.json`.
+
 ## 🌐 Estratégia entre domínios (SEO)
 
 Os dois domínios fazem parte de um único ecossistema (Bolões do Borges), com papéis complementares:

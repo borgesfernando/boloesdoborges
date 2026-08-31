@@ -1,0 +1,103 @@
+name: Calendário CAIXA (geração e validação de drift)
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/calendario-caixa.json'
+      - 'scripts/generate-calendario-caixa.js'
+      - 'scripts/validate-calendario-caixa.js'
+      - 'scripts/vendor/loterias-geral/calendarioCaixa.js'
+      - 'test/calendario-caixa.test.js'
+  pull_request:
+    paths:
+      - 'data/calendario-caixa.json'
+      - 'scripts/generate-calendario-caixa.js'
+      - 'scripts/validate-calendario-caixa.js'
+      - 'scripts/vendor/loterias-geral/calendarioCaixa.js'
+      - 'test/calendario-caixa.test.js'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-validar-calendario:
+    name: Sincronizar e validar calendário CAIXA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Clonar fonte canônica (Apps_Scripts, público)
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rm -rf /tmp/apps-scripts
+          git clone --depth 1 --branch main https://github.com/borgesfernando/Apps_Scripts.git /tmp/apps-scripts
+
+      - name: Espelhar fonte canônica no vendor
+        shell: bash
+        run: |
+          set -euxo pipefail
+          cp /tmp/apps-scripts/libs/LoteriasGeral/src/calendarioCaixa.js scripts/vendor/loterias-geral/calendarioCaixa.js
+
+      - name: Rodar testes locais
+        shell: bash
+        run: |
+          node test/calendario-caixa.test.js
+
+      - name: Validar arquivo público e detectar drift
+        id: valida
+        shell: bash
+        run: |
+          if node scripts/validate-calendario-caixa.js; then
+            echo "SEM_DRIFT=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "SEM_DRIFT=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Regenerar e commitar em schedule/dispatch
+        if: steps.valida.outputs.SEM_DRIFT == '0' && (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+        shell: bash
+        run: |
+          set -euxo pipefail
+          node scripts/generate-calendario-caixa.js
+          git add data/calendario-caixa.json scripts/vendor/loterias-geral/calendarioCaixa.js
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore(calendario): sincronizar calendário CAIXA com a fonte canônica [skip ci]"
+            git push
+          else
+            echo "Nada a commitar: calendário já sincronizado."
+          fi
+
+      - name: Falhar CI no push/PR quando houver drift
+        if: steps.valida.outputs.SEM_DRIFT == '0' && (github.event_name == 'push' || github.event_name == 'pull_request')
+        shell: bash
+        run: |
+          echo "::error::data/calendario-caixa.json divergiu da fonte canônica. Rode node scripts/generate-calendario-caixa.js e commit o resultado."
+          exit 1
+
+      - name: Sanitização final (nenhum dado sensível)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -qEi 'planilhaId|docs\.google\.com/spreadsheets|drive\.google\.com|AIza[0-9A-Za-z_-]{30,}|ghp_[0-9A-Za-z_]{20,}|-----BEGIN' data/calendario-caixa.json; then
+            echo "::error::Conteúdo sensível detectado em data/calendario-caixa.json"
+            exit 1
+          fi
+          echo "data/calendario-caixa.json sem conteúdo sensível."
