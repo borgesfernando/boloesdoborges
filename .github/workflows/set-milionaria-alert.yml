@@ -22,6 +22,31 @@ on:
         description: 'Identificador idempotente da ativação'
         type: string
         required: true
+      estado:
+        description: 'Estado operacional (ABERTA/FECHADA)'
+        type: string
+        required: false
+        default: ''
+      abre_em:
+        description: 'Abertura efetiva da janela (ISO)'
+        type: string
+        required: false
+        default: ''
+      fecha_em:
+        description: 'Fechamento efetivo da janela (ISO)'
+        type: string
+        required: false
+        default: ''
+      timezone:
+        description: 'Fuso horário da janela'
+        type: string
+        required: false
+        default: 'America/Sao_Paulo'
+      atualizado_em:
+        description: 'Momento da última transição (ISO)'
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -52,6 +77,11 @@ jobs:
           ALERTA_ATIVO: ${{ inputs.ativo }}
           ALERTA_CONCURSO: ${{ inputs.concurso }}
           ALERTA_CORRELATION_ID: ${{ inputs.correlation_id }}
+          ALERTA_ESTADO: ${{ inputs.estado }}
+          ALERTA_ABRE_EM: ${{ inputs.abre_em }}
+          ALERTA_FECHA_EM: ${{ inputs.fecha_em }}
+          ALERTA_TIMEZONE: ${{ inputs.timezone }}
+          ALERTA_ATUALIZADO_EM: ${{ inputs.atualizado_em }}
         run: node scripts/update-mensais-alert.js
 
       - name: Commit e push se houver mudanças
@@ -59,8 +89,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain data/milionaria-alert.json data/strategic-alert-rotation.json)" ]; then
-            git add data/milionaria-alert.json data/strategic-alert-rotation.json
+          if [ -n "$(git status --porcelain data/milionaria-alert.json data/strategic-alert-rotation.json data/estado-operacional.json)" ]; then
+            git add data/milionaria-alert.json data/strategic-alert-rotation.json data/estado-operacional.json
             git commit -m "chore: atualizar alerta milionaria [skip ci]"
             git push
           else

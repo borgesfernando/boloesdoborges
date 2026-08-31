@@ -67,15 +67,88 @@ function loadPayload() {
     projeto,
     ativo,
     modelo,
+    concurso,
+    correlationId,
+    estado: (process.env.ALERTA_ESTADO || '').trim(),
+    abreEm: (process.env.ALERTA_ABRE_EM || '').trim(),
+    fechaEm: (process.env.ALERTA_FECHA_EM || '').trim(),
+    timezone: (process.env.ALERTA_TIMEZONE || '').trim(),
+    atualizadoEm: (process.env.ALERTA_ATUALIZADO_EM || '').trim(),
     ultimaAtualizacao: new Date().toISOString(),
   };
+}
+
+/**
+ * Atualiza o estado operacional agregado (data/estado-operacional.json) de forma
+ * idempotente e sanitizada. Somente projetos estratégicos participam do documento.
+ * Atualizar um projeto preserva integralmente a entrada do outro projeto.
+ * @param {string} estadoPath Caminho do arquivo estado-operacional.json.
+ * @param {{projeto:string, ativo:boolean, estado?:string, concurso?:string, abreEm?:string, fechaEm?:string, timezone?:string, correlationId?:string, atualizadoEm?:string}} dados Dados sanitizados do contrato operacional.
+ * @returns {{atualizado:boolean, projeto?:string}}
+ */
+function atualizarEstadoOperacional(estadoPath, dados) {
+  if (!dados || !STRATEGIC_PROJECTS.has(dados.projeto)) return { atualizado: false };
+
+  const esqueleto = () => ({
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    timezone: 'America/Sao_Paulo',
+    projetos: { 'mega-50mais': null, 'milionaria': null },
+  });
+
+  let atual = esqueleto();
+  if (fs.existsSync(estadoPath)) {
+    try {
+      const lido = JSON.parse(fs.readFileSync(estadoPath, 'utf8'));
+      if (lido && typeof lido === 'object' && lido.projetos && typeof lido.projetos === 'object') {
+        atual = lido;
+        atual.projetos = Object.assign({}, esqueleto().projetos, atual.projetos);
+      }
+    } catch (erro) { /* corrompido: recria a partir do esqueleto */ }
+  }
+
+  const estado = dados.estado === 'ABERTA' ? 'ABERTA' : 'FECHADA';
+  const projetosAntes = JSON.stringify(atual.projetos);
+  atual.projetos[dados.projeto] = {
+    estado,
+    concurso: String(dados.concurso || ''),
+    janelaComunidade: {
+      aberta: estado === 'ABERTA',
+      abreEm: String(dados.abreEm || ''),
+      fechaEm: String(dados.fechaEm || ''),
+    },
+    correlationId: String(dados.correlationId || ''),
+    atualizadoEm: String(dados.atualizadoEm || ''),
+    timezone: String(dados.timezone || 'America/Sao_Paulo'),
+    fonteEstado: 'Apps_Scripts',
+  };
+  if (JSON.stringify(atual.projetos) !== projetosAntes) {
+    atual.generatedAt = new Date().toISOString();
+  }
+  atual.schemaVersion = 1;
+  if (!atual.timezone) atual.timezone = 'America/Sao_Paulo';
+
+  const novoConteudo = JSON.stringify(atual, null, 2) + '\n';
+  if (fs.existsSync(estadoPath) && fs.readFileSync(estadoPath, 'utf8') === novoConteudo) {
+    return { atualizado: false, projeto: dados.projeto };
+  }
+  fs.writeFileSync(estadoPath, novoConteudo, 'utf8');
+  return { atualizado: true, projeto: dados.projeto };
 }
 
 function main() {
   try {
     const payload = loadPayload();
+    const alerta = {
+      projeto: payload.projeto,
+      ativo: payload.ativo,
+      modelo: payload.modelo,
+      ultimaAtualizacao: payload.ultimaAtualizacao,
+    };
     const outputPath = ALERT_FILES[payload.projeto];
-    fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2) + '\n', 'utf8');
+    fs.writeFileSync(outputPath, JSON.stringify(alerta, null, 2) + '\n', 'utf8');
+    const estadoPath = path.join(__dirname, '..', 'data', 'estado-operacional.json');
+    atualizarEstadoOperacional(estadoPath, payload);
     console.log(`Arquivo atualizado em ${outputPath}`);
   } catch (error) {
     console.error(`[update-mensais-alert] Falha ao atualizar alerta: ${error.message}`);
@@ -87,4 +160,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { parseBoolean, loadPayload, main };
+module.exports = { parseBoolean, loadPayload, main, atualizarEstadoOperacional };
