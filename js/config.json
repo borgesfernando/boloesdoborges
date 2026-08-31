@@ -42,7 +42,7 @@
         "mesInicio": "01",
         "mesFim": "04",
         "dataLimite": "09/04/2026",
-        "dataSorteio": "19/04/2026",
+        "dataSorteio": "04/04/2026",
         "corPrimaria": "166, 19, 36",
         "corHex": "#A61324",
         "gradiente": "linear-gradient(to right, rgb(166,19,36), rgb(197,102,113))"
