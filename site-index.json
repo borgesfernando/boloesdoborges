@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-31T21:52:07.126Z",
-  "page_count": 43,
+  "generated_at": "2026-09-01T09:47:01.749Z",
+  "page_count": 42,
   "sites": [
     {
       "id": "public",
@@ -63,12 +63,6 @@
           "path": "/boloesdoborges/prest.html",
           "type": "page",
           "description": "Prestação de contas da Comunidade Bolões do Borges com transparência, documentos e relatórios para participantes."
-        },
-        {
-          "title": "Projetos operacionais | Super Bolão",
-          "url": "https://borgesfernando.github.io/boloesdoborges/projetos-abertos.html",
-          "path": "/boloesdoborges/projetos-abertos.html",
-          "type": "page"
         },
         {
           "title": "Sitemap | Bolões do Borges",
