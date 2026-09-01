@@ -12,6 +12,7 @@
 .op-update-dot { width: 10px; height: 10px; margin-top: .25rem; border-radius: 999px; background: #94a3b8; box-shadow: 0 0 0 5px rgba(148,163,184,.12); }
 .op-update-card[data-status="open"] .op-update-dot { background: #16a34a; box-shadow: 0 0 0 5px rgba(22,163,74,.13), 0 0 14px rgba(22,163,74,.45); animation: opPulse 2.2s ease-in-out infinite; }
 .op-update-card[data-status="closing"] .op-update-dot { background: #eab308; box-shadow: 0 0 0 5px rgba(234,179,8,.14), 0 0 14px rgba(234,179,8,.42); animation: opPulse 2.8s ease-in-out infinite; }
+.op-update-card[data-status="upcoming"] .op-update-dot { background: #0ea5e9; box-shadow: 0 0 0 5px rgba(14,165,233,.13), 0 0 14px rgba(14,165,233,.28); animation: opBreathe 3.4s ease-in-out infinite; }
 .op-update-card[data-status="progress"] .op-update-dot { background: #2563eb; box-shadow: 0 0 0 5px rgba(37,99,235,.12), 0 0 12px rgba(37,99,235,.25); animation: opBreathe 3.4s ease-in-out infinite; }
 .op-update-card[data-status="waiting"] .op-update-dot, .op-update-card[data-status="closed"] .op-update-dot { background: #64748b; }
 .op-update-card[data-status="indisponivel"] { opacity: .78; }
