@@ -8,8 +8,19 @@ on:
     inputs:
       ativo:
         description: 'Ativar alerta? (true/false)'
+        type: choice
+        options: ['true', 'false']
         required: true
         default: 'false'
+      concurso: { description: 'Concurso/instância operacional', type: string, required: false, default: '' }
+      correlation_id: { description: 'Identificador idempotente do evento operacional', type: string, required: false, default: '' }
+      estado: { description: 'Estado operacional', type: string, required: false, default: '' }
+      fase: { description: 'Fase pública do projeto', type: string, required: false, default: '' }
+      abre_em: { description: 'Abertura efetiva da janela (ISO)', type: string, required: false, default: '' }
+      fecha_em: { description: 'Fechamento efetivo da janela (ISO)', type: string, required: false, default: '' }
+      timezone: { description: 'Fuso horário da janela', type: string, required: false, default: 'America/Sao_Paulo' }
+      atualizado_em: { description: 'Momento da última transição (ISO)', type: string, required: false, default: '' }
+      contexto_publico: { description: 'JSON público allowlisted', type: string, required: false, default: '{}' }
 
 permissions:
   contents: write
@@ -18,31 +29,30 @@ jobs:
   set-alert:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
-
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: ''
-
-      - name: Atualizar quina-mensal-alert.json
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0, persist-credentials: true }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: '' }
+      - name: Atualizar estado da Quina Mensal
         env:
           ALERTA_PROJETO: quina-mensal
           ALERTA_ATIVO: ${{ inputs.ativo }}
+          ALERTA_CONCURSO: ${{ inputs.concurso }}
+          ALERTA_CORRELATION_ID: ${{ inputs.correlation_id }}
+          ALERTA_ESTADO: ${{ inputs.estado }}
+          ALERTA_FASE: ${{ inputs.fase }}
+          ALERTA_ABRE_EM: ${{ inputs.abre_em }}
+          ALERTA_FECHA_EM: ${{ inputs.fecha_em }}
+          ALERTA_TIMEZONE: ${{ inputs.timezone }}
+          ALERTA_ATUALIZADO_EM: ${{ inputs.atualizado_em }}
+          ALERTA_CONTEXTO_PUBLICO: ${{ inputs.contexto_publico }}
         run: node scripts/update-mensais-alert.js
-
       - name: Commit e push se houver mudanças
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          if [ -n "$(git status --porcelain data/quina-mensal-alert.json)" ]; then
-            git add data/quina-mensal-alert.json
+          if [ -n "$(git status --porcelain data/quina-mensal-alert.json data/estado-operacional.json)" ]; then
+            git add data/quina-mensal-alert.json data/estado-operacional.json
             git commit -m "chore: atualizar alerta quina-mensal [skip ci]"
             git push
           else

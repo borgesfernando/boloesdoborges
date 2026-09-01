@@ -107,4 +107,31 @@ async function renderizarMensaisAlert() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', renderizarMensaisAlert);
+/**
+ * A home já carrega mensais-alert.js. Usamos esse ponto estável apenas como
+ * bootstrap aditivo do novo painel, evitando alterar a estrutura/SEO do index.
+ */
+function carregarPainelOperacionalHome() {
+  const path = window.location.pathname;
+  const isHome = /\/(?:index\.html)?$/.test(path) || path.endsWith('/boloesdoborges/');
+  if (!isHome || document.querySelector('script[data-operational-updates]')) return;
+
+  if (!document.querySelector('link[data-operational-updates]')) {
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = 'css/operational-updates.css';
+    style.dataset.operationalUpdates = 'true';
+    document.head.appendChild(style);
+  }
+
+  const script = document.createElement('script');
+  script.src = 'js/estado-operacional.js';
+  script.defer = true;
+  script.dataset.operationalUpdates = 'true';
+  document.head.appendChild(script);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderizarMensaisAlert();
+  carregarPainelOperacionalHome();
+});

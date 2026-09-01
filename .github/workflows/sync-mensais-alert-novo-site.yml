@@ -1,4 +1,4 @@
-name: Sincronizar alertas com novo-site
+name: Sincronizar alertas e estado operacional com novo-site
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -16,6 +16,7 @@ on:
       - 'data/quina-saojoao-alert.json'
       - 'data/ds-pascoa-alert.json'
       - 'data/mega-virada-alert.json'
+      - 'data/estado-operacional.json'
   workflow_run:
     workflows:
       - Atualizar alerta Quina Mensal
@@ -31,7 +32,7 @@ on:
       - completed
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   sync-alert:
@@ -49,8 +50,9 @@ jobs:
           repository: borgesfernando/novo-site
           token: ${{ secrets.NOVO_SITE_SYNC_TOKEN }}
           path: novo-site
+          ref: master
 
-      - name: Copiar alertas para novo-site
+      - name: Copiar alertas e agregado para novo-site
         run: |
           cp data/ds-mensal-alert.json novo-site/src/data/ds-mensal-alert.json
           cp data/quina-mensal-alert.json novo-site/src/data/quina-mensal-alert.json
@@ -61,15 +63,17 @@ jobs:
           cp data/quina-saojoao-alert.json novo-site/src/data/quina-saojoao-alert.json
           cp data/ds-pascoa-alert.json novo-site/src/data/ds-pascoa-alert.json
           cp data/mega-virada-alert.json novo-site/src/data/mega-virada-alert.json
+          cp data/estado-operacional.json novo-site/src/data/estado-operacional.json
 
       - name: Commit e push se houver mudanças
         working-directory: novo-site
         run: |
-          if [ -n "$(git status --porcelain src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json src/data/lf-independencia-alert.json src/data/quina-saojoao-alert.json src/data/ds-pascoa-alert.json src/data/mega-virada-alert.json)" ]; then
+          PATHS="src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json src/data/lf-independencia-alert.json src/data/quina-saojoao-alert.json src/data/ds-pascoa-alert.json src/data/mega-virada-alert.json src/data/estado-operacional.json"
+          if [ -n "$(git status --porcelain -- $PATHS)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/ds-mensal-alert.json src/data/quina-mensal-alert.json src/data/lf-mensal-alert.json src/data/mega-50mais-alert.json src/data/milionaria-alert.json src/data/lf-independencia-alert.json src/data/quina-saojoao-alert.json src/data/ds-pascoa-alert.json src/data/mega-virada-alert.json
-            git commit -m "chore: sincronizar alertas a partir do boloesdoborges"
+            git add -- $PATHS
+            git commit -m "chore: sincronizar estado operacional a partir do boloesdoborges"
             git push origin master
           else
             echo "Sem mudanças para sincronizar"
