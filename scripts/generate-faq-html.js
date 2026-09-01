@@ -33,6 +33,15 @@ function escapeHtml(value) {
     .replace(/>/g, '&gt;');
 }
 
+function slugify(value) {
+  return String(value ?? '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function resolveLinks(html) {
   return String(html ?? '').replace(/href="(ROTA_[A-Z0-9_]+)"/g, (match, key) => {
     return rotaMap[key] ? `href="${rotaMap[key]}"` : match;
@@ -43,9 +52,11 @@ const faq = JSON.parse(fs.readFileSync(faqPath, 'utf8'));
 
 const items = faq
   .map((item) => {
-    const question = escapeHtml(item.question || '');
+    const questionRaw = item.question || '';
+    const question = escapeHtml(questionRaw);
     const answer = resolveLinks(item.answerHtml || '');
-    return `<details class="faq-item"><summary><h2 class="faq-question">${question}</h2></summary><div class="faq-answer">${answer}</div></details>`;
+    const id = `faq-${slugify(questionRaw)}`;
+    return `<details class="faq-item" id="${id}"><summary><h2 class="faq-question">${question}</h2></summary><div class="faq-answer">${answer}</div></details>`;
   })
   .join('\n');
 
@@ -119,7 +130,7 @@ const html = `<!DOCTYPE html>
   </script>
   <link rel="stylesheet" href="css/styles.css" />
   <style>
-    .faq-item { border: 1px solid #e2e2e2; border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 0.8rem; background: #fff; }
+    .faq-item { border: 1px solid #e2e2e2; border-radius: 6px; padding: 0.9rem 1rem; margin-bottom: 0.8rem; background: #fff; scroll-margin-top: 1rem; }
     .faq-item summary { cursor: pointer; color: #005da4; }
     .faq-item summary .faq-question { display: inline; margin: 0; font-size: inherit; line-height: inherit; }
     .faq-answer { margin-top: 0.8rem; line-height: 1.6; }
@@ -128,6 +139,7 @@ const html = `<!DOCTYPE html>
     .faq-answer table.tabela-faq th, .faq-answer table.tabela-faq td { border: 1px solid #d9d9d9; padding: 0.45rem 0.6rem; text-align: left; }
     .faq-answer table.tabela-faq th { background: #f2f2f2; color: #005da4; }
     .faq-answer table.tabela-faq tr:nth-child(even) td { background: #fafafa; }
+    .faq-item:target { border-color: #005da4; box-shadow: 0 0 0 2px rgba(0, 93, 164, 0.12); }
   </style>
 </head>
 <body>
