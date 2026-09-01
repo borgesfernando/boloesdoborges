@@ -1,4 +1,6 @@
 {
-  "ultimoModelo": 2,
-  "ativacoes": {}
+  "ultimoModelo": 1,
+  "ativacoes": {
+    "milionaria:386:db655975-e6f5-4ef4-b22c-d6a242703d23": 1
+  }
 }
