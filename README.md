@@ -96,6 +96,7 @@ Em resumo: **edite apenas este `faq.json`** e deixe o workflow cuidar de manter 
 - O espelho `scripts/vendor/loterias-geral/calendarioCaixa.js` é cópia verbatim da fonte canônica (sincronizada pelo workflow, nunca editada à mão).
 - O gerador `scripts/generate-calendario-caixa.js` transforma o espelho na representação pública (`versions[].modalidades[].sorteios[]` com `weekday` `MON..SUN` e `time` `HH:MM`, metadados `fonte: CAIXA`, `referencia`, `generatedAt` e `verificadoEm`) e grava `data/calendario-caixa.json`.
 - O validador `scripts/validate-calendario-caixa.js` aplica validações determinísticas (schemaVersion, timezone, weekdays permitidos, formato `HH:MM`, vigências sem sobreposição, modalidades conhecidas, exceções duplicadas e sanitização) e **detecta drift** contra a fonte canônica, retornando `exit 1` em divergência.
+- Os textos de apresentação de sorteios dos projetos mensais em `js/config.js` (e em `data/projetos.json`) são apenas **catálogo/apresentação** — não são fonte autoritativa. O validador `scripts/validate-projetos-sorteios.js` garante que eles continuem cobrindo os fatos do calendário canônico, falhando a CI em caso de drift (executado em `.github/workflows/update-projetos.yml`).
 - O workflow `.github/workflows/calendario-caixa.yml`:
   - em **push/PR** nos arquivos do calendário: clona `Apps_Scripts` (público), espelha a fonte canônica, roda testes e validação — **falha a CI quando há drift**;
   - em **schedule diário (00h00 UTC) / `workflow_dispatch`**: regenera e **commita automaticamente** quando a fonte canônica mudou.

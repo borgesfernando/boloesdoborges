@@ -30,6 +30,9 @@ jobs:
       - name: Gerar data/projetos.json
         run: node scripts/extract-projetos.js
 
+      - name: Validar textos de sorteios contra o calendário canônico
+        run: node scripts/validate-projetos-sorteios.js
+
       - name: Gerar e validar site-index.json
         run: node scripts/generate-site-index.js
 
