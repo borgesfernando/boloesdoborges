@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-09-01T09:47:01.749Z",
-  "page_count": 42,
+  "generated_at": "2026-09-01T09:47:47.673Z",
+  "page_count": 43,
   "sites": [
     {
       "id": "public",
@@ -91,6 +91,13 @@
           "path": "/",
           "type": "page",
           "description": "Bolões da Mega-Sena, Lotofácil, Quina e Dupla Sena organizados com estratégia coletiva, tecnologia aplicada, transparência e prestação de contas desde 2009."
+        },
+        {
+          "title": "Atualizações | Comunidade Bolões do Borges",
+          "url": "https://site.boloesdoborges.shop/atualizacoes",
+          "path": "/atualizacoes",
+          "type": "page",
+          "description": "Acompanhe adesões abertas e as etapas operacionais dos projetos da Comunidade Bolões do Borges."
         },
         {
           "title": "Como funciona um bolão · Bolões do Borges",
