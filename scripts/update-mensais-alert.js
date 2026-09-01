@@ -1,7 +1,16 @@
 #!/usr/bin/env node
 /**
- * Atualiza o JSON de alerta de projetos com janela pública manual.
+ * Atualiza o alerta legado de um projeto e o agregado público sanitizado
+ * data/estado-operacional.json (schema v2).
+ *
+ * Regras centrais:
+ * - os *-alert.json continuam existindo para compatibilidade;
+ * - somente um evento operacional com janela completa pode produzir ABERTA;
+ * - atualizar um projeto preserva integralmente os outros oito;
+ * - contexto público é allowlisted e nunca recebe segredos/IDs internos.
  */
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
 
@@ -16,8 +25,10 @@ const ALERT_FILES = {
   'ds-pascoa': path.join(__dirname, '..', 'data', 'ds-pascoa-alert.json'),
   'mega-virada': path.join(__dirname, '..', 'data', 'mega-virada-alert.json'),
 };
+
 const ROTATION_FILE = path.join(__dirname, '..', 'data', 'strategic-alert-rotation.json');
 const STRATEGIC_PROJECTS = new Set(['mega-50mais', 'milionaria']);
+const DEFAULT_TIMEZONE = 'America/Sao_Paulo';
 
 const CATALOGO_V2 = {
   'lf-mensal': { nome: 'Lotofácil Mensal', tipo: 'MENSAL' },
@@ -28,9 +39,22 @@ const CATALOGO_V2 = {
   'ds-pascoa': { nome: 'Dupla Sena de Páscoa', tipo: 'ESPECIAL' },
   'mega-virada': { nome: 'Mega da Virada', tipo: 'ESPECIAL' },
   'mega-50mais': { nome: 'Mega-Sena 50+', tipo: 'ESTRATEGICO' },
-  'milionaria': { nome: '+Milionária', tipo: 'ESTRATEGICO' },
+  milionaria: { nome: '+Milionária', tipo: 'ESTRATEGICO' },
 };
-const CAMPOS_PROIBIDOS_V2 = /(?:token|secret|senha|password|planilha|spreadsheet|drive|pix|whatsapp|grupo|invite|convite|authorization|cookie)/i;
+
+const CAMPOS_PROIBIDOS_V2 = /(?:token|secret|senha|password|planilha|spreadsheet|drive|pix|whatsapp|grupo|invite|convite|authorization|cookie|script.?id|container|telefone|email)/i;
+const CONTEXTO_PUBLICO_ALLOWLIST = new Set(['concurso', 'dataOperacao', 'observacaoPublica']);
+const ESTADOS_PUBLICOS = new Set(['ABERTA', 'FECHADA', 'SEM_INSTANCIA', 'INDISPONIVEL']);
+const FASES_PUBLICAS = new Set([
+  'PLANEJAMENTO',
+  'INSCRICOES',
+  'PREPARACAO_APOSTAS',
+  'APOSTAS_REGISTRADAS',
+  'AGUARDANDO_SORTEIO',
+  'APURACAO',
+  'ENCERRADA',
+  'INDISPONIVEL',
+]);
 
 function parseBoolean(value) {
   if (typeof value === 'boolean') return value;
@@ -38,6 +62,10 @@ function parseBoolean(value) {
   if (normalized === 'true') return true;
   if (normalized === 'false') return false;
   throw new Error('Informe ALERTA_ATIVO como true ou false.');
+}
+
+function textoPublico(value, max = 180) {
+  return String(value == null ? '' : value).trim().slice(0, max);
 }
 
 function loadRotation() {
@@ -68,36 +96,70 @@ function resolveStrategicModel(projeto, ativo, concurso, correlationId) {
 
 function sanitizarContextoPublico(contextoBruto) {
   if (!contextoBruto) return {};
-  let parsed;
-  try {
-    parsed = JSON.parse(contextoBruto);
-  } catch (erro) {
-    throw new Error('ALERTA_CONTEXTO_PUBLICO deve ser um JSON válido.');
+  let parsed = contextoBruto;
+  if (typeof contextoBruto === 'string') {
+    try {
+      parsed = JSON.parse(contextoBruto);
+    } catch (_) {
+      throw new Error('ALERTA_CONTEXTO_PUBLICO deve ser um JSON válido.');
+    }
   }
   if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
     throw new Error('ALERTA_CONTEXTO_PUBLICO deve ser um objeto JSON.');
   }
+
   const saida = {};
-  for (const chave of Object.keys(parsed)) {
+  for (const [chave, valor] of Object.entries(parsed)) {
     if (CAMPOS_PROIBIDOS_V2.test(chave)) {
       throw new Error('Contexto público contém campo inválido: ' + chave);
     }
-    saida[chave] = String(parsed[chave] ?? '').trim();
+    if (!CONTEXTO_PUBLICO_ALLOWLIST.has(chave)) continue;
+    saida[chave] = textoPublico(valor);
   }
   return saida;
 }
 
+function janelaValida(abreEm, fechaEm) {
+  if (!abreEm || !fechaEm) return false;
+  const abre = Date.parse(abreEm);
+  const fecha = Date.parse(fechaEm);
+  return Number.isFinite(abre) && Number.isFinite(fecha) && abre < fecha;
+}
+
+function resolverEstadoPublico(payload) {
+  const solicitado = textoPublico(payload.estado, 30).toUpperCase();
+
+  if (payload.ativo === true) {
+    // O workflow_dispatch é o evento operacional; para publicar ABERTA exigimos
+    // também identidade da instância e janela temporal completa.
+    const eventoCompleto = Boolean(payload.concurso && payload.correlationId && janelaValida(payload.abreEm, payload.fechaEm));
+    if (eventoCompleto && (!solicitado || solicitado === 'ABERTA')) return 'ABERTA';
+    return 'INDISPONIVEL';
+  }
+
+  if (solicitado && ESTADOS_PUBLICOS.has(solicitado) && solicitado !== 'ABERTA') return solicitado;
+  return 'FECHADA';
+}
+
+function normalizarFase(fase, estado) {
+  const candidata = textoPublico(fase, 60).toUpperCase();
+  if (FASES_PUBLICAS.has(candidata)) return candidata;
+  if (estado === 'ABERTA') return 'INSCRICOES';
+  if (estado === 'FECHADA') return 'ENCERRADA';
+  return 'INDISPONIVEL';
+}
+
 function loadPayload(env) {
   const fonte = env && typeof env === 'object' ? env : process.env;
-  const projeto = (fonte.ALERTA_PROJETO || '').trim();
+  const projeto = textoPublico(fonte.ALERTA_PROJETO, 80);
   if (!ALERT_FILES[projeto]) {
     throw new Error(`Informe ALERTA_PROJETO (${Object.keys(ALERT_FILES).join(', ')}).`);
   }
+
   const ativo = parseBoolean(fonte.ALERTA_ATIVO);
-  const concurso = (fonte.ALERTA_CONCURSO || '').trim();
-  const correlationId = (fonte.ALERTA_CORRELATION_ID || '').trim();
+  const concurso = textoPublico(fonte.ALERTA_CONCURSO, 80);
+  const correlationId = textoPublico(fonte.ALERTA_CORRELATION_ID, 180);
   const modelo = resolveStrategicModel(projeto, ativo, concurso, correlationId);
-  const contextoPublico = sanitizarContextoPublico(fonte.ALERTA_CONTEXTO_PUBLICO);
 
   return {
     projeto,
@@ -105,12 +167,13 @@ function loadPayload(env) {
     modelo,
     concurso,
     correlationId,
-    estado: (fonte.ALERTA_ESTADO || '').trim(),
-    abreEm: (fonte.ALERTA_ABRE_EM || '').trim(),
-    fechaEm: (fonte.ALERTA_FECHA_EM || '').trim(),
-    timezone: (fonte.ALERTA_TIMEZONE || '').trim(),
-    atualizadoEm: (fonte.ALERTA_ATUALIZADO_EM || '').trim(),
-    contextoPublico,
+    estado: textoPublico(fonte.ALERTA_ESTADO, 30),
+    fase: textoPublico(fonte.ALERTA_FASE, 60),
+    abreEm: textoPublico(fonte.ALERTA_ABRE_EM, 80),
+    fechaEm: textoPublico(fonte.ALERTA_FECHA_EM, 80),
+    timezone: textoPublico(fonte.ALERTA_TIMEZONE || DEFAULT_TIMEZONE, 80),
+    atualizadoEm: textoPublico(fonte.ALERTA_ATUALIZADO_EM, 80),
+    contextoPublico: sanitizarContextoPublico(fonte.ALERTA_CONTEXTO_PUBLICO),
     ultimaAtualizacao: new Date().toISOString(),
   };
 }
@@ -128,46 +191,73 @@ function emptyAggregate() {
       concurso: '',
       abreEm: '',
       fechaEm: '',
-      timezone: 'America/Sao_Paulo',
-      janelaComunidade: { abreEm: '', fechaEm: '', timezone: 'America/Sao_Paulo' },
+      timezone: DEFAULT_TIMEZONE,
+      janelaComunidade: { abreEm: '', fechaEm: '', timezone: DEFAULT_TIMEZONE },
       contexto: {},
       atualizadoEm: '',
       correlationId: '',
       fonteEstado: 'Apps_Scripts',
     };
   }
-  return { schemaVersion: 2, generatedAt: new Date().toISOString(), timezone: 'America/Sao_Paulo', projetos };
+  return {
+    schemaVersion: 2,
+    generatedAt: new Date().toISOString(),
+    timezone: DEFAULT_TIMEZONE,
+    projetos,
+  };
 }
 
 function estadoV2DePayload(payload) {
-  const estado = payload.estado === 'ABERTA' ? 'ABERTA' : payload.ativo ? 'ABERTA' : 'FECHADA';
-  const timezone = payload.timezone || 'America/Sao_Paulo';
+  const estado = resolverEstadoPublico(payload);
+  const timezone = payload.timezone || DEFAULT_TIMEZONE;
+  const contexto = sanitizarContextoPublico(payload.contextoPublico || {});
+  if (payload.concurso && !contexto.concurso) contexto.concurso = textoPublico(payload.concurso, 80);
+
   return {
     slug: payload.projeto,
     nome: CATALOGO_V2[payload.projeto].nome,
     tipo: CATALOGO_V2[payload.projeto].tipo,
     estado,
     ativo: estado === 'ABERTA',
-    fase: estado === 'ABERTA' ? 'INSCRICOES' : 'ENCERRADA',
-    concurso: String(payload.concurso || ''),
-    abreEm: String(payload.abreEm || ''),
-    fechaEm: String(payload.fechaEm || ''),
+    fase: normalizarFase(payload.fase, estado),
+    concurso: textoPublico(payload.concurso, 80),
+    abreEm: textoPublico(payload.abreEm, 80),
+    fechaEm: textoPublico(payload.fechaEm, 80),
     timezone,
     janelaComunidade: {
-      abreEm: String(payload.abreEm || ''),
-      fechaEm: String(payload.fechaEm || ''),
+      abreEm: textoPublico(payload.abreEm, 80),
+      fechaEm: textoPublico(payload.fechaEm, 80),
       timezone,
     },
-    contexto: payload.contextoPublico && typeof payload.contextoPublico === 'object' ? payload.contextoPublico : {},
-    atualizadoEm: String(payload.atualizadoEm || new Date().toISOString()),
-    correlationId: String(payload.correlationId || ''),
+    contexto,
+    atualizadoEm: textoPublico(payload.atualizadoEm || payload.ultimaAtualizacao, 80),
+    correlationId: textoPublico(payload.correlationId, 180),
     fonteEstado: 'Apps_Scripts',
   };
+}
+
+function validarSaidaPublica(doc) {
+  const texto = JSON.stringify(doc);
+  for (const projeto of Object.values(doc.projetos || {})) {
+    for (const chave of Object.keys(projeto || {})) {
+      if (CAMPOS_PROIBIDOS_V2.test(chave)) throw new Error('Agregado contém chave proibida: ' + chave);
+    }
+    for (const chave of Object.keys((projeto && projeto.contexto) || {})) {
+      if (!CONTEXTO_PUBLICO_ALLOWLIST.has(chave) || CAMPOS_PROIBIDOS_V2.test(chave)) {
+        throw new Error('Agregado contém contexto público fora da allowlist: ' + chave);
+      }
+    }
+  }
+  if (/(?:GITHUB_TOKEN|TELEGRAM_OUTBOUND_SECRET|Bearer\s+[A-Za-z0-9._-]+)/i.test(texto)) {
+    throw new Error('Agregado contém conteúdo sensível.');
+  }
+  return true;
 }
 
 function updateAggregate(payload, estadoPath) {
   const esqueleto = emptyAggregate();
   let atual = esqueleto;
+
   if (estadoPath && fs.existsSync(estadoPath)) {
     try {
       const lido = JSON.parse(fs.readFileSync(estadoPath, 'utf8'));
@@ -175,18 +265,27 @@ function updateAggregate(payload, estadoPath) {
         atual = lido;
         atual.projetos = Object.assign({}, esqueleto.projetos, atual.projetos);
       }
-    } catch (erro) { /* corrompido: recria a partir do esqueleto */ }
+    } catch (_) {
+      atual = esqueleto;
+    }
   }
-  if (!atual.projetos[payload.projeto] || typeof atual.projetos[payload.projeto] !== 'object') {
-    atual.projetos[payload.projeto] = {};
-  }
-  const projetosAntes = JSON.stringify(atual.projetos);
-  atual.projetos[payload.projeto] = Object.assign({}, esqueleto.projetos[payload.projeto], atual.projetos[payload.projeto], estadoV2DePayload(payload));
+
+  const anterior = JSON.stringify(atual.projetos[payload.projeto] || null);
+  atual.projetos[payload.projeto] = Object.assign(
+    {},
+    esqueleto.projetos[payload.projeto],
+    atual.projetos[payload.projeto] || {},
+    estadoV2DePayload(payload),
+  );
+
   atual.schemaVersion = 2;
-  if (JSON.stringify(atual.projetos) !== projetosAntes) {
+  atual.timezone = DEFAULT_TIMEZONE;
+  if (JSON.stringify(atual.projetos[payload.projeto]) !== anterior) {
     atual.generatedAt = new Date().toISOString();
   }
-  atual.timezone = 'America/Sao_Paulo';
+
+  validarSaidaPublica(atual);
+
   if (estadoPath) {
     const novoConteudo = JSON.stringify(atual, null, 2) + '\n';
     if (!fs.existsSync(estadoPath) || fs.readFileSync(estadoPath, 'utf8') !== novoConteudo) {
@@ -197,12 +296,10 @@ function updateAggregate(payload, estadoPath) {
 }
 
 /**
- * Atualiza o estado operacional agregado (data/estado-operacional.json) de forma
- * idempotente e sanitizada em schema v2 com todos os projetos canônicos.
- * Atualizar um projeto preserva integralmente os demais.
- * @param {string} estadoPath Caminho do arquivo estado-operacional.json.
- * @param {{projeto:string, ativo:boolean, estado?:string, concurso?:string, abreEm?:string, fechaEm?:string, timezone?:string, correlationId?:string, atualizadoEm?:string, contextoPublico?:Object}} dados Dados sanitizados do contrato operacional.
- * @returns {{atualizado:boolean, projeto?:string}}
+ * Atualiza somente o registro indicado no agregado público.
+ * @param {string} estadoPath caminho para estado-operacional.json
+ * @param {Object} dados contrato operacional sanitizado
+ * @returns {{atualizado:boolean,projeto?:string}}
  */
 function atualizarEstadoOperacional(estadoPath, dados) {
   if (!dados || !ALERT_FILES[dados.projeto]) return { atualizado: false };
@@ -210,14 +307,16 @@ function atualizarEstadoOperacional(estadoPath, dados) {
   const payload = {
     projeto: dados.projeto,
     ativo: dados.ativo === true,
-    concurso: dados.concurso || '',
-    correlationId: dados.correlationId || '',
-    estado: dados.estado || '',
-    abreEm: dados.abreEm || '',
-    fechaEm: dados.fechaEm || '',
-    timezone: dados.timezone || 'America/Sao_Paulo',
-    atualizadoEm: dados.atualizadoEm || '',
-    contextoPublico: dados.contextoPublico && typeof dados.contextoPublico === 'object' ? dados.contextoPublico : {},
+    concurso: textoPublico(dados.concurso, 80),
+    correlationId: textoPublico(dados.correlationId, 180),
+    estado: textoPublico(dados.estado, 30),
+    fase: textoPublico(dados.fase, 60),
+    abreEm: textoPublico(dados.abreEm, 80),
+    fechaEm: textoPublico(dados.fechaEm, 80),
+    timezone: textoPublico(dados.timezone || DEFAULT_TIMEZONE, 80),
+    atualizadoEm: textoPublico(dados.atualizadoEm, 80),
+    contextoPublico: sanitizarContextoPublico(dados.contextoPublico || {}),
+    ultimaAtualizacao: textoPublico(dados.atualizadoEm || new Date().toISOString(), 80),
   };
   updateAggregate(payload, estadoPath);
   const depois = fs.readFileSync(estadoPath, 'utf8');
@@ -233,8 +332,10 @@ function main() {
       modelo: payload.modelo,
       ultimaAtualizacao: payload.ultimaAtualizacao,
     };
+
     const outputPath = ALERT_FILES[payload.projeto];
     fs.writeFileSync(outputPath, JSON.stringify(alerta, null, 2) + '\n', 'utf8');
+
     const estadoPath = path.join(__dirname, '..', 'data', 'estado-operacional.json');
     updateAggregate(payload, estadoPath);
     console.log(`Arquivo atualizado em ${outputPath}`);
@@ -244,8 +345,17 @@ function main() {
   }
 }
 
-if (require.main === module) {
-  main();
-}
+if (require.main === module) main();
 
-module.exports = { parseBoolean, loadPayload, main, atualizarEstadoOperacional, emptyAggregate, updateAggregate, sanitizarContextoPublico };
+module.exports = {
+  parseBoolean,
+  loadPayload,
+  main,
+  atualizarEstadoOperacional,
+  emptyAggregate,
+  updateAggregate,
+  sanitizarContextoPublico,
+  resolverEstadoPublico,
+  janelaValida,
+  validarSaidaPublica,
+};
