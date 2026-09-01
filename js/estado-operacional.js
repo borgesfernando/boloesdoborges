@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  const UPCOMING_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
+
   const ROUTES = {
     'lf-mensal': 'boloes/mensais/lf-mensal.html',
     'quina-mensal': 'boloes/mensais/quina-mensal.html',
@@ -33,24 +35,40 @@
     return Date.parse(value);
   }
 
+  function openingInstant(record) {
+    return parseDate(record && (record.abreEm || record.janelaComunidade?.abreEm));
+  }
+
+  function closingInstant(record) {
+    return parseDate(record && (record.fechaEm || record.janelaComunidade?.fechaEm));
+  }
+
   function isOpen(record, now = Date.now()) {
     if (!record || record.estado !== 'ABERTA' || record.ativo !== true) return false;
-    const abre = parseDate(record.abreEm || record.janelaComunidade?.abreEm);
-    const fecha = parseDate(record.fechaEm || record.janelaComunidade?.fechaEm);
+    const abre = openingInstant(record);
+    const fecha = closingInstant(record);
     if (!Number.isFinite(abre) || !Number.isFinite(fecha) || abre >= fecha) return false;
     return now >= abre && now < fecha;
   }
 
   function isClosingSoon(record, now = Date.now()) {
     if (!isOpen(record, now)) return false;
-    const fecha = parseDate(record.fechaEm || record.janelaComunidade?.fechaEm);
+    const fecha = closingInstant(record);
     return fecha - now <= 6 * 60 * 60 * 1000;
+  }
+
+  function isUpcoming(record, now = Date.now()) {
+    if (!record || record.estado === 'ABERTA' || record.estado === 'INDISPONIVEL' || record.ativo === true) return false;
+    const abre = openingInstant(record);
+    if (!Number.isFinite(abre) || abre <= now) return false;
+    return abre - now <= UPCOMING_WINDOW_MS;
   }
 
   function effectiveView(record, now = Date.now()) {
     if (!record) return { key: 'indisponivel', label: 'Informação indisponível', priority: 90 };
     if (isClosingSoon(record, now)) return { key: 'closing', label: 'Adesões encerrando em breve', priority: 0 };
     if (isOpen(record, now)) return { key: 'open', label: 'Adesões abertas', priority: 1 };
+    if (isUpcoming(record, now)) return { key: 'upcoming', label: 'Abre em breve', priority: 2 };
 
     const fase = String(record.fase || '').toUpperCase();
     if (fase === 'PREPARACAO_APOSTAS') return { key: 'progress', label: FASE_LABELS[fase], priority: 10 };
@@ -95,6 +113,10 @@
       const fim = formatDateTime(record.fechaEm || record.janelaComunidade?.fechaEm);
       return fim ? `Até ${fim}` : '';
     }
+    if (view.key === 'upcoming') {
+      const inicio = formatDateTime(record.abreEm || record.janelaComunidade?.abreEm);
+      return inicio ? `Abre em ${inicio}` : '';
+    }
     if (record.concurso) return `Concurso ${record.concurso}`;
     const atualizacao = formatDateTime(record.atualizadoEm);
     return atualizacao ? `Atualizado em ${atualizacao}` : '';
@@ -114,13 +136,23 @@
     </article>`;
   }
 
-  function sortedRecords(state) {
+  function sortedRecords(state, now = Date.now()) {
     return Object.values(state.projetos).sort((a, b) => {
-      const av = effectiveView(a).priority;
-      const bv = effectiveView(b).priority;
+      const av = effectiveView(a, now).priority;
+      const bv = effectiveView(b, now).priority;
       if (av !== bv) return av - bv;
+      if (av === 2) return openingInstant(a) - openingInstant(b);
       return String(a.nome).localeCompare(String(b.nome), 'pt-BR');
     });
+  }
+
+  function selectCompactRecords(state, now = Date.now(), limit = 4) {
+    return sortedRecords(state, now)
+      .filter((record) => {
+        const key = effectiveView(record, now).key;
+        return key === 'closing' || key === 'open' || key === 'upcoming';
+      })
+      .slice(0, Math.max(1, limit));
   }
 
   function renderFull(container, state) {
@@ -129,8 +161,11 @@
   }
 
   function renderCompact(container, state) {
-    const relevant = sortedRecords(state).filter((p) => effectiveView(p).priority < 50).slice(0, 4);
-    const selected = relevant.length ? relevant : sortedRecords(state).slice(0, 3);
+    const selected = selectCompactRecords(state);
+    if (!selected.length) {
+      container.innerHTML = '';
+      return;
+    }
     container.innerHTML = `<section class="op-updates-panel" aria-labelledby="op-updates-title">
       <div class="op-updates-heading">
         <div><p class="op-updates-kicker">Agora na comunidade</p><h2 id="op-updates-title">Atualizações</h2></div>
@@ -162,11 +197,11 @@
       if (compact) renderCompact(compact, state);
     } catch (_) {
       if (full) full.innerHTML = '<p class="op-updates-fallback">Informações operacionais indisponíveis no momento.</p>';
-      if (compact) compact.innerHTML = '<p class="op-updates-fallback">Atualizações operacionais indisponíveis no momento.</p>';
+      if (compact) compact.innerHTML = '';
     }
   }
 
-  window.EstadoOperacional = { isOpen, isClosingSoon, effectiveView, load, init };
+  window.EstadoOperacional = { isOpen, isClosingSoon, isUpcoming, effectiveView, selectCompactRecords, load, init };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 }());
