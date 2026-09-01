@@ -1,0 +1,29 @@
+name: Validar workflows do estado operacional
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/set-*-alert.yml'
+      - '.github/workflows/set-estado-operacional.yml'
+      - 'test/estado-operacional-workflows.test.js'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/set-*-alert.yml'
+      - '.github/workflows/set-estado-operacional.yml'
+      - 'test/estado-operacional-workflows.test.js'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: ''
+      - name: Validar contrato dos nove workflows
+        run: node test/estado-operacional-workflows.test.js
