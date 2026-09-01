@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+
+const raiz = path.resolve(__dirname, '..');
+const pasta = path.join(raiz, '.github', 'workflows');
+const esperados = [
+  'set-ds-mensal-alert.yml',
+  'set-lf-mensal-alert.yml',
+  'set-quina-mensal-alert.yml',
+  'set-lf-independencia-alert.yml',
+  'set-quina-saojoao-alert.yml',
+  'set-ds-pascoa-alert.yml',
+  'set-mega-virada-alert.yml',
+  'set-mega-50mais-alert.yml',
+  'set-milionaria-alert.yml',
+];
+
+const erros = [];
+
+for (const nome of esperados) {
+  const arquivo = path.join(pasta, nome);
+  if (!fs.existsSync(arquivo)) {
+    erros.push(`workflow obrigatório ausente: ${nome}`);
+    continue;
+  }
+  const texto = fs.readFileSync(arquivo, 'utf8');
+  if (!/workflow_dispatch\s*:/.test(texto)) erros.push(`${nome}: workflow_dispatch ausente`);
+  if (!/scripts\/update-mensais-alert\.js/.test(texto)) erros.push(`${nome}: updater canônico ausente`);
+  if (!/data\/estado-operacional\.json/.test(texto)) erros.push(`${nome}: estado-operacional.json não participa do commit`);
+}
+
+const workflowUnico = path.join(pasta, 'set-estado-operacional.yml');
+if (fs.existsSync(workflowUnico)) {
+  erros.push('set-estado-operacional.yml surgiu antes do gate de ciclo real validado.');
+}
+
+if (erros.length) {
+  console.error('FAIL: contrato de preservação dos workflows violado.');
+  erros.forEach((erro) => console.error(`- ${erro}`));
+  process.exit(1);
+}
+
+console.log(`PASS: ${esperados.length} workflows set-*.yml preservados; consolidação ainda não iniciada.`);
