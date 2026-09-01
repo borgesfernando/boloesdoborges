@@ -21,7 +21,36 @@ var CALENDARIO_CAIXA_ = {
       }
     }
   ],
-  excecoes: []
+  excecoes: [
+    {
+      id: 'lf-independencia-2026',
+      modalidade: 'lotofacil',
+      dataSorteio: '15/09/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Lotofácil da Independência; horário oficial 20h.'
+    },
+    {
+      id: 'qsj-2026',
+      modalidade: 'quina',
+      dataSorteio: '28/06/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Quina de São João; horário oficial 20h.'
+    },
+    {
+      id: 'ds-pascoa-2026',
+      modalidade: 'duplasena',
+      dataSorteio: '04/04/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Dupla Sena de Páscoa; horário oficial 20h.'
+    },
+    {
+      id: 'mega-da-virada-2026',
+      modalidade: 'megasena',
+      dataSorteio: '31/12/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Mega da Virada; horário oficial 20h.'
+    }
+  ]
 };
 
 var ALIASES_MODALIDADE_CAIXA_ = {
@@ -74,16 +103,19 @@ function obterHorarioSorteioCaixa(modalidade, data, opcoes) {
 
   const dataStr = formatarDateParaString(dataBase);
   const versao = obterVersaoCalendarioCaixa_(dataBase);
-  if (!versao) {
-    return montarResultadoSorteioCaixa_('NAO_CONFIRMADO', idCanonico, dataStr, null, null);
-  }
 
+  // Exceções especiais são avaliadas antes da vigência da versão: um sorteio
+  // especial registrado é autoritativo mesmo fora da janela da grade regular.
   const excecao = obterExcecaoCalendarioCaixa_(idCanonico, dataStr, opcoes);
   if (excecao) {
     if (excecao.horario) {
-      return montarResultadoSorteioCaixa_('ESPECIAL', idCanonico, dataStr, excecao.horario, versao.validFrom);
+      return montarResultadoSorteioCaixa_('ESPECIAL', idCanonico, dataStr, excecao.horario, versao ? versao.validFrom : null);
     }
-    return montarResultadoSorteioCaixa_('NAO_CONFIRMADO', idCanonico, dataStr, null, versao.validFrom);
+    return montarResultadoSorteioCaixa_('NAO_CONFIRMADO', idCanonico, dataStr, null, versao ? versao.validFrom : null);
+  }
+
+  if (!versao) {
+    return montarResultadoSorteioCaixa_('NAO_CONFIRMADO', idCanonico, dataStr, null, null);
   }
 
   const grade = versao.modalidades[idCanonico];

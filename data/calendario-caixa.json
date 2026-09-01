@@ -3,8 +3,8 @@
   "timezone": "America/Sao_Paulo",
   "fonte": "CAIXA",
   "referencia": "https://loterias.caixa.gov.br/",
-  "generatedAt": "2026-08-31T23:47:00.642Z",
-  "verificadoEm": "2026-08-31T23:47:00.642Z",
+  "generatedAt": "2026-09-01T02:34:39.626Z",
+  "verificadoEm": "2026-09-01T02:34:39.626Z",
   "versions": [
     {
       "validFrom": "2026-07-19",
@@ -113,5 +113,34 @@
       }
     }
   ],
-  "exceptions": []
+  "exceptions": [
+    {
+      "id": "lf-independencia-2026",
+      "modalidade": "lotofacil",
+      "dataSorteio": "15/09/2026",
+      "horario": "20:00",
+      "motivo": "Sorteio especial Lotofácil da Independência; horário oficial 20h."
+    },
+    {
+      "id": "qsj-2026",
+      "modalidade": "quina",
+      "dataSorteio": "28/06/2026",
+      "horario": "20:00",
+      "motivo": "Sorteio especial Quina de São João; horário oficial 20h."
+    },
+    {
+      "id": "ds-pascoa-2026",
+      "modalidade": "duplasena",
+      "dataSorteio": "04/04/2026",
+      "horario": "20:00",
+      "motivo": "Sorteio especial Dupla Sena de Páscoa; horário oficial 20h."
+    },
+    {
+      "id": "mega-da-virada-2026",
+      "modalidade": "megasena",
+      "dataSorteio": "31/12/2026",
+      "horario": "20:00",
+      "motivo": "Sorteio especial Mega da Virada; horário oficial 20h."
+    }
+  ]
 }

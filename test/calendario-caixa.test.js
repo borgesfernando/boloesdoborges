@@ -31,7 +31,36 @@ const CANONICO_BASE = {
       }
     }
   ],
-  excecoes: []
+  excecoes: [
+    {
+      id: 'lf-independencia-2026',
+      modalidade: 'lotofacil',
+      dataSorteio: '15/09/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Lotofácil da Independência; horário oficial 20h.'
+    },
+    {
+      id: 'qsj-2026',
+      modalidade: 'quina',
+      dataSorteio: '28/06/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Quina de São João; horário oficial 20h.'
+    },
+    {
+      id: 'ds-pascoa-2026',
+      modalidade: 'duplasena',
+      dataSorteio: '04/04/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Dupla Sena de Páscoa; horário oficial 20h.'
+    },
+    {
+      id: 'mega-da-virada-2026',
+      modalidade: 'megasena',
+      dataSorteio: '31/12/2026',
+      horario: '20:00',
+      motivo: 'Sorteio especial Mega da Virada; horário oficial 20h.'
+    }
+  ]
 };
 
 const AGORA = new Date('2026-08-31T12:00:00.000Z');
@@ -76,7 +105,7 @@ assert.strictEqual(doc.fonte, 'CAIXA');
 assert.strictEqual(doc.referencia, gerador.REFERENCIA_CAIXA);
 assert.strictEqual(doc.versions.length, 1);
 assert.strictEqual(Object.keys(doc.versions[0].modalidades).length, 5);
-assert.deepStrictEqual(doc.exceptions, []);
+assert.strictEqual(doc.exceptions.length, 4, 'exceções especiais 2026 mapeadas');
 assert.strictEqual(doc.versions[0].validFrom, '2026-07-19');
 assert.strictEqual(doc.versions[0].validUntil, null);
 
