@@ -62,7 +62,7 @@
         '<p>Na prática, cada mês já transcorrido entra com um <strong>acréscimo simbólico de R$ 1,00</strong> (parcela equalizada de R$ ' + corrigida + ',00) e o mês atual entra pelo valor normal (R$ ' + valorMes + ',00). <strong>Isso não é multa, juros por atraso nem penalidade</strong>: quem está entrando agora ainda não era participante nos meses anteriores. O ajuste é uma forma simples de <strong>equalização financeira</strong>, considerando o tempo em que os recursos dos participantes anteriores permaneceram reservados para o projeto.</p>' +
         '<p>Por transparência, a tabela abaixo separa o plano original da cota e o valor necessário para uma nova entrada em cada mês. O pagamento da entrada no dia <strong>' + projeto.diaPix + '</strong> fecha ao meio-dia.</p>' +
         tabelaEntrada(projeto) +
-        '<p style="font-size: 0.9rem;"><em>Após a entrada, a partir do mês seguinte, o participante volta a pagar apenas a parcela mensal normal de R$ ' + valorMes + ',00. Consulte também a <a href="../../faq.html">FAQ</a>, que detalha a regra de atualização dos projetos especiais.</em></p>';
+        '<p style="font-size: 0.9rem;"><em>Após a entrada, a partir do mês seguinte, o participante volta a pagar apenas a parcela mensal normal de R$ ' + valorMes + ',00. Consulte também a <a href="../../faq.html#faq-como-e-calculado-o-valor-das-parcelas-mensais">FAQ sobre cálculo e equalização das parcelas</a>.</em></p>';
     }
   }
 
