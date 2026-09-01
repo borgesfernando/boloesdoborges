@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-31T21:45:55.809Z",
+  "generatedAt": "2026-09-01T15:01:14.425Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -28,9 +28,9 @@
       "slug": "quina-mensal",
       "nome": "Quina Mensal",
       "tipo": "MENSAL",
-      "estado": "INDISPONIVEL",
+      "estado": "FECHADA",
       "ativo": false,
-      "fase": "INDISPONIVEL",
+      "fase": "ENCERRADA",
       "concurso": "",
       "abreEm": "",
       "fechaEm": "",
@@ -41,7 +41,7 @@
         "timezone": "America/Sao_Paulo"
       },
       "contexto": {},
-      "atualizadoEm": "",
+      "atualizadoEm": "2026-09-01T15:01:14.424Z",
       "correlationId": "",
       "fonteEstado": "Apps_Scripts"
     },
