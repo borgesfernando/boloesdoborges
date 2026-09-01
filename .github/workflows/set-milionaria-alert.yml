@@ -27,6 +27,11 @@ on:
         type: string
         required: false
         default: ''
+      fase:
+        description: 'Fase pública do projeto'
+        type: string
+        required: false
+        default: ''
       abre_em:
         description: 'Abertura efetiva da janela (ISO)'
         type: string
@@ -47,6 +52,11 @@ on:
         type: string
         required: false
         default: ''
+      contexto_publico:
+        description: 'JSON público allowlisted'
+        type: string
+        required: false
+        default: '{}'
 
 permissions:
   contents: write
@@ -64,13 +74,11 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: true
-
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: ''
-
       - name: Atualizar milionaria-alert.json
         env:
           ALERTA_PROJETO: milionaria
@@ -78,17 +86,17 @@ jobs:
           ALERTA_CONCURSO: ${{ inputs.concurso }}
           ALERTA_CORRELATION_ID: ${{ inputs.correlation_id }}
           ALERTA_ESTADO: ${{ inputs.estado }}
+          ALERTA_FASE: ${{ inputs.fase }}
           ALERTA_ABRE_EM: ${{ inputs.abre_em }}
           ALERTA_FECHA_EM: ${{ inputs.fecha_em }}
           ALERTA_TIMEZONE: ${{ inputs.timezone }}
           ALERTA_ATUALIZADO_EM: ${{ inputs.atualizado_em }}
+          ALERTA_CONTEXTO_PUBLICO: ${{ inputs.contexto_publico }}
         run: node scripts/update-mensais-alert.js
-
       - name: Commit e push se houver mudanças
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           if [ -n "$(git status --porcelain data/milionaria-alert.json data/strategic-alert-rotation.json data/estado-operacional.json)" ]; then
             git add data/milionaria-alert.json data/strategic-alert-rotation.json data/estado-operacional.json
             git commit -m "chore: atualizar alerta milionaria [skip ci]"
