@@ -18,6 +18,7 @@ const MAIS_MILIONARIA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'mais
 const LOTOFACIL_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'lotofacil-api.json');
 const QUINA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'quina-api.json');
 const DUPLA_SENA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'duplasena-api.json');
+const HEALTH_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'loterias-health.json');
 const PROJETOS_PATH = path.join(__dirname, '..', 'data', 'projetos.json');
 const MEGA_PROJECT_ID = 'mega-acumulada';
 const BRAZIL_UTC_OFFSET_MINUTES = -180; // America/Sao_Paulo (UTC-3)
@@ -175,13 +176,37 @@ async function main() {
     const statusUpdated = hasMegaStatusChanged(readJsonIfExists(OUTPUT_PATH), payload);
     if (statusUpdated) writeJsonIfChanged(OUTPUT_PATH, payload);
 
+    const snapshots = [
+      ['megasena', megaData, megaSnapshotUpdated],
+      ['maismilionaria', maisMilionariaData, maisMilionariaSnapshotUpdated],
+      ['lotofacil', lotofacilData, lotofacilSnapshotUpdated],
+      ['quina', quinaData, quinaSnapshotUpdated],
+      ['duplasena', duplaSenaData, duplaSenaSnapshotUpdated],
+    ];
+    const anySnapshotUpdated = snapshots.some(([, , updated]) => updated);
+    const existingHealth = readJsonIfExists(HEALTH_OUTPUT_PATH);
+    const health = {
+      schemaVersion: 1,
+      timezone: 'America/Sao_Paulo',
+      atualizadoEm: anySnapshotUpdated ? agora.toISOString() : (existingHealth?.atualizadoEm ?? null),
+      fonte: 'CAIXA',
+      modalidades: Object.fromEntries(snapshots.map(([id, dados, updated]) => [id, {
+        dataApuracao: dados?.dataApuracao ?? null,
+        concurso: dados?.numero ?? null,
+        dataProximoConcurso: dados?.dataProximoConcurso ?? null,
+        estado: updated ? 'ATUALIZADO' : 'SEM_ALTERACAO',
+      }])),
+    };
+    const healthUpdated = anySnapshotUpdated && writeJsonIfChanged(HEALTH_OUTPUT_PATH, health);
+
     if (
       megaSnapshotUpdated ||
       maisMilionariaSnapshotUpdated ||
       lotofacilSnapshotUpdated ||
       quinaSnapshotUpdated ||
       duplaSenaSnapshotUpdated ||
-      statusUpdated
+      statusUpdated ||
+      healthUpdated
     ) {
       console.log('Arquivos de loterias atualizados');
     } else {
