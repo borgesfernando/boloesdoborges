@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "domain": "conversion",
+  "intents": [
+    {
+      "id": "conversion.next_step",
+      "intent": "saber_proximo_passo_participacao",
+      "examples": ["Estou interessado, qual o próximo passo?", "Onde faço meu cadastro?", "Como entro?", "Onde estão as regras antes de pagar?", "Com quem falo para participar?"],
+      "answerType": "hybrid",
+      "resolver": "project_context",
+      "response": {
+        "short": "O próximo passo depende do projeto e da fase atual; primeiro confirme as regras e a disponibilidade publicadas antes de qualquer pagamento.",
+        "standard": "Para avançar, o atendimento deve identificar o projeto de interesse, apresentar ou apontar as regras aplicáveis e confirmar o estado atual antes de orientar cadastro ou pagamento. Nunca deve afirmar disponibilidade apenas porque existe uma página ou regra editorial do projeto."
+      },
+      "sources": [{"type":"faq","reference":"faq.json"},{"type":"operational_state","reference":"data/estado-operacional.json"}]
+    }
+  ]
+}
