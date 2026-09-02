@@ -12,7 +12,9 @@ O snapshot é continuidade, não fonte temporal isolada. Após o horário oficia
 
 - recuperação diária: 06h BRT;
 - janela crítica: a cada 5 minutos, de 10 minutos antes até 1 hora pós-sorteio;
-- janela crítica noturna: a cada 5 minutos de 20h50 a 23h30 BRT;
-- janela crítica de domingo: a cada 5 minutos de 10h50 a 12h30 BRT.
+- janela crítica noturna: a cada 5 minutos de 20h50 a 22h00 BRT;
+- janela crítica de domingo: a cada 5 minutos de 10h50 a 12h00 BRT.
+
+Na janela crítica, o publicador lê `data/calendario-caixa.json` e consulta somente as modalidades que têm sorteio entre 10 minutos antes e 1 hora depois do horário oficial. Exceções do calendário (por exemplo, concursos especiais) substituem a grade semanal. A recuperação das 06h BRT consulta todas as modalidades.
 
 O script mantém retries para a CAIXA e, quando o snapshot de uma modalidade já contém a apuração da data corrente, deixa de consultar essa modalidade até o próximo dia. O workflow só cria commit quando houver dado novo.
