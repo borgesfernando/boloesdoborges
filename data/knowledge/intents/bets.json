@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "domain": "bets",
+  "intents": [
+    {
+      "id": "bets.composition",
+      "intent": "entender_composicao_apostas",
+      "examples": ["Quem escolhe os números?", "Como vocês montam os jogos?", "As apostas são aleatórias?", "Como evitam apostas repetidas?", "Por que usam apostas com mais dezenas?"],
+      "answerType": "canonical",
+      "response": {
+        "short": "A composição das apostas é planejada conforme o projeto, orçamento e métodos documentados; o planejamento não prevê o resultado do sorteio.",
+        "standard": "A composição varia conforme a modalidade e o projeto. O processo pode usar planejamento, combinações, ferramentas computacionais e critérios documentados para organizar a carteira de apostas. Isso não representa previsão das dezenas nem garantia de premiação."
+      },
+      "sources": [{"type":"faq","reference":"faq.json"}]
+    }
+  ]
+}
