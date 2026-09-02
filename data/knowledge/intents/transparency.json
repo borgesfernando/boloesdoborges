@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "domain": "transparency",
+  "intents": [
+    {
+      "id": "transparency.accountability",
+      "intent": "entender_prestacao_contas",
+      "examples": ["Como sei que o dinheiro foi usado nas apostas?", "Vocês mostram os bilhetes?", "Existe prestação de contas?", "Como confiro as apostas?", "O que recebo depois do pagamento?"],
+      "answerType": "canonical",
+      "response": {
+        "short": "O ciclo prevê conferência administrativa, registro das apostas e prestação de contas aos participantes.",
+        "standard": "A operação prevê conferência administrativa antes do registro, registro das apostas nos canais oficiais aplicáveis e prestação de contas aos participantes com informações do projeto e dos bilhetes, conforme as regras e o ciclo descritos na FAQ."
+      },
+      "sources": [{"type":"faq","reference":"faq.json"}]
+    }
+  ]
+}
