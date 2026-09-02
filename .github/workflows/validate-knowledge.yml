@@ -37,3 +37,5 @@ jobs:
         run: node scripts/validate-knowledge-sensitive.test.js
       - name: Verificar autoridade das fontes
         run: node scripts/validate-knowledge-authority.test.js
+      - name: Verificar ausência de wiring em produção
+        run: node scripts/validate-knowledge-no-production-wiring.test.js
