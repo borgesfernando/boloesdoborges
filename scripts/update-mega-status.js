@@ -20,6 +20,7 @@ const QUINA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'quina-api.json
 const DUPLA_SENA_RAW_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'duplasena-api.json');
 const HEALTH_OUTPUT_PATH = path.join(__dirname, '..', 'data', 'loterias-health.json');
 const PROJETOS_PATH = path.join(__dirname, '..', 'data', 'projetos.json');
+const CALENDARIO_PATH = path.join(__dirname, '..', 'data', 'calendario-caixa.json');
 const MEGA_PROJECT_ID = 'mega-acumulada';
 const BRAZIL_UTC_OFFSET_MINUTES = -180; // America/Sao_Paulo (UTC-3)
 const MAX_FETCH_ATTEMPTS = 4;
@@ -80,14 +81,88 @@ function dataHojeBrt() {
   return String(d.getUTCDate()).padStart(2, '0') + '/' + String(d.getUTCMonth() + 1).padStart(2, '0') + '/' + d.getUTCFullYear();
 }
 
-async function obterSnapshotAtualizado(apiUrl, lotteryName, outputPath, hojeBrt) {
+async function obterSnapshotAtualizado(apiUrl, lotteryName, outputPath, hojeBrt, deveConsultar) {
   const existente = readJsonIfExists(outputPath);
+  if (!deveConsultar) return { dados: existente, consultado: false };
+
   // Depois de confirmar a apuração do dia, não consulta novamente essa
   // modalidade na mesma janela. A recuperação diária sempre revalida.
   if (process.env.LOTTERY_RECOVERY !== '1' && existente?.dataApuracao === hojeBrt) {
     return { dados: existente, consultado: false };
   }
   return { dados: await fetchLotteryDataWithRetry(apiUrl, lotteryName), consultado: true };
+}
+
+const LOTERIAS = [
+  { id: 'megasena', nome: 'Mega-Sena', apiUrl: MEGA_API_URL, outputPath: RAW_OUTPUT_PATH },
+  { id: 'maismilionaria', nome: '+Milionária', apiUrl: MAIS_MILIONARIA_API_URL, outputPath: MAIS_MILIONARIA_RAW_OUTPUT_PATH },
+  { id: 'lotofacil', nome: 'Lotofácil', apiUrl: LOTOFACIL_API_URL, outputPath: LOTOFACIL_RAW_OUTPUT_PATH },
+  { id: 'quina', nome: 'Quina', apiUrl: QUINA_API_URL, outputPath: QUINA_RAW_OUTPUT_PATH },
+  { id: 'duplasena', nome: 'Dupla Sena', apiUrl: DUPLA_SENA_API_URL, outputPath: DUPLA_SENA_RAW_OUTPUT_PATH },
+];
+
+function getBrtReference(date = new Date()) {
+  return new Date(date.getTime() + BRAZIL_UTC_OFFSET_MINUTES * 60 * 1000);
+}
+
+function getBrtDateIso(date = new Date()) {
+  return getBrtReference(date).toISOString().slice(0, 10);
+}
+
+function getBrtTimeMinutes(date = new Date()) {
+  const brt = getBrtReference(date);
+  return brt.getUTCHours() * 60 + brt.getUTCMinutes();
+}
+
+function getBrtWeekday(date = new Date()) {
+  return ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][getBrtReference(date).getUTCDay()];
+}
+
+function timeToMinutes(time) {
+  const [hours, minutes] = String(time).split(':').map(Number);
+  return hours * 60 + minutes;
+}
+
+function formatBrtDate(date = new Date()) {
+  const brt = getBrtReference(date);
+  return String(brt.getUTCDate()).padStart(2, '0') + '/' + String(brt.getUTCMonth() + 1).padStart(2, '0') + '/' + brt.getUTCFullYear();
+}
+
+function getCalendarVersion(calendar, dateIso) {
+  return (calendar?.versions ?? []).find(({ validFrom, validUntil }) =>
+    validFrom <= dateIso && (!validUntil || dateIso <= validUntil)
+  );
+}
+
+function getDrawsForToday(calendar, modalidade, now = new Date()) {
+  const today = formatBrtDate(now);
+  const exceptions = (calendar?.exceptions ?? []).filter(
+    (exception) => exception.modalidade === modalidade && exception.dataSorteio === today
+  );
+  if (exceptions.length > 0) return exceptions.map(({ horario }) => ({ time: horario }));
+
+  const version = getCalendarVersion(calendar, getBrtDateIso(now));
+  return (version?.modalidades?.[modalidade]?.sorteios ?? [])
+    .filter(({ weekday }) => weekday === getBrtWeekday(now));
+}
+
+function selecionarModalidadesParaConsulta(now = new Date()) {
+  if (process.env.LOTTERY_RECOVERY === '1') {
+    return new Set(LOTERIAS.map(({ id }) => id));
+  }
+
+  const calendar = readJsonIfExists(CALENDARIO_PATH);
+  if (!calendar) throw new Error(`Calendário não encontrado: ${CALENDARIO_PATH}`);
+
+  const nowMinutes = getBrtTimeMinutes(now);
+  return new Set(
+    LOTERIAS
+      .filter(({ id }) => getDrawsForToday(calendar, id, now).some(({ time }) => {
+        const delta = nowMinutes - timeToMinutes(time);
+        return delta >= -10 && delta <= 60;
+      }))
+      .map(({ id }) => id)
+  );
 }
 
 function loadMegaProjectConfig() {
@@ -151,26 +226,37 @@ function hasMegaStatusChanged(existing, next) {
 async function main() {
   try {
     const { minimoMilhoes } = loadMegaProjectConfig();
+    const agora = new Date();
     const hojeBrt = dataHojeBrt();
-    const [mega, maisMilionaria, lotofacil, quina, duplaSena] = await Promise.all([
-      obterSnapshotAtualizado(MEGA_API_URL, 'Mega-Sena', RAW_OUTPUT_PATH, hojeBrt),
-      obterSnapshotAtualizado(MAIS_MILIONARIA_API_URL, '+Milionária', MAIS_MILIONARIA_RAW_OUTPUT_PATH, hojeBrt),
-      obterSnapshotAtualizado(LOTOFACIL_API_URL, 'Lotofácil', LOTOFACIL_RAW_OUTPUT_PATH, hojeBrt),
-      obterSnapshotAtualizado(QUINA_API_URL, 'Quina', QUINA_RAW_OUTPUT_PATH, hojeBrt),
-      obterSnapshotAtualizado(DUPLA_SENA_API_URL, 'Dupla Sena', DUPLA_SENA_RAW_OUTPUT_PATH, hojeBrt),
-    ]);
-    const { dados: megaData } = mega;
-    const { dados: maisMilionariaData } = maisMilionaria;
-    const { dados: lotofacilData } = lotofacil;
-    const { dados: quinaData } = quina;
-    const { dados: duplaSenaData } = duplaSena;
+    const modalidadesSelecionadas = selecionarModalidadesParaConsulta(agora);
+
+    console.log(
+      modalidadesSelecionadas.size > 0
+        ? `[update-mega-status] Janela ativa para: ${[...modalidadesSelecionadas].join(', ')}`
+        : '[update-mega-status] Fora de janela crítica: nenhuma consulta à CAIXA'
+    );
+
+    const resultados = await Promise.all(
+      LOTERIAS.map((loteria) =>
+        obterSnapshotAtualizado(
+          loteria.apiUrl,
+          loteria.nome,
+          loteria.outputPath,
+          hojeBrt,
+          modalidadesSelecionadas.has(loteria.id)
+        ).then((resultado) => [loteria.id, resultado])
+      )
+    );
+    const porModalidade = Object.fromEntries(resultados);
+    const megaData = porModalidade.megasena.dados;
+    if (!megaData) throw new Error('Snapshot da Mega-Sena não encontrado');
+
     const valorEstimadoProximoConcurso = Number(megaData?.valorEstimadoProximoConcurso ?? 0);
     const numero = megaData?.numero ?? megaData?.numeroConcurso ?? null;
     const dataProximoConcurso = megaData?.dataProximoConcurso ?? null;
     const acumulado = Boolean(megaData?.acumulado);
     const minimoReais = minimoMilhoes * 1_000_000;
     const ativo = valorEstimadoProximoConcurso >= minimoReais;
-    const agora = new Date();
     const janelaFim = getJanelaFim(agora);
 
     const payload = {
@@ -186,25 +272,14 @@ async function main() {
       fonte: MEGA_API_URL,
     };
 
-    const megaSnapshotUpdated = mega.consultado && writeJsonIfChanged(RAW_OUTPUT_PATH, megaData);
-    const maisMilionariaSnapshotUpdated = maisMilionaria.consultado && writeJsonIfChanged(
-      MAIS_MILIONARIA_RAW_OUTPUT_PATH,
-      maisMilionariaData
-    );
-    const lotofacilSnapshotUpdated = lotofacil.consultado && writeJsonIfChanged(LOTOFACIL_RAW_OUTPUT_PATH, lotofacilData);
-    const quinaSnapshotUpdated = quina.consultado && writeJsonIfChanged(QUINA_RAW_OUTPUT_PATH, quinaData);
-    const duplaSenaSnapshotUpdated = duplaSena.consultado && writeJsonIfChanged(DUPLA_SENA_RAW_OUTPUT_PATH, duplaSenaData);
+    const snapshots = LOTERIAS.map(({ id, outputPath }) => {
+      const { dados, consultado } = porModalidade[id];
+      return [id, dados, consultado && writeJsonIfChanged(outputPath, dados)];
+    });
+    const anySnapshotUpdated = snapshots.some(([, , updated]) => updated);
     const statusUpdated = hasMegaStatusChanged(readJsonIfExists(OUTPUT_PATH), payload);
     if (statusUpdated) writeJsonIfChanged(OUTPUT_PATH, payload);
 
-    const snapshots = [
-      ['megasena', megaData, megaSnapshotUpdated],
-      ['maismilionaria', maisMilionariaData, maisMilionariaSnapshotUpdated],
-      ['lotofacil', lotofacilData, lotofacilSnapshotUpdated],
-      ['quina', quinaData, quinaSnapshotUpdated],
-      ['duplasena', duplaSenaData, duplaSenaSnapshotUpdated],
-    ];
-    const anySnapshotUpdated = snapshots.some(([, , updated]) => updated);
     const existingHealth = readJsonIfExists(HEALTH_OUTPUT_PATH);
     const health = {
       schemaVersion: 1,
@@ -220,15 +295,7 @@ async function main() {
     };
     const healthUpdated = anySnapshotUpdated && writeJsonIfChanged(HEALTH_OUTPUT_PATH, health);
 
-    if (
-      megaSnapshotUpdated ||
-      maisMilionariaSnapshotUpdated ||
-      lotofacilSnapshotUpdated ||
-      quinaSnapshotUpdated ||
-      duplaSenaSnapshotUpdated ||
-      statusUpdated ||
-      healthUpdated
-    ) {
+    if (anySnapshotUpdated || statusUpdated || healthUpdated) {
       console.log('Arquivos de loterias atualizados');
     } else {
       console.log('Nenhuma alteração nas respostas das loterias');
