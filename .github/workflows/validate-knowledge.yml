@@ -5,10 +5,8 @@ on:
     paths:
       - "data/knowledge/**"
       - "scripts/validate-knowledge*.js"
+      - "docs/knowledge*.md"
       - "docs/arquitetura-knowledge-dataset.md"
-      - "docs/knowledge-requirements-matrix.md"
-      - "docs/knowledge-campaign-intent-map.md"
-      - "docs/knowledge-pr-scope.md"
   push:
     branches: [ main ]
     paths:
@@ -42,5 +40,7 @@ jobs:
         run: node scripts/validate-knowledge-faq-authority.test.js
       - name: Verificar cobertura fundacional
         run: node scripts/validate-knowledge-coverage.test.js
+      - name: Verificar respostas
+        run: node scripts/validate-knowledge-responses.test.js
       - name: Verificar ausência de wiring em produção
         run: node scripts/validate-knowledge-no-production-wiring.test.js
