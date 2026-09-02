@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "domain": "participation",
+  "intents": [
+    {
+      "id": "participation.lifecycle",
+      "intent": "entender_ciclo_bolao",
+      "examples": ["Como funciona o bolão?", "Nunca participei, como funciona?", "Como é o processo?", "O que acontece depois que eu pago?", "Como funciona do pagamento até o sorteio?"],
+      "answerType": "canonical",
+      "facts": ["O ciclo inclui abertura, adesões, composição, fechamento, conferência administrativa, registro das apostas, prestação de contas, sorteio, apuração e relatório final."],
+      "response": {
+        "short": "O ciclo vai da adesão ao relatório final, com planejamento, registro das apostas, conferência e prestação de contas.",
+        "standard": "Em linhas gerais, o ciclo é: abertura e adesão, planejamento e fechamento, conferência administrativa, registro das apostas nos canais oficiais, prestação de contas, sorteio, apuração dos bilhetes e relatório final. Datas, valores e regras específicas variam conforme o projeto e devem ser consultados nas fontes atuais."
+      },
+      "sources": [{"type":"faq","reference":"faq.json"}]
+    }
+  ]
+}
