@@ -5,12 +5,14 @@ on:
     paths:
       - "data/knowledge/**"
       - "scripts/validate-knowledge.js"
+      - "scripts/validate-knowledge.test.js"
       - "docs/arquitetura-knowledge-dataset.md"
   push:
     branches: [ main ]
     paths:
       - "data/knowledge/**"
       - "scripts/validate-knowledge.js"
+      - "scripts/validate-knowledge.test.js"
 
 permissions:
   contents: read
@@ -25,3 +27,5 @@ jobs:
           node-version: 24
       - name: Validar knowledge dataset
         run: node scripts/validate-knowledge.js
+      - name: Testar validador
+        run: node scripts/validate-knowledge.test.js
