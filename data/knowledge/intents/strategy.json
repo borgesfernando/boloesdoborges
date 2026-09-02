@@ -7,6 +7,7 @@
       "intent": "perguntar_se_ia_aumenta_chance",
       "examples": ["A IA aumenta as chances?", "A IA prevê os números?", "Vocês sabem quais dezenas vão sair?", "A estratégia garante prêmio?", "A IA escolhe números vencedores?"],
       "answerType": "canonical",
+      "sensitive": true,
       "facts": ["IA e métodos computacionais podem apoiar organização, análise e composição de carteiras.", "O resultado do sorteio é aleatório.", "Nenhum modelo usado pelo projeto prevê as dezenas sorteadas ou garante premiação."],
       "response": {
         "short": "Não. A IA não prevê o sorteio e não garante prêmio; ela é usada como ferramenta de análise, organização e composição das apostas.",
@@ -14,8 +15,7 @@
       },
       "mustInclude": ["não prevê o resultado do sorteio", "não garante prêmio"],
       "mustNotClaim": ["vantagem garantida", "previsão das dezenas", "retorno esperado superior", "estratégia vencedora", "garantia de faixa de prêmio"],
-      "relatedIntents": ["strategy.bet_generation", "history.past_results"],
-      "sources": [{"type":"documentation","reference":"docs/plano-historico-mega-da-virada-transparencia.md"},{"type":"faq","reference":"faq.html"}]
+      "sources": [{"type":"documentation","reference":"docs/plano-historico-mega-da-virada-transparencia.md"},{"type":"faq","reference":"faq.json"}]
     }
   ]
 }
