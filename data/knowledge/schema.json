@@ -6,7 +6,7 @@
   "required": ["schemaVersion", "domain", "intents"],
   "properties": {
     "schemaVersion": { "type": "integer", "const": 1 },
-    "domain": { "type": "string" },
+    "domain": { "type": "string", "minLength": 1 },
     "intents": {
       "type": "array",
       "items": {
@@ -14,24 +14,25 @@
         "required": ["id", "intent", "examples", "answerType", "response", "sources"],
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9_.-]+$" },
-          "intent": { "type": "string" },
-          "examples": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "intent": { "type": "string", "minLength": 1 },
+          "examples": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
           "answerType": { "enum": ["canonical", "dynamic", "hybrid", "human"] },
+          "sensitive": { "type": "boolean", "default": false },
           "response": {
             "type": "object",
             "required": ["short", "standard"],
             "properties": {
-              "short": { "type": "string" },
-              "standard": { "type": "string" },
-              "detailed": { "type": "string" }
+              "short": { "type": "string", "minLength": 1 },
+              "standard": { "type": "string", "minLength": 1 },
+              "detailed": { "type": "string", "minLength": 1 }
             },
             "additionalProperties": false
           },
-          "facts": { "type": "array", "items": { "type": "string" } },
-          "mustInclude": { "type": "array", "items": { "type": "string" } },
-          "mustNotClaim": { "type": "array", "items": { "type": "string" } },
-          "resolver": { "type": "string" },
-          "relatedIntents": { "type": "array", "items": { "type": "string" } },
+          "facts": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "mustInclude": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "mustNotClaim": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "resolver": { "type": "string", "minLength": 1 },
+          "relatedIntents": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9_.-]+$" } },
           "sources": {
             "type": "array",
             "minItems": 1,
@@ -39,13 +40,23 @@
               "type": "object",
               "required": ["type", "reference"],
               "properties": {
-                "type": { "enum": ["faq", "documentation", "operational_state", "terms"] },
-                "reference": { "type": "string" }
+                "type": { "enum": ["faq", "documentation", "operational_state", "historical_dataset", "terms"] },
+                "reference": { "type": "string", "minLength": 1 }
               },
               "additionalProperties": false
             }
           }
         },
+        "allOf": [
+          {
+            "if": { "properties": { "answerType": { "enum": ["dynamic", "hybrid"] } }, "required": ["answerType"] },
+            "then": { "required": ["resolver"] }
+          },
+          {
+            "if": { "properties": { "sensitive": { "const": true } }, "required": ["sensitive"] },
+            "then": { "required": ["mustInclude", "mustNotClaim"] }
+          }
+        ],
         "additionalProperties": false
       }
     }
