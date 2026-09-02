@@ -37,6 +37,14 @@ jobs:
           node-version: '20'
           cache: ''  # garante que NÃO tentará cache de deps (evita exigir lockfile)
 
+      - name: Definir modo da execução
+        run: |
+          # O único agendamento na hora 09 UTC é a recuperação das 06h BRT.
+          # As demais execuções usam exclusivamente a seleção pela janela do calendário.
+          if [ "$(date -u +%H)" = "09" ]; then
+            echo "LOTTERY_RECOVERY=1" >> "$GITHUB_ENV"
+          fi
+
       - name: Executar script de atualização
         run: node scripts/update-mega-status.js
 
