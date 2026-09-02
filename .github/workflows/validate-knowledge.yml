@@ -4,18 +4,15 @@ on:
   pull_request:
     paths:
       - "data/knowledge/**"
-      - "scripts/validate-knowledge.js"
-      - "scripts/validate-knowledge.test.js"
-      - "scripts/validate-knowledge.fixtures.test.js"
+      - "scripts/validate-knowledge*.js"
       - "docs/arquitetura-knowledge-dataset.md"
       - "docs/knowledge-requirements-matrix.md"
+      - "docs/knowledge-campaign-intent-map.md"
   push:
     branches: [ main ]
     paths:
       - "data/knowledge/**"
-      - "scripts/validate-knowledge.js"
-      - "scripts/validate-knowledge.test.js"
-      - "scripts/validate-knowledge.fixtures.test.js"
+      - "scripts/validate-knowledge*.js"
 
 permissions:
   contents: read
@@ -34,3 +31,5 @@ jobs:
         run: node scripts/validate-knowledge.test.js
       - name: Verificar controles de falha
         run: node scripts/validate-knowledge.fixtures.test.js
+      - name: Verificar alinhamento com schema
+        run: node scripts/validate-knowledge-schema.test.js
