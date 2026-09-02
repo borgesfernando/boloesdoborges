@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "domain": "prizes",
+  "intents": [
+    {
+      "id": "prizes.distribution",
+      "intent": "entender_rateio_premios",
+      "examples": ["Quanto cada participante recebe se ganhar?", "Como o prêmio é dividido?", "Vocês ficam com parte do prêmio?", "Como funciona o rateio?", "Quem recebe o prêmio?"],
+      "answerType": "canonical",
+      "sensitive": true,
+      "response": {
+        "short": "O rateio deve seguir as regras documentadas do projeto e a proporção de cotas aplicável, sem criar condições diferentes das divulgadas.",
+        "standard": "A distribuição de eventual premiação deve seguir as regras documentadas do projeto e a participação/cotas aplicável. Para detalhes de recebimento, repasse ou exceções, o atendimento deve reproduzir apenas o que estiver formalmente previsto nas fontes vigentes, sem improvisar regras financeiras."
+      },
+      "mustInclude": ["seguir as regras documentadas do projeto"],
+      "mustNotClaim": ["regra de distribuição não documentada", "taxa ou retenção não prevista", "garantia de prêmio"],
+      "sources": [{"type":"faq","reference":"faq.json"}]
+    }
+  ]
+}
