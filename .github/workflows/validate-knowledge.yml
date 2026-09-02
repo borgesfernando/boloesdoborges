@@ -6,13 +6,16 @@ on:
       - "data/knowledge/**"
       - "scripts/validate-knowledge.js"
       - "scripts/validate-knowledge.test.js"
+      - "scripts/validate-knowledge.fixtures.test.js"
       - "docs/arquitetura-knowledge-dataset.md"
+      - "docs/knowledge-requirements-matrix.md"
   push:
     branches: [ main ]
     paths:
       - "data/knowledge/**"
       - "scripts/validate-knowledge.js"
       - "scripts/validate-knowledge.test.js"
+      - "scripts/validate-knowledge.fixtures.test.js"
 
 permissions:
   contents: read
@@ -29,3 +32,5 @@ jobs:
         run: node scripts/validate-knowledge.js
       - name: Testar validador
         run: node scripts/validate-knowledge.test.js
+      - name: Verificar controles de falha
+        run: node scripts/validate-knowledge.fixtures.test.js
