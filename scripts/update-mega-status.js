@@ -75,6 +75,21 @@ async function fetchLotteryDataWithRetry(apiUrl, lotteryName) {
   throw lastError ?? new Error(`Falha ao buscar dados da ${lotteryName}`);
 }
 
+function dataHojeBrt() {
+  const d = new Date(Date.now() + BRAZIL_UTC_OFFSET_MINUTES * 60 * 1000);
+  return String(d.getUTCDate()).padStart(2, '0') + '/' + String(d.getUTCMonth() + 1).padStart(2, '0') + '/' + d.getUTCFullYear();
+}
+
+async function obterSnapshotAtualizado(apiUrl, lotteryName, outputPath, hojeBrt) {
+  const existente = readJsonIfExists(outputPath);
+  // Depois de confirmar a apuração do dia, não consulta novamente essa
+  // modalidade na mesma janela. A recuperação diária sempre revalida.
+  if (process.env.LOTTERY_RECOVERY !== '1' && existente?.dataApuracao === hojeBrt) {
+    return { dados: existente, consultado: false };
+  }
+  return { dados: await fetchLotteryDataWithRetry(apiUrl, lotteryName), consultado: true };
+}
+
 function loadMegaProjectConfig() {
   if (!fs.existsSync(PROJETOS_PATH)) {
     throw new Error(`Arquivo de projetos não encontrado: ${PROJETOS_PATH}`);
@@ -136,13 +151,19 @@ function hasMegaStatusChanged(existing, next) {
 async function main() {
   try {
     const { minimoMilhoes } = loadMegaProjectConfig();
-    const [megaData, maisMilionariaData, lotofacilData, quinaData, duplaSenaData] = await Promise.all([
-      fetchLotteryDataWithRetry(MEGA_API_URL, 'Mega-Sena'),
-      fetchLotteryDataWithRetry(MAIS_MILIONARIA_API_URL, '+Milionária'),
-      fetchLotteryDataWithRetry(LOTOFACIL_API_URL, 'Lotofácil'),
-      fetchLotteryDataWithRetry(QUINA_API_URL, 'Quina'),
-      fetchLotteryDataWithRetry(DUPLA_SENA_API_URL, 'Dupla Sena'),
+    const hojeBrt = dataHojeBrt();
+    const [mega, maisMilionaria, lotofacil, quina, duplaSena] = await Promise.all([
+      obterSnapshotAtualizado(MEGA_API_URL, 'Mega-Sena', RAW_OUTPUT_PATH, hojeBrt),
+      obterSnapshotAtualizado(MAIS_MILIONARIA_API_URL, '+Milionária', MAIS_MILIONARIA_RAW_OUTPUT_PATH, hojeBrt),
+      obterSnapshotAtualizado(LOTOFACIL_API_URL, 'Lotofácil', LOTOFACIL_RAW_OUTPUT_PATH, hojeBrt),
+      obterSnapshotAtualizado(QUINA_API_URL, 'Quina', QUINA_RAW_OUTPUT_PATH, hojeBrt),
+      obterSnapshotAtualizado(DUPLA_SENA_API_URL, 'Dupla Sena', DUPLA_SENA_RAW_OUTPUT_PATH, hojeBrt),
     ]);
+    const { dados: megaData } = mega;
+    const { dados: maisMilionariaData } = maisMilionaria;
+    const { dados: lotofacilData } = lotofacil;
+    const { dados: quinaData } = quina;
+    const { dados: duplaSenaData } = duplaSena;
     const valorEstimadoProximoConcurso = Number(megaData?.valorEstimadoProximoConcurso ?? 0);
     const numero = megaData?.numero ?? megaData?.numeroConcurso ?? null;
     const dataProximoConcurso = megaData?.dataProximoConcurso ?? null;
@@ -165,14 +186,14 @@ async function main() {
       fonte: MEGA_API_URL,
     };
 
-    const megaSnapshotUpdated = writeJsonIfChanged(RAW_OUTPUT_PATH, megaData);
-    const maisMilionariaSnapshotUpdated = writeJsonIfChanged(
+    const megaSnapshotUpdated = mega.consultado && writeJsonIfChanged(RAW_OUTPUT_PATH, megaData);
+    const maisMilionariaSnapshotUpdated = maisMilionaria.consultado && writeJsonIfChanged(
       MAIS_MILIONARIA_RAW_OUTPUT_PATH,
       maisMilionariaData
     );
-    const lotofacilSnapshotUpdated = writeJsonIfChanged(LOTOFACIL_RAW_OUTPUT_PATH, lotofacilData);
-    const quinaSnapshotUpdated = writeJsonIfChanged(QUINA_RAW_OUTPUT_PATH, quinaData);
-    const duplaSenaSnapshotUpdated = writeJsonIfChanged(DUPLA_SENA_RAW_OUTPUT_PATH, duplaSenaData);
+    const lotofacilSnapshotUpdated = lotofacil.consultado && writeJsonIfChanged(LOTOFACIL_RAW_OUTPUT_PATH, lotofacilData);
+    const quinaSnapshotUpdated = quina.consultado && writeJsonIfChanged(QUINA_RAW_OUTPUT_PATH, quinaData);
+    const duplaSenaSnapshotUpdated = duplaSena.consultado && writeJsonIfChanged(DUPLA_SENA_RAW_OUTPUT_PATH, duplaSenaData);
     const statusUpdated = hasMegaStatusChanged(readJsonIfExists(OUTPUT_PATH), payload);
     if (statusUpdated) writeJsonIfChanged(OUTPUT_PATH, payload);
 
