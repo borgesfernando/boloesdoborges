@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "domain": "contact",
+  "intents": [
+    {
+      "id": "contact.human_support",
+      "intent": "pedir_contato_humano",
+      "examples": ["Com quem eu falo?", "Quero falar com o responsável", "Como tiro uma dúvida específica?", "Preciso de atendimento humano", "Onde entro em contato?"],
+      "answerType": "canonical",
+      "response": {
+        "short": "Use os canais de contato oficiais publicados pelo projeto.",
+        "standard": "Quando a pessoa pedir atendimento humano ou a dúvida depender de informação não disponível nas fontes automatizadas, o sistema deve direcionar para os canais oficiais publicados, sem inventar contatos alternativos."
+      },
+      "sources": [{"type":"terms","reference":"institucional/contato.html"}]
+    }
+  ]
+}
