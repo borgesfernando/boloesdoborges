@@ -5,17 +5,16 @@ env:
 
 on:
   schedule:
-    # Baixa frequência: uma vez por hora somente entre 06h e 20h BRT.
-    # A madrugada e o período pós-sorteio já são cobertos pelas janelas críticas.
-    - cron: '0 9-23 * * *'
-    # Dias úteis, 20:50–22:30 BRT (23:50–01:30 UTC).
+    # Recuperação diária, 06h BRT.
+    - cron: '0 9 * * *'
+    # Dias úteis: 5 min até 21h30 BRT e backoff de 15 min até 22h30.
     - cron: '50,55 23 * * 1-5'
-    - cron: '*/5 0 * * 2-6'
-    - cron: '0,5,10,15,20,25,30 1 * * 2-6'
-    # Domingo, 10:50–12:30 BRT (13:50–15:30 UTC).
+    - cron: '0,5,10,15,20,25,30,45 0 * * 2-6'
+    - cron: '0,15,30 1 * * 2-6'
+    # Domingo: equivalente 10h50–12h30 BRT.
     - cron: '50,55 13 * * 0'
-    - cron: '*/5 14 * * 0'
-    - cron: '0,5,10,15,20,25,30 15 * * 0'
+    - cron: '0,5,10,15,20,25,30,45 14 * * 0'
+    - cron: '0,15,30 15 * * 0'
   workflow_dispatch:
 
 permissions:
