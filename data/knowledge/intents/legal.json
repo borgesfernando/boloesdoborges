@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "domain": "legal",
+  "intents": [
+    {
+      "id": "legal.participation_terms",
+      "intent": "consultar_termos_participacao",
+      "examples": ["Existe contrato?", "Onde vejo os termos?", "Quais são as regras antes de participar?", "Tem termo de participação?", "Posso ler as condições antes de pagar?"],
+      "answerType": "canonical",
+      "response": {
+        "short": "As condições aplicáveis devem ser consultadas nos termos e regras oficiais vigentes antes da participação.",
+        "standard": "Antes de participar, o interessado deve poder consultar as regras e os termos vigentes aplicáveis ao projeto. O atendimento automatizado pode orientar onde encontrá-los, mas não deve inventar cláusulas, exceções ou condições que não estejam documentadas."
+      },
+      "sources": [{"type":"terms","reference":"institucional/termos.html"},{"type":"faq","reference":"faq.json"}]
+    }
+  ]
+}
