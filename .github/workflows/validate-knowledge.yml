@@ -34,6 +34,8 @@ jobs:
         run: node scripts/validate-knowledge-schema.test.js
       - name: Verificar convenção de domínios
         run: node scripts/validate-knowledge-domain.test.js
+      - name: Verificar exemplos
+        run: node scripts/validate-knowledge-examples.test.js
       - name: Verificar guardrails sensíveis
         run: node scripts/validate-knowledge-sensitive.test.js
       - name: Verificar autoridade das fontes
