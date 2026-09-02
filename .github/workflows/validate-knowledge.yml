@@ -35,3 +35,5 @@ jobs:
         run: node scripts/validate-knowledge-schema.test.js
       - name: Verificar guardrails sensíveis
         run: node scripts/validate-knowledge-sensitive.test.js
+      - name: Verificar autoridade das fontes
+        run: node scripts/validate-knowledge-authority.test.js
