@@ -40,5 +40,7 @@ jobs:
         run: node scripts/validate-knowledge-authority.test.js
       - name: Verificar autoridade editorial da FAQ
         run: node scripts/validate-knowledge-faq-authority.test.js
+      - name: Verificar cobertura fundacional
+        run: node scripts/validate-knowledge-coverage.test.js
       - name: Verificar ausência de wiring em produção
         run: node scripts/validate-knowledge-no-production-wiring.test.js
