@@ -8,6 +8,7 @@ on:
       - "docs/arquitetura-knowledge-dataset.md"
       - "docs/knowledge-requirements-matrix.md"
       - "docs/knowledge-campaign-intent-map.md"
+      - "docs/knowledge-pr-scope.md"
   push:
     branches: [ main ]
     paths:
@@ -37,5 +38,7 @@ jobs:
         run: node scripts/validate-knowledge-sensitive.test.js
       - name: Verificar autoridade das fontes
         run: node scripts/validate-knowledge-authority.test.js
+      - name: Verificar autoridade editorial da FAQ
+        run: node scripts/validate-knowledge-faq-authority.test.js
       - name: Verificar ausência de wiring em produção
         run: node scripts/validate-knowledge-no-production-wiring.test.js
