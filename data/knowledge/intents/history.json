@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "domain": "history",
+  "intents": [
+    {
+      "id": "history.past_results",
+      "intent": "perguntar_resultados_historicos",
+      "examples": ["Vocês já ganharam?", "Qual foi o maior prêmio?", "Já fizeram quadra ou quina?", "Quanto vocês já ganharam?", "Se fazem isso há anos, por que ainda não ganharam o prêmio principal?"],
+      "answerType": "canonical",
+      "sensitive": true,
+      "facts": ["O histórico público é orientado a controle, rastreabilidade e prestação de contas, não a performance financeira.", "Resultados de loteria são aleatórios.", "A política editorial prevê mostrar resultados favoráveis e desfavoráveis sem selecionar apenas anos premiados."],
+      "response": {
+        "short": "O histórico é apresentado como evidência de organização e transparência, não como promessa de desempenho futuro.",
+        "standard": "Os resultados históricos podem ser informados quando estiverem documentados, inclusive anos sem premiação relevante. Eles não são usados como argumento de previsão ou rentabilidade: resultado de loteria é aleatório; o que o projeto procura demonstrar é método, controle, conferência e prestação de contas."
+      },
+      "mustInclude": ["resultado de loteria é aleatório", "sem promessa de desempenho futuro"],
+      "mustNotClaim": ["histórico de sucesso", "estratégia vencedora", "retorno garantido", "taxa de acerto como argumento promocional", "ROI como argumento promocional"],
+      "sources": [{"type":"documentation","reference":"docs/plano-historico-mega-da-virada-transparencia.md"}]
+    }
+  ]
+}
