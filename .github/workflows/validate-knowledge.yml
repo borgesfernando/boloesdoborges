@@ -1,0 +1,27 @@
+name: Validar Knowledge Dataset
+
+on:
+  pull_request:
+    paths:
+      - "data/knowledge/**"
+      - "scripts/validate-knowledge.js"
+      - "docs/arquitetura-knowledge-dataset.md"
+  push:
+    branches: [ main ]
+    paths:
+      - "data/knowledge/**"
+      - "scripts/validate-knowledge.js"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Validar knowledge dataset
+        run: node scripts/validate-knowledge.js
