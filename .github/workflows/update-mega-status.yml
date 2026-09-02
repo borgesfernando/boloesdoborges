@@ -5,8 +5,9 @@ env:
 
 on:
   schedule:
-    # Baixa frequência: uma vez por hora fora das janelas críticas.
-    - cron: '0 * * * *'
+    # Baixa frequência: uma vez por hora somente entre 06h e 20h BRT.
+    # A madrugada e o período pós-sorteio já são cobertos pelas janelas críticas.
+    - cron: '0 9-23 * * *'
     # Dias úteis, 20:50–22:30 BRT (23:50–01:30 UTC).
     - cron: '50,55 23 * * 1-5'
     - cron: '*/5 0 * * 2-6'
