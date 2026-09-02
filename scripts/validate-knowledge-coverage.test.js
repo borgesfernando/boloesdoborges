@@ -7,7 +7,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const dir = path.join(root, 'data/knowledge/intents');
-const expected = new Set(['trust','participation','payments','operations','bets','strategy','transparency','history','prizes','conversion','human']);
+const expected = new Set(['trust','participation','payments','operations','bets','strategy','transparency','history','prizes','conversion','human','legal']);
 const actual = new Set();
 
 for (const name of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
