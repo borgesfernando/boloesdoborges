@@ -10,7 +10,8 @@ O snapshot é continuidade, não fonte temporal isolada. Após o horário oficia
 
 ## Atualização
 
-- rotina: uma vez por hora, entre 06h e 20h BRT;
+- recuperação diária: 06h BRT;
+- janela crítica: 5 minutos até 30 minutos pós-sorteio, depois backoff de 15 minutos;
 - janela crítica noturna: a cada 5 minutos de 20h50 a 23h30 BRT;
 - janela crítica de domingo: a cada 5 minutos de 10h50 a 12h30 BRT.
 
