@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "domain": "operations",
+  "intents": [
+    {
+      "id": "operations.project_availability",
+      "intent": "consultar_disponibilidade_projeto",
+      "examples": ["Ainda tem vaga?", "O projeto está aberto?", "Posso entrar agora?", "Até quando posso participar?", "Ainda dá tempo de entrar?"],
+      "answerType": "dynamic",
+      "resolver": "operational_state",
+      "response": {
+        "short": "Vou considerar o estado operacional publicado do projeto para responder sobre disponibilidade.",
+        "standard": "Disponibilidade, fase e janela de participação são informações mutáveis. A resposta deve usar o estado operacional publicado no momento da consulta; se ele estiver ausente ou indisponível, não deve inferir que o projeto está aberto."
+      },
+      "mustNotClaim": ["vaga disponível sem estado operacional verificável", "projeto aberto por inferência"],
+      "sources": [{"type":"operational_state","reference":"data/estado-operacional.json"}]
+    }
+  ]
+}
