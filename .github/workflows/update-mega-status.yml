@@ -7,14 +7,14 @@ on:
   schedule:
     # Recuperação diária, 06h BRT.
     - cron: '0 9 * * *'
-    # Dias úteis: 5 min até 21h30 BRT e backoff de 15 min até 22h30.
+    # Dias úteis: a cada 5 min, de 20h50 até 22h00 BRT (1h pós-sorteio).
     - cron: '50,55 23 * * 1-5'
-    - cron: '0,5,10,15,20,25,30,45 0 * * 2-6'
-    - cron: '0,15,30 1 * * 2-6'
-    # Domingo: equivalente 10h50–12h30 BRT.
+    - cron: '*/5 0 * * 2-6'
+    - cron: '0 1 * * 2-6'
+    # Domingo: equivalente, de 10h50 até 12h00 BRT.
     - cron: '50,55 13 * * 0'
-    - cron: '0,5,10,15,20,25,30,45 14 * * 0'
-    - cron: '0,15,30 15 * * 0'
+    - cron: '*/5 14 * * 0'
+    - cron: '0 15 * * 0'
   workflow_dispatch:
 
 permissions:
