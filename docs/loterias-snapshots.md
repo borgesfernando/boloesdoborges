@@ -15,4 +15,4 @@ O snapshot é continuidade, não fonte temporal isolada. Após o horário oficia
 - janela crítica noturna: a cada 5 minutos de 20h50 a 23h30 BRT;
 - janela crítica de domingo: a cada 5 minutos de 10h50 a 12h30 BRT.
 
-O script mantém retries para a CAIXA e o workflow só cria commit quando houver dado novo.
+O script mantém retries para a CAIXA e, quando o snapshot de uma modalidade já contém a apuração da data corrente, deixa de consultar essa modalidade até o próximo dia. O workflow só cria commit quando houver dado novo.
