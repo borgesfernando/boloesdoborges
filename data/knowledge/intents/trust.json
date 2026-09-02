@@ -7,30 +7,32 @@
       "intent": "perguntar_vinculo_caixa",
       "examples": ["É da Caixa?", "Esse bolão é oficial?", "Vocês trabalham com a Caixa?", "A Caixa reconhece vocês?", "É um bolão da lotérica?"],
       "answerType": "canonical",
+      "sensitive": true,
       "facts": ["O projeto é independente.", "Não existe vínculo institucional com a Caixa Econômica Federal.", "As apostas são registradas nos canais oficiais aplicáveis."],
       "response": {
         "short": "Não. O Bolões do Borges é um projeto independente, sem vínculo institucional com a Caixa Econômica Federal.",
         "standard": "O Bolões do Borges é um projeto independente, sem vínculo institucional com a Caixa Econômica Federal. As apostas são registradas nos canais oficiais aplicáveis e o ciclo inclui conferência e prestação de contas aos participantes."
       },
       "mustInclude": ["projeto independente", "sem vínculo institucional com a Caixa Econômica Federal"],
-      "mustNotClaim": ["autorizado pela Caixa", "parceiro da Caixa", "bolão oficial do Bolões do Borges"],
-      "relatedIntents": ["trust.project_legitimacy", "transparency.bet_proof"],
-      "sources": [{"type":"faq","reference":"faq.html"}]
+      "mustNotClaim": ["autorizado pela Caixa", "parceiro da Caixa", "vínculo institucional com a Caixa"],
+      "relatedIntents": ["trust.project_legitimacy"],
+      "sources": [{"type":"faq","reference":"faq.json"}]
     },
     {
       "id": "trust.project_legitimacy",
       "intent": "avaliar_confiabilidade_projeto",
       "examples": ["É confiável?", "Como sei que não é golpe?", "Que garantia eu tenho?", "Como posso confiar?", "Onde vejo o histórico?"],
       "answerType": "canonical",
-      "facts": ["O projeto mantém regras, registros, conferência e prestação de contas.", "O histórico público deve mostrar resultados favoráveis e desfavoráveis.", "A história da Mega da Virada é documentada desde 2010, com pausa operacional entre 2017 e 2022."],
+      "sensitive": true,
+      "facts": ["O projeto mantém regras, registros, conferência e prestação de contas.", "A política histórica prevê mostrar resultados favoráveis e desfavoráveis.", "O histórico da Mega da Virada é documentado a partir de 2010, com pausa operacional entre 2017 e 2022."],
       "response": {
         "short": "A proposta de confiança é baseada em processo verificável: regras, registros, comprovantes, conferência e prestação de contas — não em promessa de prêmio.",
-        "standard": "A confiança no projeto deve ser avaliada pelo processo: regras divulgadas, controle de participação, registro das apostas, comprovantes, conferência e prestação de contas. O histórico público preserva também edições sem premiação relevante, porque o objetivo é demonstrar consistência e transparência, não selecionar apenas resultados favoráveis."
+        "standard": "A confiança no projeto deve ser avaliada pelo processo: regras divulgadas, controle de participação, registro das apostas, comprovantes, conferência e prestação de contas. A política do histórico público prevê preservar também edições sem premiação relevante, porque o objetivo é demonstrar consistência e transparência, não selecionar apenas resultados favoráveis."
       },
       "mustInclude": ["sem promessa de prêmio"],
       "mustNotClaim": ["garantia de segurança absoluta", "histórico de sucesso", "estratégia vencedora"],
-      "relatedIntents": ["trust.caixa_relationship", "transparency.bet_proof", "history.past_results"],
-      "sources": [{"type":"faq","reference":"faq.html"},{"type":"documentation","reference":"docs/plano-historico-mega-da-virada-transparencia.md"}]
+      "relatedIntents": ["trust.caixa_relationship"],
+      "sources": [{"type":"faq","reference":"faq.json"},{"type":"documentation","reference":"docs/plano-historico-mega-da-virada-transparencia.md"}]
     }
   ]
 }
