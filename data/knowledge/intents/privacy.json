@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "domain": "privacy",
+  "intents": [
+    {
+      "id": "privacy.participant_data",
+      "intent": "perguntar_privacidade_dados",
+      "examples": ["Meus dados ficam públicos?", "Vocês divulgam nomes dos participantes?", "Como tratam meus dados?", "A IA recebe meus dados pessoais?", "Onde está a política de privacidade?"],
+      "answerType": "canonical",
+      "sensitive": true,
+      "response": {
+        "short": "O atendimento deve seguir a política de privacidade publicada e não expor dados pessoais de participantes.",
+        "standard": "Dados pessoais de participantes não devem ser publicados no knowledge dataset nem expostos em respostas. Para detalhes sobre tratamento de dados, o atendimento deve remeter à política de privacidade vigente e evitar ampliar o uso de dados além do que estiver documentado."
+      },
+      "mustInclude": ["não expor dados pessoais de participantes"],
+      "mustNotClaim": ["uso de dados não documentado", "compartilhamento de dados não previsto"],
+      "sources": [{"type":"terms","reference":"institucional/privacidade.html"},{"type":"documentation","reference":"docs/plano-historico-mega-da-virada-transparencia.md"}]
+    }
+  ]
+}
