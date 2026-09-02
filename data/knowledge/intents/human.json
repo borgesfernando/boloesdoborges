@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "domain": "human",
+  "intents": [
+    {
+      "id": "human.unverified_financial_detail",
+      "intent": "solicitar_detalhe_financeiro_nao_verificavel",
+      "examples": ["Me passe o PIX por aqui", "Qual conta eu transfiro?", "Confirma os dados bancários?", "Me diga os dados de pagamento", "Esse dado financeiro ainda é o mesmo?"],
+      "answerType": "human",
+      "sensitive": true,
+      "response": {
+        "short": "Dados financeiros sensíveis não devem ser inferidos nem reproduzidos a partir deste dataset; use o canal oficial aplicável.",
+        "standard": "Quando a solicitação envolver dado financeiro sensível ou informação que não esteja publicada em fonte autorizada para atendimento automatizado, a resposta deve encaminhar para o canal oficial/humano aplicável. O knowledge dataset não armazena nem fornece chaves PIX, contas ou outros dados bancários."
+      },
+      "mustInclude": ["usar o canal oficial aplicável"],
+      "mustNotClaim": ["chave PIX", "conta bancária", "dado financeiro inferido"],
+      "sources": [{"type":"faq","reference":"faq.json"}]
+    }
+  ]
+}
