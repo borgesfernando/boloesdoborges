@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "domain": "payments",
+  "intents": [
+    {
+      "id": "payments.project_terms",
+      "intent": "consultar_regras_pagamento",
+      "examples": ["Como funciona o pagamento?", "Posso parcelar?", "Qual o valor da cota?", "Quando tenho que pagar?", "Entrei depois, como ficam as parcelas?"],
+      "answerType": "hybrid",
+      "resolver": "project_context",
+      "response": {
+        "short": "As regras de pagamento dependem do projeto e devem combinar a regra editorial vigente com o estado/contexto atual publicado.",
+        "standard": "Valores, parcelamento, datas e condições de entrada variam por projeto. A resposta deve usar a regra editorial vigente e, quando a pergunta depender da situação atual do projeto, confirmar também o estado operacional publicado. Não deve inferir preço, prazo ou disponibilidade a partir de informação antiga."
+      },
+      "sources": [{"type":"faq","reference":"faq.json"},{"type":"operational_state","reference":"data/estado-operacional.json"}]
+    }
+  ]
+}
