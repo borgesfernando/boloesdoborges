@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://site.boloesdoborges.shop/data/knowledge/schema.json",
+  "title": "Bolões do Borges Canonical Knowledge Dataset",
+  "type": "object",
+  "required": ["schemaVersion", "domain", "intents"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "domain": { "type": "string" },
+    "intents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "intent", "examples", "answerType", "response", "sources"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_.-]+$" },
+          "intent": { "type": "string" },
+          "examples": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+          "answerType": { "enum": ["canonical", "dynamic", "hybrid", "human"] },
+          "response": {
+            "type": "object",
+            "required": ["short", "standard"],
+            "properties": {
+              "short": { "type": "string" },
+              "standard": { "type": "string" },
+              "detailed": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "facts": { "type": "array", "items": { "type": "string" } },
+          "mustInclude": { "type": "array", "items": { "type": "string" } },
+          "mustNotClaim": { "type": "array", "items": { "type": "string" } },
+          "resolver": { "type": "string" },
+          "relatedIntents": { "type": "array", "items": { "type": "string" } },
+          "sources": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["type", "reference"],
+              "properties": {
+                "type": { "enum": ["faq", "documentation", "operational_state", "terms"] },
+                "reference": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
