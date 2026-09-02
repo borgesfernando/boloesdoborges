@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "domain": "about",
+  "intents": [
+    {
+      "id": "about.project_identity",
+      "intent": "entender_o_que_e_projeto",
+      "examples": ["O que é o Bolões do Borges?", "É uma empresa ou um grupo?", "Quem organiza?", "Há quanto tempo existe?", "O que significa SB?"],
+      "answerType": "canonical",
+      "response": {
+        "short": "O Bolões do Borges é um projeto coletivo privado organizado como ação entre amigos, com regras, planejamento e prestação de contas.",
+        "standard": "A FAQ apresenta a Comunidade Bolões do Borges como projeto coletivo privado, organizado como ação entre amigos e coordenado por Fernando Borges. O Super Bolão da Mega da Virada é identificado pela sigla SB. Para histórico e detalhes institucionais, a resposta deve seguir as fontes públicas vigentes."
+      },
+      "sources": [{"type":"faq","reference":"faq.json"},{"type":"terms","reference":"institucional/sobre.html"}]
+    }
+  ]
+}
