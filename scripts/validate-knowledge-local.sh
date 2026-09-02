@@ -6,6 +6,7 @@ node scripts/validate-knowledge.test.js
 node scripts/validate-knowledge.fixtures.test.js
 node scripts/validate-knowledge-schema.test.js
 node scripts/validate-knowledge-domain.test.js
+node scripts/validate-knowledge-examples.test.js
 node scripts/validate-knowledge-sensitive.test.js
 node scripts/validate-knowledge-authority.test.js
 node scripts/validate-knowledge-faq-authority.test.js
