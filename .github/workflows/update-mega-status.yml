@@ -5,16 +5,29 @@ env:
 
 on:
   schedule:
-    # Recuperação diária, 06h BRT.
+    # Recovery diário às 06h BRT: revalida todas as modalidades uma vez por dia.
     - cron: '0 9 * * *'
-    # Dias úteis: a cada 5 min, de 20h50 até 22h00 BRT (1h pós-sorteio).
+
+    # Grade regular 21h BRT (seg-sex): -10 min até +150 min.
+    # 20:50-23:30 BRT = 23:50-02:30 UTC, atravessando a virada UTC.
     - cron: '50,55 23 * * 1-5'
-    - cron: '*/5 0 * * 2-6'
-    - cron: '0 1 * * 2-6'
-    # Domingo: equivalente, de 10h50 até 12h00 BRT.
+    - cron: '*/5 0-1 * * 2-6'
+    - cron: '0,5,10,15,20,25,30 2 * * 2-6'
+
+    # Grade regular 11h BRT (domingo): -10 min até +150 min.
+    # 10:50-13:30 BRT = 13:50-16:30 UTC.
     - cron: '50,55 13 * * 0'
-    - cron: '*/5 14 * * 0'
-    - cron: '0 15 * * 0'
+    - cron: '*/5 14-15 * * 0'
+    - cron: '0,5,10,15,20,25,30 16 * * 0'
+
+    # Exceções futuras de 20h presentes no calendário canônico.
+    # Só é necessário cobrir 19:50-20:45; a partir de 20:50 a grade regular
+    # de dias úteis já mantém o Action vivo e o script filtra a modalidade.
+    - cron: '50,55 22 15 9 *'   # Lotofácil da Independência (15/09)
+    - cron: '*/5 23 15 9 *'
+    - cron: '50,55 22 31 12 *'  # Mega da Virada (31/12)
+    - cron: '*/5 23 31 12 *'
+
   workflow_dispatch:
 
 permissions:
@@ -35,12 +48,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: ''  # garante que NÃO tentará cache de deps (evita exigir lockfile)
+          cache: ''
 
       - name: Definir modo da execução
         run: |
           # O único agendamento na hora 09 UTC é a recuperação das 06h BRT.
-          # As demais execuções usam exclusivamente a seleção pela janela do calendário.
+          # As demais execuções são filtradas pelo calendário canônico.
           if [ "$(date -u +%H)" = "09" ]; then
             echo "LOTTERY_RECOVERY=1" >> "$GITHUB_ENV"
           fi
