@@ -20,13 +20,13 @@ function selected(isoLocal) {
   return ids(updater.selecionarModalidadesParaConsulta(atBrt(isoLocal), calendar));
 }
 
-assert.strictEqual(updater.PRE_DRAW_MINUTES, 10);
+assert.strictEqual(updater.PRE_DRAW_MINUTES, 0);
 assert.strictEqual(updater.POST_DRAW_MINUTES, 150);
 
 // Quarta-feira regular 21h: apenas modalidades que sorteiam na quarta.
-assert.deepStrictEqual(selected('2026-09-02T20:49'), []);
+assert.deepStrictEqual(selected('2026-09-02T20:59'), []);
 assert.deepStrictEqual(
-  selected('2026-09-02T20:50'),
+  selected('2026-09-02T21:00'),
   ['duplasena', 'lotofacil', 'maismilionaria', 'quina']
 );
 assert.deepStrictEqual(
@@ -40,7 +40,7 @@ assert.deepStrictEqual(selected('2026-09-05T21:00'), []);
 
 // Domingo regular 11h: Mega, +Milionária, Lotofácil e Quina.
 assert.deepStrictEqual(
-  selected('2026-09-06T10:50'),
+  selected('2026-09-06T11:00'),
   ['lotofacil', 'maismilionaria', 'megasena', 'quina']
 );
 assert.deepStrictEqual(
@@ -50,17 +50,18 @@ assert.deepStrictEqual(
 assert.deepStrictEqual(selected('2026-09-06T13:31'), []);
 
 // Exceção da Lotofácil da Independência às 20h substitui sua grade regular.
-assert.deepStrictEqual(selected('2026-09-15T19:49'), []);
-assert.deepStrictEqual(selected('2026-09-15T19:50'), ['lotofacil']);
+assert.deepStrictEqual(selected('2026-09-15T19:59'), []);
+assert.deepStrictEqual(selected('2026-09-15T20:00'), ['lotofacil']);
+assert.deepStrictEqual(selected('2026-09-15T20:50'), ['lotofacil']);
 assert.deepStrictEqual(
-  selected('2026-09-15T20:50'),
+  selected('2026-09-15T21:00'),
   ['lotofacil', 'megasena', 'quina']
 );
 
 // Freshness: antes do sorteio, 30/08 ainda é o último resultado esperado.
 const stale385 = { dataApuracao: '30/08/2026', numero: 385, dataProximoConcurso: '02/09/2026' };
 assert.strictEqual(
-  updater.calcularFreshnessModalidade(calendar, 'maismilionaria', stale385, atBrt('2026-09-02T20:50'), true).freshness,
+  updater.calcularFreshnessModalidade(calendar, 'maismilionaria', stale385, atBrt('2026-09-02T20:59'), false).freshness,
   'ATUAL'
 );
 
