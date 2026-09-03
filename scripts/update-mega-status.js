@@ -27,7 +27,7 @@ const CALENDARIO_PATH = path.join(__dirname, '..', 'data', 'calendario-caixa.jso
 
 const MEGA_PROJECT_ID = 'mega-acumulada';
 const BRAZIL_UTC_OFFSET_MINUTES = -180; // America/Sao_Paulo (UTC-3)
-const PRE_DRAW_MINUTES = 10;
+const PRE_DRAW_MINUTES = 0;
 const POST_DRAW_MINUTES = 150;
 const MAX_FETCH_ATTEMPTS = 4;
 const BASE_RETRY_DELAY_MS = 1200;
