@@ -16,12 +16,13 @@ function atBrt(isoLocal) {
 function ids(set) {
   return [...set].sort();
 }
-function selected(isoLocal) {
-  return ids(updater.selecionarModalidadesParaConsulta(atBrt(isoLocal), calendar));
+function selected(isoLocal, cron = '') {
+  return ids(updater.selecionarModalidadesParaConsulta(atBrt(isoLocal), calendar, cron));
 }
 
 assert.strictEqual(updater.PRE_DRAW_MINUTES, 0);
 assert.strictEqual(updater.POST_DRAW_MINUTES, 150);
+assert.strictEqual(updater.SCHEDULE_LOOKBACK_MINUTES, 720);
 
 // Quarta-feira regular 21h: apenas modalidades que sorteiam na quarta.
 assert.deepStrictEqual(selected('2026-09-02T20:59'), []);
@@ -34,6 +35,18 @@ assert.deepStrictEqual(
   ['duplasena', 'lotofacil', 'maismilionaria', 'quina']
 );
 assert.deepStrictEqual(selected('2026-09-02T23:31'), []);
+
+// Atraso do scheduler: run que só inicia às 04:19 BRT de quinta deve usar o
+// slot nominal mais recente do cron (23:30 BRT de quarta), não o relógio do runner.
+const delayedRealStart = atBrt('2026-09-03T04:19');
+const lateCron = '0,5,10,15,20,25,30 2 * * 2-6';
+const nominal = updater.resolveScheduledReference(delayedRealStart, lateCron);
+assert.strictEqual(nominal.toISOString(), '2026-09-03T02:30:00.000Z');
+assert.deepStrictEqual(
+  ids(updater.selecionarModalidadesParaConsulta(delayedRealStart, calendar, lateCron)),
+  ['duplasena', 'lotofacil', 'maismilionaria', 'quina']
+);
+assert.deepStrictEqual(selected('2026-09-03T04:19'), [], 'sem cron não deve ampliar a janela');
 
 // Sábado regular: nenhuma das cinco modalidades do mirror.
 assert.deepStrictEqual(selected('2026-09-05T21:00'), []);
@@ -99,6 +112,9 @@ const workflow = fs.readFileSync(
   'utf8'
 );
 const crons = [...workflow.matchAll(/- cron: '([^']+)'/g)].map((m) => m[1]);
+assert.ok(workflow.includes('SCHEDULE_EXPR: ${{ github.event.schedule }}'));
+assert.ok(workflow.includes('[ "$SCHEDULE_EXPR" = "0 9 * * *" ]'));
+assert.ok(!workflow.includes('date -u +%H'), 'recovery não pode depender do relógio real do runner');
 
 function fieldMatches(field, value) {
   return field.split(',').some((part) => {
@@ -106,14 +122,11 @@ function fieldMatches(field, value) {
     if (part.startsWith('*/')) return value % Number(part.slice(2)) === 0;
     const rangeStep = part.match(/^(\d+)-(\d+)\/(\d+)$/);
     if (rangeStep) {
-      const [, a, b, step] = rangeStep.map(Number);
+      const a = Number(rangeStep[1]), b = Number(rangeStep[2]), step = Number(rangeStep[3]);
       return value >= a && value <= b && (value - a) % step === 0;
     }
     const range = part.match(/^(\d+)-(\d+)$/);
-    if (range) {
-      const a = Number(range[1]), b = Number(range[2]);
-      return value >= a && value <= b;
-    }
+    if (range) return value >= Number(range[1]) && value <= Number(range[2]);
     return Number(part) === value;
   });
 }
@@ -135,9 +148,7 @@ function isRecovery(date) {
 }
 function activeCalendarWindow(date) {
   return updater.LOTERIAS.some(({ id }) =>
-    updater.getDrawsForToday(calendar, id, date).some(({ time }) =>
-      updater.isInsideCriticalWindow(time, date)
-    )
+    updater.getDrawsForToday(calendar, id, date).some(({ time }) => updater.isInsideCriticalWindow(time, date))
   );
 }
 
@@ -150,12 +161,8 @@ for (let ms = start.getTime(); ms <= end.getTime(); ms += 5 * 60 * 1000) {
   const date = new Date(ms);
   const scheduled = hasRunAt(date);
   const active = activeCalendarWindow(date);
-  if (scheduled && !isRecovery(date)) {
-    assert.ok(active, `cron desnecessário fora de janela: ${date.toISOString()}`);
-  }
-  if (active) {
-    assert.ok(scheduled, `janela sem cobertura de cron: ${date.toISOString()}`);
-  }
+  if (scheduled && !isRecovery(date)) assert.ok(active, `cron desnecessário fora de janela: ${date.toISOString()}`);
+  if (active) assert.ok(scheduled, `janela sem cobertura de cron: ${date.toISOString()}`);
 }
 
 console.log('update-mega-status-schedule.test.js: OK');
