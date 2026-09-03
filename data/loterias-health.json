@@ -4,50 +4,50 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "30/08/2026",
-      "concurso": 3051,
-      "dataProximoConcurso": "01/09/2026",
-      "estado": "SEM_ALTERACAO",
-      "freshness": "DESATUALIZADO",
+      "dataApuracao": "01/09/2026",
+      "concurso": 3052,
+      "dataProximoConcurso": "03/09/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "01/09/2026",
       "sorteioEsperadoEm": "2026-09-02T00:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "30/08/2026",
-      "concurso": 385,
-      "dataProximoConcurso": "02/09/2026",
-      "estado": "SEM_ALTERACAO",
-      "freshness": "DESATUALIZADO",
+      "dataApuracao": "02/09/2026",
+      "concurso": 386,
+      "dataProximoConcurso": "06/09/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "02/09/2026",
       "sorteioEsperadoEm": "2026-09-03T00:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "31/08/2026",
-      "concurso": 3776,
-      "dataProximoConcurso": "01/09/2026",
-      "estado": "SEM_ALTERACAO",
-      "freshness": "DESATUALIZADO",
+      "dataApuracao": "02/09/2026",
+      "concurso": 3778,
+      "dataProximoConcurso": "03/09/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "02/09/2026",
       "sorteioEsperadoEm": "2026-09-03T00:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "31/08/2026",
-      "concurso": 7106,
-      "dataProximoConcurso": "01/09/2026",
-      "estado": "SEM_ALTERACAO",
-      "freshness": "DESATUALIZADO",
+      "dataApuracao": "02/09/2026",
+      "concurso": 7108,
+      "dataProximoConcurso": "03/09/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "02/09/2026",
       "sorteioEsperadoEm": "2026-09-03T00:00:00.000Z"
     },
     "duplasena": {
-      "dataApuracao": "31/08/2026",
-      "concurso": 3003,
-      "dataProximoConcurso": "02/09/2026",
-      "estado": "SEM_ALTERACAO",
-      "freshness": "DESATUALIZADO",
+      "dataApuracao": "02/09/2026",
+      "concurso": 3004,
+      "dataProximoConcurso": "04/09/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "02/09/2026",
       "sorteioEsperadoEm": "2026-09-03T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-09-03T07:19:53.521Z"
+  "atualizadoEm": "2026-09-03T09:47:40.287Z"
 }
