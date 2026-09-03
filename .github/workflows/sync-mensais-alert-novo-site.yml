@@ -40,12 +40,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout boloesdoborges
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Checkout novo-site
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: borgesfernando/novo-site
           token: ${{ secrets.NOVO_SITE_SYNC_TOKEN }}
