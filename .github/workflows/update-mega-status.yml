@@ -79,19 +79,42 @@ jobs:
         run: node scripts/update-mega-status.js
 
       - name: Verificar e enviar alterações
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ -n "$(git status --porcelain data/mega-status.json data/loterias-health.json data/megasena-api.json data/maismilionaria-api.json data/lotofacil-api.json data/quina-api.json data/duplasena-api.json)" ]; then
-            echo "✅ Alterações detectadas nos arquivos de loterias"
+          candidates=(
+            data/mega-status.json
+            data/loterias-health.json
+            data/megasena-api.json
+            data/maismilionaria-api.json
+            data/lotofacil-api.json
+            data/quina-api.json
+            data/duplasena-api.json
+          )
+          stageable=()
+          for file in "${candidates[@]}"; do
+            if [ -e "$file" ] || git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
+              stageable+=("$file")
+            fi
+          done
 
-            git add data/mega-status.json data/loterias-health.json data/megasena-api.json data/maismilionaria-api.json data/lotofacil-api.json data/quina-api.json data/duplasena-api.json
-            git commit -m "chore: atualizar status e snapshots das loterias [skip ci]"
-
-            echo "📤 Enviando alterações para o repositório..."
-            git push
-            echo "✅ Alterações enviadas com sucesso!"
-          else
+          if [ "${#stageable[@]}" -eq 0 ] || [ -z "$(git status --porcelain -- "${stageable[@]}")" ]; then
             echo "ℹ️ Nenhuma alteração encontrada nos snapshots das loterias"
+            exit 0
           fi
+
+          echo "✅ Alterações detectadas nos arquivos de loterias"
+          git add -A -- "${stageable[@]}"
+
+          if git diff --cached --quiet; then
+            echo "ℹ️ Nenhuma alteração stageada nos snapshots das loterias"
+            exit 0
+          fi
+
+          git commit -m "chore: atualizar status e snapshots das loterias [skip ci]"
+          echo "📤 Enviando alterações para o repositório..."
+          git push
+          echo "✅ Alterações enviadas com sucesso!"
