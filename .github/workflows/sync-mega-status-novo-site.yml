@@ -31,9 +31,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          grep -q 'git push origin main' .github/workflows/sync-mega-status-novo-site.yml
-          if grep -q 'git push origin master' .github/workflows/sync-mega-status-novo-site.yml; then
-            echo "::error::Workflow ainda referencia branch master inexistente"
+          grep -qE '^[[:space:]]+git push origin main$' .github/workflows/sync-mega-status-novo-site.yml
+          if grep -qE '^[[:space:]]+git push origin master$' .github/workflows/sync-mega-status-novo-site.yml; then
+            echo "::error::Comando operacional ainda aponta para branch master inexistente"
             exit 1
           fi
 
