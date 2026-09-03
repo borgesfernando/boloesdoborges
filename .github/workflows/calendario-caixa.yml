@@ -11,14 +11,20 @@ on:
       - 'scripts/generate-calendario-caixa.js'
       - 'scripts/validate-calendario-caixa.js'
       - 'scripts/vendor/loterias-geral/calendarioCaixa.js'
+      - 'scripts/update-mega-status.js'
+      - '.github/workflows/update-mega-status.yml'
       - 'test/calendario-caixa.test.js'
+      - 'test/update-mega-status-schedule.test.js'
   pull_request:
     paths:
       - 'data/calendario-caixa.json'
       - 'scripts/generate-calendario-caixa.js'
       - 'scripts/validate-calendario-caixa.js'
       - 'scripts/vendor/loterias-geral/calendarioCaixa.js'
+      - 'scripts/update-mega-status.js'
+      - '.github/workflows/update-mega-status.yml'
       - 'test/calendario-caixa.test.js'
+      - 'test/update-mega-status-schedule.test.js'
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
@@ -58,6 +64,7 @@ jobs:
         shell: bash
         run: |
           node test/calendario-caixa.test.js
+          node test/update-mega-status-schedule.test.js
 
       - name: Validar arquivo público e detectar drift
         id: valida
