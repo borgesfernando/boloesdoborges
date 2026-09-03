@@ -8,12 +8,32 @@ on:
     branches: [ main ]
     paths:
       - "faq.json"
+  pull_request:
+    paths:
+      - '.github/workflows/sync-faq-novo-site.yml'
 
 permissions:
   contents: write
 
 jobs:
+  validar-config:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout boloesdoborges
+        uses: actions/checkout@v7
+      - name: Validar branch de destino
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -qE '^[[:space:]]+git push origin main$' .github/workflows/sync-faq-novo-site.yml
+          if grep -qE '^[[:space:]]+git push origin master$' .github/workflows/sync-faq-novo-site.yml; then
+            echo "::error::Comando operacional ainda aponta para branch master inexistente"
+            exit 1
+          fi
+
   sync-faq:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout boloesdoborges
@@ -43,6 +63,7 @@ jobs:
           repository: borgesfernando/novo-site
           token: ${{ secrets.NOVO_SITE_SYNC_TOKEN }}
           path: novo-site
+          ref: main
 
       - name: Copiar faq.json para novo-site
         run: |
@@ -56,7 +77,7 @@ jobs:
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add src/data/faq.json
             git commit -m "chore: sincronizar faq.json a partir do boloesdoborges"
-            git push origin master
+            git push origin main
           else
             echo "Sem mudanças para sincronizar"
           fi
