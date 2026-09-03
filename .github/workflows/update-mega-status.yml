@@ -25,12 +25,33 @@ on:
     - cron: '*/5 23 31 12 *'    # Mega da Virada (31/12)
 
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/calendario-caixa.json'
+      - 'scripts/update-mega-status.js'
+      - '.github/workflows/update-mega-status.yml'
+      - 'test/update-mega-status-schedule.test.js'
 
 permissions:
   contents: write
 
 jobs:
+  validar-schedule:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: ''
+      - name: Validar calendário, janelas e freshness
+        run: node test/update-mega-status-schedule.test.js
+
   update-mega-status:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
