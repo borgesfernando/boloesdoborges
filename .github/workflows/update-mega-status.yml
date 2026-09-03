@@ -5,23 +5,53 @@ env:
 
 on:
   schedule:
-    # Recuperação diária, 06h BRT.
+    # Recovery diário às 06h BRT: revalida todas as modalidades uma vez por dia.
     - cron: '0 9 * * *'
-    # Dias úteis: a cada 5 min, de 20h50 até 22h00 BRT (1h pós-sorteio).
-    - cron: '50,55 23 * * 1-5'
-    - cron: '*/5 0 * * 2-6'
-    - cron: '0 1 * * 2-6'
-    # Domingo: equivalente, de 10h50 até 12h00 BRT.
-    - cron: '50,55 13 * * 0'
-    - cron: '*/5 14 * * 0'
-    - cron: '0 15 * * 0'
+
+    # Grade regular 21h BRT (seg-sex): do sorteio até +150 min.
+    # 21:00-23:30 BRT = 00:00-02:30 UTC do dia seguinte.
+    - cron: '*/5 0-1 * * 2-6'
+    - cron: '0,5,10,15,20,25,30 2 * * 2-6'
+
+    # Grade regular 11h BRT (domingo): do sorteio até +150 min.
+    # 11:00-13:30 BRT = 14:00-16:30 UTC.
+    - cron: '*/5 14-15 * * 0'
+    - cron: '0,5,10,15,20,25,30 16 * * 0'
+
+    # Exceções futuras de 20h presentes no calendário canônico.
+    # Cobre 20:00-20:55; a partir das 21h a grade regular do mesmo dia
+    # mantém o Action vivo e o script continua filtrando por modalidade.
+    - cron: '*/5 23 15 9 *'     # Lotofácil da Independência (15/09)
+    - cron: '*/5 23 31 12 *'    # Mega da Virada (31/12)
+
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'data/calendario-caixa.json'
+      - 'scripts/update-mega-status.js'
+      - '.github/workflows/update-mega-status.yml'
+      - 'test/update-mega-status-schedule.test.js'
 
 permissions:
   contents: write
 
 jobs:
+  validar-schedule:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: ''
+      - name: Validar calendário, janelas e freshness
+        run: node test/update-mega-status-schedule.test.js
+
   update-mega-status:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
 
     steps:
@@ -35,12 +65,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: ''  # garante que NÃO tentará cache de deps (evita exigir lockfile)
+          cache: ''
 
       - name: Definir modo da execução
         run: |
           # O único agendamento na hora 09 UTC é a recuperação das 06h BRT.
-          # As demais execuções usam exclusivamente a seleção pela janela do calendário.
+          # As demais execuções são filtradas pelo calendário canônico.
           if [ "$(date -u +%H)" = "09" ]; then
             echo "LOTTERY_RECOVERY=1" >> "$GITHUB_ENV"
           fi
