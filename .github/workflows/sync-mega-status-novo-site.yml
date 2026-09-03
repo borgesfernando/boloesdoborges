@@ -13,12 +13,32 @@ on:
       - Atualizar mega-status
     types:
       - completed
+  pull_request:
+    paths:
+      - '.github/workflows/sync-mega-status-novo-site.yml'
 
 permissions:
   contents: write
 
 jobs:
+  validar-config:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout boloesdoborges
+        uses: actions/checkout@v4
+      - name: Validar branch de destino
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -qE '^[[:space:]]+git push origin main$' .github/workflows/sync-mega-status-novo-site.yml
+          if grep -qE '^[[:space:]]+git push origin master$' .github/workflows/sync-mega-status-novo-site.yml; then
+            echo "::error::Comando operacional ainda aponta para branch master inexistente"
+            exit 1
+          fi
+
   sync-mega-status:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout boloesdoborges
@@ -39,13 +59,15 @@ jobs:
 
       - name: Commit e push se houver mudanças
         working-directory: novo-site
+        shell: bash
         run: |
+          set -euo pipefail
           if [ -n "$(git status --porcelain src/data/mega-status.json)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add src/data/mega-status.json
             git commit -m "chore: sincronizar mega-status a partir do boloesdoborges"
-            git push origin master
+            git push origin main
           else
             echo "Sem mudanças para sincronizar"
           fi
