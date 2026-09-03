@@ -68,11 +68,31 @@ jobs:
           cache: ''
 
       - name: Definir modo da execução
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE_EXPR: ${{ github.event.schedule }}
         run: |
-          # O único agendamento na hora 09 UTC é a recuperação das 06h BRT.
-          # As demais execuções são filtradas pelo calendário canônico.
-          if [ "$(date -u +%H)" = "09" ]; then
+          set -euo pipefail
+
+          # Recovery não depende do horário em que o runner efetivamente iniciou.
+          # workflow_dispatch também força uma recuperação completa e segura.
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] || [ "$SCHEDULE_EXPR" = "0 9 * * *" ]; then
             echo "LOTTERY_RECOVERY=1" >> "$GITHUB_ENV"
+            echo "Modo recovery habilitado"
+            exit 0
+          fi
+
+          # Em runs agendados, preserve a expressão que originou a execução.
+          # O script reconstrói o slot nominal do cron, evitando que atraso do
+          # GitHub Actions descarte uma janela válida de sorteio.
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            if [ -z "$SCHEDULE_EXPR" ]; then
+              echo "::error::Run agendado sem github.event.schedule"
+              exit 1
+            fi
+            echo "LOTTERY_SCHEDULE_CRON=$SCHEDULE_EXPR" >> "$GITHUB_ENV"
+            echo "Cron de origem: $SCHEDULE_EXPR"
           fi
 
       - name: Executar script de atualização
