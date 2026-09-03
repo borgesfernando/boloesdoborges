@@ -19,6 +19,7 @@ on:
       - 'scripts/validate-calendario-caixa.js'
       - 'scripts/vendor/loterias-geral/calendarioCaixa.js'
       - 'test/calendario-caixa.test.js'
+      - '.github/workflows/calendario-caixa.yml'
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * *'
@@ -28,7 +29,7 @@ permissions:
 
 jobs:
   sync-validar-calendario:
-    name: Sincronizar e validar calendário CAIXA
+    name: Validar calendário CAIXA público
     runs-on: ubuntu-latest
     steps:
       - name: Checkout do repositório
@@ -41,25 +42,24 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Clonar fonte canônica (Apps_Scripts, público)
+      # Apps_Scripts é privado e continua sendo a autoridade canônica.
+      # Este repositório público valida exclusivamente o espelho versionado
+      # em scripts/vendor/loterias-geral/calendarioCaixa.js. A atualização
+      # cross-repo do vendor deve chegar por commit/PR explícito; o GITHUB_TOKEN
+      # deste repositório não possui acesso ao repositório privado por design.
+      - name: Verificar fonte canônica vendorizada
         shell: bash
         run: |
-          set -euxo pipefail
-          rm -rf /tmp/apps-scripts
-          git clone --depth 1 --branch main https://github.com/borgesfernando/Apps_Scripts.git /tmp/apps-scripts
-
-      - name: Espelhar fonte canônica no vendor
-        shell: bash
-        run: |
-          set -euxo pipefail
-          cp /tmp/apps-scripts/libs/LoteriasGeral/src/calendarioCaixa.js scripts/vendor/loterias-geral/calendarioCaixa.js
+          set -euo pipefail
+          test -s scripts/vendor/loterias-geral/calendarioCaixa.js
+          grep -q 'CALENDARIO_CAIXA_' scripts/vendor/loterias-geral/calendarioCaixa.js
 
       - name: Rodar testes locais
         shell: bash
         run: |
           node test/calendario-caixa.test.js
 
-      - name: Validar arquivo público e detectar drift
+      - name: Validar arquivo público e detectar drift local
         id: valida
         shell: bash
         run: |
@@ -75,21 +75,21 @@ jobs:
         run: |
           set -euxo pipefail
           node scripts/generate-calendario-caixa.js
-          git add data/calendario-caixa.json scripts/vendor/loterias-geral/calendarioCaixa.js
+          git add data/calendario-caixa.json
           if ! git diff --cached --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore(calendario): sincronizar calendário CAIXA com a fonte canônica [skip ci]"
+            git commit -m "chore(calendario): regenerar calendário CAIXA a partir do vendor canônico [skip ci]"
             git push
           else
-            echo "Nada a commitar: calendário já sincronizado."
+            echo "Nada a commitar: calendário já sincronizado com o vendor."
           fi
 
       - name: Falhar CI no push/PR quando houver drift
         if: steps.valida.outputs.SEM_DRIFT == '0' && (github.event_name == 'push' || github.event_name == 'pull_request')
         shell: bash
         run: |
-          echo "::error::data/calendario-caixa.json divergiu da fonte canônica. Rode node scripts/generate-calendario-caixa.js e commit o resultado."
+          echo "::error::data/calendario-caixa.json divergiu do vendor canônico. Rode node scripts/generate-calendario-caixa.js e commit o resultado."
           exit 1
 
       - name: Sanitização final (nenhum dado sensível)
