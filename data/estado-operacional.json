@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-01T23:00:32.991Z",
+  "generatedAt": "2026-09-03T00:52:06.942Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -49,21 +49,23 @@
       "slug": "ds-mensal",
       "nome": "Dupla Sena Mensal",
       "tipo": "MENSAL",
-      "estado": "INDISPONIVEL",
-      "ativo": false,
-      "fase": "INDISPONIVEL",
-      "concurso": "",
-      "abreEm": "",
-      "fechaEm": "",
+      "estado": "ABERTA",
+      "ativo": true,
+      "fase": "INSCRICOES",
+      "concurso": "3005",
+      "abreEm": "2026-09-03T00:51:55.907Z",
+      "fechaEm": "2026-09-03T15:00:00.000Z",
       "timezone": "America/Sao_Paulo",
       "janelaComunidade": {
-        "abreEm": "",
-        "fechaEm": "",
+        "abreEm": "2026-09-03T00:51:55.907Z",
+        "fechaEm": "2026-09-03T15:00:00.000Z",
         "timezone": "America/Sao_Paulo"
       },
-      "contexto": {},
-      "atualizadoEm": "",
-      "correlationId": "",
+      "contexto": {
+        "concurso": "3005"
+      },
+      "atualizadoEm": "2026-09-03T00:51:56.204Z",
+      "correlationId": "d064511e-84e2-462f-a59d-0a6e02e4fab3",
       "fonteEstado": "Apps_Scripts"
     },
     "lf-independencia": {
