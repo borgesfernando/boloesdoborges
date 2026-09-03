@@ -29,9 +29,9 @@ jobs:
   set-alert:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { fetch-depth: 0, persist-credentials: true }
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with: { node-version: '20', cache: '' }
       - name: Atualizar estado da Mega da Virada
         env:
