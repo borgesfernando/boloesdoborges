@@ -1,85 +1,53 @@
-# 📌 Projeto Bolões do Borges
+# Bolões do Borges
 
-**🤝 Sua comunidade confiável de bolões!**  
-Projetos coordenados com transparência, tecnologia e experiência desde 2009 para multiplicar suas chances nos principais concursos da Caixa.
+**Bolões organizados para você participar e acompanhar com tranquilidade.**
 
-## 💊 O que oferecemos
+Projetos mensais, especiais e estratégicos organizados com regras claras, registros, documentos e prestação de contas do início ao fim.
 
-- ✨ Organização contínua desde 2009 e comunidade engajada
-- 🧠 Modelos estatísticos e IA para construir jogos diversificados
-- 🔒 Governança, prestação de contas e controle de acesso aos documentos
-- 📅 Calendário atualizado com projetos mensais, especiais e estratégicos
+## O que você encontra aqui
 
-## 📑 Linhas de projetos
+- **Projetos** — mensais, especiais e estratégicos, cada um com regras e períodos próprios.
+- **Participação** — cadastro, confirmação e acompanhamento pelos canais oficiais.
+- **Transparência** — documentos, registros, comprovantes e prestação de contas organizados para consulta dos participantes.
+- **Tecnologia com responsabilidade** — dados e automação apoiam a organização dos projetos, sem promessa de resultado.
 
-- **Projetos Mensais**: Lotofácil, Quina e Dupla Sena, com rotinas próprias de sorteio para quem gosta de acompanhar resultados com frequência.
-- **Projetos Especiais**: Quina de São João, Lotofácil da Independência, Dupla Sena de Páscoa e Mega da Virada.
-- **Projetos Estratégicos (Acumulados)**: ativações pontuais quando Mega-Sena ou +Milionária atingem prêmios relevantes, com comunicação dedicada e janelas de entrada curtas.
+## Linhas de projetos
 
-## 📈 Como funciona
+- **Mensais** — Lotofácil, Quina e Dupla Sena em projetos recorrentes, com participação e acompanhamento ao longo de cada ciclo.
+- **Especiais** — projetos preparados para concursos especiais ao longo do ano, com períodos definidos para participação.
+- **Estratégicos** — projetos pontuais divulgados quando uma nova rodada é aberta, com regras, prazo e informações próprias.
 
-1. Realize o cadastro pelo [formulário oficial](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
-2. Receba as instruções e ingresse na comunidade WhatsApp.
-3. Escolha os projetos em que deseja participar e confirme as cotas nos prazos divulgados.
-4. Acompanhe avisos, comprovantes, resultados e prestações de contas enviadas aos participantes.
+## Como participar
 
-## 📲 Comunidade WhatsApp
+1. Faça o cadastro pelo [formulário oficial](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
+2. Conheça os projetos disponíveis e escolha os que interessam a você.
+3. Siga as orientações de valor e prazo de cada projeto.
+4. Acompanhe avisos, registros, comprovantes e prestação de contas pelos canais da comunidade.
 
-A comunidade “Bolões do Borges” no WhatsApp integra todos os projetos em um ambiente organizado.
+## Transparência e acompanhamento
 
-- **Grupo de avisos**: o administrador centraliza comunicados e abertura de oportunidades dos bolões estratégicos, mensais e especiais.
-- **Subgrupos por projeto**: cada linha possui grupos específicos apenas com os participantes confirmados, mantendo foco total.
-- **Interações pontuais**: os subgrupos ficam silenciados e abrem em momentos-chave para feedbacks, reações, eventos e compartilhamento de arquivos.
+Desde 2009, os projetos são organizados para que os participantes possam acompanhar informações, documentos e prestação de contas com clareza.
 
-⚠️ Importante: fique atento aos avisos para não perder oportunidades. [Cadastre-se aqui](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
+Comprovantes, registros, relações de jogos e informações de rateio ficam organizados para consulta dos participantes conforme cada projeto.
 
-## 📚 Transparência e segurança
+## Site e conteúdos públicos
 
-- Comprovantes, relações de jogos e rateios ficam disponíveis aos participantes autenticados.
-- Auditoria voluntária ao final de cada projeto e trilhas auditáveis de todo o fluxo financeiro.
-- Dados pessoais tratados conforme a LGPD, com acesso restrito e registro das operações.
-- Resultados significativos rateados proporcionalmente ao número de cotas.
+Este repositório é uma superfície pública e institucional do Bolões do Borges. Ele também publica alguns conteúdos e contratos estruturados destinados ao consumo público, como FAQ, calendário de sorteios, estado público das loterias e índice de páginas.
 
-## ❗ Por que participar
-
-- Mais chances com jogos coletivos e técnicas de desdobramento.
-- Custo-benefício melhor que apostar sozinho.
-- Planejamento constante: prêmios menores podem ser reinvestidos para fortalecer a base.
-- Comunidade com histórico comprovado e comunicação ativa.
-
-## 👨‍💻 Quem organiza
-
-Fernando Borges é profissional de Segurança da Informação, especialista em cibersegurança e entusiasta de IA aplicada às loterias. Ele coordena os bolões, define métodos, cuida da prestação de contas e atende os participantes.
-
-## 🌐 Conteúdo e dados públicos
-
-Este repositório é a superfície pública e institucional do Bolões do Borges. Além das páginas do site, ele publica alguns conteúdos e contratos estruturados destinados ao consumo público.
-
-- **FAQ pública**: `faq.json` e sua versão HTML apresentam perguntas e respostas de interesse dos participantes.
-- **Calendário de sorteios**: [`data/calendario-caixa.json`](https://borgesfernando.github.io/boloesdoborges/data/calendario-caixa.json) oferece uma representação estruturada dos dias e horários das modalidades acompanhadas pelo projeto.
-- **Estado público das loterias**: arquivos sanitizados em `data/` apoiam a apresentação de concursos, alertas e informações de frescor.
-- **Índice de páginas públicas**: [`site-index.json`](https://borgesfernando.github.io/boloesdoborges/site-index.json) reúne metadados das páginas públicas indexáveis do ecossistema.
-
-Os artefatos publicados aqui são deliberadamente públicos e não devem incluir credenciais, dados pessoais, URLs internas, infraestrutura privada, caminhos administrativos, runbooks ou detalhes de operação que não sejam necessários a consumidores externos.
-
-## 🧭 Site público
-
-A versão publicada deste repositório está disponível em:
+A página pública deste repositório está disponível em:
 
 - [borgesfernando.github.io/boloesdoborges](https://borgesfernando.github.io/boloesdoborges/)
 
-Conteúdos de participação e cadastro podem direcionar para outras superfícies oficiais do Bolões do Borges quando apropriado.
+O site principal do Bolões do Borges está em:
 
-## 👀 Pronto para entrar?
+- [site.boloesdoborges.shop](https://site.boloesdoborges.shop)
 
-- Cadastre-se no [formulário de interesse](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
-- Acompanhe as redes e fique por dentro de novas cotas.
-- Junte-se aos projetos que combinam com seu perfil.
+Os artefatos publicados aqui são deliberadamente públicos e não devem incluir credenciais, dados pessoais, URLs internas, infraestrutura privada, caminhos administrativos, runbooks ou detalhes operacionais internos.
 
-## 💌 Contato
+## Contato
 
-Dúvidas ou sugestões? Escreva para [correiodofernando@gmail.com](mailto:correiodofernando@gmail.com).
+Dúvidas ou sugestões: [correiodofernando@gmail.com](mailto:correiodofernando@gmail.com).
 
 ---
 
-**⚠️ Importante**: Projeto em formato de ação entre amigos, sem qualquer ligação com a Caixa Econômica Federal. Participação voluntária e exclusiva para maiores de 18 anos.
+**Aviso:** projeto independente entre participantes, sem vínculo com a Caixa Econômica Federal. Participação voluntária e exclusiva para maiores de 18 anos. Não há promessa de prêmio, retorno ou resultado.
