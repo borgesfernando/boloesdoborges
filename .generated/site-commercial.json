@@ -162,28 +162,28 @@
       "url": "https://site.boloesdoborges.shop/projetos/acumulados/mega-acumulada",
       "path": "/projetos/acumulados/mega-acumulada",
       "type": "page",
-      "description": "Ativamos o grupo quando a Mega ultrapassa R$ 50 milhões, com combinações especiais e filtros extras."
+      "description": "O projeto abre quando a Mega-Sena ultrapassa R$ 50 milhões, com cotas, prazo e informações divulgados para cada rodada."
     },
     {
       "title": "+Milionária Estratégica · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/projetos/acumulados/milionaria",
       "path": "/projetos/acumulados/milionaria",
       "type": "page",
-      "description": "Bolão estratégico da +Milionária, uma vez por semana no concurso de quarta-feira, aberto quando o prêmio é superior a R$ 80 milhões, com abertura na terça-feira pela manhã, janela pública, documentação completa e regras claras de reinvestimento."
+      "description": "Bolão da +Milionária realizado uma vez por semana no concurso de quarta-feira, aberto quando o prêmio é superior a R$ 80 milhões, com confirmação na terça-feira e acompanhamento por documentos e avisos do projeto."
     },
     {
       "title": "Dupla Sena de Páscoa · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/projetos/especiais/ds-pascoa",
       "path": "/projetos/especiais/ds-pascoa",
       "type": "page",
-      "description": "Campanha curta em que a IA ajuda a montar combinações variadas e bem distribuídas, dentro das regras oficiais. Ideal para quem gosta de janelas curtas e resultados ágeis. Entradas após o início usam o valor vigente do mês para equalizar as parcelas já transcorridas; não se trata de multa ou penalidade."
+      "description": "Projeto com combinações variadas, preparação antecipada dos jogos e acompanhamento dos registros e resultados oficiais. Projeto de duração curta, com datas, pagamentos e acompanhamento definidos previamente. Quem entra depois do início regulariza os meses anteriores pelo valor previsto para o período; isso não é multa nem penalidade."
     },
     {
       "title": "Lotofácil da Independência · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/projetos/especiais/lf-independencia",
       "path": "/projetos/especiais/lf-independencia",
       "type": "page",
-      "description": "Estratégia focada em regularidade, reaproveitando parte dos resultados para reduzir o custo por cota ao longo do ano. Parcelas previsíveis e cronograma divulgado no início do ano. Entradas após o início usam o valor vigente do mês para equalizar as parcelas já transcorridas; não se trata de multa ou penalidade."
+      "description": "Projeto com participação organizada por ciclo, jogos preparados de forma consistente e acompanhamento dos resultados e comprovantes. Parcelas previsíveis e cronograma divulgado no início do ano. Quem entra depois do início regulariza os meses anteriores pelo valor previsto para o período; isso não é multa nem penalidade."
     },
     {
       "title": "Mega da Virada 2026 · Super Bolão · Bolões do Borges",
@@ -197,28 +197,28 @@
       "url": "https://site.boloesdoborges.shop/projetos/especiais/quina-saojoao",
       "path": "/projetos/especiais/quina-saojoao",
       "type": "page",
-      "description": "Rotina de jogos com ajustes feitos conforme a frequência de acumulações e o comportamento recente dos resultados. Operação enxuta, com validações cruzadas e bloqueios inteligentes. Entradas após o início usam o valor vigente do mês para equalizar as parcelas já transcorridas; não se trata de multa ou penalidade."
+      "description": "Projeto com jogos preparados para cada ciclo e ajustes feitos de forma organizada conforme o calendário dos concursos. Organização concentrada em um período curto, com conferência dos registros antes do sorteio. Quem entra depois do início regulariza os meses anteriores pelo valor previsto para o período; isso não é multa nem penalidade."
     },
     {
       "title": "Dupla Sena Mensal · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/projetos/mensais/dupla-sena-mensal",
       "path": "/projetos/mensais/dupla-sena-mensal",
       "type": "page",
-      "description": "Bolão mensal da Dupla Sena com ciclo de 12 concursos, sorteios às segundas, quartas e sextas e combinação de jogos calibrados para ampliar a cobertura."
+      "description": "Bolão mensal da Dupla Sena com ciclo de 12 concursos, sorteios às segundas, quartas e sextas e jogos preparados para manter variedade ao longo do período."
     },
     {
       "title": "Lotofácil Mensal · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/projetos/mensais/lf-mensal",
       "path": "/projetos/mensais/lf-mensal",
       "type": "page",
-      "description": "Bolão mensal da Lotofácil com matriz calibrada por ciclo, retreinamento do modelo LSTM e regras de fixas/móveis para ampliar a cobertura de combinações."
+      "description": "Bolão mensal da Lotofácil organizado por ciclos, com combinações preparadas de forma equilibrada e acompanhamento contínuo dos concursos previstos."
     },
     {
       "title": "Quina Mensal · Bolões do Borges",
       "url": "https://site.boloesdoborges.shop/projetos/mensais/quina-mensal",
       "path": "/projetos/mensais/quina-mensal",
       "type": "page",
-      "description": "Bolão mensal da Quina com matriz calibrada por ciclo, retreinamento do modelo LSTM e ajustes baseados em vizinhança para diversificar os jogos."
+      "description": "Bolão mensal da Quina organizado por ciclos, com jogos preparados para os concursos previstos e pequenas variações usadas para diversificar as combinações."
     },
     {
       "title": "Sobre a Comunidade · Bolões do Borges",
