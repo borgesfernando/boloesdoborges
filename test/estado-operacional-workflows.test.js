@@ -17,6 +17,7 @@ const esperados = [
   'set-mega-50mais-alert.yml',
   'set-milionaria-alert.yml',
 ];
+const grupoGlobal = 'estado-operacional-global';
 
 const erros = [];
 
@@ -30,6 +31,18 @@ for (const nome of esperados) {
   if (!/workflow_dispatch\s*:/.test(texto)) erros.push(`${nome}: workflow_dispatch ausente`);
   if (!/scripts\/update-mensais-alert\.js/.test(texto)) erros.push(`${nome}: updater canônico ausente`);
   if (!/data\/estado-operacional\.json/.test(texto)) erros.push(`${nome}: estado-operacional.json não participa do commit`);
+
+  const blocoConcurrency = texto.match(/(?:^|\n)concurrency:\s*\n([\s\S]*?)(?=\n\S|$)/);
+  if (!blocoConcurrency) {
+    erros.push(`${nome}: concurrency global ausente`);
+  } else {
+    if (!new RegExp(`^\\s*group:\\s*${grupoGlobal}\\s*$`, 'm').test(blocoConcurrency[1])) {
+      erros.push(`${nome}: concurrency.group deve ser ${grupoGlobal}`);
+    }
+    if (!/^\s*cancel-in-progress:\s*false\s*$/m.test(blocoConcurrency[1])) {
+      erros.push(`${nome}: cancel-in-progress deve ser false`);
+    }
+  }
 }
 
 const workflowUnico = path.join(pasta, 'set-estado-operacional.yml');
@@ -38,9 +51,9 @@ if (fs.existsSync(workflowUnico)) {
 }
 
 if (erros.length) {
-  console.error('FAIL: contrato de preservação dos workflows violado.');
+  console.error('FAIL: contrato dos workflows de estado operacional violado.');
   erros.forEach((erro) => console.error(`- ${erro}`));
   process.exit(1);
 }
 
-console.log(`PASS: ${esperados.length} workflows set-*.yml preservados; consolidação ainda não iniciada.`);
+console.log(`PASS: ${esperados.length} workflows preservados e serializados por ${grupoGlobal}.`);
