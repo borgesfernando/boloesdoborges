@@ -59,10 +59,18 @@
     if (mesAtual < mesInicio || mesAtual > mesFim) return '';
 
     var valorAtual = calcularValorEntrada(projeto, mesAtual);
+    var mesesRestantes = Math.max(0, mesFim - mesAtual);
+    var pixRestantes = mesesRestantes * projeto.valorMes;
+    var totalAteFim = valorAtual + pixRestantes;
+    var detalheRestante = mesesRestantes > 0
+      ? ' Depois da entrada, restam ' + mesesRestantes + ' PIX mensais de R$ ' + projeto.valorMes + ',00, que somam R$ ' + pixRestantes + ',00.'
+      : ' Este é o último mês previsto do projeto.';
+
     return '<div class="card" style="margin: 1rem 0;">' +
       '<p style="margin:0 0 .35rem;"><strong>Quanto custa entrar hoje?</strong></p>' +
       '<p style="margin:0; font-size:1.35rem;"><strong>R$ ' + valorAtual + ',00</strong> para entrada em ' + NOMES_MESES[mesAtual - 1].toLowerCase() + '.</p>' +
-      '<p style="margin:.55rem 0 0; font-size:.92rem;">A cota-base do projeto é R$ ' + projeto.cota + ',00. O valor de entrada regulariza a participação até o mês atual; depois, os PIX mensais de R$ ' + projeto.valorMes + ',00 continuam normalmente até o fim do projeto.</p>' +
+      '<p style="margin:.55rem 0 0; font-size:.92rem;">A cota-base do projeto é R$ ' + projeto.cota + ',00. O valor de entrada regulariza a participação até o mês atual.' + detalheRestante + '</p>' +
+      '<p style="margin:.55rem 0 0;"><strong>Valor total da simulação até ' + NOMES_MESES[mesFim - 1].toLowerCase() + ': R$ ' + totalAteFim + ',00.</strong></p>' +
       '</div>';
   }
 
