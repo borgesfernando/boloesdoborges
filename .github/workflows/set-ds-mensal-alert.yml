@@ -14,6 +14,8 @@ on:
         default: 'false'
       concurso: { description: 'Concurso/instância operacional', type: string, required: false, default: '' }
       correlation_id: { description: 'Identificador idempotente do evento operacional', type: string, required: false, default: '' }
+      event_type: { description: 'Tipo lógico do evento operacional', type: string, required: false, default: '' }
+      revision: { description: 'Revisão monotônica da instância operacional', type: string, required: false, default: '' }
       estado: { description: 'Estado operacional', type: string, required: false, default: '' }
       fase: { description: 'Fase pública do projeto', type: string, required: false, default: '' }
       abre_em: { description: 'Abertura efetiva da janela (ISO)', type: string, required: false, default: '' }
@@ -43,6 +45,8 @@ jobs:
           ALERTA_ATIVO: ${{ inputs.ativo }}
           ALERTA_CONCURSO: ${{ inputs.concurso }}
           ALERTA_CORRELATION_ID: ${{ inputs.correlation_id }}
+          ALERTA_EVENT_TYPE: ${{ inputs.event_type }}
+          ALERTA_REVISION: ${{ inputs.revision }}
           ALERTA_ESTADO: ${{ inputs.estado }}
           ALERTA_FASE: ${{ inputs.fase }}
           ALERTA_ABRE_EM: ${{ inputs.abre_em }}

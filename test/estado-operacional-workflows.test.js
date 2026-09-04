@@ -21,6 +21,17 @@ const grupoGlobal = 'estado-operacional-global';
 
 const erros = [];
 
+function exigeInputOpcional(texto, nome, workflow) {
+  const inicio = texto.indexOf(`${nome}:`);
+  if (inicio === -1) {
+    erros.push(`${workflow}: input ${nome} ausente`);
+    return;
+  }
+  const trecho = texto.slice(inicio, inicio + 320);
+  if (!/required:\s*false/.test(trecho)) erros.push(`${workflow}: input ${nome} deve ser opcional`);
+  if (!/default:\s*''/.test(trecho)) erros.push(`${workflow}: input ${nome} deve manter default vazio`);
+}
+
 for (const nome of esperados) {
   const arquivo = path.join(pasta, nome);
   if (!fs.existsSync(arquivo)) {
@@ -43,6 +54,15 @@ for (const nome of esperados) {
       erros.push(`${nome}: cancel-in-progress deve ser false`);
     }
   }
+
+  exigeInputOpcional(texto, 'event_type', nome);
+  exigeInputOpcional(texto, 'revision', nome);
+  if (!/ALERTA_EVENT_TYPE:\s*\$\{\{\s*inputs\.event_type\s*\}\}/.test(texto)) {
+    erros.push(`${nome}: ALERTA_EVENT_TYPE não transporta inputs.event_type`);
+  }
+  if (!/ALERTA_REVISION:\s*\$\{\{\s*inputs\.revision\s*\}\}/.test(texto)) {
+    erros.push(`${nome}: ALERTA_REVISION não transporta inputs.revision`);
+  }
 }
 
 const workflowUnico = path.join(pasta, 'set-estado-operacional.yml');
@@ -56,4 +76,4 @@ if (erros.length) {
   process.exit(1);
 }
 
-console.log(`PASS: ${esperados.length} workflows preservados e serializados por ${grupoGlobal}.`);
+console.log(`PASS: ${esperados.length} workflows serializados e compatíveis com event_type/revision opcionais.`);
