@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-09-04T12:21:28.493Z",
-  "page_count": 43,
+  "generated_at": "2026-09-04T16:11:43.003Z",
+  "page_count": 44,
   "sites": [
     {
       "id": "public",
@@ -105,6 +105,13 @@
           "path": "/como-funciona",
           "type": "page",
           "description": "Entenda como participar de um bolão da Mega-Sena, Lotofácil, Quina e Dupla Sena de forma simples e transparente."
+        },
+        {
+          "title": "Como funciona o valor de entrada · Bolões do Borges",
+          "url": "https://site.boloesdoborges.shop/como-funciona/valor-de-entrada",
+          "path": "/como-funciona/valor-de-entrada",
+          "type": "page",
+          "description": "Entenda como é calculado o valor para entrar depois do início em um Projeto Especial do Bolões do Borges."
         },
         {
           "title": "Comunidade e cadastro · Bolões do Borges",
