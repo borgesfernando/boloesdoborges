@@ -14,7 +14,7 @@ Projetos mensais, especiais e estratégicos organizados com regras claras, regis
 ## Linhas de projetos
 
 - **Mensais** — Lotofácil, Quina e Dupla Sena em projetos recorrentes, com participação e acompanhamento ao longo de cada ciclo.
-- **Especiais** — projetos preparados para concursos especiais ao longo do ano, com períodos definidos para participação.
+- **Especiais** — projetos preparados para concursos especiais ao longo do ano, com períodos definidos para participação. Para entradas após o início do ciclo, o valor vigente e a metodologia são apresentados no site principal; após a entrada, os PIX mensais previstos continuam até o fim do projeto.
 - **Estratégicos** — projetos pontuais divulgados quando uma nova rodada é aberta, com regras, prazo e informações próprias.
 
 ## Como participar
@@ -41,6 +41,7 @@ A página pública deste repositório está disponível em:
 O site principal do Bolões do Borges está em:
 
 - [site.boloesdoborges.shop](https://site.boloesdoborges.shop)
+- [Como funciona o valor de entrada nos Projetos Especiais](https://site.boloesdoborges.shop/como-funciona/valor-de-entrada)
 
 Os artefatos publicados aqui são deliberadamente públicos e não devem incluir credenciais, dados pessoais, URLs internas, infraestrutura privada, caminhos administrativos, runbooks ou detalhes operacionais internos.
 
