@@ -165,12 +165,11 @@ function loadPayload(env) {
   const ativo = parseBoolean(fonte.ALERTA_ATIVO);
   const concurso = textoPublico(fonte.ALERTA_CONCURSO, 80);
   const correlationId = textoPublico(fonte.ALERTA_CORRELATION_ID, 180);
-  const modelo = resolveStrategicModel(projeto, ativo, concurso, correlationId);
 
   return {
     projeto,
     ativo,
-    modelo,
+    modelo: STRATEGIC_PROJECTS.has(projeto) ? null : 1,
     concurso,
     correlationId,
     eventType: textoPublico(fonte.ALERTA_EVENT_TYPE, 30).toUpperCase(),
@@ -358,10 +357,16 @@ function main() {
     const resultado = aplicarEstadoOperacionalComCursor(estadoPath, CURSOR_FILE, payload);
 
     if (resultado.aplicado) {
+      const modelo = resolveStrategicModel(
+        payload.projeto,
+        payload.ativo,
+        payload.concurso,
+        payload.correlationId,
+      );
       const alerta = {
         projeto: payload.projeto,
         ativo: payload.ativo,
-        modelo: payload.modelo,
+        modelo,
         ultimaAtualizacao: payload.ultimaAtualizacao,
       };
       const outputPath = ALERT_FILES[payload.projeto];
