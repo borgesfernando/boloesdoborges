@@ -62,7 +62,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: strategic-alert-rotation
+  group: estado-operacional-global
   cancel-in-progress: false
 
 jobs:
