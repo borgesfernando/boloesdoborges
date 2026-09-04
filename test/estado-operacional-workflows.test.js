@@ -18,6 +18,7 @@ const esperados = [
   'set-milionaria-alert.yml',
 ];
 const grupoGlobal = 'estado-operacional-global';
+const cursor = '.github/state/estado-operacional-applied.json';
 
 const erros = [];
 
@@ -42,6 +43,7 @@ for (const nome of esperados) {
   if (!/workflow_dispatch\s*:/.test(texto)) erros.push(`${nome}: workflow_dispatch ausente`);
   if (!/scripts\/update-mensais-alert\.js/.test(texto)) erros.push(`${nome}: updater canônico ausente`);
   if (!/data\/estado-operacional\.json/.test(texto)) erros.push(`${nome}: estado-operacional.json não participa do commit`);
+  if (!texto.includes(cursor)) erros.push(`${nome}: cursor técnico não participa do mesmo commit`);
 
   const blocoConcurrency = texto.match(/(?:^|\n)concurrency:\s*\n([\s\S]*?)(?=\n\S|$)/);
   if (!blocoConcurrency) {
@@ -65,6 +67,15 @@ for (const nome of esperados) {
   }
 }
 
+const cursorPath = path.join(raiz, '.github', 'state', 'estado-operacional-applied.json');
+if (!fs.existsSync(cursorPath)) erros.push('cursor técnico inicial ausente');
+else {
+  const cursorDoc = JSON.parse(fs.readFileSync(cursorPath, 'utf8'));
+  if (cursorDoc.version !== 1 || !cursorDoc.projetos || typeof cursorDoc.projetos !== 'object') {
+    erros.push('cursor técnico inicial inválido');
+  }
+}
+
 const workflowUnico = path.join(pasta, 'set-estado-operacional.yml');
 if (fs.existsSync(workflowUnico)) {
   erros.push('set-estado-operacional.yml surgiu antes do gate de ciclo real validado.');
@@ -76,4 +87,4 @@ if (erros.length) {
   process.exit(1);
 }
 
-console.log(`PASS: ${esperados.length} workflows serializados e compatíveis com event_type/revision opcionais.`);
+console.log(`PASS: ${esperados.length} workflows serializados, revisionados e com cursor no mesmo commit.`);
