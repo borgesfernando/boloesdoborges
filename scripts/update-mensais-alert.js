@@ -13,6 +13,11 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  carregarCursor,
+  salvarCursor,
+  decidirAplicacaoEvento,
+} = require('./estado-operacional-cursor');
 
 const ALERT_FILES = {
   'quina-mensal': path.join(__dirname, '..', 'data', 'quina-mensal-alert.json'),
@@ -27,6 +32,7 @@ const ALERT_FILES = {
 };
 
 const ROTATION_FILE = path.join(__dirname, '..', 'data', 'strategic-alert-rotation.json');
+const CURSOR_FILE = path.join(__dirname, '..', '.github', 'state', 'estado-operacional-applied.json');
 const STRATEGIC_PROJECTS = new Set(['mega-50mais', 'milionaria']);
 const DEFAULT_TIMEZONE = 'America/Sao_Paulo';
 
@@ -167,6 +173,8 @@ function loadPayload(env) {
     modelo,
     concurso,
     correlationId,
+    eventType: textoPublico(fonte.ALERTA_EVENT_TYPE, 30).toUpperCase(),
+    revision: textoPublico(fonte.ALERTA_REVISION, 30),
     estado: textoPublico(fonte.ALERTA_ESTADO, 30),
     fase: textoPublico(fonte.ALERTA_FASE, 60),
     abreEm: textoPublico(fonte.ALERTA_ABRE_EM, 80),
@@ -295,6 +303,26 @@ function updateAggregate(payload, estadoPath) {
   return atual;
 }
 
+function aplicarEstadoOperacionalComCursor(estadoPath, cursorPath, payload) {
+  const cursor = carregarCursor(cursorPath);
+  const decisao = decidirAplicacaoEvento(payload, cursor);
+  let aplicado = false;
+
+  if (decisao.acao === 'APLICAR') {
+    updateAggregate(payload, estadoPath);
+    aplicado = true;
+  }
+  const cursorAtualizado = decisao.cursorAlterado
+    ? salvarCursor(cursorPath, decisao.cursor)
+    : false;
+
+  return {
+    aplicado,
+    cursorAtualizado,
+    motivo: decisao.motivo,
+  };
+}
+
 /**
  * Atualiza somente o registro indicado no agregado público.
  * @param {string} estadoPath caminho para estado-operacional.json
@@ -326,19 +354,22 @@ function atualizarEstadoOperacional(estadoPath, dados) {
 function main() {
   try {
     const payload = loadPayload();
-    const alerta = {
-      projeto: payload.projeto,
-      ativo: payload.ativo,
-      modelo: payload.modelo,
-      ultimaAtualizacao: payload.ultimaAtualizacao,
-    };
-
-    const outputPath = ALERT_FILES[payload.projeto];
-    fs.writeFileSync(outputPath, JSON.stringify(alerta, null, 2) + '\n', 'utf8');
-
     const estadoPath = path.join(__dirname, '..', 'data', 'estado-operacional.json');
-    updateAggregate(payload, estadoPath);
-    console.log(`Arquivo atualizado em ${outputPath}`);
+    const resultado = aplicarEstadoOperacionalComCursor(estadoPath, CURSOR_FILE, payload);
+
+    if (resultado.aplicado) {
+      const alerta = {
+        projeto: payload.projeto,
+        ativo: payload.ativo,
+        modelo: payload.modelo,
+        ultimaAtualizacao: payload.ultimaAtualizacao,
+      };
+      const outputPath = ALERT_FILES[payload.projeto];
+      fs.writeFileSync(outputPath, JSON.stringify(alerta, null, 2) + '\n', 'utf8');
+      console.log(`Arquivo atualizado em ${outputPath}`);
+    } else {
+      console.log(`Evento operacional ignorado como ${resultado.motivo}; agregado preservado.`);
+    }
   } catch (error) {
     console.error(`[update-mensais-alert] Falha ao atualizar alerta: ${error.message}`);
     process.exit(1);
@@ -352,6 +383,7 @@ module.exports = {
   loadPayload,
   main,
   atualizarEstadoOperacional,
+  aplicarEstadoOperacionalComCursor,
   emptyAggregate,
   updateAggregate,
   sanitizarContextoPublico,
