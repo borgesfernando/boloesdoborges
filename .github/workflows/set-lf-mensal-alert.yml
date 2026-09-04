@@ -61,6 +61,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: estado-operacional-global
+  cancel-in-progress: false
+
 jobs:
   set-alert:
     runs-on: ubuntu-latest
