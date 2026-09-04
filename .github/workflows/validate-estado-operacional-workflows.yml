@@ -5,13 +5,25 @@ on:
     paths:
       - '.github/workflows/set-*-alert.yml'
       - '.github/workflows/set-estado-operacional.yml'
+      - '.github/workflows/validate-estado-operacional-workflows.yml'
+      - '.github/state/estado-operacional-applied.json'
+      - 'scripts/update-mensais-alert.js'
+      - 'scripts/estado-operacional-cursor.js'
       - 'test/estado-operacional-workflows.test.js'
+      - 'test/update-mensais-alert.test.js'
+      - 'test/estado-operacional-idempotencia.test.js'
   push:
     branches: [main]
     paths:
       - '.github/workflows/set-*-alert.yml'
       - '.github/workflows/set-estado-operacional.yml'
+      - '.github/workflows/validate-estado-operacional-workflows.yml'
+      - '.github/state/estado-operacional-applied.json'
+      - 'scripts/update-mensais-alert.js'
+      - 'scripts/estado-operacional-cursor.js'
       - 'test/estado-operacional-workflows.test.js'
+      - 'test/update-mensais-alert.test.js'
+      - 'test/estado-operacional-idempotencia.test.js'
 
 permissions:
   contents: read
@@ -27,3 +39,5 @@ jobs:
           cache: ''
       - name: Validar contrato dos nove workflows
         run: node test/estado-operacional-workflows.test.js
+      - name: Validar updater e cursor determinístico
+        run: node --test test/update-mensais-alert.test.js test/estado-operacional-idempotencia.test.js
