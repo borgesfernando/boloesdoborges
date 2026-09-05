@@ -26,28 +26,28 @@
       "concurso": 3779,
       "dataProximoConcurso": "15/09/2026",
       "estado": "ATUALIZADO",
-      "freshness": "ATUAL",
-      "esperadoDataApuracao": "03/09/2026",
-      "sorteioEsperadoEm": "2026-09-04T00:00:00.000Z"
+      "freshness": "DESATUALIZADO",
+      "esperadoDataApuracao": "04/09/2026",
+      "sorteioEsperadoEm": "2026-09-05T00:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "03/09/2026",
-      "concurso": 7109,
-      "dataProximoConcurso": "04/09/2026",
+      "dataApuracao": "04/09/2026",
+      "concurso": 7110,
+      "dataProximoConcurso": "06/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "03/09/2026",
-      "sorteioEsperadoEm": "2026-09-04T00:00:00.000Z"
+      "esperadoDataApuracao": "04/09/2026",
+      "sorteioEsperadoEm": "2026-09-05T00:00:00.000Z"
     },
     "duplasena": {
-      "dataApuracao": "02/09/2026",
-      "concurso": 3004,
-      "dataProximoConcurso": "04/09/2026",
+      "dataApuracao": "04/09/2026",
+      "concurso": 3005,
+      "dataProximoConcurso": "09/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "02/09/2026",
-      "sorteioEsperadoEm": "2026-09-03T00:00:00.000Z"
+      "esperadoDataApuracao": "04/09/2026",
+      "sorteioEsperadoEm": "2026-09-05T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-09-04T02:58:06.895Z"
+  "atualizadoEm": "2026-09-05T03:00:15.339Z"
 }

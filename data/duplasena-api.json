@@ -1,39 +1,39 @@
 {
   "acumulado": true,
-  "dataApuracao": "02/09/2026",
-  "dataProximoConcurso": "04/09/2026",
+  "dataApuracao": "04/09/2026",
+  "dataProximoConcurso": "09/09/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "28",
+    "25",
     "09",
-    "16",
+    "21",
+    "24",
+    "33",
     "18",
-    "46",
-    "10",
-    "03",
-    "10",
-    "16",
-    "45",
-    "08",
-    "01"
+    "05",
+    "40",
+    "09",
+    "36",
+    "07",
+    "46"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
     "09",
-    "10",
-    "16",
     "18",
-    "28",
-    "46"
+    "21",
+    "24",
+    "25",
+    "33"
   ],
   "listaDezenasSegundoSorteio": [
-    "01",
-    "03",
-    "08",
-    "10",
-    "16",
-    "45"
+    "05",
+    "07",
+    "09",
+    "36",
+    "40",
+    "46"
   ],
   "listaMunicipioUFGanhadores": [],
   "listaRateioPremio": [
@@ -46,20 +46,20 @@
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 12,
-      "valorPremio": 4174.41
+      "numeroDeGanhadores": 9,
+      "valorPremio": 7063.27
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 440,
-      "valorPremio": 130.11
+      "numeroDeGanhadores": 736,
+      "valorPremio": 98.71
     },
     {
       "descricaoFaixa": "3 acertos",
       "faixa": 4,
-      "numeroDeGanhadores": 9211,
-      "valorPremio": 3.1
+      "numeroDeGanhadores": 13097,
+      "valorPremio": 2.77
     },
     {
       "descricaoFaixa": "6 acertos",
@@ -70,30 +70,30 @@
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 6,
-      "numeroDeGanhadores": 6,
-      "valorPremio": 7513.94
+      "numeroDeGanhadores": 3,
+      "valorPremio": 19070.83
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 7,
-      "numeroDeGanhadores": 517,
-      "valorPremio": 110.73
+      "numeroDeGanhadores": 489,
+      "valorPremio": 148.57
     },
     {
       "descricaoFaixa": "3 acertos",
       "faixa": 8,
-      "numeroDeGanhadores": 9939,
-      "valorPremio": 2.88
+      "numeroDeGanhadores": 10605,
+      "valorPremio": 3.42
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
   "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3004,
-  "numeroConcursoAnterior": 3003,
+  "numero": 3005,
+  "numeroConcursoAnterior": 3004,
   "numeroConcursoFinal_0_5": 0,
-  "numeroConcursoProximo": 3005,
+  "numeroConcursoProximo": 3006,
   "numeroJogo": 18,
   "observacao": "",
   "premiacaoContingencia": null,
@@ -101,11 +101,11 @@
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 1634193,
+  "valorArrecadado": 2073840,
   "valorAcumuladoConcurso_0_5": 0,
-  "valorAcumuladoConcursoEspecial": 5426438.25,
-  "valorAcumuladoProximoConcurso": 2799931.37,
-  "valorEstimadoProximoConcurso": 3000000,
+  "valorAcumuladoConcursoEspecial": 5528149.34,
+  "valorAcumuladoProximoConcurso": 3060565.97,
+  "valorEstimadoProximoConcurso": 3500000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
