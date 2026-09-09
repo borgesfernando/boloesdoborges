@@ -1,4 +1,14 @@
 {
   "version": 1,
-  "projetos": {}
+  "projetos": {
+    "mega-50mais": {
+      "correlationId": "6adf97a8-4182-4dd8-879f-49c105654ee2",
+      "lastRevision": 1,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "mega-50mais:6adf97a8-4182-4dd8-879f-49c105654ee2:ABRIR:1",
+      "identityFingerprint": "b80a7b7824148f2f1546d1fe64a110c96691a5da23be03d76931dd8c79c6ffbe",
+      "factsFingerprint": "169a01fdf3794092f547590e245dc74f93570d14f118f53c464f062983696a93",
+      "payloadFingerprint": "c1f3d27b361615846f8b4ed8518eb4417a9ec0b68074e2d03a589617b54486d9"
+    }
+  }
 }
