@@ -1,12 +1,12 @@
 {
-  "concurso": 3054,
+  "concurso": 3055,
   "acumulado": true,
-  "dataProximoConcurso": "08/09/2026",
-  "valorEstimadoProximoConcurso": 70000000,
+  "dataProximoConcurso": "10/09/2026",
+  "valorEstimadoProximoConcurso": 76000000,
   "minimoMilhoes": 50,
   "ativo": true,
-  "janelaInicio": "2026-09-08T03:07:24.149Z",
-  "janelaFim": "2026-09-08T21:00:00.000Z",
-  "ultimaAtualizacao": "2026-09-08T03:07:24.149Z",
+  "janelaInicio": "2026-09-09T03:08:47.203Z",
+  "janelaFim": "2026-09-09T21:00:00.000Z",
+  "ultimaAtualizacao": "2026-09-09T03:08:47.203Z",
   "fonte": "https://servicebus3.caixa.gov.br/portaldeloterias/api/megasena"
 }
