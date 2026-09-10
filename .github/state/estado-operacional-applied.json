@@ -12,12 +12,12 @@
     },
     "mega-virada": {
       "correlationId": "824c89da-b0e3-4ac5-b146-056b33d7602a",
-      "lastRevision": 1,
-      "lastEventType": "ABRIR",
-      "lastEventKey": "mega-virada:824c89da-b0e3-4ac5-b146-056b33d7602a:ABRIR:1",
+      "lastRevision": 2,
+      "lastEventType": "FECHAR",
+      "lastEventKey": "mega-virada:824c89da-b0e3-4ac5-b146-056b33d7602a:FECHAR:2",
       "identityFingerprint": "ab6cbdbb7f1a0d46b229bb4e00576b762522e4825aa5a6950087dfe518a9ac80",
-      "factsFingerprint": "5032d1fbb231022bf1c42f5d1e476a0268420ef531a4da953953f911d420f449",
-      "payloadFingerprint": "e005111d80780f73290ce7565434e71919621ec3c1cc8737f519636409237952"
+      "factsFingerprint": "c1eac7e4c59f547371386df367a3b3b36e4043dacf11e46679a947e42712bf4b",
+      "payloadFingerprint": "1346b5bef1cab8f5273f98908753385af1db3574fc109c537104344bb380340c"
     }
   }
 }
