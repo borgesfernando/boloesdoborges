@@ -9,6 +9,15 @@
       "identityFingerprint": "b80a7b7824148f2f1546d1fe64a110c96691a5da23be03d76931dd8c79c6ffbe",
       "factsFingerprint": "47ca43f662fc45eff7c9af0c8d88e931fce01588546b2fe494a8b7ad1ed60394",
       "payloadFingerprint": "a941eb568716b357c4117d4eada48ce1bda659315c3e1814a84ffe87669eb2d9"
+    },
+    "mega-virada": {
+      "correlationId": "824c89da-b0e3-4ac5-b146-056b33d7602a",
+      "lastRevision": 1,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "mega-virada:824c89da-b0e3-4ac5-b146-056b33d7602a:ABRIR:1",
+      "identityFingerprint": "ab6cbdbb7f1a0d46b229bb4e00576b762522e4825aa5a6950087dfe518a9ac80",
+      "factsFingerprint": "5032d1fbb231022bf1c42f5d1e476a0268420ef531a4da953953f911d420f449",
+      "payloadFingerprint": "e005111d80780f73290ce7565434e71919621ec3c1cc8737f519636409237952"
     }
   }
 }
