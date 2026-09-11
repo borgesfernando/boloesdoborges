@@ -50,11 +50,17 @@ assert.equal(api.isOpen(open, now), true);
 assert.equal(api.isUpcoming(upcoming, now), true);
 assert.equal(api.isUpcoming(far, now), false);
 assert.equal(api.isUpcoming(unavailable, now), false);
+assert.equal(api.tierFor(progress, now), 'current');
 
-const selected = api.selectCompactRecords({ projetos: { open, upcoming, far, unavailable, progress } }, now, 4);
-assert.deepEqual(Array.from(selected, (item) => item.slug), ['open', 'soon']);
+const selected = api.selectCompactRecords({ projetos: { open, upcoming, far, unavailable, progress } }, now, 3);
+assert.deepEqual(Array.from(selected, (item) => item.slug), ['open', 'progress', 'soon']);
 
-const empty = api.selectCompactRecords({ projetos: { far, unavailable, progress } }, now, 4);
-assert.equal(empty.length, 0);
+const onlyProgress = api.selectCompactRecords({ projetos: { far, unavailable, progress } }, now, 3);
+assert.deepEqual(Array.from(onlyProgress, (item) => item.slug), ['progress']);
+
+const source = fs.readFileSync('js/estado-operacional.js', 'utf8');
+assert.match(source, /atualizacoes\.html#\$\{encodeURIComponent\(slug\)\}/);
+assert.match(source, /Ver atualização →/);
+assert.match(source, /Ver projeto →/);
 
 console.log('estado-operacional-ui.test.js: OK');
