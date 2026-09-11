@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-09-05T21:55:42.001Z",
-  "page_count": 44,
+  "generated_at": "2026-09-11T11:39:25.918Z",
+  "page_count": 46,
   "sites": [
     {
       "id": "public",
@@ -308,6 +308,20 @@
           "path": "/projetos/mensais/quina-mensal",
           "type": "page",
           "description": "Bolão mensal da Quina organizado por ciclos, com jogos preparados para os concursos previstos e pequenas variações usadas para diversificar as combinações."
+        },
+        {
+          "title": "Regras do Bolão da Mega Acumulada · Bolões do Borges",
+          "url": "https://site.boloesdoborges.shop/regras/mega-acumulada",
+          "path": "/regras/mega-acumulada",
+          "type": "page",
+          "description": "Regras de participação, pagamento, apostas, rateio e prestação de contas do Bolão da Mega Acumulada."
+        },
+        {
+          "title": "Regras do Bolão da +Milionária · Bolões do Borges",
+          "url": "https://site.boloesdoborges.shop/regras/milionaria",
+          "path": "/regras/milionaria",
+          "type": "page",
+          "description": "Regras de participação, pagamento, reinvestimento, rateio e prestação de contas do Bolão da +Milionária."
         },
         {
           "title": "Sobre a Comunidade · Bolões do Borges",
