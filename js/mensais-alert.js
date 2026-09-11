@@ -107,14 +107,29 @@ async function renderizarMensaisAlert() {
   }
 }
 
+function isHomePage() {
+  const path = window.location.pathname;
+  return /\/(?:index\.html)?$/.test(path) || path.endsWith('/boloesdoborges/');
+}
+
+/**
+ * A home passa a ter uma única superfície de destaque operacional: o painel
+ * baseado em estado-operacional.json. Os containers legados são removidos só
+ * na página principal; páginas de projeto continuam usando os alertas antigos.
+ */
+function removerDestaquesLegadosHome() {
+  if (!isHomePage()) return;
+  ['mega-acumulada-alert', 'acumulados-alert', 'mensais-alert'].forEach((id) => {
+    document.getElementById(id)?.remove();
+  });
+}
+
 /**
  * A home já carrega mensais-alert.js. Usamos esse ponto estável apenas como
  * bootstrap aditivo do novo painel, evitando alterar a estrutura/SEO do index.
  */
 function carregarPainelOperacionalHome() {
-  const path = window.location.pathname;
-  const isHome = /\/(?:index\.html)?$/.test(path) || path.endsWith('/boloesdoborges/');
-  if (!isHome || document.querySelector('script[data-operational-updates]')) return;
+  if (!isHomePage() || document.querySelector('script[data-operational-updates]')) return;
 
   if (!document.querySelector('link[data-operational-updates]')) {
     const style = document.createElement('link');
@@ -132,6 +147,7 @@ function carregarPainelOperacionalHome() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  removerDestaquesLegadosHome();
   renderizarMensaisAlert();
   carregarPainelOperacionalHome();
 });
