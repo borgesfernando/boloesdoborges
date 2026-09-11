@@ -53,15 +53,13 @@
 
   function isClosingSoon(record, now = Date.now()) {
     if (!isOpen(record, now)) return false;
-    const fecha = closingInstant(record);
-    return fecha - now <= 6 * 60 * 60 * 1000;
+    return closingInstant(record) - now <= 6 * 60 * 60 * 1000;
   }
 
   function isUpcoming(record, now = Date.now()) {
     if (!record || record.estado === 'ABERTA' || record.estado === 'INDISPONIVEL' || record.ativo === true) return false;
     const abre = openingInstant(record);
-    if (!Number.isFinite(abre) || abre <= now) return false;
-    return abre - now <= UPCOMING_WINDOW_MS;
+    return Number.isFinite(abre) && abre > now && abre - now <= UPCOMING_WINDOW_MS;
   }
 
   function effectiveView(record, now = Date.now()) {
@@ -81,6 +79,13 @@
     return { key: 'indisponivel', label: 'Aguardando próxima atualização', priority: 80 };
   }
 
+  function tierFor(record, now = Date.now()) {
+    const key = effectiveView(record, now).key;
+    if (key === 'closing' || key === 'open' || key === 'progress') return 'current';
+    if (key === 'upcoming') return 'upcoming';
+    return 'other';
+  }
+
   function formatDateTime(value) {
     const parsed = parseDate(value);
     if (!Number.isFinite(parsed)) return '';
@@ -97,15 +102,16 @@
     const res = await fetch(`${basePrefix()}data/estado-operacional.json`, { cache: 'no-store' });
     if (!res.ok) throw new Error('Estado operacional indisponível');
     const json = await res.json();
-    if (json?.schemaVersion !== 2 || !json.projetos || typeof json.projetos !== 'object') {
-      throw new Error('Contrato operacional inválido');
-    }
+    if (json?.schemaVersion !== 2 || !json.projetos || typeof json.projetos !== 'object') throw new Error('Contrato operacional inválido');
     return json;
   }
 
   function routeFor(slug) {
-    const route = ROUTES[slug] || '#';
-    return `${basePrefix()}${route}`;
+    return `${basePrefix()}${ROUTES[slug] || '#'}`;
+  }
+
+  function updatesRouteFor(slug) {
+    return `${basePrefix()}atualizacoes.html#${encodeURIComponent(slug)}`;
   }
 
   function metaLine(record, view) {
@@ -122,17 +128,22 @@
     return atualizacao ? `Atualizado em ${atualizacao}` : '';
   }
 
-  function cardHtml(record) {
+  function cardHtml(record, options = {}) {
     const view = effectiveView(record);
+    const tier = tierFor(record);
     const meta = metaLine(record, view);
-    return `<article class="op-update-card" data-status="${view.key}">
+    const compact = options.compact === true;
+    const href = compact ? updatesRouteFor(record.slug) : routeFor(record.slug);
+    const label = compact ? 'Ver atualização →' : 'Ver projeto →';
+    return `<article id="${record.slug}" class="op-update-card" data-status="${view.key}" data-tier="${tier}">
       <div class="op-update-dot" aria-hidden="true"></div>
       <div class="op-update-copy">
+        ${compact && tier !== 'other' ? `<span class="op-update-tier">${tier === 'current' ? 'Em execução' : 'Próximo projeto'}</span>` : ''}
         <p class="op-update-type">${record.tipo || 'PROJETO'}</p>
         <h3>${record.nome || record.slug}</h3>
         <p class="op-update-status"><strong>${view.label}</strong>${meta ? ` · ${meta}` : ''}</p>
       </div>
-      <a class="op-update-link" href="${routeFor(record.slug)}" aria-label="Ver ${record.nome || record.slug}">Ver projeto →</a>
+      <a class="op-update-link" href="${href}" aria-label="${label.replace(' →', '')}: ${record.nome || record.slug}">${label}</a>
     </article>`;
   }
 
@@ -146,18 +157,18 @@
     });
   }
 
-  function selectCompactRecords(state, now = Date.now(), limit = 4) {
-    return sortedRecords(state, now)
-      .filter((record) => {
-        const key = effectiveView(record, now).key;
-        return key === 'closing' || key === 'open' || key === 'upcoming';
-      })
-      .slice(0, Math.max(1, limit));
+  function selectCompactRecords(state, now = Date.now(), upcomingLimit = 3) {
+    const records = sortedRecords(state, now);
+    const current = records.filter((record) => tierFor(record, now) === 'current');
+    const upcoming = records
+      .filter((record) => tierFor(record, now) === 'upcoming')
+      .sort((a, b) => openingInstant(a) - openingInstant(b))
+      .slice(0, Math.max(0, upcomingLimit));
+    return [...current, ...upcoming];
   }
 
   function renderFull(container, state) {
-    const records = sortedRecords(state);
-    container.innerHTML = records.map(cardHtml).join('');
+    container.innerHTML = sortedRecords(state).map((record) => cardHtml(record)).join('');
   }
 
   function renderCompact(container, state) {
@@ -168,10 +179,14 @@
     }
     container.innerHTML = `<section class="op-updates-panel" aria-labelledby="op-updates-title">
       <div class="op-updates-heading">
-        <div><p class="op-updates-kicker">Agora na comunidade</p><h2 id="op-updates-title">Atualizações</h2></div>
+        <div>
+          <p class="op-updates-kicker">Agora na comunidade</p>
+          <h2 id="op-updates-title">Atualizações dos projetos</h2>
+          <p class="op-updates-summary">Em execução agora em maior destaque; próximas janelas confirmadas logo abaixo.</p>
+        </div>
         <a href="atualizacoes.html">Ver todas as atualizações →</a>
       </div>
-      <div class="op-updates-grid">${selected.map(cardHtml).join('')}</div>
+      <div class="op-updates-grid">${selected.map((record) => cardHtml(record, { compact: true })).join('')}</div>
     </section>`;
   }
 
@@ -201,7 +216,7 @@
     }
   }
 
-  window.EstadoOperacional = { isOpen, isClosingSoon, isUpcoming, effectiveView, selectCompactRecords, load, init };
+  window.EstadoOperacional = { isOpen, isClosingSoon, isUpcoming, effectiveView, tierFor, selectCompactRecords, load, init };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 }());
