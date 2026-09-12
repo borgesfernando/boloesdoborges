@@ -8,20 +8,23 @@
 .op-updates-grid, #projetos-operacionais { display: grid; gap: .85rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .op-update-card { scroll-margin-top: 5rem; position: relative; display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: .8rem; align-items: start; border: 1px solid rgba(100,116,139,.2); border-radius: 16px; padding: 1rem; background: rgba(255,255,255,.86); transition: opacity .2s ease, box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
 .op-updates-panel .op-update-card[data-tier="current"] { border-color: rgba(22,163,74,.34); background: linear-gradient(145deg, rgba(240,253,244,.98), rgba(255,255,255,.92)); box-shadow: 0 12px 28px rgba(22,163,74,.09); transform: translateY(-1px); }
-.op-updates-panel .op-update-card[data-tier="upcoming"] { opacity: .74; border-color: rgba(14,165,233,.18); background: rgba(248,250,252,.9); }
+.op-updates-panel .op-update-card[data-tier="upcoming"] { opacity: .84; border-color: rgba(14,165,233,.18); background: rgba(248,250,252,.9); }
 .op-update-tier { display: inline-flex; margin: 0 0 .45rem; padding: .2rem .48rem; border-radius: 999px; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #166534; background: rgba(22,163,74,.09); border: 1px solid rgba(22,163,74,.16); }
 .op-update-card[data-tier="upcoming"] .op-update-tier { color: #0369a1; background: rgba(14,165,233,.07); border-color: rgba(14,165,233,.13); }
 .op-update-copy h3 { margin: .1rem 0 .35rem; font-size: 1.02rem; }
 .op-update-card[data-tier="current"] .op-update-copy h3 { font-size: 1.08rem; }
-.op-update-status { margin: 0; font-size: .9rem; line-height: 1.45; }
+.op-update-status, .op-update-note { margin: 0; font-size: .9rem; line-height: 1.45; }
+.op-update-note { margin-top: .35rem; color: #64748b; }
 .op-update-link { grid-column: 2; margin-top: .2rem; font-size: .85rem; }
 .op-update-dot { width: 10px; height: 10px; margin-top: .25rem; border-radius: 999px; background: #94a3b8; box-shadow: 0 0 0 5px rgba(148,163,184,.12); }
-.op-update-card[data-status="open"] .op-update-dot { background: #16a34a; box-shadow: 0 0 0 5px rgba(22,163,74,.13), 0 0 14px rgba(22,163,74,.45); animation: opPulse 2.2s ease-in-out infinite; }
-.op-update-card[data-status="closing"] .op-update-dot { background: #eab308; box-shadow: 0 0 0 5px rgba(234,179,8,.14), 0 0 14px rgba(234,179,8,.42); animation: opPulse 2.8s ease-in-out infinite; }
+.op-update-card[data-status="active"] .op-update-dot { background: #16a34a; box-shadow: 0 0 0 5px rgba(22,163,74,.13), 0 0 14px rgba(22,163,74,.45); animation: opPulse 2.2s ease-in-out infinite; }
 .op-update-card[data-status="upcoming"] .op-update-dot { background: #0ea5e9; box-shadow: 0 0 0 5px rgba(14,165,233,.13), 0 0 14px rgba(14,165,233,.28); animation: opBreathe 3.4s ease-in-out infinite; }
-.op-update-card[data-status="progress"] .op-update-dot { background: #2563eb; box-shadow: 0 0 0 5px rgba(37,99,235,.12), 0 0 12px rgba(37,99,235,.25); animation: opBreathe 3.4s ease-in-out infinite; }
-.op-update-card[data-status="waiting"] .op-update-dot, .op-update-card[data-status="closed"] .op-update-dot { background: #64748b; }
-.op-update-card[data-status="indisponivel"] { opacity: .78; }
+.op-updates-today { margin-top: 1rem; padding-top: .85rem; border-top: 1px solid rgba(100,116,139,.16); }
+.op-updates-today-title { margin: 0 0 .5rem; font-size: .74rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; color: #64748b; }
+.op-updates-today ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.op-updates-today li { display: flex; flex-wrap: wrap; gap: .45rem; font-size: .82rem; color: #64748b; }
+.op-updates-today li strong { color: #334155; }
+.op-updates-today li em { font-style: normal; color: #475569; }
 .op-updates-fallback { margin: 1rem 0; padding: 1rem; border-radius: 14px; background: rgba(148,163,184,.1); color: #475569; }
 @keyframes opPulse { 0%,100% { transform: scale(1); opacity: .85; } 50% { transform: scale(1.2); opacity: 1; } }
 @keyframes opBreathe { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
