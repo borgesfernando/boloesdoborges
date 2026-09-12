@@ -1,8 +1,7 @@
 (function () {
   'use strict';
 
-  const UPCOMING_WINDOW_MS = 7 * 24 * 60 * 60 * 1000;
-
+  const TIMEZONE = 'America/Sao_Paulo';
   const ROUTES = {
     'lf-mensal': 'boloes/mensais/lf-mensal.html',
     'quina-mensal': 'boloes/mensais/quina-mensal.html',
@@ -15,178 +14,158 @@
     milionaria: 'boloes/acumulados/milionaria.html',
   };
 
-  const FASE_LABELS = {
-    PLANEJAMENTO: 'Em planejamento',
-    INSCRICOES: 'Adesões abertas',
-    PREPARACAO_APOSTAS: 'Apostas em preparação',
-    APOSTAS_REGISTRADAS: 'Apostas registradas',
-    AGUARDANDO_SORTEIO: 'Aguardando sorteio',
-    APURACAO: 'Em apuração',
-    ENCERRADA: 'Ciclo encerrado',
-    INDISPONIVEL: 'Aguardando próxima atualização',
-  };
-
   function basePrefix() {
     return window.location.pathname.includes('/boloes/') || window.location.pathname.includes('/institucional/') ? '../' : '';
   }
 
-  function parseDate(value) {
-    if (!value) return NaN;
-    return Date.parse(value);
+  function safeText(value) {
+    return String(value == null ? '' : value).replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[char]));
   }
 
-  function openingInstant(record) {
-    return parseDate(record && (record.abreEm || record.janelaComunidade?.abreEm));
-  }
-
-  function closingInstant(record) {
-    return parseDate(record && (record.fechaEm || record.janelaComunidade?.fechaEm));
-  }
-
-  function isOpen(record, now = Date.now()) {
-    if (!record || record.estado !== 'ABERTA' || record.ativo !== true) return false;
-    const abre = openingInstant(record);
-    const fecha = closingInstant(record);
-    if (!Number.isFinite(abre) || !Number.isFinite(fecha) || abre >= fecha) return false;
-    return now >= abre && now < fecha;
-  }
-
-  function isClosingSoon(record, now = Date.now()) {
-    if (!isOpen(record, now)) return false;
-    return closingInstant(record) - now <= 6 * 60 * 60 * 1000;
-  }
-
-  function isUpcoming(record, now = Date.now()) {
-    if (!record || record.estado === 'ABERTA' || record.estado === 'INDISPONIVEL' || record.ativo === true) return false;
-    const abre = openingInstant(record);
-    return Number.isFinite(abre) && abre > now && abre - now <= UPCOMING_WINDOW_MS;
-  }
-
-  function effectiveView(record, now = Date.now()) {
-    if (!record) return { key: 'indisponivel', label: 'Informação indisponível', priority: 90 };
-    if (isClosingSoon(record, now)) return { key: 'closing', label: 'Adesões encerrando em breve', priority: 0 };
-    if (isOpen(record, now)) return { key: 'open', label: 'Adesões abertas', priority: 1 };
-    if (isUpcoming(record, now)) return { key: 'upcoming', label: 'Abre em breve', priority: 2 };
-
-    const fase = String(record.fase || '').toUpperCase();
-    if (fase === 'PREPARACAO_APOSTAS') return { key: 'progress', label: FASE_LABELS[fase], priority: 10 };
-    if (fase === 'APOSTAS_REGISTRADAS') return { key: 'progress', label: FASE_LABELS[fase], priority: 11 };
-    if (fase === 'AGUARDANDO_SORTEIO') return { key: 'progress', label: FASE_LABELS[fase], priority: 12 };
-    if (fase === 'APURACAO') return { key: 'progress', label: FASE_LABELS[fase], priority: 13 };
-    if (fase === 'PLANEJAMENTO') return { key: 'waiting', label: FASE_LABELS[fase], priority: 30 };
-    if (record.estado === 'FECHADA' || fase === 'ENCERRADA') return { key: 'closed', label: 'Sem novas adesões', priority: 50 };
-    if (record.estado === 'SEM_INSTANCIA') return { key: 'waiting', label: 'Aguardando próxima janela', priority: 60 };
-    return { key: 'indisponivel', label: 'Aguardando próxima atualização', priority: 80 };
-  }
-
-  function tierFor(record, now = Date.now()) {
-    const key = effectiveView(record, now).key;
-    if (key === 'closing' || key === 'open' || key === 'progress') return 'current';
-    if (key === 'upcoming') return 'upcoming';
-    return 'other';
+  function localDateKey(value) {
+    const date = value instanceof Date ? value : new Date(value);
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      timeZone: TIMEZONE, year: 'numeric', month: '2-digit', day: '2-digit'
+    }).formatToParts(date);
+    const read = (type) => parts.find((part) => part.type === type)?.value || '';
+    return `${read('year')}-${read('month')}-${read('day')}`;
   }
 
   function formatDateTime(value) {
-    const parsed = parseDate(value);
-    if (!Number.isFinite(parsed)) return '';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '';
     return new Intl.DateTimeFormat('pt-BR', {
-      timeZone: 'America/Sao_Paulo',
-      day: '2-digit',
-      month: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-    }).format(new Date(parsed));
+      timeZone: TIMEZONE, day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'
+    }).format(date);
   }
 
-  async function load() {
-    const res = await fetch(`${basePrefix()}data/estado-operacional.json`, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Estado operacional indisponível');
-    const json = await res.json();
-    if (json?.schemaVersion !== 2 || !json.projetos || typeof json.projetos !== 'object') throw new Error('Contrato operacional inválido');
-    return json;
+  function formatDrawDate(value) {
+    const parts = String(value || '').split('-');
+    return parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : String(value || '');
   }
 
-  function routeFor(slug) {
-    return `${basePrefix()}${ROUTES[slug] || '#'}`;
+  async function loadProjection() {
+    const response = await fetch(`${basePrefix()}data/site-projection.json`, { cache: 'no-store' });
+    if (!response.ok) throw new Error('Site Projection indisponível');
+    const value = await response.json();
+    if (!value || value.schemaVersion !== 1 || value.projectionVersion !== 'site-projection.v1') throw new Error('Site Projection inválida');
+    if (!value.current || typeof value.current !== 'object' || Array.isArray(value.current) || !Array.isArray(value.updates)) throw new Error('Site Projection inválida');
+    return value;
   }
 
-  function updatesRouteFor(slug) {
-    return `${basePrefix()}atualizacoes.html#${encodeURIComponent(slug)}`;
+  async function loadSpecialCalendar() {
+    const response = await fetch(`${basePrefix()}data/calendario-caixa.json`, { cache: 'no-store' });
+    if (!response.ok) return null;
+    const value = await response.json();
+    const today = localDateKey(new Date());
+    const candidates = (value.exceptions || [])
+      .map((item) => ({
+        id: item.id || '',
+        name: item.id === 'mega-da-virada-2026' ? 'Mega da Virada' : item.id === 'lf-independencia-2026' ? 'Lotofácil da Independência' : item.id === 'qsj-2026' ? 'Quina de São João' : item.id === 'ds-pascoa-2026' ? 'Dupla Sena de Páscoa' : item.motivo || item.id,
+        drawDate: String(item.dataSorteio || '').split('/').reverse().join('-')
+      }))
+      .filter((item) => /^\d{4}-\d{2}-\d{2}$/.test(item.drawDate) && item.drawDate >= today)
+      .sort((a, b) => a.drawDate.localeCompare(b.drawDate));
+    return candidates[0] || null;
   }
 
-  function metaLine(record, view) {
-    if (view.key === 'open' || view.key === 'closing') {
-      const fim = formatDateTime(record.fechaEm || record.janelaComunidade?.fechaEm);
-      return fim ? `Até ${fim}` : '';
-    }
-    if (view.key === 'upcoming') {
-      const inicio = formatDateTime(record.abreEm || record.janelaComunidade?.abreEm);
-      return inicio ? `Abre em ${inicio}` : '';
-    }
-    if (record.concurso) return `Concurso ${record.concurso}`;
-    const atualizacao = formatDateTime(record.atualizadoEm);
-    return atualizacao ? `Atualizado em ${atualizacao}` : '';
+  function label(update) {
+    if (update.eventType === 'PROJECT_OPENED') return 'Projeto aberto';
+    if (update.eventType === 'PROJECT_CLOSED') return 'Ciclo encerrado';
+    if (update.eventType === 'ACCOUNTABILITY_AVAILABLE') return 'Prestação de contas disponível';
+    if (update.facts?.stage === 'ALERTA_FINAL') return 'Alerta final';
+    if (update.facts?.stage === 'ULTIMA_CHAMADA') return 'Última chamada';
+    return 'Atualização do projeto';
   }
 
-  function cardHtml(record, options = {}) {
-    const view = effectiveView(record);
-    const tier = tierFor(record);
-    const meta = metaLine(record, view);
-    const compact = options.compact === true;
-    const href = compact ? updatesRouteFor(record.slug) : routeFor(record.slug);
-    const label = compact ? 'Ver atualização →' : 'Ver projeto →';
-    return `<article id="${record.slug}" class="op-update-card" data-status="${view.key}" data-tier="${tier}">
+  function routeFor(project) {
+    if (project.publicUrl && (project.publicUrl.startsWith('/') || project.publicUrl.startsWith('https://'))) return project.publicUrl;
+    return `${basePrefix()}${ROUTES[project.projectSlug] || 'atualizacoes.html'}`;
+  }
+
+  function activeProjects(projection) {
+    return Object.values(projection.current)
+      .filter((project) => project && (project.status === 'OPEN' || project.status === 'ACTIVE'))
+      .sort((a, b) => Date.parse(b.occurredAt) - Date.parse(a.occurredAt));
+  }
+
+  function todayUpdates(projection) {
+    const today = localDateKey(new Date());
+    return projection.updates
+      .filter((update) => update && update.occurredAt && localDateKey(update.occurredAt) === today)
+      .sort((a, b) => Date.parse(b.occurredAt) - Date.parse(a.occurredAt));
+  }
+
+  function activeCard(project, compact) {
+    const facts = project.facts || {};
+    return `<article id="${safeText(project.projectSlug)}" class="op-update-card" data-status="active" data-tier="current">
       <div class="op-update-dot" aria-hidden="true"></div>
       <div class="op-update-copy">
-        ${compact && tier !== 'other' ? `<span class="op-update-tier">${tier === 'current' ? 'Em execução' : 'Próximo projeto'}</span>` : ''}
-        <p class="op-update-type">${record.tipo || 'PROJETO'}</p>
-        <h3>${record.nome || record.slug}</h3>
-        <p class="op-update-status"><strong>${view.label}</strong>${meta ? ` · ${meta}` : ''}</p>
+        <span class="op-update-tier">Em execução</span>
+        <p class="op-update-type">${safeText(project.family || 'PROJETO')}</p>
+        <h3>${safeText(facts.projectName || project.projectSlug)}</h3>
+        <p class="op-update-status"><strong>${safeText(label(project))}</strong>${facts.contestNumber ? ` · Concurso ${safeText(facts.contestNumber)}` : ''}</p>
+        ${facts.publicDeadline ? `<p class="op-update-note">Prazo: ${safeText(formatDateTime(facts.publicDeadline))}</p>` : ''}
+        ${facts.operationalContext ? `<p class="op-update-note">${safeText(facts.operationalContext)}</p>` : ''}
+        <p class="op-update-note">Última atualização: ${safeText(formatDateTime(project.occurredAt))}</p>
       </div>
-      <a class="op-update-link" href="${href}" aria-label="${label.replace(' →', '')}: ${record.nome || record.slug}">${label}</a>
+      <a class="op-update-link" href="${safeText(compact ? `${basePrefix()}atualizacoes.html#${encodeURIComponent(project.projectSlug)}` : routeFor(project))}">${compact ? 'Ver atualização →' : 'Ver projeto →'}</a>
     </article>`;
   }
 
-  function sortedRecords(state, now = Date.now()) {
-    return Object.values(state.projetos).sort((a, b) => {
-      const av = effectiveView(a, now).priority;
-      const bv = effectiveView(b, now).priority;
-      if (av !== bv) return av - bv;
-      if (av === 2) return openingInstant(a) - openingInstant(b);
-      return String(a.nome).localeCompare(String(b.nome), 'pt-BR');
-    });
+  function emptyCards(nextSpecial) {
+    const next = nextSpecial ? `<article class="op-update-card" data-status="upcoming" data-tier="upcoming">
+      <div class="op-update-dot" aria-hidden="true"></div>
+      <div class="op-update-copy">
+        <span class="op-update-tier">Próximo projeto especial</span>
+        <p class="op-update-type">Especial</p>
+        <h3>${safeText(nextSpecial.name)}</h3>
+        <p class="op-update-status"><strong>Sorteio em ${safeText(formatDrawDate(nextSpecial.drawDate))}</strong></p>
+      </div>
+      <a class="op-update-link" href="${basePrefix()}especiais.html">Conhecer projetos →</a>
+    </article>` : '';
+    return `<article class="op-update-card" data-tier="other">
+      <div class="op-update-dot" aria-hidden="true"></div>
+      <div class="op-update-copy">
+        <p class="op-update-type">Comunidade</p>
+        <h3>Nenhum projeto em execução neste momento</h3>
+        <p class="op-update-status">O painel será atualizado automaticamente quando um projeto publicar uma nova movimentação.</p>
+      </div>
+    </article>${next}`;
   }
 
-  function selectCompactRecords(state, now = Date.now(), upcomingLimit = 3) {
-    const records = sortedRecords(state, now);
-    const current = records.filter((record) => tierFor(record, now) === 'current');
-    const upcoming = records
-      .filter((record) => tierFor(record, now) === 'upcoming')
-      .sort((a, b) => openingInstant(a) - openingInstant(b))
-      .slice(0, Math.max(0, upcomingLimit));
-    return [...current, ...upcoming];
+  function todayHtml(updates, limit) {
+    const selected = updates.slice(0, limit);
+    if (!selected.length) return '';
+    return `<div class="op-updates-today"><p class="op-updates-today-title">Atualizações confirmadas hoje</p><ul>${selected.map((update) => `<li><span>${safeText(formatDateTime(update.occurredAt))}</span><strong>${safeText(update.facts?.projectName || update.projectSlug)}</strong><em>${safeText(label(update))}</em></li>`).join('')}</ul></div>`;
   }
 
-  function renderFull(container, state) {
-    container.innerHTML = sortedRecords(state).map((record) => cardHtml(record)).join('');
-  }
-
-  function renderCompact(container, state) {
-    const selected = selectCompactRecords(state);
-    if (!selected.length) {
-      container.innerHTML = '';
-      return;
-    }
+  function renderCompact(container, projection, nextSpecial) {
+    const active = activeProjects(projection);
+    const updates = todayUpdates(projection);
     container.innerHTML = `<section class="op-updates-panel" aria-labelledby="op-updates-title">
       <div class="op-updates-heading">
         <div>
           <p class="op-updates-kicker">Agora na comunidade</p>
-          <h2 id="op-updates-title">Atualizações dos projetos</h2>
-          <p class="op-updates-summary">Em execução agora em maior destaque; próximas janelas confirmadas logo abaixo.</p>
+          <h2 id="op-updates-title">${active.length ? 'Atualizações dos projetos' : 'Nenhum projeto ativo hoje'}</h2>
+          <p class="op-updates-summary">${active.length ? 'Em execução agora em maior destaque; fatos confirmados pelos próprios projetos.' : 'As próximas movimentações aparecem aqui assim que forem confirmadas pelos projetos.'}</p>
         </div>
-        <a href="atualizacoes.html">Ver todas as atualizações →</a>
+        <a href="${basePrefix()}atualizacoes.html">Ver todas as atualizações →</a>
       </div>
-      <div class="op-updates-grid">${selected.map((record) => cardHtml(record, { compact: true })).join('')}</div>
+      <div class="op-updates-grid">${active.length ? active.map((project) => activeCard(project, true)).join('') : emptyCards(nextSpecial)}</div>
+      ${todayHtml(updates, 4)}
+    </section>`;
+  }
+
+  function renderFull(container, projection, nextSpecial) {
+    const active = activeProjects(projection);
+    const updates = todayUpdates(projection);
+    container.innerHTML = `<section class="op-updates-panel" aria-labelledby="projetos-operacionais-title">
+      <div class="op-updates-heading"><div><p class="op-updates-kicker">Agora na comunidade</p><h2 id="projetos-operacionais-title">${active.length ? 'Atualizações dos projetos' : 'Nenhum projeto ativo hoje'}</h2></div></div>
+      <div class="op-updates-grid">${active.length ? active.map((project) => activeCard(project, false)).join('') : emptyCards(nextSpecial)}</div>
+      ${todayHtml(updates, 12)}
     </section>`;
   }
 
@@ -207,16 +186,17 @@
     const compact = document.getElementById('atualizacoes-operacionais-home');
     if (!full && !compact) return;
     try {
-      const state = await load();
-      if (full) renderFull(full, state);
-      if (compact) renderCompact(compact, state);
+      const [projection, nextSpecial] = await Promise.all([loadProjection(), loadSpecialCalendar()]);
+      if (full) renderFull(full, projection, nextSpecial);
+      if (compact) renderCompact(compact, projection, nextSpecial);
     } catch (_) {
-      if (full) full.innerHTML = '<p class="op-updates-fallback">Informações operacionais indisponíveis no momento.</p>';
-      if (compact) compact.innerHTML = '';
+      const fallback = '<p class="op-updates-fallback">Atualizações factuais indisponíveis no momento.</p>';
+      if (full) full.innerHTML = fallback;
+      if (compact) compact.innerHTML = fallback;
     }
   }
 
-  window.EstadoOperacional = { isOpen, isClosingSoon, isUpcoming, effectiveView, tierFor, selectCompactRecords, load, init };
+  window.EstadoOperacional = { loadProjection, activeProjects, todayUpdates, init };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 }());
