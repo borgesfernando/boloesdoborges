@@ -80,6 +80,18 @@
     return 'Atualização do projeto';
   }
 
+  function presentationState(project) {
+    if (project.facts?.stage === 'ULTIMA_CHAMADA') return 'last-call';
+    if (project.facts?.stage === 'ALERTA_FINAL') return 'pre-final';
+    return 'open';
+  }
+
+  function presentationLabel(project) {
+    if (project.facts?.stage === 'ULTIMA_CHAMADA') return 'Última chamada';
+    if (project.facts?.stage === 'ALERTA_FINAL') return 'Reta final';
+    return 'Em execução';
+  }
+
   function routeFor(project) {
     if (project.publicUrl && (project.publicUrl.startsWith('/') || project.publicUrl.startsWith('https://'))) return project.publicUrl;
     return `${basePrefix()}${ROUTES[project.projectSlug] || 'atualizacoes.html'}`;
@@ -100,10 +112,10 @@
 
   function activeCard(project, compact) {
     const facts = project.facts || {};
-    return `<article id="${safeText(project.projectSlug)}" class="op-update-card" data-status="active" data-tier="current">
+    return `<article id="${safeText(project.projectSlug)}" class="op-update-card" data-status="active" data-tier="current" data-presentation="${safeText(presentationState(project))}">
       <div class="op-update-dot" aria-hidden="true"></div>
       <div class="op-update-copy">
-        <span class="op-update-tier">Em execução</span>
+        <span class="op-update-tier">${safeText(presentationLabel(project))}</span>
         <p class="op-update-type">${safeText(project.family || 'PROJETO')}</p>
         <h3>${safeText(facts.projectName || project.projectSlug)}</h3>
         <p class="op-update-status"><strong>${safeText(label(project))}</strong>${facts.contestNumber ? ` · Concurso ${safeText(facts.contestNumber)}` : ''}</p>
