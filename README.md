@@ -4,25 +4,25 @@
 
 Projetos mensais, especiais e estratégicos organizados com regras claras, registros, documentos e prestação de contas do início ao fim.
 
+> **Importante:** este repositório e a publicação `borgesfernando.github.io/boloesdoborges` são uma superfície pública de arquivo, dados e documentação. O único site comercial canônico e eventual destino de mídia paga é **https://site.boloesdoborges.shop**.
+
 ## O que você encontra aqui
 
-- **Projetos** — mensais, especiais e estratégicos, cada um com regras e períodos próprios.
-- **Participação** — cadastro, confirmação e acompanhamento pelos canais oficiais.
-- **Transparência** — documentos, registros, comprovantes e prestação de contas organizados para consulta dos participantes.
+- **Projetos** — registros públicos de projetos mensais, especiais e estratégicos.
+- **Transparência** — conteúdos, contratos estruturados, documentos e artefatos públicos de acompanhamento.
 - **Tecnologia com responsabilidade** — dados e automação apoiam a organização dos projetos, sem promessa de resultado.
+- **Arquivo institucional** — páginas históricas que podem ser substituídas por versões vigentes no site principal.
 
-## Linhas de projetos
+## Participação
 
-- **Mensais** — Lotofácil, Quina e Dupla Sena em projetos recorrentes, com participação e acompanhamento ao longo de cada ciclo.
-- **Especiais** — projetos preparados para concursos especiais ao longo do ano, com períodos definidos para participação. Para entradas após o início do ciclo, o valor vigente e a metodologia são apresentados no site principal; após a entrada, os PIX mensais previstos continuam até o fim do projeto.
-- **Estratégicos** — projetos pontuais divulgados quando uma nova rodada é aberta, com regras, prazo e informações próprias.
+A jornada vigente de participação não deve começar pelo GitHub Pages. Para conhecer primeiro a comunidade, governança, transparência, funcionamento e jogo responsável, use:
 
-## Como participar
+- [Comunidade — site canônico](https://site.boloesdoborges.shop/comunidade)
+- [Jogo responsável — 18+](https://site.boloesdoborges.shop/jogo-responsavel)
+- [Como funciona](https://site.boloesdoborges.shop/como-funciona)
+- [Termos de participação](https://site.boloesdoborges.shop/termos)
 
-1. Faça o cadastro pelo [formulário oficial](https://docs.google.com/forms/d/e/1FAIpQLSeGURdHgTYpsLF4hcW45xlHJGkdqv4ubCNr3lvGk4dGCcTqxw/viewform).
-2. Conheça os projetos disponíveis e escolha os que interessam a você.
-3. Siga as orientações de valor e prazo de cada projeto.
-4. Acompanhe avisos, registros, comprovantes e prestação de contas pelos canais da comunidade.
+A disponibilidade, os valores, os prazos e o CTA de cada projeto devem ser verificados no site canônico e nas fontes operacionais vigentes.
 
 ## Transparência e acompanhamento
 
@@ -32,22 +32,28 @@ Comprovantes, registros, relações de jogos e informações de rateio ficam org
 
 ## Site e conteúdos públicos
 
-Este repositório é uma superfície pública e institucional do Bolões do Borges. Ele também publica alguns conteúdos e contratos estruturados destinados ao consumo público, como FAQ, calendário de sorteios, estado público das loterias, índice de páginas e a **Site Projection v1** usada pelo painel de atualizações da comunidade.
+Este repositório publica alguns conteúdos e contratos estruturados destinados ao consumo público, como FAQ, calendário de sorteios, estado público das loterias, índice de páginas e a **Site Projection v1** usada pelo painel de atualizações da comunidade.
 
 Documentação técnica pública da Site Projection:
 
 - [`docs/site-projection-v1.md`](docs/site-projection-v1.md) — contrato, atualização factual e matriz de apresentação `Em execução / Reta final / Última chamada / Encerrado`.
 
-A página pública deste repositório está disponível em:
+Arquivo público deste repositório:
 
 - [borgesfernando.github.io/boloesdoborges](https://borgesfernando.github.io/boloesdoborges/)
 
-O site principal do Bolões do Borges está em:
+Site comercial canônico:
 
 - [site.boloesdoborges.shop](https://site.boloesdoborges.shop)
 - [Como funciona o valor de entrada nos Projetos Especiais](https://site.boloesdoborges.shop/como-funciona/valor-de-entrada)
 
 Os artefatos publicados aqui são deliberadamente públicos e não devem incluir credenciais, dados pessoais, URLs internas, infraestrutura privada, caminhos administrativos, runbooks ou detalhes operacionais internos.
+
+## Google Ads / Gambling
+
+Este repositório **não deve ser usado como domínio de certificação ou final URL de Google Ads**. O domínio comercial é `site.boloesdoborges.shop`.
+
+A existência de avisos 18+, jogo responsável e ausência de promessa de prêmio não substitui as exigências de elegibilidade, licenciamento/autorização aplicável e certificação do Google Ads para publicidade relacionada a loterias.
 
 ## Contato
 
@@ -55,4 +61,6 @@ Dúvidas ou sugestões: [correiodofernando@gmail.com](mailto:correiodofernando@g
 
 ---
 
-**Aviso:** projeto independente entre participantes, sem vínculo com a Caixa Econômica Federal. Participação voluntária e exclusiva para maiores de 18 anos. Não há promessa de prêmio, retorno ou resultado.
+**18+. Jogue com responsabilidade.** Participar de loterias envolve risco financeiro e não existe garantia de prêmio.
+
+**Aviso institucional:** Bolões do Borges é uma comunidade independente, sem vínculo, chancela ou patrocínio da Caixa Econômica Federal. Não há promessa de prêmio, retorno ou resultado.
