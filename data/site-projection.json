@@ -1,7 +1,1 @@
-{
-  "schemaVersion": 1,
-  "projectionVersion": "site-projection.v1",
-  "projectedThrough": null,
-  "current": {},
-  "updates": []
-}
+{"current":{"MILIONARIA":{"contentVersion":"publisher-lib-v1","correlationId":"MILIONARIA|389|13/09/2026","eventId":"evt_16a1e55461d7bb3577d5d241fa574ef6","eventType":"PROJECT_OPENED","facts":{"contestNumber":"389","projectName":"+Milionária","publicDeadline":"12h","publicState":"ABERTA"},"family":"ESTRATEGICO","occurredAt":"2026-09-12T10:36:51.151Z","projectSlug":"MILIONARIA","publicationId":"pub_d15845c4030c2a4d3546cb57e9f3cb4c","publicUrl":"https://site.boloesdoborges.shop/regras/milionaria","status":"OPEN"}},"projectedThrough":"2026-09-12T10:36:51.151Z","projectionVersion":"site-projection.v1","schemaVersion":1,"updates":[{"contentVersion":"publisher-lib-v1","correlationId":"MILIONARIA|389|13/09/2026","eventId":"evt_16a1e55461d7bb3577d5d241fa574ef6","eventType":"PROJECT_OPENED","facts":{"contestNumber":"389","projectName":"+Milionária","publicDeadline":"12h","publicState":"ABERTA"},"family":"ESTRATEGICO","occurredAt":"2026-09-12T10:36:51.151Z","projectSlug":"MILIONARIA","publicationId":"pub_d15845c4030c2a4d3546cb57e9f3cb4c","publicUrl":"https://site.boloesdoborges.shop/regras/milionaria"}]}
