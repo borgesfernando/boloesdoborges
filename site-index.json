@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-09-12T11:00:56.434Z",
-  "page_count": 46,
+  "generated_at": "2026-09-12T18:15:39.149Z",
+  "page_count": 45,
   "sites": [
     {
       "id": "public",
@@ -14,13 +14,6 @@
           "path": "/boloesdoborges/faq.html",
           "type": "page",
           "description": "Perguntas frequentes sobre a Comunidade Bolões do Borges: participação, pagamentos, transparência e regras."
-        },
-        {
-          "title": "Comunidade Bolões do Borges | Bolões independentes com transparência",
-          "url": "https://borgesfernando.github.io/boloesdoborges/index.html",
-          "path": "/boloesdoborges/index.html",
-          "type": "page",
-          "description": "Comunidade Bolões do Borges: bolões independentes com estratégia coletiva, tecnologia aplicada, transparência e prestação de contas desde 2009. Sem vínculo com a Caixa."
         },
         {
           "title": "Contato | Bolões do Borges",
