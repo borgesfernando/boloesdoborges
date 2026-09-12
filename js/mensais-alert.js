@@ -113,9 +113,9 @@ function isHomePage() {
 }
 
 /**
- * A home passa a ter uma única superfície de destaque operacional: o painel
- * baseado em estado-operacional.json. Os containers legados são removidos só
- * na página principal; páginas de projeto continuam usando os alertas antigos.
+ * A home tem uma única superfície de destaque: Agora na comunidade, alimentada
+ * pela Site Projection do Publisher. Os containers legados permanecem somente
+ * nas páginas onde ainda são consumidores explícitos.
  */
 function removerDestaquesLegadosHome() {
   if (!isHomePage()) return;
@@ -124,10 +124,6 @@ function removerDestaquesLegadosHome() {
   });
 }
 
-/**
- * A home já carrega mensais-alert.js. Usamos esse ponto estável apenas como
- * bootstrap aditivo do novo painel, evitando alterar a estrutura/SEO do index.
- */
 function carregarPainelOperacionalHome() {
   if (!isHomePage() || document.querySelector('script[data-operational-updates]')) return;
 
