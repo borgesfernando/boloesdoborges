@@ -33,6 +33,15 @@ test('painel usa Site Projection e não estado-operacional.json', () => {
   assert.doesNotMatch(runtime, /data\/estado-operacional\.json/);
 });
 
+test('painel deriva OPEN, PRE_FINAL e LAST_CALL somente dos stages recebidos', () => {
+  assert.match(runtime, /project\.facts\?\.stage === 'ALERTA_FINAL'/);
+  assert.match(runtime, /return 'Reta final'/);
+  assert.match(runtime, /project\.facts\?\.stage === 'ULTIMA_CHAMADA'/);
+  assert.match(runtime, /return 'Última chamada'/);
+  assert.match(runtime, /return 'Em execução'/);
+  assert.match(runtime, /data-presentation=/);
+});
+
 test('próximo especial é calendário futuro sem virar abertura', () => {
   assert.match(runtime, /data\/calendario-caixa\.json/);
   assert.match(runtime, /item\.drawDate >= today/);
