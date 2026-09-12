@@ -1,9 +1,10 @@
 {
-  "ultimoModelo": 2,
+  "ultimoModelo": 1,
   "ativacoes": {
     "milionaria:386:db655975-e6f5-4ef4-b22c-d6a242703d23": 1,
     "mega-50mais:3055:3ff65046-d605-4587-8c6f-37892486c450": 2,
     "mega-50mais:3056:6adf97a8-4182-4dd8-879f-49c105654ee2": 1,
-    "mega-50mais:3057:57daa1c9-6741-49a3-8aa9-c3975b594917": 2
+    "mega-50mais:3057:57daa1c9-6741-49a3-8aa9-c3975b594917": 2,
+    "milionaria:389:2a5f9365-644e-4936-a042-30932d8e307f": 1
   }
 }

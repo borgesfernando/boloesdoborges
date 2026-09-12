@@ -18,6 +18,15 @@
       "identityFingerprint": "ab6cbdbb7f1a0d46b229bb4e00576b762522e4825aa5a6950087dfe518a9ac80",
       "factsFingerprint": "c1eac7e4c59f547371386df367a3b3b36e4043dacf11e46679a947e42712bf4b",
       "payloadFingerprint": "1346b5bef1cab8f5273f98908753385af1db3574fc109c537104344bb380340c"
+    },
+    "milionaria": {
+      "correlationId": "2a5f9365-644e-4936-a042-30932d8e307f",
+      "lastRevision": 1,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "milionaria:2a5f9365-644e-4936-a042-30932d8e307f:ABRIR:1",
+      "identityFingerprint": "e5974dd20fd91d3a60d26930785b67a1511723b151ba6f3903e14738d5a7a7cc",
+      "factsFingerprint": "32cd9334e8913b77851fb5b4ccf77628de49bd8230e58703ba22b4de9584d38f",
+      "payloadFingerprint": "846e8c0d5609c5863d35faffcbb1a3c34c32829b446adfb4f4366bad980969f6"
     }
   }
 }
