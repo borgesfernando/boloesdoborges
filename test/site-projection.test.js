@@ -11,11 +11,16 @@ const workflow = fs.readFileSync(path.join(root, '.github/workflows/sync-publish
 
 const forbidden = /(?:token|secret|senha|password|planilha|spreadsheet|drive|pix|whatsapp|authorization|cookie)/i;
 
-test('fallback Site Projection v1 é público e válido', () => {
+test('Site Projection v1 versionada é pública e válida', () => {
   assert.equal(projection.schemaVersion, 1);
   assert.equal(projection.projectionVersion, 'site-projection.v1');
-  assert.deepEqual(projection.current, {});
-  assert.deepEqual(projection.updates, []);
+  assert.equal(typeof projection.current, 'object');
+  assert.equal(Array.isArray(projection.current), false);
+  assert.equal(Array.isArray(projection.updates), true);
+  assert.equal(
+    projection.projectedThrough === null || !Number.isNaN(Date.parse(projection.projectedThrough)),
+    true,
+  );
   assert.equal(forbidden.test(JSON.stringify(projection)), false);
 });
 
