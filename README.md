@@ -32,7 +32,11 @@ Comprovantes, registros, relações de jogos e informações de rateio ficam org
 
 ## Site e conteúdos públicos
 
-Este repositório é uma superfície pública e institucional do Bolões do Borges. Ele também publica alguns conteúdos e contratos estruturados destinados ao consumo público, como FAQ, calendário de sorteios, estado público das loterias e índice de páginas.
+Este repositório é uma superfície pública e institucional do Bolões do Borges. Ele também publica alguns conteúdos e contratos estruturados destinados ao consumo público, como FAQ, calendário de sorteios, estado público das loterias, índice de páginas e a **Site Projection v1** usada pelo painel de atualizações da comunidade.
+
+Documentação técnica pública da Site Projection:
+
+- [`docs/site-projection-v1.md`](docs/site-projection-v1.md) — contrato, atualização factual e matriz de apresentação `Em execução / Reta final / Última chamada / Encerrado`.
 
 A página pública deste repositório está disponível em:
 
