@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-09-12T18:15:39.149Z",
-  "page_count": 45,
+  "generated_at": "2026-09-12T18:16:05.748Z",
+  "page_count": 46,
   "sites": [
     {
       "id": "public",
@@ -107,11 +107,11 @@
           "description": "Entenda como é calculado o valor para entrar depois do início em um Projeto Especial do Bolões do Borges."
         },
         {
-          "title": "Comunidade e cadastro · Bolões do Borges",
+          "title": "Comunidade Bolões do Borges | Como funciona, transparência e participação 18+",
           "url": "https://site.boloesdoborges.shop/comunidade",
           "path": "/comunidade",
           "type": "page",
-          "description": "Entre na comunidade e acompanhe os avisos dos projetos."
+          "description": "Conheça a Comunidade Bolões do Borges: governança, transparência, funcionamento, jogo responsável 18+ e como participar de projetos coletivos de loterias oficiais."
         },
         {
           "title": "Contato · Bolões do Borges",
@@ -191,6 +191,13 @@
           "description": "Metodologia técnica (estatística pura + LSTM) com transparência, rastreabilidade e sem promessas de acerto."
         },
         {
+          "title": "Jogo responsável | Bolões do Borges — participação 18+",
+          "url": "https://site.boloesdoborges.shop/jogo-responsavel",
+          "path": "/jogo-responsavel",
+          "type": "page",
+          "description": "Informações de jogo responsável da Comunidade Bolões do Borges: participação exclusiva para maiores de 18 anos, risco financeiro, ausência de garantia de prêmio e natureza independente da CAIXA."
+        },
+        {
           "title": "Linhas de Projetos · Bolões do Borges",
           "url": "https://site.boloesdoborges.shop/linhas-de-projetos",
           "path": "/linhas-de-projetos",
@@ -237,7 +244,7 @@
           "url": "https://site.boloesdoborges.shop/privacidade",
           "path": "/privacidade",
           "type": "page",
-          "description": "Política de Privacidade da Comunidade Bolões do Borges conforme a LGPD (Lei 13.709/2018): dados coletados, bases legais, segurança, retenção e direitos do titular."
+          "description": "Política de Privacidade da Comunidade Bolões do Borges conforme a LGPD (Lei 13.709/2018): dados coletados, bases legais, segurança, retenção, mensuração de publicidade e direitos do titular."
         },
         {
           "title": "Mega-Sena Acumulada · Bolões do Borges",
@@ -328,7 +335,7 @@
           "url": "https://site.boloesdoborges.shop/termos",
           "path": "/termos",
           "type": "page",
-          "description": "Regras de participação da Comunidade Bolões do Borges em linguagem simples: como funcionam os projetos, pagamentos, apostas, prêmios, comunicação e prestação de contas."
+          "description": "Regras de participação da Comunidade Bolões do Borges em linguagem simples: como funcionam os projetos, pagamentos, apostas, prêmios, comunicação e prestação de contas. Participação exclusiva para maiores de 18 anos."
         }
       ]
     }
