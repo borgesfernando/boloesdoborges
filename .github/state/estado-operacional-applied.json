@@ -3,12 +3,12 @@
   "projetos": {
     "mega-50mais": {
       "correlationId": "eac89112-89d6-4151-bc1a-dd80b55c3516",
-      "lastRevision": 1,
-      "lastEventType": "ABRIR",
-      "lastEventKey": "mega-50mais:eac89112-89d6-4151-bc1a-dd80b55c3516:ABRIR:1",
+      "lastRevision": 2,
+      "lastEventType": "FECHAR",
+      "lastEventKey": "mega-50mais:eac89112-89d6-4151-bc1a-dd80b55c3516:FECHAR:2",
       "identityFingerprint": "e94c6f9a179e42f2312653e963c23782f72d88522c31815b1dea2a617f6cd696",
-      "factsFingerprint": "eb151538056bfe1a812c34b2a09737cd5dfe08850d38627d64b955147fe57f79",
-      "payloadFingerprint": "d87d5fb9948a770aae889294c4eb4790b40bb645297a7ee2307b39898b36dd08"
+      "factsFingerprint": "947a6d7241fa2c8c8aa8ca217c9c208b0ebbe636294a23b60028711b559cd812",
+      "payloadFingerprint": "f273a0f05be0cdc4c9e5a6b997d413796ad7277b95ff8113684007bd9a7a1d2b"
     },
     "mega-virada": {
       "correlationId": "824c89da-b0e3-4ac5-b146-056b33d7602a",
