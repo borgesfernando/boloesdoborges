@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-15T10:07:25.227Z",
+  "generatedAt": "2026-09-15T21:00:13.360Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -181,8 +181,8 @@
       "slug": "milionaria",
       "nome": "+Milionária",
       "tipo": "ESTRATEGICO",
-      "estado": "ABERTA",
-      "ativo": true,
+      "estado": "FECHADA",
+      "ativo": false,
       "fase": "INSCRICOES",
       "concurso": "390",
       "abreEm": "2026-09-15T10:07:13Z",
@@ -196,7 +196,7 @@
       "contexto": {
         "concurso": "390"
       },
-      "atualizadoEm": "2026-09-15T10:07:13.947Z",
+      "atualizadoEm": "2026-09-15T21:00:02.134Z",
       "correlationId": "faa260ba-de9c-4869-a369-560bd6db2c6e",
       "fonteEstado": "Apps_Scripts"
     }
