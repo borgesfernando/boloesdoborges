@@ -4,11 +4,11 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "13/09/2026",
-      "concurso": 3057,
-      "dataProximoConcurso": "15/09/2026",
+      "dataApuracao": "15/09/2026",
+      "concurso": 3058,
+      "dataProximoConcurso": "17/09/2026",
       "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "15/09/2026",
       "sorteioEsperadoEm": "2026-09-16T00:00:00.000Z"
     },
@@ -26,16 +26,16 @@
       "concurso": 3779,
       "dataProximoConcurso": "15/09/2026",
       "estado": "ATUALIZADO",
-      "freshness": "AGUARDANDO_APURACAO",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "15/09/2026",
       "sorteioEsperadoEm": "2026-09-15T23:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "14/09/2026",
-      "concurso": 7117,
-      "dataProximoConcurso": "15/09/2026",
+      "dataApuracao": "15/09/2026",
+      "concurso": 7118,
+      "dataProximoConcurso": "16/09/2026",
       "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
+      "freshness": "ATUAL",
       "esperadoDataApuracao": "15/09/2026",
       "sorteioEsperadoEm": "2026-09-16T00:00:00.000Z"
     },
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-09-15T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-09-16T01:17:04.654Z"
+  "atualizadoEm": "2026-09-16T03:23:43.097Z"
 }
