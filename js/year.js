@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.title = document.title.replace(/\b\d{4}\b/g, String(year));
   }
 
+  // A home restaurada do Pages é um arquivo informativo. Preserva seu conteúdo,
+  // metadados e avisos em vez de substituí-los pela copy da landing comercial.
+  // Outras páginas conservam o comportamento editorial já existente.
+  if (document.getElementById('atualizacoes-operacionais-home') &&
+      document.querySelector('meta[name="robots"][content*="noindex"]')) {
+    return;
+  }
+
   // Mantem a capa publica alinhada ao posicionamento editorial do site principal.
   const pageTitle = 'Bolões do Borges | Projetos organizados com transparência';
   const pageDescription = 'Projetos mensais, especiais e estratégicos organizados com regras claras, registros, documentos e prestação de contas do início ao fim.';
