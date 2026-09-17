@@ -17,12 +17,17 @@ async function inspectPage(page, viewportName) {
   await page.waitForFunction(() => {
     const text = document.querySelector('#atualizacoes-operacionais-home')?.textContent || '';
     return !text.includes('Carregando atualizações públicas');
-  }, { timeout: 15000 });
+  }, null, { timeout: 15000 });
   const panel = await page.locator('#atualizacoes-operacionais-home').innerText();
   assert.ok(panel.trim(), `${viewportName}: painel vazio`);
   assert.ok(/Agora na comunidade|Atualizações factuais indisponíveis/i.test(panel), `${viewportName}: painel sem renderização ou fallback explícito`);
   assert.equal(errors.length, 0, `${viewportName}: JavaScript errors: ${errors.join(' | ')}`);
   assert.equal(await page.locator('h1').count(), 1, `${viewportName}: H1 único`);
+  assert.match(await page.locator('h1').innerText(), /Comunidade.*Bolões do Borges/, `${viewportName}: título do arquivo sobrescrito`);
+  assert.match(await page.locator('.hero-badge').last().innerText(), /18\+.*sem garantia de prêmio/, `${viewportName}: aviso 18+ sobrescrito`);
+  assert.match(await page.title(), /Arquivo público e atualizações/, `${viewportName}: title comercial sobrescreveu arquivo`);
+  assert.match(await page.locator('meta[name="description"]').getAttribute('content'), /Arquivo público/, `${viewportName}: description sobrescrita`);
+  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://site.boloesdoborges.shop/');
   assert.equal(await page.locator('.hero-side-card').count(), 1, `${viewportName}: destaque lateral`);
   assert.equal(await page.locator('.project-card.linha-card').count(), 3, `${viewportName}: cards de projetos`);
   const overflow = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, viewport: window.innerWidth }));
