@@ -1,231 +1,86 @@
 {
-  "acumulado": false,
-  "dataApuracao": "15/09/2026",
-  "dataProximoConcurso": "16/09/2026",
+  "acumulado": true,
+  "dataApuracao": "16/09/2026",
+  "dataProximoConcurso": "17/09/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "15",
-    "07",
-    "03",
     "19",
-    "06",
-    "21",
-    "22",
-    "04",
-    "23",
-    "02",
-    "05",
-    "12",
     "16",
-    "01",
-    "17"
+    "03",
+    "08",
+    "05",
+    "06",
+    "13",
+    "09",
+    "11",
+    "12",
+    "25",
+    "21",
+    "07",
+    "22",
+    "24"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
-  "indicadorConcursoEspecial": 2,
+  "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "01",
-    "02",
     "03",
-    "04",
     "05",
     "06",
     "07",
+    "08",
+    "09",
+    "11",
     "12",
-    "15",
+    "13",
     "16",
-    "17",
     "19",
     "21",
     "22",
-    "23"
+    "24",
+    "25"
   ],
   "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [
-    {
-      "ganhadores": 11,
-      "municipio": "CANAL ELETRONICO",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "--"
-    },
-    {
-      "ganhadores": 2,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "AL"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "AM"
-    },
-    {
-      "ganhadores": 4,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "BA"
-    },
-    {
-      "ganhadores": 6,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "CE"
-    },
-    {
-      "ganhadores": 3,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "DF"
-    },
-    {
-      "ganhadores": 2,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "GO"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "MA"
-    },
-    {
-      "ganhadores": 8,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "MG"
-    },
-    {
-      "ganhadores": 2,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "MS"
-    },
-    {
-      "ganhadores": 2,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "MT"
-    },
-    {
-      "ganhadores": 2,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "PB"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "PI"
-    },
-    {
-      "ganhadores": 3,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "PR"
-    },
-    {
-      "ganhadores": 4,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "RJ"
-    },
-    {
-      "ganhadores": 2,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "RN"
-    },
-    {
-      "ganhadores": 3,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "RS"
-    },
-    {
-      "ganhadores": 15,
-      "municipio": "",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "SP"
-    }
-  ],
+  "listaMunicipioUFGanhadores": [],
   "listaRateioPremio": [
     {
       "descricaoFaixa": "15 acertos",
       "faixa": 1,
-      "numeroDeGanhadores": 72,
-      "valorPremio": 4488579
+      "numeroDeGanhadores": 0,
+      "valorPremio": 0
     },
     {
       "descricaoFaixa": "14 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 8978,
-      "valorPremio": 2762.74
+      "numeroDeGanhadores": 159,
+      "valorPremio": 1815.85
     },
     {
       "descricaoFaixa": "13 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 290866,
-      "valorPremio": 17.5
+      "numeroDeGanhadores": 5732,
+      "valorPremio": 35
     },
     {
       "descricaoFaixa": "12 acertos",
       "faixa": 4,
-      "numeroDeGanhadores": 3465636,
-      "valorPremio": 7
+      "numeroDeGanhadores": 76882,
+      "valorPremio": 14
     },
     {
       "descricaoFaixa": "11 acertos",
       "faixa": 5,
-      "numeroDeGanhadores": 19323208,
-      "valorPremio": 3.5
+      "numeroDeGanhadores": 416831,
+      "valorPremio": 7
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
   "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3780,
-  "numeroConcursoAnterior": 3779,
+  "numero": 3781,
+  "numeroConcursoAnterior": 3780,
   "numeroConcursoFinal_0_5": 3790,
-  "numeroConcursoProximo": 3781,
+  "numeroConcursoProximo": 3782,
   "numeroJogo": 8,
   "observacao": "",
   "premiacaoContingencia": null,
@@ -233,11 +88,11 @@
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 843914921.5,
-  "valorAcumuladoConcurso_0_5": 0,
-  "valorAcumuladoConcursoEspecial": 0,
-  "valorAcumuladoProximoConcurso": 0,
-  "valorEstimadoProximoConcurso": 2000000,
+  "valorArrecadado": 16824703,
+  "valorAcumuladoConcurso_0_5": 222092.67,
+  "valorAcumuladoConcursoEspecial": 333139.02,
+  "valorAcumuladoProximoConcurso": 1376974.56,
+  "valorEstimadoProximoConcurso": 5000000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }

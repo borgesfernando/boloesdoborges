@@ -13,41 +13,41 @@
       "sorteioEsperadoEm": "2026-09-16T00:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "13/09/2026",
-      "concurso": 389,
-      "dataProximoConcurso": "16/09/2026",
+      "dataApuracao": "16/09/2026",
+      "concurso": 390,
+      "dataProximoConcurso": "20/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "13/09/2026",
-      "sorteioEsperadoEm": "2026-09-13T14:00:00.000Z"
+      "esperadoDataApuracao": "16/09/2026",
+      "sorteioEsperadoEm": "2026-09-17T00:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "15/09/2026",
-      "concurso": 3780,
-      "dataProximoConcurso": "16/09/2026",
+      "dataApuracao": "16/09/2026",
+      "concurso": 3781,
+      "dataProximoConcurso": "17/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "15/09/2026",
-      "sorteioEsperadoEm": "2026-09-15T23:00:00.000Z"
+      "esperadoDataApuracao": "16/09/2026",
+      "sorteioEsperadoEm": "2026-09-17T00:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "15/09/2026",
-      "concurso": 7118,
-      "dataProximoConcurso": "16/09/2026",
+      "dataApuracao": "16/09/2026",
+      "concurso": 7119,
+      "dataProximoConcurso": "17/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "15/09/2026",
-      "sorteioEsperadoEm": "2026-09-16T00:00:00.000Z"
+      "esperadoDataApuracao": "16/09/2026",
+      "sorteioEsperadoEm": "2026-09-17T00:00:00.000Z"
     },
     "duplasena": {
-      "dataApuracao": "14/09/2026",
-      "concurso": 3008,
-      "dataProximoConcurso": "16/09/2026",
+      "dataApuracao": "16/09/2026",
+      "concurso": 3009,
+      "dataProximoConcurso": "18/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "14/09/2026",
-      "sorteioEsperadoEm": "2026-09-15T00:00:00.000Z"
+      "esperadoDataApuracao": "16/09/2026",
+      "sorteioEsperadoEm": "2026-09-17T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-09-16T13:58:28.721Z"
+  "atualizadoEm": "2026-09-17T03:29:26.261Z"
 }
