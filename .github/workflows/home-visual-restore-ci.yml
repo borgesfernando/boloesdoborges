@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'index.html'
+      - 'js/year.js'
       - 'test/home-visual-restore.test.js'
       - 'test/home-visual-browser.test.js'
       - '.github/workflows/home-visual-restore-ci.yml'
