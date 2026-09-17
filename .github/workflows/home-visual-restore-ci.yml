@@ -1,0 +1,42 @@
+name: Home visual restoration CI
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'js/year.js'
+      - 'test/home-visual-restore.test.js'
+      - 'test/home-visual-browser.test.js'
+      - '.github/workflows/home-visual-restore-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  home-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate homepage presentation and commercial boundary
+        run: node --test test/home-visual-restore.test.js
+      - name: Install browser smoke dependencies
+        run: |
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Browser smoke for desktop, mobile, links and operational panel
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/home-visual-http.log 2>&1 &
+          node --test test/home-visual-browser.test.js
+      - name: Publish browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: home-visual-browser-screenshots
+          path: artifacts/home-visual/*.png
+          if-no-files-found: ignore
+          retention-days: 7
