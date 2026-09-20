@@ -1,65 +1,56 @@
 {
-  "acumulado": false,
-  "dataApuracao": "17/09/2026",
-  "dataProximoConcurso": "20/09/2026",
+  "acumulado": true,
+  "dataApuracao": "20/09/2026",
+  "dataProximoConcurso": "22/09/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "35",
-    "02",
-    "07",
-    "33",
-    "01",
-    "18"
+    "15",
+    "23",
+    "37",
+    "38",
+    "36",
+    "06"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "01",
-    "02",
-    "07",
-    "18",
-    "33",
-    "35"
+    "06",
+    "15",
+    "23",
+    "36",
+    "37",
+    "38"
   ],
   "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [
-    {
-      "ganhadores": 1,
-      "municipio": "PRESIDENTE VENCESLAU",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "SP"
-    }
-  ],
+  "listaMunicipioUFGanhadores": [],
   "listaRateioPremio": [
     {
       "descricaoFaixa": "6 acertos",
       "faixa": 1,
-      "numeroDeGanhadores": 1,
-      "valorPremio": 101970706.13
+      "numeroDeGanhadores": 0,
+      "valorPremio": 0
     },
     {
       "descricaoFaixa": "5 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 98,
-      "valorPremio": 31664.29
+      "numeroDeGanhadores": 54,
+      "valorPremio": 32111.66
     },
     {
       "descricaoFaixa": "4 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 6697,
-      "valorPremio": 763.77
+      "numeroDeGanhadores": 3075,
+      "valorPremio": 929.52
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
   "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3059,
-  "numeroConcursoAnterior": 3058,
-  "numeroConcursoFinal_0_5": 3060,
-  "numeroConcursoProximo": 3060,
+  "numero": 3060,
+  "numeroConcursoAnterior": 3059,
+  "numeroConcursoFinal_0_5": 3065,
+  "numeroConcursoProximo": 3061,
   "numeroJogo": 2,
   "observacao": "",
   "premiacaoContingencia": null,
@@ -67,11 +58,11 @@
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 77871672,
-  "valorAcumuladoConcurso_0_5": 21381420.73,
-  "valorAcumuladoConcursoEspecial": 74890418.48,
-  "valorAcumuladoProximoConcurso": 21381420.73,
-  "valorEstimadoProximoConcurso": 28000000,
+  "valorArrecadado": 43515114,
+  "valorAcumuladoConcurso_0_5": 2934511.34,
+  "valorAcumuladoConcursoEspecial": 76224287.28,
+  "valorAcumuladoProximoConcurso": 26716895.88,
+  "valorEstimadoProximoConcurso": 32000000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }

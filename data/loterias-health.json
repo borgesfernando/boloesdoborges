@@ -4,40 +4,40 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "17/09/2026",
-      "concurso": 3059,
-      "dataProximoConcurso": "20/09/2026",
+      "dataApuracao": "20/09/2026",
+      "concurso": 3060,
+      "dataProximoConcurso": "22/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "17/09/2026",
-      "sorteioEsperadoEm": "2026-09-18T00:00:00.000Z"
+      "esperadoDataApuracao": "20/09/2026",
+      "sorteioEsperadoEm": "2026-09-20T14:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "16/09/2026",
-      "concurso": 390,
-      "dataProximoConcurso": "20/09/2026",
+      "dataApuracao": "20/09/2026",
+      "concurso": 391,
+      "dataProximoConcurso": "23/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "16/09/2026",
-      "sorteioEsperadoEm": "2026-09-17T00:00:00.000Z"
+      "esperadoDataApuracao": "20/09/2026",
+      "sorteioEsperadoEm": "2026-09-20T14:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "18/09/2026",
-      "concurso": 3783,
-      "dataProximoConcurso": "20/09/2026",
+      "dataApuracao": "20/09/2026",
+      "concurso": 3784,
+      "dataProximoConcurso": "21/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "18/09/2026",
-      "sorteioEsperadoEm": "2026-09-19T00:00:00.000Z"
+      "esperadoDataApuracao": "20/09/2026",
+      "sorteioEsperadoEm": "2026-09-20T14:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "18/09/2026",
-      "concurso": 7121,
-      "dataProximoConcurso": "20/09/2026",
+      "dataApuracao": "20/09/2026",
+      "concurso": 7122,
+      "dataProximoConcurso": "21/09/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "18/09/2026",
-      "sorteioEsperadoEm": "2026-09-19T00:00:00.000Z"
+      "esperadoDataApuracao": "20/09/2026",
+      "sorteioEsperadoEm": "2026-09-20T14:00:00.000Z"
     },
     "duplasena": {
       "dataApuracao": "18/09/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-09-19T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-09-19T03:11:28.303Z"
+  "atualizadoEm": "2026-09-20T17:18:47.115Z"
 }
