@@ -20,13 +20,13 @@
       "payloadFingerprint": "1346b5bef1cab8f5273f98908753385af1db3574fc109c537104344bb380340c"
     },
     "milionaria": {
-      "correlationId": "faa260ba-de9c-4869-a369-560bd6db2c6e",
-      "lastRevision": 2,
-      "lastEventType": "FECHAR",
-      "lastEventKey": "milionaria:faa260ba-de9c-4869-a369-560bd6db2c6e:FECHAR:2",
-      "identityFingerprint": "130235df108960f71a0eaf7132343fb67d511c1ac9c43f4e7a5ad48b596bc1f0",
-      "factsFingerprint": "cf92facf9b9c760eea5a7f665bde2422af8d23d92a0e34c9d645587b216341c2",
-      "payloadFingerprint": "8f58e49b18909b3365f0787c042f8f3f540cf492cb726d0ba22667089314a7d6"
+      "correlationId": "c56f3126-766f-4012-9f18-02c51d2f2bad",
+      "lastRevision": 1,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "milionaria:c56f3126-766f-4012-9f18-02c51d2f2bad:ABRIR:1",
+      "identityFingerprint": "1f37bb8e325f2c7ae915da3484519cca89d71d208701685c64c193b329c515a1",
+      "factsFingerprint": "a9410a471ecc13b7ad824fb03953f00529450710273359bdaa7e777d06a2d20f",
+      "payloadFingerprint": "843641576d8a38418f4912023007ca9b48d1bd987fed96866f001ed1bf4d40d1"
     }
   }
 }
