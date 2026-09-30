@@ -2,13 +2,13 @@
   "version": 1,
   "projetos": {
     "mega-50mais": {
-      "correlationId": "da2d80d5-4ba2-411a-9c4c-2fd63319c1ce",
-      "lastRevision": 3,
-      "lastEventType": "FECHAR",
-      "lastEventKey": "mega-50mais:da2d80d5-4ba2-411a-9c4c-2fd63319c1ce:FECHAR:3",
-      "identityFingerprint": "aef0daedb395a1bbe55fc81d9026407dfc199b56c75ac49012503aaa514f77f6",
-      "factsFingerprint": "ba8fd200a18d3ee184b7d825feb118ce2731c45e63d11393712e6b895c0c932d",
-      "payloadFingerprint": "1157ea16f36e32655006accedac21aaf8436f5fd3133b0922358954fa3a87c69"
+      "correlationId": "1ff65399-d7f3-49d3-970c-eaddafe3c123",
+      "lastRevision": 1,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "mega-50mais:1ff65399-d7f3-49d3-970c-eaddafe3c123:ABRIR:1",
+      "identityFingerprint": "98105878a43f8128894bfe2f3d17c19129199003ea5449bb4f9465e49c3f6f65",
+      "factsFingerprint": "191119df5d17e9521ff3ac5a46591ccdce5cfe30c1b4121ecc17915ba5c76e83",
+      "payloadFingerprint": "44fc1fb8f68e51ef9bcd99c9646d1e1915ceca6ff5f3a01a771ba094860344be"
     },
     "mega-virada": {
       "correlationId": "824c89da-b0e3-4ac5-b146-056b33d7602a",
