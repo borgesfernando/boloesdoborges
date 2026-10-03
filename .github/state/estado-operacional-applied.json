@@ -39,12 +39,12 @@
     },
     "ds-mensal": {
       "correlationId": "0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5",
-      "lastRevision": 2,
+      "lastRevision": 3,
       "lastEventType": "FECHAR",
-      "lastEventKey": "ds-mensal:0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5:FECHAR:2",
+      "lastEventKey": "ds-mensal:0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5:FECHAR:3",
       "identityFingerprint": "ca6bdd80613e6f4b25395e6956e788ecebf4810d3c5ec2107f2931c0f998e2cf",
       "factsFingerprint": "b859ca5c61774b98d5733ea97082d9d6f3560c930373494563cc4e3dc18d5248",
-      "payloadFingerprint": "d6544f647eb0f30847e00be3953809de62f495c7b32681437f30b106f1188a7a"
+      "payloadFingerprint": "42499191b99bf6ecc00c6fb51bf43e7a6d2f1d632c1b7fe0216449f928655d43"
     }
   }
 }
