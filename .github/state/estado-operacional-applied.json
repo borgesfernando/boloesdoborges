@@ -36,6 +36,15 @@
       "identityFingerprint": "2e58b7cd26b17714161d038c1a1d8d68f961bd93a310a004d2b571e8f6292da9",
       "factsFingerprint": "8e2b459439b7592f502957d66e7ee27671bfc7d4b0e498a7f9e7d62f7a3469c4",
       "payloadFingerprint": "3137522bb58e3f25e1522754a85b1dedc2b2440dcff24533e3cdb6dab671c010"
+    },
+    "ds-mensal": {
+      "correlationId": "0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5",
+      "lastRevision": 1,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "ds-mensal:0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5:ABRIR:1",
+      "identityFingerprint": "ca6bdd80613e6f4b25395e6956e788ecebf4810d3c5ec2107f2931c0f998e2cf",
+      "factsFingerprint": "4d7adf306d3c9368af4502998d7b311b89c93989b0468eb9eea65ccdbb9b6233",
+      "payloadFingerprint": "00e6baca2ea6721b4e62543a666bda7bc9ec4626d9ac025b9ded97d6aae95b64"
     }
   }
 }
