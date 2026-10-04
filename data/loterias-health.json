@@ -8,7 +8,7 @@
       "concurso": 3066,
       "dataProximoConcurso": "06/10/2026",
       "estado": "ATUALIZADO",
-      "freshness": "AGUARDANDO_APURACAO",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "04/10/2026",
       "sorteioEsperadoEm": "2026-10-04T14:00:00.000Z"
     },
@@ -17,7 +17,7 @@
       "concurso": 395,
       "dataProximoConcurso": "07/10/2026",
       "estado": "ATUALIZADO",
-      "freshness": "AGUARDANDO_APURACAO",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "04/10/2026",
       "sorteioEsperadoEm": "2026-10-04T14:00:00.000Z"
     },
@@ -26,7 +26,7 @@
       "concurso": 3796,
       "dataProximoConcurso": "05/10/2026",
       "estado": "ATUALIZADO",
-      "freshness": "AGUARDANDO_APURACAO",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "04/10/2026",
       "sorteioEsperadoEm": "2026-10-04T14:00:00.000Z"
     },
@@ -35,7 +35,7 @@
       "concurso": 7134,
       "dataProximoConcurso": "05/10/2026",
       "estado": "ATUALIZADO",
-      "freshness": "AGUARDANDO_APURACAO",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "04/10/2026",
       "sorteioEsperadoEm": "2026-10-04T14:00:00.000Z"
     },
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-10-03T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-04T14:33:25.479Z"
+  "atualizadoEm": "2026-10-04T17:59:57.243Z"
 }
