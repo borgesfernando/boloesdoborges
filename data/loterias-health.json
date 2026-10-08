@@ -13,41 +13,41 @@
       "sorteioEsperadoEm": "2026-10-07T00:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "03/10/2026",
-      "concurso": 395,
-      "dataProximoConcurso": "07/10/2026",
+      "dataApuracao": "07/10/2026",
+      "concurso": 396,
+      "dataProximoConcurso": "11/10/2026",
       "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
-      "esperadoDataApuracao": "04/10/2026",
-      "sorteioEsperadoEm": "2026-10-04T14:00:00.000Z"
+      "freshness": "ATUAL",
+      "esperadoDataApuracao": "07/10/2026",
+      "sorteioEsperadoEm": "2026-10-08T00:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "06/10/2026",
-      "concurso": 3798,
-      "dataProximoConcurso": "07/10/2026",
+      "dataApuracao": "07/10/2026",
+      "concurso": 3799,
+      "dataProximoConcurso": "08/10/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "06/10/2026",
-      "sorteioEsperadoEm": "2026-10-07T00:00:00.000Z"
+      "esperadoDataApuracao": "07/10/2026",
+      "sorteioEsperadoEm": "2026-10-08T00:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "06/10/2026",
-      "concurso": 7136,
-      "dataProximoConcurso": "07/10/2026",
+      "dataApuracao": "07/10/2026",
+      "concurso": 7137,
+      "dataProximoConcurso": "08/10/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "06/10/2026",
-      "sorteioEsperadoEm": "2026-10-07T00:00:00.000Z"
+      "esperadoDataApuracao": "07/10/2026",
+      "sorteioEsperadoEm": "2026-10-08T00:00:00.000Z"
     },
     "duplasena": {
-      "dataApuracao": "05/10/2026",
-      "concurso": 3017,
-      "dataProximoConcurso": "07/10/2026",
+      "dataApuracao": "07/10/2026",
+      "concurso": 3018,
+      "dataProximoConcurso": "09/10/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "05/10/2026",
-      "sorteioEsperadoEm": "2026-10-06T00:00:00.000Z"
+      "esperadoDataApuracao": "07/10/2026",
+      "sorteioEsperadoEm": "2026-10-08T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-07T04:23:10.041Z"
+  "atualizadoEm": "2026-10-08T04:34:31.847Z"
 }
