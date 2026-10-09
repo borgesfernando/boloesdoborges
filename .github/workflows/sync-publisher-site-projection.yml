@@ -21,42 +21,72 @@ jobs:
         with:
           ref: main
 
-      - name: Validate dispatch envelope
+      - name: Resolve Site Projection artifact
+        id: resolve
+        shell: bash
         env:
+          SCHEMA: ${{ github.event.client_payload.schema }}
           SOURCE_SHA: ${{ github.event.client_payload.source_sha }}
           PROJECTION_SHA256: ${{ github.event.client_payload.projection_sha256 }}
+          PROJECTION_BYTES: ${{ github.event.client_payload.projection_bytes }}
+          INBOX_REF: ${{ github.event.client_payload.artifact.ref }}
+          INBOX_PATH: ${{ github.event.client_payload.artifact.path }}
           PROJECTION_B64: ${{ github.event.client_payload.projection_b64 }}
-        run: |
-          set -euo pipefail
-          [[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
-          [[ "$PROJECTION_SHA256" =~ ^[0-9a-f]{64}$ ]]
-          [[ -n "$PROJECTION_B64" ]]
-          (( ${#PROJECTION_B64} <= 100000 ))
-
-      - name: Decode and validate public projection
-        env:
-          PROJECTION_SHA256: ${{ github.event.client_payload.projection_sha256 }}
-          PROJECTION_B64: ${{ github.event.client_payload.projection_b64 }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           umask 077
-          printf '%s' "$PROJECTION_B64" | base64 --decode > /tmp/site-projection.json
-          [[ "$(wc -c </tmp/site-projection.json)" -le 75000 ]]
-          ACTUAL_SHA="$(sha256sum /tmp/site-projection.json | awk '{print $1}')"
-          [[ "$ACTUAL_SHA" == "$PROJECTION_SHA256" ]]
+          out="/tmp/site-projection.json"
+          rm -f "$out"
 
-          node <<'NODE'
+          [[ "$SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$PROJECTION_SHA256" =~ ^[0-9a-f]{64}$ ]]
+
+          if [[ "$SCHEMA" == 'site-projection-ref.v1' ]]; then
+            [[ "$INBOX_REF" =~ ^refs/heads/[A-Za-z0-9._/-]+$ ]]
+            [[ "$INBOX_PATH" =~ ^[A-Za-z0-9._/-]+$ && "$INBOX_PATH" != *..* ]]
+            [[ "$PROJECTION_BYTES" =~ ^[1-9][0-9]*$ ]]
+            gh api -H 'Accept: application/vnd.github.raw+json' \
+              "repos/${GITHUB_REPOSITORY}/contents/${INBOX_PATH}?ref=${INBOX_REF}" > "$out"
+            transport=REFERENCE
+          else
+            [[ -n "$PROJECTION_B64" ]]
+            (( ${#PROJECTION_B64} <= 66000 ))
+            printf '%s' "$PROJECTION_B64" | base64 --decode > "$out"
+            transport=LEGACY_INLINE
+          fi
+
+          [[ -s "$out" ]]
+          actual_sha="$(sha256sum "$out" | awk '{print $1}')"
+          [[ "$actual_sha" == "$PROJECTION_SHA256" ]]
+
+          node - "$out" <<'NODE'
           const fs = require('fs');
-          const raw = fs.readFileSync('/tmp/site-projection.json', 'utf8');
+          const path = process.argv[2];
+          const raw = fs.readFileSync(path, 'utf8');
           const value = JSON.parse(raw);
           if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('invalid_projection');
           if (value.schemaVersion !== 1) throw new Error('invalid_schema_version');
           if (value.projectionVersion !== 'site-projection.v1') throw new Error('invalid_projection_version');
           if (!value.current || typeof value.current !== 'object' || Array.isArray(value.current)) throw new Error('invalid_current');
           if (!Array.isArray(value.updates)) throw new Error('invalid_updates');
+          if (value.projectedThrough != null && typeof value.projectedThrough !== 'string') throw new Error('invalid_projected_through');
           const forbidden = /(?:token|secret|password|senha|authorization|cookie|spreadsheet|planilha|drive|pix)/i;
           if (forbidden.test(raw)) throw new Error('forbidden_content');
+
+          let current = null;
+          try { current = JSON.parse(fs.readFileSync('data/site-projection.json', 'utf8')); } catch { current = null; }
+          if (current && typeof current === 'object') {
+            const a = current.projectedThrough, b = value.projectedThrough;
+            if (typeof a === 'string' && typeof b === 'string' && b < a) throw new Error('projection_regression');
+            if (Array.isArray(current.updates) && Array.isArray(value.updates) && value.updates.length < current.updates.length) {
+              throw new Error('projection_updates_shrink');
+            }
+          }
           NODE
+
+          printf 'transport=%s\nprojection_sha256=%s\n' "$transport" "$PROJECTION_SHA256" >> "$GITHUB_OUTPUT"
+          printf 'site_projection_resolved=YES transport=%s bytes=%s\n' "$transport" "$(wc -c < "$out" | tr -d ' ')"
 
       - name: Stage and validate site projection
         run: |
