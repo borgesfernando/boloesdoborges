@@ -4,9 +4,9 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "11/10/2026",
-      "concurso": 3069,
-      "dataProximoConcurso": "14/10/2026",
+      "dataApuracao": "14/10/2026",
+      "concurso": 3070,
+      "dataProximoConcurso": "18/10/2026",
       "estado": "ATUALIZADO",
       "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "13/10/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-10-15T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-15T03:15:27.496Z"
+  "atualizadoEm": "2026-10-15T13:51:24.751Z"
 }
