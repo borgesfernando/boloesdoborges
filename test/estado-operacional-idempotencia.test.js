@@ -139,19 +139,39 @@ test('ABRIR e FECHAR repetidos idênticos são no-op público e avançam somente
   assert.equal(fs.readFileSync(paths.estado, 'utf8'), agregadoFechado);
 });
 
-test('nova correlação exige ABRIR revision=1 e reinicia cursor por instância', () => {
+test('nova correlação exige ABRIR e aceita revision monotônica de projeto maior que 1', () => {
   const paths = pathsTemporarios();
   aplicarEstadoOperacionalComCursor(paths.estado, paths.cursor, payload());
+  aplicarEstadoOperacionalComCursor(paths.estado, paths.cursor, payload({
+    ativo: false,
+    eventType: 'FECHAR',
+    revision: '7',
+    estado: 'FECHADA',
+    fase: 'ENCERRADA',
+    atualizadoEm: '2026-09-04T16:00:00.000Z',
+  }));
   assert.throws(() => aplicarEstadoOperacionalComCursor(paths.estado, paths.cursor, payload({
     correlationId: 'corr-2',
     eventType: 'ATUALIZAR',
-    revision: '2',
+    revision: '8',
   })), /Nova instância/);
+
+  const obsoleta = aplicarEstadoOperacionalComCursor(paths.estado, paths.cursor, payload({
+    concurso: '3007',
+    correlationId: 'corr-2',
+    revision: '6',
+    abreEm: '2026-09-05T08:00:00-03:00',
+    fechaEm: '2026-09-05T13:00:00-03:00',
+    atualizadoEm: '2026-09-05T11:00:00.000Z',
+    contextoPublico: { concurso: '3007' },
+  }));
+  assert.equal(obsoleta.aplicado, false);
+  assert.equal(obsoleta.motivo, 'REVISAO_INFERIOR');
 
   const nova = aplicarEstadoOperacionalComCursor(paths.estado, paths.cursor, payload({
     concurso: '3007',
     correlationId: 'corr-2',
-    revision: '1',
+    revision: '8',
     abreEm: '2026-09-05T08:00:00-03:00',
     fechaEm: '2026-09-05T13:00:00-03:00',
     atualizadoEm: '2026-09-05T11:00:00.000Z',
@@ -160,7 +180,7 @@ test('nova correlação exige ABRIR revision=1 e reinicia cursor por instância'
   assert.equal(nova.aplicado, true);
   const cursor = JSON.parse(fs.readFileSync(paths.cursor, 'utf8'));
   assert.equal(cursor.projetos['ds-mensal'].correlationId, 'corr-2');
-  assert.equal(cursor.projetos['ds-mensal'].lastRevision, 1);
+  assert.equal(cursor.projetos['ds-mensal'].lastRevision, 8);
 });
 
 test('atualizações sequenciais de dois projetos preservam ambos no agregado', () => {

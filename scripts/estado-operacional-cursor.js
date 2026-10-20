@@ -120,8 +120,14 @@ function decidirAplicacaoEvento(payload, cursor) {
 
   const mesmaInstancia = anterior.correlationId === proximoRegistro.correlationId;
   if (!mesmaInstancia) {
-    if (metadados.eventType !== 'ABRIR' || metadados.revision !== 1) {
-      throw new Error('Nova instância operacional deve iniciar com ABRIR revision=1.');
+    if (metadados.eventType !== 'ABRIR') {
+      throw new Error('Nova instância operacional deve iniciar com ABRIR.');
+    }
+    if (metadados.revision < Number(anterior.lastRevision || 0)) {
+      return { acao: 'NO_OP', motivo: 'REVISAO_INFERIOR', cursorAlterado: false, cursor };
+    }
+    if (metadados.revision === Number(anterior.lastRevision || 0)) {
+      throw new Error('Nova instância operacional reutilizou a revision já aplicada ao projeto.');
     }
     proximoCursor.projetos[payload.projeto] = proximoRegistro;
     return { acao: 'APLICAR', motivo: 'NOVA_INSTANCIA', cursorAlterado: true, cursor: proximoCursor };
