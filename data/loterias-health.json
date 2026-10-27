@@ -22,32 +22,32 @@
       "sorteioEsperadoEm": "2026-10-25T14:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "24/10/2026",
-      "concurso": 3813,
-      "dataProximoConcurso": "26/10/2026",
-      "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
-      "esperadoDataApuracao": "25/10/2026",
-      "sorteioEsperadoEm": "2026-10-25T14:00:00.000Z"
-    },
-    "quina": {
-      "dataApuracao": "24/10/2026",
-      "concurso": 7151,
-      "dataProximoConcurso": "26/10/2026",
-      "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
-      "esperadoDataApuracao": "25/10/2026",
-      "sorteioEsperadoEm": "2026-10-25T14:00:00.000Z"
-    },
-    "duplasena": {
-      "dataApuracao": "23/10/2026",
-      "concurso": 3024,
-      "dataProximoConcurso": "26/10/2026",
+      "dataApuracao": "26/10/2026",
+      "concurso": 3814,
+      "dataProximoConcurso": "27/10/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "23/10/2026",
-      "sorteioEsperadoEm": "2026-10-24T00:00:00.000Z"
+      "esperadoDataApuracao": "26/10/2026",
+      "sorteioEsperadoEm": "2026-10-27T00:00:00.000Z"
+    },
+    "quina": {
+      "dataApuracao": "26/10/2026",
+      "concurso": 7152,
+      "dataProximoConcurso": "27/10/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
+      "esperadoDataApuracao": "26/10/2026",
+      "sorteioEsperadoEm": "2026-10-27T00:00:00.000Z"
+    },
+    "duplasena": {
+      "dataApuracao": "26/10/2026",
+      "concurso": 3025,
+      "dataProximoConcurso": "28/10/2026",
+      "estado": "ATUALIZADO",
+      "freshness": "ATUAL",
+      "esperadoDataApuracao": "26/10/2026",
+      "sorteioEsperadoEm": "2026-10-27T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-25T17:26:26.080Z"
+  "atualizadoEm": "2026-10-27T03:45:59.296Z"
 }
