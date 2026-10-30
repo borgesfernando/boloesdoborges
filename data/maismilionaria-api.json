@@ -1,31 +1,31 @@
 {
   "trevosSorteados": [
-    "1",
-    "4"
+    "3",
+    "5"
   ],
   "acumulado": true,
-  "dataApuracao": "24/10/2026",
-  "dataProximoConcurso": "28/10/2026",
+  "dataApuracao": "29/10/2026",
+  "dataProximoConcurso": "30/10/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "44",
-    "14",
-    "26",
-    "20",
-    "30",
-    "12",
-    "04",
-    "01"
+    "36",
+    "07",
+    "35",
+    "43",
+    "13",
+    "06",
+    "03",
+    "05"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "12",
-    "14",
-    "20",
-    "26",
-    "30",
-    "44"
+    "06",
+    "07",
+    "13",
+    "35",
+    "36",
+    "43"
   ],
   "listaDezenasSegundoSorteio": null,
   "listaMunicipioUFGanhadores": [],
@@ -46,71 +46,71 @@
       "descricaoFaixa": "5 acertos + 2 trevos",
       "faixa": 3,
       "numeroDeGanhadores": 2,
-      "valorPremio": 182352
+      "valorPremio": 144694.2
     },
     {
       "descricaoFaixa": "5 acertos + 1 ou nenhum trevo",
       "faixa": 4,
-      "numeroDeGanhadores": 14,
-      "valorPremio": 11577.91
+      "numeroDeGanhadores": 17,
+      "valorPremio": 7565.71
     },
     {
       "descricaoFaixa": "4 acertos + 2 trevos",
       "faixa": 5,
-      "numeroDeGanhadores": 86,
-      "valorPremio": 2019.4
+      "numeroDeGanhadores": 100,
+      "valorPremio": 1378.04
     },
     {
       "descricaoFaixa": "4 acertos + 1 ou nenhum trevo",
       "faixa": 6,
-      "numeroDeGanhadores": 1259,
-      "valorPremio": 137.94
+      "numeroDeGanhadores": 1033,
+      "valorPremio": 133.4
     },
     {
       "descricaoFaixa": "3 acertos + 2 trevos",
       "faixa": 7,
-      "numeroDeGanhadores": 1715,
+      "numeroDeGanhadores": 1839,
       "valorPremio": 50
     },
     {
       "descricaoFaixa": "3 acertos + 1 trevo",
       "faixa": 8,
-      "numeroDeGanhadores": 13140,
+      "numeroDeGanhadores": 12980,
       "valorPremio": 24
     },
     {
       "descricaoFaixa": "2 acertos + 2 trevos",
       "faixa": 9,
-      "numeroDeGanhadores": 13157,
+      "numeroDeGanhadores": 14533,
       "valorPremio": 12
     },
     {
       "descricaoFaixa": "2 acertos + 1 trevo",
       "faixa": 10,
-      "numeroDeGanhadores": 105307,
+      "numeroDeGanhadores": 98449,
       "valorPremio": 6
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "Espaço da Sorte",
-  "nomeMunicipioUFSorteio": "SAO PAULO,  SP",
+  "nomeMunicipioUFSorteio": "SAO PAULO, SP",
   "nomeTimeCoracaoMesSorte": null,
-  "numero": 401,
-  "numeroConcursoAnterior": 400,
+  "numero": 402,
+  "numeroConcursoAnterior": 401,
   "numeroConcursoFinal_0_5": 0,
-  "numeroConcursoProximo": 402,
+  "numeroConcursoProximo": 403,
   "numeroJogo": 9,
-  "observacao": "O sorteio do concurso Nº 402 da +Milionária foi adiado para o dia 29/10/2026 às 21h, com transmissão ao vivo pelas redes sociais da caixa no Youtube e Loterias Caixa no Facebook, além do portal G1.",
+  "observacao": "",
   "premiacaoContingencia": null,
   "tipoJogo": "MAIS_MILIONARIA",
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 9820344,
+  "valorArrecadado": 8329932,
   "valorAcumuladoConcurso_0_5": 0,
   "valorAcumuladoConcursoEspecial": 0,
-  "valorAcumuladoProximoConcurso": 107712161.06,
-  "valorEstimadoProximoConcurso": 109000000,
-  "valorSaldoReservaGarantidora": 5991101.96,
-  "valorTotalPremioFaixaUm": 1256204.32
+  "valorAcumuladoProximoConcurso": 108708944.7,
+  "valorEstimadoProximoConcurso": 110000000,
+  "valorSaldoReservaGarantidora": 6118770.66,
+  "valorTotalPremioFaixaUm": 996783.65
 }

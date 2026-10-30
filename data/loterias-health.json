@@ -13,9 +13,9 @@
       "sorteioEsperadoEm": "2026-10-30T00:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "24/10/2026",
-      "concurso": 401,
-      "dataProximoConcurso": "28/10/2026",
+      "dataApuracao": "29/10/2026",
+      "concurso": 402,
+      "dataProximoConcurso": "30/10/2026",
       "estado": "ATUALIZADO",
       "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "28/10/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-10-29T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-30T04:26:19.179Z"
+  "atualizadoEm": "2026-10-30T15:28:22.380Z"
 }
