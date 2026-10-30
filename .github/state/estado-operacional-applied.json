@@ -30,12 +30,12 @@
     },
     "lf-mensal": {
       "correlationId": "6220c472-9657-4fe5-a6f9-b444b047e522",
-      "lastRevision": 3,
-      "lastEventType": "ABRIR",
-      "lastEventKey": "lf-mensal:6220c472-9657-4fe5-a6f9-b444b047e522:ABRIR:3",
+      "lastRevision": 4,
+      "lastEventType": "FECHAR",
+      "lastEventKey": "lf-mensal:6220c472-9657-4fe5-a6f9-b444b047e522:FECHAR:4",
       "identityFingerprint": "f49f14e21bae045bbc7b215987b28059e9b0f345ecc91e88db84f6f67138603c",
-      "factsFingerprint": "a765dc574df9d8a2e9e02322137547827b964cd77c444d29d71771b95f9199be",
-      "payloadFingerprint": "308a4d976e2104ea9d18c897ca5c1dc8669962bdc97ed488e1cbc64449c95a79"
+      "factsFingerprint": "5c0dc51e061582f8a1858711a7d7c4a646cbaca0204e95915bb3374cae7c6610",
+      "payloadFingerprint": "1f056c75c59cf04b487e781a0192222c5d76e4f4b20600b181933dc29c6ac6e1"
     },
     "ds-mensal": {
       "correlationId": "0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5",
