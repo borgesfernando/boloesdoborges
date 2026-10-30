@@ -29,13 +29,13 @@
       "payloadFingerprint": "9f8aefc35406084881bc3c8ad2e5aeffaff69b1763dc20e28b2aa0257c21ed41"
     },
     "lf-mensal": {
-      "correlationId": "bf7b15e7-32a7-4e8a-8390-ae5b6440b9c6",
-      "lastRevision": 2,
-      "lastEventType": "FECHAR",
-      "lastEventKey": "lf-mensal:bf7b15e7-32a7-4e8a-8390-ae5b6440b9c6:FECHAR:2",
-      "identityFingerprint": "2e58b7cd26b17714161d038c1a1d8d68f961bd93a310a004d2b571e8f6292da9",
-      "factsFingerprint": "8e2b459439b7592f502957d66e7ee27671bfc7d4b0e498a7f9e7d62f7a3469c4",
-      "payloadFingerprint": "3137522bb58e3f25e1522754a85b1dedc2b2440dcff24533e3cdb6dab671c010"
+      "correlationId": "6220c472-9657-4fe5-a6f9-b444b047e522",
+      "lastRevision": 3,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "lf-mensal:6220c472-9657-4fe5-a6f9-b444b047e522:ABRIR:3",
+      "identityFingerprint": "f49f14e21bae045bbc7b215987b28059e9b0f345ecc91e88db84f6f67138603c",
+      "factsFingerprint": "a765dc574df9d8a2e9e02322137547827b964cd77c444d29d71771b95f9199be",
+      "payloadFingerprint": "308a4d976e2104ea9d18c897ca5c1dc8669962bdc97ed488e1cbc64449c95a79"
     },
     "ds-mensal": {
       "correlationId": "0fde2e9e-c0ed-491b-a0e1-0b8ddc1416b5",

@@ -1,29 +1,29 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-28T21:00:26.113Z",
+  "generatedAt": "2026-10-30T00:42:22.099Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
       "slug": "lf-mensal",
       "nome": "Lotofácil Mensal",
       "tipo": "MENSAL",
-      "estado": "FECHADA",
-      "ativo": false,
-      "fase": "ENCERRADA",
-      "concurso": "3794",
-      "abreEm": "2026-10-01T11:21:03.368Z",
-      "fechaEm": "2026-10-02T15:00:00.000Z",
+      "estado": "ABERTA",
+      "ativo": true,
+      "fase": "INSCRICOES",
+      "concurso": "3818",
+      "abreEm": "2026-10-30T00:42:08.692Z",
+      "fechaEm": "2026-10-30T15:00:00.000Z",
       "timezone": "America/Sao_Paulo",
       "janelaComunidade": {
-        "abreEm": "2026-10-01T11:21:03.368Z",
-        "fechaEm": "2026-10-02T15:00:00.000Z",
+        "abreEm": "2026-10-30T00:42:08.692Z",
+        "fechaEm": "2026-10-30T15:00:00.000Z",
         "timezone": "America/Sao_Paulo"
       },
       "contexto": {
-        "concurso": "3794"
+        "concurso": "3818"
       },
-      "atualizadoEm": "2026-10-02T15:00:24.222Z",
-      "correlationId": "bf7b15e7-32a7-4e8a-8390-ae5b6440b9c6",
+      "atualizadoEm": "2026-10-30T00:42:08.806Z",
+      "correlationId": "6220c472-9657-4fe5-a6f9-b444b047e522",
       "fonteEstado": "Apps_Scripts"
     },
     "quina-mensal": {
