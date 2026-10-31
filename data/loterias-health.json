@@ -4,18 +4,18 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "29/10/2026",
-      "concurso": 3078,
-      "dataProximoConcurso": "30/10/2026",
+      "dataApuracao": "30/10/2026",
+      "concurso": 3079,
+      "dataProximoConcurso": "01/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "ATUAL",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "29/10/2026",
       "sorteioEsperadoEm": "2026-10-30T00:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "29/10/2026",
-      "concurso": 402,
-      "dataProximoConcurso": "30/10/2026",
+      "dataApuracao": "30/10/2026",
+      "concurso": 403,
+      "dataProximoConcurso": "04/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "28/10/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-10-31T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-31T04:07:01.050Z"
+  "atualizadoEm": "2026-10-31T14:57:19.923Z"
 }
