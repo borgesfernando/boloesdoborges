@@ -4,40 +4,40 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "30/10/2026",
-      "concurso": 3079,
-      "dataProximoConcurso": "01/11/2026",
+      "dataApuracao": "01/11/2026",
+      "concurso": 3080,
+      "dataProximoConcurso": "04/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
-      "esperadoDataApuracao": "29/10/2026",
-      "sorteioEsperadoEm": "2026-10-30T00:00:00.000Z"
+      "freshness": "ATUAL",
+      "esperadoDataApuracao": "01/11/2026",
+      "sorteioEsperadoEm": "2026-11-01T14:00:00.000Z"
     },
     "maismilionaria": {
       "dataApuracao": "30/10/2026",
       "concurso": 403,
       "dataProximoConcurso": "04/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
-      "esperadoDataApuracao": "28/10/2026",
-      "sorteioEsperadoEm": "2026-10-29T00:00:00.000Z"
+      "freshness": "AGUARDANDO_APURACAO",
+      "esperadoDataApuracao": "01/11/2026",
+      "sorteioEsperadoEm": "2026-11-01T14:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "30/10/2026",
-      "concurso": 3818,
-      "dataProximoConcurso": "01/11/2026",
+      "dataApuracao": "01/11/2026",
+      "concurso": 3819,
+      "dataProximoConcurso": "03/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "30/10/2026",
-      "sorteioEsperadoEm": "2026-10-31T00:00:00.000Z"
+      "esperadoDataApuracao": "01/11/2026",
+      "sorteioEsperadoEm": "2026-11-01T14:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "30/10/2026",
-      "concurso": 7156,
-      "dataProximoConcurso": "01/11/2026",
+      "dataApuracao": "01/11/2026",
+      "concurso": 7157,
+      "dataProximoConcurso": "03/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "30/10/2026",
-      "sorteioEsperadoEm": "2026-10-31T00:00:00.000Z"
+      "esperadoDataApuracao": "01/11/2026",
+      "sorteioEsperadoEm": "2026-11-01T14:00:00.000Z"
     },
     "duplasena": {
       "dataApuracao": "30/10/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-10-31T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-10-31T14:57:19.923Z"
+  "atualizadoEm": "2026-11-01T15:41:01.734Z"
 }
