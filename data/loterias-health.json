@@ -26,28 +26,28 @@
       "concurso": 3819,
       "dataProximoConcurso": "03/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "ATUAL",
-      "esperadoDataApuracao": "01/11/2026",
-      "sorteioEsperadoEm": "2026-11-01T14:00:00.000Z"
+      "freshness": "DESATUALIZADO",
+      "esperadoDataApuracao": "02/11/2026",
+      "sorteioEsperadoEm": "2026-11-03T00:00:00.000Z"
     },
     "quina": {
       "dataApuracao": "01/11/2026",
       "concurso": 7157,
       "dataProximoConcurso": "03/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "ATUAL",
-      "esperadoDataApuracao": "01/11/2026",
-      "sorteioEsperadoEm": "2026-11-01T14:00:00.000Z"
+      "freshness": "DESATUALIZADO",
+      "esperadoDataApuracao": "02/11/2026",
+      "sorteioEsperadoEm": "2026-11-03T00:00:00.000Z"
     },
     "duplasena": {
       "dataApuracao": "30/10/2026",
       "concurso": 3027,
       "dataProximoConcurso": "04/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "ATUAL",
-      "esperadoDataApuracao": "30/10/2026",
-      "sorteioEsperadoEm": "2026-10-31T00:00:00.000Z"
+      "freshness": "DESATUALIZADO",
+      "esperadoDataApuracao": "02/11/2026",
+      "sorteioEsperadoEm": "2026-11-03T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-11-01T18:45:45.085Z"
+  "atualizadoEm": "2026-11-03T05:24:18.980Z"
 }
