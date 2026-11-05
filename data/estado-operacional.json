@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-05T01:01:16.916Z",
+  "generatedAt": "2026-11-05T15:01:07.799Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -51,9 +51,9 @@
       "slug": "ds-mensal",
       "nome": "Dupla Sena Mensal",
       "tipo": "MENSAL",
-      "estado": "ABERTA",
-      "ativo": true,
-      "fase": "INSCRICOES",
+      "estado": "FECHADA",
+      "ativo": false,
+      "fase": "ENCERRADA",
       "concurso": "3029",
       "abreEm": "2026-11-05T01:01:01.886Z",
       "fechaEm": "2026-11-05T15:00:00.000Z",
@@ -66,7 +66,7 @@
       "contexto": {
         "concurso": "3029"
       },
-      "atualizadoEm": "2026-11-05T01:01:02.068Z",
+      "atualizadoEm": "2026-11-05T15:00:51.576Z",
       "correlationId": "6df1d628-365b-43d2-914f-92fc93ca9bbe",
       "fonteEstado": "Apps_Scripts"
     },
