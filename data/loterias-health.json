@@ -17,7 +17,7 @@
       "concurso": 405,
       "dataProximoConcurso": "11/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "AGUARDANDO_APURACAO",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "08/11/2026",
       "sorteioEsperadoEm": "2026-11-08T14:00:00.000Z"
     },
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-11-07T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-11-08T15:43:06.807Z"
+  "atualizadoEm": "2026-11-08T18:40:36.095Z"
 }
