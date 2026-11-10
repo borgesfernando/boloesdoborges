@@ -12,12 +12,12 @@
     },
     "mega-virada": {
       "correlationId": "7499219b-252e-49c4-9f17-bcb465653309",
-      "lastRevision": 5,
-      "lastEventType": "ABRIR",
-      "lastEventKey": "mega-virada:7499219b-252e-49c4-9f17-bcb465653309:ABRIR:5",
+      "lastRevision": 6,
+      "lastEventType": "FECHAR",
+      "lastEventKey": "mega-virada:7499219b-252e-49c4-9f17-bcb465653309:FECHAR:6",
       "identityFingerprint": "649267600db9d2b9973077df59d2ac0268c43942d2887431fe065ff9c89493a5",
-      "factsFingerprint": "703d07cd9bc57d6a79e87a0fc9c999b38c5d09b33a96b4a7e3e58314bf56e4ba",
-      "payloadFingerprint": "b8001f1bf5f6673a5670290b59cd7285776f2850cbb0cc251639c42db3d4b8ce"
+      "factsFingerprint": "6e72439b6cc29f81f90deb55bf8c974c0fe177c3e4d6c1633b4f95744324ec5e",
+      "payloadFingerprint": "a5903b9c857cbbfab927c77010b7255afef5e3464ad9508e7d7f24a4319f8776"
     },
     "milionaria": {
       "correlationId": "1cf2278c-6f14-48ff-ae75-5b73a6a0e057",

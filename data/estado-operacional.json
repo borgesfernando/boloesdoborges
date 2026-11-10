@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T09:24:21.704Z",
+  "generatedAt": "2026-11-10T15:00:58.515Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -137,8 +137,8 @@
       "slug": "mega-virada",
       "nome": "Mega da Virada",
       "tipo": "ESPECIAL",
-      "estado": "ABERTA",
-      "ativo": true,
+      "estado": "FECHADA",
+      "ativo": false,
       "fase": "INSCRICOES",
       "concurso": "3106",
       "abreEm": "2026-11-10T09:24:08.116Z",
@@ -152,7 +152,7 @@
       "contexto": {
         "concurso": "3106"
       },
-      "atualizadoEm": "2026-11-10T09:24:09.835Z",
+      "atualizadoEm": "2026-11-10T15:00:46.517Z",
       "correlationId": "7499219b-252e-49c4-9f17-bcb465653309",
       "fonteEstado": "Apps_Scripts"
     },
