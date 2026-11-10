@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-05T15:01:07.799Z",
+  "generatedAt": "2026-11-10T09:24:21.704Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -137,23 +137,23 @@
       "slug": "mega-virada",
       "nome": "Mega da Virada",
       "tipo": "ESPECIAL",
-      "estado": "FECHADA",
-      "ativo": false,
-      "fase": "ENCERRADA",
-      "concurso": "3104",
-      "abreEm": "2026-09-10T09:24:07.368Z",
-      "fechaEm": "2026-09-10T12:00:00-03:00",
+      "estado": "ABERTA",
+      "ativo": true,
+      "fase": "INSCRICOES",
+      "concurso": "3106",
+      "abreEm": "2026-11-10T09:24:08.116Z",
+      "fechaEm": "2026-11-10T12:00:00-03:00",
       "timezone": "America/Sao_Paulo",
       "janelaComunidade": {
-        "abreEm": "2026-09-10T09:24:07.368Z",
-        "fechaEm": "2026-09-10T12:00:00-03:00",
+        "abreEm": "2026-11-10T09:24:08.116Z",
+        "fechaEm": "2026-11-10T12:00:00-03:00",
         "timezone": "America/Sao_Paulo"
       },
       "contexto": {
-        "concurso": "3104"
+        "concurso": "3106"
       },
-      "atualizadoEm": "2026-09-10T15:00:07.645Z",
-      "correlationId": "824c89da-b0e3-4ac5-b146-056b33d7602a",
+      "atualizadoEm": "2026-11-10T09:24:09.835Z",
+      "correlationId": "7499219b-252e-49c4-9f17-bcb465653309",
       "fonteEstado": "Apps_Scripts"
     },
     "mega-50mais": {

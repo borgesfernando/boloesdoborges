@@ -11,13 +11,13 @@
       "payloadFingerprint": "5f7c5fb12b0386013a10a93a0036493292ddd863945cfea47a14f7843f030fc4"
     },
     "mega-virada": {
-      "correlationId": "824c89da-b0e3-4ac5-b146-056b33d7602a",
-      "lastRevision": 2,
-      "lastEventType": "FECHAR",
-      "lastEventKey": "mega-virada:824c89da-b0e3-4ac5-b146-056b33d7602a:FECHAR:2",
-      "identityFingerprint": "ab6cbdbb7f1a0d46b229bb4e00576b762522e4825aa5a6950087dfe518a9ac80",
-      "factsFingerprint": "c1eac7e4c59f547371386df367a3b3b36e4043dacf11e46679a947e42712bf4b",
-      "payloadFingerprint": "1346b5bef1cab8f5273f98908753385af1db3574fc109c537104344bb380340c"
+      "correlationId": "7499219b-252e-49c4-9f17-bcb465653309",
+      "lastRevision": 5,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "mega-virada:7499219b-252e-49c4-9f17-bcb465653309:ABRIR:5",
+      "identityFingerprint": "649267600db9d2b9973077df59d2ac0268c43942d2887431fe065ff9c89493a5",
+      "factsFingerprint": "703d07cd9bc57d6a79e87a0fc9c999b38c5d09b33a96b4a7e3e58314bf56e4ba",
+      "payloadFingerprint": "b8001f1bf5f6673a5670290b59cd7285776f2850cbb0cc251639c42db3d4b8ce"
     },
     "milionaria": {
       "correlationId": "1cf2278c-6f14-48ff-ae75-5b73a6a0e057",
