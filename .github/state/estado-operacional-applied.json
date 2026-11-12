@@ -21,12 +21,12 @@
     },
     "milionaria": {
       "correlationId": "385972b4-065f-48ff-96cb-c19580b8af55",
-      "lastRevision": 13,
-      "lastEventType": "ABRIR",
-      "lastEventKey": "milionaria:385972b4-065f-48ff-96cb-c19580b8af55:ABRIR:13",
+      "lastRevision": 14,
+      "lastEventType": "FECHAR",
+      "lastEventKey": "milionaria:385972b4-065f-48ff-96cb-c19580b8af55:FECHAR:14",
       "identityFingerprint": "32d4743d5f0e572a40ddb08682b36c1081d6351c7e7df496be6565c98b7ffc57",
-      "factsFingerprint": "1dd8f00fbd532f5557311e4f29d4976cc57ff3f93ecbfcff5798f4098b0d979a",
-      "payloadFingerprint": "d193cd86ee03c1d6ed438028824a7f973f8c822406982d65e67ec1b362a4bd5c"
+      "factsFingerprint": "3c38132a7cbb1419d89ac8cb3a25396a546aeb51b8f1494d207e9627b4c383d9",
+      "payloadFingerprint": "0f861b48c13c3187915acea9e3cb4442471fdc202950f5b38c93010a11675034"
     },
     "lf-mensal": {
       "correlationId": "6220c472-9657-4fe5-a6f9-b444b047e522",
