@@ -4,13 +4,13 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "10/11/2026",
-      "concurso": 3084,
-      "dataProximoConcurso": "12/11/2026",
+      "dataApuracao": "12/11/2026",
+      "concurso": 3085,
+      "dataProximoConcurso": "15/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "10/11/2026",
-      "sorteioEsperadoEm": "2026-11-11T00:00:00.000Z"
+      "esperadoDataApuracao": "12/11/2026",
+      "sorteioEsperadoEm": "2026-11-13T00:00:00.000Z"
     },
     "maismilionaria": {
       "dataApuracao": "11/11/2026",
@@ -22,22 +22,22 @@
       "sorteioEsperadoEm": "2026-11-12T00:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "11/11/2026",
-      "concurso": 3827,
-      "dataProximoConcurso": "12/11/2026",
+      "dataApuracao": "12/11/2026",
+      "concurso": 3828,
+      "dataProximoConcurso": "13/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "11/11/2026",
-      "sorteioEsperadoEm": "2026-11-12T00:00:00.000Z"
+      "esperadoDataApuracao": "12/11/2026",
+      "sorteioEsperadoEm": "2026-11-13T00:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "11/11/2026",
-      "concurso": 7165,
-      "dataProximoConcurso": "12/11/2026",
+      "dataApuracao": "12/11/2026",
+      "concurso": 7166,
+      "dataProximoConcurso": "13/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "11/11/2026",
-      "sorteioEsperadoEm": "2026-11-12T00:00:00.000Z"
+      "esperadoDataApuracao": "12/11/2026",
+      "sorteioEsperadoEm": "2026-11-13T00:00:00.000Z"
     },
     "duplasena": {
       "dataApuracao": "11/11/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-11-12T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-11-12T05:48:04.308Z"
+  "atualizadoEm": "2026-11-13T05:08:01.697Z"
 }
