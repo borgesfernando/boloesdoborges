@@ -13,11 +13,11 @@
       "sorteioEsperadoEm": "2026-11-13T00:00:00.000Z"
     },
     "maismilionaria": {
-      "dataApuracao": "11/11/2026",
-      "concurso": 406,
-      "dataProximoConcurso": "13/11/2026",
+      "dataApuracao": "13/11/2026",
+      "concurso": 407,
+      "dataProximoConcurso": "18/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "ATUAL",
+      "freshness": "DESATUALIZADO",
       "esperadoDataApuracao": "11/11/2026",
       "sorteioEsperadoEm": "2026-11-12T00:00:00.000Z"
     },
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-11-14T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-11-14T04:58:12.138Z"
+  "atualizadoEm": "2026-11-14T15:27:53.951Z"
 }

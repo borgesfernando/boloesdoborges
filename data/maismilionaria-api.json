@@ -1,31 +1,31 @@
 {
   "trevosSorteados": [
-    "3",
-    "5"
+    "2",
+    "3"
   ],
   "acumulado": true,
-  "dataApuracao": "11/11/2026",
-  "dataProximoConcurso": "13/11/2026",
+  "dataApuracao": "13/11/2026",
+  "dataProximoConcurso": "18/11/2026",
   "dezenasSorteadasOrdemSorteio": [
+    "50",
+    "22",
+    "25",
     "26",
-    "14",
-    "06",
-    "36",
-    "42",
-    "03",
-    "05",
+    "09",
+    "28",
+    "02",
     "03"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "03",
-    "06",
-    "14",
+    "09",
+    "22",
+    "25",
     "26",
-    "36",
-    "42"
+    "28",
+    "50"
   ],
   "listaDezenasSegundoSorteio": null,
   "listaMunicipioUFGanhadores": [],
@@ -45,49 +45,49 @@
     {
       "descricaoFaixa": "5 acertos + 2 trevos",
       "faixa": 3,
-      "numeroDeGanhadores": 4,
-      "valorPremio": 114065.83
+      "numeroDeGanhadores": 1,
+      "valorPremio": 277348.32
     },
     {
       "descricaoFaixa": "5 acertos + 1 ou nenhum trevo",
       "faixa": 4,
-      "numeroDeGanhadores": 18,
-      "valorPremio": 11265.76
+      "numeroDeGanhadores": 19,
+      "valorPremio": 6487.68
     },
     {
       "descricaoFaixa": "4 acertos + 2 trevos",
       "faixa": 5,
-      "numeroDeGanhadores": 122,
-      "valorPremio": 1780.88
+      "numeroDeGanhadores": 49,
+      "valorPremio": 1886.72
     },
     {
       "descricaoFaixa": "4 acertos + 1 ou nenhum trevo",
       "faixa": 6,
-      "numeroDeGanhadores": 1790,
-      "valorPremio": 121.37
+      "numeroDeGanhadores": 1069,
+      "valorPremio": 123.54
     },
     {
       "descricaoFaixa": "3 acertos + 2 trevos",
       "faixa": 7,
-      "numeroDeGanhadores": 2504,
+      "numeroDeGanhadores": 1382,
       "valorPremio": 50
     },
     {
       "descricaoFaixa": "3 acertos + 1 trevo",
       "faixa": 8,
-      "numeroDeGanhadores": 19019,
+      "numeroDeGanhadores": 12900,
       "valorPremio": 24
     },
     {
       "descricaoFaixa": "2 acertos + 2 trevos",
       "faixa": 9,
-      "numeroDeGanhadores": 20670,
+      "numeroDeGanhadores": 11207,
       "valorPremio": 12
     },
     {
       "descricaoFaixa": "2 acertos + 1 trevo",
       "faixa": 10,
-      "numeroDeGanhadores": 145058,
+      "numeroDeGanhadores": 103541,
       "valorPremio": 6
     }
   ],
@@ -95,10 +95,10 @@
   "localSorteio": "Espaço da Sorte",
   "nomeMunicipioUFSorteio": "SAO PAULO, SP",
   "nomeTimeCoracaoMesSorte": null,
-  "numero": 406,
-  "numeroConcursoAnterior": 405,
+  "numero": 407,
+  "numeroConcursoAnterior": 406,
   "numeroConcursoFinal_0_5": 0,
-  "numeroConcursoProximo": 407,
+  "numeroConcursoProximo": 408,
   "numeroJogo": 9,
   "observacao": "",
   "premiacaoContingencia": null,
@@ -106,11 +106,11 @@
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 12791148,
+  "valorArrecadado": 8018190,
   "valorAcumuladoConcurso_0_5": 0,
   "valorAcumuladoConcursoEspecial": 0,
-  "valorAcumuladoProximoConcurso": 113332394.55,
-  "valorEstimadoProximoConcurso": 115000000,
-  "valorSaldoReservaGarantidora": 6686912.11,
-  "valorTotalPremioFaixaUm": 1571585.56
+  "valorAcumuladoProximoConcurso": 114287710.25,
+  "valorEstimadoProximoConcurso": 116000000,
+  "valorSaldoReservaGarantidora": 6809802.9,
+  "valorTotalPremioFaixaUm": 955315.7
 }
