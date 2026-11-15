@@ -4,40 +4,40 @@
   "fonte": "CAIXA",
   "modalidades": {
     "megasena": {
-      "dataApuracao": "12/11/2026",
-      "concurso": 3085,
-      "dataProximoConcurso": "15/11/2026",
+      "dataApuracao": "15/11/2026",
+      "concurso": 3086,
+      "dataProximoConcurso": "17/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "12/11/2026",
-      "sorteioEsperadoEm": "2026-11-13T00:00:00.000Z"
+      "esperadoDataApuracao": "15/11/2026",
+      "sorteioEsperadoEm": "2026-11-15T14:00:00.000Z"
     },
     "maismilionaria": {
       "dataApuracao": "13/11/2026",
       "concurso": 407,
       "dataProximoConcurso": "18/11/2026",
       "estado": "ATUALIZADO",
-      "freshness": "DESATUALIZADO",
-      "esperadoDataApuracao": "11/11/2026",
-      "sorteioEsperadoEm": "2026-11-12T00:00:00.000Z"
+      "freshness": "AGUARDANDO_APURACAO",
+      "esperadoDataApuracao": "15/11/2026",
+      "sorteioEsperadoEm": "2026-11-15T14:00:00.000Z"
     },
     "lotofacil": {
-      "dataApuracao": "13/11/2026",
-      "concurso": 3829,
-      "dataProximoConcurso": "15/11/2026",
+      "dataApuracao": "15/11/2026",
+      "concurso": 3830,
+      "dataProximoConcurso": "16/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "13/11/2026",
-      "sorteioEsperadoEm": "2026-11-14T00:00:00.000Z"
+      "esperadoDataApuracao": "15/11/2026",
+      "sorteioEsperadoEm": "2026-11-15T14:00:00.000Z"
     },
     "quina": {
-      "dataApuracao": "13/11/2026",
-      "concurso": 7167,
-      "dataProximoConcurso": "15/11/2026",
+      "dataApuracao": "15/11/2026",
+      "concurso": 7168,
+      "dataProximoConcurso": "16/11/2026",
       "estado": "ATUALIZADO",
       "freshness": "ATUAL",
-      "esperadoDataApuracao": "13/11/2026",
-      "sorteioEsperadoEm": "2026-11-14T00:00:00.000Z"
+      "esperadoDataApuracao": "15/11/2026",
+      "sorteioEsperadoEm": "2026-11-15T14:00:00.000Z"
     },
     "duplasena": {
       "dataApuracao": "13/11/2026",
@@ -49,5 +49,5 @@
       "sorteioEsperadoEm": "2026-11-14T00:00:00.000Z"
     }
   },
-  "atualizadoEm": "2026-11-14T15:27:53.951Z"
+  "atualizadoEm": "2026-11-15T16:00:27.647Z"
 }
