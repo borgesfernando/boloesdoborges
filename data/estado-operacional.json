@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-23T21:00:33.324Z",
+  "generatedAt": "2026-11-25T09:16:04.058Z",
   "timezone": "America/Sao_Paulo",
   "projetos": {
     "lf-mensal": {
@@ -160,23 +160,23 @@
       "slug": "mega-50mais",
       "nome": "Mega-Sena 50+",
       "tipo": "ESTRATEGICO",
-      "estado": "FECHADA",
-      "ativo": false,
+      "estado": "ABERTA",
+      "ativo": true,
       "fase": "INSCRICOES",
-      "concurso": "3090",
-      "abreEm": "2026-11-23T09:15:44Z",
-      "fechaEm": "2026-11-23T18:00:00-03:00",
+      "concurso": "3091",
+      "abreEm": "2026-11-25T09:15:51Z",
+      "fechaEm": "2026-11-25T18:00:00-03:00",
       "timezone": "America/Sao_Paulo",
       "janelaComunidade": {
-        "abreEm": "2026-11-23T09:15:44Z",
-        "fechaEm": "2026-11-23T18:00:00-03:00",
+        "abreEm": "2026-11-25T09:15:51Z",
+        "fechaEm": "2026-11-25T18:00:00-03:00",
         "timezone": "America/Sao_Paulo"
       },
       "contexto": {
-        "concurso": "3090"
+        "concurso": "3091"
       },
-      "atualizadoEm": "2026-11-23T21:00:22.568Z",
-      "correlationId": "fff9db9b-4489-4f78-b115-f4ff7d7aa405",
+      "atualizadoEm": "2026-11-25T09:15:52.282Z",
+      "correlationId": "fb54c8fe-ffdd-4ee2-b593-a30069422613",
       "fonteEstado": "Apps_Scripts"
     },
     "milionaria": {
