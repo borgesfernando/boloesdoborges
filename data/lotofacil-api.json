@@ -1,75 +1,84 @@
 {
-  "acumulado": true,
-  "dataApuracao": "23/11/2026",
-  "dataProximoConcurso": "24/11/2026",
+  "acumulado": false,
+  "dataApuracao": "24/11/2026",
+  "dataProximoConcurso": "25/11/2026",
   "dezenasSorteadasOrdemSorteio": [
-    "09",
-    "15",
-    "21",
-    "02",
-    "12",
-    "20",
-    "16",
-    "03",
+    "11",
+    "05",
     "22",
-    "24",
     "23",
-    "19",
+    "16",
     "07",
+    "20",
+    "14",
+    "24",
     "17",
-    "05"
+    "04",
+    "03",
+    "25",
+    "10",
+    "08"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
-    "02",
     "03",
+    "04",
     "05",
     "07",
-    "09",
-    "12",
-    "15",
+    "08",
+    "10",
+    "11",
+    "14",
     "16",
     "17",
-    "19",
     "20",
-    "21",
     "22",
     "23",
-    "24"
+    "24",
+    "25"
   ],
   "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [],
+  "listaMunicipioUFGanhadores": [
+    {
+      "ganhadores": 1,
+      "municipio": "BURITI ALEGRE",
+      "nomeFatansiaUL": "",
+      "posicao": 1,
+      "serie": "",
+      "uf": "GO"
+    }
+  ],
   "listaRateioPremio": [
     {
       "descricaoFaixa": "15 acertos",
       "faixa": 1,
-      "numeroDeGanhadores": 0,
-      "valorPremio": 0
+      "numeroDeGanhadores": 1,
+      "valorPremio": 3755409.03
     },
     {
       "descricaoFaixa": "14 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 218,
-      "valorPremio": 1962.92
+      "numeroDeGanhadores": 828,
+      "valorPremio": 841.75
     },
     {
       "descricaoFaixa": "13 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 8957,
+      "numeroDeGanhadores": 14564,
       "valorPremio": 35
     },
     {
       "descricaoFaixa": "12 acertos",
       "faixa": 4,
-      "numeroDeGanhadores": 101926,
+      "numeroDeGanhadores": 158259,
       "valorPremio": 14
     },
     {
       "descricaoFaixa": "11 acertos",
       "faixa": 5,
-      "numeroDeGanhadores": 507002,
+      "numeroDeGanhadores": 804414,
       "valorPremio": 7
     }
   ],
@@ -77,10 +86,10 @@
   "localSorteio": "ESPAÇO DA SORTE",
   "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3836,
-  "numeroConcursoAnterior": 3835,
+  "numero": 3837,
+  "numeroConcursoAnterior": 3836,
   "numeroConcursoFinal_0_5": 3840,
-  "numeroConcursoProximo": 3837,
+  "numeroConcursoProximo": 3838,
   "numeroJogo": 8,
   "observacao": "",
   "premiacaoContingencia": null,
@@ -88,11 +97,11 @@
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 19596132.5,
-  "valorAcumuladoConcurso_0_5": 1654780.42,
-  "valorAcumuladoConcursoEspecial": 26241966.81,
-  "valorAcumuladoProximoConcurso": 1428586.27,
-  "valorEstimadoProximoConcurso": 5000000,
+  "valorArrecadado": 31325889,
+  "valorAcumuladoConcurso_0_5": 2030074.41,
+  "valorAcumuladoConcursoEspecial": 26804907.82,
+  "valorAcumuladoProximoConcurso": 0,
+  "valorEstimadoProximoConcurso": 2000000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
