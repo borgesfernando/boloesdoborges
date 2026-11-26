@@ -49,7 +49,7 @@
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
-  "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
+  "nomeMunicipioUFSorteio": "SÃO PAULO,  SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
   "numero": 7172,
   "numeroConcursoAnterior": 7171,
@@ -66,7 +66,7 @@
   "valorAcumuladoConcurso_0_5": 0,
   "valorAcumuladoConcursoEspecial": 62193912.34,
   "valorAcumuladoProximoConcurso": 62193912.34,
-  "valorEstimadoProximoConcurso": 50000000,
+  "valorEstimadoProximoConcurso": 80000000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
