@@ -20,13 +20,13 @@
       "payloadFingerprint": "a5903b9c857cbbfab927c77010b7255afef5e3464ad9508e7d7f24a4319f8776"
     },
     "milionaria": {
-      "correlationId": "ab51b1cc-65bb-4b1a-87cc-300a5e3f6702",
-      "lastRevision": 17,
-      "lastEventType": "FECHAR",
-      "lastEventKey": "milionaria:ab51b1cc-65bb-4b1a-87cc-300a5e3f6702:FECHAR:17",
-      "identityFingerprint": "6a42cf9c4ff14e454931d638f11987ca4044ef49893f379f7535c731103f1b8c",
-      "factsFingerprint": "966f3779551a8972c4e57f9bfbf894f7e197c2b09e58eccea5e730ffc02a731e",
-      "payloadFingerprint": "4ac45a67a5f54150bd2ba5af658123c2a9563c19e2184ff3bae441a9047ca7e4"
+      "correlationId": "d42e44a4-da2f-432b-a261-bef4668356fa",
+      "lastRevision": 18,
+      "lastEventType": "ABRIR",
+      "lastEventKey": "milionaria:d42e44a4-da2f-432b-a261-bef4668356fa:ABRIR:18",
+      "identityFingerprint": "b57d7d3c9d3625094283033c251414b3e42a76e1c4728623ceb4b5ef707dbbc7",
+      "factsFingerprint": "64d9dccd7a682d39e753254f4ac48b2c5859e0486b6333036be0779914090d03",
+      "payloadFingerprint": "0add68e27cd22bf88f096280decd1bb2d74aef4a975e4ccd83388d712bc35a4b"
     },
     "lf-mensal": {
       "correlationId": "6220c472-9657-4fe5-a6f9-b444b047e522",
