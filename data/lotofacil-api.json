@@ -1,135 +1,86 @@
 {
-  "acumulado": false,
-  "dataApuracao": "25/11/2026",
-  "dataProximoConcurso": "26/11/2026",
+  "acumulado": true,
+  "dataApuracao": "26/11/2026",
+  "dataProximoConcurso": "27/11/2026",
   "dezenasSorteadasOrdemSorteio": [
+    "21",
+    "24",
+    "15",
+    "04",
+    "08",
+    "10",
+    "18",
+    "09",
+    "14",
+    "01",
+    "03",
     "07",
     "12",
-    "13",
-    "25",
-    "10",
-    "08",
-    "20",
-    "23",
-    "02",
     "05",
-    "16",
-    "17",
-    "01",
-    "15",
-    "11"
+    "19"
   ],
   "exibirDetalhamentoPorCidade": false,
   "id": null,
   "indicadorConcursoEspecial": 1,
   "listaDezenas": [
     "01",
-    "02",
+    "03",
+    "04",
     "05",
     "07",
     "08",
+    "09",
     "10",
-    "11",
     "12",
-    "13",
+    "14",
     "15",
-    "16",
-    "17",
-    "20",
-    "23",
-    "25"
+    "18",
+    "19",
+    "21",
+    "24"
   ],
   "listaDezenasSegundoSorteio": null,
-  "listaMunicipioUFGanhadores": [
-    {
-      "ganhadores": 1,
-      "municipio": "CANAL ELETRONICO",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "--"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "GOIANIA",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "GO"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "MONTE CARMELO",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "MG"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "RECIFE",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "PE"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "LARANJEIRAS DO SUL",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "PR"
-    },
-    {
-      "ganhadores": 1,
-      "municipio": "TORRES",
-      "nomeFatansiaUL": "",
-      "posicao": 1,
-      "serie": "",
-      "uf": "RS"
-    }
-  ],
+  "listaMunicipioUFGanhadores": [],
   "listaRateioPremio": [
     {
       "descricaoFaixa": "15 acertos",
       "faixa": 1,
-      "numeroDeGanhadores": 6,
-      "valorPremio": 204556.17
+      "numeroDeGanhadores": 0,
+      "valorPremio": 0
     },
     {
       "descricaoFaixa": "14 acertos",
       "faixa": 2,
-      "numeroDeGanhadores": 342,
-      "valorPremio": 1074.95
+      "numeroDeGanhadores": 223,
+      "valorPremio": 1829.85
     },
     {
       "descricaoFaixa": "13 acertos",
       "faixa": 3,
-      "numeroDeGanhadores": 9514,
+      "numeroDeGanhadores": 8659,
       "valorPremio": 35
     },
     {
       "descricaoFaixa": "12 acertos",
       "faixa": 4,
-      "numeroDeGanhadores": 105484,
+      "numeroDeGanhadores": 98199,
       "valorPremio": 14
     },
     {
       "descricaoFaixa": "11 acertos",
       "faixa": 5,
-      "numeroDeGanhadores": 531107,
+      "numeroDeGanhadores": 499845,
       "valorPremio": 7
     }
   ],
   "listaResultadoEquipeEsportiva": null,
   "localSorteio": "ESPAÇO DA SORTE",
-  "nomeMunicipioUFSorteio": "SÃO PAULO, SP",
+  "nomeMunicipioUFSorteio": "SÃO PAULO,  SP",
   "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
-  "numero": 3838,
-  "numeroConcursoAnterior": 3837,
+  "numero": 3839,
+  "numeroConcursoAnterior": 3838,
   "numeroConcursoFinal_0_5": 3840,
-  "numeroConcursoProximo": 3839,
+  "numeroConcursoProximo": 3840,
   "numeroJogo": 8,
   "observacao": "",
   "premiacaoContingencia": null,
@@ -137,11 +88,11 @@
   "tipoPublicacao": 3,
   "tituloConcursoEspecial": null,
   "ultimoConcurso": true,
-  "valorArrecadado": 19080796,
-  "valorAcumuladoConcurso_0_5": 2228031.99,
-  "valorAcumuladoConcursoEspecial": 27101844.21,
-  "valorAcumuladoProximoConcurso": 0,
-  "valorEstimadoProximoConcurso": 2000000,
+  "valorArrecadado": 18989869.5,
+  "valorAcumuladoConcurso_0_5": 3810036.5,
+  "valorAcumuladoConcursoEspecial": 27431428.5,
+  "valorAcumuladoProximoConcurso": 3810036.5,
+  "valorEstimadoProximoConcurso": 8500000,
   "valorSaldoReservaGarantidora": 0,
   "valorTotalPremioFaixaUm": 0
 }
